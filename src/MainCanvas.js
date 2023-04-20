@@ -4,6 +4,7 @@
 import { Canvas } from "@react-three/fiber";
 import { useState, useRef, useEffect } from "react";
 import HeroSection from "./HeroSection.js";
+import AboutSection from "./AboutSection.js";
 import {
   ScrollControls,
   Scroll,
@@ -27,8 +28,8 @@ export default function MainCanvas({}) {
               <Scroll>
               </Scroll>
               <Scroll html>
-                
                 <HeroSection/>
+                <AboutSection/>
               </Scroll>
             </ScrollControls>
           </Canvas>
