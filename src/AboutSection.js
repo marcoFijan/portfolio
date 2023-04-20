@@ -3,7 +3,7 @@ import marcoPointingAtText from "../public/images/marcoPointing.png";
 
 export default function AboutSection() {
   return (
-    <article className="w-full bg-bgColorLight sticky">
+    <article className="w-full bg-bgColorLight">
       <div className="max-w-wrapper mx-auto w-full grid gap-8 grid-cols-fluid pt-10 px-8">
         <section className="self-center">
           <h1>Marco Fijan</h1>
