@@ -6,6 +6,7 @@ import { useState, useRef, useEffect } from "react";
 import HeroSection from "./HeroSection.js";
 import AboutSection from "./AboutSection.js";
 import PortfolioSection from "./PortfolioSection.js";
+import PortfolioAnimation from "./PortfolioAnimation.js";
 import ContactSection from "./ContactSection.js"
 import {
   ScrollControls,
@@ -27,6 +28,7 @@ export default function MainCanvas({}) {
             <ambientLight color={"white"} intensity={0.3} />
             <ScrollControls pages={10} damping={0.1}>
               <Environment blur={0} preset="warehouse" />
+              <PortfolioAnimation/>
               <Scroll>
               </Scroll>
               <Scroll html>
