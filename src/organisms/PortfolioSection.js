@@ -1,37 +1,68 @@
-import Link from 'next/link'
+import Link from "next/link";
+import Article from "../molecules/Article";
 
 export default function PortfolioSection() {
   return (
     <div className="max-w-wrapper mx-auto w-full px-8">
-      <article className="py-10 h-screen box-border">
-          <h1 className="text-bgColorLight">Portfolio</h1>
-          <h2 className="">Mijn projecten</h2>
-          <p className="py-8 text-bgColorLight">
-            Bekijk hier mijn projecten
-          </p>
-      </article>
-      <article className="py-10 h-screen box-border text-right">
-        <h1 className="text-bgColorLight">KBO Tilburg Reeshof</h1>
-        <h2 className="">Redesign website met de focus voor ouderen binnen budget</h2> 
-        <Link href="/projects/kbo-tilburg-reeshof">Bekijk het project</Link> 
-      </article>
-      <article className="py-10 h-screen box-border text-right">
-        <h1 className="text-bgColorLight">GWOTY Award - YoungOnes</h1>
-        <h2 className="">Stage project met NextJS, Tailwind en Figma</h2>      
-      </article> 
-      <article className="py-10 h-screen box-border text-left">
-        <h1 className="text-bgColorLight">Dashboard - YoungOnes</h1>
-        <h2 className="">Stage project met NextJS, Tailwind Figma en ChartJS</h2>      
-      </article>
-      <article className="py-10 h-screen box-border text-right">
-        <h1 className="text-bgColorLight">Ring Ring Dashboard</h1>
-        <h2 className="">Datavisualisatie project met D3</h2>      
-      </article>
-      <article className="py-10 h-screen box-border text-left">
-        <h1 className="text-bgColorLight">Standaard Aaanbouw</h1>
-        <h2 className="">Commercieel wordpress website voor een aannemer</h2>      
-      </article>
-      
+      <Article
+        customClassName={"h-screen text-left"}
+        transparent={true}
+        header1={"Portfolio"}
+        header2={"Mijn projecten"}
+        paragraph1={
+          "De afgelopen jaren heb ik verschillende diverse projecten ondernomen. De projecten verschillen van UX/UI-design tot daadwerkelijke frontend. Hieronder vind u enkele projecten"
+        }
+      ></Article>
+      <Article
+        customClassName={"h-screen text-right"}
+        transparent={true}
+        header1={"KBO Tilburg Reeshof"}
+        header2={"Redesign website met de focus voor ouderen binnen budget"}
+        linkHref={"/projects/kbo-tilburg-reeshof"}
+        linkText={"Bekijk het project"}
+      ></Article>
+      <Article
+        customClassName={"h-screen text-left"}
+        transparent={true}
+        header1={"GWOTY Award - YoungOnes"}
+        header2={"Stage project met NextJS, Tailwind en Figma"}
+        linkHref={"/projects/gwoty-award-youngones"}
+        linkText={"Bekijk het project"}
+      ></Article>
+      <Article
+        customClassName={"h-screen text-right"}
+        transparent={true}
+        header1={"Dashboard - YoungOnes"}
+        header2={"Stage project met NextJS, Tailwind Figma en ChartJS"}
+        linkHref={"/projects/dashboard-youngones"}
+        linkText={"Bekijk het project"}
+      ></Article>
+      <Article
+        customClassName={"h-screen text-left"}
+        transparent={true}
+        header1={"Ring-Ring Dashboard"}
+        header2={"Datavisualisatie project met D3"}
+        linkHref={"/projects/ring-ring-dashboard"}
+        linkText={"Bekijk het project"}
+      ></Article>
+      <Article
+        customClassName={"h-screen text-right"}
+        transparent={true}
+        header1={"Standaard Aanbouw"}
+        header2={"Commercieel Wordpress website voor een aannemer"}
+        linkHref={"/projects/standaard-aanbouw"}
+        linkText={"Bekijk het project"}
+      ></Article>
+      <Article
+        customClassName={"h-screen text-left"}
+        transparent={true}
+        header1={"Kleine projecten"}
+        header2={
+          "Andere projecten uit diverse achtergronden waaronder Unity-engine, Blender, pure CSS"
+        }
+        linkHref={"/projects/standaard-aanbouw"}
+        linkText={"Bekijk het project"}
+      ></Article>
     </div>
   );
 }

@@ -1,5 +1,7 @@
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import Article from "../molecules/Article";
+import ContactForm from "../molecules/ContactForm";
 
 export default function SkillsSection() {
   const form = useRef();
@@ -29,7 +31,12 @@ export default function SkillsSection() {
 
   return (
     <div className="max-w-wrapper mx-auto w-full h-screen px-8 bg-bgColorLight">
-      <article className="py-10 h-full box-border">
+      <Article
+        header1={"Interesse?"}
+        header2={"Neem gerust contact met me op!"}
+        extraContent={<ContactForm />}
+      ></Article>
+      {/* <article className="py-10 h-full box-border">
         <h1 className="">Interesse?</h1>
         <h2 className="">Neem gerust contact met me op!</h2>
         <p className="py-8 text-bgColorLight">Wat is uw naam?</p>
@@ -71,7 +78,7 @@ export default function SkillsSection() {
           </button>
           {succes && "Uw bericht is succesvol verzonden!"}
         </form>
-      </article>
+      </article> */}
     </div>
   );
 }

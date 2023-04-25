@@ -1,3 +1,11 @@
-export default function P({ text }) {
-  return <p className="py-8">{text}</p>;
+export default function Paragraph({ text, darkBackground }) {
+  return (
+    <p
+      className={`max-w-xl ${
+        darkBackground ? "text-bgColorLight" : "text-bgColorDark"
+      }`}
+    >
+      {text}
+    </p>
+  );
 }
