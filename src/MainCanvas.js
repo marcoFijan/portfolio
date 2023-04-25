@@ -26,11 +26,11 @@ export default function MainCanvas({}) {
           camera={{ position: [0, 0, 7] }}
         >
           <ambientLight color={"white"} intensity={0.3} />
-          <ScrollControls pages={10} damping={0}>
+          <ScrollControls pages={12} damping={0}>
             <Environment blur={0} preset="warehouse" />
             <PortfolioAnimation />
             <Scroll></Scroll>
-            <Scroll html>
+            <Scroll html className='w-full'>
               {/* Introduction animation [1 page] */}
               <HeroSection />
               {/* Information about me [1 page] */}
