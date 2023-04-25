@@ -1,5 +1,5 @@
 import { Montserrat } from "next/font/google";
-import MainCanvas from "../templates/MainCanvas.js";
+import ProjectTemplate from "../../templates/ProjectTemplate";
 
 const montserrat = Montserrat({
   weight: ["400", "700", "900"],
@@ -7,10 +7,11 @@ const montserrat = Montserrat({
   variable: "--font-montserrat",
 });
 
-export default function Home() {
+export default function KBOTilburgReeshof() {
   return (
     <main className={`${montserrat.className}`}>
-      <MainCanvas />
+      <h1>TEST</h1>
+      <ProjectTemplate />
     </main>
   );
 }
