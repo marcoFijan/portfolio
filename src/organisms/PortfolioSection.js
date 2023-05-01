@@ -7,8 +7,8 @@ export default function PortfolioSection() {
       <Article
         customClassName={"h-screen text-left"}
         transparent={true}
-        header1={"Portfolio"}
-        header2={"Mijn projecten"}
+        title={"Portfolio"}
+        subTitle={"Mijn projecten"}
         paragraph1={
           "De afgelopen jaren heb ik verschillende diverse projecten ondernomen. De projecten verschillen van UX/UI-design tot daadwerkelijke frontend. Hieronder vind u enkele projecten"
         }

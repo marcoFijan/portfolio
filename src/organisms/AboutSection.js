@@ -8,8 +8,8 @@ export default function AboutSection() {
       <div className="max-w-wrapper mx-auto w-full grid gap-8 grid-cols-fluid px-8">
         <Article
           transparent={false}
-          header1={"Marco Fijan"}
-          header2={"Web Designer"}
+          title={"Marco Fijan"}
+          subTitle={"Web Designer"}
           paragraph1={
             "Welkom! Leuk dat je een kijkje komt nemen op mijn website. Ik ben Marco en ben in 2022 afgestudeerd in Communicatie en Multimedia design op de Hogeschool van Amsterdam. Het ontwerpen en ontwikkelen van gebruiksvriendelijke webapplicaties spreekt mij erg aan; Het bedenken van een idee, hierop itereren en deze iteraties toetsen met de doelgroep is dan ook iets wat ik graag doe. Ik zet altijd alles op alles om de beleving van de gebruiker voorop te zetten en deze te bevorderen."
           }

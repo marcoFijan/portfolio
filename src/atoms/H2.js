@@ -1,7 +1,11 @@
-export default function H2({ text }) {
+export default function H2({ text, darkBackground }) {
   return (
-    <h2 className="text-2xl uppercase font-black text-accentColor pb-12">
+    <h3
+      className={`text-2xl uppercase font-black ${
+        darkBackground ? "text-bgColorLight" : "text-bgColorDark"
+      }`}
+    >
       {text}
-    </h2>
+    </h3>
   );
 }

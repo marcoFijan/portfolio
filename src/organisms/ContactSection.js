@@ -32,8 +32,8 @@ export default function SkillsSection() {
   return (
     <div className="max-w-wrapper mx-auto w-full h-screen px-8 bg-bgColorLight">
       <Article
-        header1={"Interesse?"}
-        header2={"Neem gerust contact met me op!"}
+        title={"Interesse?"}
+        subTitle={"Neem gerust contact met me op!"}
         extraContent={<ContactForm />}
       ></Article>
       {/* <article className="py-10 h-full box-border">

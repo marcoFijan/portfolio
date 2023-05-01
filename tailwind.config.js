@@ -17,8 +17,11 @@ module.exports = {
       white: "#ffffff",
     },
     extend: {
+      padding: {
+        articlePadding: "3rem",
+      },
       maxWidth: {
-        wrapper: "110rem",
+        wrapper: "80rem",
       },
       gridTemplateColumns: {
         fluid: "repeat(auto-fit, minmax(25em, 1fr));",
