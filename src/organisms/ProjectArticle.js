@@ -1,8 +1,8 @@
 import Image from "next/image";
 import marcoPointingAtText from "../../public/images/marcoPointing.png";
-import Article from "../molecules/Article";
-import ArticleIntro from "../molecules/ArticleIntroduction";
 import Section from "../molecules/Section";
+import SectionIntro from "../molecules/SectionIntroduction";
+import SectionSmall from "../molecules/SmallSection";
 import UnorderedList from "../molecules/UnorderedList";
 import Title from "../atoms/Title.js";
 import SubTitle from "../atoms/SubTitle.js";
@@ -113,8 +113,8 @@ export default function ProjectArticle({
     //     alt={paragraphImageAlt}
     //   />
     // </article>
-    <div className="py-16 block">
-      <ArticleIntro
+    <article className="py-16 block">
+      <SectionIntro
         title={title}
         subTitle={subTitle}
         header={header}
@@ -135,7 +135,7 @@ export default function ProjectArticle({
         extraContent={extraContent1}
       />
       {paragraph2a && (
-        <Article
+        <Section
           header2={header2b}
           paragraph1a={paragraph2a}
           paragraph1b={paragraph2b}
@@ -152,7 +152,7 @@ export default function ProjectArticle({
       )}
       {sectionParagraph1a && (
         <section className="grid grid-cols-fluid gap-16">
-          <Section
+          <SectionSmall
             header2={sectionHeader1}
             paragraph1a={sectionParagraph1a}
             paragraph1b={sectionParagraph1b}
@@ -171,7 +171,7 @@ export default function ProjectArticle({
             linkText={section1LinkText}
           />
           {sectionParagraph2a && (
-            <Section
+            <SectionSmall
               header2={sectionHeader2}
               paragraph1a={sectionParagraph2a}
               paragraph1b={sectionParagraph2b}
@@ -191,7 +191,7 @@ export default function ProjectArticle({
             />
           )}
           {sectionParagraph3a && (
-            <Section
+            <SectionSmall
               header2={sectionHeader3}
               paragraph1a={sectionParagraph3a}
               paragraph1b={sectionParagraph3b}
@@ -211,7 +211,7 @@ export default function ProjectArticle({
             />
           )}
           {sectionParagraph4a && (
-            <Section
+            <SectionSmall
               header2={sectionHeader4}
               paragraph1a={sectionParagraph4a}
               paragraph1b={sectionParagraph4b}
@@ -224,7 +224,7 @@ export default function ProjectArticle({
             />
           )}
           {sectionParagraph5a && (
-            <Section
+            <SectionSmall
               header2={sectionHeader5}
               paragraph1a={sectionParagraph5a}
               paragraph1b={sectionParagraph5b}
@@ -237,7 +237,7 @@ export default function ProjectArticle({
             />
           )}
           {sectionParagraph6a && (
-            <Section
+            <SectionSmall
               header2={sectionHeader6}
               paragraph1a={sectionParagraph6a}
               paragraph1b={sectionParagraph6b}
@@ -251,6 +251,6 @@ export default function ProjectArticle({
           )}
         </section>
       )}
-    </div>
+    </article>
   );
 }

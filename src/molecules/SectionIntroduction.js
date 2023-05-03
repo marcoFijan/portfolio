@@ -18,6 +18,7 @@ export default function Article({
   subHeader,
   header2,
   subHeader2,
+  summaryObject,
   introduction,
   paragraph1a,
   paragraph1b,
@@ -31,8 +32,15 @@ export default function Article({
   linkHref,
   extraContent,
 }) {
+  let summaryText;
+  if (summaryObject) {
+    const summaryEntries = Object.entries(summaryObject);
+    summaryText = summaryEntries.map(([key, val] = entry) => {
+      return `${key}: ${val}`;
+    });
+  }
   return (
-    <article className={`w-full ${customClassName}`}>
+    <section className={`w-full ${customClassName}`}>
       {title && <Title text={title} darkBackground={darkBackground}></Title>}
       {subTitle && <SubTitle text={subTitle}></SubTitle>}
 
@@ -45,6 +53,22 @@ export default function Article({
           <section className="block">
             {header && <H1 text={header} darkBackground={darkBackground}></H1>}
             {subHeader && <SubH1 text={subHeader}></SubH1>}
+            {summaryText && (
+              <ul>
+                {summaryText.map((val) => {
+                  return (
+                    <li
+                      className={
+                        "text-sm uppercase bg-bgColorLight text-bgColorDark px-8 py-2 mb-4 rounded-full"
+                      }
+                      key={val}
+                    >
+                      {val}
+                    </li>
+                  );
+                })}
+              </ul>
+            )}
             {introduction && (
               <P text={introduction} darkBackground={darkBackground}></P>
             )}
@@ -100,6 +124,6 @@ export default function Article({
       )}
 
       {extraContent && extraContent}
-    </article>
+    </section>
   );
 }

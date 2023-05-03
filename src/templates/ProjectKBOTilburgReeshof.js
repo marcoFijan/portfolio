@@ -16,7 +16,7 @@ import homeImg from "../../public/images/KBOReeshof/Home.png";
 import introductionImg from "../../public/images/KBOReeshof/introduction.png";
 import menuImg from "../../public/images/KBOReeshof/Menu.png";
 
-import Article from "../molecules/Article";
+import Article from "../molecules/Section";
 import Title from "../atoms/Title";
 import SubTitle from "../atoms/SubTitle";
 import H1 from "../atoms/H1";
@@ -27,7 +27,7 @@ import ProjectIntroduction from "../organisms/ProjectIntroduction";
 import ProjectArticle from "../organisms/ProjectArticle";
 import ProjectArticleSpecial from "../organisms/ProjectArticleSpecial";
 
-export default function ProjectTemplate({
+export default function ProjectKBOTilburgReesof({
   title,
   subTitle,
   introduction,

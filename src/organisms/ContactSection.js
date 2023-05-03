@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
-import Article from "../molecules/Article";
+import Section from "../molecules/Section";
 import ContactForm from "../molecules/ContactForm";
 
 export default function SkillsSection() {
@@ -30,12 +30,12 @@ export default function SkillsSection() {
   };
 
   return (
-    <div className="max-w-wrapper mx-auto w-full h-screen px-8 bg-bgColorLight">
-      <Article
+    <article className="max-w-wrapper mx-auto w-full h-screen px-8 bg-bgColorLight">
+      <Section
         title={"Interesse?"}
         subTitle={"Neem gerust contact met me op!"}
         extraContent={<ContactForm />}
-      ></Article>
+      ></Section>
       {/* <article className="py-10 h-full box-border">
         <h1 className="">Interesse?</h1>
         <h2 className="">Neem gerust contact met me op!</h2>
@@ -79,6 +79,6 @@ export default function SkillsSection() {
           {succes && "Uw bericht is succesvol verzonden!"}
         </form>
       </article> */}
-    </div>
+    </article>
   );
 }

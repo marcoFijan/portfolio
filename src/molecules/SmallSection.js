@@ -8,32 +8,43 @@ import SubH1 from "../atoms/SubH1.js";
 import SubH2 from "../atoms/SubH2.js";
 import P from "../atoms/Paragraph.js";
 import NextLink from "../atoms/NextLink.js";
-import IframeLoader from "../atoms/IframeLoader";
 
-export default function Article({
+export default function Section({
   darkBackground,
   customClassName,
-  title,
-  subTitle,
   header,
   subHeader,
   header2,
-  introduction,
+  paragraph1a,
+  paragraph1b,
+  paragraph1c,
+  paragraphImageURL,
+  paragraphImageAlt,
+  paragraphImageClassname,
   linkText,
   linkHref,
-  iframeSrc,
+  extraContent,
 }) {
   return (
     <section className={`w-full ${customClassName}`}>
-      {title && <Title text={title} darkBackground={darkBackground}></Title>}
-      {subTitle && <SubTitle text={subTitle}></SubTitle>}
       {header && <H1 text={header} darkBackground={darkBackground}></H1>}
       {subHeader && <SubH1 text={subHeader}></SubH1>}
-      {introduction && (
-        <P text={introduction} darkBackground={darkBackground}></P>
-      )}
       {header2 && <H2 text={header2} darkBackground={darkBackground}></H2>}
-      <IframeLoader iframeSrc={iframeSrc} />
+      {paragraph1a && (
+        <P text={paragraph1a} darkBackground={darkBackground}></P>
+      )}
+      {paragraph1b && (
+        <P text={paragraph1b} darkBackground={darkBackground}></P>
+      )}
+      {paragraph1c && (
+        <P text={paragraph1c} darkBackground={darkBackground}></P>
+      )}
+      {extraContent && extraContent}
+      <Image
+        className={`${paragraphImageClassname}`}
+        src={paragraphImageURL}
+        alt={paragraphImageAlt}
+      />
       {linkHref && <NextLink text={linkText} href={linkHref}></NextLink>}
     </section>
   );

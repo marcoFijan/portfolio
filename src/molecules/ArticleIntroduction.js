@@ -40,7 +40,7 @@ export default function Article({
     });
   }
   return (
-    <article className={`w-full ${customClassName}`}>
+    <section className={`w-full ${customClassName}`}>
       {title && <Title text={title} darkBackground={darkBackground}></Title>}
       {subTitle && <SubTitle text={subTitle}></SubTitle>}
 
@@ -124,6 +124,6 @@ export default function Article({
       )}
 
       {extraContent && extraContent}
-    </article>
+    </section>
   );
 }

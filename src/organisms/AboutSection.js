@@ -1,12 +1,12 @@
 import Image from "next/image";
 import marcoPointingAtText from "../../public/images/marcoPointing.png";
-import Article from "../molecules/Article";
+import Section from "../molecules/Section";
 
 export default function AboutSection() {
   return (
     <article className="w-full bg-bgColorLight">
       <div className="max-w-wrapper mx-auto w-full grid gap-8 grid-cols-fluid px-8">
-        <Article
+        <Section
           transparent={false}
           title={"Marco Fijan"}
           subTitle={"Web Designer"}
@@ -18,7 +18,7 @@ export default function AboutSection() {
           }
         >
           DIT IS EEN TEST PROP BLABLBALBLA
-        </Article>
+        </Section>
         <Image
           className="w-auto h-auto  max-w-lg block self-end"
           src={marcoPointingAtText}

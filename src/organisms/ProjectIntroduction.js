@@ -1,6 +1,6 @@
 import Image from "next/image";
 import marcoPointingAtText from "../../public/images/marcoPointing.png";
-import Article from "../molecules/Article";
+import Article from "../molecules/Section";
 import Title from "../atoms/Title.js";
 import SubTitle from "../atoms/SubTitle.js";
 import H1 from "../atoms/H1.js";
