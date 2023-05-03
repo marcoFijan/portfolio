@@ -1,3 +1,4 @@
+// IMAGES
 import Image from "next/image";
 import kboIntroImg from "../../public/images/KBOReeshof/KBOIntro.png";
 import stakeholdersImg from "../../public/images/KBOReeshof/Stakeholders.png";
@@ -5,7 +6,15 @@ import kboReeshofBuildingImg from "../../public/images/KBOReeshof/KBOReeshofBuil
 import persona1Img from "../../public/images/KBOReeshof/Persona1.jpg";
 import persona2Img from "../../public/images/KBOReeshof/Persona2.jpg";
 import empathyMapImg from "../../public/images/KBOReeshof/EmpathyMap.jpg";
-import inspirationboardsHarrisProfile from "../../public/images/KBOReeshof/InspirationboardsHarrisProfile.png";
+import inspirationboardsHarrisProfileImg from "../../public/images/KBOReeshof/InspirationboardsHarrisProfile.png";
+import conceptImg from "../../public/images/KBOReeshof/Concept.png";
+import designRulesImg from "../../public/images/KBOReeshof/DesignRules.jpg";
+import activitiesImg from "../../public/images/KBOReeshof/Activities.png";
+import footerImg from "../../public/images/KBOReeshof/Footer.png";
+import helpMenuImg from "../../public/images/KBOReeshof/HelpMenu.png";
+import homeImg from "../../public/images/KBOReeshof/Home.png";
+import introductionImg from "../../public/images/KBOReeshof/introduction.png";
+import menuImg from "../../public/images/KBOReeshof/Menu.png";
 
 import Article from "../molecules/Article";
 import Title from "../atoms/Title";
@@ -16,6 +25,7 @@ import P from "../atoms/Paragraph";
 import SubH2 from "../atoms/SubH2";
 import ProjectIntroduction from "../organisms/ProjectIntroduction";
 import ProjectArticle from "../organisms/ProjectArticle";
+import ProjectArticleSpecial from "../organisms/ProjectArticleSpecial";
 
 export default function ProjectTemplate({
   title,
@@ -54,6 +64,7 @@ export default function ProjectTemplate({
     "Het product moet gefocust zijn op een laptop en computer formaat (16:9)",
     "Het product betreft een digitaal prototype",
   ];
+
   return (
     // Introductie
     // Onderzoek persona's empathy map
@@ -67,6 +78,11 @@ export default function ProjectTemplate({
       <ProjectArticle
         title={title}
         subTitle={subTitle}
+        summaryObject={{
+          Projectjaar: "2021",
+          Projectdoel: "Moderne uitstraling",
+          Doelgroep: "Gezinnen met interesse aanbouw",
+        }}
         paragraph1a={introduction}
         paragraph1ImageAlt={"Afbeelding van het ontworpen product"}
         paragraph1ImageURL={kboIntroImg}
@@ -146,11 +162,19 @@ export default function ProjectTemplate({
           "Bij het verkennen is er vooral gewerkt met observaties. Nu worden de resultaten van de observaties getoetst met de daadwerkelijke doelgroep. Het toetsen van deze onderzoeksresultaten wordt voornamelijk gedaan met interviews. Ook werd er een design pattern search uitgevoerd om huidige theorieën en patterns te vinden voor het ontwerpen bij deze doelgroep. De belangrijkste inzichten waren: "
         }
         sectionData1={importantInsights}
+        section1LinkHref={
+          "https://amenable-sword-4e9.notion.site/Interviews-Bag-tour-860c2c93b8564e1a9eac450c6341d45e"
+        }
+        section1LinkText={"Bekijk alle interviews"}
         sectionHeader2={"Belangrijkste eisen"}
         sectionParagraph2a={
           "Op basis van mijn onderzoeksresultaten splitste ik de doelgroep op in categorieën en werd er met deze kennis een uitgebreid Programma van Eisen opgezet. Met een Programma van Eisen geef je een overzicht van alle eisen waaraan het product moet voldoen. Deze eisen worden gerankt met de methode MoSCoW."
         }
         sectionData2={importantDemands}
+        section2LinkHref={
+          "https://amenable-sword-4e9.notion.site/Programma-van-Eisen-79af771f4c874a0d8107fd1660a8a891"
+        }
+        section2LinkText={"Bekijk alle eisen"}
       />
       <ProjectArticle
         darkBackground={darkBackground}
@@ -169,7 +193,7 @@ export default function ProjectTemplate({
         paragraph1c={
           "Aangezien er veel ideegeneratie methodes zijn gebruikt en veel van deze methodes vrij groot zijn in uitwerking, kunt u de ideegeneratie methodes het best bekijken in de betreffende design rationale onderaan de pagina of in de productbiografie"
         }
-        paragraph1ImageURL={inspirationboardsHarrisProfile}
+        paragraph1ImageURL={inspirationboardsHarrisProfileImg}
         paragraph1ImageAlt={
           "Afbeelding van inspiratieborden en het Harris Profiel"
         }
@@ -183,66 +207,108 @@ export default function ProjectTemplate({
         darkBackground={darkBackground}
         header={"Conceptualiseren"}
         subHeader={"Itereren op mogelijke oplossingen"}
-        introduction={""}
-        paragraph1a={""}
+        introduction={
+          "Nadat er verschillende ideeën vaststaan, worden er keuzes gemaakt en worden deze keuzes uitgewerkt in schetsen"
+        }
+        header2a={"Concept"}
+        paragraph1a={
+          "Uit mijn literatuuronderzoek over skeuomorphisme, de resultaten van het Harris Profiel en de resultaten van de feedback frenzy, bleek de combinatie van het idee van een klikbare omgeving en een standaard website met skeuomorphisme-knoppen een goede combinatie. Ook mijn kennispartner was hier erg positief over en was vooral enthousiast over de visueel klikbare website, maar gaf ook aan dat een het hebben van een ‘standaard’ website essentieel is voor de ouderen en mensen die al wel ervaring hebben met websites."
+        }
+        paragraph1b={
+          "Uit mijn observaties en interviews met de doelgroep bleek overduidelijk dat ouderen erg verschillend zijn en verschillende wensen hebben. Zo zijn er ongeduldige ouderen met ervaring die liever een standaard goed leesbare website hebben met een zoekbalk, maar zijn er ook ouderen die letterlijk slapeloze nachten krijgen van computers. Het aanbieden van de website in verschillende vormen, kan daarom een goede uitkomt bieden."
+        }
+        paragraph1c={
+          "Bij binnenkomst krijgt de gebruiker de keuze om een standaard website of om een visuele versimpelde website te bezoeken. Bij de standaard website wordt er een zijbalk gebruikt met essentiële elementen in de vorm van een herkenbare afstandsbediening. De visuele website toont een muur met verschillende klikbare elementen die vervolgens informatie geeft wanneer er op wordt geklikt."
+        }
+        paragraph1ImageURL={conceptImg}
+        paragraph1ImageAlt={"Schets van het concept"}
+        paragraph1ImageSmall={true}
+        paragraph1ImageClassname={"row-start-1 max-w-[30rem]"}
+        button1CTA={true}
+        button1Href={
+          "https://amenable-sword-4e9.notion.site/Digitale-schetsen-voor-feedback-frenzy-530edefdd420499e8e6d6bbb2c3fda93"
+        }
+        button1Text={"Bekijk alle concepten"}
+        header2b={"Vormgevingsregels"}
+        paragraph2a={
+          "Aangezien het gaat om een compleet nieuw ontwerp gaat en de doelgroep ouderen betreft, kunnen er nu nog geen harde beslissingen gemaakt worden over de daadwerkelijke vormgeving. Verschillende elementen dienen eerst getest te worden met de doelgroep. Wel kunnen er kleuren en vormgevingsregels vastgesteld worden op basis van mijn onderzoek naar de doelgroep en het huidige logo van KBO Brabant."
+        }
+        paragraph2b={
+          "Tijdens de interviews heb ik ook de meeste ouderen verschillende knoppen en iconen laten zien en konden ze aangeven welke knoppen en iconen ze begrepen en het duidelijkst vonden. Hier kwam onder andere uit dat de meeste platte iconen onherkenbaar zijn voor ouderen en dat donkere knoppen erg geliefd waren vanwege de hoge contrastratio en  leesbaarheid. Daarnaast waren ‘3d-knoppen’ ook erg geliefd."
+        }
+        paragraph2c={
+          "Uit de design pattern search kwamen daarnaast ook nog veel patterns over het gebruik van lettertype en -grootte en kleurgebruik  die hier ook zijn gebruikt voor de tekst en overige vormgevingsregels"
+        }
+        paragraph2ImageURL={designRulesImg}
+        paragraph2ImageAlt={"Overzicht van de Vormgevingsregels"}
+        paragraph2ImageSmall={true}
+        button2CTA={true}
+        button2Href={
+          "https://amenable-sword-4e9.notion.site/Design-pattern-search-0907ce46570c41b8a383b66d38553d30"
+        }
+        button2Text={"Bekijk alle design patterns"}
       />
-
-      {/* <article>
-        <Title text={title} darkBackground={darkBackground} />
-        <SubTitle text={subTitle} />
-        <section>
-          <section>
-            <P text={introduction} darkBackground={darkBackground} />
-            <P text={introduction2} darkBackground={darkBackground} />
-          </section>
-        </section>
-      </article>
-      <Article
-        transparent={true}
-        title={title}
-        subTitle={subTitle}
-        paragraph1={introduction}
-        paragraph2={introduction2}
-        extraContent={
-          <Image
-            className="w-full h-96 object-cover"
-            src={marcoPointingAtText}
-            alt="Picture of Marco Fijan pointing to text"
-          />
+      {/* <ProjectArticle header={"Eindproduct"} subHeader={''} /> */}
+      <ProjectArticle
+        darkBackground={darkBackground}
+        header={"Eindproduct"}
+        subHeader={"Diverse schermen van het eindproduct"}
+        introduction={
+          "Hieronder vind u enkele afbeeldingen van het eindproduct om u een beeld te geven. Wilt u alle schermen zien? Of het interactief product proberen? Bekijk dan de design rationale of het productbiografie."
         }
-      ></Article>
-      <Article
-        transparent={true}
-        header1={"Verkennen"}
-        header2={"Onderzoek doen naar de doelgroep"}
-        paragraph1={"Voordat"}
-      ></Article>
-      <Article
-        transparent={true}
-        header1={"Definiëren"}
-        header2={"De doelgroep en eisen vastleggen"}
-        paragraph1={
-          "Voor er iets bedacht kan worden voor de doelgroep is het belangrijk dat hier eerst globaal onderzoek naar gedaan wordt."
+        sectionHeader1={"Introductie website"}
+        sectionParagraph1a={
+          "De hoofdpagina waar de ouder, na de introductieschermen, terecht komt"
         }
-      ></Article>
-      <Article
-        transparent={true}
-        header1={"Afbakenen"}
-        header2={"Begrijpen van de doelgroep"}
-        paragraph1={"Voordat"}
-      ></Article>
-      <Article
-        transparent={true}
-        header1={"Ideegeneratie"}
-        header2={"Het genereren van mogelijke oplossingen"}
-        paragraph1={"Voordat"}
-      ></Article>
-      <Article
-        transparent={true}
-        header1={"Conceptualiseren"}
-        header2={"Mogelijke concepten noteren"}
-        paragraph1={"Voordat"}
-      ></Article> */}
+        section1ImageAlt={"KBO Tilburg Reeshof hoofdpagina afbeelding"}
+        section1ImageURL={introductionImg}
+        sectionHeader2={"Hoofdscherm"}
+        sectionParagraph2a={
+          "Het scherm dat opent wanneer de ouder op één van de vele hulpknoppen drukt"
+        }
+        section2ImageAlt={"KBO Tilburg Reeshof helpmenu afbeelding"}
+        section2ImageURL={homeImg}
+        sectionHeader3={"Menu"}
+        sectionParagraph3a={
+          "Het menu dat opent wanneer de gebruiker op een 'wat wilt u doen?'-knop drukt"
+        }
+        section3ImageAlt={"KBO Tilburg Reeshof menu afbeelding"}
+        section3ImageURL={menuImg}
+        sectionHeader4={"Hulp menu"}
+        sectionParagraph4a={
+          "Het scherm dat opent wanneer de ouder op één van de vele hulpknoppen drukt"
+        }
+        section4ImageAlt={"KBO Tilburg Reeshof helpmenu afbeelding"}
+        section4ImageURL={helpMenuImg}
+        sectionHeader5={"Activiteiten bekijken"}
+        sectionParagraph5a={
+          "De hoofdpagina waar de ouder, na de introductieschermen, terecht komt"
+        }
+        section5ImageAlt={"KBO Tilburg Reeshof hoofdpagina afbeelding"}
+        section5ImageURL={activitiesImg}
+        sectionHeader6={"Footer"}
+        sectionParagraph6a={
+          "De hoofdpagina waar de ouder, na de introductieschermen, terecht komt"
+        }
+        section6ImageAlt={"KBO Tilburg Reeshof helpmenu afbeelding"}
+        section6ImageURL={footerImg}
+      />
+      <ProjectArticleSpecial
+        darkBackground={darkBackground}
+        header={"Documentatie"}
+        subHeader={"Volledige documentatie van het project"}
+        introduction={
+          "Hier vind u de design rationale en een link naar de volledige productbiografie"
+        }
+        header2a={"Design Rationale"}
+        iframeSrc={
+          "https://drive.google.com/file/d/1iXpgTq90AxV9-KqkzIO90jlGQBFBjct8/preview"
+        }
+        linkHref={
+          "https://amenable-sword-4e9.notion.site/Productbiografie-1edc81194bb144b2bddb7619a652b5b0"
+        }
+        linkText={"Bekijk het productbiografie"}
+      />
     </div>
   );
 }

@@ -26,7 +26,7 @@ export default function Section({
   extraContent,
 }) {
   return (
-    <section className={`w-full -mt-4 ${customClassName}`}>
+    <section className={`w-full ${customClassName}`}>
       {header && <H1 text={header} darkBackground={darkBackground}></H1>}
       {subHeader && <SubH1 text={subHeader}></SubH1>}
       {header2 && <H2 text={header2} darkBackground={darkBackground}></H2>}
@@ -45,6 +45,7 @@ export default function Section({
         src={paragraphImageURL}
         alt={paragraphImageAlt}
       />
+      {linkHref && <NextLink text={linkText} href={linkHref}></NextLink>}
     </section>
   );
 }

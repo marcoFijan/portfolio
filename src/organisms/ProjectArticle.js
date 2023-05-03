@@ -1,6 +1,7 @@
 import Image from "next/image";
 import marcoPointingAtText from "../../public/images/marcoPointing.png";
 import Article from "../molecules/Article";
+import ArticleIntro from "../molecules/ArticleIntroduction";
 import Section from "../molecules/Section";
 import UnorderedList from "../molecules/UnorderedList";
 import Title from "../atoms/Title.js";
@@ -19,6 +20,7 @@ export default function ProjectArticle({
   header,
   subHeader,
   introduction,
+  summaryObject,
   header2a,
   paragraph1a,
   paragraph1b,
@@ -43,9 +45,16 @@ export default function ProjectArticle({
   button2CTA,
   extraContent1,
   extraContent2,
+  extraContent3,
+  extraContent4,
+  extraContent5,
+  extraContent6,
   sectionHeader1,
   sectionHeader2,
   sectionHeader3,
+  sectionHeader4,
+  sectionHeader5,
+  sectionHeader6,
   sectionParagraph1a,
   sectionParagraph1b,
   sectionParagraph1c,
@@ -55,12 +64,42 @@ export default function ProjectArticle({
   sectionParagraph3a,
   sectionParagraph3b,
   sectionParagraph3c,
-  sectionExtraContent1,
-  sectionExtraContent2,
-  sectionExtraContent3,
+  sectionParagraph4a,
+  sectionParagraph4b,
+  sectionParagraph4c,
+  sectionParagraph5a,
+  sectionParagraph5b,
+  sectionParagraph5c,
+  sectionParagraph6a,
+  sectionParagraph6b,
+  sectionParagraph6c,
+  section1LinkHref,
+  section1LinkText,
+  section2LinkHref,
+  section2LinkText,
+  section3LinkHref,
+  section3LinkText,
+  section4LinkHref,
+  section4LinkText,
+  section5LinkHref,
+  section5LinkText,
+  section6LinkHref,
+  section6LinkText,
   sectionData1,
   sectionData2,
   sectionData3,
+  section1ImageAlt,
+  section1ImageURL,
+  section2ImageAlt,
+  section2ImageURL,
+  section3ImageAlt,
+  section3ImageURL,
+  section4ImageAlt,
+  section4ImageURL,
+  section5ImageAlt,
+  section5ImageURL,
+  section6ImageAlt,
+  section6ImageURL,
   darkBackground,
 }) {
   return (
@@ -75,11 +114,12 @@ export default function ProjectArticle({
     //   />
     // </article>
     <div className="py-16 block">
-      <Article
+      <ArticleIntro
         title={title}
         subTitle={subTitle}
         header={header}
         subHeader={subHeader}
+        summaryObject={summaryObject}
         introduction={introduction}
         header2={header2a}
         paragraph1a={paragraph1a}
@@ -111,7 +151,7 @@ export default function ProjectArticle({
         />
       )}
       {sectionParagraph1a && (
-        <section className="grid grid-cols-fluid gap-4">
+        <section className="grid grid-cols-fluid gap-16">
           <Section
             header2={sectionHeader1}
             paragraph1a={sectionParagraph1a}
@@ -125,6 +165,10 @@ export default function ProjectArticle({
               )
             }
             darkBackground={darkBackground}
+            paragraphImageAlt={section1ImageAlt}
+            paragraphImageURL={section1ImageURL}
+            linkHref={section1LinkHref}
+            linkText={section1LinkText}
           />
           {sectionParagraph2a && (
             <Section
@@ -140,6 +184,10 @@ export default function ProjectArticle({
                 )
               }
               darkBackground={darkBackground}
+              paragraphImageAlt={section2ImageAlt}
+              paragraphImageURL={section2ImageURL}
+              linkHref={section2LinkHref}
+              linkText={section2LinkText}
             />
           )}
           {sectionParagraph3a && (
@@ -156,6 +204,49 @@ export default function ProjectArticle({
                 )
               }
               darkBackground={darkBackground}
+              paragraphImageAlt={section3ImageAlt}
+              paragraphImageURL={section3ImageURL}
+              linkHref={section3LinkHref}
+              linkText={section3LinkText}
+            />
+          )}
+          {sectionParagraph4a && (
+            <Section
+              header2={sectionHeader4}
+              paragraph1a={sectionParagraph4a}
+              paragraph1b={sectionParagraph4b}
+              paragraph1c={sectionParagraph4c}
+              darkBackground={darkBackground}
+              paragraphImageAlt={section4ImageAlt}
+              paragraphImageURL={section4ImageURL}
+              linkHref={section4LinkHref}
+              linkText={section4LinkText}
+            />
+          )}
+          {sectionParagraph5a && (
+            <Section
+              header2={sectionHeader5}
+              paragraph1a={sectionParagraph5a}
+              paragraph1b={sectionParagraph5b}
+              paragraph1c={sectionParagraph5c}
+              darkBackground={darkBackground}
+              paragraphImageAlt={section5ImageAlt}
+              paragraphImageURL={section5ImageURL}
+              linkHref={section5LinkHref}
+              linkText={section5LinkText}
+            />
+          )}
+          {sectionParagraph6a && (
+            <Section
+              header2={sectionHeader6}
+              paragraph1a={sectionParagraph6a}
+              paragraph1b={sectionParagraph6b}
+              paragraph1c={sectionParagraph6c}
+              darkBackground={darkBackground}
+              paragraphImageAlt={section6ImageAlt}
+              paragraphImageURL={section6ImageURL}
+              linkHref={section6LinkHref}
+              linkText={section6LinkText}
             />
           )}
         </section>
