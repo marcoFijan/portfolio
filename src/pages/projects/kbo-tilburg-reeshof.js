@@ -1,5 +1,5 @@
 import { Montserrat } from "next/font/google";
-import ProjectTemplate from "../../templates/ProjectTemplate";
+import ProjectTemplate from "../../templates/ProjectKBOTilburgReeshof";
 
 const montserrat = Montserrat({
   weight: ["400", "700", "900"],
