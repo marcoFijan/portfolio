@@ -1,4 +1,4 @@
-import ArticleIframe from "../molecules/ArticleIframe";
+import ArticleIframe from "../molecules/SectionIframe";
 
 export default function ProjectArticleSpecial({
   darkBackground,
