@@ -134,22 +134,6 @@ export default function ProjectArticle({
         darkBackground={darkBackground}
         extraContent={extraContent1}
       />
-      {paragraph2a && (
-        <Section
-          header2={header2b}
-          paragraph1a={paragraph2a}
-          paragraph1b={paragraph2b}
-          paragraph1c={paragraph2c}
-          paragraphImageURL={paragraph2ImageURL}
-          paragraphImageAlt={paragraph2ImageAlt}
-          paragraphImageSmall={paragraph2ImageSmall}
-          paragraphImageClassname={paragraph2ImageClassname}
-          linkHref={button2Href}
-          linkText={button2Text}
-          darkBackground={darkBackground}
-          extraContent={extraContent2}
-        />
-      )}
       {sectionParagraph1a && (
         <section className="grid grid-cols-fluid gap-16">
           <SectionSmall
@@ -250,6 +234,22 @@ export default function ProjectArticle({
             />
           )}
         </section>
+      )}
+      {paragraph2a && (
+        <Section
+          header2={header2b}
+          paragraph1a={paragraph2a}
+          paragraph1b={paragraph2b}
+          paragraph1c={paragraph2c}
+          paragraphImageURL={paragraph2ImageURL}
+          paragraphImageAlt={paragraph2ImageAlt}
+          paragraphImageSmall={paragraph2ImageSmall}
+          paragraphImageClassname={paragraph2ImageClassname}
+          linkHref={button2Href}
+          linkText={button2Text}
+          darkBackground={darkBackground}
+          extraContent={extraContent2}
+        />
       )}
     </article>
   );

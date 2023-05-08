@@ -1,21 +1,25 @@
 // IMAGES
-import hifiAbout from "../../public/images/YoGwoty/HiFiAbout.png";
-import hifiAboutResponsive from "../../public/images/YoGwoty/HiFiAboutMobiel.png";
-import hifiDashboard from "../../public/images/YoGwoty/HiFiDashboard.png";
-import hifiDashboardResponsive from "../../public/images/YoGwoty/HiFiDashboardMobiel.png";
-import hifiSignIn from "../../public/images/YoGwoty/HiFiInloggen.png";
-import hifiSignInResponsive from "../../public/images/YoGwoty/HiFiInloggenMobiel.png";
-import hifiLeaderboard from "../../public/images/YoGwoty/HiFiLeaderboard.png";
-import hifiLeaderboardResponsive from "../../public/images/YoGwoty/HiFiLeaderboardMobiel.png";
-import hifiProfile from "../../public/images/YoGwoty/HiFiProfiel.png";
-import hifiProfileResponsive from "../../public/images/YoGwoty/HiFiProfielMobiel.png";
-import hifiForgotPassword from "../../public/images/YoGwoty/HiFiWachtwoordVergeten.png";
-import lofiAbout from "../../public/images/YoGwoty/LoFiAbout.png";
-import lofiTerms from "../../public/images/YoGwoty/LoFiAlgemeneVoorwaarden.png";
-import lofiDashboardV1 from "../../public/images/YoGwoty/LoFiDashboardVersie1.png";
-import lofiDashboardV2 from "../../public/images/YoGwoty/LoFiDashboardVersie2.png";
-import lofiSignIn from "../../public/images/YoGwoty/LoFiInloggen.png";
-import lofiLeaderboard from "../../public/images/YoGwoty/LoFiLeaderboard.png";
+import hifiAboutImg from "../../public/images/YoGwoty/HiFiAbout.png";
+import hifiAboutResponsiveImg from "../../public/images/YoGwoty/HiFiAboutMobiel.png";
+import hifiDashboardImg from "../../public/images/YoGwoty/HiFiDashboard.png";
+import hifiDashboardResponsiveImg from "../../public/images/YoGwoty/HiFiDashboardMobiel.png";
+import hifiSignInImg from "../../public/images/YoGwoty/HiFiInloggen.png";
+import hifiSignInResponsiveImg from "../../public/images/YoGwoty/HiFiInloggenMobiel.png";
+import hifiLeaderboardImg from "../../public/images/YoGwoty/HiFiLeaderboard.png";
+import hifiLeaderboardResponsiveImg from "../../public/images/YoGwoty/HiFiLeaderboardMobiel.png";
+import hifiProfileImg from "../../public/images/YoGwoty/HiFiProfiel.png";
+import hifiProfileResponsiveImg from "../../public/images/YoGwoty/HiFiProfielMobiel.png";
+import lofiAboutImg from "../../public/images/YoGwoty/LoFiAbout.png";
+import lofiTermsImg from "../../public/images/YoGwoty/LoFiAlgemeneVoorwaarden.png";
+import lofiDashboardV1Img from "../../public/images/YoGwoty/LoFiDashboardVersie1.png";
+import lofiDashboardV2Img from "../../public/images/YoGwoty/LoFiDashboardVersie2.png";
+import lofiSignInImg from "../../public/images/YoGwoty/LoFiInloggen.png";
+import lofiLeaderboardImg from "../../public/images/YoGwoty/LoFiLeaderboard.png";
+import finalDashboardImg from "../../public/images/YoGwoty/EindversieDashboard.jpg";
+import finalDashboardInstagramImg from "../../public/images/YoGwoty/EindversieDashboardUitlegInstagram.jpg";
+import finalSignInImg from "../../public/images/YoGwoty/EindversieInloggen.jpg";
+import finalLeaderboardImg from "../../public/images/YoGwoty/EindversieLeaderboard.jpg";
+import finalProfileImg from "../../public/images/YoGwoty/EindversieProfiel.jpg";
 
 // COMPONENTS
 import ProjectArticle from "../organisms/ProjectArticle";
@@ -63,161 +67,186 @@ export default function ProjectStandaardAanbouw({}) {
         sectionParagraph1a={
           "In het dashboard moet uiteraard ingelogd kunnen worden. Dit werd daarom ook in de LoFi meegeneomen om te controleren dat ik geen informatie mis."
         }
-        section1ImageURL={lofiSignIn}
+        section1ImageURL={lofiSignInImg}
         section1ImageAlt={"lofi gwoty inloggen afbeelding"}
         sectionHeader2={"Dashboard V1"}
         sectionParagraph2a={
           "De belangrijkste pagina is het dashboard. Dit is waar alle essentiele informatie te vinden is. In de eerste iteratie had ik de timer klein linksboven staan."
         }
-        section2ImageURL={lofiDashboardV1}
+        section2ImageURL={lofiDashboardV1Img}
         section2ImageAlt={"Lofi gwoty dashboard versie 1"}
         sectionHeader3={"Dashboard V2"}
         sectionParagraph3a={
           "Uiteindelijk besloot ik om knoppen te maken van de kaders bovenin. Dit geeft meer rust, en een mogelijk hogere conversieratio voor de secundaire pagina's."
         }
-        section3ImageURL={lofiDashboardV2}
-        section3ImageAlt={'Lofi gwoty dashboard versie 2'}
-        sectionHeader4={'Leaderboard'}
-        sectionParagraph4a={'Tijdens de wedstrijd willen de freelancers natuurlijk ook een ranglijst zien met hun positie en die van hun concurrenten. Hiervoor is er een leaderboard beschikbaar'}
-        sectionHeader5={'Over GWOTY'}
-        sectionParagraph5a={'Om mensen te informeren over wat GWOTY precies inhoud, werd er een about-pagina ontworpen. Hier kan de gebruiker stap voor stap lezen hoe de puntenscore van GWOTY precies werkt.'}
-        section5ImageURL={lofiAbout}
-        section5ImageAlt={'Lofi gwoty about pagina'}
-        sectionHeader6={''}
-        section6ImageURL={lofiTerms}
-        
-        
-        
-        
-        paragraph1ImageAlt={"Website voor het herontwerp"}
-        paragraph1ImageURL={oldDesignImg}
-        paragraph1ImageSmall={true}
-        paragraph1ImageClassname={"max-w-[30rem] align-self-center row-start-1"}
-        buttonHref={"/"}
-        buttonText={"Bekijk het prototype"}
-        buttonCTA={true}
+        section3ImageURL={lofiDashboardV2Img}
+        section3ImageAlt={"Lofi gwoty dashboard versie 2"}
+        sectionHeader4={"Leaderboard"}
+        sectionParagraph4a={
+          "Tijdens de wedstrijd willen de freelancers natuurlijk ook een ranglijst zien met hun positie en die van hun concurrenten. Hiervoor is er een leaderboard beschikbaar"
+        }
+        section4ImageURL={lofiLeaderboardImg}
+        section4ImageAlt={"Lofi gwoty leaderboard pagina"}
+        sectionHeader5={"Over GWOTY"}
+        sectionParagraph5a={
+          "Om mensen te informeren over wat GWOTY precies inhoud, werd er een about-pagina ontworpen. Hier kan de gebruiker stap voor stap lezen hoe de puntenscore van GWOTY precies werkt."
+        }
+        section5ImageURL={lofiAboutImg}
+        section5ImageAlt={"Lofi gwoty about pagina"}
+        sectionHeader6={"Voorwaarden"}
+        sectionParagraph6a={
+          "Naast de informatie over GWOTY, is het ook belangrijk om de algemene voorwaarden helder te hebben. Hiervoor is er een voorwaarden pagina waar de gebruiker alle voorwaarden kan vindne."
+        }
+        section6ImageURL={lofiTermsImg}
         darkBackground={true}
       />
       <ProjectArticle
         darkBackground={darkBackground}
-        header={"Huisstijl elementen"}
-        subHeader={"Huisstijl voor briefpapier en facturen"}
+        header={"HiFi"}
+        subHeader={"Kleur geven aan het ontwerp"}
         introduction={
-          "Voor er iets bedacht kan worden voor de doelgroep is het belangrijk dat hier eerst globaal onderzoek naar gedaan wordt. Hieronder vindt u mijn belangrijkste bevindingen uit het onderzoek"
+          "Nadat de LoFi ontwerpen klaar waren, had ik een gesprek met een marketing medewerker van YoungOnes. Zij was erg enthousiast over de LoFi en het ontwerp zag er een stuk moderener uit dan de website die ze hiervoor gebruikte. Daarnaast werd er nog iets meer duidelijkheid gegeven over de schermen die wel of niet nodig waren. Zo bleek dat een aanmeldscherm en een dashboard voor medewerkers niet nodig waren en dus werden deze schetsen geschrapt voor de HiFi."
         }
-        sectionHeader1={"Logo"}
+        sectionHeader1={"Inloggen"}
         sectionParagraph1a={
-          "De aannemer is recentelijk een rebranding aangegaan en heeft het bedrijf hernoemd naar standaard aanbouw. Hiervoor huurde de aannemer een designer voor een nieuw logo"
+          "Voor de HiFi voor het inloggen was er niet veel werk nodig. Er werd een bijpassende afbeelding gebruikt en de kleuren en lettertype werden toegepast volgens de huisstijl."
         }
-        section1ImageAlt={"Huidig logo van Standaard Aanbouw"}
-        section1ImageURL={logoImg}
-        sectionHeader2={"Briefpapier"}
+        section1ImageAlt={"HiFi van het dashboard van GWOTY-awards"}
+        section1ImageURL={hifiSignInImg}
+        sectionHeader2={"Dashboard"}
         sectionParagraph2a={
-          "De aannemer werkt voornamelijk via bestaande contacten en heeft hiervoor geen website nodig gehad. Wel werden er facturen opgesteld en hiervoor werd briefpapier ontworpen"
+          "Ook het dashboard kreeg een update door hier een nieuw logo toe te voegen in de header en bijpassende iconen en huisstijl toe te voegen. Ook werden de menuitems geüpdate."
         }
-        section2ImageAlt={"Gebruikt briefpapier voor recente facturen"}
-        section2ImageURL={paperStyleImg}
+        section2ImageAlt={"Hifi ontwerp van het dashboard van de GWOTY-awards"}
+        section2ImageURL={hifiDashboardImg}
+        sectionHeader3={"Profiel"}
+        sectionParagraph3a={
+          "Een van de feedbackpunten vanuit marketing is dat ze graag een profielpagina willen hebben. Op deze manier heeft de gebruiker een beter inzicht over zijn of haar behaalde punten."
+        }
+        section3ImageURL={hifiProfileImg}
+        section3ImageAlt={"Hifi ontwerp van het profiel van de GWOTY-awards"}
+        sectionHeader4={"Leaderboard"}
+        sectionParagraph4a={
+          "Voor het leaderboard was niet veel werk nodig. Alleen de huisstijl werd toegepast."
+        }
+        section4ImageURL={hifiLeaderboardImg}
+        section4ImageAlt={"Hifi ontwerp van het leaderboard van GWOTY-awards"}
+        sectionHeader5={"Over GWOTY"}
+        sectionParagraph5a={
+          "Ook de HiFi van de about-pagina was erg makkelijk te ontwerpen. Hier was weinig feedback voor ontvangen"
+        }
+        section5ImageURL={hifiAboutImg}
+        section5ImageAlt={"Hifi ontwerp van de about-pagina van GWOTY-awards"}
+        sectionHeader6={"Voorwaarden"}
+        sectionParagraph6a={
+          "De algemene voorwaarden pagina was niet meer nodig. Hiervoor kunnen de freelancers naar de youngones website zelf gaan waar het al in detail wordt uitgelegd. De pagina in het dashboard werd daarom geschrapt."
+        }
+        section6ImageURL={hifi}
+        button2Href={
+          "https://www.figma.com/proto/pmllBf9iI0nUlJ1aCtRiEQ/YOUNGONES-GWOTY-HIFI-V1?type=design&node-id=2-2&scaling=scale-down&page-id=0%3A1&starting-point-node-id=2%3A2"
+        }
+        button2Text={"Bekijk het interactief digitaal prototype"}
+      />
+      <ProjectArticle
+        darkBackground={darkBackground}
+        header={"HiFi - Mobiel"}
+        subHeader={"De mobiele responsive versie van het HiFi-ontwerp"}
+        introduction={
+          "Uiteraard is het ook belangrijk om een beeld te geven over een mobiele versie. Een standaard website moet namelijk in deze tijd altijd geoptimaliseerd zijn voor alle vormen en maten schermen. Hiervoor werd de content in een smallere kader getoond. In de frontend kan dit makkelijk geautimatiseerd worden met een custom hamburgermenu en stylingselementen zoals flex en grid."
+        }
+        sectionHeader1={"Inloggen"}
+        sectionParagraph1a={
+          "Voor de mobiele versie werd de afbeelding verborgen om direct de content weer te geven."
+        }
+        section1ImageAlt={"Mobiele HiFi van het inloggen van GWOTY-awards"}
+        section1ImageURL={hifiSignInResponsiveImg}
+        sectionHeader2={"Dashboard"}
+        sectionParagraph2a={
+          "Het dashboard werd onder elkaar gezet in volgorde van relevantie. De timer werd daarom bovenaan getoond."
+        }
+        section2ImageAlt={
+          "Mobiele Hifi ontwerp van het dashboard van de GWOTY-awards"
+        }
+        section2ImageURL={hifiDashboardResponsiveImg}
+        sectionHeader3={"Profiel"}
+        sectionParagraph3a={
+          "Bij het profiel werd de sidebar volledig onderaan gezet en het hoofdvak met belangrijke informatie bovenaan."
+        }
+        section3ImageURL={hifiProfileResponsiveImg}
+        section3ImageAlt={
+          "Mobiele Hifi ontwerp van het profiel van de GWOTY-awards"
+        }
+        sectionHeader4={"Leaderboard"}
+        sectionParagraph4a={
+          "Ook bij het leaderboard verschijnt de sidebar onderaan en het hoofdvlak met belangrijke informatie bovenaan"
+        }
+        section4ImageURL={hifiLeaderboardResponsiveImg}
+        section4ImageAlt={
+          "Mobiele Hifi ontwerp van het leaderboard van GWOTY-awards"
+        }
+        sectionHeader5={"Over GWOTY"}
+        sectionParagraph5a={
+          "In de mobiele versie verdwijnt de overflow en wordt de tekst volledig onder elkaar getoond om het scrollen te versoepelen"
+        }
+        section5ImageURL={hifiAboutResponsiveImg}
+        section5ImageAlt={
+          "Mobiele Hifi ontwerp van de about-pagina van GWOTY-awards"
+        }
+        button2Href={
+          "https://www.figma.com/proto/pmllBf9iI0nUlJ1aCtRiEQ/YOUNGONES-GWOTY-HIFI-V1?type=design&node-id=413-890&scaling=scale-down&page-id=0%3A1&starting-point-node-id=2%3A2"
+        }
+        button2Text={"Bekijk het interactief digitaal prototype"}
       />
 
       <ProjectArticle
         darkBackground={darkBackground}
-        header={"Herontwerp"}
-        subHeader={"Overzicht van de hoofditeraties"}
+        header={"Eindversie"}
+        subHeader={"Het uiteindelijke resultaat in NextJS en Tailwind"}
         introduction={
-          "Hieronder vind u de verschillende iteraties tijdens het ontwerpproces. Ik begon met een schets in de vorm van een LoFi ontwerp en eindigde met een eind HiFI ontwerp."
+          "Nadat er een akkoord was bereikt over de Hifi, werd er al snel een NextJS met Tailwind project opgezet om het ontwerp te realiseren in de frontend. Dit was mijn eerste echte project met NextJS en daarom duurde sommige elementen wat langer. Hiervoor had ik alleen ervaring met Svelte, wat nog steeds mijn voorkeur is. Het handmatig opzetten van verschillende hooks om variablen te laten updaten op de canvas vind ik ergens wel handig. Maar toch vind ik dit ergens ook nog een ouderwetse manier. Zeker wanneer je dit vergelijkt met Svelte waar dit volledig is geautimatiseerd zonder enige prestatieverlies"
         }
-        sectionHeader1={"LoFi ontwerp"}
+        sectionHeader1={"Inloggen"}
         sectionParagraph1a={
-          "In het LoFi-ontwerp probeerde ik de stijl van het briefpapier na te bootsen. De schuine donkere balken wil ik de blauwe huiskleur geven en als accentkleur wil ik de geel groene kleur gebruiken. De opdrachtgever was tevreden met het LoFi-ontwerp en ik ging dus verder met het HiFi-ontwerp"
+          "Voor de eindversie werd de afbeelding veranderd naar iets toepasselijker voor de doelgroep: hard werken, ofwel 'strijden'. Ook werd de gekleurde kring verwijderd om meer rust te creeëren."
         }
-        section1ImageAlt={"Eerste schets en ontwerp van herontwerp"}
-        section1ImageURL={lofiImg}
-        sectionHeader2={"Eerste HiFi iteratie"}
+        section1ImageAlt={"Eindversie van het inlogscherm"}
+        section1ImageURL={finalSignInImg}
+        sectionHeader2={"Dashboard"}
         sectionParagraph2a={
-          "In dit ontwerp voeg ik kleur en afbeeldingen toe om het ontwerp meer vorm te geven. Naast de afbeeldingen probeerde ik ook de huisstijl van het briefpapier na te bootsen op de website. Voor de menuselectie gebruikte ik het oorspronkelijke ontwerp van de beter wonen website."
+          "Voor het dashboard heb ik snel een nieuwe bannerafbeelding gemaakt die minder druk overkomt, hierdoor komt de inhoud beter naar voren. Daarnaast is de prestatiesectie ook overzichtelijker vormgegeven."
         }
-        section2ImageAlt={"Eerste herontwerp met kleur, huisstijl en detail"}
-        section2ImageURL={hifi1Img}
-        sectionHeader3={"Tweede HiFi iteratie"}
+        section2ImageAlt={"Eindversie van het dashboardscherm"}
+        section2ImageURL={finalDashboardImg}
+        sectionHeader3={"Dashboard Instagram"}
         sectionParagraph3a={
-          "Het blauw in de eerste HiFi iteratie vond ik te druk. Daarnaast pastte de afgeronde knoppen niet in de stijl van de rest van de website en werden deze dus aangepast. Ook waren er nog geen verkopersslogans aanwezig terwijl bewezen is dat dit klanten vertrouwen geeft. Als laatste is de tekst ook beter vormgegeven."
+          "Op verzoek van team marketing moest er nog een informatie pop-up toegevoegd worden om instagram stories uit te leggen. Deze werd toegevoegd in de vorm van een toggable i-knop waardoor er een uitlegscherm verschijnt."
         }
         section3ImageAlt={
-          "Tweede iteratie van het herontwerp met kleur, huisstijl en detail"
+          "Eindversie van het Dashboardscherm met instagram stories uitleg"
         }
-        section3ImageURL={hifi2Img}
-        sectionHeader4={"Derde HiFi iteratie"}
+        section3ImageURL={finalDashboardInstagramImg}
+        sectionHeader4={"Leaderboard"}
         sectionParagraph4a={
-          "In de volgende iteratie heb ik geëxperimenteerd met de herosectie van de pagina. In de vorige itaratie was de tekst, ondanks de tekstschaduw, de tekst nog slecht leesbaar."
+          "Het Leaderboard werd hernoemd naar tussenstand op verzoek van team marketing. Leaderboard is te engels en team marketing wilde hiervoor een nederlandse benaming. Daarnaast is er meer padding toegevoegd en meer kleuren voor de top 3."
         }
-        section4ImageAlt={"Eerste schets en ontwerp van herontwerp"}
-        section4ImageURL={hifi3Img}
-        sectionHeader5={"Vierde HiFi iteratie"}
-        Daarnaast
-        vielen
-        de
-        slogans
-        bovenaan
-        niet
-        erg
-        op
+        section4ImageAlt={"Eindversie van het leaderboard"}
+        section4ImageURL={finalLeaderboardImg}
+        sectionHeader5={"Profiel"}
         sectionParagraph5a={
-          "In deze iteratie werd er verder geïtereerd op de herosectie en kreeg de achtergrondkleur, knop, header en titel aangepast. Ook werden er keurmerken toegevoegd om vertrouwen te wekken."
+          "ALs laatste is de profielpagina verwerkt. Hier is vooral de overzicht sectie aangepast. Er is veel onnodige uitleg verwijderd en deze uitleg is samengevat tot belangrijkst gegevens met grote getallen. "
         }
-        section5ImageAlt={"Eerste herontwerp met kleur, huisstijl en detail"}
-        section5ImageURL={hifi4Img}
-        sectionHeader6={"Laatste HiFi iteratie"}
-        sectionParagraph6a={
-          "De aannemer heeft geen keurmerken dus werden deze verwijderd. Daarnaast werden er secondaire knoppen, een galerij, een contactsectie en recente nieuwspagina's toegevoegd op de hoofdpagina."
+        section5ImageAlt={"Eindversie van het profielscherm"}
+        section5ImageURL={finalProfileImg}
+        paragraph2a={
+          "Hieronder vind u de link naar een statische versie van deze website. Dit is niet de laatste versie. In de laatste versie staan veel connecties met de database van YoungOnes en andere gevoelige informatie. Om die reden is de website zo goed mogelijk om de website alsnog in statische vorm weer te geven."
         }
-        section6ImageAlt={
-          "Tweede en laatste iteratie van het herontwerp met kleur, huisstijl en detail"
+        button2Href={
+          "https://youngones-gwoty-o9bw7u9mo-marcofijan1.vercel.app/"
         }
-        section6ImageURL={hifi5Img}
-      />
-      <ProjectArticle
-        darkBackground={darkBackground}
-        header={"Overige schermen"}
-        subHeader={"Overzicht van diverse detailpagina's"}
-        introduction={
-          "Nadat er een akkoord was bereikt over het eindontwerp van de hoofdpagina, werden diverse detailpagina's uitgewerkt. Deze detailpainga's werden in dezelfde vorm en huisstijl ontworpen dan het hoofdscherm. Hieronder vind u de 3 hoofddetailpagina's vormgegeven."
-        }
-        sectionHeader1={"Blogpagina"}
-        sectionParagraph1a={
-          "Verschillende klanten bij het bedrijf willen graag op de hoogte gesteld blijven over diverse ontwikkelingen bij het bedrijf. Hiervoor wordt een nieuwspagina ofwel blogpagina bijgehouden door de aannemer. Daarnaast geeft het hebben van een up-to-date nieuwspagina meer vertrouwen naar potentiele nieuwe klanten."
-        }
-        section1ImageAlt={"HiFi van de blogpagina"}
-        section1ImageURL={blogPageImg}
-        sectionHeader2={"HiFi van de servicepagina's"}
-        sectionParagraph2a={
-          "De aannemer levert verschillende services. De aannemer wilt de focus hebben op 'hulp bij het zelf aannemen' en daarom is deze optie als call-to-action zichtbaar op het hoofdscherm. Bij de vergelijking tussen services wordt deze optie daarom ook in het midden getoond, de positie waar ogen het eerst naar toe gaan."
-        }
-        section2ImageAlt={"Eerste herontwerp met kleur, huisstijl en detail"}
-        section2ImageURL={servicePageImg}
+        button2Text={"Bekijk statische website"}
       />
 
-      <ProjectArticle
-        darkBackground={darkBackground}
-        header={"Github en Eindresultaat"}
-        subHeader={"Code en eindontwerp"}
-        introduction={
-          "Nadat er een akkoord was voor het ontwerp, werd de website responsive ontworpen op Wordpress. Er werd gebruik gemaakt van een thema die semantieke HTML genereerd en de plugin Advanced Custom Fields. Met Advanced Custom Fields heb je als devloper veel flexibiliteit met het ontwerpen. Voor elk type content, kan er een 'custom field' aangemaakt worden waar je als devloper de styling en positie kan aanpassen. Daarnaast is het mogelijk om al die verschillende 'fields' in een specifieke structuur voor de eigenaar te tonen waardoor het wijzigen en toevoegen van content wordt versimpeld."
-        }
-        header2a={"Github"}
-        paragraph1a={
-          "Helaas is de aannemer en eigenaar momenteel bezig met een groot persoonlijk project waardoor hij geen tijd heeft om nieuwe klussen aan te nemen. De website staat daarom momenteel offline. De code kunt u echter nog wel bekijken op mijn github"
-        }
-        button1Href={"https://github.com/marcoFijan/StandaardAanbouwWordpress"}
-        button1Text={"Bekijk github"}
-        section1ImageAlt={"HiFi van de blogpagina"}
-        section1ImageURL={blogPageImg}
-        sectionHeader2={"HiFi van de servicepagina's"}
-        sectionParagraph2a={
-          "De aannemer levert verschillende services. De aannemer wilt de focus hebben op 'hulp bij het zelf aannemen' en daarom is deze optie als call-to-action zichtbaar op het hoofdscherm. Bij de vergelijking tussen services wordt deze optie daarom ook in het midden getoond, de positie waar ogen het eerst naar toe gaan."
-        }
-        section2ImageAlt={"Eerste herontwerp met kleur, huisstijl en detail"}
-        section2ImageURL={servicePageImg}
-      />
+      {/* TODO: Knop naar github */}
     </div>
   );
 }
