@@ -66,22 +66,15 @@ export default function ProjectKBOTilburgReesof({
   ];
 
   return (
-    // Introductie
-    // Onderzoek persona's empathy map
-    // afbakenen programma van eisen
-    // ideegeneratie harris profiel
-    // concept concept keuzes en vormgevingsregels
-    // Het product
-    // Validatie
-    // Resources: Design Rationale + Link naar productbiografie
     <div className="max-w-wrapper mx-auto w-full block px-articlePadding">
       <ProjectArticle
         title={title}
         subTitle={subTitle}
-        summaryObject={{
-          Projectjaar: "2021",
+        summaryProject={{
+          Projectjaar: "2022",
           Projectdoel: "Moderne uitstraling",
-          Doelgroep: "Gezinnen met interesse aanbouw",
+          Doelgroep:
+            "Eenzame ouderen vanaf 65 jaar in omgeving Tilburg Reeshof",
         }}
         paragraph1a={introduction}
         paragraph1ImageAlt={"Afbeelding van het ontworpen product"}
