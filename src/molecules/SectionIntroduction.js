@@ -98,6 +98,22 @@ export default function Article({
         <section className="pb-8">
           {header && <H1 text={header} darkBackground={darkBackground}></H1>}
           {subHeader && <SubH1 text={subHeader}></SubH1>}
+          {summaryText && (
+            <ul>
+              {summaryText.map((val) => {
+                return (
+                  <li
+                    className={
+                      "text-sm uppercase bg-bgColorLight text-bgColorDark px-8 py-2 mb-4 rounded-full"
+                    }
+                    key={val}
+                  >
+                    {val}
+                  </li>
+                );
+              })}
+            </ul>
+          )}
           {introduction && (
             <P text={introduction} darkBackground={darkBackground}></P>
           )}

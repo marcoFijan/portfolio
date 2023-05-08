@@ -1,5 +1,4 @@
 import Image from "next/image";
-import marcoPointingAtText from "../../public/images/marcoPointing.png";
 import Title from "../atoms/Title.js";
 import SubTitle from "../atoms/SubTitle.js";
 import H1 from "../atoms/H1.js";
@@ -9,17 +8,23 @@ import SubH2 from "../atoms/SubH2.js";
 import P from "../atoms/Paragraph.js";
 import NextLink from "../atoms/NextLink.js";
 
-export default function Section({
+export default function Article({
   darkBackground,
   customClassName,
+  title,
+  subTitle,
   header,
   subHeader,
   header2,
+  subHeader2,
+  introduction,
   paragraph1a,
   paragraph1b,
   paragraph1c,
+  paragraphCenter,
   paragraphImageURL,
   paragraphImageAlt,
+  paragraphImageSmall,
   paragraphImageClassname,
   linkText,
   linkHref,
@@ -27,25 +32,73 @@ export default function Section({
 }) {
   return (
     <section className={`w-full ${customClassName}`}>
-      {header && <H1 text={header} darkBackground={darkBackground}></H1>}
-      {subHeader && <SubH1 text={subHeader}></SubH1>}
-      {header2 && <H2 text={header2} darkBackground={darkBackground}></H2>}
-      {paragraph1a && (
-        <P text={paragraph1a} darkBackground={darkBackground}></P>
+      {title && <Title text={title} darkBackground={darkBackground}></Title>}
+      {subTitle && <SubTitle text={subTitle}></SubTitle>}
+
+      {paragraphImageSmall && (
+        <section
+          className={`grid grid-cols-fluid gap-4 pb-8 items-center ${
+            paragraphCenter && "justify-center"
+          }`}
+        >
+          <section className="block">
+            {header && <H1 text={header} darkBackground={darkBackground}></H1>}
+            {subHeader && <SubH1 text={subHeader}></SubH1>}
+            {introduction && (
+              <P text={introduction} darkBackground={darkBackground}></P>
+            )}
+            {header2 && (
+              <H2 text={header2} darkBackground={darkBackground}></H2>
+            )}
+            {subHeader2 && <SubH2 text={subHeader2}></SubH2>}
+            {paragraph1a && (
+              <P text={paragraph1a} darkBackground={darkBackground}></P>
+            )}
+            {paragraph1b && (
+              <P text={paragraph1b} darkBackground={darkBackground}></P>
+            )}
+            {paragraph1c && (
+              <P text={paragraph1c} darkBackground={darkBackground}></P>
+            )}
+            {linkHref && <NextLink text={linkText} href={linkHref}></NextLink>}
+          </section>
+          <Image
+            className={`${paragraphImageClassname}`}
+            src={paragraphImageURL}
+            alt={paragraphImageAlt}
+          />
+        </section>
       )}
-      {paragraph1b && (
-        <P text={paragraph1b} darkBackground={darkBackground}></P>
+      {!paragraphImageSmall && (
+        <section className="pb-8">
+          {header && <H1 text={header} darkBackground={darkBackground}></H1>}
+          {subHeader && <SubH1 text={subHeader}></SubH1>}
+          {introduction && (
+            <P text={introduction} darkBackground={darkBackground}></P>
+          )}
+          {header2 && <H2 text={header2} darkBackground={darkBackground}></H2>}
+          {subHeader2 && <SubH2 text={subHeader2}></SubH2>}
+          {paragraph1a && (
+            <P text={paragraph1a} darkBackground={darkBackground}></P>
+          )}
+          {paragraph1b && (
+            <P text={paragraph1b} darkBackground={darkBackground}></P>
+          )}
+          {paragraph1c && (
+            <P text={paragraph1c} darkBackground={darkBackground}></P>
+          )}
+          {paragraphImageURL && (
+            <Image
+              className={`w-full object-cover ${paragraphImageClassname}`}
+              src={paragraphImageURL}
+              alt={paragraphImageAlt}
+            />
+          )}
+          {linkHref && <NextLink text={linkText} href={linkHref}></NextLink>}
+        </section>
       )}
-      {paragraph1c && (
-        <P text={paragraph1c} darkBackground={darkBackground}></P>
-      )}
+
       {extraContent && extraContent}
-      <Image
-        className={`${paragraphImageClassname}`}
-        src={paragraphImageURL}
-        alt={paragraphImageAlt}
-      />
-      {linkHref && <NextLink text={linkText} href={linkHref}></NextLink>}
     </section>
   );
 }

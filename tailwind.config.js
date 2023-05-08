@@ -24,7 +24,7 @@ module.exports = {
         wrapper: "80rem",
       },
       gridTemplateColumns: {
-        fluid: "repeat(auto-fit, minmax(25em, 1fr));",
+        fluid: "repeat(auto-fit, minmax(20em, 1fr));",
       },
       fontFamily: {
         montserrat: ["var(--font-montserrat)"],

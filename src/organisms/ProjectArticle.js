@@ -20,7 +20,7 @@ export default function ProjectArticle({
   header,
   subHeader,
   introduction,
-  summaryObject,
+  summaryProject,
   header2a,
   paragraph1a,
   paragraph1b,
@@ -119,7 +119,7 @@ export default function ProjectArticle({
         subTitle={subTitle}
         header={header}
         subHeader={subHeader}
-        summaryObject={summaryObject}
+        summaryObject={summaryProject}
         introduction={introduction}
         header2={header2a}
         paragraph1a={paragraph1a}
