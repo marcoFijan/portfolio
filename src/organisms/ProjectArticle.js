@@ -134,7 +134,7 @@ export default function ProjectArticle({
         darkBackground={darkBackground}
         extraContent={extraContent1}
       />
-      {sectionParagraph1a && (
+      {sectionHeader1 && (
         <section className="grid grid-cols-fluid gap-16">
           <SectionSmall
             header2={sectionHeader1}
@@ -154,7 +154,7 @@ export default function ProjectArticle({
             linkHref={section1LinkHref}
             linkText={section1LinkText}
           />
-          {sectionParagraph2a && (
+          {sectionHeader2 && (
             <SectionSmall
               header2={sectionHeader2}
               paragraph1a={sectionParagraph2a}
@@ -174,7 +174,7 @@ export default function ProjectArticle({
               linkText={section2LinkText}
             />
           )}
-          {sectionParagraph3a && (
+          {sectionHeader3 && (
             <SectionSmall
               header2={sectionHeader3}
               paragraph1a={sectionParagraph3a}
@@ -194,7 +194,7 @@ export default function ProjectArticle({
               linkText={section3LinkText}
             />
           )}
-          {sectionParagraph4a && (
+          {sectionHeader4 && (
             <SectionSmall
               header2={sectionHeader4}
               paragraph1a={sectionParagraph4a}
@@ -207,7 +207,7 @@ export default function ProjectArticle({
               linkText={section4LinkText}
             />
           )}
-          {sectionParagraph5a && (
+          {sectionHeader5 && (
             <SectionSmall
               header2={sectionHeader5}
               paragraph1a={sectionParagraph5a}
@@ -220,7 +220,7 @@ export default function ProjectArticle({
               linkText={section5LinkText}
             />
           )}
-          {sectionParagraph6a && (
+          {sectionHeader6 && (
             <SectionSmall
               header2={sectionHeader6}
               paragraph1a={sectionParagraph6a}
