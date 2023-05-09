@@ -141,7 +141,6 @@ export default function ProjectStandaardAanbouw({}) {
         sectionParagraph6a={
           "De algemene voorwaarden pagina was niet meer nodig. Hiervoor kunnen de freelancers naar de youngones website zelf gaan waar het al in detail wordt uitgelegd. De pagina in het dashboard werd daarom geschrapt."
         }
-        section6ImageURL={hifi}
         button2Href={
           "https://www.figma.com/proto/pmllBf9iI0nUlJ1aCtRiEQ/YOUNGONES-GWOTY-HIFI-V1?type=design&node-id=2-2&scaling=scale-down&page-id=0%3A1&starting-point-node-id=2%3A2"
         }
