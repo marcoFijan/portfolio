@@ -28,6 +28,8 @@ export default function Article({
   paragraphImageClassname,
   linkText,
   linkHref,
+  linkText2,
+  linkHref2,
   extraContent,
 }) {
   return (
@@ -60,7 +62,16 @@ export default function Article({
             {paragraph1c && (
               <P text={paragraph1c} darkBackground={darkBackground}></P>
             )}
-            {linkHref && <NextLink text={linkText} href={linkHref}></NextLink>}
+            {extraContent && extraContent}
+            {linkHref & linkHref2 && (
+              <section className="w-full flex flex-wrap justify-center">
+                <NextLink text={linkText} href={linkHref} cta={true}></NextLink>
+                <NextLink text={linkText2} href={linkHref2}></NextLink>
+              </section>
+            )}
+            {linkHref & !linkHref2 && (
+              <NextLink text={linkText} href={linkHref} cta={true}></NextLink>
+            )}
           </section>
           <Image
             className={`${paragraphImageClassname}`}
@@ -87,6 +98,7 @@ export default function Article({
           {paragraph1c && (
             <P text={paragraph1c} darkBackground={darkBackground}></P>
           )}
+          {extraContent && extraContent}
           {paragraphImageURL && (
             <Image
               className={`w-full object-cover ${paragraphImageClassname}`}
@@ -94,11 +106,17 @@ export default function Article({
               alt={paragraphImageAlt}
             />
           )}
-          {linkHref && <NextLink text={linkText} href={linkHref}></NextLink>}
+          {linkHref & linkHref2 && (
+            <section className="w-full flex flex-wrap justify-center">
+              <NextLink text={linkText} href={linkHref} cta={true}></NextLink>
+              <NextLink text={linkText2} href={linkHref2}></NextLink>
+            </section>
+          )}
+          {linkHref & !linkHref2 && (
+            <NextLink text={linkText} href={linkHref} cta={true}></NextLink>
+          )}
         </section>
       )}
-
-      {extraContent && extraContent}
     </section>
   );
 }

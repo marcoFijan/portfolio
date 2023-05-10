@@ -194,7 +194,7 @@ export default function ProjectStandaardAanbouw({}) {
         button2Href={
           "https://www.figma.com/proto/pmllBf9iI0nUlJ1aCtRiEQ/YOUNGONES-GWOTY-HIFI-V1?type=design&node-id=413-890&scaling=scale-down&page-id=0%3A1&starting-point-node-id=2%3A2"
         }
-        button2Text={"Bekijk het interactief digitaal prototype"}
+        button2Text={"Interactief prototype"}
       />
 
       <ProjectArticle
@@ -243,6 +243,8 @@ export default function ProjectStandaardAanbouw({}) {
           "https://youngones-gwoty-o9bw7u9mo-marcofijan1.vercel.app/"
         }
         button2Text={"Bekijk statische website"}
+        button2bHref={"https://github.com/marcoFijan/yo-gwoty"}
+        button2bText={"Bekijk github"}
       />
 
       {/* TODO: Knop naar github */}

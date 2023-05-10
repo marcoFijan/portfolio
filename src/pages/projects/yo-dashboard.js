@@ -1,5 +1,5 @@
 import { Montserrat } from "next/font/google";
-import ProjectsOverview from "../../templates/ProjectsOverview.js";
+import YODashboardContent from "../../templates/ProjectYODashboardClients";
 
 const montserrat = Montserrat({
   weight: ["400", "700", "900"],
@@ -7,10 +7,10 @@ const montserrat = Montserrat({
   variable: "--font-montserrat",
 });
 
-export default function Projects() {
+export default function YODashboardClients() {
   return (
     <main className={`bg-bgColorDark ${montserrat.className}`}>
-      <ProjectsOverview />
+      <YODashboardContent />
     </main>
   );
 }

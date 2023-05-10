@@ -2,7 +2,7 @@
 import hifi1JobsImg from "../../public/images/YoDashboardClients/HiFi1Klussen.png";
 import hifi1FreelancerImg from "../../public/images/YoDashboardClients/HiFi1Freelancer.png";
 import hifi1OverviewImg from "../../public/images/YoDashboardClients/HiFi1Overzicht.png";
-import hifi2JobsImg from "../../public/images/YoDashboardClients/HiFi12Klussen.png";
+import hifi2JobsImg from "../../public/images/YoDashboardClients/HiFi2Klussen.png";
 import hifi2FreelancerImg from "../../public/images/YoDashboardClients/HiFi2Freelancer.png";
 import hifi2OverviewImg from "../../public/images/YoDashboardClients/HiFi2Overzicht.png";
 import hifi3JobsImg from "../../public/images/YoDashboardClients/HiFi3Klussen.png";
@@ -11,7 +11,7 @@ import hifi3JobsTypeFilterImg from "../../public/images/YoDashboardClients/HiFi3
 import hifi3FreelancerImg from "../../public/images/YoDashboardClients/HiFi3Freelancer.png";
 import hifi3FreelancerExplainImg from "../../public/images/YoDashboardClients/HiFi3FreelancerExplain.png";
 import hifi3OverviewImg from "../../public/images/YoDashboardClients/HiFi3Overzicht.png";
-import hifi3OverviewTypeFilterImg from "../../public/images/YoDashboardClients/HiFi3OverzichtTypeFilter.png";
+// import hifi3OverviewTypeFilterImg from "../../public/images/YoDashboardClients/HiFi3OverzichtTypeFilter.png";
 import lofiFreelancerImg from "../../public/images/YoDashboardClients/LoFiFreelancer.png";
 import lofiJobsImg from "../../public/images/YoDashboardClients/LoFiKlussen.png";
 import lofiJobsFilterImg from "../../public/images/YoDashboardClients/LoFiKlussenFilters.png";
@@ -43,6 +43,9 @@ export default function ProjectStandaardAanbouw({}) {
         paragraph1a={
           "YoungOnes gebruikte tot nu toe een automatisch gegenereerde PowerBI dashboard die de opdrachtgevers konden geberuiken om inzichten te doen. PowerBI gaf alleen tabellen en had geen enkele vorm van datavisualistie. Hierdoor is het lastiger om nuttige inzichten te doen over de data. Er moest daarom een nieuw dashboard ontworpen en hier kreeg ik de opdracht"
         }
+        paragraph1ImageAlt={"Power BI dashboard afbeelding"}
+        paragraph1ImageSmall={true}
+        paragraph1ImageURL={originalDashbordImg}
         darkBackground={true}
       />
       <ProjectArticle

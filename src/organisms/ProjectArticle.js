@@ -31,7 +31,8 @@ export default function ProjectArticle({
   paragraph1ImageSmall,
   button1Href,
   button1Text,
-  button1CTA,
+  button1bHref,
+  button1bText,
   header2b,
   paragraph2a,
   paragraph2b,
@@ -42,13 +43,11 @@ export default function ProjectArticle({
   paragraph2ImageSmall,
   button2Href,
   button2Text,
-  button2CTA,
+  button2bHref,
+  button2bText,
   extraContent1,
   extraContent2,
   extraContent3,
-  extraContent4,
-  extraContent5,
-  extraContent6,
   sectionHeader1,
   sectionHeader2,
   sectionHeader3,
@@ -75,16 +74,28 @@ export default function ProjectArticle({
   sectionParagraph6c,
   section1LinkHref,
   section1LinkText,
+  section1bLinkHref,
+  section1bLinkText,
   section2LinkHref,
   section2LinkText,
+  section2bLinkHref,
+  section2bLinkText,
   section3LinkHref,
   section3LinkText,
+  section3bLinkHref,
+  section3bLinkText,
   section4LinkHref,
   section4LinkText,
+  section4bLinkHref,
+  section4bLinkText,
   section5LinkHref,
   section5LinkText,
+  section5bLinkHref,
+  section5bLinkText,
   section6LinkHref,
   section6LinkText,
+  section6bLinkHref,
+  section6bLinkText,
   sectionData1,
   sectionData2,
   sectionData3,
@@ -131,12 +142,14 @@ export default function ProjectArticle({
         paragraphImageClassname={paragraph1ImageClassname}
         linkHref={button1Href}
         linkText={button1Text}
+        linkHref2={button1bHref}
+        linkText2={button1bText}
         darkBackground={darkBackground}
         extraContent={extraContent1}
       />
       {sectionHeader1 && (
         <section className="grid grid-cols-fluid gap-16">
-          <SectionSmall
+          <Section
             header2={sectionHeader1}
             paragraph1a={sectionParagraph1a}
             paragraph1b={sectionParagraph1b}
@@ -153,9 +166,11 @@ export default function ProjectArticle({
             paragraphImageURL={section1ImageURL}
             linkHref={section1LinkHref}
             linkText={section1LinkText}
+            linkHref2={section1bLinkHref}
+            linkText2={section1bLinkText}
           />
           {sectionHeader2 && (
-            <SectionSmall
+            <Section
               header2={sectionHeader2}
               paragraph1a={sectionParagraph2a}
               paragraph1b={sectionParagraph2b}
@@ -172,10 +187,12 @@ export default function ProjectArticle({
               paragraphImageURL={section2ImageURL}
               linkHref={section2LinkHref}
               linkText={section2LinkText}
+              linkHref2={section2bLinkHref}
+              linkText2={section2bLinkText}
             />
           )}
           {sectionHeader3 && (
-            <SectionSmall
+            <Section
               header2={sectionHeader3}
               paragraph1a={sectionParagraph3a}
               paragraph1b={sectionParagraph3b}
@@ -192,10 +209,12 @@ export default function ProjectArticle({
               paragraphImageURL={section3ImageURL}
               linkHref={section3LinkHref}
               linkText={section3LinkText}
+              linkHref2={section3bLinkHref}
+              linkText2={section3bLinkText}
             />
           )}
           {sectionHeader4 && (
-            <SectionSmall
+            <Section
               header2={sectionHeader4}
               paragraph1a={sectionParagraph4a}
               paragraph1b={sectionParagraph4b}
@@ -205,10 +224,12 @@ export default function ProjectArticle({
               paragraphImageURL={section4ImageURL}
               linkHref={section4LinkHref}
               linkText={section4LinkText}
+              linkHref2={section4bLinkHref}
+              linkText2={section4bLinkText}
             />
           )}
           {sectionHeader5 && (
-            <SectionSmall
+            <Section
               header2={sectionHeader5}
               paragraph1a={sectionParagraph5a}
               paragraph1b={sectionParagraph5b}
@@ -218,10 +239,12 @@ export default function ProjectArticle({
               paragraphImageURL={section5ImageURL}
               linkHref={section5LinkHref}
               linkText={section5LinkText}
+              linkHref2={section5bLinkHref}
+              linkText2={section5bLinkText}
             />
           )}
           {sectionHeader6 && (
-            <SectionSmall
+            <Section
               header2={sectionHeader6}
               paragraph1a={sectionParagraph6a}
               paragraph1b={sectionParagraph6b}
@@ -231,6 +254,8 @@ export default function ProjectArticle({
               paragraphImageURL={section6ImageURL}
               linkHref={section6LinkHref}
               linkText={section6LinkText}
+              linkHref2={section6bLinkHref}
+              linkText2={section6bLinkText}
             />
           )}
         </section>
@@ -247,6 +272,8 @@ export default function ProjectArticle({
           paragraphImageClassname={paragraph2ImageClassname}
           linkHref={button2Href}
           linkText={button2Text}
+          linkHref2={button2bHref}
+          linkText2={button2bText}
           darkBackground={darkBackground}
           extraContent={extraContent2}
         />
