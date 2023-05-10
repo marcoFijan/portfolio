@@ -39,7 +39,7 @@ export default function Article({
 
       {paragraphImageSmall && (
         <section
-          className={`grid grid-cols-fluid gap-4 pb-8 items-center ${
+          className={`grid grid-cols-fluid gap-12 pb-8 items-center ${
             paragraphCenter && "justify-center"
           }`}
         >
@@ -106,15 +106,15 @@ export default function Article({
               alt={paragraphImageAlt}
             />
           )}
-          {linkHref & linkHref2 && (
-            <section className="w-full flex flex-wrap justify-center">
+
+          <section className="w-full flex flex-wrap justify-center">
+            {linkHref && (
               <NextLink text={linkText} href={linkHref} cta={true}></NextLink>
+            )}
+            {linkHref2 && (
               <NextLink text={linkText2} href={linkHref2}></NextLink>
-            </section>
-          )}
-          {linkHref & !linkHref2 && (
-            <NextLink text={linkText} href={linkHref} cta={true}></NextLink>
-          )}
+            )}
+          </section>
         </section>
       )}
     </section>

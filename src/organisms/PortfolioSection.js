@@ -2,11 +2,12 @@ import Link from "next/link";
 import Section from "../molecules/Section";
 
 export default function PortfolioSection() {
+  const darkBackground = true;
   return (
     <article className="max-w-wrapper mx-auto w-full px-8">
       <Section
         customClassName={"h-screen text-left"}
-        transparent={true}
+        darkBackground={darkBackground}
         title={"Portfolio"}
         subTitle={"Mijn projecten"}
         paragraph1={
@@ -15,49 +16,49 @@ export default function PortfolioSection() {
       ></Section>
       <Section
         customClassName={"h-screen text-right"}
-        transparent={true}
-        header1={"KBO Tilburg Reeshof"}
-        header2={"Redesign website met de focus voor ouderen binnen budget"}
+        darkBackground={darkBackground}
+        header={"KBO Tilburg Reeshof"}
+        subHeader={"Redesign website met de focus voor ouderen binnen budget"}
         linkHref={"/projects/kbo-tilburg-reeshof"}
         linkText={"Bekijk het project"}
       ></Section>
       <Section
         customClassName={"h-screen text-left"}
-        transparent={true}
-        header1={"GWOTY Award - YoungOnes"}
-        header2={"Stage project met NextJS, Tailwind en Figma"}
+        darkBackground={darkBackground}
+        header={"GWOTY Award - YoungOnes"}
+        subHeader={"Stage project met NextJS, Tailwind en Figma"}
         linkHref={"/projects/gwoty-award-youngones"}
         linkText={"Bekijk het project"}
       ></Section>
       <Section
         customClassName={"h-screen text-right"}
-        transparent={true}
-        header1={"Dashboard - YoungOnes"}
-        header2={"Stage project met NextJS, Tailwind Figma en ChartJS"}
+        darkBackground={darkBackground}
+        header={"Dashboard - YoungOnes"}
+        subHeader={"Stage project met NextJS, Tailwind Figma en ChartJS"}
         linkHref={"/projects/dashboard-youngones"}
         linkText={"Bekijk het project"}
       ></Section>
       <Section
         customClassName={"h-screen text-left"}
-        transparent={true}
-        header1={"Ring-Ring Dashboard"}
-        header2={"Datavisualisatie project met D3"}
+        darkBackground={darkBackground}
+        header={"Ring-Ring Dashboard"}
+        subHeader={"Datavisualisatie project met D3"}
         linkHref={"/projects/ring-ring-dashboard"}
         linkText={"Bekijk het project"}
       ></Section>
       <Section
         customClassName={"h-screen text-right"}
-        transparent={true}
-        header1={"Standaard Aanbouw"}
-        header2={"Commercieel Wordpress website voor een aannemer"}
+        darkBackground={darkBackground}
+        header={"Standaard Aanbouw"}
+        subHeader={"Commercieel Wordpress website voor een aannemer"}
         linkHref={"/projects/standaard-aanbouw"}
         linkText={"Bekijk het project"}
       ></Section>
       <Section
         customClassName={"h-screen text-left"}
-        transparent={true}
-        header1={"Kleine projecten"}
-        header2={
+        darkBackground={darkBackground}
+        header={"Kleine projecten"}
+        subHeader={
           "Andere projecten uit diverse achtergronden waaronder Unity-engine, Blender, pure CSS"
         }
         linkHref={"/projects/standaard-aanbouw"}

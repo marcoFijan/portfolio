@@ -1,5 +1,3 @@
-import Li from "../atoms/ListItem.js";
-
 export default function UnorderedList({ data }) {
   return (
     <ul>

@@ -1,5 +1,5 @@
 import { Montserrat } from "next/font/google";
-import YOGwotyContent from "../../templates/ProjectYOGWOTY";
+import ReisartikelenContent from "../../templates/ProjectReisartikelen";
 
 const montserrat = Montserrat({
   weight: ["400", "700", "900"],
@@ -7,10 +7,10 @@ const montserrat = Montserrat({
   variable: "--font-montserrat",
 });
 
-export default function YOGwotyAward() {
+export default function Reisartikelen() {
   return (
     <main className={`bg-bgColorDark ${montserrat.className}`}>
-      <YOGwotyContent />
+      <ReisartikelenContent />
     </main>
   );
 }
