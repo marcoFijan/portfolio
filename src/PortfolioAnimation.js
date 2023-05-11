@@ -6,10 +6,10 @@ import { useFrame } from "@react-three/fiber";
 import { gsap } from "gsap";
 
 export default function PortfolioSection() {
-   return (
+  return (
     <group>
-      <Smartphone/>
-      <Laptop/>
+      <Smartphone />
+      <Laptop />
     </group>
   );
 }

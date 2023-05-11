@@ -13,21 +13,32 @@ import { useGLTF, useTexture, useScroll } from "@react-three/drei";
 import { gsap } from "gsap";
 
 export default function Laptop(...props) {
-  const { nodes, materials } = useGLTF('./models/laptop.glb')
+  const { nodes, materials } = useGLTF("./models/laptop.glb");
   const [laptopScreenPath, setLaptopScreenPath] = useState("./images/p1.jpg");
-  const rotation = {open: {rot: [1.36, 0, 0], pos: [0, 0.12, 0.01]}, close: {rot: [Math.PI / 0.995, 0, 0], pos: [0, 0.122, 0.01]} }
-  const [animationDone, setAnimationDone] = useState(false)
+  // const rotation = {
+  //   open: { rot: [1.36, 0, 0], pos: [0, 0.12, 0.01] },
+  //   close: { rot: [Math.PI / 0.995, 0, 0], pos: [0, 0.122, 0.01] },
+  // };
+  const rotation = {
+    open: { rot: { x: 1.06, y: 0, z: 0 }, pos: { x: 0, y: 0.12, z: 0.01 } },
+    close: {
+      rot: { x: Math.PI / 0.995, y: 0, z: 0 },
+      pos: { x: 0, y: 0.122, z: 0.01 },
+    },
+  };
+  const [animationDone, setAnimationDone] = useState(false);
   const laptopScreenTexture = useTexture(laptopScreenPath);
 
   const laptop = useRef();
+  const screenRot = useRef();
   const scroll = useScroll();
   const timeline = useRef();
   // changePortfolioScrollBottom(true)
 
   // Update timeline
   useFrame((state, delta) => {
-    if(typeof timeline.current !== "undefined")
-    timeline.current.seek(scroll.offset * timeline.current.duration());
+    if (typeof timeline.current !== "undefined")
+      timeline.current.seek(scroll.offset * timeline.current.duration());
     // console.log(scroll.offset <= 0.1)
     // console.log(scroll.offset >= 0.9)
     // console.log(scroll >= 0.9)
@@ -41,11 +52,17 @@ export default function Laptop(...props) {
       defaults: { duration: 1 },
     });
 
-
     // Animation
     timeline.current
+      .to(screenRot.current.rotation, { x: rotation.close.rot.x }, 0)
+      .to(screenRot.current.position, { x: rotation.close.pos.x }, 0)
+      .to(screenRot.current.position, { y: rotation.close.pos.y }, 0)
+      .to(screenRot.current.position, { z: rotation.close.pos.z }, 0)
+      .to(laptop.current.rotation, { x: -Math.PI / 2 }, 0)
+      .to(laptop.current.position, { y: 0 }, 0)
       .to(laptop.current.rotation, { y: -3 }, 2.5)
       .to(laptop.current.position, { x: -6 }, 2.5)
+
       .call(
         () => setLaptopScreenPath("./images/marcoPointing.png"),
 
@@ -83,38 +100,81 @@ export default function Laptop(...props) {
       .to(laptop.current.position, { x: 0 }, 20);
   }, []);
 
-
-
   return (
-    <group {...props} dispose={null} scale={16} ref={laptop}>
+    <group
+      {...props}
+      dispose={null}
+      scale={16}
+      ref={laptop}
+      position={[0, -7, 0]}
+      rotation={[-0.4, 0, 0]}
+    >
       <group scale={0.01}>
-        <group position={[0, 0.02, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
-          <group position={rotation.close.pos} rotation={rotation.close.rot}>
-            <mesh geometry={nodes.Screen_Frame_Screen_Frame_0.geometry} material={materials.Screen_Frame} />
-            <mesh geometry={nodes.Screen_Frame_Screen_Shiny_Border_0.geometry} material={materials.Screen_Shiny_Border} />
-            <mesh geometry={nodes.Screen_Frame_Base_0.geometry} material={materials.Base} />
-             <mesh
+        <group position={[0, 0.02, 0]} rotation={[0, 0, 0]} scale={100}>
+          <group
+            position={[
+              rotation.open.pos.x,
+              rotation.open.pos.y,
+              rotation.open.pos.z,
+            ]}
+            rotation={[
+              rotation.open.rot.x,
+              rotation.open.rot.y,
+              rotation.open.rot.z,
+            ]}
+            ref={screenRot}
+          >
+            <mesh
+              geometry={nodes.Screen_Frame_Screen_Frame_0.geometry}
+              material={materials.Screen_Frame}
+            />
+            <mesh
+              geometry={nodes.Screen_Frame_Screen_Shiny_Border_0.geometry}
+              material={materials.Screen_Shiny_Border}
+            />
+            <mesh
+              geometry={nodes.Screen_Frame_Base_0.geometry}
+              material={materials.Base}
+            />
+            <mesh
               rotation={[0, Math.PI / 2, 0]}
               position={[0, 0.127, 0]}
               scale={0.0198}
-              >
-                <boxGeometry args={[0.01, 10.6, 16]} />
-                <meshStandardMaterial
-                  map={laptopScreenTexture}
-                  roughness={0.3}
-                  metalness={1}
-                  />
-              </mesh>
+            >
+              <boxGeometry args={[0.01, 10.6, 16]} />
+              <meshStandardMaterial
+                map={laptopScreenTexture}
+                roughness={0.3}
+                metalness={1}
+              />
+            </mesh>
           </group>
-          <mesh geometry={nodes.Modern_Slim_Laptop_Base_0.geometry} material={materials.Base} />
-          <mesh geometry={nodes.Modern_Slim_Laptop_Touchpad_0.geometry} material={materials.Touchpad} />
-          <mesh geometry={nodes.Modern_Slim_Laptop_Plastic_Black_Ports_0.geometry} material={materials.Plastic_Black_Ports} />
-          <mesh geometry={nodes.Modern_Slim_Laptop_Lights_0.geometry} material={materials.Lights} />
-          <mesh geometry={nodes.Keyboard_Keyboard_0.geometry} material={materials.Keyboard} position={[-0.07, 0, 0.01]} rotation={[0.02, 0, 0]} />
+          <mesh
+            geometry={nodes.Modern_Slim_Laptop_Base_0.geometry}
+            material={materials.Base}
+          />
+          <mesh
+            geometry={nodes.Modern_Slim_Laptop_Touchpad_0.geometry}
+            material={materials.Touchpad}
+          />
+          <mesh
+            geometry={nodes.Modern_Slim_Laptop_Plastic_Black_Ports_0.geometry}
+            material={materials.Plastic_Black_Ports}
+          />
+          <mesh
+            geometry={nodes.Modern_Slim_Laptop_Lights_0.geometry}
+            material={materials.Lights}
+          />
+          <mesh
+            geometry={nodes.Keyboard_Keyboard_0.geometry}
+            material={materials.Keyboard}
+            position={[-0.07, 0, 0.01]}
+            rotation={[0.02, 0, 0]}
+          />
         </group>
       </group>
     </group>
-  )
+  );
 }
 
-useGLTF.preload('./models/laptop.glb')
+useGLTF.preload("./models/laptop.glb");

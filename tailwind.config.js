@@ -9,14 +9,19 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    colors: {
-      accentColor: "#3fabaf",
-      CTAColor: "#FD5825",
-      bgColorDark: "#222222",
-      bgColorLight: "#F7EFE5",
-      white: "#ffffff",
-    },
     extend: {
+      colors: {
+        accentColor: "#d4a418",
+        CTAColor: "#e745a1",
+        bgColorDark: "#12131a",
+        bgColorDarkSec: "#282b37",
+        bgColorLight: "#e7efff",
+        white: "#ffffff",
+      },
+      boxShadow: {
+        ctaButtonHover: "5px 5px 0px #5c1c40, -5px -5px 0px #ff6eff;",
+        ctaButton: "0px 0px 10px #5c1c40;",
+      },
       padding: {
         articlePadding: "3rem",
       },
@@ -29,34 +34,37 @@ module.exports = {
       fontFamily: {
         montserrat: ["var(--font-montserrat)"],
       },
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+      },
       keyframes: {
         lines: {
           "0%": {
             width: 0,
             height: 0,
-            "border-top": "4px solid #3fabaf",
-            "border-bottom": "4px solid #3fabaf",
+            "border-top": "2px solid #3fabaf",
+            "border-bottom": "2px solid #3fabaf",
           },
           "50%": {
             width: "100%",
             height: 0,
             padding: "0",
-            "border-top": "4px solid #3fabaf",
-            "border-bottom": "4px solid #3fabaf",
+            "border-top": "2px solid #3fabaf",
+            "border-bottom": "2px solid #3fabaf",
           },
           "90%": {
             width: "100%",
             height: "12rem",
-            padding: "2rem 0",
-            "border-top": "8px solid white",
-            "border-bottom": "8px solid white",
+            padding: "1rem 0",
+            "border-top": "4px solid white",
+            "border-bottom": "4px solid white",
           },
           "100%": {
             width: "100%",
 
-            padding: "2rem 0",
-            "border-top": "8px solid white",
-            "border-bottom": "8px solid white",
+            padding: "1rem 0",
+            "border-top": "4px solid white",
+            "border-bottom": "4px solid white",
           },
         },
         becomeVisible: {

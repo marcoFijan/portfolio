@@ -14,6 +14,9 @@ export default function Home() {
     <>
       <Header />
       <main className={`${montserrat.className}`}>
+        {/* <div className="bg-white w-full h-screen absolute top-0 left-0" /> */}
+
+        <div className="bg-gradient-radial from-bgColorDarkSec to-bgColorDark w-full h-screen absolute top-0 left-0" />
         <MainCanvas />
       </main>
     </>

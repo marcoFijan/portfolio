@@ -1,11 +1,12 @@
 import styles from "../styles/heroAnimation.module.css";
+import NextLink from "../atoms/NextLink.js";
 
 export default function HeroSection() {
   return (
-    <section className=" w-screen min-h-screen bg-bgColorDark flex  justify-center items-center flex-col box-border">
-      <div className=" max-w-wrapper mx-auto flex justify-center items-center flex-col">
+    <section className=" w-screen min-h-screen flex  justify-center items-center flex-col box-border">
+      <div className=" w-3/4 max-w-xl mx-auto flex justify-center items-center flex-col">
         {/* Marco SVG */}
-        <div className="flex flex-wrap gap-x-16 gap-y-4 justify-center max-w-fit max-h-fit h-auto mx-8 animate-[lines_3s_ease-in-out_forwards]">
+        <div className="flex gap-10 justify-center animate-[lines_3s_ease-in-out_forwards]">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 287.71 52.7"
@@ -43,17 +44,21 @@ export default function HeroSection() {
             </g>
           </svg>
         </div>
-        <section className="flex gap-x-8 justify-between w-full px-8">
-          <p className="uppercase text-4xl text-white opacity-0 font-black animate-[becomeVisible_1s_ease-in-out_5s_normal_forwards]">
-            #User Experience
-          </p>
-          <p className="uppercase text-4xl text-white opacity-0 font-black animate-[becomeVisible_1s_ease-in-out_5.5s_normal_forwards]">
-            #User Interface
-          </p>
-          <p className="uppercase text-4xl text-white opacity-0 font-black animate-[becomeVisible_1s_ease-in-out_6s_normal_forwards]">
+        <section className="flex flex-wrap flex-row justify-between w-full">
+          <p className="uppercase text-lg text-white justify-self-start opacity-0 font-black animate-[becomeVisible_1s_ease-in-out_5s_normal_forwards]">
             #Frontend
           </p>
+          <p className="uppercase text-lg text-white justify-self-center opacity-0 font-black animate-[becomeVisible_1s_ease-in-out_5.5s_normal_forwards]">
+            #User Interface
+          </p>
+
+          <p className="uppercase text-lg text-white justify-self-end opacity-0 font-black animate-[becomeVisible_1s_ease-in-out_6s_normal_forwards]">
+            #User Experience
+          </p>
         </section>
+        <div className="opacity-0 animate-[becomeVisible_1s_ease-in-out_6.5s_normal_forwards]">
+          <NextLink href={"#contact"} text={"Neem contact op!"} cta={true} />
+        </div>
       </div>
     </section>
   );

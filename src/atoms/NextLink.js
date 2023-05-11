@@ -4,11 +4,14 @@ export default function NextLink({ text, href, cta }) {
   return (
     <div className="w-full grid justify-items-center">
       <Link
-        className={`text-bgColorLight bg-accentColor font-bold px-8 py-3 mt-4 inline-block rounded-full text-center mx-auto place-self-center ${
-          cta && "bg-CTAColor"
+        className={`text-bgColorLight  font-bold px-8 py-3 mt-4 inline-block rounded-lg text-center mx-auto place-self-center shadow-2xl transition duration-500 ease-in-out ${
+          cta
+            ? "bg-gradient-to-br from-[#f562b5] to-[#ac2873] shadow-ctaButton hover:shadow-ctaButtonHover"
+            : "bg-accentColor"
         }`}
         href={href}
       >
+        {/* bg-gradient-to-br from-[#f562b5] to-[#ac2873] */}
         {text}
       </Link>
     </div>

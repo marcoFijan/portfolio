@@ -8,17 +8,11 @@ import AboutSection from "../organisms/AboutSection.js";
 import PortfolioSection from "../organisms/PortfolioSection.js";
 import PortfolioAnimation from "../PortfolioAnimation.js";
 import ContactSection from "../organisms/ContactSection.js";
-import {
-  ScrollControls,
-  Scroll,
-  Environment,
-  Float,
-  useScroll,
-} from "@react-three/drei";
+import { ScrollControls, Scroll, Environment } from "@react-three/drei";
 
 export default function MainCanvas({}) {
   return (
-    <div className="bg-bgColorDark w-full h-screen">
+    <div className="w-full h-screen">
       {/* <div className="w-full h-screen"> */}
       <Canvas
         shadows
@@ -28,6 +22,8 @@ export default function MainCanvas({}) {
         <ambientLight color={"white"} intensity={0.3} />
         <ScrollControls pages={12} damping={0}>
           <Environment blur={0} preset="warehouse" />
+          <color attach="background" args={"#f5efe6"} />
+
           <PortfolioAnimation />
           <Scroll></Scroll>
           <Scroll html className="w-full">

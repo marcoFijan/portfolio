@@ -17,14 +17,14 @@ export default function Smartphone({ pos, rot, ...props }) {
   let [smartScreenPath, setSmartScreenPath] = useState("./images/p1.jpg");
   const smartScreen = useTexture(smartScreenPath);
 
-  const laptop = useRef();
+  const smartphone = useRef();
   const scroll = useScroll();
   const timeline = useRef();
 
   // Update timeline
   useFrame((state, delta) => {
-    if(typeof timeline.current !== "undefined")
-    timeline.current.seek(scroll.offset * timeline.current.duration());
+    if (typeof timeline.current !== "undefined")
+      timeline.current.seek(scroll.offset * timeline.current.duration());
   });
 
   useEffect(() => {
@@ -35,8 +35,10 @@ export default function Smartphone({ pos, rot, ...props }) {
 
     // Animation
     timeline.current
-      .to(laptop.current.rotation, { y: -3 }, 2)
-      .to(laptop.current.position, { x: -8 }, 2)
+      .to(smartphone.current.rotation, { y: 0 }, 0)
+      .to(smartphone.current.position, { x: 0 }, 0)
+      .to(smartphone.current.rotation, { y: -3 }, 2)
+      .to(smartphone.current.position, { x: -8 }, 2)
       .call(
         () => setSmartScreenPath("./images/marcoPointing.png"),
 
@@ -44,10 +46,10 @@ export default function Smartphone({ pos, rot, ...props }) {
         null,
         "<2"
       )
-      .to(laptop.current.rotation, { y: -5 }, 4)
+      .to(smartphone.current.rotation, { y: -5 }, 4)
 
-      .to(laptop.current.rotation, { y: 1 }, 8)
-      .to(laptop.current.position, { x: -1 }, 8)
+      .to(smartphone.current.rotation, { y: 1 }, 8)
+      .to(smartphone.current.position, { x: -1 }, 8)
       .call(
         function () {
           setSmartScreenPath("./images/p1.jpg");
@@ -57,21 +59,21 @@ export default function Smartphone({ pos, rot, ...props }) {
         "<1"
       )
 
-      .to(laptop.current.rotation, { y: 0 }, 11)
-      .to(laptop.current.rotation, { x: 1 }, 11)
-      .to(laptop.current.position, { x: 0 }, 11)
+      .to(smartphone.current.rotation, { y: 0 }, 11)
+      .to(smartphone.current.rotation, { x: 1 }, 11)
+      .to(smartphone.current.position, { x: 0 }, 11)
 
-      .to(laptop.current.rotation, { y: 0 }, 13)
-      .to(laptop.current.rotation, { x: -1 }, 13)
-      .to(laptop.current.position, { x: 0 }, 13)
+      .to(smartphone.current.rotation, { y: 0 }, 13)
+      .to(smartphone.current.rotation, { x: -1 }, 13)
+      .to(smartphone.current.position, { x: 0 }, 13)
 
-      .to(laptop.current.rotation, { y: 0 }, 16)
-      .to(laptop.current.rotation, { x: 0 }, 16)
-      .to(laptop.current.position, { x: 0 }, 16)
+      .to(smartphone.current.rotation, { y: 0 }, 16)
+      .to(smartphone.current.rotation, { x: 0 }, 16)
+      .to(smartphone.current.position, { x: 0 }, 16)
 
-      .to(laptop.current.rotation, { y: 0 }, 20)
-      .to(laptop.current.rotation, { x: 0 }, 20)
-      .to(laptop.current.position, { x: 0 }, 20);
+      .to(smartphone.current.rotation, { y: 0 }, 20)
+      .to(smartphone.current.rotation, { x: 0 }, 20)
+      .to(smartphone.current.position, { x: 0 }, 20);
 
     // timeline.current.set(smartScreenPath, "./images/marcoPointing.png", 4);
   }, []);
@@ -81,11 +83,12 @@ export default function Smartphone({ pos, rot, ...props }) {
       {...props}
       dispose={null}
       scale={1.3}
-      ref={laptop}
-      position={pos ? pos : [0, 0, 0]}
-      rotation={rot ? rot : [0, 0, 0]}
+      ref={smartphone}
+      position={[6, 1, 0]}
+      rotation={[0, 0, 0.3]}
     >
-      <group rotation={[-1.91, 0.19, -0.49]}>
+      {/* [-1.91, 0.19, -0.49] */}
+      <group rotation={[-Math.PI / 2, 0, 0]}>
         <group rotation={[Math.PI / 2, 0, 0]}>
           <group rotation={[Math.PI / 2, 0, 0]}>
             <mesh
