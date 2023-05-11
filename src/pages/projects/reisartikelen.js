@@ -1,5 +1,5 @@
 import { Montserrat } from "next/font/google";
-import ReisartikelenContent from "../../templates/ProjectReisartikelen";
+import ReisartikelenContent from "../../pageContents/ProjectReisartikelen";
 
 const montserrat = Montserrat({
   weight: ["400", "700", "900"],

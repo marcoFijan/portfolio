@@ -1,5 +1,7 @@
 import { Montserrat } from "next/font/google";
-import ProjectsOverview from "../../templates/ProjectsOverview.js";
+import ProjectsOverview from "../../pageContents/ProjectsOverview.js";
+import Header from "../../organisms/Header.js";
+import Footer from "../../organisms/Footer.js";
 
 const montserrat = Montserrat({
   weight: ["400", "700", "900"],
@@ -9,8 +11,12 @@ const montserrat = Montserrat({
 
 export default function Projects() {
   return (
-    <main className={`bg-bgColorDark ${montserrat.className}`}>
-      <ProjectsOverview />
-    </main>
+    <>
+      <Header />
+      <main className={`bg-bgColorDark ${montserrat.className}`}>
+        <ProjectsOverview />
+      </main>
+      <Footer />
+    </>
   );
 }

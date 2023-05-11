@@ -1,5 +1,5 @@
 import { Montserrat } from "next/font/google";
-import YODashboardContent from "../../templates/ProjectYODashboardClients";
+import YODashboardContent from "../../pageContents/ProjectYODashboardClients";
 
 const montserrat = Montserrat({
   weight: ["400", "700", "900"],

@@ -1,5 +1,5 @@
 import { Montserrat } from "next/font/google";
-import RingRingContent from "../../templates/ProjectRingRing";
+import RingRingContent from "../../pageContents/ProjectRingRing";
 
 const montserrat = Montserrat({
   weight: ["400", "700", "900"],
