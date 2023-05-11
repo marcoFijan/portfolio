@@ -21,6 +21,8 @@ module.exports = {
       boxShadow: {
         ctaButtonHover: "5px 5px 0px #5c1c40, -5px -5px 0px #ff6eff;",
         ctaButton: "0px 0px 10px #5c1c40;",
+        buttonHover: "5px 5px 0px #0a0b0c, -5px -5px 0px #5d6583;",
+        button: "0px 0px 10px #0a0b0c;",
       },
       padding: {
         articlePadding: "3rem",
