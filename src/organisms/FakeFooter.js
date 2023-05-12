@@ -2,13 +2,9 @@ import Link from "next/link";
 import Image from "next/link";
 import LogoImg from "../../public/images/Logo.svg";
 
-export default function Footer({ homePage }) {
+export default function Footer() {
   return (
-    <footer
-      className={`bg-bgColorLight text-black h-48 ${
-        homePage && "absolute -z-50 top-full"
-      }`}
-    >
+    <article className="bg-bgColorLight text-black h-50%">
       <ul className="grid, justify-evenly">
         <li>
           <Link
@@ -46,6 +42,6 @@ export default function Footer({ homePage }) {
           </Link>
         </li>
       </ul>
-    </footer>
+    </article>
   );
 }

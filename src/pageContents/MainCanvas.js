@@ -6,6 +6,7 @@ import { useState, useRef, useEffect } from "react";
 import HeroSection from "../organisms/HeroSection.js";
 import AboutSection from "../organisms/AboutSection.js";
 import PortfolioSection from "../organisms/PortfolioSection.js";
+import Footer from "../organisms/FakeFooter.js";
 import PortfolioAnimation from "../PortfolioAnimation.js";
 import ContactSection from "../organisms/ContactSection.js";
 import { ScrollControls, Scroll, Environment } from "@react-three/drei";
@@ -22,19 +23,19 @@ export default function MainCanvas({}) {
         <ambientLight color={"white"} intensity={0.3} />
         <ScrollControls pages={12} damping={0}>
           <Environment blur={0} preset="warehouse" />
-          <color attach="background" args={"#f5efe6"} />
-
           <PortfolioAnimation />
           <Scroll></Scroll>
           <Scroll html className="w-full">
             {/* Introduction animation [1 page] */}
             <HeroSection />
-            {/* Information about me [1 page] */}
+            {/* Information about me [2 page] */}
             <AboutSection />
-            {/* Overview with a couple of projects I am proud of [6 pages] */}
+            {/* Overview with a couple of projects I am proud of [7 pages] */}
             <PortfolioSection />
-            {/* Contactpage with a form [1 page] */}
+            {/* Contactpage with a form [1.5 page] */}
             <ContactSection />
+            {/* Footer [0.5 page] */}
+            <Footer />
           </Scroll>
         </ScrollControls>
       </Canvas>

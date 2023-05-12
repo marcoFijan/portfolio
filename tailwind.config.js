@@ -27,6 +27,17 @@ module.exports = {
       padding: {
         articlePadding: "3rem",
       },
+      margin: {
+        "1/2-height": "50vh",
+        "3/5-height": "65vh",
+      },
+      backgroundSize: {
+        "100%": "100% 100%",
+      },
+      height: {
+        "50%": "50vh",
+      },
+
       maxWidth: {
         wrapper: "80rem",
       },
