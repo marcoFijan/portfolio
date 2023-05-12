@@ -12,6 +12,30 @@ import ContactSection from "../organisms/ContactSection.js";
 import { ScrollControls, Scroll, Environment } from "@react-three/drei";
 
 export default function MainCanvas({}) {
+  const [screenSize, setScreenSize] = useState(0);
+  const [pages, setPages] = useState(0);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      console.log(window.innerWidth);
+      const updateDimension = () => {
+        setScreenSize(window.innerWidth);
+      };
+      window.addEventListener("resize", updateDimension);
+
+      if (window.innerWidth <= 832) {
+        console.log("NUUUUUUUU");
+        setPages(13);
+      } else {
+        setPages(12);
+      }
+
+      return () => {
+        window.removeEventListener("resize", updateDimension);
+      };
+    }
+  }, [screenSize]);
+
   return (
     <div className="w-full h-screen">
       {/* <div className="w-full h-screen"> */}
@@ -21,7 +45,7 @@ export default function MainCanvas({}) {
         camera={{ position: [0, 0, 7] }}
       >
         <ambientLight color={"white"} intensity={0.3} />
-        <ScrollControls pages={12} damping={0}>
+        <ScrollControls pages={pages} damping={0}>
           <Environment blur={0} preset="warehouse" />
           <PortfolioAnimation />
           <Scroll></Scroll>

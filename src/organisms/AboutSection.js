@@ -8,7 +8,7 @@ export default function AboutSection() {
     <>
       <div id="splitterStart"></div>
       <article className="w-full bg-bgColorLight -z-40">
-        <div className="max-w-wrapper mx-auto w-full grid gap-8 grid-cols-fluid px-8 mb-1/2-height h-screen items-center">
+        <div className="max-w-wrapper mx-auto w-full grid gap-8 grid-cols-fluid px-8 mb-1/2-height h-screenx2 md:h-screen items-center">
           <section>
             <Section
               darkBackground={false}
@@ -20,12 +20,9 @@ export default function AboutSection() {
               paragraph1b={
                 "Naast mijn passie voor het ontwerpen en developen van websites, kan ik ook erg genieten van rust, natuur en dieren. Daarnaast spaar ik edelstenen en minarelen en besteed ik mijn vrije tijd ook graag aan videogames met goed verhaal. Hier kan ik helemaal in verdwalen."
               }
+              linkHref={"https://github.com/marcoFijan"}
+              linkText={"Bekijk mijn github"}
             ></Section>
-            <NextLink
-              href={"https://github.com/marcoFijan"}
-              text={"Bekijk mijn github"}
-              cta={true}
-            />
           </section>
           <div className="w-auto h-auto z-0">
             <Image
