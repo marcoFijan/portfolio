@@ -41,23 +41,15 @@ export default function PortfolioSection() {
       <Section
         customClassName={"h-screen text-left"}
         darkBackground={darkBackground}
-        header={"Ring-Ring Dashboard"}
-        subHeader={"Datavisualisatie project met D3"}
-        linkHref={"/projects/ring-ring-dashboard"}
-        linkText={"Bekijk het project"}
-      ></Section>
-      <Section
-        customClassName={"h-screen text-right"}
-        darkBackground={darkBackground}
         header={"Standaard Aanbouw"}
         subHeader={"Commercieel Wordpress website voor een aannemer"}
         linkHref={"/projects/standaard-aanbouw"}
         linkText={"Bekijk het project"}
       ></Section>
       <Section
-        customClassName={"h-screen text-left"}
+        customClassName={"h-screen text-right"}
         darkBackground={darkBackground}
-        header={"Kleine projecten"}
+        header={"Andere projecten"}
         subHeader={
           "Andere projecten uit diverse achtergronden waaronder Unity-engine, Blender, pure CSS"
         }

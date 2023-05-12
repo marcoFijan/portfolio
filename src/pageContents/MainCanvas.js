@@ -17,17 +17,15 @@ export default function MainCanvas({}) {
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      console.log(window.innerWidth);
       const updateDimension = () => {
         setScreenSize(window.innerWidth);
       };
       window.addEventListener("resize", updateDimension);
 
       if (window.innerWidth <= 832) {
-        console.log("NUUUUUUUU");
-        setPages(13);
-      } else {
         setPages(12);
+      } else {
+        setPages(11);
       }
 
       return () => {
@@ -54,7 +52,7 @@ export default function MainCanvas({}) {
             <HeroSection />
             {/* Information about me [2 page] */}
             <AboutSection />
-            {/* Overview with a couple of projects I am proud of [7 pages] */}
+            {/* Overview with a couple of projects I am proud of [6 pages] */}
             <PortfolioSection />
             {/* Contactpage with a form [1.5 page] */}
             <ContactSection />

@@ -52,48 +52,138 @@ export default function Laptop(...props) {
       defaults: { duration: 1 },
     });
 
+    // Screen rotation values
+    const rotation = {
+      open: { rot: { x: 1.06, y: 0, z: 0 }, pos: { x: 0, y: 0.12, z: 0.01 } },
+      close: {
+        rot: { x: Math.PI / 0.995, y: 0, z: 0 },
+        pos: { x: 0, y: 0.122, z: 0.01 },
+      },
+    };
+
+    const startpositions = {
+      hero: 0,
+      portfolioIntro: 5,
+      firstProject: 7,
+      secondProject: 8,
+      thirdProject: 10,
+      fourthProject: 12,
+      fithProject: 14,
+      otherProjects: 16,
+    };
+
     // Animation
     timeline.current
-      .to(screenRot.current.rotation, { x: rotation.close.rot.x }, 0)
-      .to(screenRot.current.position, { x: rotation.close.pos.x }, 0)
-      .to(screenRot.current.position, { y: rotation.close.pos.y }, 0)
-      .to(screenRot.current.position, { z: rotation.close.pos.z }, 0)
-      .to(laptop.current.rotation, { x: -Math.PI / 2 }, 0)
-      .to(laptop.current.position, { y: 0 }, 0)
-      .to(laptop.current.rotation, { y: -3 }, 2.5)
-      .to(laptop.current.position, { x: -6 }, 2.5)
-
-      .call(
-        () => setLaptopScreenPath("./images/marcoPointing.png"),
-
-        [],
-        null,
-        "<2"
+      // OPENINGSANIMATION
+      .to(
+        screenRot.current.rotation,
+        { x: rotation.close.rot.x },
+        startpositions.hero
       )
-      .to(laptop.current.rotation, { y: -5 }, 4.5)
-
-      .to(laptop.current.rotation, { y: 1 }, 8)
-      .to(laptop.current.position, { x: -1 }, 8)
-      .call(
-        function () {
-          setLaptopScreenPath("./images/p1.jpg");
-        },
-        [],
-        null,
-        "<1"
+      .to(
+        screenRot.current.rotation,
+        { y: rotation.close.rot.y },
+        startpositions.hero
       )
+      .to(
+        screenRot.current.rotation,
+        { z: rotation.close.rot.z },
+        startpositions.hero
+      )
+      .to(
+        screenRot.current.position,
+        { x: rotation.close.pos.x },
+        startpositions.hero
+      )
+      .to(
+        screenRot.current.position,
+        { y: rotation.close.pos.y },
+        startpositions.hero
+      )
+      .to(
+        screenRot.current.position,
+        { z: rotation.close.pos.z },
+        startpositions.hero
+      )
+      .to(laptop.current.rotation, { x: -Math.PI / 2 }, startpositions.hero)
+      .to(laptop.current.position, { y: 0 }, startpositions.hero)
+      .to(laptop.current.position, { x: -2 }, startpositions.portfolioIntro)
+      .to(laptop.current.position, { y: -2 }, startpositions.portfolioIntro)
+      // FIRST PROJECT
+      .to(
+        screenRot.current.rotation,
+        { x: rotation.open.rot.x },
+        startpositions.firstProject
+      )
+      .to(
+        screenRot.current.rotation,
+        { y: rotation.open.rot.y },
+        startpositions.firstProject
+      )
+      .to(
+        screenRot.current.rotation,
+        { z: rotation.open.rot.z },
+        startpositions.firstProject
+      )
+      .to(
+        screenRot.current.position,
+        { x: rotation.open.pos.x },
+        startpositions.firstProject
+      )
+      .to(
+        screenRot.current.position,
+        { y: rotation.open.pos.y },
+        startpositions.firstProject
+      )
+      .to(
+        screenRot.current.position,
+        { z: rotation.open.pos.z },
+        startpositions.firstProject
+      )
+      .to(laptop.current.position, { x: -3 }, startpositions.firstProject)
+      .to(
+        laptop.current.rotation,
+        { z: Math.PI / 4 },
+        startpositions.firstProject
+      )
+      // .to(laptop.current.rotation, { x: -0.2 }, startpositions.firstProject)
 
-      .to(laptop.current.rotation, { y: 0 }, 11)
-      .to(laptop.current.rotation, { x: 1 }, 11)
-      .to(laptop.current.position, { x: 0 }, 11)
+      // .to(laptop.current.rotation, { z: 0.6 }, startpositions.firstProject)
 
-      .to(laptop.current.rotation, { y: 0 }, 13)
-      .to(laptop.current.rotation, { x: -1 }, 13)
-      .to(laptop.current.position, { x: 0 }, 13)
+      // .to(laptop.current.rotation, { y: -3 }, 2.5)
+      // .to(laptop.current.position, { x: -6 }, 2.5)
 
-      .to(laptop.current.rotation, { y: 0 }, 16)
-      .to(laptop.current.rotation, { x: 0 }, 16)
-      .to(laptop.current.position, { x: 0 }, 16)
+      // .call(
+      //   () => setLaptopScreenPath("./images/marcoPointing.png"),
+
+      //   [],
+      //   null,
+      //   "<2"
+      // )
+      // .to(laptop.current.rotation, { y: -5 }, 4.5)
+
+      // .to(laptop.current.rotation, { y: 1 }, 8)
+      // .to(laptop.current.position, { x: -1 }, 8)
+      // .call(
+      //   function () {
+      //     setLaptopScreenPath("./images/p1.jpg");
+      //   },
+      //   [],
+      //   null,
+      //   "<1"
+      // )
+
+      // .to(laptop.current.rotation, { y: 0 }, 11)
+      // .to(laptop.current.rotation, { x: 1 }, 11)
+      // .to(laptop.current.position, { x: 0 }, 11)
+
+      // .to(laptop.current.rotation, { y: 0 }, 13)
+      // .to(laptop.current.rotation, { x: -1 }, 13)
+      // .to(laptop.current.position, { x: 0 }, 13)
+
+      // .to(laptop.current.rotation, { y: 0 }, 16)
+      // .to(laptop.current.rotation, { x: 0 }, 16)
+      // .to(laptop.current.position, { x: 0 }, 16)
 
       .to(laptop.current.rotation, { y: 0 }, 20)
       .to(laptop.current.rotation, { x: 0 }, 20)
