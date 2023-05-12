@@ -12,6 +12,13 @@ import { useFrame } from "@react-three/fiber";
 import { useGLTF, useTexture, useScroll } from "@react-three/drei";
 import { gsap } from "gsap";
 
+// IMAGES
+import KBOReeshofThumbnail from "../public/images/Thumbnails/KBOReeshofThumb.png";
+import StandaardAanbouwThumbnail from "../public/images/Thumbnails/StandaardAanbouwThumb.png";
+import YODashboardThumbnail from "../public/images/Thumbnails/YODashboardThumb.png";
+import YOGwotyThumbnail from "../public/images/Thumbnails/YOGwotyThumb.png";
+// import KBOReeshofThumbnail from "../public/images/Thumbnails/KBOReeshofThumb.png";
+
 export default function Laptop(...props) {
   const { nodes, materials } = useGLTF("./models/laptop.glb");
   const [laptopScreenPath, setLaptopScreenPath] = useState("./images/p1.jpg");
@@ -19,12 +26,10 @@ export default function Laptop(...props) {
   //   open: { rot: [1.36, 0, 0], pos: [0, 0.12, 0.01] },
   //   close: { rot: [Math.PI / 0.995, 0, 0], pos: [0, 0.122, 0.01] },
   // };
-  const rotation = {
-    open: { rot: { x: 1.06, y: 0, z: 0 }, pos: { x: 0, y: 0.12, z: 0.01 } },
-    close: {
-      rot: { x: Math.PI / 0.995, y: 0, z: 0 },
-      pos: { x: 0, y: 0.122, z: 0.01 },
-    },
+
+  const startScreenPosition = {
+    rot: { x: 1.06, y: 0, z: 0 },
+    pos: { x: 0, y: 0.12, z: 0.01 },
   };
   const [animationDone, setAnimationDone] = useState(false);
   const laptopScreenTexture = useTexture(laptopScreenPath);
@@ -39,11 +44,21 @@ export default function Laptop(...props) {
   useFrame((state, delta) => {
     if (typeof timeline.current !== "undefined")
       timeline.current.seek(scroll.offset * timeline.current.duration());
-    // console.log(scroll.offset <= 0.1)
-    // console.log(scroll.offset >= 0.9)
-    // console.log(scroll >= 0.9)
-    // changePortfolioScrollTop(scroll <= 0.1)
-    // changePortfolioScrollTop(scroll >= 0.1)
+    // Hardcoded screenchange since .call function from gsap has performance issues
+    if (scroll.offset < 0.09) {
+      setLaptopScreenPath("./images/Thumbnails/codeThumb.png");
+    } else if ((scroll.offset >= 0.09) & (scroll.offset <= 0.4)) {
+      setLaptopScreenPath("./images/Thumbnails/KBOReeshofThumb.png");
+    } else if ((scroll.offset >= 0.41) & (scroll.offset <= 0.43)) {
+      setLaptopScreenPath("./images/Thumbnails/YODashboardThumb.png");
+    } else if ((scroll.offset >= 0.526) & (scroll.offset <= 0.6)) {
+      setLaptopScreenPath("./images/Thumbnails/YOGwotyThumb.png");
+    } else if ((scroll.offset >= 0.601) & (scroll.offset <= 0.621)) {
+      setLaptopScreenPath("./images/Thumbnails/StandaardAanbouwThumb.png");
+    } else if ((scroll.offset >= 0.697) & (scroll.offset <= 0.71)) {
+      setLaptopScreenPath("./images/Thumbnails/StandaardAanbouwThumb.png");
+    }
+    console.log(scroll.offset);
   });
 
   useEffect(() => {
@@ -54,7 +69,11 @@ export default function Laptop(...props) {
 
     // Screen rotation values
     const rotation = {
-      open: { rot: { x: 1.06, y: 0, z: 0 }, pos: { x: 0, y: 0.12, z: 0.01 } },
+      openStart: {
+        rot: { x: 1.06, y: 0, z: 0 },
+        pos: { x: 0, y: 0.12, z: 0.01 },
+      },
+      open: { rot: { x: 1.56, y: 0, z: 0 }, pos: { x: 0, y: 0.12, z: 0.01 } },
       close: {
         rot: { x: Math.PI / 0.995, y: 0, z: 0 },
         pos: { x: 0, y: 0.122, z: 0.01 },
@@ -65,11 +84,14 @@ export default function Laptop(...props) {
       hero: 0,
       portfolioIntro: 5,
       firstProject: 7,
-      secondProject: 8,
-      thirdProject: 10,
-      fourthProject: 12,
-      fithProject: 14,
-      otherProjects: 16,
+      firstProjectEnd: 8,
+      secondProject: 9,
+      secondProjectEnd: 10,
+      thirdProject: 11,
+      thirdProjectEnd: 12,
+      fourthProject: 13,
+      fourthProjectEnd: 14,
+      otherProjects: 15,
     };
 
     // Animation
@@ -106,9 +128,10 @@ export default function Laptop(...props) {
         startpositions.hero
       )
       .to(laptop.current.rotation, { x: -Math.PI / 2 }, startpositions.hero)
-      .to(laptop.current.position, { y: 0 }, startpositions.hero)
-      .to(laptop.current.position, { x: -2 }, startpositions.portfolioIntro)
+      .to(laptop.current.position, { y: -2 }, startpositions.hero)
+      .to(laptop.current.position, { x: -20 }, 3.5)
       .to(laptop.current.position, { y: -2 }, startpositions.portfolioIntro)
+      .to(laptop.current.position, { x: 0 }, startpositions.portfolioIntro)
       // FIRST PROJECT
       .to(
         screenRot.current.rotation,
@@ -140,12 +163,307 @@ export default function Laptop(...props) {
         { z: rotation.open.pos.z },
         startpositions.firstProject
       )
-      .to(laptop.current.position, { x: -3 }, startpositions.firstProject)
+      .to(laptop.current.position, { x: -5 }, startpositions.firstProject)
       .to(
         laptop.current.rotation,
         { z: Math.PI / 4 },
         startpositions.firstProject
       )
+      // First to second project transition
+      .to(
+        screenRot.current.rotation,
+        { x: rotation.close.rot.x },
+        startpositions.firstProjectEnd
+      )
+      .to(
+        screenRot.current.rotation,
+        { y: rotation.close.rot.y },
+        startpositions.firstProjectEnd
+      )
+      .to(
+        screenRot.current.rotation,
+        { z: rotation.close.rot.z },
+        startpositions.firstProjectEnd
+      )
+      .to(
+        screenRot.current.position,
+        { x: rotation.close.pos.x },
+        startpositions.firstProjectEnd
+      )
+      .to(
+        screenRot.current.position,
+        { y: rotation.close.pos.y },
+        startpositions.firstProjectEnd
+      )
+      .to(
+        screenRot.current.position,
+        { z: rotation.close.pos.z },
+        startpositions.firstProjectEnd
+      )
+      // .call(
+      //   () => {
+      //     this.props.dispatch(
+      //       setLaptopScreenPath("./images/Thumbnails/YODashboardThumb.png")
+      //     );
+      //   },
+      //   [],
+      //   null,
+      //   ">"
+      // )
+      // .call(
+      //   () => {
+      //     setLaptopScreenPath("./images/Thumbnails/YODashboardThumb.png");
+      //   },
+      //   [],
+      //   null,
+      //   ">"
+      // )
+      .to(laptop.current.position, { x: 0 }, startpositions.firstProjectEnd)
+      .to(laptop.current.rotation, { z: 0 }, startpositions.firstProjectEnd)
+      // SECOND PROJECT
+      .to(
+        screenRot.current.rotation,
+        { x: rotation.open.rot.x },
+        startpositions.secondProject
+      )
+      .to(
+        screenRot.current.rotation,
+        { y: rotation.open.rot.y },
+        startpositions.secondProject
+      )
+      .to(
+        screenRot.current.rotation,
+        { z: rotation.open.rot.z },
+        startpositions.secondProject
+      )
+      .to(
+        screenRot.current.position,
+        { x: rotation.open.pos.x },
+        startpositions.secondProject
+      )
+      .to(
+        screenRot.current.position,
+        { y: rotation.open.pos.y },
+        startpositions.secondProject
+      )
+      .to(
+        screenRot.current.position,
+        { z: rotation.open.pos.z },
+        startpositions.secondProject
+      )
+      .to(laptop.current.position, { x: 5 }, startpositions.secondProject)
+      .to(
+        laptop.current.rotation,
+        { z: -Math.PI / 4 },
+        startpositions.secondProject
+      )
+      // Second to third project transition
+      .to(
+        screenRot.current.rotation,
+        { x: rotation.close.rot.x },
+        startpositions.secondProjectEnd
+      )
+      .to(
+        screenRot.current.rotation,
+        { y: rotation.close.rot.y },
+        startpositions.secondProjectEnd
+      )
+      .to(
+        screenRot.current.rotation,
+        { z: rotation.close.rot.z },
+        startpositions.secondProjectEnd
+      )
+      .to(
+        screenRot.current.position,
+        { x: rotation.close.pos.x },
+        startpositions.secondProjectEnd
+      )
+      .to(
+        screenRot.current.position,
+        { y: rotation.close.pos.y },
+        startpositions.secondProjectEnd
+      )
+      .to(
+        screenRot.current.position,
+        { z: rotation.close.pos.z },
+        startpositions.secondProjectEnd
+      )
+      // .call(
+      //   () => {
+      //     setLaptopScreenPath("./images/Thumbnails/YOGwotyThumb.png");
+      //   },
+      //   [],
+      //   null,
+      //   "<1"
+      // )
+      // .call(
+      //   () => {
+      //     setLaptopScreenPath("./images/Thumbnails/YOGwotyThumb.png");
+      //   },
+      //   [],
+      //   null,
+      //   "<1"
+      // )
+      .to(laptop.current.position, { x: 0 }, startpositions.secondProjectEnd)
+      .to(laptop.current.rotation, { z: 0 }, startpositions.secondProjectEnd)
+
+      // THIRD PROJECT
+      .to(
+        screenRot.current.rotation,
+        { x: rotation.open.rot.x },
+        startpositions.thirdProject
+      )
+      .to(
+        screenRot.current.rotation,
+        { y: rotation.open.rot.y },
+        startpositions.thirdProject
+      )
+      .to(
+        screenRot.current.rotation,
+        { z: rotation.open.rot.z },
+        startpositions.thirdProject
+      )
+      .to(
+        screenRot.current.position,
+        { x: rotation.open.pos.x },
+        startpositions.thirdProject
+      )
+      .to(
+        screenRot.current.position,
+        { y: rotation.open.pos.y },
+        startpositions.thirdProject
+      )
+      .to(
+        screenRot.current.position,
+        { z: rotation.open.pos.z },
+        startpositions.thirdProject
+      )
+      .to(laptop.current.position, { x: -5 }, startpositions.thirdProject)
+      .to(
+        laptop.current.rotation,
+        { z: Math.PI / 4 },
+        startpositions.thirdProject
+      )
+      // Third to fourth project transition
+      .to(
+        screenRot.current.rotation,
+        { x: rotation.close.rot.x },
+        startpositions.thirdProjectEnd
+      )
+      .to(
+        screenRot.current.rotation,
+        { y: rotation.close.rot.y },
+        startpositions.thirdProjectEnd
+      )
+      .to(
+        screenRot.current.rotation,
+        { z: rotation.close.rot.z },
+        startpositions.thirdProjectEnd
+      )
+      .to(
+        screenRot.current.position,
+        { x: rotation.close.pos.x },
+        startpositions.thirdProjectEnd
+      )
+      .to(
+        screenRot.current.position,
+        { y: rotation.close.pos.y },
+        startpositions.thirdProjectEnd
+      )
+      .to(
+        screenRot.current.position,
+        { z: rotation.close.pos.z },
+        startpositions.thirdProjectEnd
+      )
+      // .call(
+      //   () => {
+      //     setLaptopScreenPath("./images/Thumbnails/StandaardAanbouwThumb.png");
+      //   },
+      //   [],
+      //   null,
+      //   "<1"
+      // )
+      // .call(
+      //   () => {
+      //     setLaptopScreenPath("./images/Thumbnails/StandaardAanbouwThumb.png");
+      //   },
+      //   [],
+      //   null,
+      //   "<1"
+      // )
+      .to(laptop.current.position, { x: 0 }, startpositions.thirdProjectEnd)
+      .to(laptop.current.rotation, { z: 0 }, startpositions.thirdProjectEnd)
+      // FOURTH PROJECT
+      .to(
+        screenRot.current.rotation,
+        { x: rotation.open.rot.x },
+        startpositions.fourthProject
+      )
+      .to(
+        screenRot.current.rotation,
+        { y: rotation.open.rot.y },
+        startpositions.fourthProject
+      )
+      .to(
+        screenRot.current.rotation,
+        { z: rotation.open.rot.z },
+        startpositions.fourthProject
+      )
+      .to(
+        screenRot.current.position,
+        { x: rotation.open.pos.x },
+        startpositions.fourthProject
+      )
+      .to(
+        screenRot.current.position,
+        { y: rotation.open.pos.y },
+        startpositions.fourthProject
+      )
+      .to(
+        screenRot.current.position,
+        { z: rotation.open.pos.z },
+        startpositions.fourthProject
+      )
+      .to(laptop.current.position, { x: 5 }, startpositions.fourthProject)
+      .to(
+        laptop.current.rotation,
+        { z: -Math.PI / 4 },
+        startpositions.fourthProject
+      )
+      // Fourth to other project transition
+      .to(
+        screenRot.current.rotation,
+        { x: rotation.close.rot.x },
+        startpositions.fourthProjectEnd
+      )
+      .to(
+        screenRot.current.rotation,
+        { y: rotation.close.rot.y },
+        startpositions.fourthProjectEnd
+      )
+      .to(
+        screenRot.current.rotation,
+        { z: rotation.close.rot.z },
+        startpositions.fourthProjectEnd
+      )
+      .to(
+        screenRot.current.position,
+        { x: rotation.close.pos.x },
+        startpositions.fourthProjectEnd
+      )
+      .to(
+        screenRot.current.position,
+        { y: rotation.close.pos.y },
+        startpositions.fourthProjectEnd
+      )
+      .to(
+        screenRot.current.position,
+        { z: rotation.close.pos.z },
+        startpositions.fourthProjectEnd
+      )
+      .to(laptop.current.position, { x: 0 }, startpositions.fourthProjectEnd)
+      .to(laptop.current.rotation, { z: 0 }, startpositions.fourthProjectEnd)
+
       // .to(laptop.current.rotation, { x: -0.2 }, startpositions.firstProject)
 
       // .to(laptop.current.rotation, { z: 0.6 }, startpositions.firstProject)
@@ -203,14 +521,14 @@ export default function Laptop(...props) {
         <group position={[0, 0.02, 0]} rotation={[0, 0, 0]} scale={100}>
           <group
             position={[
-              rotation.open.pos.x,
-              rotation.open.pos.y,
-              rotation.open.pos.z,
+              startScreenPosition.pos.x,
+              startScreenPosition.pos.y,
+              startScreenPosition.pos.z,
             ]}
             rotation={[
-              rotation.open.rot.x,
-              rotation.open.rot.y,
-              rotation.open.rot.z,
+              startScreenPosition.rot.x,
+              startScreenPosition.rot.y,
+              startScreenPosition.rot.z,
             ]}
             ref={screenRot}
           >
@@ -235,7 +553,7 @@ export default function Laptop(...props) {
               <meshStandardMaterial
                 map={laptopScreenTexture}
                 roughness={0.3}
-                metalness={1}
+                metalness={0.3}
               />
             </mesh>
           </group>
