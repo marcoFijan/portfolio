@@ -1,5 +1,5 @@
-import Smartphone from "./Smartphone.js";
-import Laptop from "./Laptop.js";
+import Smartphone from "./models/Smartphone.js";
+import Laptop from "./models/Laptop.js";
 
 import React, { useRef, useEffect, useState } from "react";
 import { useFrame } from "@react-three/fiber";

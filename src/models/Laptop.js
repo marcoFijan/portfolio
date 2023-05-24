@@ -12,23 +12,11 @@ import { useFrame } from "@react-three/fiber";
 import { useGLTF, useTexture, useScroll } from "@react-three/drei";
 import { gsap } from "gsap";
 
-// IMAGES
-import KBOReeshofThumbnail from "../public/images/Thumbnails/KBOReeshofThumb.png";
-import StandaardAanbouwThumbnail from "../public/images/Thumbnails/StandaardAanbouwThumb.png";
-import YODashboardThumbnail from "../public/images/Thumbnails/YODashboardThumb.png";
-import YOGwotyThumbnail from "../public/images/Thumbnails/YOGwotyThumb.png";
-// import KBOReeshofThumbnail from "../public/images/Thumbnails/KBOReeshofThumb.png";
-
 export default function Laptop(...props) {
   const { nodes, materials } = useGLTF("./models/laptop.glb");
   const [laptopScreenPath, setLaptopScreenPath] = useState(
     "./images/Thumbnails/codeThumb.png"
   );
-  // const rotation = {
-  //   open: { rot: [1.36, 0, 0], pos: [0, 0.12, 0.01] },
-  //   close: { rot: [Math.PI / 0.995, 0, 0], pos: [0, 0.122, 0.01] },
-  // };
-
   const startScreenPosition = {
     rot: { x: 1.06, y: 0, z: 0 },
     pos: { x: 0, y: 0.12, z: 0.01 },
@@ -51,11 +39,11 @@ export default function Laptop(...props) {
       setLaptopScreenPath("./images/Thumbnails/codeThumb.png");
     } else if ((scroll.offset >= 0.09) & (scroll.offset <= 0.4)) {
       setLaptopScreenPath("./images/Thumbnails/KBOReeshofThumb.png");
-    } else if ((scroll.offset >= 0.41) & (scroll.offset <= 0.43)) {
+    } else if ((scroll.offset >= 0.41) & (scroll.offset <= 0.525)) {
       setLaptopScreenPath("./images/Thumbnails/YODashboardThumb.png");
     } else if ((scroll.offset >= 0.526) & (scroll.offset <= 0.6)) {
       setLaptopScreenPath("./images/Thumbnails/YOGwotyThumb.png");
-    } else if ((scroll.offset >= 0.601) & (scroll.offset <= 0.621)) {
+    } else if ((scroll.offset >= 0.601) & (scroll.offset <= 0.696)) {
       setLaptopScreenPath("./images/Thumbnails/StandaardAanbouwThumb.png");
     } else if ((scroll.offset >= 0.697) & (scroll.offset <= 0.71)) {
       setLaptopScreenPath("./images/Thumbnails/StandaardAanbouwThumb.png");
