@@ -7,7 +7,7 @@ import HeroSection from "../organisms/HeroSection.js";
 import AboutSection from "../organisms/AboutSection.js";
 import PortfolioSection from "../organisms/PortfolioSection.js";
 import Footer from "../organisms/FakeFooter.js";
-import PortfolioAnimation from "../PortfolioAnimation.js";
+import PortfolioAnimation from "../organisms/PortfolioAnimation.js";
 import ContactSection from "../organisms/ContactSection.js";
 import { ScrollControls, Scroll, Environment } from "@react-three/drei";
 

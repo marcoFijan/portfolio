@@ -5,16 +5,12 @@
   fill: transparent;
 }
 
-/* .fijan {
-  padding-top: 1rem;
-} */
-
 .marco path,
 .fijan path {
   stroke-dasharray: 300;
   stroke-dashoffset: 300;
   fill: transparent;
-  stroke: #3fabaf;
+  stroke: #d4a418;
   stroke-width: 0.5;
 }
 

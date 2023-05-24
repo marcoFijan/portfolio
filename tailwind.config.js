@@ -72,26 +72,25 @@ module.exports = {
           "0%": {
             width: 0,
             height: 0,
-            "border-top": "2px solid #3fabaf",
-            "border-bottom": "2px solid #3fabaf",
+            "border-top": "2px solid #d4a418",
+            "border-bottom": "2px solid #d4a418",
           },
           "50%": {
             width: "100%",
             height: 0,
             padding: "0",
-            "border-top": "2px solid #3fabaf",
-            "border-bottom": "2px solid #3fabaf",
+            "border-top": "2px solid #d4a418",
+            "border-bottom": "2px solid #d4a418",
           },
           "90%": {
             width: "100%",
-            height: "12rem",
+            height: "7.5rem",
             padding: "1rem 0",
             "border-top": "4px solid white",
             "border-bottom": "4px solid white",
           },
           "100%": {
             width: "100%",
-
             padding: "1rem 0",
             "border-top": "4px solid white",
             "border-bottom": "4px solid white",
