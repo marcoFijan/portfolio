@@ -25,6 +25,17 @@ export default function Smartphone({ pos, rot, ...props }) {
   useFrame((state, delta) => {
     if (typeof timeline.current !== "undefined")
       timeline.current.seek(scroll.offset * timeline.current.duration());
+    if (scroll.offset < 0.09) {
+      setSmartScreenPath("./images/Thumbnails/codeThumb.png");
+    } else if ((scroll.offset >= 0.09) & (scroll.offset <= 0.4)) {
+      setSmartScreenPath("./images/Thumbnails/KBOReeshofThumbMobile.png");
+    } else if ((scroll.offset >= 0.526) & (scroll.offset <= 0.6)) {
+      setSmartScreenPath("./images/Thumbnails/YOGwotyThumbMobile.png");
+    } else if ((scroll.offset >= 0.601) & (scroll.offset <= 0.621)) {
+      setSmartScreenPath("./images/Thumbnails/StandaardAanbouwThumbMobile.png");
+    } else if ((scroll.offset >= 0.697) & (scroll.offset <= 0.71)) {
+      setSmartScreenPath("./images/Thumbnails/RingRingThumbMobile.png");
+    }
   });
 
   useEffect(() => {
@@ -33,49 +44,88 @@ export default function Smartphone({ pos, rot, ...props }) {
       defaults: { duration: 1 },
     });
 
+    const startpositions = {
+      hero: 0,
+      portfolioIntro: 5,
+      firstProject: 7,
+      firstProjectEnd: 8,
+      thirdProject: 10.5,
+      thirdProjectEnd: 12,
+      fourthProject: 13,
+      fourthProjectEnd: 14,
+      otherProjects: 18,
+      endpoint: 20,
+    };
+
     // Animation
     timeline.current
-      .to(smartphone.current.rotation, { y: 0 }, 0)
-      .to(smartphone.current.position, { x: 0 }, 0)
-      .to(smartphone.current.rotation, { y: -3 }, 2)
-      .to(smartphone.current.position, { x: -8 }, 2)
-      .call(
-        () => setSmartScreenPath("./images/marcoPointing.png"),
-
-        [],
-        null,
-        "<2"
-      )
-      .to(smartphone.current.rotation, { y: -5 }, 4)
-
-      .to(smartphone.current.rotation, { y: 1 }, 8)
-      .to(smartphone.current.position, { x: -1 }, 8)
-      .call(
-        function () {
-          setSmartScreenPath("./images/p1.jpg");
-        },
-        [],
-        null,
-        "<1"
+      // OPENINGSANIMATION
+      .to(smartphone.current.rotation, { x: -Math.PI / 2 }, startpositions.hero)
+      .to(smartphone.current.position, { y: -2 }, startpositions.hero)
+      .to(smartphone.current.position, { x: 18 }, 2)
+      .to(smartphone.current.rotation, { z: 2 }, 2)
+      .to(smartphone.current.position, { x: 5 }, startpositions.portfolioIntro)
+      .to(
+        smartphone.current.rotation,
+        { z: 0.2 },
+        startpositions.portfolioIntro
       )
 
-      .to(smartphone.current.rotation, { y: 0 }, 11)
-      .to(smartphone.current.rotation, { x: 1 }, 11)
-      .to(smartphone.current.position, { x: 0 }, 11)
+      // FIRST PROJECT
+      .to(smartphone.current.position, { x: 4 }, startpositions.firstProject)
+      .to(smartphone.current.rotation, { x: 0 }, startpositions.firstProject)
+      // First to second project transition
+      .to(
+        smartphone.current.position,
+        { x: 20 },
+        startpositions.firstProjectEnd
+      )
+      // THIRD PROJECT
+      .to(
+        smartphone.current.rotation,
+        { y: Math.PI * 2 },
+        startpositions.firstProjectEnd
+      )
+      .to(smartphone.current.position, { x: 4 }, startpositions.thirdProject)
+      .to(
+        smartphone.current.rotation,
+        { y: Math.PI * 2 },
+        startpositions.thirdProject
+      )
+      .to(
+        smartphone.current.rotation,
+        { x: Math.PI * 2 },
+        startpositions.thirdProject
+      )
+      .to(smartphone.current.position, { y: 0 }, startpositions.thirdProjectEnd)
+      .to(
+        smartphone.current.position,
+        { x: -1 },
+        startpositions.thirdProjectEnd
+      )
+      .to(smartphone.current.position, { z: 2 }, startpositions.thirdProjectEnd)
+      .to(
+        smartphone.current.rotation,
+        { y: Math.PI },
+        startpositions.thirdProjectEnd
+      )
+      // Third to fourth project transition
+      .to(smartphone.current.position, { z: 0 }, startpositions.fourthProject)
+      .to(smartphone.current.position, { x: -5 }, startpositions.fourthProject)
+      .to(smartphone.current.position, { y: -4 }, startpositions.fourthProject)
+      .to(smartphone.current.rotation, { y: 0 }, startpositions.fourthProject)
+      .to(
+        smartphone.current.position,
+        { y: 0 },
+        startpositions.fourthProjectEnd
+      )
 
-      .to(smartphone.current.rotation, { y: 0 }, 13)
-      .to(smartphone.current.rotation, { x: -1 }, 13)
-      .to(smartphone.current.position, { x: 0 }, 13)
-
-      .to(smartphone.current.rotation, { y: 0 }, 16)
-      .to(smartphone.current.rotation, { x: 0 }, 16)
-      .to(smartphone.current.position, { x: 0 }, 16)
-
-      .to(smartphone.current.rotation, { y: 0 }, 20)
-      .to(smartphone.current.rotation, { x: 0 }, 20)
-      .to(smartphone.current.position, { x: 0 }, 20);
-
-    // timeline.current.set(smartScreenPath, "./images/marcoPointing.png", 4);
+      // FOURTH PROJECT
+      .to(smartphone.current.position, { x: 5 }, startpositions.otherProjects)
+      // Fourth to other project transition
+      .to(smartphone.current.position, { x: 0 }, startpositions.otherProjects)
+      .to(smartphone.current.rotation, { z: 0 }, startpositions.otherProjects)
+      .to(smartphone.current.position, { x: 0 }, startpositions.endpoint);
   }, []);
 
   return (

@@ -21,7 +21,9 @@ import YOGwotyThumbnail from "../public/images/Thumbnails/YOGwotyThumb.png";
 
 export default function Laptop(...props) {
   const { nodes, materials } = useGLTF("./models/laptop.glb");
-  const [laptopScreenPath, setLaptopScreenPath] = useState("./images/p1.jpg");
+  const [laptopScreenPath, setLaptopScreenPath] = useState(
+    "./images/Thumbnails/codeThumb.png"
+  );
   // const rotation = {
   //   open: { rot: [1.36, 0, 0], pos: [0, 0.12, 0.01] },
   //   close: { rot: [Math.PI / 0.995, 0, 0], pos: [0, 0.122, 0.01] },
@@ -130,8 +132,10 @@ export default function Laptop(...props) {
       .to(laptop.current.rotation, { x: -Math.PI / 2 }, startpositions.hero)
       .to(laptop.current.position, { y: -2 }, startpositions.hero)
       .to(laptop.current.position, { x: -20 }, 3.5)
+      .to(laptop.current.rotation, { z: -1 }, 3.5)
       .to(laptop.current.position, { y: -2 }, startpositions.portfolioIntro)
       .to(laptop.current.position, { x: 0 }, startpositions.portfolioIntro)
+      .to(laptop.current.rotation, { z: 0 }, startpositions.portfolioIntro)
       // FIRST PROJECT
       .to(
         screenRot.current.rotation,
@@ -200,24 +204,7 @@ export default function Laptop(...props) {
         { z: rotation.close.pos.z },
         startpositions.firstProjectEnd
       )
-      // .call(
-      //   () => {
-      //     this.props.dispatch(
-      //       setLaptopScreenPath("./images/Thumbnails/YODashboardThumb.png")
-      //     );
-      //   },
-      //   [],
-      //   null,
-      //   ">"
-      // )
-      // .call(
-      //   () => {
-      //     setLaptopScreenPath("./images/Thumbnails/YODashboardThumb.png");
-      //   },
-      //   [],
-      //   null,
-      //   ">"
-      // )
+
       .to(laptop.current.position, { x: 0 }, startpositions.firstProjectEnd)
       .to(laptop.current.rotation, { z: 0 }, startpositions.firstProjectEnd)
       // SECOND PROJECT
@@ -288,22 +275,7 @@ export default function Laptop(...props) {
         { z: rotation.close.pos.z },
         startpositions.secondProjectEnd
       )
-      // .call(
-      //   () => {
-      //     setLaptopScreenPath("./images/Thumbnails/YOGwotyThumb.png");
-      //   },
-      //   [],
-      //   null,
-      //   "<1"
-      // )
-      // .call(
-      //   () => {
-      //     setLaptopScreenPath("./images/Thumbnails/YOGwotyThumb.png");
-      //   },
-      //   [],
-      //   null,
-      //   "<1"
-      // )
+
       .to(laptop.current.position, { x: 0 }, startpositions.secondProjectEnd)
       .to(laptop.current.rotation, { z: 0 }, startpositions.secondProjectEnd)
 
@@ -375,22 +347,7 @@ export default function Laptop(...props) {
         { z: rotation.close.pos.z },
         startpositions.thirdProjectEnd
       )
-      // .call(
-      //   () => {
-      //     setLaptopScreenPath("./images/Thumbnails/StandaardAanbouwThumb.png");
-      //   },
-      //   [],
-      //   null,
-      //   "<1"
-      // )
-      // .call(
-      //   () => {
-      //     setLaptopScreenPath("./images/Thumbnails/StandaardAanbouwThumb.png");
-      //   },
-      //   [],
-      //   null,
-      //   "<1"
-      // )
+
       .to(laptop.current.position, { x: 0 }, startpositions.thirdProjectEnd)
       .to(laptop.current.rotation, { z: 0 }, startpositions.thirdProjectEnd)
       // FOURTH PROJECT
@@ -463,46 +420,6 @@ export default function Laptop(...props) {
       )
       .to(laptop.current.position, { x: 0 }, startpositions.fourthProjectEnd)
       .to(laptop.current.rotation, { z: 0 }, startpositions.fourthProjectEnd)
-
-      // .to(laptop.current.rotation, { x: -0.2 }, startpositions.firstProject)
-
-      // .to(laptop.current.rotation, { z: 0.6 }, startpositions.firstProject)
-
-      // .to(laptop.current.rotation, { y: -3 }, 2.5)
-      // .to(laptop.current.position, { x: -6 }, 2.5)
-
-      // .call(
-      //   () => setLaptopScreenPath("./images/marcoPointing.png"),
-
-      //   [],
-      //   null,
-      //   "<2"
-      // )
-      // .to(laptop.current.rotation, { y: -5 }, 4.5)
-
-      // .to(laptop.current.rotation, { y: 1 }, 8)
-      // .to(laptop.current.position, { x: -1 }, 8)
-      // .call(
-      //   function () {
-      //     setLaptopScreenPath("./images/p1.jpg");
-      //   },
-      //   [],
-      //   null,
-      //   "<1"
-      // )
-
-      // .to(laptop.current.rotation, { y: 0 }, 11)
-      // .to(laptop.current.rotation, { x: 1 }, 11)
-      // .to(laptop.current.position, { x: 0 }, 11)
-
-      // .to(laptop.current.rotation, { y: 0 }, 13)
-      // .to(laptop.current.rotation, { x: -1 }, 13)
-      // .to(laptop.current.position, { x: 0 }, 13)
-
-      // .to(laptop.current.rotation, { y: 0 }, 16)
-      // .to(laptop.current.rotation, { x: 0 }, 16)
-      // .to(laptop.current.position, { x: 0 }, 16)
-
       .to(laptop.current.rotation, { y: 0 }, 20)
       .to(laptop.current.rotation, { x: 0 }, 20)
       .to(laptop.current.position, { x: 0 }, 20);
