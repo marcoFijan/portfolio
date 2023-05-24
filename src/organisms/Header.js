@@ -10,7 +10,7 @@ export default function Header() {
           <li className="justify-self-start">
             <Link
               className="text-bgColorLight font-bold px-4 py-2 mt-2 inline-block text-center place-self-center"
-              href={"/"}
+              href={"/#home"}
             >
               Home
             </Link>
@@ -18,7 +18,7 @@ export default function Header() {
           <li className="justify-self-start">
             <Link
               className="text-bgColorLight font-bold px-4 py-2 mt-2 inline-block text-center place-self-center"
-              href={"/"}
+              href={"/#about"}
             >
               Over mij
             </Link>
@@ -35,7 +35,7 @@ export default function Header() {
           <li className="justify-self-end">
             <Link
               className="text-bgColorLight font-bold px-4 py-2 mt-2 inline-block text-center place-self-center"
-              href={"/"}
+              href={"/#portfolio"}
             >
               Projects
             </Link>
@@ -43,7 +43,7 @@ export default function Header() {
           <li className="justify-self-end">
             <Link
               className="text-bgColorLight font-bold px-4 py-2 mt-2 inline-block text-center place-self-center"
-              href={"/"}
+              href={"/#contact"}
             >
               Neem contact op!
             </Link>

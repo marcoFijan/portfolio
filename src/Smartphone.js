@@ -29,11 +29,11 @@ export default function Smartphone({ pos, rot, ...props }) {
       setSmartScreenPath("./images/Thumbnails/codeThumb.png");
     } else if ((scroll.offset >= 0.09) & (scroll.offset <= 0.4)) {
       setSmartScreenPath("./images/Thumbnails/KBOReeshofThumbMobile.png");
-    } else if ((scroll.offset >= 0.526) & (scroll.offset <= 0.6)) {
+    } else if ((scroll.offset >= 0.41) & (scroll.offset <= 0.6)) {
       setSmartScreenPath("./images/Thumbnails/YOGwotyThumbMobile.png");
-    } else if ((scroll.offset >= 0.601) & (scroll.offset <= 0.621)) {
+    } else if ((scroll.offset >= 0.601) & (scroll.offset <= 0.729)) {
       setSmartScreenPath("./images/Thumbnails/StandaardAanbouwThumbMobile.png");
-    } else if ((scroll.offset >= 0.697) & (scroll.offset <= 0.71)) {
+    } else if ((scroll.offset >= 0.73) & (scroll.offset <= 0.99)) {
       setSmartScreenPath("./images/Thumbnails/RingRingThumbMobile.png");
     }
   });
@@ -53,7 +53,9 @@ export default function Smartphone({ pos, rot, ...props }) {
       thirdProjectEnd: 12,
       fourthProject: 13,
       fourthProjectEnd: 14,
-      otherProjects: 18,
+      otherProjects: 15,
+      otherProjectsEnd: 16,
+      otherProjectsEnd2: 16.5,
       endpoint: 20,
     };
 
@@ -109,22 +111,54 @@ export default function Smartphone({ pos, rot, ...props }) {
         { y: Math.PI },
         startpositions.thirdProjectEnd
       )
+
       // Third to fourth project transition
       .to(smartphone.current.position, { z: 0 }, startpositions.fourthProject)
       .to(smartphone.current.position, { x: -5 }, startpositions.fourthProject)
       .to(smartphone.current.position, { y: -4 }, startpositions.fourthProject)
       .to(smartphone.current.rotation, { y: 0 }, startpositions.fourthProject)
+
       .to(
         smartphone.current.position,
         { y: 0 },
         startpositions.fourthProjectEnd
       )
+      .to(
+        smartphone.current.rotation,
+        { z: -0.3 },
+        startpositions.fourthProjectEnd
+      )
 
       // FOURTH PROJECT
       .to(smartphone.current.position, { x: 5 }, startpositions.otherProjects)
+      .to(smartphone.current.rotation, { z: 0.3 }, startpositions.otherProjects)
+      .to(
+        smartphone.current.rotation,
+        { y: Math.PI * 2 },
+        startpositions.otherProjects
+      )
+      .to(
+        smartphone.current.rotation,
+        { z: -0.3 },
+        startpositions.otherProjectsEnd
+      )
+      .to(
+        smartphone.current.rotation,
+        { y: Math.PI * 2 - 0.1 },
+        startpositions.otherProjectsEnd
+      )
+      .to(
+        smartphone.current.position,
+        { y: -2 },
+        startpositions.otherProjectsEnd
+      )
+      .to(
+        smartphone.current.rotation,
+        { x: Math.PI * 2 - Math.PI / 2 },
+        startpositions.otherProjectsEnd2
+      )
       // Fourth to other project transition
-      .to(smartphone.current.position, { x: 0 }, startpositions.otherProjects)
-      .to(smartphone.current.rotation, { z: 0 }, startpositions.otherProjects)
+
       .to(smartphone.current.position, { x: 0 }, startpositions.endpoint);
   }, []);
 

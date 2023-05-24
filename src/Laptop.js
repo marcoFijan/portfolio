@@ -93,7 +93,8 @@ export default function Laptop(...props) {
       thirdProjectEnd: 12,
       fourthProject: 13,
       fourthProjectEnd: 14,
-      otherProjects: 15,
+      otherProjects: 15.5,
+      otherProjectsEnd: 16.5,
     };
 
     // Animation
@@ -206,7 +207,11 @@ export default function Laptop(...props) {
       )
 
       .to(laptop.current.position, { x: 0 }, startpositions.firstProjectEnd)
-      .to(laptop.current.rotation, { z: 0 }, startpositions.firstProjectEnd)
+      .to(
+        laptop.current.rotation,
+        { z: Math.PI },
+        startpositions.firstProjectEnd
+      )
       // SECOND PROJECT
       .to(
         screenRot.current.rotation,
@@ -241,7 +246,7 @@ export default function Laptop(...props) {
       .to(laptop.current.position, { x: 5 }, startpositions.secondProject)
       .to(
         laptop.current.rotation,
-        { z: -Math.PI / 4 },
+        { z: Math.PI * 2 - Math.PI / 4 },
         startpositions.secondProject
       )
       // Second to third project transition
@@ -277,7 +282,11 @@ export default function Laptop(...props) {
       )
 
       .to(laptop.current.position, { x: 0 }, startpositions.secondProjectEnd)
-      .to(laptop.current.rotation, { z: 0 }, startpositions.secondProjectEnd)
+      .to(
+        laptop.current.rotation,
+        { z: Math.PI },
+        startpositions.secondProjectEnd
+      )
 
       // THIRD PROJECT
       .to(
@@ -347,10 +356,23 @@ export default function Laptop(...props) {
         { z: rotation.close.pos.z },
         startpositions.thirdProjectEnd
       )
-
+      .to(laptop.current.position, { z: -2 }, startpositions.thirdProjectEnd)
       .to(laptop.current.position, { x: 0 }, startpositions.thirdProjectEnd)
       .to(laptop.current.rotation, { z: 0 }, startpositions.thirdProjectEnd)
+      .to(
+        laptop.current.rotation,
+        { x: -Math.PI },
+        startpositions.thirdProjectEnd
+      )
+
       // FOURTH PROJECT
+      .to(laptop.current.position, { z: 0 }, startpositions.fourthProject)
+      .to(
+        laptop.current.rotation,
+        { x: -Math.PI / 2 },
+        startpositions.fourthProject
+      )
+
       .to(
         screenRot.current.rotation,
         { x: rotation.open.rot.x },
@@ -420,6 +442,67 @@ export default function Laptop(...props) {
       )
       .to(laptop.current.position, { x: 0 }, startpositions.fourthProjectEnd)
       .to(laptop.current.rotation, { z: 0 }, startpositions.fourthProjectEnd)
+      // OTHER PROJECTS
+      .to(
+        screenRot.current.rotation,
+        { x: rotation.open.rot.x },
+        startpositions.otherProjects
+      )
+      .to(
+        screenRot.current.rotation,
+        { y: rotation.open.rot.y },
+        startpositions.otherProjects
+      )
+      .to(
+        screenRot.current.rotation,
+        { z: rotation.open.rot.z },
+        startpositions.otherProjects
+      )
+      .to(
+        screenRot.current.position,
+        { x: rotation.open.pos.x },
+        startpositions.otherProjects
+      )
+      .to(
+        screenRot.current.position,
+        { y: rotation.open.pos.y },
+        startpositions.otherProjects
+      )
+      .to(
+        screenRot.current.position,
+        { z: rotation.open.pos.z },
+        startpositions.otherProjects
+      )
+      .to(
+        screenRot.current.rotation,
+        { x: rotation.close.rot.x },
+        startpositions.otherProjectsEnd
+      )
+      .to(
+        screenRot.current.rotation,
+        { y: rotation.close.rot.y },
+        startpositions.otherProjectsEnd
+      )
+      .to(
+        screenRot.current.rotation,
+        { z: rotation.close.rot.z },
+        startpositions.otherProjectsEnd
+      )
+      .to(
+        screenRot.current.position,
+        { x: rotation.close.pos.x },
+        startpositions.otherProjectsEnd
+      )
+      .to(
+        screenRot.current.position,
+        { y: rotation.close.pos.y },
+        startpositions.otherProjectsEnd
+      )
+      .to(
+        screenRot.current.position,
+        { z: rotation.close.pos.z },
+        startpositions.otherProjectsEnd
+      )
       .to(laptop.current.rotation, { y: 0 }, 20)
       .to(laptop.current.rotation, { x: 0 }, 20)
       .to(laptop.current.position, { x: 0 }, 20);
