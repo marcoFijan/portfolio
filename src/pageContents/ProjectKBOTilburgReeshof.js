@@ -16,16 +16,10 @@ import homeImg from "../../public/images/KBOReeshof/Home.png";
 import introductionImg from "../../public/images/KBOReeshof/introduction.png";
 import menuImg from "../../public/images/KBOReeshof/Menu.png";
 
-import Article from "../molecules/Section";
-import Title from "../atoms/Title";
-import SubTitle from "../atoms/SubTitle";
-import H1 from "../atoms/H1";
-import H2 from "../atoms/H2";
-import P from "../atoms/Paragraph";
-import SubH2 from "../atoms/SubH2";
-import ProjectIntroduction from "../organisms/ProjectIntroduction";
+// COMPONENTS
 import ProjectArticle from "../organisms/ProjectArticle";
 import ProjectArticleSpecial from "../organisms/ProjectArticleSpecial";
+import SideCanvas from "../organisms/SideCanvas";
 
 export default function ProjectKBOTilburgReesof({
   title,
@@ -77,9 +71,13 @@ export default function ProjectKBOTilburgReesof({
             "Eenzame ouderen vanaf 65 jaar in omgeving Tilburg Reeshof",
         }}
         paragraph1a={introduction}
-        paragraph1ImageAlt={"Afbeelding van het ontworpen product"}
-        paragraph1ImageURL={kboIntroImg}
         paragraph1ImageSmall={true}
+        canvas={
+          <SideCanvas
+            laptopScreen={"../images/Thumbnails/KBOReeshofThumb.png"}
+            smartphoneScreen={"../images/Thumbnails/KBOReeshofThumbMobile.png"}
+          />
+        }
         buttonHref={"/"}
         buttonText={"Bekijk het prototype"}
         buttonCTA={true}
@@ -93,7 +91,8 @@ export default function ProjectKBOTilburgReesof({
         paragraph1ImageAlt={"Afbeelding van KBO Tilburg Reeshof"}
         paragraph1ImageURL={kboReeshofBuildingImg}
         paragraph1ImageSmall={true}
-        paragraph1ImageClassname={"max-w-[30rem] align-self-center row-start-1"}
+        paragraph1ImageNoBorder={true}
+        paragraph1ImageClassname={"max-w-[34rem] align-self-center row-start-1"}
         buttonHref={"/"}
         buttonText={"Bekijk het prototype"}
         buttonCTA={true}
@@ -109,10 +108,6 @@ export default function ProjectKBOTilburgReesof({
         paragraph1a={
           "Op basis van mijn observaties bij het meedoen met activiteiten en gesprekken met mijn kennispartner heb ik verschillende stakeholders kunnen noteren. Elke stakeholder heeft zijn of haar eigen wensen en belangen wanneer het gaat over een website van een wijkgemeenschap. De belangrijkste stakeholders zijn de ouderen en het wijkhuis, KBO Tilburg Reeshof. De ouderen moeten zonder inspanning de website kunnen gebruiken en daarnaast moet de website technisch ook haalbaar zijn voor KBO Tilburg Reeshof"
         }
-        paragraph1ImageURL={stakeholdersImg}
-        paragraph1ImageAlt={"Diagram van de verschillende stakeholders"}
-        paragraph1ImageSmall={true}
-        paragraph1ImageClassname={"w-96 justify-self-center"}
         darkBackground={darkBackground}
         header2b={"Perona's en Empathy map"}
         paragraph2a={
@@ -191,6 +186,7 @@ export default function ProjectKBOTilburgReesof({
           "Afbeelding van inspiratieborden en het Harris Profiel"
         }
         paragraph1ImageSmall={true}
+        paragraph1ImageNoBorder={true}
         button1Href={
           "https://amenable-sword-4e9.notion.site/Ideegeneratie-141e664077d64253a884f872ab156497"
         }

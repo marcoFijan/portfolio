@@ -1,5 +1,4 @@
 import Image from "next/image";
-import marcoPointingAtText from "../../public/images/marcoPointing.png";
 import Title from "../atoms/Title.js";
 import SubTitle from "../atoms/SubTitle.js";
 import H1 from "../atoms/H1.js";
@@ -28,6 +27,7 @@ export default function Article({
   paragraphImageAlt,
   paragraphImageSmall,
   paragraphImageClassname,
+  paragraphImageNoBorder,
   linkText,
   linkHref,
   extraContent,
@@ -86,11 +86,17 @@ export default function Article({
             {paragraph1c && (
               <P text={paragraph1c} darkBackground={darkBackground}></P>
             )}
-            {linkHref && <NextLink text={linkText} href={linkHref}></NextLink>}
+            {linkHref && (
+              <NextLink text={linkText} href={linkHref} cta={true}></NextLink>
+            )}
           </section>
           {paragraphImageURL && (
             <Image
-              className={`w-full object-cover  box-border p-4 border rounded-2xl ${paragraphImageClassname}`}
+              className={`${
+                paragraphImageNoBorder
+                  ? ""
+                  : "w-full object-cover  box-border p-4 border rounded-2xl"
+              } ${paragraphImageClassname}`}
               src={paragraphImageURL}
               alt={paragraphImageAlt}
             />
@@ -139,7 +145,9 @@ export default function Article({
               alt={paragraphImageAlt}
             />
           )}
-          {linkHref && <NextLink text={linkText} href={linkHref}></NextLink>}
+          {linkHref && (
+            <NextLink text={linkText} href={linkHref} cta={true}></NextLink>
+          )}
         </section>
       )}
 

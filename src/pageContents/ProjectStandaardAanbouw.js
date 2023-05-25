@@ -35,7 +35,14 @@ export default function ProjectStandaardAanbouw({}) {
         // paragraph1ImageURL={kboIntroImg}
         // paragraph1ImageSmall={true}
         paragraph1ImageSmall={true}
-        canvas={<SideCanvas />}
+        canvas={
+          <SideCanvas
+            laptopScreen={"../images/Thumbnails/StandaardAanbouwThumb.png"}
+            smartphoneScreen={
+              "../images/Thumbnails/StandaardAanbouwThumbMobile.png"
+            }
+          />
+        }
         buttonHref={"/"}
         buttonText={"Bekijk het prototype"}
         buttonCTA={true}

@@ -7,7 +7,7 @@ import { ScrollControls, Float, Environment } from "@react-three/drei";
 import Smartphone from "../models/SmartphoneStatic.js";
 import Laptop from "../models/LaptopStatic.js";
 
-export default function SideCanvas({}) {
+export default function SideCanvas({ laptopScreen, smartphoneScreen }) {
   const [screenSize, setScreenSize] = useState(0);
   const [pages, setPages] = useState(0);
 
@@ -40,8 +40,9 @@ export default function SideCanvas({}) {
         <ambientLight color={"white"} intensity={0.3} />
         <Environment blur={0} preset="warehouse" />
         {/* <Float> */}
-        <Laptop />
-        <Smartphone />
+        {laptopScreen && <Laptop screen={laptopScreen} />}
+        {smartphoneScreen && <Smartphone screen={smartphoneScreen} />}
+
         {/* </Float> */}
       </Canvas>
     </div>

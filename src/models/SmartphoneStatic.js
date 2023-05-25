@@ -10,11 +10,9 @@ Title: Smartphone
 import React, { useRef, useEffect, useState } from "react";
 import { useGLTF, useTexture, useScroll } from "@react-three/drei";
 
-export default function Smartphone({ pos, rot, ...props }) {
+export default function Smartphone({ screen, ...props }) {
   const { nodes, materials } = useGLTF("../models/smartphone.glb");
-  let [smartScreenPath, setSmartScreenPath] = useState(
-    "../images/Thumbnails/StandaardAanbouwThumbMobile.png"
-  );
+  let [smartScreenPath, setSmartScreenPath] = useState(screen);
   const smartScreen = useTexture(smartScreenPath);
 
   const smartphone = useRef();

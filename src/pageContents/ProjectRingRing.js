@@ -5,7 +5,9 @@ import routesImg from "../../public/images/RingRing/Routes.JPG";
 import specificDataImg from "../../public/images/RingRing/SpecificData.JPG";
 import feedbackImg from "../../public/images/RingRing/Feedback.JPG";
 
+// COMPONENTS
 import ProjectArticle from "../organisms/ProjectArticle";
+import SideCanvas from "../organisms/SideCanvas";
 
 export default function ProjectRingRing({}) {
   const darkBackground = true;
@@ -22,6 +24,13 @@ export default function ProjectRingRing({}) {
         }}
         paragraph1a={
           "Tijdens dit project kreeg ik de opdracht van Ring Ring om een dashboard te ontwerpen voor de beleidsmakers. Ring Ring is een bedrijf dat met haar app data verzameld over fietsverkeer en probeert met haar app mensen te motiveren om meer te fietsen. Daarnaast wilt Ring Ring ook graag feedback ontvangen en visualiseren over haar gebruikers en hun fietsroutes. Voor het dashbaord kregen we een geojson met onder andere de coordinaten van de routes, de snelheid, de start en einddatum en tijd, de feedback met feedbackscore en de afgelegde afstand"
+        }
+        paragraph1ImageSmall={true}
+        canvas={
+          <SideCanvas
+            laptopScreen={"../images/Thumbnails/RingRingThumb.png"}
+            smartphoneScreen={"../images/Thumbnails/RingRingThumbMobile.png"}
+          />
         }
         button1Href={"https://github.com/marcoFijan/projectDatavisualisation"}
         button1Text={"Bekijk github"}

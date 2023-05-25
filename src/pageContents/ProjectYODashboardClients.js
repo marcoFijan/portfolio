@@ -25,6 +25,7 @@ import finalOverviewFilter from "../../public/images/YoDashboardClients/Eindvers
 
 // COMPONENTS
 import ProjectArticle from "../organisms/ProjectArticle";
+import SideCanvas from "../organisms/SideCanvas";
 
 export default function ProjectStandaardAanbouw({}) {
   const darkBackground = true;
@@ -43,9 +44,24 @@ export default function ProjectStandaardAanbouw({}) {
         paragraph1a={
           "YoungOnes gebruikte tot nu toe een automatisch gegenereerde PowerBI dashboard die de opdrachtgevers konden geberuiken om inzichten te doen. PowerBI gaf alleen tabellen en had geen enkele vorm van datavisualistie. Hierdoor is het lastiger om nuttige inzichten te doen over de data. Er moest daarom een nieuw dashboard ontworpen en hier kreeg ik de opdracht"
         }
+        paragraph1ImageSmall={true}
+        canvas={
+          <SideCanvas
+            laptopScreen={"../images/Thumbnails/YODashboardThumb.png"}
+          />
+        }
+        darkBackground={true}
+      />
+      <ProjectArticle
+        header={"Huidig dashboard"}
+        subHeader={"Huidig gebruikt PowerBI dashboard"}
+        paragraph1a={
+          "YoungOnes gebruikte tot nu toe een automatisch gegenereerde PowerBI dashboard die de opdrachtgevers konden geberuiken om inzichten te doen. PowerBI gaf alleen tabellen en had geen enkele vorm van datavisualistie. Hierdoor is het lastiger om nuttige inzichten te doen over de data. Er moest daarom een nieuw dashboard ontworpen en hier kreeg ik de opdracht"
+        }
         paragraph1ImageAlt={"Power BI dashboard afbeelding"}
         paragraph1ImageSmall={true}
         paragraph1ImageURL={originalDashbordImg}
+        paragraph1ImageClassname={"align-self-center row-start-1"}
         darkBackground={true}
       />
       <ProjectArticle

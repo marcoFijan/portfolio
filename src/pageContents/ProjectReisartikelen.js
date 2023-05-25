@@ -3,7 +3,9 @@ import hifiImg from "../../public/images/Reisartikelen/Hifi.jpg";
 import lofiImg from "../../public/images/Reisartikelen/Lofi.jpg";
 import OriginalImg from "../../public/images/Reisartikelen/Original.jpg";
 
+// COMPONENTS
 import ProjectArticle from "../organisms/ProjectArticle";
+import SideCanvas from "../organisms/SideCanvas";
 
 export default function ProjectReisartikelen({}) {
   const darkBackground = true;
@@ -18,6 +20,12 @@ export default function ProjectReisartikelen({}) {
           Projectdoel: "Consistentie, vertrouwen opbouwen en beetere conversie",
           Doelgroep: "Corona getroffen reizigers",
         }}
+        paragraph1ImageSmall={true}
+        canvas={
+          <SideCanvas
+            laptopScreen={"../images/Thumbnails/ReisartikelenThumb.jpg"}
+          />
+        }
         paragraph1a={
           "Het bedrijf achter reisartikelen.nl merkte dat hun conversie erg laag was. Daarom wilde ze een mogelijke herontwerp hebben van hun website die beter gefocust is op de huidige bezoekers. Reisartikelen.nl is een website die gespecialiseerd is in allerlei soort reisartikelen. Helaas zorgde de coronamaatregelen ervoor dat hun website dit jaar niet erg relevant of nuttig meer was. Ik kreeg de oprdacht om de website te herontwerpen zodat deze beter relevant is voor de coronamaatregelen en meer omzet kan draaien."
         }
