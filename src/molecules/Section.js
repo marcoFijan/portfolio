@@ -74,7 +74,7 @@ export default function Article({
             )}
           </section>
           <Image
-            className={`${paragraphImageClassname}`}
+            className={`${paragraphImageClassname}w-full object-cover  box-border p-4 border rounded-2xl`}
             src={paragraphImageURL}
             alt={paragraphImageAlt}
           />
@@ -101,7 +101,7 @@ export default function Article({
           {extraContent && extraContent}
           {paragraphImageURL && (
             <Image
-              className={`w-full object-cover ${paragraphImageClassname}`}
+              className={`w-full object-cover  box-border p-4 border rounded-2xl ${paragraphImageClassname}`}
               src={paragraphImageURL}
               alt={paragraphImageAlt}
             />

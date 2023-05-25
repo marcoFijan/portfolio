@@ -31,6 +31,7 @@ export default function Article({
   linkText,
   linkHref,
   extraContent,
+  canvas,
 }) {
   let summaryText;
   if (summaryObject) {
@@ -87,11 +88,14 @@ export default function Article({
             )}
             {linkHref && <NextLink text={linkText} href={linkHref}></NextLink>}
           </section>
-          <Image
-            className={`${paragraphImageClassname}`}
-            src={paragraphImageURL}
-            alt={paragraphImageAlt}
-          />
+          {paragraphImageURL && (
+            <Image
+              className={`w-full object-cover  box-border p-4 border rounded-2xl ${paragraphImageClassname}`}
+              src={paragraphImageURL}
+              alt={paragraphImageAlt}
+            />
+          )}
+          {canvas && canvas}
         </section>
       )}
       {!paragraphImageSmall && (
@@ -130,7 +134,7 @@ export default function Article({
           )}
           {paragraphImageURL && (
             <Image
-              className={`w-full object-cover ${paragraphImageClassname}`}
+              className={`w-full object-cover  box-border p-4 border rounded-2xl ${paragraphImageClassname}`}
               src={paragraphImageURL}
               alt={paragraphImageAlt}
             />

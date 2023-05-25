@@ -11,29 +11,14 @@ import paperStyleImg from "../../public/images/StandaardAanbouw/Briefpapier.jpg"
 import blogPageImg from "../../public/images/StandaardAanbouw/Blogpagina.png";
 import servicePageImg from "../../public/images/StandaardAanbouw/Servicepagina.png";
 
-import Article from "../molecules/Section";
-import Title from "../atoms/Title";
-import SubTitle from "../atoms/SubTitle";
-import H1 from "../atoms/H1";
-import H2 from "../atoms/H2";
-import P from "../atoms/Paragraph";
-import SubH2 from "../atoms/SubH2";
-import ProjectIntroduction from "../organisms/ProjectIntroduction";
+// COMPONENTS
 import ProjectArticle from "../organisms/ProjectArticle";
-import ProjectArticleSpecial from "../organisms/ProjectArticleSpecial";
+import SideCanvas from "../organisms/SideCanvas";
 
 export default function ProjectStandaardAanbouw({}) {
   const darkBackground = true;
 
   return (
-    // Introductie
-    // Onderzoek persona's empathy map
-    // afbakenen programma van eisen
-    // ideegeneratie harris profiel
-    // concept concept keuzes en vormgevingsregels
-    // Het product
-    // Validatie
-    // Resources: Design Rationale + Link naar productbiografie
     <div className="max-w-wrapper mx-auto w-full block px-articlePadding">
       <ProjectArticle
         title={"Standaard aanbouw herontwerp"}
@@ -49,6 +34,8 @@ export default function ProjectStandaardAanbouw({}) {
         // paragraph1ImageAlt={"Afbeelding van het ontworpen product"}
         // paragraph1ImageURL={kboIntroImg}
         // paragraph1ImageSmall={true}
+        paragraph1ImageSmall={true}
+        canvas={<SideCanvas />}
         buttonHref={"/"}
         buttonText={"Bekijk het prototype"}
         buttonCTA={true}
@@ -111,7 +98,7 @@ export default function ProjectStandaardAanbouw({}) {
         section2ImageURL={hifi1Img}
         sectionHeader3={"Tweede HiFi iteratie"}
         sectionParagraph3a={
-          "Het blauw in de eerste HiFi iteratie vond ik te druk. Daarnaast pastte de afgeronde knoppen niet in de stijl van de rest van de website en werden deze dus aangepast. Ook waren er nog geen verkopersslogans aanwezig terwijl bewezen is dat dit klanten vertrouwen geeft. Als laatste is de tekst ook beter vormgegeven."
+          "Het blauw in de eerste HiFi iteratie vond ik te druk. Daarnaast pastte de afgeronde knoppen niet in de stijl van de rest van de website en werden deze dus aangepast. Ook werden er slogans toegevoegd."
         }
         section3ImageAlt={
           "Tweede iteratie van het herontwerp met kleur, huisstijl en detail"
@@ -139,7 +126,7 @@ export default function ProjectStandaardAanbouw({}) {
         section5ImageURL={hifi4Img}
         sectionHeader6={"Laatste HiFi iteratie"}
         sectionParagraph6a={
-          "De aannemer heeft geen keurmerken dus werden deze verwijderd. Daarnaast werden er secondaire knoppen, een galerij, een contactsectie en recente nieuwspagina's toegevoegd op de hoofdpagina."
+          "De aannemer heeft geen keurmerken dus werden deze verwijderd. Daarnaast werden er secondaire knoppen, een galerij, een contactsectie en recente nieuwspagina's toegevoegd."
         }
         section6ImageAlt={
           "Tweede en laatste iteratie van het herontwerp met kleur, huisstijl en detail"

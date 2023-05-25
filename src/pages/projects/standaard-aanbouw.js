@@ -9,7 +9,9 @@ const montserrat = Montserrat({
 
 export default function KBOTilburgReeshof() {
   return (
-    <main className={`bg-bgColorDark ${montserrat.className}`}>
+    <main
+      className={`bg-gradient-radial from-bgColorDarkSec to-bgColorDark ${montserrat.className}`}
+    >
       <StandaardAanbouwContent />
     </main>
   );

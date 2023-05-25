@@ -112,18 +112,9 @@ export default function ProjectArticle({
   section6ImageAlt,
   section6ImageURL,
   darkBackground,
+  canvas,
 }) {
   return (
-    // <article className="pt-4">
-    //   <H1 text={header} darkBackground={darkBackground} />
-    //   <SubH1 text={subHeader} />
-    //   <P text={paragraph} darkBackground={darkBackground} />
-    //   <Image
-    //     className="w-full h-96 object-cover"
-    //     src={paragraphImageURL}
-    //     alt={paragraphImageAlt}
-    //   />
-    // </article>
     <article className="py-16 block">
       <SectionIntro
         title={title}
@@ -146,6 +137,7 @@ export default function ProjectArticle({
         linkText2={button1bText}
         darkBackground={darkBackground}
         extraContent={extraContent1}
+        canvas={canvas}
       />
       {sectionHeader1 && (
         <section className="grid grid-cols-fluid gap-16">
