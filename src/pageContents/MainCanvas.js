@@ -6,7 +6,7 @@ import { useState, useRef, useEffect } from "react";
 import HeroSection from "../organisms/HeroSection.js";
 import AboutSection from "../organisms/AboutSection.js";
 import PortfolioSection from "../organisms/PortfolioSection.js";
-import Footer from "../organisms/FakeFooter.js";
+import Footer from "../organisms/Footer.js";
 import PortfolioAnimation from "../organisms/PortfolioAnimation.js";
 import ContactSection from "../organisms/ContactSection.js";
 import { ScrollControls, Scroll, Environment } from "@react-three/drei";
@@ -57,7 +57,7 @@ export default function MainCanvas({}) {
             {/* Contactpage with a form [1.5 page] */}
             <ContactSection />
             {/* Footer [0.5 page] */}
-            <Footer />
+            <Footer homePage={true} />
           </Scroll>
         </ScrollControls>
       </Canvas>
