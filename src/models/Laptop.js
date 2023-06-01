@@ -11,12 +11,16 @@ import React, { useEffect, useRef, useState } from "react";
 import { useFrame } from "@react-three/fiber";
 import { useGLTF, useTexture, useScroll } from "@react-three/drei";
 import { gsap } from "gsap";
+import { useThree } from "@react-three/fiber";
 
-export default function Laptop(...props) {
+export default function Laptop({ mobile, props }) {
   const { nodes, materials } = useGLTF("./models/laptop.glb");
+  const { viewport } = useThree();
   const [laptopScreenPath, setLaptopScreenPath] = useState(
     "./images/Thumbnails/codeThumb.png"
   );
+  const [screenSizeType, setScreenSizeType] = useState("default"); // default / mobile
+  const [screenSize, setScreenSize] = useState(0);
   const startScreenPosition = {
     rot: { x: 1.06, y: 0, z: 0 },
     pos: { x: 0, y: 0.12, z: 0.01 },
@@ -28,28 +32,57 @@ export default function Laptop(...props) {
   const screenRot = useRef();
   const scroll = useScroll();
   const timeline = useRef();
-  // changePortfolioScrollBottom(true)
 
   // Update timeline
   useFrame((state, delta) => {
     if (typeof timeline.current !== "undefined")
       timeline.current.seek(scroll.offset * timeline.current.duration());
     // Hardcoded screenchange since .call function from gsap has performance issues
-    if (scroll.offset < 0.09) {
-      setLaptopScreenPath("./images/Thumbnails/codeThumb.png");
-    } else if ((scroll.offset >= 0.09) & (scroll.offset <= 0.4)) {
-      setLaptopScreenPath("./images/Thumbnails/KBOReeshofThumb.png");
-    } else if ((scroll.offset >= 0.41) & (scroll.offset <= 0.525)) {
-      setLaptopScreenPath("./images/Thumbnails/YODashboardThumb.png");
-    } else if ((scroll.offset >= 0.526) & (scroll.offset <= 0.6)) {
-      setLaptopScreenPath("./images/Thumbnails/YOGwotyThumb.png");
-    } else if ((scroll.offset >= 0.601) & (scroll.offset <= 0.696)) {
-      setLaptopScreenPath("./images/Thumbnails/StandaardAanbouwThumb.png");
-    } else if ((scroll.offset >= 0.697) & (scroll.offset <= 0.71)) {
-      setLaptopScreenPath("./images/Thumbnails/StandaardAanbouwThumb.png");
+    if (mobile) {
+      if (scroll.offset < 0.09) {
+        setLaptopScreenPath("./images/Thumbnails/codeThumb.png");
+      } else if ((scroll.offset >= 0.36) & (scroll.offset <= 0.46)) {
+        setLaptopScreenPath("./images/Thumbnails/KBOReeshofThumb.png");
+      } else if ((scroll.offset >= 0.47) & (scroll.offset <= 0.55)) {
+        setLaptopScreenPath("./images/Thumbnails/YODashboardThumb.png");
+      } else if ((scroll.offset >= 0.6) & (scroll.offset <= 0.67)) {
+        setLaptopScreenPath("./images/Thumbnails/YOGwotyThumb.png");
+      } else if ((scroll.offset >= 0.671) & (scroll.offset <= 0.75)) {
+        setLaptopScreenPath("./images/Thumbnails/StandaardAanbouwThumb.png");
+      } else if ((scroll.offset >= 0.76) & (scroll.offset <= 0.85)) {
+        setLaptopScreenPath("./images/Thumbnails/StandaardAanbouwThumb.png");
+      }
+    } else {
+      if (scroll.offset < 0.09) {
+        setLaptopScreenPath("./images/Thumbnails/codeThumb.png");
+      } else if ((scroll.offset >= 0.09) & (scroll.offset <= 0.4)) {
+        setLaptopScreenPath("./images/Thumbnails/KBOReeshofThumb.png");
+      } else if ((scroll.offset >= 0.41) & (scroll.offset <= 0.525)) {
+        setLaptopScreenPath("./images/Thumbnails/YODashboardThumb.png");
+      } else if ((scroll.offset >= 0.526) & (scroll.offset <= 0.6)) {
+        setLaptopScreenPath("./images/Thumbnails/YOGwotyThumb.png");
+      } else if ((scroll.offset >= 0.601) & (scroll.offset <= 0.696)) {
+        setLaptopScreenPath("./images/Thumbnails/StandaardAanbouwThumb.png");
+      } else if ((scroll.offset >= 0.697) & (scroll.offset <= 0.71)) {
+        setLaptopScreenPath("./images/Thumbnails/StandaardAanbouwThumb.png");
+      }
     }
     console.log(scroll.offset);
   });
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      function updateDimension() {
+        setScreenSize(window.innerWidth);
+        // location.reload();
+      }
+      window.addEventListener("resize", updateDimension);
+
+      return () => {
+        window.removeEventListener("resize", updateDimension);
+      };
+    }
+  }, [screenSize]);
 
   useEffect(() => {
     // Setup timeline
@@ -70,22 +103,37 @@ export default function Laptop(...props) {
       },
     };
 
-    const startpositions = {
-      hero: 0,
-      portfolioIntro: 5,
-      firstProject: 7,
-      firstProjectEnd: 8,
-      secondProject: 9,
-      secondProjectEnd: 10,
-      thirdProject: 11,
-      thirdProjectEnd: 12,
-      fourthProject: 13,
-      fourthProjectEnd: 14,
-      otherProjects: 15.5,
-      otherProjectsEnd: 16.5,
-    };
-
     // Animation
+    const startpositions = mobile
+      ? {
+          hero: 0,
+          portfolioIntro: 6.5,
+          firstProject: 8.3,
+          firstProjectEnd: 9.3,
+          secondProject: 10.3,
+          secondProjectEnd: 11.3,
+          thirdProject: 12.3,
+          thirdProjectEnd: 13.3,
+          fourthProject: 14.3,
+          fourthProjectEnd: 15.3,
+          otherProjects: 16.35,
+          otherProjectsEnd: 17.5,
+        }
+      : {
+          hero: 0,
+          portfolioIntro: 5,
+          firstProject: 7,
+          firstProjectEnd: 8,
+          secondProject: 9,
+          secondProjectEnd: 10,
+          thirdProject: 11,
+          thirdProjectEnd: 12,
+          fourthProject: 13,
+          fourthProjectEnd: 14,
+          otherProjects: 15.5,
+          otherProjectsEnd: 16.5,
+        };
+
     timeline.current
       // OPENINGSANIMATION
       .to(
@@ -122,7 +170,11 @@ export default function Laptop(...props) {
       .to(laptop.current.position, { y: -2 }, startpositions.hero)
       .to(laptop.current.position, { x: -20 }, 3.5)
       .to(laptop.current.rotation, { z: -1 }, 3.5)
-      .to(laptop.current.position, { y: -2 }, startpositions.portfolioIntro)
+      .to(
+        laptop.current.position,
+        { y: mobile ? -3.5 : -2 },
+        startpositions.portfolioIntro
+      )
       .to(laptop.current.position, { x: 0 }, startpositions.portfolioIntro)
       .to(laptop.current.rotation, { z: 0 }, startpositions.portfolioIntro)
       // FIRST PROJECT
@@ -156,7 +208,11 @@ export default function Laptop(...props) {
         { z: rotation.open.pos.z },
         startpositions.firstProject
       )
-      .to(laptop.current.position, { x: -5 }, startpositions.firstProject)
+      .to(
+        laptop.current.position,
+        { x: mobile ? 0 : -5 },
+        startpositions.firstProject
+      )
       .to(
         laptop.current.rotation,
         { z: Math.PI / 4 },
@@ -231,7 +287,11 @@ export default function Laptop(...props) {
         { z: rotation.open.pos.z },
         startpositions.secondProject
       )
-      .to(laptop.current.position, { x: 5 }, startpositions.secondProject)
+      .to(
+        laptop.current.position,
+        { x: mobile ? 0 : 5 },
+        startpositions.secondProject
+      )
       .to(
         laptop.current.rotation,
         { z: Math.PI * 2 - Math.PI / 4 },
@@ -307,7 +367,11 @@ export default function Laptop(...props) {
         { z: rotation.open.pos.z },
         startpositions.thirdProject
       )
-      .to(laptop.current.position, { x: -5 }, startpositions.thirdProject)
+      .to(
+        laptop.current.position,
+        { x: mobile ? 0 : -5 },
+        startpositions.thirdProject
+      )
       .to(
         laptop.current.rotation,
         { z: Math.PI / 4 },
@@ -391,7 +455,11 @@ export default function Laptop(...props) {
         { z: rotation.open.pos.z },
         startpositions.fourthProject
       )
-      .to(laptop.current.position, { x: 5 }, startpositions.fourthProject)
+      .to(
+        laptop.current.position,
+        { x: mobile ? 0 : 5 },
+        startpositions.fourthProject
+      )
       .to(
         laptop.current.rotation,
         { z: -Math.PI / 4 },
@@ -494,15 +562,15 @@ export default function Laptop(...props) {
       .to(laptop.current.rotation, { y: 0 }, 20)
       .to(laptop.current.rotation, { x: 0 }, 20)
       .to(laptop.current.position, { x: 0 }, 20);
-  }, []);
+  }, [mobile]);
 
   return (
     <group
       {...props}
       dispose={null}
-      scale={16}
+      scale={mobile ? 10 : 16}
       ref={laptop}
-      position={[0, -7, 0]}
+      position={[0, mobile ? -5 : -7, 0]}
       rotation={[-0.4, 0, 0]}
     >
       <group scale={0.01}>

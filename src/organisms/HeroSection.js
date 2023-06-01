@@ -44,15 +44,15 @@ export default function HeroSection() {
             </g>
           </svg>
         </div>
-        <section className="flex flex-wrap flex-row justify-between w-full">
-          <p className="uppercase text-lg text-white justify-self-start opacity-0 font-black animate-[becomeVisible_1s_ease-in-out_5s_normal_forwards]">
+        <section className="flex flex-wrap flex-col md:flex-row justify-between w-full">
+          <p className="uppercase self-start md:self-auto text-lg text-white justify-self-start opacity-0 font-black animate-[becomeVisible_1s_ease-in-out_5s_normal_forwards]">
             #Frontend
           </p>
-          <p className="uppercase text-lg text-white justify-self-center opacity-0 font-black animate-[becomeVisible_1s_ease-in-out_5.5s_normal_forwards]">
+          <p className="uppercase self-center md:self-auto text-lg text-white justify-self-center opacity-0 font-black animate-[becomeVisible_1s_ease-in-out_5.5s_normal_forwards]">
             #User Interface
           </p>
 
-          <p className="uppercase text-lg text-white justify-self-end opacity-0 font-black animate-[becomeVisible_1s_ease-in-out_6s_normal_forwards]">
+          <p className="uppercase self-end md:self-auto text-lg text-white justify-self-end opacity-0 font-black animate-[becomeVisible_1s_ease-in-out_6s_normal_forwards]">
             #User Experience
           </p>
         </section>

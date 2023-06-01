@@ -10,7 +10,7 @@ module.exports = {
   ],
   theme: {
     screens: {
-      sm: "640px",
+      sm: "668px",
       // => @media (min-width: 640px) { ... }
 
       md: "832px",
@@ -39,6 +39,8 @@ module.exports = {
         ctaButton: "0px 0px 10px #5c1c40;",
         buttonHover: "5px 5px 0px #0a0b0c, -5px -5px 0px #5d6583;",
         button: "0px 0px 10px #0a0b0c;",
+        inputField: "inset 6px 6px 12px #d5dceb, inset -6px -6px 12px #f9ffff;",
+        inputFieldValid: "6px 6px 12px #d5dceb, -6px -6px 12px #f9ffff;",
       },
       padding: {
         articlePadding: "3rem",

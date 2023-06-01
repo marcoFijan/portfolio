@@ -8,8 +8,8 @@ export default function AboutSection() {
     <>
       <div id="splitterStart"></div>
       <article className="w-full bg-bgColorLight -z-40">
-        <div className="max-w-wrapper mx-auto w-full grid gap-8 grid-cols-fluid px-8 mb-1/2-height h-screenx2 md:h-screen items-center">
-          <section>
+        <div className="max-w-wrapper mx-auto w-full grid gap-8 grid-cols-fluid mb-1/2-height h-screenx2 md:h-screen items-center">
+          <section className="px-articlePadding">
             <Section
               darkBackground={false}
               title={"Marco Fijan"}
@@ -24,9 +24,9 @@ export default function AboutSection() {
               linkText={"Bekijk mijn github"}
             ></Section>
           </section>
-          <div className="w-auto h-auto z-0">
+          <div className="w-full h-full md:w-auto md:h-auto z-0">
             <Image
-              className="w-auto h-auto  max-w-lg block  z-0"
+              className="w-full  md:w-auto h-auto md:max-w-lg block z-0 px-articlePadding"
               src={marcoPointingAtText}
               alt="Picture of Marco Fijan pointing to text"
             />

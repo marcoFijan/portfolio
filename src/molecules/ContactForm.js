@@ -46,7 +46,7 @@ export default function ContactForm() {
         rows="4"
         cols="50"
         required
-        className="mb-8 rounded-md border border-bgColorDark p-2"
+        className="mb-8 mt-2 rounded-md shadow-inputField bg-bgColorLight p-2 valid:shadow-inputFieldValid focus:bg-white focus:border-2 focus:outline-none focus:border-accentColor focus:p-2 box-border"
       ></textarea>
       <Button text={"Verstuur bericht"} type={"submit"} cta={true} />
       {succes && "Uw bericht is succesvol verzonden!"}

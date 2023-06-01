@@ -2,18 +2,19 @@
 
 // import Projects from "./PortfolioProjects.jsx";
 import { Canvas } from "@react-three/fiber";
-import { useState, useRef, useEffect } from "react";
+import { useState, Suspense, useEffect } from "react";
 import HeroSection from "../organisms/HeroSection.js";
 import AboutSection from "../organisms/AboutSection.js";
 import PortfolioSection from "../organisms/PortfolioSection.js";
 import Footer from "../organisms/Footer.js";
 import PortfolioAnimation from "../organisms/PortfolioAnimation.js";
 import ContactSection from "../organisms/ContactSection.js";
-import { ScrollControls, Scroll, Environment } from "@react-three/drei";
+import { ScrollControls, Scroll, Environment, Loader } from "@react-three/drei";
 
 export default function MainCanvas({}) {
   const [screenSize, setScreenSize] = useState(0);
   const [pages, setPages] = useState(0);
+  const [mobile, setMobile] = useState();
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -24,8 +25,10 @@ export default function MainCanvas({}) {
 
       if (window.innerWidth <= 832) {
         setPages(12);
+        setMobile(true);
       } else {
         setPages(11);
+        setMobile(false);
       }
 
       return () => {
@@ -45,7 +48,9 @@ export default function MainCanvas({}) {
         <ambientLight color={"white"} intensity={0.3} />
         <ScrollControls pages={pages} damping={0}>
           <Environment blur={0} preset="warehouse" />
-          <PortfolioAnimation />
+          {/* <Suspense fallback={null}> */}
+          <PortfolioAnimation mobile={mobile} />
+          {/* </Suspense> */}
           <Scroll></Scroll>
           <Scroll html className="w-full">
             {/* Introduction animation [1 page] */}
@@ -61,6 +66,7 @@ export default function MainCanvas({}) {
           </Scroll>
         </ScrollControls>
       </Canvas>
+      <Loader />
       {/* </div> */}
     </div>
   );

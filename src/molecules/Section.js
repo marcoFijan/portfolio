@@ -39,7 +39,7 @@ export default function Article({
 
       {paragraphImageSmall && (
         <section
-          className={`grid grid-cols-fluid gap-12 pb-8 items-center ${
+          className={`block md:grid md:grid-cols-fluid gap-12 pb-8 items-center ${
             paragraphCenter && "justify-center"
           }`}
         >
@@ -81,7 +81,7 @@ export default function Article({
         </section>
       )}
       {!paragraphImageSmall && (
-        <section className="pb-8">
+        <section className="pb-8 w-full">
           {header && <H1 text={header} darkBackground={darkBackground}></H1>}
           {subHeader && <SubH1 text={subHeader}></SubH1>}
           {introduction && (

@@ -1,15 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import NextLink from "../atoms/NextLink.js";
+import H3 from "../atoms/H3.js";
 
 export default function Footer({ homePage }) {
   const footerContent = (
-    <div className="w-full max-w-wrapper px-articlePadding mx-auto flex justify-between">
-      <div className="relative bg-accentColor rounded-full w-44 h-44 self-center">
+    <section className="w-full max-w-wrapper px-articlePadding mx-auto flex justify-between">
+      <div className="hidden sm:block relative shadow-inputField bg-bgColorLight rounded-full w-44 h-44 self-center">
         <Image
           width="500"
           height={"500"}
-          className="absolute rounded-b-full w-44 bottom-0"
+          className="absolute rounded-b-full w-44 bottom-0 -scale-x-100"
           src={"/../public/images/marcoPointing.png"}
           alt={"Marco afbeelding"}
         />
@@ -17,29 +18,29 @@ export default function Footer({ homePage }) {
       <nav>
         <ul className="flex flex-col gap-1">
           <li>
-            <h3>Pagina</h3>
+            <H3 text="Pagina's" darkBackground={false} />
           </li>
           <li>
-            <Link className="hover:underline" href={""}>
+            <Link className="hover:underline" href={"/"}>
               Hoofdpagina
             </Link>
           </li>
           <li>
-            <Link className="hover:underline" href={""}>
+            <Link className="hover:underline" href={"/projects"}>
               Projecten
             </Link>
           </li>
           <li>
-            <Link className="hover:underline" href={""}>
+            <Link className="hover:underline" href={"/contact"}>
               Contact
             </Link>
           </li>
         </ul>
       </nav>
       <nav>
-        <ul className="flex flex-col gap-1">
+        <ul className="hidden md:flex flex-col gap-1">
           <li>
-            <h3>Projecten</h3>
+            <H3 text="Projecten" darkBackground={false} />
           </li>
           <li>
             <Link className="hover:underline" href={""}>
@@ -74,10 +75,10 @@ export default function Footer({ homePage }) {
         </ul>
       </nav>
       <div>
-        <h3>Contact</h3>
+        <H3 text="Contact" darkBackground={false} />
         <NextLink text="Neem contact op!" href="/contact"></NextLink>
       </div>
-    </div>
+    </section>
   );
   return (
     <>

@@ -4,7 +4,7 @@ import LogoImg from "../../public/images/Logo.svg";
 
 export default function Header() {
   return (
-    <header className="bg-bgColorDark text-white fixed z-50 w-full shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]">
+    <header className="text-white fixed z-50 w-full ">
       <div className="w-full max-w-wrapper px-articlePadding mx-auto flex justify-between py-2">
         <div className="relative w-36 top-0 left-0">
           <Image
@@ -17,7 +17,7 @@ export default function Header() {
         </div>
         <nav classname="flex items-center">
           <ul className="flex justify-between gap-4">
-            <li className="">
+            <li className="drop-shadow-[0_1.2px_1.2px_#12131a]">
               <Link
                 className="text-bgColorLight font-bold px-4 py-1 inline-block text-center place-self-center hover:underline"
                 href={"/"}
@@ -25,7 +25,7 @@ export default function Header() {
                 Hoofdpagina
               </Link>
             </li>
-            <li className="">
+            <li className="drop-shadow-[0_1.2px_1.2px_#12131a]">
               <Link
                 className="text-bgColorLight font-bold px-4 py-1 inline-block text-center place-self-center hover:underline"
                 href={"/projects"}
@@ -33,7 +33,7 @@ export default function Header() {
                 Projecten
               </Link>
             </li>
-            <li className="">
+            <li className="drop-shadow-[0_1.2px_1.2px_#12131a]">
               <Link
                 className="text-bgColorLight font-bold px-4 py-1 inline-block text-center place-self-center hover:underline"
                 href={"https://github.com/marcoFijan"}
@@ -46,7 +46,9 @@ export default function Header() {
                 className="text-bgColorLight whitespace-nowrap font-bold ml-4 px-4 py-1 inline-block rounded-lg text-center mx-auto place-self-center transition duration-500 ease-in-out bg-gradient-to-br from-[#f562b5] to-[#ac2873] shadow-ctaButton hover:shadow-ctaButtonHover"
                 href={"/contact"}
               >
-                Neem contact op!
+                <p className={"drop-shadow-[0_1.2px_1.2px_#12131a]"}>
+                  Neem contact op!
+                </p>
               </Link>
             </li>
           </ul>

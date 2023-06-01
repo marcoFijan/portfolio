@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer base {
-  h1 {
+  /* h1 {
     @apply text-6xl;
     @apply font-black;
     @apply uppercase;
@@ -18,7 +18,7 @@
     @apply text-xl;
     @apply font-black;
     @apply uppercase;
-  }
+  } */
 }
 
 #splitterStart {

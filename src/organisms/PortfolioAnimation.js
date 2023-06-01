@@ -5,11 +5,11 @@ import React, { useRef, useEffect, useState } from "react";
 import { useFrame } from "@react-three/fiber";
 import { gsap } from "gsap";
 
-export default function PortfolioSection() {
+export default function PortfolioSection({ mobile }) {
   return (
     <group>
-      <Smartphone />
-      <Laptop />
+      <Smartphone mobile={mobile} />
+      <Laptop mobile={mobile} />
     </group>
   );
 }

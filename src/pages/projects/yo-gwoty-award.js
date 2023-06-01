@@ -1,5 +1,7 @@
 import { Montserrat } from "next/font/google";
 import YOGwotyContent from "../../pageContents/ProjectYOGWOTY";
+import Header from "../../organisms/Header.js";
+import Footer from "../../organisms/Footer.js";
 
 const montserrat = Montserrat({
   weight: ["400", "700", "900"],
@@ -9,8 +11,12 @@ const montserrat = Montserrat({
 
 export default function YOGwotyAward() {
   return (
-    <main className={`bg-bgColorDark ${montserrat.className}`}>
-      <YOGwotyContent />
-    </main>
+    <>
+      <Header />
+      <main className={`bg-bgColorDark ${montserrat.className}`}>
+        <YOGwotyContent />
+      </main>
+      <Footer />
+    </>
   );
 }
