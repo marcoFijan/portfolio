@@ -5,7 +5,7 @@ import LogoImg from "../../public/images/Logo.svg";
 export default function Header() {
   return (
     <header className="text-white fixed z-50 w-full ">
-      <div className="w-full max-w-wrapper px-articlePadding mx-auto flex justify-between py-2">
+      <div className="w-full max-w-wrapper px-articlePaddingMobile md:px-articlePadding mx-auto flex justify-between py-2">
         <div className="relative w-36 top-0 left-0">
           <Image
             alt="logo"
