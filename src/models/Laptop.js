@@ -14,7 +14,7 @@ import { gsap } from "gsap";
 import { useThree } from "@react-three/fiber";
 
 export default function Laptop({ mobile, props }) {
-  const { nodes, materials } = useGLTF("./models/laptop.glb");
+  const { nodes, materials } = useGLTF("/modelsResource/laptop.glb");
   const { viewport } = useThree();
   const [laptopScreenPath, setLaptopScreenPath] = useState(
     "./images/Thumbnails/codeThumb.png"
@@ -641,4 +641,4 @@ export default function Laptop({ mobile, props }) {
   );
 }
 
-useGLTF.preload("./models/laptop.glb");
+useGLTF.preload("/modelsResource/laptop.glb");

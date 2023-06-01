@@ -37,7 +37,7 @@ export default function ProjectStandaardAanbouw({}) {
     // Het product
     // Validatie
     // Resources: Design Rationale + Link naar productbiografie
-    <div className="max-w-wrapper mx-auto w-full block px-articlePadding">
+    <div className="max-w-wrapper mx-auto w-full block">
       <ProjectArticle
         title={"Gig Worker Of The Year Award"}
         subTitle={"Een wedstrijd onderling verschillende YoungOnes zzp'ers"}

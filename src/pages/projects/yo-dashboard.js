@@ -13,7 +13,9 @@ export default function YODashboardClients() {
   return (
     <>
       <Header />
-      <main className={`bg-bgColorDark ${montserrat.className}`}>
+      <main
+        className={`bg-gradient-radial from-bgColorDarkSec to-bgColorDarkk ${montserrat.className}`}
+      >
         <YODashboardContent />
       </main>
       <Footer />

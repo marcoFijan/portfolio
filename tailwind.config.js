@@ -44,6 +44,7 @@ module.exports = {
       },
       padding: {
         articlePadding: "3rem",
+        articlePaddingMobile: "1rem",
       },
       margin: {
         "1/2-height": "50vh",

@@ -5,7 +5,7 @@ import H3 from "../atoms/H3.js";
 
 export default function Footer({ homePage }) {
   const footerContent = (
-    <section className="w-full max-w-wrapper px-articlePadding mx-auto flex justify-between">
+    <section className="w-full max-w-wrapper px-articlePaddingMobile md:px-articlePadding mx-auto flex justify-between">
       <div className="hidden sm:block relative shadow-inputField bg-bgColorLight rounded-full w-44 h-44 self-center">
         <Image
           width="500"

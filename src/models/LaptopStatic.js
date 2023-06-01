@@ -11,7 +11,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { useGLTF, useTexture, useScroll } from "@react-three/drei";
 
 export default function Laptop({ screen, ...props }) {
-  const { nodes, materials } = useGLTF("../models/laptop.glb");
+  const { nodes, materials } = useGLTF("/modelsResource/laptop.glb");
   const [laptopScreenPath, setLaptopScreenPath] = useState(screen);
   const startScreenPosition = {
     rot: { x: 1.46, y: 0, z: 0 },
@@ -100,4 +100,4 @@ export default function Laptop({ screen, ...props }) {
   );
 }
 
-useGLTF.preload("../models/laptop.glb");
+useGLTF.preload("/modelsResource/laptop.glb");

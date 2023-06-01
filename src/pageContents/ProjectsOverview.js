@@ -11,7 +11,7 @@ import RingRingThumbnailImg from "../../public/images/Thumbnails/RingRingThumb.j
 export default function ProjectsOverview({}) {
   const darkBackground = true;
   return (
-    <div className="max-w-wrapper mx-auto w-full block px-articlePadding">
+    <div className="max-w-wrapper mx-auto w-full block">
       <Article
         darkBackground={true}
         title={"Alle projecten"}

@@ -4,7 +4,7 @@ import Section from "../molecules/Section";
 export default function PortfolioSection() {
   const darkBackground = true;
   return (
-    <article className="max-w-wrapper mx-auto w-full px-8">
+    <article className="max-w-wrapper mx-auto w-full px-articlePaddingMobile md:px-articlePadding">
       <Section
         customClassName={"h-screen text-left"}
         darkBackground={darkBackground}

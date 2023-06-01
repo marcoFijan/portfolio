@@ -13,7 +13,7 @@ import { useGLTF, useTexture, useScroll } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 
 export default function Smartphone({ pos, rot, ...props }) {
-  const { nodes, materials } = useGLTF("./models/smartphone.glb");
+  const { nodes, materials } = useGLTF("/modelsResource/smartphone.glb");
   let [smartScreenPath, setSmartScreenPath] = useState("./images/p1.jpg");
   const smartScreen = useTexture(smartScreenPath);
 
@@ -332,4 +332,4 @@ export default function Smartphone({ pos, rot, ...props }) {
   );
 }
 
-useGLTF.preload("./models/smartphone.glb");
+useGLTF.preload("/modelsResource/smartphone.glb");

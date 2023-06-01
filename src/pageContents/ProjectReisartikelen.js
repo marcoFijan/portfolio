@@ -11,7 +11,7 @@ export default function ProjectReisartikelen({}) {
   const darkBackground = true;
 
   return (
-    <div className="max-w-wrapper mx-auto w-full block px-articlePadding">
+    <div className="max-w-wrapper mx-auto w-full block">
       <ProjectArticle
         title={"Reisartikelen herontwerp"}
         subTitle={"Een herontwerp met focus op conversieratio's"}

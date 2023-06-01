@@ -13,7 +13,9 @@ export default function KBOTilburgReeshof() {
   return (
     <>
       <Header />
-      <main className={`bg-bgColorDark ${montserrat.className}`}>
+      <main
+        className={`bg-gradient-radial from-bgColorDarkSec to-bgColorDark ${montserrat.className}`}
+      >
         <KBOTilburgReeshofContent
           title={"KBO Tilburg Reeshof"}
           subTitle={"Een designopdracht voor ouderen"}

@@ -13,7 +13,9 @@ export default function Projects() {
   return (
     <>
       <Header />
-      <main className={`bg-bgColorDark ${montserrat.className}`}>
+      <main
+        className={`bg-gradient-radial from-bgColorDarkSec to-bgColorDark ${montserrat.className}`}
+      >
         <ProjectsOverview />
       </main>
       <Footer />

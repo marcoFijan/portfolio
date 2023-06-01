@@ -31,7 +31,7 @@ export default function ProjectStandaardAanbouw({}) {
   const darkBackground = true;
 
   return (
-    <div className="max-w-wrapper mx-auto w-full block px-articlePadding">
+    <div className="max-w-wrapper mx-auto w-full block">
       <ProjectArticle
         title={"Opdrachtgever Dashboard"}
         subTitle={"Een overzicht van alle freelancers via YoungOnes"}
