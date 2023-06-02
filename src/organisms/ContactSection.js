@@ -32,7 +32,7 @@ export default function SkillsSection() {
   return (
     <>
       <div id="splitterStart"></div>
-      <article className="h-screen bg-bgColorLight">
+      <article className="h-screen bg-bgColorLight pt-36 md:mt-0">
         <div className="max-w-wrapper mx-auto w-full px-articlePaddingMobile md:px-articlePadding">
           <Section
             title={"Interesse?"}

@@ -74,7 +74,7 @@ export default function Laptop({ mobile, props }) {
     if (typeof window !== "undefined") {
       function updateDimension() {
         setScreenSize(window.innerWidth);
-        // location.reload();
+        location.reload();
       }
       window.addEventListener("resize", updateDimension);
 

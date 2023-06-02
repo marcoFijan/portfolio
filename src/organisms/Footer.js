@@ -1,11 +1,19 @@
+import { Montserrat } from "next/font/google";
+
 import Image from "next/image";
 import Link from "next/link";
 import NextLink from "../atoms/NextLink.js";
 import H3 from "../atoms/H3.js";
 
+const montserrat = Montserrat({
+  weight: ["400", "700", "900"],
+  subsets: ["latin"],
+  variable: "--font-montserrat",
+});
+
 export default function Footer({ homePage }) {
   const footerContent = (
-    <section className="w-full max-w-wrapper px-articlePaddingMobile md:px-articlePadding mx-auto flex justify-between">
+    <section className="w-full max-w-wrapper px-articlePaddingMobile md:px-articlePadding mx-auto flex flex-wrap justify-between gap-8 ">
       <div className="hidden sm:block relative shadow-inputField bg-bgColorLight rounded-full w-44 h-44 self-center">
         <Image
           width="500"
@@ -38,7 +46,7 @@ export default function Footer({ homePage }) {
         </ul>
       </nav>
       <nav>
-        <ul className="hidden md:flex flex-col gap-1">
+        <ul className="flex flex-col gap-1">
           <li>
             <H3 text="Projecten" darkBackground={false} />
           </li>
@@ -74,8 +82,9 @@ export default function Footer({ homePage }) {
           </li>
         </ul>
       </nav>
-      <div>
+      <div className="self-center md:w-auto md:self-auto">
         <H3 text="Contact" darkBackground={false} />
+        <p>Heeft u interesse? </p> <p>Stuur gerust een berichtje!</p>
         <NextLink text="Neem contact op!" href="/contact"></NextLink>
       </div>
     </section>
@@ -83,11 +92,18 @@ export default function Footer({ homePage }) {
   return (
     <>
       {homePage ? (
-        <div className="bg-bgColorLight h-50% grid items-center">
+        <div
+          className={`bg-bgColorLight h-50% grid items-center ${montserrat.className}`}
+        >
           {footerContent}
         </div>
       ) : (
-        <footer className="bg-bgColorDark">{footerContent}</footer>
+        <>
+          <footer className={`${montserrat.className} -mt-[50vh]`}>
+            <div id="splitterStart"></div>
+            <div className="w-full bg-bgColorLight py-8">{footerContent}</div>
+          </footer>
+        </>
       )}
     </>
   );

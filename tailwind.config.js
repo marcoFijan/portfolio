@@ -29,8 +29,8 @@ module.exports = {
       colors: {
         accentColor: "#d4a418",
         CTAColor: "#e745a1",
-        bgColorDark: "#12131a",
-        bgColorDarkSec: "#282b37",
+        bgColorDark: "#3d0d29",
+        bgColorDarkSec: "#0e3d46",
         bgColorLight: "#e7efff",
         white: "#ffffff",
       },
