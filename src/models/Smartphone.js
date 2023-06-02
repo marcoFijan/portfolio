@@ -12,7 +12,7 @@ import { gsap } from "gsap";
 import { useGLTF, useTexture, useScroll } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 
-export default function Smartphone({ pos, rot, ...props }) {
+export default function Smartphone({ pos, rot, mobile, ...props }) {
   const { nodes, materials } = useGLTF("/modelsResource/smartphone.glb");
   let [smartScreenPath, setSmartScreenPath] = useState("./images/p1.jpg");
   const smartScreen = useTexture(smartScreenPath);
@@ -44,29 +44,63 @@ export default function Smartphone({ pos, rot, ...props }) {
       defaults: { duration: 1 },
     });
 
-    const startpositions = {
-      hero: 0,
-      portfolioIntro: 5,
-      firstProject: 7,
-      firstProjectEnd: 8,
-      thirdProject: 10.5,
-      thirdProjectEnd: 12,
-      fourthProject: 13,
-      fourthProjectEnd: 14,
-      otherProjects: 15,
-      otherProjectsEnd: 16,
-      otherProjectsEnd2: 16.5,
-      endpoint: 20,
-    };
+    // {
+    //       hero: 0,
+    //       portfolioIntro: 6.5,
+    //       firstProject: 8.3,
+    //       firstProjectEnd: 9.3,
+    //       secondProject: 10.3,
+    //       secondProjectEnd: 11.3,
+    //       thirdProject: 12.3,
+    //       thirdProjectEnd: 13.3,
+    //       fourthProject: 14.3,
+    //       fourthProjectEnd: 15.3,
+    //       otherProjects: 16.35,
+    //       otherProjectsEnd: 17.5,
+    //     }
+
+    const startpositions = mobile
+      ? {
+          hero: 0,
+          portfolioIntro: 5.8,
+          firstProject: 8,
+          firstProjectEnd: 9.5,
+          thirdProject: 11.8,
+          thirdProjectEnd: 13,
+          fourthProject: 13.8,
+          fourthProjectEnd: 14.8,
+          otherProjects: 16,
+          otherProjectsEnd: 17,
+          otherProjectsEnd2: 17.5,
+          endpoint: 20,
+        }
+      : {
+          hero: 0,
+          portfolioIntro: 5,
+          firstProject: 7,
+          firstProjectEnd: 8,
+          thirdProject: 10.5,
+          thirdProjectEnd: 12,
+          fourthProject: 13,
+          fourthProjectEnd: 14,
+          otherProjects: 15,
+          otherProjectsEnd: 16,
+          otherProjectsEnd2: 16.5,
+          endpoint: 20,
+        };
 
     // Animation
     timeline.current
       // OPENINGSANIMATION
       .to(smartphone.current.rotation, { x: -Math.PI / 2 }, startpositions.hero)
-      .to(smartphone.current.position, { y: -2 }, startpositions.hero)
+      .to(smartphone.current.position, { y: 0 }, startpositions.hero)
       .to(smartphone.current.position, { x: 18 }, 2)
       .to(smartphone.current.rotation, { z: 2 }, 2)
-      .to(smartphone.current.position, { x: 5 }, startpositions.portfolioIntro)
+      .to(
+        smartphone.current.position,
+        { x: mobile ? 0 : 5 },
+        startpositions.portfolioIntro
+      )
       .to(
         smartphone.current.rotation,
         { z: 0.2 },
@@ -74,7 +108,11 @@ export default function Smartphone({ pos, rot, ...props }) {
       )
 
       // FIRST PROJECT
-      .to(smartphone.current.position, { x: 4 }, startpositions.firstProject)
+      .to(
+        smartphone.current.position,
+        { x: mobile ? 0 : 4 },
+        startpositions.firstProject
+      )
       .to(smartphone.current.rotation, { x: 0 }, startpositions.firstProject)
       // First to second project transition
       .to(
@@ -88,7 +126,11 @@ export default function Smartphone({ pos, rot, ...props }) {
         { y: Math.PI * 2 },
         startpositions.firstProjectEnd
       )
-      .to(smartphone.current.position, { x: 4 }, startpositions.thirdProject)
+      .to(
+        smartphone.current.position,
+        { x: mobile ? 0 : 4 },
+        startpositions.thirdProject
+      )
       .to(
         smartphone.current.rotation,
         { y: Math.PI * 2 },
@@ -102,7 +144,7 @@ export default function Smartphone({ pos, rot, ...props }) {
       .to(smartphone.current.position, { y: 0 }, startpositions.thirdProjectEnd)
       .to(
         smartphone.current.position,
-        { x: -1 },
+        { x: mobile ? 0 : -1 },
         startpositions.thirdProjectEnd
       )
       .to(smartphone.current.position, { z: 2 }, startpositions.thirdProjectEnd)
@@ -114,13 +156,21 @@ export default function Smartphone({ pos, rot, ...props }) {
 
       // Third to fourth project transition
       .to(smartphone.current.position, { z: 0 }, startpositions.fourthProject)
-      .to(smartphone.current.position, { x: -5 }, startpositions.fourthProject)
-      .to(smartphone.current.position, { y: -4 }, startpositions.fourthProject)
+      .to(
+        smartphone.current.position,
+        { x: mobile ? 0 : -5 },
+        startpositions.fourthProject
+      )
+      .to(
+        smartphone.current.position,
+        { y: mobile ? 0 : -1 },
+        startpositions.fourthProject
+      )
       .to(smartphone.current.rotation, { y: 0 }, startpositions.fourthProject)
 
       .to(
         smartphone.current.position,
-        { y: 0 },
+        { y: mobile ? 2 : 0 },
         startpositions.fourthProjectEnd
       )
       .to(
@@ -130,7 +180,11 @@ export default function Smartphone({ pos, rot, ...props }) {
       )
 
       // FOURTH PROJECT
-      .to(smartphone.current.position, { x: 5 }, startpositions.otherProjects)
+      .to(
+        smartphone.current.position,
+        { x: mobile ? 0 : 5 },
+        startpositions.otherProjects
+      )
       .to(smartphone.current.rotation, { z: 0.3 }, startpositions.otherProjects)
       .to(
         smartphone.current.rotation,
@@ -149,7 +203,7 @@ export default function Smartphone({ pos, rot, ...props }) {
       )
       .to(
         smartphone.current.position,
-        { y: -2 },
+        { y: mobile ? 0 : -2 },
         startpositions.otherProjectsEnd
       )
       .to(
@@ -168,7 +222,7 @@ export default function Smartphone({ pos, rot, ...props }) {
       dispose={null}
       scale={1.3}
       ref={smartphone}
-      position={[6, 1, 0]}
+      position={[mobile ? 0 : 6, mobile ? 3 : 1, 0]}
       rotation={[0, 0, 0.3]}
     >
       {/* [-1.91, 0.19, -0.49] */}
