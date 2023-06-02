@@ -107,17 +107,17 @@ export default function Laptop({ mobile, props }) {
     const startpositions = mobile
       ? {
           hero: 0,
-          portfolioIntro: 6.5,
-          firstProject: 8.3,
-          firstProjectEnd: 9.3,
-          secondProject: 10.3,
-          secondProjectEnd: 11.3,
-          thirdProject: 12.3,
-          thirdProjectEnd: 13.3,
-          fourthProject: 14.3,
-          fourthProjectEnd: 15.3,
-          otherProjects: 16.35,
-          otherProjectsEnd: 17.5,
+          portfolioIntro: 6,
+          firstProject: 7.5,
+          firstProjectEnd: 8.8,
+          secondProject: 9.8,
+          secondProjectEnd: 10.8,
+          thirdProject: 11.8,
+          thirdProjectEnd: 12.8,
+          fourthProject: 13.8,
+          fourthProjectEnd: 14.8,
+          otherProjects: 15.85,
+          otherProjectsEnd: 17,
         }
       : {
           hero: 0,
@@ -172,7 +172,7 @@ export default function Laptop({ mobile, props }) {
       .to(laptop.current.rotation, { z: -1 }, 3.5)
       .to(
         laptop.current.position,
-        { y: mobile ? -3.5 : -2 },
+        { y: mobile ? -3.5 : -3 },
         startpositions.portfolioIntro
       )
       .to(laptop.current.position, { x: 0 }, startpositions.portfolioIntro)

@@ -24,7 +24,7 @@ export default function MainCanvas({}) {
       window.addEventListener("resize", updateDimension);
 
       if (window.innerWidth <= 832) {
-        setPages(12);
+        setPages(11.5);
         setMobile(true);
       } else {
         setPages(11);
@@ -66,7 +66,7 @@ export default function MainCanvas({}) {
           </Scroll>
         </ScrollControls>
       </Canvas>
-      <Loader />
+      {/* <Loader /> */}
       {/* </div> */}
     </div>
   );

@@ -46,9 +46,7 @@ export default function Header() {
                 className="text-bgColorLight whitespace-nowrap font-bold ml-4 px-4 py-1 inline-block rounded-lg text-center mx-auto place-self-center transition duration-500 ease-in-out bg-gradient-to-br from-[#f562b5] to-[#ac2873] shadow-ctaButton hover:shadow-ctaButtonHover"
                 href={"/contact"}
               >
-                <p className={"drop-shadow-[0_1.2px_1.2px_#12131a]"}>
-                  Neem contact op!
-                </p>
+                Neem contact op!
               </Link>
             </li>
           </ul>

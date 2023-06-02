@@ -55,7 +55,6 @@ module.exports = {
       },
       height: {
         "50%": "50vh",
-        screenx2: "200vh",
       },
 
       maxWidth: {
