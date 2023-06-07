@@ -51,7 +51,10 @@ export default function MainCanvas({}) {
       >
         <ambientLight color={"white"} intensity={0.3} />
         <ScrollControls pages={pages} damping={0}>
-          <Environment blur={0} preset="warehouse" />
+          <Environment
+            blur={0}
+            files="../images/Environment/brown_photostudio_02_1k.hdr"
+          />
           <Smartphone mobile={mobile} />
           <Laptop mobile={mobile} />
 
