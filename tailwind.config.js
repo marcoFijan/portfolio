@@ -25,6 +25,12 @@ module.exports = {
       "2xl": "1536px",
       // => @media (min-width: 1536px) { ... }
     },
+    backgroundSize: {
+      auto: "auto",
+      cover: "cover",
+      contain: "contain",
+      "200%": "200%",
+    },
     extend: {
       colors: {
         accentColor: "#d4a418",

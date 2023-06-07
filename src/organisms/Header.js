@@ -15,7 +15,7 @@ export default function Header() {
     <header className={`${montserrat.className} text-white fixed z-50 w-full`}>
       <div className="w-full h-12 bg-bgColorLight opacity-10 -z-10 absolute top-0 left-0"></div>
       <div className="w-full max-w-wrapper md:px-articlePadding mx-auto flex justify-between py-2">
-        <div className="relative w-16 top-0 left-0">
+        <div className="mx-auto md:mx-0 relative w-16 top-0 left-0">
           <Image
             alt="logo"
             src={LogoImg}
@@ -24,7 +24,7 @@ export default function Header() {
             className="h-16 absolute -top-4 left-0"
           />
         </div>
-        <nav className="flex transition-all items-center">
+        <nav id="nav" className="flex transition-all items-center">
           <input
             className="hidden"
             type="checkbox"
@@ -33,7 +33,7 @@ export default function Header() {
           />
           <label
             htmlFor="hamburgerMenu"
-            className="fixed flex items-center justify-center w-16 h-16 bg-gradient-to-br from-[#60667c] to-[#070709] rounded-lg shadow-md cursor-pointer bottom-8 right-4 md:hidden"
+            className="fixed flex items-center justify-center w-16 h-16 bg-gradient-to-br from-[#60667c] via-[#070709] to-[#60667c] rounded-lg shadow-md cursor-pointer bottom-8 right-4 md:hidden"
             id="hamburgerMenu"
           >
             <div className="" id="menuButtonBurger"></div>
@@ -68,7 +68,8 @@ export default function Header() {
             </li>
             <li className="">
               <Link
-                className="text-bgColorLight whitespace-nowrap font-bold ml-4 px-4 py-1 hidden md:inline-block rounded-lg text-center mx-auto place-self-center transition duration-500 ease-in-out bg-gradient-to-br from-[#f562b5] to-[#ac2873] shadow-ctaButton hover:shadow-ctaButtonHover"
+                id="button"
+                className="text-bgColorLight whitespace-nowrap font-bold ml-4 px-4 py-1 hidden md:inline-block rounded-lg text-center mx-auto place-self-center transition duration-500 ease-in-out bg-gradient-to-br from-[#f562b5] via-[#ac2873] to-[#f562b5] shadow-ctaButton hover:shadow-ctaButtonHover"
                 href={"/contact"}
               >
                 Neem contact op!

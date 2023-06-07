@@ -3,22 +3,16 @@
 @tailwind utilities;
 
 @layer base {
-  /* h1 {
-    @apply text-6xl;
-    @apply font-black;
-    @apply uppercase;
-  }
-  h2 {
-    @apply text-2xl;
-    @apply font-black;
-    @apply text-accentColor;
-    @apply uppercase;
-  }
-  h3 {
-    @apply text-xl;
-    @apply font-black;
-    @apply uppercase;
-  } */
+}
+
+#button {
+  background-size: 1000%;
+  background-position: left;
+  transition: all 0.5s ease-in-out;
+}
+
+#button:hover {
+  background-position: right;
 }
 
 #splitterStart {
@@ -84,23 +78,35 @@
   #hamburgerMenu {
     transition: all 0.5s ease-in-out;
     transition-delay: 200ms;
+    background-size: 1000%;
+    background-position: left;
+  }
+
+  #hamburgerMenu:hover {
+    background-position: right;
   }
 
   #hamburgerMenu:checked ~ #hamburgerMenu {
     background-position: right;
     box-shadow: 0px 0px 3px transparent;
-    /* background: transparent; */
     bottom: 0;
     right: 0;
     padding: 2.5rem 0;
     width: 100%;
   }
 
+  #navlist {
+    transition: all 0.5s ease-in-out;
+  }
+
+  #navlist li {
+    transition: all 0.5s ease-in-out;
+  }
+
   #navlist li a {
     transition: all 0.5s ease-in-out;
     width: 100vw;
     padding: 2rem 0;
-    /* background: black; */
   }
 
   #navlist li:nth-child(2) {
@@ -142,12 +148,3 @@
     background: white;
   }
 }
-
-/* 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-} */

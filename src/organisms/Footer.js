@@ -14,7 +14,7 @@ const montserrat = Montserrat({
 export default function Footer({ homePage }) {
   const footerContent = (
     <section className="w-full max-w-wrapper px-articlePaddingMobile md:px-articlePadding mx-auto flex flex-wrap justify-between gap-8 ">
-      <div className="hidden sm:block relative shadow-inputField bg-bgColorLight rounded-full w-44 h-44 self-center">
+      <div className="hidden md:block relative shadow-inputField bg-bgColorLight rounded-full w-44 h-44 self-center">
         <Image
           height={500}
           width={500}
