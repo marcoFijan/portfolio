@@ -51,33 +51,34 @@ export default function Footer({ homePage }) {
             <H3 text="Projecten" darkBackground={false} />
           </li>
           <li>
-            <Link className="hover:underline" href={""}>
+            <Link
+              className="hover:underline"
+              href={"/projects/kbo-tilburg-reeshof"}
+            >
               KBO Tilburg Reeshof
             </Link>
           </li>
           <li>
-            <Link className="hover:underline" href={""}>
+            <Link className="hover:underline" href={"/projects/yo-gwoty-award"}>
               YO Dashboard
             </Link>
           </li>
           <li>
-            <Link className="hover:underline" href={""}>
+            <Link className="hover:underline" href={"/projects/yo-dashboard"}>
               YO GWOTY-award
             </Link>
           </li>
           <li>
-            <Link className="hover:underline" href={""}>
+            <Link
+              className="hover:underline"
+              href={"/projects/standaard-aanbouw"}
+            >
               Standaard Aanbouw
             </Link>
           </li>
           <li>
-            <Link className="hover:underline" href={""}>
-              KBO Tilburg Reeshof
-            </Link>
-          </li>
-          <li>
-            <Link className="hover:underline" href={""}>
-              KBO Tilburg Reeshof
+            <Link className="hover:underline" href={"/projects"}>
+              Overige projecten
             </Link>
           </li>
         </ul>
