@@ -1,6 +1,6 @@
 // IMAGES
-import hifiImg from "../../public/images/Reisartikelen/Hifi.jpg";
-import lofiImg from "../../public/images/Reisartikelen/Lofi.jpg";
+import hifiImg from "../../public/images/Reisartikelen/HiFi.jpg";
+import lofiImg from "../../public/images/Reisartikelen/LoFi.jpg";
 import OriginalImg from "../../public/images/Reisartikelen/Original.jpg";
 import mockupImg from "../../public/images/Thumbnails/ReisartikelenMockup.png";
 

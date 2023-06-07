@@ -12,7 +12,7 @@ import activitiesImg from "../../public/images/KBOReeshof/Activities.png";
 import footerImg from "../../public/images/KBOReeshof/Footer.png";
 import helpMenuImg from "../../public/images/KBOReeshof/HelpMenu.png";
 import homeImg from "../../public/images/KBOReeshof/Home.png";
-import introductionImg from "../../public/images/KBOReeshof/introduction.png";
+import introductionImg from "../../public/images/KBOReeshof/Introduction.png";
 import menuImg from "../../public/images/KBOReeshof/Menu.png";
 
 // COMPONENTS
