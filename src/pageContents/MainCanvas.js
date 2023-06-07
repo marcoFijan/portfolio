@@ -2,6 +2,7 @@
 
 // import Projects from "./PortfolioProjects.jsx";
 import { Canvas } from "@react-three/fiber";
+import Image from "next/image";
 import { useState, Suspense, useEffect } from "react";
 import HeroSection from "../organisms/HeroSection.js";
 import AboutSection from "../organisms/AboutSection.js";
@@ -43,7 +44,77 @@ export default function MainCanvas({}) {
 
   return (
     <div className="w-full h-screen">
-      {/* <div className="w-full h-screen"> */}
+      {/* PRELOAD THUMBNAILS  */}
+      <Image
+        alt="thumbloader KBO"
+        src={"/../../public/images/Thumbnails/KBOReeshofThumb.png"}
+        height={100}
+        width={100}
+        className="hidden"
+      />
+      <Image
+        alt="thumbloader KBO"
+        src={"/../../public/images/Thumbnails/KBOReeshofThumbMobile.png"}
+        height={100}
+        width={100}
+        className="hidden"
+      />
+      <Image
+        alt="thumbloader KBO"
+        src={"/../../public/images/Thumbnails/ReisartikelenThumb.jpg"}
+        height={100}
+        width={100}
+        className="hidden"
+      />
+      <Image
+        alt="thumbloader KBO"
+        src={"/../../public/images/Thumbnails/RingRingThumb.jpg"}
+        height={100}
+        width={100}
+        className="hidden"
+      />
+      <Image
+        alt="thumbloader KBO"
+        src={"/../../public/images/Thumbnails/RingRingThumbMobile.png"}
+        height={100}
+        width={100}
+        className="hidden"
+      />
+      <Image
+        alt="thumbloader KBO"
+        src={"/../../public/images/Thumbnails/StandaardAanbouwThumb.png"}
+        height={100}
+        width={100}
+        className="hidden"
+      />
+      <Image
+        alt="thumbloader KBO"
+        src={"/../../public/images/Thumbnails/StandaardAanbouwThumbMobile.png"}
+        height={100}
+        width={100}
+        className="hidden"
+      />
+      <Image
+        alt="thumbloader KBO"
+        src={"/../../public/images/Thumbnails/YODashboardThumb.png"}
+        height={100}
+        width={100}
+        className="hidden"
+      />
+      <Image
+        alt="thumbloader KBO"
+        src={"/../../public/images/Thumbnails/YOGwotyThumb.png"}
+        height={100}
+        width={100}
+        className="hidden"
+      />
+      <Image
+        alt="thumbloader KBO"
+        src={"/../../public/images/Thumbnails/YOGwotyThumbMobile.png"}
+        height={100}
+        width={100}
+        className="hidden"
+      />
       <Canvas
         shadows
         className="h-full w-full overflow-hidden"
