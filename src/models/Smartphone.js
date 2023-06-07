@@ -93,7 +93,11 @@ export default function Smartphone({ pos, rot, mobile, ...props }) {
     timeline.current
       // OPENINGSANIMATION
       .to(smartphone.current.rotation, { x: -Math.PI / 2 }, startpositions.hero)
-      .to(smartphone.current.position, { y: 0 }, startpositions.hero)
+      .to(
+        smartphone.current.position,
+        { y: mobile ? 0 : -2 },
+        startpositions.hero
+      )
       .to(smartphone.current.position, { x: 18 }, 2)
       .to(smartphone.current.rotation, { z: 2 }, 2)
       .to(
@@ -104,6 +108,11 @@ export default function Smartphone({ pos, rot, mobile, ...props }) {
       .to(
         smartphone.current.rotation,
         { z: 0.2 },
+        startpositions.portfolioIntro
+      )
+      .to(
+        smartphone.current.position,
+        { y: mobile ? 0 : -3 },
         startpositions.portfolioIntro
       )
 
@@ -203,7 +212,7 @@ export default function Smartphone({ pos, rot, mobile, ...props }) {
       )
       .to(
         smartphone.current.position,
-        { y: mobile ? 0 : -2 },
+        { y: mobile ? 0 : -3 },
         startpositions.otherProjectsEnd
       )
       .to(

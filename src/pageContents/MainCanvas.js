@@ -48,25 +48,24 @@ export default function MainCanvas({}) {
         <ambientLight color={"white"} intensity={0.3} />
         <ScrollControls pages={pages} damping={0}>
           <Environment blur={0} preset="warehouse" />
-          <Suspense fallback={null}>
-            <PortfolioAnimation mobile={mobile} />
-            <Scroll></Scroll>
-            <Scroll html className="w-full">
-              {/* Introduction animation [1 page] */}
-              <HeroSection />
-              {/* Information about me [2 page] */}
-              <AboutSection />
-              {/* Overview with a couple of projects I am proud of [6 pages] */}
-              <PortfolioSection />
-              {/* Contactpage with a form [1.5 page] */}
-              <ContactSection homePage={true} />
-              {/* Footer [0.5 page] */}
-              <Footer homePage={true} />
-            </Scroll>
-          </Suspense>
+
+          <PortfolioAnimation mobile={mobile} />
+          <Scroll></Scroll>
+          <Scroll html className="w-full">
+            {/* Introduction animation [1 page] */}
+            <HeroSection />
+            {/* Information about me [2 page] */}
+            <AboutSection />
+            {/* Overview with a couple of projects I am proud of [6 pages] */}
+            <PortfolioSection />
+            {/* Contactpage with a form [1.5 page] */}
+            <ContactSection homePage={true} />
+            {/* Footer [0.5 page] */}
+            <Footer homePage={true} />
+          </Scroll>
         </ScrollControls>
       </Canvas>
-      <Loader />
+
       {/* </div> */}
     </div>
   );
