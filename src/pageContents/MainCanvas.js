@@ -59,7 +59,7 @@ export default function MainCanvas({}) {
               {/* Overview with a couple of projects I am proud of [6 pages] */}
               <PortfolioSection />
               {/* Contactpage with a form [1.5 page] */}
-              <ContactSection />
+              <ContactSection homePage={true} />
               {/* Footer [0.5 page] */}
               <Footer homePage={true} />
             </Scroll>

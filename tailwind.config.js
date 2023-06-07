@@ -34,14 +34,21 @@ module.exports = {
         bgColorLight: "#e7efff",
         white: "#ffffff",
       },
+      borderWidth: {
+        1: "1px",
+      },
       boxShadow: {
         ctaButtonHover: "5px 5px 0px #5c1c40, -5px -5px 0px #ff6eff;",
         ctaButton: "0px 0px 10px #5c1c40;",
         buttonHover: "5px 5px 0px #0a0b0c, -5px -5px 0px #5d6583;",
         button: "0px 0px 10px #0a0b0c;",
         inputField: "inset 6px 6px 12px #d5dceb, inset -6px -6px 12px #f9ffff;",
-        inputFieldValid: "6px 6px 12px #d5dceb, -6px -6px 12px #f9ffff;",
+        inputFieldValid: "5px 5px 10px #d5dceb, -6px -6px 12px #f9ffff;",
+        inputFieldDark:
+          "inset 9px 9px 18px #222030, inset -9px -9px 18px #2c283e;",
+        inputFieldDarkValid: "5px 5px 10px #222030, -9px -9px 18px #2c283e;",
       },
+
       padding: {
         articlePadding: "3rem",
         articlePaddingMobile: "1rem",
