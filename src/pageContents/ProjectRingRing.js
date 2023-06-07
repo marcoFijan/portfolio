@@ -1,9 +1,9 @@
 // IMAGES
 import signInImg from "../../public/images/RingRing/Inlogscherm.png";
-import homeImg from "../../public/images/RingRing/Home.JPG";
-import routesImg from "../../public/images/RingRing/Routes.JPG";
-import specificDataImg from "../../public/images/RingRing/SpecificData.JPG";
-import feedbackImg from "../../public/images/RingRing/Feedback.JPG";
+import homeImg from "../../public/images/RingRing/Home.jpg";
+import routesImg from "../../public/images/RingRing/Routes.jpg";
+import specificDataImg from "../../public/images/RingRing/SpecificData.jpg";
+import feedbackImg from "../../public/images/RingRing/Feedback.jpg";
 
 // COMPONENTS
 import ProjectArticle from "../organisms/ProjectArticle";
