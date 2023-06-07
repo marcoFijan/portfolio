@@ -5,6 +5,8 @@ import Link from "next/link";
 import NextLink from "../atoms/NextLink.js";
 import H3 from "../atoms/H3.js";
 
+import FooterImg from "../../public/images/marcoPointing.png";
+
 const montserrat = Montserrat({
   weight: ["400", "700", "900"],
   subsets: ["latin"],
@@ -19,8 +21,9 @@ export default function Footer({ homePage }) {
           height={500}
           width={500}
           className="absolute rounded-b-full w-44 bottom-0 -scale-x-100"
-          src={"/../public/images/marcoPointing.png"}
+          src={FooterImg}
           alt={"Marco afbeelding"}
+          priority={true}
         />
       </div>
       <nav>

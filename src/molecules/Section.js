@@ -79,6 +79,7 @@ export default function Article({
             alt={paragraphImageAlt}
             height={1000}
             width={1000}
+            priority={true}
           />
         </section>
       )}
@@ -108,6 +109,7 @@ export default function Article({
               alt={paragraphImageAlt}
               height={1000}
               width={1000}
+              priority={true}
             />
           )}
 

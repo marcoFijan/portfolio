@@ -99,6 +99,7 @@ export default function Article({
               } ${paragraphImageClassname}`}
               src={paragraphImageURL}
               alt={paragraphImageAlt}
+              priority={true}
             />
           )}
           {canvas && canvas}
@@ -143,6 +144,7 @@ export default function Article({
               className={`w-full object-cover  box-border p-4 border rounded-2xl ${paragraphImageClassname}`}
               src={paragraphImageURL}
               alt={paragraphImageAlt}
+              priority={true}
             />
           )}
           {linkHref && (

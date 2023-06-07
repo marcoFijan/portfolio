@@ -30,6 +30,7 @@ export default function AboutSection() {
               alt="Picture of Marco Fijan pointing to text"
               height={1000}
               width={1000}
+              priority={true}
             />
             <div className="relative w-full h-10">
               <div className="-mt-12" id="bottomImageWave"></div>

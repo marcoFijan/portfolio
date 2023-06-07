@@ -118,17 +118,26 @@ export default function ProjectKBOTilburgReesof({
                 className="w-full border-white border-8"
                 src={persona1Img}
                 alt="Afbeelding van persona 1"
+                width={500}
+                height={500}
+                priority={true}
               />
               <Image
                 className="w-full border-white border-8"
                 src={persona2Img}
                 alt="Afbeelding van persona 2"
+                width={500}
+                height={500}
+                priority={true}
               />
             </section>
             <Image
               className="w-full max-w-[50rem] mx-auto border-white border-8"
               src={empathyMapImg}
               alt="Afbeelding van Empathy Map"
+              width={500}
+              height={500}
+              priority={true}
             />
           </section>
         }

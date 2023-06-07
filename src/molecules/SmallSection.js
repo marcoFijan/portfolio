@@ -42,6 +42,7 @@ export default function Section({
         alt={paragraphImageAlt}
         height={1000}
         width={1000}
+        priority={true}
       />
       {linkHref && <NextLink text={linkText} href={linkHref}></NextLink>}
     </section>
