@@ -2,7 +2,6 @@ import ArticleIframe from "../molecules/SectionIframe";
 
 export default function ProjectArticleSpecial({
   darkBackground,
-  customClassName,
   header,
   subHeader,
   header2,

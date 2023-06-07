@@ -19,12 +19,12 @@ export default function Header() {
           <Image
             alt="logo"
             src={LogoImg}
-            width={1000}
-            height={1000}
+            width={300}
+            height={300}
             className="h-16 absolute -top-4 left-0"
           />
         </div>
-        <nav classname="flex items-center">
+        <nav className="flex transition-all items-center">
           <input
             className="hidden"
             type="checkbox"
@@ -42,7 +42,7 @@ export default function Header() {
             className="fixed top-0 h-screen pb-20 md:pb-0 md:h-auto md:static flex flex-col md:flex-row justify-end md:justify-between md:gap-4"
             id="navlist"
           >
-            <li className="drop-shadow-[0_1.2px_1.2px_#12131a]">
+            <li className="transition drop-shadow-[0_1.2px_1.2px_#12131a]">
               <Link
                 className="text-bgColorLight font-bold px-4 py-1 inline-block text-center place-self-center hover:underline transition duration-500 ease-in-out bg-gradient-to-br from-[#60667c] to-[#070709] md:from-transparent md:to-transparent bg-transparent"
                 href={"/"}
@@ -50,7 +50,7 @@ export default function Header() {
                 Hoofdpagina
               </Link>
             </li>
-            <li className="drop-shadow-[0_1.2px_1.2px_#12131a]">
+            <li className="transition drop-shadow-[0_1.2px_1.2px_#12131a]">
               <Link
                 className="text-bgColorLight font-bold px-4 py-1 inline-block text-center place-self-center hover:underline transition duration-500 ease-in-out bg-gradient-to-br from-[#60667c] to-[#070709] md:from-transparent md:to-transparent bg-transparent"
                 href={"/projects"}
@@ -58,7 +58,7 @@ export default function Header() {
                 Projecten
               </Link>
             </li>
-            <li className="drop-shadow-[0_1.2px_1.2px_#12131a]">
+            <li className="transition drop-shadow-[0_1.2px_1.2px_#12131a]">
               <Link
                 className="text-bgColorLight font-bold px-4 py-1 inline-block text-center place-self-center hover:underline transition duration-500 ease-in-out bg-gradient-to-br from-[#60667c] to-[#070709] md:from-transparent md:to-transparent bg-transparent"
                 href={"https://github.com/marcoFijan"}

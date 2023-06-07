@@ -77,6 +77,8 @@ export default function Article({
             className={`${paragraphImageClassname}w-full object-cover bg-black box-border p-4 border rounded-2xl`}
             src={paragraphImageURL}
             alt={paragraphImageAlt}
+            height={1000}
+            width={1000}
           />
         </section>
       )}
@@ -104,6 +106,8 @@ export default function Article({
               className={`w-full object-cover bg-black box-border p-4 border rounded-2xl ${paragraphImageClassname}`}
               src={paragraphImageURL}
               alt={paragraphImageAlt}
+              height={1000}
+              width={1000}
             />
           )}
 

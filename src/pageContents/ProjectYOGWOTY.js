@@ -29,14 +29,6 @@ export default function ProjectStandaardAanbouw({}) {
   const darkBackground = true;
 
   return (
-    // Introductie
-    // Onderzoek persona's empathy map
-    // afbakenen programma van eisen
-    // ideegeneratie harris profiel
-    // concept concept keuzes en vormgevingsregels
-    // Het product
-    // Validatie
-    // Resources: Design Rationale + Link naar productbiografie
     <div className="max-w-wrapper mx-auto w-full block">
       <ProjectArticle
         title={"Gig Worker Of The Year Award"}
@@ -57,12 +49,6 @@ export default function ProjectStandaardAanbouw({}) {
             smartphoneScreen={"../images/Thumbnails/YOGwotyThumbMobile.png"}
           />
         }
-        // paragraph1ImageAlt={"Afbeelding van het ontworpen product"}
-        // paragraph1ImageURL={kboIntroImg}
-        // paragraph1ImageSmall={true}
-        // buttonHref={"/"}
-        // buttonText={"Bekijk het prototype"}
-        // buttonCTA={true}
         darkBackground={true}
       />
       <ProjectArticle
@@ -254,8 +240,6 @@ export default function ProjectStandaardAanbouw({}) {
         button2bHref={"https://github.com/marcoFijan/yo-gwoty"}
         button2bText={"Bekijk github"}
       />
-
-      {/* TODO: Knop naar github */}
     </div>
   );
 }

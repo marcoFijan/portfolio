@@ -11,7 +11,6 @@ import hifi3JobsTypeFilterImg from "../../public/images/YoDashboardClients/HiFi3
 import hifi3FreelancerImg from "../../public/images/YoDashboardClients/HiFi3Freelancer.png";
 import hifi3FreelancerExplainImg from "../../public/images/YoDashboardClients/HiFi3FreelancerExplain.png";
 import hifi3OverviewImg from "../../public/images/YoDashboardClients/HiFi3Overzicht.png";
-// import hifi3OverviewTypeFilterImg from "../../public/images/YoDashboardClients/HiFi3OverzichtTypeFilter.png";
 import lofiFreelancerImg from "../../public/images/YoDashboardClients/LoFiFreelancer.png";
 import lofiJobsImg from "../../public/images/YoDashboardClients/LoFiKlussen.png";
 import lofiJobsFilterImg from "../../public/images/YoDashboardClients/LoFiKlussenFilters.png";

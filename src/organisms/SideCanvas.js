@@ -1,9 +1,8 @@
 "use client";
 
-// import Projects from "./PortfolioProjects.jsx";
 import { Canvas } from "@react-three/fiber";
-import { useState, useRef, useEffect } from "react";
-import { ScrollControls, Float, Environment } from "@react-three/drei";
+import { useState, useEffect } from "react";
+import { Environment } from "@react-three/drei";
 import Smartphone from "../models/SmartphoneStatic.js";
 import Laptop from "../models/LaptopStatic.js";
 

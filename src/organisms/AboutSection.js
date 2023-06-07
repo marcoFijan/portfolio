@@ -1,7 +1,6 @@
 import Image from "next/image";
 import marcoPointingAtText from "../../public/images/marcoPointing.png";
 import Section from "../molecules/Section";
-import NextLink from "../atoms/NextLink.js";
 
 export default function AboutSection() {
   return (
@@ -29,6 +28,8 @@ export default function AboutSection() {
               className="w-full max-w-md mx-auto md:mx-0 md:w-auto h-auto md:max-w-lg block z-0 px-articlePadding"
               src={marcoPointingAtText}
               alt="Picture of Marco Fijan pointing to text"
+              height={1000}
+              width={1000}
             />
             <div className="relative w-full h-10">
               <div className="-mt-12" id="bottomImageWave"></div>

@@ -31,9 +31,6 @@ export default function ProjectStandaardAanbouw({}) {
         paragraph1a={
           "Ik kreeg de opdracht om een nieuwe website te creeëren van een bedrijf van een kennis. Ik begon met het analyseren van de huisstijl en websites van concurrenten. Hier ontwierp ik een Lofi bij. Na een feedback sessie ging de opdrachtgever akkoord met de lofi en vervolgde ik mijn ontwerp naar een HiFi. Na een volgende feedbacksessie is er een tweede HiFi ontworpen en deze is vervolgens responsive uitgewerkt in wordpress"
         }
-        // paragraph1ImageAlt={"Afbeelding van het ontworpen product"}
-        // paragraph1ImageURL={kboIntroImg}
-        // paragraph1ImageSmall={true}
         paragraph1ImageSmall={true}
         canvas={
           <SideCanvas

@@ -1,11 +1,7 @@
 import Image from "next/image";
-import marcoPointingAtText from "../../public/images/marcoPointing.png";
-import Title from "../atoms/Title.js";
-import SubTitle from "../atoms/SubTitle.js";
 import H1 from "../atoms/H1.js";
 import H2 from "../atoms/H2.js";
 import SubH1 from "../atoms/SubH1.js";
-import SubH2 from "../atoms/SubH2.js";
 import P from "../atoms/Paragraph.js";
 import NextLink from "../atoms/NextLink.js";
 
@@ -44,6 +40,8 @@ export default function Section({
         className={`${paragraphImageClassname}`}
         src={paragraphImageURL}
         alt={paragraphImageAlt}
+        height={1000}
+        width={1000}
       />
       {linkHref && <NextLink text={linkText} href={linkHref}></NextLink>}
     </section>
