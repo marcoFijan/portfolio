@@ -37,6 +37,15 @@ export default function Laptop({ mobile, props }) {
   useFrame((state, delta) => {
     if (typeof timeline.current !== "undefined")
       timeline.current.seek(scroll.offset * timeline.current.duration());
+
+    // Preloader
+    setLaptopScreenPath("./images/Thumbnails/codeThumb.png");
+    setLaptopScreenPath("./images/Thumbnails/KBOReeshofThumb.png");
+    setLaptopScreenPath("./images/Thumbnails/YODashboardThumb.png");
+    setLaptopScreenPath("./images/Thumbnails/YOGwotyThumb.png");
+    setLaptopScreenPath("./images/Thumbnails/StandaardAanbouwThumb.png");
+    setLaptopScreenPath("./images/Thumbnails/ReisartikelenThumb.png");
+
     // Hardcoded screenchange since .call function from gsap has performance issues
     if (mobile) {
       if (scroll.offset < 0.09) {
@@ -50,7 +59,7 @@ export default function Laptop({ mobile, props }) {
       } else if ((scroll.offset >= 0.644) & (scroll.offset <= 0.73)) {
         setLaptopScreenPath("./images/Thumbnails/StandaardAanbouwThumb.png");
       } else if ((scroll.offset >= 0.74) & (scroll.offset <= 0.99)) {
-        setLaptopScreenPath("./images/Thumbnails/StandaardAanbouwThumb.png");
+        setLaptopScreenPath("./images/Thumbnails/ReisartikelenThumb.png");
       }
     } else {
       if (scroll.offset < 0.09) {

@@ -27,6 +27,15 @@ export default function Smartphone({ pos, rot, mobile, ...props }) {
   useFrame((state, delta) => {
     if (typeof timeline.current !== "undefined")
       timeline.current.seek(scroll.offset * timeline.current.duration());
+
+    // Preloader
+    setSmartScreenPath("./images/Thumbnails/codeThumb.png");
+    setSmartScreenPath("./images/Thumbnails/KBOReeshofThumbMobile.png");
+    setSmartScreenPath("./images/Thumbnails/YOGwotyThumbMobile.png");
+    setSmartScreenPath("./images/Thumbnails/StandaardAanbouwThumbMobile.png");
+    setSmartScreenPath("./images/Thumbnails/RingRingThumbMobile.png");
+
+    // Hardcoded screenchange since .call function from gsap has performance issues
     if (mobile) {
       if (scroll.offset < 0.09) {
         setSmartScreenPath("./images/Thumbnails/codeThumb.png");
