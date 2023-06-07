@@ -17,7 +17,7 @@ import lofiJobsFilterImg from "../../public/images/YoDashboardClients/LoFiKlusse
 import lofiOverviewImg from "../../public/images/YoDashboardClients/LoFiOverzicht.png";
 import lofiOverviewFilterImg from "../../public/images/YoDashboardClients/LoFiOverzichtFilters.png";
 import originalDashbordImg from "../../public/images/YoDashboardClients/PowerBiDataViewer.png";
-import finalFreelancerImg from "../../public/images/YoDashboardClients/EIndversieFreelancer.png";
+import finalFreelancerImg from "../../public/images/YoDashboardClients/EindversieFreelancer.png";
 import finalJobsImg from "../../public/images/YoDashboardClients/EindversieKlussen.png";
 import finalOverview from "../../public/images/YoDashboardClients/EindversieOverzicht.png";
 import finalOverviewFilter from "../../public/images/YoDashboardClients/EindversieOverzichtFilter.png";

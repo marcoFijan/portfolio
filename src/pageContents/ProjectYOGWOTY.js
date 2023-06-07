@@ -14,7 +14,7 @@ import lofiTermsImg from "../../public/images/YoGwoty/LoFiAlgemeneVoorwaarden.pn
 import lofiDashboardV1Img from "../../public/images/YoGwoty/LoFiDashboardVersie1.png";
 import lofiDashboardV2Img from "../../public/images/YoGwoty/LoFiDashboardVersie2.png";
 import lofiSignInImg from "../../public/images/YoGwoty/LoFiInloggen.png";
-import lofiLeaderboardImg from "../../public/images/YoGwoty/LoFiLeaderboard.png";
+import lofiLeaderboardImg from "../../public/images/YoGwoty/LofiLeaderboard.png";
 import finalDashboardImg from "../../public/images/YoGwoty/EindversieDashboard.jpg";
 import finalDashboardInstagramImg from "../../public/images/YoGwoty/EindversieDashboardUitlegInstagram.jpg";
 import finalSignInImg from "../../public/images/YoGwoty/EindversieInloggen.jpg";
