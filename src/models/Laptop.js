@@ -64,7 +64,7 @@ export default function Laptop({ mobile, props }) {
       } else if ((scroll.offset >= 0.601) & (scroll.offset <= 0.696)) {
         setLaptopScreenPath("./images/Thumbnails/StandaardAanbouwThumb.png");
       } else if ((scroll.offset >= 0.697) & (scroll.offset <= 0.71)) {
-        setLaptopScreenPath("./images/Thumbnails/StandaardAanbouwThumb.png");
+        setLaptopScreenPath("./images/Thumbnails/ReisartikelenThumb.jpg");
       }
     }
     console.log(scroll.offset);
