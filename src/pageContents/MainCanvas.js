@@ -7,8 +7,10 @@ import HeroSection from "../organisms/HeroSection.js";
 import AboutSection from "../organisms/AboutSection.js";
 import PortfolioSection from "../organisms/PortfolioSection.js";
 import Footer from "../organisms/Footer.js";
-import PortfolioAnimation from "../organisms/PortfolioAnimation.js";
+// import PortfolioAnimation from "../organisms/PortfolioAnimation.js";
 import ContactSection from "../organisms/ContactSection.js";
+import Smartphone from "../models/Smartphone.js";
+import Laptop from "../models/Laptop.js";
 import { ScrollControls, Scroll, Environment, Loader } from "@react-three/drei";
 
 export default function MainCanvas({}) {
@@ -37,6 +39,8 @@ export default function MainCanvas({}) {
     }
   }, [screenSize]);
 
+  useEffect(() => {}, []);
+
   return (
     <div className="w-full h-screen">
       {/* <div className="w-full h-screen"> */}
@@ -48,8 +52,10 @@ export default function MainCanvas({}) {
         <ambientLight color={"white"} intensity={0.3} />
         <ScrollControls pages={pages} damping={0}>
           <Environment blur={0} preset="warehouse" />
+          <Smartphone mobile={mobile} />
+          <Laptop mobile={mobile} />
 
-          <PortfolioAnimation mobile={mobile} />
+          {/* <PortfolioAnimation mobile={mobile} /> */}
           <Scroll></Scroll>
           <Scroll html className="w-full">
             {/* Introduction animation [1 page] */}
@@ -65,8 +71,6 @@ export default function MainCanvas({}) {
           </Scroll>
         </ScrollControls>
       </Canvas>
-
-      {/* </div> */}
     </div>
   );
 }

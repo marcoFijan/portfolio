@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Section from "../molecules/Section";
 
 export default function PortfolioSection() {
@@ -27,7 +26,7 @@ export default function PortfolioSection() {
         darkBackground={darkBackground}
         header={"Dashboard YoungOnes - 2022"}
         subHeader={"Stage project met NextJS, Tailwind Figma en ChartJS"}
-        linkHref={"/projects/gwoty-award-youngones"}
+        linkHref={"/projects/yo-gwoty-award"}
         linkText={"Bekijk het project"}
       ></Section>
       <Section
@@ -35,7 +34,7 @@ export default function PortfolioSection() {
         darkBackground={darkBackground}
         header={"GWOTY Award YoungOnes - 2021"}
         subHeader={"Stage project met NextJS, Tailwind en Figma"}
-        linkHref={"/projects/dashboard-youngones"}
+        linkHref={"/projects/yo-dashboard"}
         linkText={"Bekijk het project"}
       ></Section>
       <Section
