@@ -21,10 +21,10 @@ import finalFreelancerImg from "../../public/images/YoDashboardClients/EIndversi
 import finalJobsImg from "../../public/images/YoDashboardClients/EindversieKlussen.png";
 import finalOverview from "../../public/images/YoDashboardClients/EindversieOverzicht.png";
 import finalOverviewFilter from "../../public/images/YoDashboardClients/EindversieOverzichtFilter.png";
+import mockupImg from "../../public/images/Thumbnails/YODashboardMockup.png";
 
 // COMPONENTS
 import ProjectArticle from "../organisms/ProjectArticle";
-import SideCanvas from "../organisms/SideCanvas";
 
 export default function ProjectStandaardAanbouw({}) {
   const darkBackground = true;
@@ -44,11 +44,9 @@ export default function ProjectStandaardAanbouw({}) {
           "YoungOnes gebruikte tot nu toe een automatisch gegenereerde PowerBI dashboard die de opdrachtgevers konden geberuiken om inzichten te doen. PowerBI gaf alleen tabellen en had geen enkele vorm van datavisualistie. Hierdoor is het lastiger om nuttige inzichten te doen over de data. Er moest daarom een nieuw dashboard ontworpen en hier kreeg ik de opdracht"
         }
         paragraph1ImageSmall={true}
-        canvas={
-          <SideCanvas
-            laptopScreen={"../images/Thumbnails/YODashboardThumb.png"}
-          />
-        }
+        paragraph1ImageAlt={"mockup image"}
+        paragraph1ImageURL={mockupImg}
+        paragraph1ImageNoBorder={true}
         darkBackground={true}
       />
       <ProjectArticle

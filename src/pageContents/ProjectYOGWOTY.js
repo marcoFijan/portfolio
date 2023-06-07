@@ -20,10 +20,10 @@ import finalDashboardInstagramImg from "../../public/images/YoGwoty/EindversieDa
 import finalSignInImg from "../../public/images/YoGwoty/EindversieInloggen.jpg";
 import finalLeaderboardImg from "../../public/images/YoGwoty/EindversieLeaderboard.jpg";
 import finalProfileImg from "../../public/images/YoGwoty/EindversieProfiel.jpg";
+import mockupImg from "../../public/images/Thumbnails/YOGwotyMockup.png";
 
 // COMPONENTS
 import ProjectArticle from "../organisms/ProjectArticle";
-import SideCanvas from "../organisms/SideCanvas";
 
 export default function ProjectStandaardAanbouw({}) {
   const darkBackground = true;
@@ -43,12 +43,9 @@ export default function ProjectStandaardAanbouw({}) {
           "Tijdens de eerste 5 weken van mijn stage bij YoungOnes kreeg ik de opdract om een nieuw dashboard te ontwerpen voor de zzp'ers van YoungOnes. De marketing afdeling van YoungOnes gaf deze opdracht. Hierin kunnen ‘gig workers’, ofwel freelancers, in een korte tijd punten scoren door te werken en hier leuke prijzen mee winnen. Om dit idee te realiseren moest er een dashboard ontworpen en ontwikkeld worden, dit is waar ik in het verhaal kom. In dit dashboard kunnen de zzp'ers zien hoe ze punten kunnen verdienen, hoeveel punten ze hebben, op welke positie ze staan en hoeveel tijd ze nog hebben om meer punten te verdienen. Hiervoor had ik veel contact met marketing om een globaal idee te krijgen over wat ze nu precies wilde hebben en hoe dit de jaren hiervoor verliep."
         }
         paragraph1ImageSmall={true}
-        canvas={
-          <SideCanvas
-            laptopScreen={"../images/Thumbnails/YOGwotyThumb.png"}
-            smartphoneScreen={"../images/Thumbnails/YOGwotyThumbMobile.png"}
-          />
-        }
+        paragraph1ImageAlt={"mockup image"}
+        paragraph1ImageURL={mockupImg}
+        paragraph1ImageNoBorder={true}
         darkBackground={true}
       />
       <ProjectArticle

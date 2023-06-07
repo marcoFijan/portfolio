@@ -10,10 +10,10 @@ import logoImg from "../../public/images/StandaardAanbouw/Logo.jpg";
 import paperStyleImg from "../../public/images/StandaardAanbouw/Briefpapier.jpg";
 import blogPageImg from "../../public/images/StandaardAanbouw/Blogpagina.png";
 import servicePageImg from "../../public/images/StandaardAanbouw/Servicepagina.png";
+import mockupImg from "../../public/images/Thumbnails/StandaardAanbouwMockup.png";
 
 // COMPONENTS
 import ProjectArticle from "../organisms/ProjectArticle";
-import SideCanvas from "../organisms/SideCanvas";
 
 export default function ProjectStandaardAanbouw({}) {
   const darkBackground = true;
@@ -32,14 +32,9 @@ export default function ProjectStandaardAanbouw({}) {
           "Ik kreeg de opdracht om een nieuwe website te creeëren van een bedrijf van een kennis. Ik begon met het analyseren van de huisstijl en websites van concurrenten. Hier ontwierp ik een Lofi bij. Na een feedback sessie ging de opdrachtgever akkoord met de lofi en vervolgde ik mijn ontwerp naar een HiFi. Na een volgende feedbacksessie is er een tweede HiFi ontworpen en deze is vervolgens responsive uitgewerkt in wordpress"
         }
         paragraph1ImageSmall={true}
-        canvas={
-          <SideCanvas
-            laptopScreen={"../images/Thumbnails/StandaardAanbouwThumb.png"}
-            smartphoneScreen={
-              "../images/Thumbnails/StandaardAanbouwThumbMobile.png"
-            }
-          />
-        }
+        paragraph1ImageAlt={"mockup image"}
+        paragraph1ImageURL={mockupImg}
+        paragraph1ImageNoBorder={true}
         buttonHref={"/"}
         buttonText={"Bekijk het prototype"}
         buttonCTA={true}

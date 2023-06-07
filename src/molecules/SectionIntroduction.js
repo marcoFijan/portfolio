@@ -95,7 +95,7 @@ export default function Article({
               className={`${
                 paragraphImageNoBorder
                   ? ""
-                  : "w-full object-cover  box-border p-4 border rounded-2xl"
+                  : "w-full object-cover  box-border p-4 border bg-black rounded-2xl"
               } ${paragraphImageClassname}`}
               src={paragraphImageURL}
               alt={paragraphImageAlt}

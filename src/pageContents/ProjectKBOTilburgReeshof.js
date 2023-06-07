@@ -1,7 +1,6 @@
 // IMAGES
 import Image from "next/image";
-import kboIntroImg from "../../public/images/KBOReeshof/KBOIntro.png";
-import stakeholdersImg from "../../public/images/KBOReeshof/Stakeholders.png";
+import mockupImg from "../../public/images/Thumbnails/KBOReeshofMockup.png";
 import kboReeshofBuildingImg from "../../public/images/KBOReeshof/KBOReeshofBuilding.png";
 import persona1Img from "../../public/images/KBOReeshof/Persona1.jpg";
 import persona2Img from "../../public/images/KBOReeshof/Persona2.jpg";
@@ -19,7 +18,6 @@ import menuImg from "../../public/images/KBOReeshof/Menu.png";
 // COMPONENTS
 import ProjectArticle from "../organisms/ProjectArticle";
 import ProjectArticleSpecial from "../organisms/ProjectArticleSpecial";
-import SideCanvas from "../organisms/SideCanvas";
 
 export default function ProjectKBOTilburgReesof({
   title,
@@ -72,12 +70,9 @@ export default function ProjectKBOTilburgReesof({
         }}
         paragraph1a={introduction}
         paragraph1ImageSmall={true}
-        canvas={
-          <SideCanvas
-            laptopScreen={"../images/Thumbnails/KBOReeshofThumb.png"}
-            smartphoneScreen={"../images/Thumbnails/KBOReeshofThumbMobile.png"}
-          />
-        }
+        paragraph1ImageAlt={"mockup image"}
+        paragraph1ImageURL={mockupImg}
+        paragraph1ImageNoBorder={true}
         buttonHref={"/"}
         buttonText={"Bekijk het prototype"}
         buttonCTA={true}
