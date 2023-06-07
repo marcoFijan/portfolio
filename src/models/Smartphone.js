@@ -227,7 +227,7 @@ export default function Smartphone({ pos, rot, mobile, ...props }) {
       // Fourth to other project transition
 
       .to(smartphone.current.position, { x: 0 }, startpositions.endpoint);
-  }, []);
+  }, [mobile]);
 
   return (
     <group
