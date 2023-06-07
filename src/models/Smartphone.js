@@ -27,16 +27,34 @@ export default function Smartphone({ pos, rot, mobile, ...props }) {
   useFrame((state, delta) => {
     if (typeof timeline.current !== "undefined")
       timeline.current.seek(scroll.offset * timeline.current.duration());
-    if (scroll.offset < 0.09) {
-      setSmartScreenPath("./images/Thumbnails/codeThumb.png");
-    } else if ((scroll.offset > 0.09) & (scroll.offset <= 0.47)) {
-      setSmartScreenPath("./images/Thumbnails/KBOReeshofThumbMobile.png");
-    } else if ((scroll.offset >= 0.48) & (scroll.offset <= 0.633)) {
-      setSmartScreenPath("./images/Thumbnails/YOGwotyThumbMobile.png");
-    } else if ((scroll.offset >= 0.634) & (scroll.offset <= 0.77)) {
-      setSmartScreenPath("./images/Thumbnails/StandaardAanbouwThumbMobile.png");
-    } else if ((scroll.offset >= 0.78) & (scroll.offset <= 0.99)) {
-      setSmartScreenPath("./images/Thumbnails/RingRingThumbMobile.png");
+    if (mobile) {
+      if (scroll.offset < 0.09) {
+        setSmartScreenPath("./images/Thumbnails/codeThumb.png");
+      } else if ((scroll.offset > 0.09) & (scroll.offset <= 0.47)) {
+        setSmartScreenPath("./images/Thumbnails/KBOReeshofThumbMobile.png");
+      } else if ((scroll.offset >= 0.48) & (scroll.offset <= 0.633)) {
+        setSmartScreenPath("./images/Thumbnails/YOGwotyThumbMobile.png");
+      } else if ((scroll.offset >= 0.634) & (scroll.offset <= 0.77)) {
+        setSmartScreenPath(
+          "./images/Thumbnails/StandaardAanbouwThumbMobile.png"
+        );
+      } else if ((scroll.offset >= 0.78) & (scroll.offset <= 0.99)) {
+        setSmartScreenPath("./images/Thumbnails/RingRingThumbMobile.png");
+      }
+    } else {
+      if (scroll.offset < 0.09) {
+        setSmartScreenPath("./images/Thumbnails/codeThumb.png");
+      } else if ((scroll.offset >= 0.09) & (scroll.offset <= 0.4)) {
+        setSmartScreenPath("./images/Thumbnails/KBOReeshofThumbMobile.png");
+      } else if ((scroll.offset >= 0.41) & (scroll.offset <= 0.6)) {
+        setSmartScreenPath("./images/Thumbnails/YOGwotyThumbMobile.png");
+      } else if ((scroll.offset >= 0.601) & (scroll.offset <= 0.729)) {
+        setSmartScreenPath(
+          "./images/Thumbnails/StandaardAanbouwThumbMobile.png"
+        );
+      } else if ((scroll.offset >= 0.73) & (scroll.offset <= 0.99)) {
+        setSmartScreenPath("./images/Thumbnails/RingRingThumbMobile.png");
+      }
     }
   });
 
