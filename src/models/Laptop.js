@@ -41,15 +41,15 @@ export default function Laptop({ mobile, props }) {
     if (mobile) {
       if (scroll.offset < 0.09) {
         setLaptopScreenPath("./images/Thumbnails/codeThumb.png");
-      } else if ((scroll.offset >= 0.36) & (scroll.offset <= 0.46)) {
+      } else if ((scroll.offset >= 0.09) & (scroll.offset <= 0.44)) {
         setLaptopScreenPath("./images/Thumbnails/KBOReeshofThumb.png");
-      } else if ((scroll.offset >= 0.47) & (scroll.offset <= 0.55)) {
+      } else if ((scroll.offset >= 0.45) & (scroll.offset <= 0.53)) {
         setLaptopScreenPath("./images/Thumbnails/YODashboardThumb.png");
-      } else if ((scroll.offset >= 0.6) & (scroll.offset <= 0.67)) {
+      } else if ((scroll.offset >= 0.54) & (scroll.offset <= 0.643)) {
         setLaptopScreenPath("./images/Thumbnails/YOGwotyThumb.png");
-      } else if ((scroll.offset >= 0.671) & (scroll.offset <= 0.75)) {
+      } else if ((scroll.offset >= 0.644) & (scroll.offset <= 0.73)) {
         setLaptopScreenPath("./images/Thumbnails/StandaardAanbouwThumb.png");
-      } else if ((scroll.offset >= 0.76) & (scroll.offset <= 0.85)) {
+      } else if ((scroll.offset >= 0.74) & (scroll.offset <= 0.99)) {
         setLaptopScreenPath("./images/Thumbnails/StandaardAanbouwThumb.png");
       }
     } else {

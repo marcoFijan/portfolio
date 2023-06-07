@@ -14,7 +14,9 @@ import { useFrame } from "@react-three/fiber";
 
 export default function Smartphone({ pos, rot, mobile, ...props }) {
   const { nodes, materials } = useGLTF("/modelsResource/smartphone.glb");
-  let [smartScreenPath, setSmartScreenPath] = useState("./images/p1.jpg");
+  let [smartScreenPath, setSmartScreenPath] = useState(
+    "./images/Thumbnails/codeThumb.png"
+  );
   const smartScreen = useTexture(smartScreenPath);
 
   const smartphone = useRef();
@@ -27,13 +29,13 @@ export default function Smartphone({ pos, rot, mobile, ...props }) {
       timeline.current.seek(scroll.offset * timeline.current.duration());
     if (scroll.offset < 0.09) {
       setSmartScreenPath("./images/Thumbnails/codeThumb.png");
-    } else if ((scroll.offset >= 0.09) & (scroll.offset <= 0.4)) {
+    } else if ((scroll.offset > 0.09) & (scroll.offset <= 0.47)) {
       setSmartScreenPath("./images/Thumbnails/KBOReeshofThumbMobile.png");
-    } else if ((scroll.offset >= 0.41) & (scroll.offset <= 0.6)) {
+    } else if ((scroll.offset >= 0.48) & (scroll.offset <= 0.633)) {
       setSmartScreenPath("./images/Thumbnails/YOGwotyThumbMobile.png");
-    } else if ((scroll.offset >= 0.601) & (scroll.offset <= 0.729)) {
+    } else if ((scroll.offset >= 0.634) & (scroll.offset <= 0.77)) {
       setSmartScreenPath("./images/Thumbnails/StandaardAanbouwThumbMobile.png");
-    } else if ((scroll.offset >= 0.73) & (scroll.offset <= 0.99)) {
+    } else if ((scroll.offset >= 0.78) & (scroll.offset <= 0.99)) {
       setSmartScreenPath("./images/Thumbnails/RingRingThumbMobile.png");
     }
   });
@@ -43,22 +45,6 @@ export default function Smartphone({ pos, rot, mobile, ...props }) {
     timeline.current = gsap.timeline({
       defaults: { duration: 1 },
     });
-
-    // {
-    //       hero: 0,
-    //       portfolioIntro: 6.5,
-    //       firstProject: 8.3,
-    //       firstProjectEnd: 9.3,
-    //       secondProject: 10.3,
-    //       secondProjectEnd: 11.3,
-    //       thirdProject: 12.3,
-    //       thirdProjectEnd: 13.3,
-    //       fourthProject: 14.3,
-    //       fourthProjectEnd: 15.3,
-    //       otherProjects: 16.35,
-    //       otherProjectsEnd: 17.5,
-    //     }
-
     const startpositions = mobile
       ? {
           hero: 0,
