@@ -22,6 +22,7 @@ export default function Header() {
             width={300}
             height={300}
             className="h-16 absolute -top-4 left-0"
+            priority={true}
           />
         </div>
         <nav id="nav" className="flex transition-all items-center">
