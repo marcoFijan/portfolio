@@ -39,7 +39,7 @@ export default function Article({
 
       {paragraphImageSmall && (
         <section
-          className={`block md:grid md:grid-cols-fluid gap-12 pb-8 items-center ${
+          className={`block md:grid md:grid-cols-fluid md:gap-12 pb-8 items-center ${
             paragraphCenter && "justify-center"
           }`}
         >

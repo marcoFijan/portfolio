@@ -26,7 +26,7 @@ export default function AboutSection() {
           </section>
           <div className="w-full h-full md:w-auto md:h-auto z-0">
             <Image
-              className="w-full  md:w-auto h-auto md:max-w-lg block z-0 px-articlePadding"
+              className="w-full max-w-md mx-auto md:mx-0 md:w-auto h-auto md:max-w-lg block z-0 px-articlePadding"
               src={marcoPointingAtText}
               alt="Picture of Marco Fijan pointing to text"
             />
