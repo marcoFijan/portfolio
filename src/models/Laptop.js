@@ -44,7 +44,7 @@ export default function Laptop({ mobile, props }) {
     setLaptopScreenPath("./images/Thumbnails/YODashboardThumb.png");
     setLaptopScreenPath("./images/Thumbnails/YOGwotyThumb.png");
     setLaptopScreenPath("./images/Thumbnails/StandaardAanbouwThumb.png");
-    setLaptopScreenPath("./images/Thumbnails/ReisartikelenThumb.png");
+    setLaptopScreenPath("./images/Thumbnails/ReisartikelenThumb.jpg");
 
     // Hardcoded screenchange since .call function from gsap has performance issues
     if (mobile) {
@@ -59,7 +59,7 @@ export default function Laptop({ mobile, props }) {
       } else if ((scroll.offset >= 0.644) & (scroll.offset <= 0.73)) {
         setLaptopScreenPath("./images/Thumbnails/StandaardAanbouwThumb.png");
       } else if ((scroll.offset >= 0.74) & (scroll.offset <= 0.99)) {
-        setLaptopScreenPath("./images/Thumbnails/ReisartikelenThumb.png");
+        setLaptopScreenPath("./images/Thumbnails/ReisartikelenThumb.jpg");
       }
     } else {
       if (scroll.offset < 0.09) {
