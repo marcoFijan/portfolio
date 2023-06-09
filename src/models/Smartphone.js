@@ -17,6 +17,7 @@ export default function Smartphone({ pos, rot, mobile, ...props }) {
   let [smartScreenPath, setSmartScreenPath] = useState(
     "./images/Thumbnails/codeThumb.png"
   );
+  const [preloader, setPreloader] = useState(true);
   const smartScreen = useTexture(smartScreenPath);
 
   const smartphone = useRef();
@@ -29,11 +30,14 @@ export default function Smartphone({ pos, rot, mobile, ...props }) {
       timeline.current.seek(scroll.offset * timeline.current.duration());
 
     // Preloader
-    setSmartScreenPath("./images/Thumbnails/codeThumb.png");
-    setSmartScreenPath("./images/Thumbnails/KBOReeshofThumbMobile.png");
-    setSmartScreenPath("./images/Thumbnails/YOGwotyThumbMobile.png");
-    setSmartScreenPath("./images/Thumbnails/StandaardAanbouwThumbMobile.png");
-    setSmartScreenPath("./images/Thumbnails/RingRingThumbMobile.png");
+    if (preloader) {
+      setSmartScreenPath("./images/Thumbnails/codeThumb.png");
+      setSmartScreenPath("./images/Thumbnails/KBOReeshofThumbMobile.png");
+      setSmartScreenPath("./images/Thumbnails/YOGwotyThumbMobile.png");
+      setSmartScreenPath("./images/Thumbnails/StandaardAanbouwThumbMobile.png");
+      setSmartScreenPath("./images/Thumbnails/RingRingThumbMobile.png");
+      setPreloader(false);
+    }
 
     // Hardcoded screenchange since .call function from gsap has performance issues
     if (mobile) {

@@ -12,7 +12,13 @@ import Footer from "../organisms/Footer.js";
 import ContactSection from "../organisms/ContactSection.js";
 import Smartphone from "../models/Smartphone.js";
 import Laptop from "../models/Laptop.js";
-import { ScrollControls, Scroll, Environment, Loader } from "@react-three/drei";
+import {
+  ScrollControls,
+  Scroll,
+  Environment,
+  MeshDistortMaterial,
+  Sphere,
+} from "@react-three/drei";
 
 export default function MainCanvas({}) {
   const [screenSize, setScreenSize] = useState(0);
@@ -59,7 +65,16 @@ export default function MainCanvas({}) {
           <Laptop mobile={mobile} />
 
           {/* <PortfolioAnimation mobile={mobile} /> */}
-          <Scroll></Scroll>
+          <Scroll>
+            <Sphere args={[1, 100, 200]} scale={5} position={[0, 0, -5]}>
+              <MeshDistortMaterial
+                color="#1a7694"
+                attach="material"
+                distort={0.5}
+                speed={1}
+              />
+            </Sphere>
+          </Scroll>
           <Scroll html className="w-full">
             {/* Introduction animation [1 page] */}
             <HeroSection />

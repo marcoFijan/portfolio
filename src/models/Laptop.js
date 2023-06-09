@@ -15,11 +15,10 @@ import { useThree } from "@react-three/fiber";
 
 export default function Laptop({ mobile, props }) {
   const { nodes, materials } = useGLTF("/modelsResource/laptop.glb");
-  const { viewport } = useThree();
   const [laptopScreenPath, setLaptopScreenPath] = useState(
     "./images/Thumbnails/codeThumb.png"
   );
-  const [screenSizeType, setScreenSizeType] = useState("default"); // default / mobile
+  const [preloader, setPreloader] = useState(true);
   const [screenSize, setScreenSize] = useState(0);
   const startScreenPosition = {
     rot: { x: 1.06, y: 0, z: 0 },
@@ -39,12 +38,15 @@ export default function Laptop({ mobile, props }) {
       timeline.current.seek(scroll.offset * timeline.current.duration());
 
     // Preloader
-    setLaptopScreenPath("./images/Thumbnails/codeThumb.png");
-    setLaptopScreenPath("./images/Thumbnails/KBOReeshofThumb.png");
-    setLaptopScreenPath("./images/Thumbnails/YODashboardThumb.png");
-    setLaptopScreenPath("./images/Thumbnails/YOGwotyThumb.png");
-    setLaptopScreenPath("./images/Thumbnails/StandaardAanbouwThumb.png");
-    setLaptopScreenPath("./images/Thumbnails/ReisartikelenThumb.jpg");
+    if (preloader) {
+      setLaptopScreenPath("./images/Thumbnails/codeThumb.png");
+      setLaptopScreenPath("./images/Thumbnails/KBOReeshofThumb.png");
+      setLaptopScreenPath("./images/Thumbnails/YODashboardThumb.png");
+      setLaptopScreenPath("./images/Thumbnails/YOGwotyThumb.png");
+      setLaptopScreenPath("./images/Thumbnails/StandaardAanbouwThumb.png");
+      setLaptopScreenPath("./images/Thumbnails/ReisartikelenThumb.jpg");
+      setPreloader(false);
+    }
 
     // Hardcoded screenchange since .call function from gsap has performance issues
     if (mobile) {

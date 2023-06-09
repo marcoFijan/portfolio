@@ -14,9 +14,7 @@ export default function Contact() {
   return (
     <>
       <Header />
-      <main
-        className={`bg-gradient-to-tr from-bgColorDarkSec to-bgColorDark pb-[50vh] ${montserrat.className}`}
-      >
+      <main className={`bg-bgColorDark pb-[50vh] ${montserrat.className}`}>
         <ContactSection />
       </main>
       <Footer />

@@ -33,10 +33,13 @@ module.exports = {
     },
     extend: {
       colors: {
-        accentColor: "#d4a418",
-        CTAColor: "#e745a1",
-        bgColorDark: "#3d0d29",
-        bgColorDarkSec: "#0e3d46",
+        accentColor: "#4dcbf5",
+        CTAColorLight: "#ff6f27",
+        CTAColorDark: "#a73c0b",
+        CTAColor: "#e06020",
+        bgColorDark: "#34393e",
+        bgColorDarkLight: "#2f3338",
+        bgColorDarkDark: "#383d42",
         bgColorLight: "#e7efff",
         white: "#ffffff",
       },
@@ -44,10 +47,10 @@ module.exports = {
         1: "1px",
       },
       boxShadow: {
-        ctaButtonHover: "5px 5px 0px #5c1c40, -5px -5px 0px #ff6eff;",
-        ctaButton: "0px 0px 10px #5c1c40;",
-        buttonHover: "5px 5px 0px #0a0b0c, -5px -5px 0px #5d6583;",
-        button: "0px 0px 10px #0a0b0c;",
+        ctaButtonHover: "5px 5px 0px #ab1b0b, -5px -5px 0px #e1530a;",
+        ctaButton: "0px 0px 10px #ab1b0b;",
+        buttonHover: "5px 5px 0px #2a2e32, -5px -5px 0px #3e444a;",
+        button: "5px 5px 10px #2a2e32, -5px -5px 10px #3e444a;",
         inputField: "inset 6px 6px 12px #d5dceb, inset -6px -6px 12px #f9ffff;",
         inputFieldValid: "5px 5px 10px #d5dceb, -6px -6px 12px #f9ffff;",
         inputFieldDark:

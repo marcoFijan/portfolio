@@ -89,7 +89,7 @@ export default function Footer({ homePage }) {
       <div className="self-center md:w-auto md:self-auto">
         <H3 text="Contact" darkBackground={false} />
         <p>Heeft u interesse? </p> <p>Stuur gerust een berichtje!</p>
-        <NextLink text="Neem contact op!" href="/contact"></NextLink>
+        <NextLink text="Neem contact op!" href="/contact" cta={true}></NextLink>
       </div>
     </section>
   );
