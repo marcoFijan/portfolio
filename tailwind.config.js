@@ -34,6 +34,8 @@ module.exports = {
     extend: {
       colors: {
         accentColor: "#4dcbf5",
+        accentColorLight: "#68d9ff",
+        accentColorDark: "#2692b6",
         CTAColorLight: "#ff6f27",
         CTAColorDark: "#a73c0b",
         CTAColor: "#e06020",
@@ -51,8 +53,8 @@ module.exports = {
         ctaButton: "0px 0px 10px #ab1b0b;",
         buttonHover: "5px 5px 0px #2a2e32, -5px -5px 0px #3e444a;",
         button: "5px 5px 10px #2a2e32, -5px -5px 10px #3e444a;",
-        inputField: "inset 6px 6px 12px #d5dceb, inset -6px -6px 12px #f9ffff;",
-        inputFieldValid: "5px 5px 10px #d5dceb, -6px -6px 12px #f9ffff;",
+        inputField: "inset 5px 5px 10px #bbc2cf, inset -5px -5px 10px #ffffff;",
+        inputFieldValid: "  5px 5px 10px #bbc2cf, -5px -5px 10px #ffffff;",
         inputFieldDark:
           "inset 9px 9px 18px #222030, inset -9px -9px 18px #2c283e;",
         inputFieldDarkValid: "5px 5px 10px #222030, -9px -9px 18px #2c283e;",

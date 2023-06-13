@@ -1,5 +1,6 @@
 import styles from "../styles/heroAnimation.module.css";
 import NextLink from "../atoms/NextLink.js";
+import { motion } from "framer-motion";
 
 export default function HeroSection() {
   return (
@@ -13,7 +14,7 @@ export default function HeroSection() {
             className={styles.marco}
           >
             <title>MARCO</title>
-            <g id="Layer_2" data-name="Layer 2">
+            <motion.g id="Layer_2" data-name="Layer 2">
               <g id="Layer_1-2" data-name="Layer 1">
                 <path
                   className="stoke"
@@ -24,7 +25,7 @@ export default function HeroSection() {
                 <path d="M192,49.36A25.12,25.12,0,0,1,182,40a25.9,25.9,0,0,1-3.64-13.65A25.87,25.87,0,0,1,182,12.71a25,25,0,0,1,10-9.36A30.67,30.67,0,0,1,206.42,0a31.6,31.6,0,0,1,13.11,2.59,24.33,24.33,0,0,1,9.5,7.49L218.3,19.66q-4.68-5.91-11-5.91a11.25,11.25,0,0,0-8.57,3.42q-3.24,3.42-3.24,9.18t3.24,9.18A11.25,11.25,0,0,0,207.29,39q6.33,0,11-5.9L229,42.62a24.24,24.24,0,0,1-9.5,7.49,31.6,31.6,0,0,1-13.11,2.59A30.66,30.66,0,0,1,192,49.36Z" />
                 <path d="M244.65,49.32a25.25,25.25,0,0,1-13.82-23,25.25,25.25,0,0,1,13.82-23,33.31,33.31,0,0,1,29.24,0,25.25,25.25,0,0,1,13.82,23,25.25,25.25,0,0,1-13.82,23,33.31,33.31,0,0,1-29.24,0ZM265,37.4A11,11,0,0,0,269.06,33a13.93,13.93,0,0,0,1.51-6.66,14,14,0,0,0-1.51-6.66A11.08,11.08,0,0,0,265,15.3a11.33,11.33,0,0,0-11.44,0,11.08,11.08,0,0,0-4.07,4.39A14,14,0,0,0,248,26.35,13.93,13.93,0,0,0,249.48,33a11,11,0,0,0,4.07,4.39,11.33,11.33,0,0,0,11.44,0Z" />
               </g>
-            </g>
+            </motion.g>
           </svg>
           {/* Fijan SVG */}
           <svg
@@ -57,7 +58,7 @@ export default function HeroSection() {
           </p>
         </section>
         <div className="opacity-0 animate-[becomeVisible_1s_ease-in-out_6.5s_normal_forwards]">
-          <NextLink href={"#contact"} text={"Neem contact op!"} cta={true} />
+          <NextLink href={"/contact"} text={"Neem contact op!"} cta={true} />
         </div>
       </div>
     </section>

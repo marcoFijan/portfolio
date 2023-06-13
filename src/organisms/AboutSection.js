@@ -1,6 +1,8 @@
 import Image from "next/image";
 import marcoPointingAtText from "../../public/images/marcoPointing.png";
 import Section from "../molecules/Section";
+import H3 from "../atoms/H3";
+import Skill from "../molecules/Skill";
 
 export default function AboutSection() {
   return (
@@ -17,25 +19,51 @@ export default function AboutSection() {
                 "Welkom! Leuk dat je een kijkje komt nemen op mijn website. Ik ben Marco en ben in 2022 afgestudeerd in Communicatie en Multimedia design op de Hogeschool van Amsterdam. Het ontwerpen en ontwikkelen van gebruiksvriendelijke webapplicaties spreekt mij erg aan; Het bedenken van een idee, hierop itereren en deze iteraties toetsen met de doelgroep is dan ook iets wat ik graag doe. Ik zet altijd alles op alles om de beleving van de gebruiker voorop te zetten en deze te bevorderen."
               }
               paragraph1b={
-                "Naast mijn passie voor het ontwerpen en developen van websites, kan ik ook erg genieten van rust, natuur en dieren. Daarnaast spaar ik edelstenen en minarelen en besteed ik mijn vrije tijd ook graag aan videogames met goed verhaal. Hier kan ik helemaal in verdwalen."
+                "Naast mijn passie voor het ontwerpen en developen van websites, kan ik ook erg genieten van rust, natuur en dieren. Daarnaast spaar ik edelstenen en minarelen en besteed ik mijn vrije tijd ook graag aan videogames met goed verhaal, wat voor mij de meest immersieve manier is om een verhaal mee te krijgen"
               }
               linkHref={"https://github.com/marcoFijan"}
               linkText={"Bekijk mijn github"}
             ></Section>
           </section>
-          <div className="w-full h-full md:w-auto md:h-auto z-0">
-            <Image
-              className="w-full max-w-md mx-auto md:mx-0 md:w-auto h-auto md:max-w-lg block z-0 px-articlePadding"
-              src={marcoPointingAtText}
-              alt="Picture of Marco Fijan pointing to text"
-              height={1000}
-              width={1000}
-              priority={true}
-            />
-            <div className="relative w-full h-10">
-              <div className="-mt-12" id="bottomImageWave"></div>
+          <section>
+            <div className="w-full h-full md:w-auto md:h-auto z-0">
+              <Image
+                className="w-full max-w-md mx-auto md:mx-0 md:w-auto h-auto md:max-w-md block z-0 px-articlePadding"
+                src={marcoPointingAtText}
+                alt="Picture of Marco Fijan pointing to text"
+                height={1000}
+                width={1000}
+                priority={true}
+              />
+              {/* <div className="relative w-full h-10">
+                <div className="-mt-12" id="bottomImageWave"></div>
+              </div> */}
             </div>
-          </div>
+            <section className="grid grid-cols-2 gap-8 shadow-inputFieldValid bg-bgColorLight z-50 rounded-lg box-border px-8 pt-8 pb-4">
+              <section>
+                <Skill
+                  text={"HTML, CSS en Styling"}
+                  percentageClassname="w-[90%]"
+                />
+                <Skill text={"Javascript"} percentageClassname="w-[75%]" />
+                <Skill
+                  text={"NextJS en Svelte"}
+                  percentageClassname="w-[70%]"
+                />
+              </section>
+              <section>
+                <Skill text={"Three Fiber"} percentageClassname="w-[70%]" />
+                <Skill
+                  text={"Illustrator en Figma"}
+                  percentageClassname="w-[86%]"
+                />
+                <Skill
+                  text={"Unity Game engine"}
+                  percentageClassname="w-[65%]"
+                />
+              </section>
+            </section>
+          </section>
         </div>
       </article>
       <div className="relative h-1/2 w-full">

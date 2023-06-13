@@ -36,7 +36,7 @@ export default function Header() {
           />
           <label
             htmlFor="hamburgerMenu"
-            className="fixed flex items-center justify-center w-16 h-16 bg-gradient-to-br from-bgColorDarkLight via-bgColorDarkDark to-bgColorDarkLight rounded-lg shadow-md cursor-pointer bottom-8 right-4 md:hidden"
+            className="fixed flex items-center justify-center w-16 h-16 bg-gradient-to-br from-bgColorDarkLight via-bgColorDarkDark to-bgColorDarkLight shadow-button rounded-lg cursor-pointer bottom-8 right-4 md:hidden"
             id="hamburgerMenu"
           >
             <div className="" id="menuButtonBurger"></div>
