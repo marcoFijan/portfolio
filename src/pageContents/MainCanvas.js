@@ -6,6 +6,7 @@ import { useState, Suspense, useEffect } from "react";
 import HeroSection from "../organisms/HeroSection.js";
 import AboutSection from "../organisms/AboutSection.js";
 import PortfolioSection from "../organisms/PortfolioSection.js";
+import LoadingScreen from "../organisms/LoadingScreen.js";
 import Footer from "../organisms/Footer.js";
 import ContactSection from "../organisms/ContactSection.js";
 import Smartphone from "../models/Smartphone.js";
@@ -61,8 +62,12 @@ export default function MainCanvas({}) {
             blur={0}
             files="../images/Environment/brown_photostudio_02_1k.hdr"
           />
-          <Laptop mobile={mobile} />
-          <Smartphone mobile={mobile} />
+          <Suspense>
+            <Laptop mobile={mobile} />
+          </Suspense>
+          <Suspense>
+            <Smartphone mobile={mobile} />
+          </Suspense>
           <Sparkles size={2} scale={[10, 10, 10]}></Sparkles>
           <Scroll>
             <Circle args={[1, 100, 200]} scale={5} position={[0, 0, -5]}>
@@ -88,6 +93,7 @@ export default function MainCanvas({}) {
           </Scroll>
         </ScrollControls>
       </Canvas>
+      <LoadingScreen />
     </div>
   );
 }
