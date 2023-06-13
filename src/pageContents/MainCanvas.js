@@ -18,6 +18,7 @@ import {
   Environment,
   MeshDistortMaterial,
   Sphere,
+  Loader,
 } from "@react-three/drei";
 
 export default function MainCanvas({}) {
@@ -61,9 +62,12 @@ export default function MainCanvas({}) {
             blur={0}
             files="../images/Environment/brown_photostudio_02_1k.hdr"
           />
-          {/* <Smartphone mobile={mobile} />
-          <Laptop mobile={mobile} /> */}
-
+          <Suspense fallback={null}>
+            <Laptop mobile={mobile} />
+          </Suspense>
+          <Suspense fallback={null}>
+            <Smartphone mobile={mobile} />
+          </Suspense>
           {/* <PortfolioAnimation mobile={mobile} /> */}
           <Scroll>
             <Sphere args={[1, 100, 200]} scale={5} position={[0, 0, -5]}>
@@ -89,6 +93,7 @@ export default function MainCanvas({}) {
           </Scroll>
         </ScrollControls>
       </Canvas>
+      <Loader />
     </div>
   );
 }
