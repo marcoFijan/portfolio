@@ -26,8 +26,10 @@ export default function Article({
   paragraphImageAlt,
   paragraphImageSmall,
   paragraphImageClassname,
+  imgPriority,
   linkText,
   linkHref,
+  lightBg,
   linkText2,
   linkHref2,
   extraContent,
@@ -65,21 +67,29 @@ export default function Article({
             {extraContent && extraContent}
             {linkHref & linkHref2 && (
               <section className="w-full flex flex-wrap justify-center">
-                <NextLink text={linkText} href={linkHref} cta={true}></NextLink>
+                <NextLink
+                  text={linkText}
+                  href={linkHref}
+                  cta={true}
+                  lightBg={lightBg}
+                ></NextLink>
                 <NextLink text={linkText2} href={linkHref2}></NextLink>
               </section>
             )}
             {linkHref & !linkHref2 && (
-              <NextLink text={linkText} href={linkHref} cta={true}></NextLink>
+              <NextLink
+                text={linkText}
+                href={linkHref}
+                cta={true}
+                lightBg={lightBg}
+              ></NextLink>
             )}
           </section>
           <Image
-            className={`${paragraphImageClassname} w-full object-cover bg-black box-border p-4 border rounded-2xl`}
+            className={`${paragraphImageClassname} w-full object-cover bg-black shadow-button box-border p-4 border rounded-2xl`}
             src={paragraphImageURL}
             alt={paragraphImageAlt}
-            height={1000}
-            width={1000}
-            priority={true}
+            priority={imgPriority}
           />
         </section>
       )}
@@ -104,18 +114,21 @@ export default function Article({
           {extraContent && extraContent}
           {paragraphImageURL && (
             <Image
-              className={`w-full object-cover bg-black box-border p-4 border rounded-2xl ${paragraphImageClassname}`}
+              className={`w-full object-cover shadow-button bg-black box-border p-4 border rounded-2xl ${paragraphImageClassname}`}
               src={paragraphImageURL}
               alt={paragraphImageAlt}
-              height={1000}
-              width={1000}
-              priority={true}
+              priority={imgPriority}
             />
           )}
 
           <section className="w-full flex flex-wrap justify-center">
             {linkHref && (
-              <NextLink text={linkText} href={linkHref} cta={true}></NextLink>
+              <NextLink
+                text={linkText}
+                href={linkHref}
+                cta={true}
+                lightBg={lightBg}
+              ></NextLink>
             )}
             {linkHref2 && (
               <NextLink text={linkText2} href={linkHref2}></NextLink>

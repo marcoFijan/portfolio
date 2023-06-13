@@ -68,7 +68,12 @@ export default function ContactForm({ darkBackground }) {
             : "shadow-inputField bg-bgColorLight valid:shadow-inputFieldValid "
         } p-2 border-2 border-white focus:bg-white focus:border-2 focus:outline-none focus:border-accentColor box-border`}
       ></textarea>
-      <Button text={"Verstuur bericht"} type={"submit"} cta={true} />
+      <Button
+        text={"Verstuur bericht"}
+        type={"submit"}
+        cta={true}
+        lightBg={true}
+      />
       {succes && "Uw bericht is succesvol verzonden!"}
     </form>
   );

@@ -100,6 +100,8 @@ export default function ProjectArticle({
   section5ImageURL,
   section6ImageAlt,
   section6ImageURL,
+  section1ImagePriority,
+  section2ImagePriority,
   darkBackground,
   canvas,
 }) {
@@ -121,6 +123,7 @@ export default function ProjectArticle({
         paragraphImageSmall={paragraph1ImageSmall}
         paragraphImageNoBorder={paragraph1ImageNoBorder}
         paragraphImageClassname={paragraph1ImageClassname}
+        imgPriority={true}
         linkHref={button1Href}
         linkText={button1Text}
         linkHref2={button1bHref}
@@ -146,6 +149,7 @@ export default function ProjectArticle({
             darkBackground={darkBackground}
             paragraphImageAlt={section1ImageAlt}
             paragraphImageURL={section1ImageURL}
+            imgPriority={section1ImagePriority}
             linkHref={section1LinkHref}
             linkText={section1LinkText}
             linkHref2={section1bLinkHref}
@@ -167,6 +171,7 @@ export default function ProjectArticle({
               darkBackground={darkBackground}
               paragraphImageAlt={section2ImageAlt}
               paragraphImageURL={section2ImageURL}
+              imgPriority={section2ImagePriority}
               linkHref={section2LinkHref}
               linkText={section2LinkText}
               linkHref2={section2bLinkHref}

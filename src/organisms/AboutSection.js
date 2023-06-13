@@ -1,7 +1,6 @@
 import Image from "next/image";
 import marcoPointingAtText from "../../public/images/marcoPointing.png";
 import Section from "../molecules/Section";
-import H3 from "../atoms/H3";
 import Skill from "../molecules/Skill";
 
 export default function AboutSection() {
@@ -9,7 +8,7 @@ export default function AboutSection() {
     <>
       <div id="splitterStart"></div>
       <article className="w-full bg-bgColorLight -z-40">
-        <div className="max-w-wrapper mx-auto w-full grid gap-8 grid-cols-fluid mb-1/2-height h-[150vh] md:h-screen items-center">
+        <div className="max-w-wrapper mx-auto w-full grid md:gap-8 grid-cols-fluid mb-1/2-height h-[150vh] md:h-screen items-start md:items-center">
           <section className="px-articlePaddingMobile md:px-articlePadding">
             <Section
               darkBackground={false}
@@ -23,23 +22,19 @@ export default function AboutSection() {
               }
               linkHref={"https://github.com/marcoFijan"}
               linkText={"Bekijk mijn github"}
+              lightBg={true}
             ></Section>
           </section>
           <section>
             <div className="w-full h-full md:w-auto md:h-auto z-0">
               <Image
-                className="w-full max-w-md mx-auto md:mx-0 md:w-auto h-auto md:max-w-md block z-0 px-articlePadding"
+                className="w-full max-w-xs hidden mx-auto md:mx-0 md:w-auto h-auto md:max-w-md md:block z-0 px-articlePadding"
                 src={marcoPointingAtText}
                 alt="Picture of Marco Fijan pointing to text"
-                height={1000}
-                width={1000}
-                priority={true}
+                priority={false}
               />
-              {/* <div className="relative w-full h-10">
-                <div className="-mt-12" id="bottomImageWave"></div>
-              </div> */}
             </div>
-            <section className="grid grid-cols-2 gap-8 shadow-inputFieldValid bg-bgColorLight z-50 rounded-lg box-border px-8 pt-8 pb-4">
+            <section className="grid grid-cols-2 mx-4 gap-8 shadow-inputFieldValid bg-bgColorLight z-50 rounded-lg box-border px-8 pt-8 pb-4">
               <section>
                 <Skill
                   text={"HTML, CSS en Styling"}
@@ -52,11 +47,12 @@ export default function AboutSection() {
                 />
               </section>
               <section>
-                <Skill text={"Three Fiber"} percentageClassname="w-[70%]" />
                 <Skill
                   text={"Illustrator en Figma"}
                   percentageClassname="w-[86%]"
                 />
+                <Skill text={"Tailwind"} percentageClassname="w-[80%]" />
+
                 <Skill
                   text={"Unity Game engine"}
                   percentageClassname="w-[65%]"

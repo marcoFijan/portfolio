@@ -22,6 +22,7 @@ export default function ProjectsOverview({}) {
         section1ImageURL={KBOReeshofThumbnailImg}
         section1LinkHref={"/projects/kbo-tilburg-reeshof"}
         section1LinkText={"Bekijk project"}
+        section1ImagePriority={true}
         section1bLinkHref={
           "https://amenable-sword-4e9.notion.site/Productbiografie-1edc81194bb144b2bddb7619a652b5b0"
         }
@@ -32,6 +33,7 @@ export default function ProjectsOverview({}) {
         section2ImageURL={YODashboardThumbnailImg}
         section2LinkHref={"/projects/yo-dashboard"}
         section2LinkText={"Bekijk project"}
+        section2ImagePriority={true}
         section2bLinkHref={
           "https://www.figma.com/proto/AwTDSAwkiuLqhmUwRc9i4q/YO---Dashboard-opdrachtgevers-Hifi-2?node-id=845%3A285&scaling=scale-down-width&page-id=0%3A1&starting-point-node-id=577%3A145"
         }

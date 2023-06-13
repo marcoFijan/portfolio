@@ -2,13 +2,11 @@
 
 // import Projects from "./PortfolioProjects.jsx";
 import { Canvas } from "@react-three/fiber";
-import Image from "next/image";
 import { useState, Suspense, useEffect } from "react";
 import HeroSection from "../organisms/HeroSection.js";
 import AboutSection from "../organisms/AboutSection.js";
 import PortfolioSection from "../organisms/PortfolioSection.js";
 import Footer from "../organisms/Footer.js";
-// import PortfolioAnimation from "../organisms/PortfolioAnimation.js";
 import ContactSection from "../organisms/ContactSection.js";
 import Smartphone from "../models/Smartphone.js";
 import Laptop from "../models/Laptop.js";
@@ -17,7 +15,8 @@ import {
   Scroll,
   Environment,
   MeshDistortMaterial,
-  Sphere,
+  Sparkles,
+  Circle,
   Loader,
 } from "@react-three/drei";
 
@@ -62,22 +61,18 @@ export default function MainCanvas({}) {
             blur={0}
             files="../images/Environment/brown_photostudio_02_1k.hdr"
           />
-          <Suspense fallback={null}>
-            <Laptop mobile={mobile} />
-          </Suspense>
-          <Suspense fallback={null}>
-            <Smartphone mobile={mobile} />
-          </Suspense>
-          {/* <PortfolioAnimation mobile={mobile} /> */}
+          <Laptop mobile={mobile} />
+          <Smartphone mobile={mobile} />
+          <Sparkles size={2} scale={[10, 10, 10]}></Sparkles>
           <Scroll>
-            <Sphere args={[1, 100, 200]} scale={5} position={[0, 0, -5]}>
+            <Circle args={[1, 100, 200]} scale={5} position={[0, 0, -5]}>
               <MeshDistortMaterial
                 color="#1a7694"
                 attach="material"
                 distort={0.5}
-                speed={1}
+                speed={0.6}
               />
-            </Sphere>
+            </Circle>
           </Scroll>
           <Scroll html className="w-full">
             {/* Introduction animation [1 page] */}
@@ -93,7 +88,6 @@ export default function MainCanvas({}) {
           </Scroll>
         </ScrollControls>
       </Canvas>
-      <Loader />
     </div>
   );
 }

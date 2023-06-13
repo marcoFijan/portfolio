@@ -18,12 +18,10 @@ export default function Footer({ homePage }) {
     <section className="w-full max-w-wrapper px-articlePaddingMobile md:px-articlePadding mx-auto flex flex-wrap justify-between gap-8 ">
       <div className="hidden md:block relative shadow-inputField bg-bgColorLight rounded-full w-44 h-44 self-center">
         <Image
-          height={500}
-          width={500}
           className="absolute rounded-b-full w-44 bottom-0 -scale-x-100"
           src={FooterImg}
           alt={"Marco afbeelding"}
-          priority={true}
+          priority={false}
         />
       </div>
       <nav>
@@ -89,7 +87,12 @@ export default function Footer({ homePage }) {
       <div className="self-center md:w-auto md:self-auto">
         <H3 text="Contact" darkBackground={false} />
         <p>Heeft u interesse? </p> <p>Stuur gerust een berichtje!</p>
-        <NextLink text="Neem contact op!" href="/contact" cta={true}></NextLink>
+        <NextLink
+          text="Neem contact op!"
+          href="/contact"
+          cta={true}
+          lightBg={true}
+        ></NextLink>
       </div>
     </section>
   );

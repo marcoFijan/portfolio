@@ -51,6 +51,7 @@ module.exports = {
       boxShadow: {
         ctaButtonHover: "5px 5px 0px #ab1b0b, -5px -5px 0px #e1530a;",
         ctaButton: "0px 0px 10px #ab1b0b;",
+        buttonLight: "  5px 5px 10px #bbc2cf, -5px -5px 10px #ffffff;",
         buttonHover: "5px 5px 0px #2a2e32, -5px -5px 0px #3e444a;",
         button: "5px 5px 10px #2a2e32, -5px -5px 10px #3e444a;",
         inputField: "inset 5px 5px 10px #bbc2cf, inset -5px -5px 10px #ffffff;",
@@ -92,15 +93,15 @@ module.exports = {
           "0%": {
             width: 0,
             height: 0,
-            "border-top": "2px solid #d4a418",
-            "border-bottom": "2px solid #d4a418",
+            "border-top": "4px solid #e06020",
+            "border-bottom": "4px solid #e06020",
           },
           "50%": {
             width: "100%",
             height: 0,
             padding: "0",
-            "border-top": "2px solid #d4a418",
-            "border-bottom": "2px solid #d4a418",
+            "border-top": "4px solid #e06020",
+            "border-bottom": "4px solid #e06020",
           },
           "90%": {
             width: "100%",

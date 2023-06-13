@@ -28,6 +28,7 @@ export default function Article({
   paragraphImageSmall,
   paragraphImageClassname,
   paragraphImageNoBorder,
+  imgPriority,
   linkText,
   linkHref,
   extraContent,
@@ -95,11 +96,11 @@ export default function Article({
               className={`${
                 paragraphImageNoBorder
                   ? ""
-                  : "w-full object-cover  box-border p-4 border bg-black rounded-2xl"
+                  : "w-full object-cover  box-border p-4 border bg-black rounded-2xl shadow-button"
               } ${paragraphImageClassname}`}
               src={paragraphImageURL}
               alt={paragraphImageAlt}
-              priority={true}
+              priority={imgPriority}
             />
           )}
           {canvas && canvas}
@@ -141,10 +142,10 @@ export default function Article({
           )}
           {paragraphImageURL && (
             <Image
-              className={`w-full object-cover  box-border p-4 border rounded-2xl ${paragraphImageClassname}`}
+              className={`w-full object-cover  box-border p-4 shadow-button border rounded-2xl ${paragraphImageClassname}`}
               src={paragraphImageURL}
               alt={paragraphImageAlt}
-              priority={true}
+              priority={imgPriority}
             />
           )}
           {linkHref && (

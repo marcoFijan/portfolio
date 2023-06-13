@@ -17,6 +17,7 @@ export default function Section({
   paragraphImageURL,
   paragraphImageAlt,
   paragraphImageClassname,
+  imgPriority,
   linkText,
   linkHref,
   extraContent,
@@ -40,9 +41,7 @@ export default function Section({
         className={`${paragraphImageClassname}`}
         src={paragraphImageURL}
         alt={paragraphImageAlt}
-        height={1000}
-        width={1000}
-        priority={true}
+        priority={imgPriority}
       />
       {linkHref && <NextLink text={linkText} href={linkHref}></NextLink>}
     </section>
