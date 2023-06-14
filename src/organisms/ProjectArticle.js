@@ -154,6 +154,7 @@ export default function ProjectArticle({
             linkText={section1LinkText}
             linkHref2={section1bLinkHref}
             linkText2={section1bLinkText}
+            customClassName={"pb-8"}
           />
           {sectionHeader2 && (
             <Section
@@ -176,6 +177,7 @@ export default function ProjectArticle({
               linkText={section2LinkText}
               linkHref2={section2bLinkHref}
               linkText2={section2bLinkText}
+              customClassName={"pb-8"}
             />
           )}
           {sectionHeader3 && (
@@ -198,6 +200,7 @@ export default function ProjectArticle({
               linkText={section3LinkText}
               linkHref2={section3bLinkHref}
               linkText2={section3bLinkText}
+              customClassName={"pb-8"}
             />
           )}
           {sectionHeader4 && (
@@ -213,6 +216,7 @@ export default function ProjectArticle({
               linkText={section4LinkText}
               linkHref2={section4bLinkHref}
               linkText2={section4bLinkText}
+              customClassName={"pb-8"}
             />
           )}
           {sectionHeader5 && (
@@ -228,6 +232,7 @@ export default function ProjectArticle({
               linkText={section5LinkText}
               linkHref2={section5bLinkHref}
               linkText2={section5bLinkText}
+              customClassName={"pb-8"}
             />
           )}
           {sectionHeader6 && (
@@ -243,6 +248,7 @@ export default function ProjectArticle({
               linkText={section6LinkText}
               linkHref2={section6bLinkHref}
               linkText2={section6bLinkText}
+              customClassName={"pb-8"}
             />
           )}
         </section>
