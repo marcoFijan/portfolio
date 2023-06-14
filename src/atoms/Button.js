@@ -6,8 +6,8 @@ export default function Button({ text, type, cta, lightBg }) {
         lightBg ? "shadow-buttonLight" : "shadow-button"
       } ${
         cta
-          ? "bg-gradient-to-br from-CTAColorLight via-CTAColorDark to-CTAColorLight hover:shadow-ctaButtonHover"
-          : "bg-gradient-to-br from-[#60667c] via-[#070709] to-[#60667c] hover:shadow-buttonHover"
+          ? "bg-gradient-to-br from-CTAColorLight via-CTAColorDark to-CTAColorLight"
+          : "bg-gradient-to-br from-[#60667c] via-[#070709] to-[#60667c]"
       }`}
       type={type}
     >

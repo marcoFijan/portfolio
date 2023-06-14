@@ -75,7 +75,7 @@ export default function Header() {
             <li className="">
               <Link
                 id="button"
-                className="text-white whitespace-nowrap font-bold ml-4 px-4 py-1 hidden md:inline-block rounded-lg text-center mx-auto place-self-center transition duration-500 ease-in-out bg-gradient-to-br from-CTAColorLight via-CTAColorDark to-CTAColorLight shadow-button hover:shadow-ctaButtonHover"
+                className="text-white whitespace-nowrap font-bold ml-4 px-4 py-1 hidden md:inline-block rounded-lg text-center mx-auto place-self-center transition duration-500 ease-in-out bg-gradient-to-br from-CTAColorLight via-CTAColorDark to-CTAColorLight shadow-button"
                 href={"/contact"}
               >
                 Neem contact op!

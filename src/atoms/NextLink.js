@@ -9,8 +9,8 @@ export default function NextLink({ text, href, cta, lightBg }) {
           lightBg ? "shadow-buttonLight" : "shadow-button"
         } ${
           cta
-            ? "bg-gradient-to-br from-CTAColorLight via-CTAColorDark to-CTAColorLight hover:shadow-ctaButtonHover"
-            : "bg-gradient-to-br from-bgColorDarkLight via-bgColorDarkDark to-bgColorDarkLight hover:shadow-buttonHover"
+            ? "bg-gradient-to-br from-CTAColorLight via-CTAColorDark to-CTAColorLight"
+            : "bg-gradient-to-br from-bgColorDarkLight via-bgColorDarkDark to-bgColorDarkLight"
         }`}
         href={href}
       >
