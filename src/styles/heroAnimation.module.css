@@ -1,7 +1,6 @@
 .marco,
 .fijan {
   height: 5rem;
-  /* width: 18rem; */
   fill: transparent;
 }
 
@@ -10,8 +9,8 @@
   stroke-dasharray: 300;
   stroke-dashoffset: 300;
   fill: transparent;
-  stroke: #d4a418;
-  stroke-width: 1.5;
+  stroke: #e06020;
+  stroke-width: 3;
 }
 
 .marco path:first-child {

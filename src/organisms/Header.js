@@ -48,7 +48,7 @@ export default function Header() {
             <li className="transition drop-shadow-[0_1.2px_1.2px_#12131a]">
               <Link
                 id="button"
-                className="text-white font-bold px-4 py-1 inline-block text-center place-self-center hover:underline transition duration-500 ease-in-out bg-gradient-to-br from-bgColorDarkLight via-bgColorDarkDark to-bgColorDarkLight border-y-white hover:border-y-CTAColor hover:border-y-2 box-border border-y-1 md:border-y-0 md:border-y-transparent md:from-transparent md:via-transparent md:to-transparent bg-transparent"
+                className="text-white font-bold px-4 py-1 inline-block text-center place-self-center hover:underline transition duration-500 ease-in-out bg-gradient-to-br from-bgColorDarkLight via-bgColorDarkDark to-bgColorDarkLight border-y-white box-border border-y-1 md:border-y-0 md:border-y-transparent md:from-transparent md:via-transparent md:to-transparent bg-transparent"
                 href={"/"}
               >
                 Hoofdpagina
@@ -57,7 +57,7 @@ export default function Header() {
             <li className="transition drop-shadow-[0_1.2px_1.2px_#12131a]">
               <Link
                 id="button"
-                className="text-white font-bold px-4 py-1 inline-block text-center place-self-center hover:underline transition duration-500 ease-in-out bg-gradient-to-br from-bgColorDarkLight via-bgColorDarkDark to-bgColorDarkLight border-y-white hover:border-y-CTAColor hover:border-y-2 box-border border-y-1 md:border-y-0 md:border-y-transparent md:from-transparent md:via-transparent md:to-transparent bg-transparent"
+                className="text-white font-bold px-4 py-1 inline-block text-center place-self-center hover:underline transition duration-500 ease-in-out bg-gradient-to-br from-bgColorDarkLight via-bgColorDarkDark to-bgColorDarkLight border-y-white box-border border-y-1 md:border-y-0 md:border-y-transparent md:from-transparent md:via-transparent md:to-transparent bg-transparent"
                 href={"/projects"}
               >
                 Projecten
@@ -66,7 +66,7 @@ export default function Header() {
             <li className="transition drop-shadow-[0_1.2px_1.2px_#12131a]">
               <Link
                 id="button"
-                className="text-white font-bold px-4 py-1 inline-block text-center place-self-center hover:underline transition duration-500 ease-in-out bg-gradient-to-br from-bgColorDarkLight via-bgColorDarkDark to-bgColorDarkLight border-y-white hover:border-y-CTAColor hover:border-y-2 box-border border-y-1 md:border-y-0 md:border-y-transparent md:from-transparent md:via-transparent md:to-transparent bg-transparent"
+                className="text-white font-bold px-4 py-1 inline-block text-center place-self-center hover:underline transition duration-500 ease-in-out bg-gradient-to-br from-bgColorDarkLight via-bgColorDarkDark to-bgColorDarkLight border-y-white box-border border-y-1 md:border-y-0 md:border-y-transparent md:from-transparent md:via-transparent md:to-transparent bg-transparent"
                 href={"https://github.com/marcoFijan"}
               >
                 Githubpagina
@@ -75,7 +75,7 @@ export default function Header() {
             <li className="">
               <Link
                 id="button"
-                className="text-white whitespace-nowrap font-bold ml-4 px-4 py-1 hidden md:inline-block rounded-lg text-center mx-auto place-self-center transition duration-500 ease-in-out bg-gradient-to-br from-CTAColorLight via-CTAColorDark to-CTAColorLight shadow-ctaButton hover:shadow-ctaButtonHover"
+                className="text-white whitespace-nowrap font-bold ml-4 px-4 py-1 hidden md:inline-block rounded-lg text-center mx-auto place-self-center transition duration-500 ease-in-out bg-gradient-to-br from-CTAColorLight via-CTAColorDark to-CTAColorLight shadow-button hover:shadow-ctaButtonHover"
                 href={"/contact"}
               >
                 Neem contact op!

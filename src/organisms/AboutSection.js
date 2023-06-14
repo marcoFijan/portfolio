@@ -1,15 +1,15 @@
 import Image from "next/image";
-import marcoPointingAtText from "../../public/images/marcoPointing.png";
+import marcoPointingLeft from "../../public/images/marcoPointing.png";
+import marcoPointingUp from "../../public/images/marcoPointingUp.png";
 import Section from "../molecules/Section";
 import Skill from "../molecules/Skill";
 
-export default function AboutSection() {
+export default function AboutSection({ mobile }) {
   return (
     <>
       <div id="splitterStart"></div>
-      <article className="w-full bg-bgColorLight -z-40">
-        <div className="absolute z-50 top-0 left-0"></div>
-        <div className="max-w-wrapper mx-auto w-full grid md:gap-8 grid-cols-fluid mb-1/2-height h-[150vh] md:h-screen items-start md:items-center">
+      <article className="w-full bg-bgColorLight z-40">
+        <div className="max-w-wrapper mx-auto w-full grid md:gap-8 grid-cols-fluid h-[150vh] md:h-screen items-start md:items-center">
           <section className="px-articlePaddingMobile md:px-articlePadding">
             <Section
               darkBackground={false}
@@ -29,8 +29,8 @@ export default function AboutSection() {
           <section>
             <div className="w-full h-full md:w-auto md:h-auto z-0">
               <Image
-                className="w-full max-w-xs hidden mx-auto md:mx-0 md:w-auto h-auto md:max-w-md md:block z-0 px-articlePadding"
-                src={marcoPointingAtText}
+                className="object-contain w-full max-w-xs h-40 mx-auto md:mx-0 md:w-auto md:h-auto md:max-w-md md:block z-0 px-articlePadding"
+                src={mobile ? marcoPointingUp : marcoPointingLeft}
                 alt="Picture of Marco Fijan pointing to text"
                 priority={false}
               />
@@ -63,9 +63,11 @@ export default function AboutSection() {
           </section>
         </div>
       </article>
-      <div className="relative h-1/2 w-full">
-        <div id="splitterEnd" className="-mt-3/5-height z-50 absolute"></div>
-      </div>
+      <div id="splitterEnd"></div>
+
+      {/* <div className="relative h-1/2 w-full">
+        <div id="splitterEnd" className="-mt-[60vh] z-0 absolute"></div>
+      </div> */}
     </>
   );
 }

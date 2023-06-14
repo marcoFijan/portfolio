@@ -41,7 +41,7 @@ module.exports = {
         CTAColor: "#e06020",
         bgColorDark: "#34393e",
         bgColorDarkLight: "#2f3338",
-        bgColorDarkDark: "#383d42",
+        bgColorDarkDark: "#202224",
         bgColorLight: "#e7efff",
         white: "#ffffff",
       },
@@ -93,15 +93,15 @@ module.exports = {
           "0%": {
             width: 0,
             height: 0,
-            "border-top": "4px solid #e06020",
-            "border-bottom": "4px solid #e06020",
+            "border-top": "2px solid #e06020",
+            "border-bottom": "2px solid #e06020",
           },
           "50%": {
             width: "100%",
             height: 0,
             padding: "0",
-            "border-top": "4px solid #e06020",
-            "border-bottom": "4px solid #e06020",
+            "border-top": "2px solid #e06020",
+            "border-bottom": "2px solid #e06020",
           },
           "90%": {
             width: "100%",

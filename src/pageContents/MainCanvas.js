@@ -72,7 +72,7 @@ export default function MainCanvas({}) {
           <Scroll>
             <Circle args={[1, 100, 200]} scale={5} position={[0, 0, -5]}>
               <MeshDistortMaterial
-                color="#1a7694"
+                color="#383d42"
                 attach="material"
                 distort={0.5}
                 speed={0.6}
@@ -83,7 +83,7 @@ export default function MainCanvas({}) {
             {/* Introduction animation [1 page] */}
             <HeroSection />
             {/* Information about me [2 page] */}
-            <AboutSection />
+            <AboutSection mobile={mobile} />
             {/* Overview with a couple of projects I am proud of [6 pages] */}
             <PortfolioSection />
             {/* Contactpage with a form [1.5 page] */}
