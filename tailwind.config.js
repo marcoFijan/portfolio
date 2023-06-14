@@ -54,6 +54,7 @@ module.exports = {
         buttonLight: "  5px 5px 10px #bbc2cf, -5px -5px 10px #ffffff;",
         buttonHover: "5px 5px 0px #2a2e32, -5px -5px 0px #3e444a;",
         button: "5px 5px 10px #2a2e32, -5px -5px 10px #3e444a;",
+        darkInner: "inset 5px 5px 10px #202224, inset -5px -5px 10px #2f3338;",
         inputField: "inset 5px 5px 10px #bbc2cf, inset -5px -5px 10px #ffffff;",
         inputFieldValid: "  5px 5px 10px #bbc2cf, -5px -5px 10px #ffffff;",
         inputFieldDark:

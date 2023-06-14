@@ -1,4 +1,4 @@
-import ArticleIframe from "../molecules/SectionIframe";
+import SectionIframe from "../molecules/SectionIframe";
 
 export default function ProjectArticleSpecial({
   darkBackground,
@@ -11,15 +11,17 @@ export default function ProjectArticleSpecial({
   iframeSrc,
 }) {
   return (
-    <ArticleIframe
-      iframeSrc={iframeSrc}
-      darkBackground={darkBackground}
-      header={header}
-      subHeader={subHeader}
-      header2={header2}
-      introduction={introduction}
-      linkText={linkText}
-      linkHref={linkHref}
-    />
+    <article className="py-8 block px-articlePaddingMobile md:px-articlePadding w-full">
+      <SectionIframe
+        iframeSrc={iframeSrc}
+        darkBackground={darkBackground}
+        header={header}
+        subHeader={subHeader}
+        header2={header2}
+        introduction={introduction}
+        linkText={linkText}
+        linkHref={linkHref}
+      />
+    </article>
   );
 }

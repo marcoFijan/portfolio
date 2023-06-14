@@ -106,7 +106,7 @@ export default function ProjectArticle({
   canvas,
 }) {
   return (
-    <article className="py-16 block px-articlePaddingMobile md:px-articlePadding w-full">
+    <article className="pb-8 pt-24 block px-articlePaddingMobile md:px-articlePadding w-full">
       <SectionIntro
         title={title}
         subTitle={subTitle}
@@ -133,7 +133,7 @@ export default function ProjectArticle({
         canvas={canvas}
       />
       {sectionHeader1 && (
-        <section className="block md:grid md:grid-cols-fluid gap-16">
+        <section className="block md:grid md:grid-cols-fluid gap-x-16">
           <Section
             header2={sectionHeader1}
             paragraph1a={sectionParagraph1a}
@@ -263,6 +263,7 @@ export default function ProjectArticle({
           linkText2={button2bText}
           darkBackground={darkBackground}
           extraContent={extraContent2}
+          customClassName={"pt-8"}
         />
       )}
     </article>

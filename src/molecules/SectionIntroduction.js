@@ -61,7 +61,7 @@ export default function Article({
                   return (
                     <li
                       className={
-                        "text-sm uppercase bg-bgColorLight text-bgColorDark px-8 py-2 mb-4 rounded-full"
+                        "text-sm bg-bgColorDark font-bold text-bgColorLight shadow-darkInner px-4 py-2 mb-4 rounded-3xl"
                       }
                       key={val}
                     >
@@ -96,7 +96,7 @@ export default function Article({
               className={`${
                 paragraphImageNoBorder
                   ? ""
-                  : "w-full object-cover  box-border p-4 border bg-black rounded-2xl shadow-button"
+                  : "w-full object-cover  box-border p-1 mt-8 border bg-black rounded-2xl shadow-button"
               } ${paragraphImageClassname}`}
               src={paragraphImageURL}
               alt={paragraphImageAlt}
@@ -107,7 +107,7 @@ export default function Article({
         </section>
       )}
       {!paragraphImageSmall && (
-        <section className="pb-8">
+        <section>
           {header && <H1 text={header} darkBackground={darkBackground}></H1>}
           {subHeader && <SubH1 text={subHeader}></SubH1>}
           {summaryText && (
@@ -116,7 +116,7 @@ export default function Article({
                 return (
                   <li
                     className={
-                      "text-sm uppercase bg-bgColorLight text-bgColorDark px-8 py-2 mb-4 rounded-full"
+                      "text-sm bg-bgColorDark font-bold text-bgColorLight shadow-darkInner px-4 py-2 mb-4 rounded-3xl"
                     }
                     key={val}
                   >
@@ -142,7 +142,7 @@ export default function Article({
           )}
           {paragraphImageURL && (
             <Image
-              className={`w-full object-cover  box-border p-4 shadow-button border rounded-2xl ${paragraphImageClassname}`}
+              className={`w-full object-cover  box-border p-1 mt-4 shadow-button border rounded-2xl ${paragraphImageClassname}`}
               src={paragraphImageURL}
               alt={paragraphImageAlt}
               priority={imgPriority}

@@ -5,7 +5,7 @@ export default function UnorderedList({ data }) {
         return (
           <li
             className={
-              "text-sm uppercase bg-bgColorLight text-bgColorDark px-8 py-2 mb-4 rounded-full"
+              "text-sm bg-bgColorDark font-extralight text-bgColorLight shadow-darkInner px-4 py-2 mb-4 rounded-xl"
             }
             key={d}
           >

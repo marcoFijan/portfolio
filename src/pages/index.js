@@ -4,7 +4,7 @@ import MainCanvas from "../pageContents/MainCanvas.js";
 import Header from "../organisms/Header.js";
 
 const montserrat = Montserrat({
-  weight: ["400", "700", "900"],
+  weight: ["200", "400", "700", "900"],
   subsets: ["latin"],
   variable: "--font-montserrat",
 });

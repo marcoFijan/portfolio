@@ -6,7 +6,7 @@ import Header from "../../organisms/Header.js";
 import Footer from "../../organisms/Footer.js";
 
 const montserrat = Montserrat({
-  weight: ["400", "700", "900"],
+  weight: ["200", "400", "700", "900"],
   subsets: ["latin"],
   variable: "--font-montserrat",
 });

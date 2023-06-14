@@ -10,7 +10,7 @@
   stroke-dashoffset: 300;
   fill: transparent;
   stroke: #e06020;
-  stroke-width: 3;
+  stroke-width: 1.5;
 }
 
 .marco path:first-child {
@@ -64,7 +64,7 @@
   }
   50% {
     stroke-dashoffset: 0;
-    stroke-width: 0.1;
+    stroke-width: 1.5;
     fill: transparent;
   }
   100% {

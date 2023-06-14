@@ -35,13 +35,13 @@ export default function Article({
   extraContent,
 }) {
   return (
-    <section className={`w-full ${customClassName}`}>
+    <section className={`w-full z-0 ${customClassName}`}>
       {title && <Title text={title} darkBackground={darkBackground}></Title>}
       {subTitle && <SubTitle text={subTitle}></SubTitle>}
 
       {paragraphImageSmall && (
         <section
-          className={`block md:grid md:grid-cols-fluid md:gap-12 pb-8 items-center ${
+          className={`block md:grid md:grid-cols-fluid md:gap-12 items-center ${
             paragraphCenter && "justify-center"
           }`}
         >
@@ -86,7 +86,7 @@ export default function Article({
             )}
           </section>
           <Image
-            className={`${paragraphImageClassname} w-full object-cover bg-black shadow-button box-border p-4 border rounded-2xl`}
+            className={`${paragraphImageClassname} w-full object-cover bg-black shadow-button box-border p-1 mt-4 border rounded-2xl z-0`}
             src={paragraphImageURL}
             alt={paragraphImageAlt}
             priority={imgPriority}
@@ -94,7 +94,7 @@ export default function Article({
         </section>
       )}
       {!paragraphImageSmall && (
-        <section className="pb-8 w-full">
+        <section className="w-full">
           {header && <H1 text={header} darkBackground={darkBackground}></H1>}
           {subHeader && <SubH1 text={subHeader}></SubH1>}
           {introduction && (
@@ -114,7 +114,7 @@ export default function Article({
           {extraContent && extraContent}
           {paragraphImageURL && (
             <Image
-              className={`w-full object-cover shadow-button bg-black box-border p-4 border rounded-2xl ${paragraphImageClassname}`}
+              className={`w-full object-cover shadow-button bg-black box-border p-1 mt-4 border rounded-2xl mb-8 z-0 ${paragraphImageClassname}`}
               src={paragraphImageURL}
               alt={paragraphImageAlt}
               priority={imgPriority}

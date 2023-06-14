@@ -115,20 +115,20 @@ export default function ProjectKBOTilburgReesof({
           <section>
             <section className="grid grid-cols-fluid gap-8 mb-8 items-center">
               <Image
-                className="w-full border-white border-8"
+                className="border-white border-8 box-border"
                 src={persona1Img}
                 alt="Afbeelding van persona 1"
                 priority={false}
               />
               <Image
-                className="w-full border-white border-8"
+                className="border-white border-8 box-border"
                 src={persona2Img}
                 alt="Afbeelding van persona 2"
                 priority={false}
               />
             </section>
             <Image
-              className="w-full max-w-[50rem] mx-auto border-white border-8"
+              className=" md:max-w-[50rem] box-border mx-auto border-white border-8"
               src={empathyMapImg}
               alt="Afbeelding van Empathy Map"
               priority={false}
@@ -188,7 +188,7 @@ export default function ProjectKBOTilburgReesof({
         button1Href={
           "https://amenable-sword-4e9.notion.site/Ideegeneratie-141e664077d64253a884f872ab156497"
         }
-        button1Text={"Bekijk ideegeneratie in productbiografie"}
+        button1Text={"Bekijk ideegeneratie"}
       />
       <ProjectArticle
         darkBackground={darkBackground}
@@ -235,7 +235,6 @@ export default function ProjectKBOTilburgReesof({
         }
         button2Text={"Bekijk alle design patterns"}
       />
-      {/* <ProjectArticle header={"Eindproduct"} subHeader={''} /> */}
       <ProjectArticle
         darkBackground={darkBackground}
         header={"Eindproduct"}
