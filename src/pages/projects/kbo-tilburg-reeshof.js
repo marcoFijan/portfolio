@@ -1,4 +1,6 @@
 import { Montserrat } from "next/font/google";
+import Head from "next/head";
+
 import KBOTilburgReeshofContent from "../../pageContents/ProjectKBOTilburgReeshof";
 import Header from "../../organisms/Header.js";
 import Footer from "../../organisms/Footer.js";
@@ -12,6 +14,18 @@ const montserrat = Montserrat({
 export default function KBOTilburgReeshof() {
   return (
     <>
+      <Head>
+        <title>Marco Fijan - Senior Website project</title>
+        <meta
+          name="description"
+          content="Improve website UI for the elderly, Marco Fijan"
+        />
+        <meta
+          name="keywords"
+          content="HTML, CSS, JavaScript, NextJS, React, Svelte, Unity, Front, End, Frontend, Developer, Development, Git, Github, Portfolio, NL, Soliciting, Job, Vacature, Baan, UI, User, Interface, UX, Experience, senior, elderly"
+        />
+        <meta name="author" content="Marco Fijan" />
+      </Head>
       <Header />
       <main className={`bg-bgColorDark pb-[50vh] ${montserrat.className}`}>
         <KBOTilburgReeshofContent
