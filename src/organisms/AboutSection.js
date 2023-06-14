@@ -8,6 +8,7 @@ export default function AboutSection() {
     <>
       <div id="splitterStart"></div>
       <article className="w-full bg-bgColorLight -z-40">
+        <div className="absolute z-50 top-0 left-0"></div>
         <div className="max-w-wrapper mx-auto w-full grid md:gap-8 grid-cols-fluid mb-1/2-height h-[150vh] md:h-screen items-start md:items-center">
           <section className="px-articlePaddingMobile md:px-articlePadding">
             <Section

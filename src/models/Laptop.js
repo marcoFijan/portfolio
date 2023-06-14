@@ -17,14 +17,34 @@ export default function Laptop({ mobile, props }) {
   const [laptopScreenPath, setLaptopScreenPath] = useState(
     "./images/Thumbnails/codeThumb.png"
   );
-  const [preloader, setPreloader] = useState(true);
   const [screenSize, setScreenSize] = useState(0);
   const startScreenPosition = {
     rot: { x: 1.06, y: 0, z: 0 },
     pos: { x: 0, y: 0.12, z: 0.01 },
   };
-  const [animationDone, setAnimationDone] = useState(false);
-  const laptopScreenTexture = useTexture(laptopScreenPath);
+  const startTexture = useTexture("./images/ThumbnailsSmall/codeThumb.png");
+  const kboReeshofTexture = useTexture(
+    "./images/ThumbnailsSmall/KBOReeshofThumb.png"
+  );
+  const yoDashboardTexture = useTexture(
+    "./images/ThumbnailsSmall/YODashboardThumb.png"
+  );
+  const yoGwotyTexture = useTexture(
+    "./images/ThumbnailsSmall/YOGwotyThumb.png"
+  );
+  const StandaardAanbouwTexture = useTexture(
+    "./images/ThumbnailsSmall/StandaardAanbouwThumb.png"
+  );
+  const ReisartikelenTexture = useTexture(
+    "./images/ThumbnailsSmall/ReisartikelenThumb.jpg"
+  );
+
+  const [startingScreen, setStartingScreen] = useState(true);
+  const [project1Screen, setProject1Screen] = useState(false);
+  const [project2Screen, setProject2Screen] = useState(false);
+  const [project3Screen, setProject3Screen] = useState(false);
+  const [project4Screen, setProject4Screen] = useState(false);
+  const [project5Screen, setProject5Screen] = useState(false);
 
   const laptop = useRef();
   const screenRot = useRef();
@@ -36,45 +56,110 @@ export default function Laptop({ mobile, props }) {
     if (typeof timeline.current !== "undefined")
       timeline.current.seek(scroll.offset * timeline.current.duration());
 
-    // Preloader
-    if (preloader) {
-      setLaptopScreenPath("./images/Thumbnails/codeThumb.png");
-      setLaptopScreenPath("./images/Thumbnails/KBOReeshofThumb.png");
-      setLaptopScreenPath("./images/Thumbnails/YODashboardThumb.png");
-      setLaptopScreenPath("./images/Thumbnails/YOGwotyThumb.png");
-      setLaptopScreenPath("./images/Thumbnails/StandaardAanbouwThumb.png");
-      setLaptopScreenPath("./images/Thumbnails/ReisartikelenThumb.jpg");
-      setPreloader(false);
-    }
-
     // Hardcoded screenchange since .call function from gsap has performance issues
     if (mobile) {
       if (scroll.offset < 0.09) {
-        setLaptopScreenPath("./images/Thumbnails/codeThumb.png");
-      } else if ((scroll.offset >= 0.09) & (scroll.offset <= 0.44)) {
-        setLaptopScreenPath("./images/Thumbnails/KBOReeshofThumb.png");
-      } else if ((scroll.offset >= 0.45) & (scroll.offset <= 0.53)) {
-        setLaptopScreenPath("./images/Thumbnails/YODashboardThumb.png");
-      } else if ((scroll.offset >= 0.54) & (scroll.offset <= 0.643)) {
-        setLaptopScreenPath("./images/Thumbnails/YOGwotyThumb.png");
-      } else if ((scroll.offset >= 0.644) & (scroll.offset <= 0.73)) {
-        setLaptopScreenPath("./images/Thumbnails/StandaardAanbouwThumb.png");
-      } else if ((scroll.offset >= 0.74) & (scroll.offset <= 0.99)) {
-        setLaptopScreenPath("./images/Thumbnails/ReisartikelenThumb.jpg");
+        setStartingScreen(true);
+        setProject1Screen(false);
+        setProject2Screen(false);
+        setProject3Screen(false);
+        setProject4Screen(false);
+        setProject5Screen(false);
+        // setLaptopScreenPath("./images/ThumbnailsSmall/codeThumb.png");
+      } else if (scroll.offset >= 0.09 && scroll.offset <= 0.44) {
+        setStartingScreen(false);
+        setProject1Screen(true);
+        setProject2Screen(false);
+        setProject3Screen(false);
+        setProject4Screen(false);
+        setProject5Screen(false);
+        // setLaptopScreenPath("./images/ThumbnailsSmall/KBOReeshofThumb.png");
+      } else if (scroll.offset >= 0.45 && scroll.offset <= 0.53) {
+        setStartingScreen(false);
+        setProject1Screen(false);
+        setProject2Screen(true);
+        setProject3Screen(false);
+        setProject4Screen(false);
+        setProject5Screen(false);
+        // setLaptopScreenPath("./images/ThumbnailsSmall/YODashboardThumb.png");
+      } else if (scroll.offset >= 0.54 && scroll.offset <= 0.643) {
+        setStartingScreen(false);
+        setProject1Screen(false);
+        setProject2Screen(false);
+        setProject3Screen(true);
+        setProject4Screen(false);
+        setProject5Screen(false);
+        // setLaptopScreenPath("./images/ThumbnailsSmall/YOGwotyThumb.png");
+      } else if (scroll.offset >= 0.644 && scroll.offset <= 0.73) {
+        setStartingScreen(false);
+        setProject1Screen(false);
+        setProject2Screen(false);
+        setProject3Screen(false);
+        setProject4Screen(true);
+        setProject5Screen(false);
+        // setLaptopScreenPath(
+        //   "./images/ThumbnailsSmall/StandaardAanbouwThumb.png"
+        // );
+      } else if (scroll.offset >= 0.74 && scroll.offset <= 0.99) {
+        setStartingScreen(false);
+        setProject1Screen(false);
+        setProject2Screen(false);
+        setProject3Screen(false);
+        setProject4Screen(false);
+        setProject5Screen(true);
+        // setLaptopScreenPath("./images/ThumbnailsSmall/ReisartikelenThumb.jpg");
       }
     } else {
       if (scroll.offset < 0.09) {
-        setLaptopScreenPath("./images/Thumbnails/codeThumb.png");
-      } else if ((scroll.offset >= 0.09) & (scroll.offset <= 0.4)) {
-        setLaptopScreenPath("./images/Thumbnails/KBOReeshofThumb.png");
-      } else if ((scroll.offset >= 0.41) & (scroll.offset <= 0.525)) {
-        setLaptopScreenPath("./images/Thumbnails/YODashboardThumb.png");
-      } else if ((scroll.offset >= 0.526) & (scroll.offset <= 0.6)) {
-        setLaptopScreenPath("./images/Thumbnails/YOGwotyThumb.png");
-      } else if ((scroll.offset >= 0.601) & (scroll.offset <= 0.696)) {
-        setLaptopScreenPath("./images/Thumbnails/StandaardAanbouwThumb.png");
-      } else if ((scroll.offset >= 0.697) & (scroll.offset <= 0.71)) {
-        setLaptopScreenPath("./images/Thumbnails/ReisartikelenThumb.jpg");
+        setStartingScreen(true);
+        setProject1Screen(false);
+        setProject2Screen(false);
+        setProject3Screen(false);
+        setProject4Screen(false);
+        setProject5Screen(false);
+        // setLaptopScreenPath("./images/ThumbnailsSmall/codeThumb.png");
+      } else if (scroll.offset >= 0.09 && scroll.offset <= 0.392) {
+        setStartingScreen(false);
+        setProject1Screen(true);
+        setProject2Screen(false);
+        setProject3Screen(false);
+        setProject4Screen(false);
+        setProject5Screen(false);
+        // setLaptopScreenPath("./images/ThumbnailsSmall/KBOReeshofThumb.png");
+      } else if (scroll.offset >= 0.393 && scroll.offset <= 0.4885) {
+        setStartingScreen(false);
+        setProject1Screen(false);
+        setProject2Screen(true);
+        setProject3Screen(false);
+        setProject4Screen(false);
+        setProject5Screen(false);
+        // setLaptopScreenPath("./images/ThumbnailsSmall/YODashboardThumb.png");
+      } else if (scroll.offset >= 0.4886 && scroll.offset <= 0.6009) {
+        setStartingScreen(false);
+        setProject1Screen(false);
+        setProject2Screen(false);
+        setProject3Screen(true);
+        setProject4Screen(false);
+        setProject5Screen(false);
+        // setLaptopScreenPath("./images/ThumbnailsSmall/YOGwotyThumb.png");
+      } else if (scroll.offset >= 0.601 && scroll.offset <= 0.6929) {
+        setStartingScreen(false);
+        setProject1Screen(false);
+        setProject2Screen(false);
+        setProject3Screen(false);
+        setProject4Screen(true);
+        setProject5Screen(false);
+        // setLaptopScreenPath(
+        //   "./images/ThumbnailsSmall/StandaardAanbouwThumb.png"
+        // );
+      } else if (scroll.offset >= 0.693) {
+        setStartingScreen(false);
+        setProject1Screen(false);
+        setProject2Screen(false);
+        setProject3Screen(false);
+        setProject4Screen(false);
+        setProject5Screen(true);
+        // setLaptopScreenPath("./images/ThumbnailsSmall/ReisartikelenThumb.jpg");
       }
     }
   });
@@ -616,9 +701,81 @@ export default function Laptop({ mobile, props }) {
             >
               <boxGeometry args={[0.01, 10.6, 16]} />
               <meshStandardMaterial
-                map={laptopScreenTexture}
+                map={startTexture}
                 roughness={0.3}
                 metalness={0.3}
+                opacity={startingScreen ? 1 : 0}
+                transparent
+              />
+            </mesh>
+            <mesh
+              rotation={[0, Math.PI / 2, 0]}
+              position={[0, 0.127, 0]}
+              scale={0.0198}
+            >
+              <boxGeometry args={[0.01, 10.6, 16]} />
+              <meshStandardMaterial
+                map={kboReeshofTexture}
+                roughness={0.3}
+                metalness={0.3}
+                opacity={project1Screen ? 1 : 0}
+                transparent
+              />
+            </mesh>
+            <mesh
+              rotation={[0, Math.PI / 2, 0]}
+              position={[0, 0.127, 0]}
+              scale={0.0198}
+            >
+              <boxGeometry args={[0.01, 10.6, 16]} />
+              <meshStandardMaterial
+                map={yoDashboardTexture}
+                roughness={0.3}
+                metalness={0.3}
+                opacity={project2Screen ? 1 : 0}
+                transparent
+              />
+            </mesh>
+            <mesh
+              rotation={[0, Math.PI / 2, 0]}
+              position={[0, 0.127, 0]}
+              scale={0.0198}
+            >
+              <boxGeometry args={[0.01, 10.6, 16]} />
+              <meshStandardMaterial
+                map={yoGwotyTexture}
+                roughness={0.3}
+                metalness={0.3}
+                opacity={project3Screen ? 1 : 0}
+                transparent
+              />
+            </mesh>
+            <mesh
+              rotation={[0, Math.PI / 2, 0]}
+              position={[0, 0.127, 0]}
+              scale={0.0198}
+            >
+              <boxGeometry args={[0.01, 10.6, 16]} />
+              <meshStandardMaterial
+                map={StandaardAanbouwTexture}
+                roughness={0.3}
+                metalness={0.3}
+                opacity={project4Screen ? 1 : 0}
+                transparent
+              />
+            </mesh>
+            <mesh
+              rotation={[0, Math.PI / 2, 0]}
+              position={[0, 0.127, 0]}
+              scale={0.0198}
+            >
+              <boxGeometry args={[0.01, 10.6, 16]} />
+              <meshStandardMaterial
+                map={ReisartikelenTexture}
+                roughness={0.3}
+                metalness={0.3}
+                opacity={project5Screen ? 1 : 0}
+                transparent
               />
             </mesh>
           </group>
