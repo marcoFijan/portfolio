@@ -128,16 +128,25 @@ module.exports = {
         becomeHidden: {
           "0%": {
             opacity: "1",
+            display: "flex",
+            "z-index": 50,
+          },
+          "90%": {
+            opacity: "0",
+            display: "flex",
+            "z-index": 50,
           },
           "100%": {
             opacity: "0",
+            display: "none",
+            "z-index": -50,
           },
         },
       },
       animation: {
         lines: "lines 3s ease-in-out forwards",
         becomeVisible: "becomeVisible 1s ease-in-out 5s normal forwards",
-        becomeHidden: "becomeHidden 1s ease-in-out 7s normal forwards",
+        becomeHidden: "becomeHidden 1s ease-in-out 0s normal forwards",
       },
     },
   },
