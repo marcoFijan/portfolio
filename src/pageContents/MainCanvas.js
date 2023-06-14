@@ -62,10 +62,9 @@ export default function MainCanvas({}) {
             blur={0}
             files="../images/Environment/brown_photostudio_02_1k.hdr"
           />
-          <Suspense>
-            <Laptop mobile={mobile} />
-          </Suspense>
-          <Suspense>
+
+          <Laptop mobile={mobile} />
+          <Suspense fallback={null}>
             <Smartphone mobile={mobile} />
           </Suspense>
           <Sparkles size={2} scale={[10, 10, 10]}></Sparkles>

@@ -87,7 +87,7 @@ export default function ProjectKBOTilburgReesof({
         paragraph1ImageURL={kboReeshofBuildingImg}
         paragraph1ImageSmall={true}
         paragraph1ImageNoBorder={true}
-        paragraph1ImageClassname={"max-w-[34rem] align-self-center row-start-1"}
+        paragraph1ImageClassname={"align-self-center row-start-1"}
         buttonHref={"/"}
         buttonText={"Bekijk het prototype"}
         buttonCTA={true}
