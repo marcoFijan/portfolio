@@ -31,7 +31,7 @@ export default function LoadingScreen() {
         <Title text="Welkom!" darkBackground={true} />
         <SubTitle text="Een klein momentje ..." darkBackground={true} />
 
-        <H3 text={`Voortgang: ${roundedProgress}%`} darkBackground={true} />
+        <H3 text={`Voortgang`} darkBackground={true} />
         <div className="w-full h-3 bg-bgColorLight shadow-inputField rounded-full relative mb-4">
           <div
             style={{ width: `${roundedProgress}%` }}

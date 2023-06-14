@@ -15,7 +15,7 @@ import { useFrame } from "@react-three/fiber";
 export default function Smartphone({ pos, rot, mobile, ...props }) {
   const { nodes, materials } = useGLTF("/modelsResource/smartphone.glb");
   let [smartScreenPath, setSmartScreenPath] = useState(
-    "./images/Thumbnails/codeThumb.png"
+    "./images/marcoArmsCrossed.png"
   );
   const [preloader, setPreloader] = useState(true);
   const smartScreen = useTexture(smartScreenPath);
@@ -31,7 +31,7 @@ export default function Smartphone({ pos, rot, mobile, ...props }) {
 
     // Preloader
     if (preloader) {
-      setSmartScreenPath("./images/Thumbnails/codeThumb.png");
+      setSmartScreenPath("./images/marcoArmsCrossed.png");
       setSmartScreenPath("./images/Thumbnails/KBOReeshofThumbMobile.png");
       setSmartScreenPath("./images/Thumbnails/YOGwotyThumbMobile.png");
       setSmartScreenPath("./images/Thumbnails/StandaardAanbouwThumbMobile.png");
@@ -42,7 +42,7 @@ export default function Smartphone({ pos, rot, mobile, ...props }) {
     // Hardcoded screenchange since .call function from gsap has performance issues
     if (mobile) {
       if (scroll.offset < 0.09) {
-        setSmartScreenPath("./images/Thumbnails/codeThumb.png");
+        setSmartScreenPath("./images/marcoArmsCrossed.png");
       } else if ((scroll.offset > 0.09) & (scroll.offset <= 0.47)) {
         setSmartScreenPath("./images/Thumbnails/KBOReeshofThumbMobile.png");
       } else if ((scroll.offset >= 0.48) & (scroll.offset <= 0.633)) {
@@ -56,7 +56,7 @@ export default function Smartphone({ pos, rot, mobile, ...props }) {
       }
     } else {
       if (scroll.offset < 0.09) {
-        setSmartScreenPath("./images/Thumbnails/codeThumb.png");
+        setSmartScreenPath("./images/marcoArmsCrossed.png");
       } else if ((scroll.offset >= 0.09) & (scroll.offset <= 0.4)) {
         setSmartScreenPath("./images/Thumbnails/KBOReeshofThumbMobile.png");
       } else if ((scroll.offset >= 0.41) & (scroll.offset <= 0.6)) {
