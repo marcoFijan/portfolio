@@ -77,7 +77,6 @@ export default function Laptop({ mobile, props }) {
         setLaptopScreenPath("./images/Thumbnails/ReisartikelenThumb.jpg");
       }
     }
-    console.log(scroll.offset);
   });
 
   useEffect(() => {
