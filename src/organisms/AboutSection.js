@@ -3,6 +3,7 @@ import marcoPointingLeft from "../../public/images/marcoPointing.png";
 import marcoPointingUp from "../../public/images/marcoPointingUp.png";
 import Section from "../molecules/Section";
 import Skill from "../molecules/Skill";
+import UnorderedList from "../molecules/UnorderedList";
 
 export default function AboutSection({ mobile }) {
   return (
@@ -29,34 +30,45 @@ export default function AboutSection({ mobile }) {
           <section>
             <div className="w-full h-full md:w-auto md:h-auto z-0">
               <Image
-                className="object-contain w-full max-w-xs h-40 mx-auto md:mx-0 md:w-auto md:h-auto md:max-w-md md:block z-0 px-articlePadding"
+                className="object-contain w-full max-w-xs h-40 mx-auto md:h-72 md:max-w-md md:block z-0 px-articlePadding"
                 src={mobile ? marcoPointingUp : marcoPointingLeft}
                 alt="Picture of Marco Fijan pointing to text"
                 priority={false}
               />
             </div>
-            <section className="grid grid-cols-2 mx-4 gap-8 shadow-inputFieldValid bg-bgColorLight z-50 rounded-lg box-border px-8 pt-8 pb-4">
-              <section>
-                <Skill
-                  text={"HTML, CSS en Styling"}
-                  percentageClassname="w-[90%]"
-                />
-                <Skill text={"Javascript"} percentageClassname="w-[75%]" />
-                <Skill
-                  text={"NextJS en Svelte"}
-                  percentageClassname="w-[70%]"
-                />
-              </section>
-              <section>
-                <Skill
-                  text={"Illustrator en Figma"}
-                  percentageClassname="w-[86%]"
-                />
-                <Skill text={"Tailwind"} percentageClassname="w-[80%]" />
+            <section className="mx-4 shadow-inputFieldValid bg-bgColorLight z-50 rounded-lg box-border px-8 pt-8 pb-4">
+              <section className="grid grid-cols-2  gap-8">
+                <section>
+                  <Skill
+                    text={"HTML, CSS en Styling"}
+                    percentageClassname="w-[90%]"
+                  />
+                  <Skill text={"Javascript"} percentageClassname="w-[75%]" />
+                  <Skill
+                    text={"NextJS en Svelte"}
+                    percentageClassname="w-[70%]"
+                  />
+                </section>
+                <section>
+                  <Skill
+                    text={"Illustrator en Figma"}
+                    percentageClassname="w-[86%]"
+                  />
+                  <Skill text={"Tailwind"} percentageClassname="w-[80%]" />
 
-                <Skill
-                  text={"Unity Game engine"}
-                  percentageClassname="w-[65%]"
+                  <Skill
+                    text={"Unity Game engine"}
+                    percentageClassname="w-[65%]"
+                  />
+                </section>
+              </section>
+              <section className="border-t-1 border-bgColorDark mt-2 pt-2 border-dashed font-black">
+                <UnorderedList
+                  data={[
+                    "Bachelor: Communicatie en Multimedia Design, 2022",
+                    "Minor: Applied Game Design, 2021",
+                  ]}
+                  lightBg={true}
                 />
               </section>
             </section>
@@ -64,10 +76,6 @@ export default function AboutSection({ mobile }) {
         </div>
       </article>
       <div id="splitterEnd"></div>
-
-      {/* <div className="relative h-1/2 w-full">
-        <div id="splitterEnd" className="-mt-[60vh] z-0 absolute"></div>
-      </div> */}
     </>
   );
 }
