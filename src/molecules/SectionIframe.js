@@ -1,4 +1,4 @@
-import Title from "../atoms/Title.js";
+import { Title } from "../atoms/Title.js";
 import SubTitle from "../atoms/SubTitle.js";
 import H1 from "../atoms/H1.js";
 import H2 from "../atoms/H2.js";

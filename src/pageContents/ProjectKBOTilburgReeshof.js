@@ -76,7 +76,7 @@ export default function ProjectKBOTilburgReesof({
         buttonHref={"/"}
         buttonText={"Bekijk het prototype"}
         buttonCTA={true}
-        darkBackground={true}
+        darkBackground={false}
       />
       <ProjectArticle
         header={"Probleemstelling"}
@@ -91,7 +91,7 @@ export default function ProjectKBOTilburgReesof({
         buttonHref={"/"}
         buttonText={"Bekijk het prototype"}
         buttonCTA={true}
-        darkBackground={true}
+        darkBackground={false}
       />
       <ProjectArticle
         header={"Verkennen"}

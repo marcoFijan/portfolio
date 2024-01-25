@@ -2,10 +2,11 @@ import Section from "../molecules/Section";
 
 export default function PortfolioSection() {
   const darkBackground = true;
+
   return (
     <article className="max-w-wrapper mx-auto w-full px-articlePaddingMobile md:px-articlePadding">
       <Section
-        customClassName={"h-screen text-left"}
+        customClassName={"h-screen text-left portfolioSection"}
         darkBackground={darkBackground}
         title={"Portfolio"}
         subTitle={"Mijn projecten"}
@@ -14,7 +15,7 @@ export default function PortfolioSection() {
         }
       ></Section>
       <Section
-        customClassName={"h-screen text-right"}
+        customClassName={"h-screen text-right portfolioSection"}
         darkBackground={darkBackground}
         header={"KBO Tilburg Reeshof - 2022"}
         subHeader={"Redesign website met de focus voor ouderen binnen budget"}
@@ -22,7 +23,7 @@ export default function PortfolioSection() {
         linkText={"Bekijk het project"}
       ></Section>
       <Section
-        customClassName={"h-screen text-left"}
+        customClassName={"h-screen text-left portfolioSection"}
         darkBackground={darkBackground}
         header={"Dashboard YoungOnes - 2022"}
         subHeader={"Stage project met NextJS, Tailwind Figma en ChartJS"}
@@ -30,7 +31,7 @@ export default function PortfolioSection() {
         linkText={"Bekijk het project"}
       ></Section>
       <Section
-        customClassName={"h-screen text-right"}
+        customClassName={"h-screen text-right portfolioSection"}
         darkBackground={darkBackground}
         header={"GWOTY Award YoungOnes - 2021"}
         subHeader={"Stage project met NextJS, Tailwind en Figma"}
@@ -38,7 +39,7 @@ export default function PortfolioSection() {
         linkText={"Bekijk het project"}
       ></Section>
       <Section
-        customClassName={"h-screen text-left"}
+        customClassName={"h-screen text-left portfolioSection"}
         darkBackground={darkBackground}
         header={"Standaard Aanbouw - 2020"}
         subHeader={"Commercieel Wordpress website voor een aannemer"}
@@ -46,14 +47,14 @@ export default function PortfolioSection() {
         linkText={"Bekijk het project"}
       ></Section>
       <Section
-        customClassName={"h-screen text-right"}
+        customClassName={"h-screen text-right portfolioSection"}
         darkBackground={darkBackground}
         header={"Andere projecten"}
         subHeader={
           "Andere projecten uit diverse achtergronden waaronder Unity-engine, Blender, pure CSS"
         }
         linkHref={"/projects"}
-        linkText={"Bekijk het project"}
+        linkText={"Bekijk alle projecten"}
       ></Section>
     </article>
   );

@@ -11,6 +11,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { useFrame } from "@react-three/fiber";
 import { useGLTF, useTexture, useScroll } from "@react-three/drei";
 import { gsap } from "gsap";
+import { motion } from "framer-motion-3d";
 
 export default function Laptop({ mobile, props }) {
   const { nodes, materials } = useGLTF("/modelsResource/laptop.glb");

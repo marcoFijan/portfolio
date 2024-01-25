@@ -38,7 +38,7 @@ export default function ProjectStandaardAanbouw({}) {
         buttonHref={"/"}
         buttonText={"Bekijk het prototype"}
         buttonCTA={true}
-        darkBackground={true}
+        darkBackground={false}
       />
       <ProjectArticle
         header={"Huidige website"}
@@ -53,7 +53,7 @@ export default function ProjectStandaardAanbouw({}) {
         buttonHref={"/"}
         buttonText={"Bekijk het prototype"}
         buttonCTA={true}
-        darkBackground={true}
+        darkBackground={false}
       />
       <ProjectArticle
         darkBackground={darkBackground}

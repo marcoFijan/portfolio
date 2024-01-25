@@ -8,7 +8,7 @@ import H3 from "../atoms/H3.js";
 import FooterImg from "../../public/images/marcoPointing.png";
 
 const montserrat = Montserrat({
-  weight: ["400", "700", "900"],
+  weight: ["400", "500", "700", "900"],
   subsets: ["latin"],
   variable: "--font-montserrat",
 });

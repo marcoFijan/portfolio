@@ -13,7 +13,7 @@ export default function AboutSection({ mobile }) {
         <div className="max-w-wrapper mx-auto w-full grid md:gap-8 grid-cols-fluid h-[150vh] md:h-screen items-start md:items-center">
           <section className="px-articlePaddingMobile md:px-articlePadding">
             <Section
-              darkBackground={false}
+              darkBackground={true}
               title={"Marco Fijan"}
               subTitle={"Web Designer"}
               paragraph1a={
@@ -24,7 +24,7 @@ export default function AboutSection({ mobile }) {
               }
               linkHref={"https://github.com/marcoFijan"}
               linkText={"Bekijk mijn github"}
-              lightBg={true}
+              lightBg={false}
             ></Section>
           </section>
           <section>
@@ -36,7 +36,7 @@ export default function AboutSection({ mobile }) {
                 priority={false}
               />
             </div>
-            <section className="mx-4 shadow-inputFieldValid bg-bgColorLight z-50 rounded-lg box-border px-8 pt-8 pb-4">
+            <section className="mx-4 shadow-inputFieldValid bg-colorBgDark border-1 border-accentColor z-50 box-border px-8 pt-8 pb-4">
               <section className="grid grid-cols-2  gap-8">
                 <section>
                   <Skill
@@ -75,7 +75,7 @@ export default function AboutSection({ mobile }) {
           </section>
         </div>
       </article>
-      <div id="splitterEnd"></div>
+      <div id="splitterEnd" className="-m-2"></div>
     </>
   );
 }

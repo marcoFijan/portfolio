@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Title from "../atoms/Title.js";
+import { Title } from "../atoms/Title.js";
 import SubTitle from "../atoms/SubTitle.js";
 import H1 from "../atoms/H1.js";
 import H2 from "../atoms/H2.js";
@@ -96,7 +96,7 @@ export default function Article({
               className={`${
                 paragraphImageNoBorder
                   ? ""
-                  : "w-full object-cover  box-border p-1 mt-8 border bg-black rounded-2xl shadow-button"
+                  : "w-full object-cover  box-border p-1 mt-8 border bg-black rounded-2xl"
               } ${paragraphImageClassname}`}
               src={paragraphImageURL}
               alt={paragraphImageAlt}
@@ -142,7 +142,7 @@ export default function Article({
           )}
           {paragraphImageURL && (
             <Image
-              className={`w-full object-cover  box-border p-1 mt-4 shadow-button border rounded-2xl ${paragraphImageClassname}`}
+              className={`w-full object-cover  box-border p-1 mt-4 border rounded-2xl ${paragraphImageClassname}`}
               src={paragraphImageURL}
               alt={paragraphImageAlt}
               priority={imgPriority}

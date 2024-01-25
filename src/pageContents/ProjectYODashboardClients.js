@@ -47,7 +47,7 @@ export default function ProjectStandaardAanbouw({}) {
         paragraph1ImageAlt={"mockup image"}
         paragraph1ImageURL={mockupImg}
         paragraph1ImageNoBorder={true}
-        darkBackground={true}
+        darkBackground={false}
       />
       <ProjectArticle
         header={"Huidig dashboard"}
@@ -59,7 +59,7 @@ export default function ProjectStandaardAanbouw({}) {
         paragraph1ImageSmall={true}
         paragraph1ImageURL={originalDashbordImg}
         paragraph1ImageClassname={"align-self-center row-start-1"}
-        darkBackground={true}
+        darkBackground={false}
       />
       <ProjectArticle
         header={"LoFi iteratie"}
@@ -111,7 +111,7 @@ export default function ProjectStandaardAanbouw({}) {
           "https://www.figma.com/proto/vmwmMAYOxuefLbwsdT0cya/YO---Dashboard-opdrachtgevers?node-id=577%3A145&scaling=scale-down-width&page-id=0%3A1&starting-point-node-id=577%3A145"
         }
         button2Text={"Interactief prototype"}
-        darkBackground={true}
+        darkBackground={false}
       />
       <ProjectArticle
         header={"HiFi V1 iteratie"}
@@ -134,7 +134,7 @@ export default function ProjectStandaardAanbouw({}) {
         section3ImageAlt={
           "Eerste HiFi ontwerp van de klussenpagina van de opdrachtgeversdashboard"
         }
-        darkBackground={true}
+        darkBackground={false}
       />
       <ProjectArticle
         darkBackground={darkBackground}

@@ -46,7 +46,7 @@ export default function ProjectStandaardAanbouw({}) {
         paragraph1ImageAlt={"mockup image"}
         paragraph1ImageURL={mockupImg}
         paragraph1ImageNoBorder={true}
-        darkBackground={true}
+        darkBackground={false}
       />
       <ProjectArticle
         header={"LoFi"}
@@ -89,7 +89,7 @@ export default function ProjectStandaardAanbouw({}) {
           "Naast de informatie over GWOTY, is het ook belangrijk om de algemene voorwaarden helder te hebben. Hiervoor is er een voorwaarden pagina waar de gebruiker alle voorwaarden kan vindne."
         }
         section6ImageURL={lofiTermsImg}
-        darkBackground={true}
+        darkBackground={false}
       />
       <ProjectArticle
         darkBackground={darkBackground}

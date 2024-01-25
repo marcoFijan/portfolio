@@ -5,12 +5,8 @@ export default function NextLink({ text, href, cta, lightBg }) {
     <div className="w-full grid justify-items-center">
       <Link
         id="button"
-        className={`text-white font-bold px-8 py-3 mt-4 inline-block rounded-lg text-center mx-auto place-self-center shadow-2xl transition duration-500 ease-in-out ${
-          lightBg ? "shadow-buttonLight" : "shadow-button"
-        } ${
-          cta
-            ? "bg-gradient-to-br from-CTAColorLight via-CTAColorDark to-CTAColorLight"
-            : "bg-gradient-to-br from-bgColorDarkLight via-bgColorDarkDark to-bgColorDarkLight"
+        className={`text-[#ffffff] font-bold px-8 py-3 mt-4 inline-block text-center mx-auto place-self-center rounded-full transition duration-500 ease-in-out ${
+          cta ? "bg-accentColor" : "text-accentColor"
         }`}
         href={href}
       >

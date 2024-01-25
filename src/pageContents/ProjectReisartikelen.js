@@ -31,7 +31,7 @@ export default function ProjectReisartikelen({}) {
           "https://www.figma.com/proto/w6Y44DPKMD8ttJCWdfOuyt/Reisartikelen.nl-HiFi-Final?node-id=1%3A2&scaling=scale-down-width"
         }
         button1Text={"Interactief prototype"}
-        darkBackground={true}
+        darkBackground={false}
       />
       <ProjectArticle
         header={"Orgineel ontwerp"}
@@ -45,7 +45,7 @@ export default function ProjectReisartikelen({}) {
         paragraph1ImageClassname={"align-self-center row-start-1"}
         button1Href={"https://www.reisartikelen.nl/"}
         button1Text={"Bekijk de website"}
-        darkBackground={true}
+        darkBackground={false}
       />
       <ProjectArticle
         darkBackground={darkBackground}

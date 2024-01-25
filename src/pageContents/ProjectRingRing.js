@@ -33,7 +33,7 @@ export default function ProjectRingRing({}) {
         button1Text={"Bekijk github"}
         button1bHref={"https://marcofijan.github.io/projectDatavisualisation/"}
         button1bText={"Bekijk op website"}
-        darkBackground={true}
+        darkBackground={false}
       />
       <ProjectArticle
         header={"Inlogpagina"}
@@ -47,7 +47,7 @@ export default function ProjectRingRing({}) {
         paragraph1ImageClassname={"align-self-center row-start-1"}
         button1Href={"https://github.com/marcoFijan/projectDatavisualisation"}
         button1Text={"Bekijk op github"}
-        darkBackground={true}
+        darkBackground={false}
       />
       <ProjectArticle
         header={"Dashboard"}
@@ -60,7 +60,7 @@ export default function ProjectRingRing({}) {
         paragraph1ImageSmall={true}
         button1Href={"https://github.com/marcoFijan/projectDatavisualisation"}
         button1Text={"Bekijk op github"}
-        darkBackground={true}
+        darkBackground={false}
       />
       <ProjectArticle
         header={"'Voor u'-pagina"}
@@ -74,7 +74,7 @@ export default function ProjectRingRing({}) {
         paragraph1ImageClassname={"align-self-center row-start-1"}
         button1Href={"https://github.com/marcoFijan/projectDatavisualisation"}
         button1Text={"Bekijk op github"}
-        darkBackground={true}
+        darkBackground={false}
       />
       <ProjectArticle
         header={"Kaartpagina"}
@@ -87,7 +87,7 @@ export default function ProjectRingRing({}) {
         paragraph1ImageSmall={true}
         button1Href={"https://github.com/marcoFijan/projectDatavisualisation"}
         button1Text={"Bekijk op github"}
-        darkBackground={true}
+        darkBackground={false}
       />
       <ProjectArticle
         header={"Feedbackpagina"}
@@ -101,7 +101,7 @@ export default function ProjectRingRing({}) {
         paragraph1ImageClassname={"align-self-center row-start-1"}
         button1Href={"https://github.com/marcoFijan/projectDatavisualisation"}
         button1Text={"Bekijk op github"}
-        darkBackground={true}
+        darkBackground={false}
       />
     </div>
   );

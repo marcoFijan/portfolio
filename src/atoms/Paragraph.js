@@ -1,13 +1,18 @@
+import { motion } from "framer-motion";
+
 export default function Paragraph({ text, darkBackground }) {
   return (
-    <p
-      className={`max-w-4xl w-full pb-4 ${
-        darkBackground
-          ? "text-bgColorLight drop-shadow-[0_1.2px_1.2px_#12131a]"
-          : "text-bgColorDark drop-shadow-[0_1.2px_1.2px_#e7efff]"
+    <motion.p
+      className={`max-w-4xl w-full pb-4 text-xl opacity-60 font-medium ${
+        darkBackground ? "text-white" : "text-colorTextDark"
       }`}
+      initial={{ opacity: 0 }}
+      whileInView={{
+        opacity: 0.6,
+        transition: { duration: 1, delay: 0.5 },
+      }}
     >
       {text}
-    </p>
+    </motion.p>
   );
 }

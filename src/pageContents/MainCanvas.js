@@ -64,19 +64,19 @@ export default function MainCanvas({}) {
           />
 
           <Laptop mobile={mobile} />
-          <Suspense fallback={null}>
-            <Smartphone mobile={mobile} />
-          </Suspense>
-          <Sparkles size={2} scale={[10, 10, 10]}></Sparkles>
+          {/* <Suspense fallback={null}> */}
+          <Smartphone mobile={mobile} />
+          {/* </Suspense> */}
+          <Sparkles size={2} scale={[10, 10, 10]} color={"#00aeff"}></Sparkles>
           <Scroll>
-            <Circle args={[1, 100, 200]} scale={5} position={[0, 0, -5]}>
+            {/* <Circle args={[1, 100, 200]} scale={5} position={[0, 0, -5]}>
               <MeshDistortMaterial
-                color="#383d42"
+                color="#e5e7f9"
                 attach="material"
                 distort={0.5}
                 speed={0.6}
               />
-            </Circle>
+            </Circle> */}
           </Scroll>
           <Scroll html className="w-full">
             {/* Introduction animation [1 page] */}
@@ -92,7 +92,7 @@ export default function MainCanvas({}) {
           </Scroll>
         </ScrollControls>
       </Canvas>
-      <LoadingScreen />
+      {/* <LoadingScreen /> */}
     </div>
   );
 }

@@ -13,7 +13,7 @@ export default function ProjectsOverview({}) {
   return (
     <div className="max-w-wrapper mx-auto w-full block">
       <Article
-        darkBackground={true}
+        darkBackground={false}
         title={"Alle projecten"}
         subTitle={"Kort overzicht van alle projecten"}
         sectionHeader1={"KBO Tilburg Reeshof"}

@@ -39,8 +39,8 @@ export default function ContactSection({ homePage }) {
           <Section
             title={"Interesse?"}
             subTitle={"Neem gerust contact met me op!"}
-            extraContent={<ContactForm darkBackground={!homePage} />}
-            darkBackground={!homePage}
+            extraContent={<ContactForm darkBackground={true} />}
+            darkBackground={true}
           ></Section>
         </div>
       </article>

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Title from "../atoms/Title.js";
+import { Title } from "../atoms/Title.js";
 import SubTitle from "../atoms/SubTitle.js";
 import H1 from "../atoms/H1.js";
 import H2 from "../atoms/H2.js";
@@ -7,6 +7,7 @@ import SubH1 from "../atoms/SubH1.js";
 import SubH2 from "../atoms/SubH2.js";
 import P from "../atoms/Paragraph.js";
 import NextLink from "../atoms/NextLink.js";
+import { motion } from "framer-motion";
 
 export default function Article({
   darkBackground,
@@ -35,7 +36,7 @@ export default function Article({
   extraContent,
 }) {
   return (
-    <section className={`w-full z-0 ${customClassName}`}>
+    <motion.section className={`w-full z-0 ${customClassName}`}>
       {title && <Title text={title} darkBackground={darkBackground}></Title>}
       {subTitle && <SubTitle text={subTitle}></SubTitle>}
 
@@ -86,7 +87,7 @@ export default function Article({
             )}
           </section>
           <Image
-            className={`${paragraphImageClassname} w-full object-cover bg-black shadow-button box-border p-1 mt-4 border rounded-2xl z-0`}
+            className={`${paragraphImageClassname} w-full object-cover bg-black box-border p-1 mt-4 border rounded-2xl z-0`}
             src={paragraphImageURL}
             alt={paragraphImageAlt}
             priority={imgPriority}
@@ -114,7 +115,7 @@ export default function Article({
           {extraContent && extraContent}
           {paragraphImageURL && (
             <Image
-              className={`w-full object-cover shadow-button bg-black box-border p-1 mt-4 border rounded-2xl mb-8 z-0 ${paragraphImageClassname}`}
+              className={`w-full object-cover bg-black box-border p-1 mt-4 border rounded-2xl mb-8 z-0 ${paragraphImageClassname}`}
               src={paragraphImageURL}
               alt={paragraphImageAlt}
               priority={imgPriority}
@@ -136,6 +137,6 @@ export default function Article({
           </section>
         </section>
       )}
-    </section>
+    </motion.section>
   );
 }
