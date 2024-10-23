@@ -34,6 +34,7 @@ module.exports = {
     extend: {
       colors: {
         accentColor: "#ff6f27",
+        colorBg: "#0d0d0d",
         accentColorLight: "#68d9ff",
         accentColorDark: "#2692b6",
         CTAColorLight: "#ff6f27",
@@ -43,9 +44,10 @@ module.exports = {
         bgColorDarkLight: "#2f3338",
         bgColorDarkDark: "#202224",
         bgColorLight: "#16192A",
-        colorBgDark: "#16192a",
-        colorTextDark: "#0e0e0e",
-        colorAccentColor: "#ff6f27",
+        colorBgDark: "#1a1a1a",
+        colorBgLight: "#dbdbdb",
+        colorTextDark: "#011923",
+        colorAccentColor: "#db0021",
         // colorAccentColorDarken: "#d1571a",
         // colorAccentColorDark: "#a04c22",
         white: "#ffffff",
@@ -77,16 +79,8 @@ module.exports = {
         "1/2-height": "50vh",
         "3/5-height": "65vh",
       },
-      backgroundSize: {
-        "100%": "100% 100%",
-      },
-      height: {
-        "50%": "50vh",
-      },
-
       maxWidth: {
         wrapper: "80rem",
-        headerWrapper: "80rem",
       },
       gridTemplateColumns: {
         fluid: "repeat(auto-fit, minmax(23em, 1fr));",

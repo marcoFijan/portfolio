@@ -18,109 +18,60 @@ canvas {
 @keyframes fadeIn {
   0% {
     opacity: 0;
-    /* margin-top: 100px; */
-  }
-
-  80% {
-    /* margin-top: 0; */
   }
 
   100% {
     opacity: 1;
-    /* margin-top: 0; */
   }
-}
-
-#button {
-  outline: 2px solid rgb(255, 111, 39, 0);
-  outline-offset: 6px;
-  transition: outline 0.3s ease-in;
-}
-
-#button:hover {
-  outline: 2px solid rgb(255, 111, 39, 1);
-}
-
-header nav {
-  background: rgba(22, 25, 42, 0.3764705882352941);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  /* border: 1px solid rgb(255, 111, 39, 0.3);
-  padding: 10px; */
-}
-
-/*
-#button {
-  background-color: #ff6f27;
-   background: linear-gradient(
-    90deg,
-    rgba(251, 242, 192, 0.1) 0%,
-    rgba(251, 242, 192, 0.1) 21%,
-    rgba(251, 242, 192, 1) 22%,
-    rgba(251, 242, 192, 0.1) 23%,
-    rgba(251, 242, 192, 0.1) 75%,
-    rgba(251, 242, 192, 1) 80%,
-    rgba(251, 242, 192, 1) 100%
-  ); 
-  font-size: 1.3rem;
-  background-size: 500%;
-  background-position: left;
-  transition: background 1s ease-out, outline 0.3s ease-in 0.1s,
-    transform 0.5s ease-in-out, color 0.3s ease-in 0.05s;
-  outline: 2px solid rgb(255, 111, 39, 0);
-  outline-offset: 6px;
-}
-
-#button:hover {
-  color: #002831;
-  outline: 2px solid rgb(255, 111, 39, 1);
-  background-position: right;
-}
-
-#button:focus {
-  background-position: right;
-  transform: translateX(-900px);
-}*/
-
-#splitterStart {
-  width: 100%;
-  height: 50vh;
-  background: url("../../public/images/Splitter/splitterStart.svg");
-  background-size: 100% 100%;
-}
-
-/* #background {
-  background: #fff;
-  background-image: none;
-  background-image: radial-gradient(at 0 150%, #2dacbd 0, transparent 40%),
-    radial-gradient(at 50% 167%, #0e051f 0, transparent 50%);
-} */
-
-#splitterEnd {
-  width: 100%;
-  height: 50vh;
-  background: url("../../public/images/Splitter/splitterStart.svg");
-  background-size: 100% 100%;
-  transform: scale(1, -1);
-}
-
-#bottomImageWave {
-  width: 100%;
-  height: 4rem;
-  background: url("../../public/images/Splitter/imageWave.svg");
-  background-size: 100% 100%;
-}
-
-#headerBg {
-  width: 100%;
-  height: 4rem;
-  background: url("../../public/images/Splitter/headerBg.svg");
-  background-size: 100% 100%;
 }
 
 * {
   scroll-behavior: smooth;
+}
+
+/* Header */
+header nav ul li:hover {
+  background: radial-gradient(
+    circle,
+    rgba(242, 242, 242, 0.1) 0%,
+    rgba(242, 242, 242, 0) 100%
+  );
+  cursor: pointer;
+}
+
+header nav ul li:first-child:hover {
+  background: linear-gradient(
+    270deg,
+    rgba(242, 242, 242, 0) 0%,
+    rgba(242, 242, 242, 0.1) 100%
+  );
+}
+
+header nav ul li:last-child:hover {
+  background: linear-gradient(
+    90deg,
+    rgba(242, 242, 242, 0) 0%,
+    rgba(242, 242, 242, 0.1) 100%
+  );
+}
+
+/*Tailwind unsupported sizes*/
+.h-100vh {
+  height: 100%;
+  height: 100vh;
+  height: 100dvh;
+}
+
+.h-200vh {
+  height: 200%;
+  height: 200vh;
+  height: 200dvh;
+}
+
+.h-300vh {
+  height: 300%;
+  height: 300vh;
+  height: 300dvh;
 }
 
 /* <<<<< HAMBURGERBUTTON LOGIC >>>>>  */

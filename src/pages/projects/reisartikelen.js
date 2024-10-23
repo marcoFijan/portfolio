@@ -2,8 +2,8 @@ import { Montserrat } from "next/font/google";
 import Head from "next/head";
 
 import ReisartikelenContent from "../../pageContents/ProjectReisartikelen";
-import Header from "../../organisms/Header.js";
-import Footer from "../../organisms/Footer.js";
+import Header from "../../sections/Header.js";
+import Footer from "../../sections/Footer.js";
 
 const montserrat = Montserrat({
   weight: ["400", "700", "900"],
