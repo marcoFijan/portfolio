@@ -19,8 +19,8 @@ export default function Laptop({ mobile, props }) {
   );
   const [screenSize, setScreenSize] = useState(0);
   const startScreenPosition = {
-    rot: { x: 1.06, y: 0, z: 0 },
-    pos: { x: 0, y: 0.2, z: 0.3 },
+    rot: { x: 1.03, y: 0, z: 0 },
+    pos: { x: 0, y: 0.06, z: 0.4 },
   };
   // pos: { x: 0, y: 0.12, z: 0.01 },
 
@@ -141,7 +141,7 @@ export default function Laptop({ mobile, props }) {
         setProject5Screen(false);
         if (scroll.offset >= 0.32) {
           setAccentColor("colorKBO");
-          // setFloat(true);
+          setFloat(true);
         } else {
           setAccentColor("noColor");
         }
@@ -692,7 +692,7 @@ export default function Laptop({ mobile, props }) {
 
   return (
     <Float
-      speed={0.85}
+      speed={float ? 0.85 : 0}
       rotationIntensity={0.5} // XYZ rotation intensity, defaults to 1
       floatIntensity={0.5} // Up/down float intensity, works like a multiplier with floatingRange,defaults to 1
       floatingRange={[0.05, 0.05]} // Range of y-axis values the object will float within, defaults to [-0.1,0.1]

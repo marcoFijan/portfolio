@@ -19,7 +19,7 @@ export default function Header() {
     >
       <div className={""}>Logo</div>
       <nav>
-        <ul className="backdrop-blur-[15px] bg-zinc-100/[0.05] rounded-3xl justify-between items-center p-2 flex relative">
+        <ul className="backdrop-blur-[15px] bg-zinc-100/[0.05] rounded-3xl justify-between items-center p-2 flex relative border-white border-opacity-30 border hover:border-yellow-600 transition-all">
           <li className="text-white py-1  px-3  rounded-full `hover:bg-[radial-gradient(circle,rgba(242,242,242,0.1)0%,rgba(242,242,242,0)100%)] cursor-pointer`">
             Projecten
           </li>

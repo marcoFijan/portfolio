@@ -1,12 +1,9 @@
 import { motion } from "framer-motion";
 
-export default function P({ children, customClasses }) {
+export default function H2({ children, darkBackground }) {
   return (
-    <motion.p
-      className={
-        "text-white text-xl mb-4 font-light opacity-30 max-w-6xl " +
-        customClasses
-      }
+    <motion.h2
+      className={`text-xl md:text-2xl lg:text-3xl leading-relaxed mb-4 font-black text-white`}
       initial={{ opacity: 0, y: 25 }}
       whileInView={{
         opacity: 1,
@@ -15,6 +12,6 @@ export default function P({ children, customClasses }) {
       }}
     >
       {children}
-    </motion.p>
+    </motion.h2>
   );
 }

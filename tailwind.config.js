@@ -35,6 +35,7 @@ module.exports = {
       colors: {
         accentColor: "#ff6f27",
         colorBg: "#0d0d0d",
+        // colorBg: "#0F172A",
         accentColorLight: "#68d9ff",
         accentColorDark: "#2692b6",
         CTAColorLight: "#ff6f27",
