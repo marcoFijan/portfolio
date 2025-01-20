@@ -1,4 +1,4 @@
-export default function Button({ text, type, cta, lightBg, url }) {
+export default function Button({ text, type, cta, url }) {
   return (
     <button
       id="button"

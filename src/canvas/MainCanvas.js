@@ -11,6 +11,7 @@ import SectionHome from "../sections/SectionHome.js";
 import Container from "../sections/Container.js";
 import Article from "../sections/Article.js";
 import Section from "../sections/Section.js";
+import SectionContact from "../sections/ContactSection.js";
 
 import H1 from "../elements/H1.js";
 import SubH1 from "../elements/SubH1.js";
@@ -219,8 +220,42 @@ export default function MainCanvas({}) {
 
               {/* Contactpage with a form [1.5 page] */}
               {/* <ContactSection homePage={true} /> */}
+              <SectionHome amountOfPages={"1"} className={"text-right"}>
+                <H2 chapeau={"Redesign website voor ouderen binnen budget"}>
+                  KBO Tilburg Reeshof
+                </H2>
+              </SectionHome>
               <SectionHome amountOfPages={"1"}>
-                <h1>test</h1>
+                <H2
+                  chapeau={"Dashboard datavisualisatie ontwerp + ontwikkeling"}
+                >
+                  Dashboard YoungOnes
+                </H2>
+              </SectionHome>
+              <SectionHome amountOfPages={"1"} className={"text-right"}>
+                <H2 chapeau={"Wedstrijd dashboard ontwerp + ontwikkeling"}>
+                  GWOTY Award YoungOnes
+                </H2>
+              </SectionHome>
+              <SectionHome amountOfPages={"1"}>
+                <H2
+                  chapeau={
+                    "Commercieel Wordpress website ontwerp + ontwikkeling"
+                  }
+                >
+                  Standaard Aanbouw
+                </H2>
+              </SectionHome>
+              <SectionHome amountOfPages={"1"} className={"text-right"}>
+                <H2
+                  chapeau={"Andere projecten; Unity-engine, Blender, pure CSS"}
+                >
+                  Andere projecten
+                </H2>
+              </SectionHome>
+              <SectionHome amountOfPages={"1"}>
+                <H2 chapeau={"Interesse?"}>Neem contact met me op!</H2>
+                <SectionContact />
               </SectionHome>
             </Container>
 

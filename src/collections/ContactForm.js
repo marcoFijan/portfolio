@@ -31,22 +31,10 @@ export default function ContactForm({ darkBackground }) {
     <form
       onSubmit={sendEmail}
       ref={form}
-      className="w-full max-w-xl  mx-auto flex flex-col valid:bg-white"
+      className="w-full max-w-xl  mx-auto flex flex-col"
     >
-      <label
-        htmlFor="name"
-        className={darkBackground ? "text-white" : "text-black"}
-      >
-        Uw naam
-      </label>
-      <Input type={"name"} darkBackground={darkBackground} />
-      <label
-        htmlFor="email"
-        className={darkBackground ? "text-white" : "text-black"}
-      >
-        Uw mail
-      </label>
-      <Input type={"email"} darkBackground={darkBackground} />
+      <Input type={"text"} label={"Uw naam"} value={"name"} />
+      <Input type={"email"} value={"email"} label={"Uw email"} />
       <label
         htmlFor="message"
         className={darkBackground ? "text-white" : "text-black"}

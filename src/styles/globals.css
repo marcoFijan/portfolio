@@ -74,6 +74,10 @@ header nav ul li:last-child:hover {
   height: 300dvh;
 }
 
+form:not(:has(input:invalid)) {
+  /* background: white; */
+}
+
 /* <<<<< HAMBURGERBUTTON LOGIC >>>>>  */
 /* WHITE BARS  */
 @media only screen and (max-width: 832px) {
