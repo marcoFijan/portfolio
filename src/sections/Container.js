@@ -1,3 +1,12 @@
-export default function Container({ children }) {
-  return <div className="w-full max-w-[1800px] mx-auto px-8">{children}</div>;
+export default function Container({ children, className }) {
+  return (
+    <div
+      className={
+        "w-full max-w-wrapper mx-auto px-wrapperMobile md:px-wrapper" +
+        className
+      }
+    >
+      {children}
+    </div>
+  );
 }

@@ -1,9 +1,12 @@
 import { Montserrat } from "next/font/google";
 
 import Image from "next/image";
-import Link from "next/link";
 import NextLink from "../elements/NextLink.js";
+import P from "../elements/P.js";
+import H2 from "../elements/H2.js";
 import H3 from "../elements/H3.js";
+import Container from "./Container.js";
+import Divider from "../elements/Divider.js";
 
 import FooterImg from "../../public/images/marcoPointing.png";
 
@@ -16,7 +19,7 @@ const montserrat = Montserrat({
 export default function Footer({ homePage }) {
   const footerContent = (
     <section className="w-full max-w-wrapper px-articlePaddingMobile md:px-articlePadding mx-auto flex flex-wrap justify-between gap-8 ">
-      <div className="hidden md:block relative shadow-inputField bg-bgColorLight rounded-full w-44 h-44 self-center">
+      <div className="hidden md:block relative shadow-inputField rounded-full w-44 h-44 self-center">
         <Image
           className="absolute rounded-b-full w-44 bottom-0 -scale-x-100"
           src={FooterImg}
@@ -30,19 +33,19 @@ export default function Footer({ homePage }) {
             <H3 text="Pagina's" darkBackground={false} />
           </li>
           <li>
-            <Link className="hover:underline" href={"/"}>
+            <NextLink className="hover:underline" href={"/"}>
               Hoofdpagina
-            </Link>
+            </NextLink>
           </li>
           <li>
-            <Link className="hover:underline" href={"/projects"}>
+            <NextLink className="hover:underline" href={"/projects"}>
               Projecten
-            </Link>
+            </NextLink>
           </li>
           <li>
-            <Link className="hover:underline" href={"/contact"}>
+            <NextLink className="hover:underline" href={"/contact"}>
               Contact
-            </Link>
+            </NextLink>
           </li>
         </ul>
       </nav>
@@ -52,66 +55,58 @@ export default function Footer({ homePage }) {
             <H3 text="Projecten" darkBackground={false} />
           </li>
           <li>
-            <Link
+            <NextLink
               className="hover:underline"
               href={"/projects/kbo-tilburg-reeshof"}
             >
               KBO Tilburg Reeshof
-            </Link>
+            </NextLink>
           </li>
           <li>
-            <Link className="hover:underline" href={"/projects/yo-gwoty-award"}>
+            <NextLink
+              className="hover:underline"
+              href={"/projects/yo-gwoty-award"}
+            >
               YO Dashboard
-            </Link>
+            </NextLink>
           </li>
           <li>
-            <Link className="hover:underline" href={"/projects/yo-dashboard"}>
+            <NextLink
+              className="hover:underline"
+              href={"/projects/yo-dashboard"}
+            >
               YO GWOTY-award
-            </Link>
+            </NextLink>
           </li>
           <li>
-            <Link
+            <NextLink
               className="hover:underline"
               href={"/projects/standaard-aanbouw"}
             >
               Standaard Aanbouw
-            </Link>
+            </NextLink>
           </li>
           <li>
-            <Link className="hover:underline" href={"/projects"}>
+            <NextLink className="hover:underline" href={"/projects"}>
               Overige projecten
-            </Link>
+            </NextLink>
           </li>
         </ul>
       </nav>
       <div className="self-center md:w-auto md:self-auto">
         <H3 text="Contact" darkBackground={false} />
-        <p>Heeft u interesse? </p> <p>Stuur gerust een berichtje!</p>
-        <NextLink
-          text="Neem contact op!"
-          href="/contact"
-          cta={true}
-          lightBg={true}
-        ></NextLink>
+        <P>Heeft u interesse? </P>
+        <P>Stuur gerust een berichtje!</P>
+        <NextLink href="/contact">Neem contact op!</NextLink>
       </div>
     </section>
   );
   return (
     <>
-      {homePage ? (
-        <div
-          className={`bg-bgColorLight h-50% grid items-center ${montserrat.className}`}
-        >
-          {footerContent}
-        </div>
-      ) : (
-        <>
-          <footer className={`${montserrat.className} -mt-[50vh]`}>
-            <div id="splitterStart"></div>
-            <div className="w-full bg-bgColorLight py-8">{footerContent}</div>
-          </footer>
-        </>
-      )}
+      <footer className={`${montserrat.className} h-screen`}>
+        <Divider />
+        <div className="w-full py-8">{footerContent}</div>
+      </footer>
     </>
   );
 }

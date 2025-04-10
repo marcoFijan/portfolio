@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-export default function H2({ children, darkBackground, chapeau }) {
+export default function H2({ children, chapeau }) {
   return (
     <>
       {chapeau && (
@@ -16,17 +16,19 @@ export default function H2({ children, darkBackground, chapeau }) {
           {chapeau}
         </motion.span>
       )}
-      <motion.h2
-        className={`text-3xl md:text-4xl lg:text-5xl pt-4 leading-relaxed mb-8 font-black text-white`}
-        initial={{ opacity: 0, y: 25 }}
-        whileInView={{
-          opacity: 1,
-          y: 0,
-          transition: { duration: 0.5, delay: 0.1 },
-        }}
-      >
-        {children}
-      </motion.h2>
+      {children && (
+        <motion.h2
+          className={`text-3xl md:text-4xl lg:text-5xl pt-4 leading-relaxed mb-8 font-black text-white`}
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.5, delay: 0.1 },
+          }}
+        >
+          {children}
+        </motion.h2>
+      )}
     </>
   );
 }

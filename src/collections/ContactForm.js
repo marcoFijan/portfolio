@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import Input from "../elements/Input";
 import Button from "../elements/Button";
+import H3 from "@/elements/H3";
 
 export default function ContactForm({ darkBackground }) {
   const form = useRef();
@@ -31,35 +32,14 @@ export default function ContactForm({ darkBackground }) {
     <form
       onSubmit={sendEmail}
       ref={form}
-      className="w-full max-w-xl  mx-auto flex flex-col"
+      autocomplete="off"
+      className="w-full max-w-xl  mx-auto flex flex-col p-8 rounded-xl mt-20"
     >
+      <H3 className={"mb-6"}>Voer hier je gegevens in</H3>
       <Input type={"text"} label={"Uw naam"} value={"name"} />
       <Input type={"email"} value={"email"} label={"Uw email"} />
-      <label
-        htmlFor="message"
-        className={darkBackground ? "text-white" : "text-black"}
-      >
-        Uw bericht
-      </label>
-      <textarea
-        id="message"
-        name="message"
-        rows="4"
-        cols="50"
-        required
-        // className="mb-8 mt-2 rounded-md shadow-inputField bg-bgColorLight p-2 valid:shadow-inputFieldValid focus:bg-white focus:border-2 focus:outline-none focus:border-accentColor focus:p-2 box-border"
-        className={`mb-8 mt-2 rounded-md ${
-          darkBackground
-            ? "shadow-inputField bg-bgColorLight valid:shadow-inputFieldDarkValid "
-            : "shadow-inputField bg-bgColorLight valid:shadow-inputFieldValid "
-        } p-2 border-2 border-white focus:bg-white focus:border-2 focus:outline-none focus:border-accentColor box-border`}
-      ></textarea>
-      <Button
-        text={"Verstuur bericht"}
-        type={"submit"}
-        cta={true}
-        lightBg={true}
-      />
+      <Input type={"textarea"} value={"message"} label={"Uw bericht"} />
+      <Button text={"Verstuur bericht"} type={"submit"} cta={true} />
       {succes && "Uw bericht is succesvol verzonden!"}
     </form>
   );

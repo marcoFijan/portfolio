@@ -1,9 +1,14 @@
 import { motion } from "framer-motion";
 
-export default function H2({ children, darkBackground }) {
+export default function H3({ children, className }) {
+  const extras = className ? className : "";
+
   return (
-    <motion.h2
-      className={`text-xl md:text-2xl lg:text-3xl leading-relaxed mb-4 font-black text-white`}
+    <motion.h3
+      className={
+        `text-xl md:text-2xl lg:text-3xl leading-relaxed mb-4 font-black text-white ` +
+        extras
+      }
       initial={{ opacity: 0, y: 25 }}
       whileInView={{
         opacity: 1,
@@ -12,6 +17,6 @@ export default function H2({ children, darkBackground }) {
       }}
     >
       {children}
-    </motion.h2>
+    </motion.h3>
   );
 }

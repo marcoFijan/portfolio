@@ -1,4 +1,4 @@
-import { Montserrat } from "next/font/google";
+import { Montserrat, Quicksand } from "next/font/google";
 import { Inter } from "next/font/google";
 import Head from "next/head";
 import MainCanvas from "../canvas/MainCanvas.js";
@@ -9,6 +9,12 @@ const montserrat = Montserrat({
   weight: ["200", "400", "700", "900"],
   subsets: ["latin"],
   variable: "--font-montserrat",
+});
+
+const quicksand = Quicksand({
+  weight: ["300", "400", "500", "600", "700"],
+  subsets: ["latin"],
+  variable: "--font-Quicksand",
 });
 
 const inter = Inter({
@@ -33,7 +39,7 @@ export default function Home() {
         <meta name="author" content="Marco Fijan" />
       </Head>
       <Header />
-      <main className={`${inter.className}`}>
+      <main className={`${quicksand.className}`}>
         {/* <div className="bg-gradient-to-br from-green-50 to-violet-200 w-full h-screen absolute top-0 left-0" /> */}
         {/* <div
           id="background"
@@ -43,7 +49,7 @@ export default function Home() {
           id="background"
           className="bg-colorBg w-[100dvw] h-[100dvh] absolute overflow-hidden top-0 left-0 z-[-3]"
         >
-          <div className="h-[200dvh] w-full absolute top-[-100dvh] left-0 z-[-2] bg-gradient-radial from-gray-800 to-colorBg"></div>
+          <div className="h-[200dvh] w-full absolute top-[-100dvh] left-0 z-[-2]"></div>
         </div>
         <MainCanvas />
       </main>

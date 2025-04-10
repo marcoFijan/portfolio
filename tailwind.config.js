@@ -33,24 +33,9 @@ module.exports = {
     },
     extend: {
       colors: {
-        accentColor: "#ff6f27",
-        colorBg: "#0d0d0d",
-        // colorBg: "#0F172A",
-        accentColorLight: "#68d9ff",
-        accentColorDark: "#2692b6",
-        CTAColorLight: "#ff6f27",
-        CTAColorDark: "#a73c0b",
-        CTAColor: "#e06020",
-        bgColorDark: "#34393e",
-        bgColorDarkLight: "#2f3338",
-        bgColorDarkDark: "#202224",
-        bgColorLight: "#16192A",
-        colorBgDark: "#1a1a1a",
-        colorBgLight: "#dbdbdb",
-        colorTextDark: "#011923",
-        colorAccentColor: "#db0021",
-        // colorAccentColorDarken: "#d1571a",
-        // colorAccentColorDark: "#a04c22",
+        colorBg: "#15151a",
+        colorAccent: "#D16608",
+        colorBgLight: "#3c3a44",
         white: "#ffffff",
       },
       borderWidth: {
@@ -71,17 +56,27 @@ module.exports = {
         inputFieldDarkValid:
           "inset 20px 20px 76px #100522, inset -20px -20px 76px #180936;",
       },
-
+      height: {
+        hamburger: "3rem",
+        hamburgerBar: "3px",
+      },
+      width: {
+        hamburger: "3rem",
+      },
       padding: {
         articlePadding: "3rem",
         articlePaddingMobile: "1rem",
+        wrapper: "3rem",
+        wrapperMobile: "1rem",
       },
       margin: {
         "1/2-height": "50vh",
         "3/5-height": "65vh",
+        hamburger: ".5rem",
       },
       maxWidth: {
         wrapper: "80rem",
+        paragraph: "60rem",
       },
       gridTemplateColumns: {
         fluid: "repeat(auto-fit, minmax(23em, 1fr));",

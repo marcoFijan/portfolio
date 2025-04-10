@@ -20,8 +20,12 @@ export default function Laptop({ mobile, props }) {
   const [screenSize, setScreenSize] = useState(0);
   const startScreenPosition = {
     rot: { x: 1.03, y: 0, z: 0 },
-    pos: { x: 0, y: 0.06, z: 0.4 },
+    pos: { x: -30, y: 0.45, z: 0.45 },
   };
+
+  // rot: { x: 1.03, y: 0, z: 0 },
+  // pos: { x: 0, y: 0.06, z: 0.4 },
+
   // pos: { x: 0, y: 0.12, z: 0.01 },
 
   const startTexture = useTexture("./images/ThumbnailsSmall/codeThumb.png");
@@ -66,7 +70,7 @@ export default function Laptop({ mobile, props }) {
     // Hardcoded screenchange since .call function from gsap has performance issues
     if (mobile) {
       if (scroll.offset < 0.09) {
-        setStartingScreen(true);
+        setStartingScreen(false);
         setProject1Screen(false);
         setProject2Screen(false);
         setProject3Screen(false);
@@ -124,7 +128,7 @@ export default function Laptop({ mobile, props }) {
       }
     } else {
       if (scroll.offset < 0.09) {
-        setStartingScreen(true);
+        setStartingScreen(false);
         setProject1Screen(false);
         setProject2Screen(false);
         setProject3Screen(false);
@@ -191,10 +195,34 @@ export default function Laptop({ mobile, props }) {
 
   useEffect(() => {
     if (typeof window !== "undefined") {
+      let previousWidth = window.innerWidth;
+      let isThrottled = false;
+
       function updateDimension() {
-        setScreenSize(window.innerWidth);
-        location.reload();
+        if (isThrottled) return;
+
+        isThrottled = true;
+
+        // Delay the function execution to ensure it's not running too often
+        setTimeout(() => {
+          const currentWidth = window.innerWidth;
+
+          // Check if screen width crosses 1000px (either direction)
+          if (
+            (previousWidth <= 1000 && currentWidth > 1000) ||
+            (previousWidth > 1000 && currentWidth <= 1000)
+          ) {
+            location.reload();
+          }
+
+          // Update the previousWidth to currentWidth
+          previousWidth = currentWidth;
+
+          setScreenSize(currentWidth);
+          isThrottled = false; // Reset throttle flag
+        }, 200); // Set the throttle delay (200ms here, adjust as needed)
       }
+
       window.addEventListener("resize", updateDimension);
 
       return () => {
@@ -275,11 +303,7 @@ export default function Laptop({ mobile, props }) {
         { z: rotation.close.rot.z },
         startpositions.hero
       )
-      .to(
-        screenRot.current.position,
-        { x: rotation.close.pos.x },
-        startpositions.hero
-      )
+      .to(screenRot.current.position, { x: 0 }, startpositions.hero)
       .to(
         screenRot.current.position,
         { y: rotation.close.pos.y },
@@ -291,7 +315,7 @@ export default function Laptop({ mobile, props }) {
         startpositions.hero
       )
       .to(laptop.current.rotation, { x: -Math.PI / 2 }, startpositions.hero)
-      .to(laptop.current.position, { y: 0 }, startpositions.hero)
+      // .to(laptop.current.position, { y: 0 }, startpositions.hero)
       .to(laptop.current.position, { x: -30 }, 1)
       // .to(laptop.current.position, { x: -20 }, 3.5)
       // .to(laptop.current.rotation, { z: -1 }, 3.5)

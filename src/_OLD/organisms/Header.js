@@ -1,4 +1,4 @@
-import { Montserrat } from "next/font/google";
+import { Montserrat, Quicksand } from "next/font/google";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -8,6 +8,12 @@ const montserrat = Montserrat({
   weight: ["400", "700", "900"],
   subsets: ["latin"],
   variable: "--font-montserrat",
+});
+
+const quicksand = Quicksand({
+  weight: ["400", "700", "900"],
+  subsets: ["latin"],
+  variable: "--font-Quicksand",
 });
 
 export default function Header() {

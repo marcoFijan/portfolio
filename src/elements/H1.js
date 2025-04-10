@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-export default function H1({ children, darkBackground, chapeau }) {
+export default function H1({ children, chapeau, className }) {
   // const darkBackground = this.prop.darkBackground;
 
   return (
@@ -19,9 +19,10 @@ export default function H1({ children, darkBackground, chapeau }) {
         </motion.span>
       )}
       <motion.h1
-        className={`text-4xl pt-4 md:text-6xl lg:text-7xl font-semibold leading-loose md:leading-loose lg:leading-tight ${
-          darkBackground ? "text-white" : "text-colorTextDark"
-        }`}
+        className={
+          `text-3xl pt-4 md:text-6xl lg:text-7xl font-light leading-tight md:leading-loose lg:leading-tight text-white ` +
+          className
+        }
         initial={{ opacity: 0, y: 25 }}
         whileInView={{
           opacity: 1,

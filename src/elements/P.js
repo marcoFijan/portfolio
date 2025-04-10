@@ -4,7 +4,7 @@ export default function P({ children, customClasses }) {
   return (
     <motion.p
       className={
-        "text-white text-xl mb-4 font-light opacity-30 max-w-6xl " +
+        "text-white text-xl mb-4 font-light opacity-30 max-w-paragraph " +
         customClasses
       }
       initial={{ opacity: 0, y: 25 }}
