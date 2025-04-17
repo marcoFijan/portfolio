@@ -28,6 +28,7 @@ import NextLink from "@/elements/NextLink";
 import ReadMore from "@/collections/ReadMore.js";
 import Strong from "@/elements/Strong.js";
 import InfiniteTextBar from "@/elements/infiniteTextBar.js";
+import Focus from "@/elements/Focus.js";
 
 import testImgUrl from "../../public/images/KBOReeshof/Persona1.jpg";
 
@@ -108,11 +109,11 @@ export default function MainCanvas({}) {
               <SectionHome
                 amountOfPages={1}
                 className={
-                  "relative flex flex-col-reverse xl:flex-col items-center"
+                  "relative flex flex-col-reverse xl:flex-col items-center justify-end xl:justify-start"
                 }
               >
-                <div className="m-0 p-0 box-border min-h-[50vh] threeDSlider w-full xl:w-1/2 xl:self-end xl:min-h-screen relative group">
-                  <div className="relative z-10 w-full h-screen text-center overflow-visible scale-[20%] sm:scale-[30%] md:scale-[40%] lg:scale-[50%] xl:scale-[40%] 2xl:scale-[60%] max-h-[25vh] lg:max-h-[50vh]">
+                <div className="m-0 p-0 box-border h-[50vh] threeDSlider w-full xl:w-1/2 xl:self-end xl:min-h-screen relative group">
+                  <div className="relative z-10 w-full h-screen text-center overflow-visible  scale-[20%] xs:scale-[30%] sm:scale-[40%] md:scale-[40%] lg:scale-[50%] xl:scale-[40%] 2xl:scale-[60%] max-h-[25vh] lg:max-h-[50vh]">
                     {/* <!-- 3D Slider --> */}
                     <div
                       className="absolute aspect-square w-[150px] h-[150px] top-[10%] left-1/2 -ml-[125px] [transform-style:preserve-3d] [transform:perspective(1000px)] animate-[autoRun_90s_linear_infinite] z-20"
@@ -504,10 +505,10 @@ export default function MainCanvas({}) {
                     width={1000}
                     height={2000}
                     src="/images/marcoHero.png"
-                    className="-scale-x-100  absolute top-[10vh] lg:top-[20vh] left-1/2 -translate-x-1/2 h-[90vh] lg:h-[80vh] object-contain overflow-visible object-bottom z-0 after:w-full after:h-full after:bg-red-200"
+                    className="-scale-x-100  absolute top-[12vh] lg:top-[20vh] left-1/2 -translate-x-1/2 h-[70vh] lg:h-[80vh] max-w-[70%] xl:max-w-full object-top object-cover xl:object-contain overflow-visible xl:object-bottom z-0"
                   />
                 </div>
-                <article className="pt-12 xl:absolute left-0 bottom-0 xl:h-full w-full xl:w-1/2 flex flex-col justify-center relative">
+                <article className="pt-24 xl:absolute h-[50vh] left-0 bottom-0 xl:h-full w-full xl:w-1/2 flex flex-col justify-center relative">
                   <H1 chapeau={"Marco Fijan"} className={""}>
                     Van een{" "}
                     <strong className="font-black text-colorAccent">
@@ -528,7 +529,7 @@ export default function MainCanvas({}) {
                     ongeacht het budget, motiveert mij. Jouw online visie is
                     uniek, en samen zorgen we ervoor dat die tot leven komt!
                   </P> */}
-                  <NextLink className={"mt-8 block "} type="round">
+                  <NextLink className={"mt-8 block mx-auto "} type="round">
                     Neem contact op!
                   </NextLink>
                 </article>
@@ -572,30 +573,28 @@ export default function MainCanvas({}) {
                 amountOfPages={mobile ? "3" : "2"}
                 className={"flex flex-col relative"}
               >
-                <div className="min-h-[30vw]">
+                <div className="min-h-[60vw] xl:min-h-[30vw]">
                   {/* <ScrollingBarRight></ScrollingBarRight> */}
                   <InfiniteTextBar
                     text="User Experience - Frontend Developer - Usability - Design - Testen - "
-                    className="-top-[5vw]"
+                    className="md:-top-[6vw] -top-[20vw]"
                   ></InfiniteTextBar>
                   <InfiniteTextBar
                     text="Figma - NextJS - Tailwind - SCSS - Umbraco - Wordpress - Kentico"
-                    className="top-[8vw]"
+                    className="top-[13vw]"
                     directionLeft
                   ></InfiniteTextBar>
                 </div>
 
                 <Article className="max-h-[calc(100% - 20vw)]">
-                  <H2>Welkom!</H2>
                   <section className="grid lg:gap-16 grid-cols-1 lg:grid-cols-6 w-full">
-                    <Img
-                      alt="Altje"
-                      src="/images/general/MarcoBureau.jpg"
-                      className="object-right-top"
-                      classNameWrapper="col-span-1 lg:col-span-4 row-span-3 aspect-video "
-                    />
-                    <Section className="col-span-1 lg:col-span-4 row-span-2 lg:col-start-3">
-                      <H3>Van ontwerp tot realisatie</H3>
+                    <Section className="col-span-1 lg:col-span-4 row-span-1 lg:col-start-3">
+                      <Focus className="">
+                        Merken helpen opvallen in het digitale tijdperk. Samen
+                        zetten we de nieuwe norm. Geen poespas, altijd
+                        vooruitstrevend.
+                      </Focus>
+                      {/* <H3>Van ontwerp tot realisatie</H3>
                       <P>
                         Het ontwerpen en ontwikkelen van gebruiksvriendelijke
                         webapplicaties is mijn passie. Ik geniet van het
@@ -610,23 +609,21 @@ export default function MainCanvas({}) {
                         komen. Mijn favoriete tools zijn Figma om te ontwerpen,
                         Svelte om te ontwikkelen en Sass/Scss om vorm te geven
                         aan de producten.
-                      </P>
+                      </P> */}
                       {/* <P>Ik vind het daarna vervolgens ook erg leuk om deze unieke ideeën en ervaringen te realiseren tot een eindproduct. Om echt iets te leveren waar zowel ik als de klant achter staat.</P> */}
                     </Section>
-                    <Section className="col-span-1 lg:col-span-4 row-span-2">
-                      <H3>Ervaring</H3>
-                      <P>
-                        Na mijn Havo-Diploma begon ik in 2016 aan de studie
-                        Informatica op Hogeschool Avans in Den Bosch. Na hier in
-                        2017 mijn propedeuse gehaald te hebben kwam ik erachter
-                        dat puur alleen coderen niet voor mij was weggelegd.
-                      </P>
-                      <P>
-                        Ik wilde meer, ik wilde mensen helpen en gebruik maken
-                        van mijn creativiteit. Ik begon daarom aan een nieuwe
-                        studie in Amsterdam waar ik mijn Bachelor of Science
-                        haalde in Communicatie en Multimedia Design.
-                      </P>
+                    <Img
+                      alt="Altje"
+                      src="/images/general/MarcoBureau.jpg"
+                      className="object-right-top"
+                      classNameWrapper="col-span-1 lg:col-span-4 row-span-3 aspect-video "
+                    />
+                    <Section className="col-span-1 lg:col-span-4 lg:col-start-3">
+                      <Focus className="">
+                        De combinatie van mijn passie voor design, code en
+                        interactie plaatst mij op een unieke plek in de wereld
+                        van webdesign.
+                      </Focus>
                     </Section>
                   </section>
                 </Article>
@@ -634,14 +631,15 @@ export default function MainCanvas({}) {
               </SectionHome>
               {/* Overview with a couple of projects I am proud of [6 pages] */}
               {/* <PortfolioSection /> */}
-              <SectionHome amountOfPages={"1"}>
-                <H2
-                  chapeau={"Mijn projecten"}
-                  className="flex flex-col justify-evenly w-full h-full"
-                  animateRight
-                >
-                  <span>Uitgelichtte</span>
-                  <span>Projecten</span>
+              <SectionHome
+                amountOfPages={"1"}
+                className={"flex flex-col justify-center"}
+              >
+                <H2 chapeau={"Mijn projecten"} big>
+                  Uitgelichtte
+                </H2>
+                <H2 className="self-end" big>
+                  Projecten
                 </H2>
               </SectionHome>
 

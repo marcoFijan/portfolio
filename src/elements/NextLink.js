@@ -11,16 +11,18 @@ export default function NextLink({
 }) {
   // Static classes
   const baseClasses =
-    "flex transition duration-500 items-center gap-1 ease-in-out w-max";
+    "flex transition duration-500 items-center gap-1 ease-in-out";
 
   // Optionally, handle conditional classes based on 'cta' or 'className' prop
   const typeClasses =
     type === "primary"
-      ? "backdrop-blur-[15px] hover:bg-zinc-100/[0.1] hover:border-colorAccent bg-colorAccent h-[50px] border border-colorAccent border-opacity-100 rounded-full text-white px-6 "
+      ? "w-max backdrop-blur-[15px] hover:bg-zinc-100/[0.1] hover:border-colorAccent bg-colorAccent h-[50px] border border-colorAccent border-opacity-100 rounded-full text-white px-6 "
       : type === "round"
-      ? "backdrop-blur-[15px] hover:bg-zinc-100/[0.1] hover:border-colorAccent bg-colorAccent text-shadow h-36 w-36 aspect-square border border-colorAccent border-opacity-100 rounded-full text-colorBg font-black p-6"
+      ? "w-max backdrop-blur-[15px] hover:bg-zinc-100/[0.1] hover:border-colorAccent bg-colorAccent text-shadow w-24 h-24 xs:h-36 xs:w-36 aspect-square border border-colorAccent border-opacity-100 rounded-full text-colorBg leading-[1.2] p-2"
+      : type === "nav"
+      ? "w-full text-white"
       : type === "secondary"
-      ? "backdrop-blur-[15px] hover:bg-zinc-100/[0.05] hover:border-opacity-30 bg-transparent h-[50px] border border-white border-opacity-0 px-4 rounded-full text-white"
+      ? "w-max backdrop-blur-[15px] hover:bg-zinc-100/[0.05] hover:border-opacity-30 bg-transparent h-[50px] border border-white border-opacity-0 px-4 rounded-full text-white"
       : "text-white"; // Example for 'cta' condition
   const combinedClassNames = `${baseClasses} ${typeClasses} ${className}`;
 

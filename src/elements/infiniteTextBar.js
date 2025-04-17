@@ -102,7 +102,7 @@ export default function InfiniteTextBar({
     <div
       className={`${
         orbitron.className
-      } overflow-hidden border-y-2 border-colorWhiteSoft bg-colorBg text-colorWhiteSoft text-[7vw]  h-max whitespace-nowrap absolute  cursor-default left-1/2 -translate-x-1/2 ${
+      } overflow-hidden  border-colorWhiteSoft bg-colorBg text-colorWhiteSoft md:text-[10vw] text-4xl sm:text-7xl h-20 md:h-[12vw] whitespace-nowrap absolute  cursor-default left-1/2 -translate-x-1/2 ${
         directionLeft ? "-rotate-[5deg] " : "rotate-[5deg] "
       } ${className} `}
     >

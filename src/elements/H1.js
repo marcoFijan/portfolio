@@ -12,7 +12,7 @@ export default function H1({ children, chapeau, className, big }) {
     <>
       {chapeau && (
         <motion.span
-          className={`text-2xl leading-loose uppercase font-light text-white text-opacity-50 pl-6 relative after:absolute after:content-[''] after:h-3 after:w-3 after:bg-white after:rounded-full after:left-0 after:top-1/2 after:-translate-y-1/2 after:opacity-100 after:border-1 after:border-black ${orbitron.className}`}
+          className={`text-md xs:text-lg sm:text-xl md:text-2xl leading-loose uppercase font-light text-white text-opacity-50 pl-6 relative after:absolute after:content-[''] after:h-3 after:w-3 after:bg-white after:rounded-full after:left-0 after:top-1/2 after:-translate-y-1/2 after:opacity-70 after:border-1 after:border-black ${orbitron.className}`}
           initial={{ opacity: 0, y: 25 }}
           whileInView={{
             opacity: 1,
@@ -25,12 +25,12 @@ export default function H1({ children, chapeau, className, big }) {
       )}
       <motion.h1
         className={
-          `pt-2 pb-12 font-light leading-[.82] text-white ${
+          `pt-2 pb-8 md:pb-8 lg:pb-12 font-light leading-[1] sm:leading-[.82] text-white ${
             orbitron.className
           } ${
             big
               ? "text-homeH1 xl:text-homeH1Big "
-              : "text-3xl md:text-6xl lg:text-7xl "
+              : "text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl "
           }` + className
         }
         initial={{ opacity: 0, y: 25 }}

@@ -1,6 +1,7 @@
 import { Montserrat } from "next/font/google";
 import { useState, useEffect } from "react";
 import NextLink from "@/elements/NextLink";
+import Link from "next/link";
 import Container from "../sections/Container.js";
 import LogoImg from "../../public/images/Logo.svg";
 import IconHome from "../../public/images/icons/iconHome.svg";
@@ -23,7 +24,7 @@ export default function Header() {
       };
       window.addEventListener("resize", updateDimension);
 
-      if (window.innerWidth <= 832) {
+      if (window.innerWidth <= 1024) {
         setMobile(true);
       } else {
         setMobile(false);
@@ -117,7 +118,7 @@ export default function Header() {
                   : "max-h-0 overflow-hidden pointer-events-none"
               }`}
             >
-              <div className="flex h-full min-h-min w-full flex-col justify-end  overflow-y-auto overflow-x-hidden max-w-screen bg-colorBg px-wrapper py-8">
+              <div className="flex h-full min-h-min w-full flex-col justify-end  overflow-y-auto overflow-x-hidden max-w-screen bg-colorBg px-wrapperMobile py-8">
                 {/* Logo */}
                 <NextLink
                   href="/"
@@ -131,12 +132,13 @@ export default function Header() {
                 <nav className="w-full h-screen top-0 left-0 z-50 lg:hidden">
                   <ul>
                     {links.links.map((link) => (
-                      <li key={link.name} className="">
+                      <li key={link.name} className="w-full">
                         <NextLink
                           href={link.url}
+                          type="nav"
                           title={"Ga naar " + link.name}
                           className={
-                            "text-left py-4 border-b-1 border-gray-400 hover:translate-x-4 transition-all px-3 group"
+                            "text-left py-4 border-b-1 border-gray-400 transition-all px-3 group w-full"
                           }
                         >
                           <span
@@ -166,7 +168,7 @@ export default function Header() {
           </div>
         ) : (
           <>
-            <nav className="w-max justify-self-center hidden lg:block relative z-50">
+            <nav className="w-max justify-self-center hidden lg:block relative z-50 desktop">
               <ul className="backdrop-blur-[15px] bg-zinc-100/[0.05] rounded-3xl justify-between items-center p-2 flex relative border-white border-opacity-30 border hover:border-yellow-600 transition-all duration-300">
                 {links.links.map((link) => (
                   <li

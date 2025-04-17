@@ -10,6 +10,9 @@ module.exports = {
   ],
   theme: {
     screens: {
+      xs: "500px",
+      // => @media (min-width: 500px) { ... }
+
       sm: "668px",
       // => @media (min-width: 640px) { ... }
 
@@ -42,7 +45,7 @@ module.exports = {
         colorLogoBg: "transparent",
         colorLogoInner: "transparent",
         white: "#e5e5da",
-        colorWhiteSoft: "#4e5d67",
+        colorWhiteSoft: "#70828e",
       },
       borderWidth: {
         1: "1px",
