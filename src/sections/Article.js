@@ -1,7 +1,5 @@
 export default function Article({ children, customClasses }) {
   return (
-    <article className={"w-full flex relative " + customClasses}>
-      {children}
-    </article>
+    <article className={"w-full relative " + customClasses}>{children}</article>
   );
 }

@@ -65,7 +65,7 @@ export default function Laptop({ mobile, props }) {
     if (typeof timeline.current !== "undefined")
       timeline.current.seek(scroll.offset * timeline.current.duration());
 
-    console.log(scroll.offset);
+    // console.log(scroll.offset);
 
     // Hardcoded screenchange since .call function from gsap has performance issues
     if (mobile) {

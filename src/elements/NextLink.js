@@ -16,7 +16,9 @@ export default function NextLink({
   // Optionally, handle conditional classes based on 'cta' or 'className' prop
   const typeClasses =
     type === "primary"
-      ? "backdrop-blur-[15px] hover:bg-zinc-100/[0.1] hover:border-colorAccent bg-colorAccent h-[50px] border border-colorAccent border-opacity-100 rounded-full text-white px-6 font-bold "
+      ? "backdrop-blur-[15px] hover:bg-zinc-100/[0.1] hover:border-colorAccent bg-colorAccent h-[50px] border border-colorAccent border-opacity-100 rounded-full text-white px-6 "
+      : type === "round"
+      ? "backdrop-blur-[15px] hover:bg-zinc-100/[0.1] hover:border-colorAccent bg-colorAccent text-shadow h-36 w-36 aspect-square border border-colorAccent border-opacity-100 rounded-full text-colorBg font-black p-6"
       : type === "secondary"
       ? "backdrop-blur-[15px] hover:bg-zinc-100/[0.05] hover:border-opacity-30 bg-transparent h-[50px] border border-white border-opacity-0 px-4 rounded-full text-white"
       : "text-white"; // Example for 'cta' condition

@@ -203,6 +203,14 @@ header nav ul li:last-child:hover {
   height: 300dvh;
 }
 
+.leftHalf {
+  left: calc(50% - 100vw);
+}
+
+.rightHalf {
+  right: calc(50% - 100vw);
+}
+/* 
 form {
   overflow: visible;
   position: relative;
@@ -213,7 +221,7 @@ form {
 
 form::after {
   content: "";
-  backdrop-filter: blur(15px); /* Equivalent to backdrop-blur-[15px] */
+  backdrop-filter: blur(15px); 
   background-color: #3a3a3a0d;
   transition: all ease-in-out 0.5s;
   width: 100%;
@@ -244,8 +252,6 @@ form:not(:has(input:invalid, textarea:invalid)) button[type="submit"] {
   pointer-events: all;
 }
 
-/* <<<<< HAMBURGERBUTTON LOGIC >>>>>  */
-/* WHITE BARS  */
 @media only screen and (max-width: 832px) {
   #navlist {
     transition: all 0.5s ease-in-out;
@@ -298,5 +304,43 @@ form:not(:has(input:invalid, textarea:invalid)) button[type="submit"] {
   #hamburgerMenu:checked ~ #hamburgerMenu div::after {
     transform: rotate(-45deg) translate(21.5px, 21.5px);
     background: white;
+  }
+} */
+
+/* .threeDSlider {
+  background-color: #d2d2d2;
+  background-image: repeating-linear-gradient(
+      to right,
+      transparent 0 100px,
+      #25283b22 100px 101px
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0 100px,
+      #25283b22 100px 101px
+    );
+} */
+
+.threeDSlider::before {
+  /* content: "";
+  position: absolute;
+  width: min(1000px, 90vw);
+  height: 90%;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-image: url(../../public/images/marcoPointingUp.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: top center;
+  pointer-events: none;
+  z-index: 0; */
+}
+@keyframes autoRun {
+  from {
+    transform: perspective(1000px) rotateX(-16deg) rotateY(0deg);
+  }
+  to {
+    transform: perspective(1000px) rotateX(-16deg) rotateY(360deg);
   }
 }

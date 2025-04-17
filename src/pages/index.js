@@ -1,26 +1,25 @@
-import { Montserrat, Quicksand } from "next/font/google";
-import { Inter } from "next/font/google";
+import { Orbitron, Poppins } from "next/font/google";
 import Head from "next/head";
-import MainCanvas from "../canvas/MainCanvas.js";
-import Header from "../sections/Header.js";
+import MainCanvas from "../canvas/MainCanvas";
+import Header from "../sections/Header";
 import { useRef, useEffect } from "react";
 
-const montserrat = Montserrat({
-  weight: ["200", "400", "700", "900"],
+// const montserrat = Montserrat({
+//   weight: ["200", "400", "700", "900"],
+//   subsets: ["latin"],
+//   variable: "--font-montserrat",
+// });
+
+const orbitron = Orbitron({
+  weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
-  variable: "--font-montserrat",
+  variable: "--font-orbitron",
 });
 
-const quicksand = Quicksand({
-  weight: ["300", "400", "500", "600", "700"],
-  subsets: ["latin"],
-  variable: "--font-Quicksand",
-});
-
-const inter = Inter({
+const poppins = Poppins({
   weight: ["200", "400", "700", "900"],
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-poppins",
 });
 
 export default function Home() {
@@ -34,23 +33,19 @@ export default function Home() {
         />
         <meta
           name="keywords"
-          content="HTML, CSS, JavaScript, NextJS, React, Svelte, Unity, Front, End, Frontend, Developer, Development, Git, Github, Portfolio, NL, Soliciting, Job, Vacature, Baan, UI, User, Interface, UX, Experience"
+          content="HTML, CSS, JavaScript, NextJS, React, Svelte, Unity, Frontend, Developer, Git, Github, Portfolio"
         />
         <meta name="author" content="Marco Fijan" />
       </Head>
+
       <Header />
-      <main className={`${quicksand.className}`}>
-        {/* <div className="bg-gradient-to-br from-green-50 to-violet-200 w-full h-screen absolute top-0 left-0" /> */}
-        {/* <div
-          id="background"
-          className="w-full h-screen absolute top-0 left-0 bg-[#000000]"
-        /> */}
+
+      <main className={`${poppins.className}`}>
         <div
           id="background"
           className="bg-colorBg w-[100dvw] h-[100dvh] absolute overflow-hidden top-0 left-0 z-[-3]"
-        >
-          <div className="h-[200dvh] w-full absolute top-[-100dvh] left-0 z-[-2]"></div>
-        </div>
+        ></div>
+
         <MainCanvas />
       </main>
     </>
