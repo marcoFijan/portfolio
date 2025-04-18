@@ -508,7 +508,7 @@ export default function MainCanvas({}) {
                     className="-scale-x-100  absolute top-[12vh] lg:top-[20vh] left-1/2 -translate-x-1/2 h-[70vh] lg:h-[80vh] max-w-[70%] xl:max-w-full object-top object-cover xl:object-contain overflow-visible xl:object-bottom z-0"
                   />
                 </div>
-                <article className="pt-24 xl:absolute h-[50vh] left-0 bottom-0 xl:h-full w-full xl:w-1/2 flex flex-col justify-center relative">
+                <article className="pt-24 xl:absolute h-[50vh] left-0 bottom-0 xl:h-min xl:bottom-[unset] xl:pt-32 w-full xl:w-1/2 flex flex-col justify-center relative">
                   <H1 chapeau={"Marco Fijan"} className={""}>
                     Van een{" "}
                     <strong className="font-black text-colorAccent">
@@ -529,7 +529,7 @@ export default function MainCanvas({}) {
                     ongeacht het budget, motiveert mij. Jouw online visie is
                     uniek, en samen zorgen we ervoor dat die tot leven komt!
                   </P> */}
-                  <NextLink className={"mt-8 block mx-auto "} type="round">
+                  <NextLink className={"mt-8 block"} type="primary">
                     Neem contact op!
                   </NextLink>
                 </article>
@@ -573,7 +573,7 @@ export default function MainCanvas({}) {
                 amountOfPages={mobile ? "3" : "2"}
                 className={"flex flex-col relative"}
               >
-                <div className="min-h-[60vw] xl:min-h-[30vw]">
+                <div className="h-[20000px] max-h-[60vw] xl:max-h-[30vw]">
                   {/* <ScrollingBarRight></ScrollingBarRight> */}
                   <InfiniteTextBar
                     text="User Experience - Frontend Developer - Usability - Design - Testen - "
@@ -586,32 +586,15 @@ export default function MainCanvas({}) {
                   ></InfiniteTextBar>
                 </div>
 
-                <Article className="max-h-[calc(100% - 20vw)]">
-                  <section className="grid lg:gap-16 grid-cols-1 lg:grid-cols-6 w-full">
-                    <Section className="col-span-1 lg:col-span-4 row-span-1 lg:col-start-3">
+                <Article className="h-full">
+                  <section className="grid lg:gap-24 grid-cols-1 lg:grid-cols-6 w-full h-full items-stretch box-border pt-24">
+                    {/* <Section className="col-span-1 lg:col-span-4 row-span-1 lg:col-start-3">
                       <Focus className="">
                         Merken helpen opvallen in het digitale tijdperk. Samen
                         zetten we de nieuwe norm. Geen poespas, altijd
                         vooruitstrevend.
                       </Focus>
-                      {/* <H3>Van ontwerp tot realisatie</H3>
-                      <P>
-                        Het ontwerpen en ontwikkelen van gebruiksvriendelijke
-                        webapplicaties is mijn passie. Ik geniet van het
-                        bedenken van ideeën, itereren op deze concepten en ze
-                        testen met de doelgroep. Ik zet altijd de
-                        gebruikerservaring voorop en werk hard om deze continu
-                        te verbeteren.
-                      </P>
-                      <P>
-                        Door de afgelopen jaren heen heb ik diverse tools en
-                        frameworks kunnen gebruiken om tot een eindproduct te
-                        komen. Mijn favoriete tools zijn Figma om te ontwerpen,
-                        Svelte om te ontwikkelen en Sass/Scss om vorm te geven
-                        aan de producten.
-                      </P> */}
-                      {/* <P>Ik vind het daarna vervolgens ook erg leuk om deze unieke ideeën en ervaringen te realiseren tot een eindproduct. Om echt iets te leveren waar zowel ik als de klant achter staat.</P> */}
-                    </Section>
+                    </Section> */}
                     <Img
                       alt="Altje"
                       src="/images/general/MarcoBureau.jpg"
@@ -620,14 +603,19 @@ export default function MainCanvas({}) {
                     />
                     <Section className="col-span-1 lg:col-span-4 lg:col-start-3">
                       <Focus className="">
+                        Merken helpen opvallen in het digitale tijdperk. Samen
+                        zetten we de nieuwe norm. Geen poespas, altijd
+                        vooruitstrevend.
+                      </Focus>
+                      {/* <Focus className="">
                         De combinatie van mijn passie voor design, code en
                         interactie plaatst mij op een unieke plek in de wereld
                         van webdesign.
-                      </Focus>
+                      </Focus> */}
                     </Section>
                   </section>
                 </Article>
-                <Divider></Divider>
+                {/* <Divider></Divider> */}
               </SectionHome>
               {/* Overview with a couple of projects I am proud of [6 pages] */}
               {/* <PortfolioSection /> */}
@@ -635,12 +623,7 @@ export default function MainCanvas({}) {
                 amountOfPages={"1"}
                 className={"flex flex-col justify-center"}
               >
-                <H2 chapeau={"Mijn projecten"} big>
-                  Uitgelichtte
-                </H2>
-                <H2 className="self-end" big>
-                  Projecten
-                </H2>
+                <H1 chapeau={"Mijn projecten"}>Uitgelichtte Projecten</H1>
               </SectionHome>
 
               {/* Contactpage with a form [1.5 page] */}

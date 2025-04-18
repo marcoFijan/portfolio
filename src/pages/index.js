@@ -41,10 +41,7 @@ export default function Home() {
       <Header />
 
       <main className={`${poppins.className}`}>
-        <div
-          id="background"
-          className="bg-colorBg w-[100dvw] h-[100dvh] absolute overflow-hidden top-0 left-0 z-[-3]"
-        ></div>
+        <div id="background" className=""></div>
 
         <MainCanvas />
       </main>

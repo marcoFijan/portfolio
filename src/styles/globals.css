@@ -344,3 +344,28 @@ form:not(:has(input:invalid, textarea:invalid)) button[type="submit"] {
     transform: perspective(1000px) rotateX(-16deg) rotateY(360deg);
   }
 }
+
+#background {
+  width: 100dvw;
+  height: 100dvh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -3;
+  overflow: hidden;
+  background-color: #0c1a24;
+  transition: all 0.5s ease-in-out;
+}
+
+#background[color="colorKBO"] {
+  background-color: #021936;
+}
+
+#background[color="colorYO"] {
+  background-color: #10d1bb;
+  background-color: #000000;
+}
+
+#background[color="colorSA"] {
+  background-color: #212a50;
+}

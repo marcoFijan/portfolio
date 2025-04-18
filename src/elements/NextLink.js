@@ -11,18 +11,18 @@ export default function NextLink({
 }) {
   // Static classes
   const baseClasses =
-    "flex transition duration-500 items-center gap-1 ease-in-out";
+    "flex transition duration-500 items-center gap-1 ease-in-out text-lg lg:text-xl xl:text-2xl";
 
   // Optionally, handle conditional classes based on 'cta' or 'className' prop
   const typeClasses =
     type === "primary"
-      ? "w-max backdrop-blur-[15px] hover:bg-zinc-100/[0.1] hover:border-colorAccent bg-colorAccent h-[50px] border border-colorAccent border-opacity-100 rounded-full text-white px-6 "
+      ? "w-max backdrop-blur-[15px] hover:bg-colorAccent/[0.5] hover:border-colorAccent bg-colorBg text-white h-[50px] px-8 py-8 border border-colorAccent border-opacity-100 rounded"
       : type === "round"
-      ? "w-max backdrop-blur-[15px] hover:bg-zinc-100/[0.1] hover:border-colorAccent bg-colorAccent text-shadow w-24 h-24 xs:h-36 xs:w-36 aspect-square border border-colorAccent border-opacity-100 rounded-full text-colorBg leading-[1.2] p-2"
+      ? "w-max backdrop-blur-[15px] hover:bg-colorBg/[0.5] hover:border-colorAccent bg-colorBg text-white text-shadow w-24 h-24 xs:h-36 xs:w-36 aspect-square border border-colorAccent border-opacity-100 rounded text-colorBg leading-[1.2] p-2"
       : type === "nav"
       ? "w-full text-white"
       : type === "secondary"
-      ? "w-max backdrop-blur-[15px] hover:bg-zinc-100/[0.05] hover:border-opacity-30 bg-transparent h-[50px] border border-white border-opacity-0 px-4 rounded-full text-white"
+      ? "w-max backdrop-blur-[15px] hover:bg-colorBg/[0.5] hover:border-opacity-30 bg-transparent h-[50px] border border-white border-opacity-0 px-8 py-8 rounded text-white"
       : "text-white"; // Example for 'cta' condition
   const combinedClassNames = `${baseClasses} ${typeClasses} ${className}`;
 

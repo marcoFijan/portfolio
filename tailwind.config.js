@@ -44,7 +44,7 @@ module.exports = {
         colorBgLight: "#152631",
         colorLogoBg: "transparent",
         colorLogoInner: "transparent",
-        white: "#e5e5da",
+        white: "#c8cfd6",
         colorWhiteSoft: "#70828e",
       },
       borderWidth: {

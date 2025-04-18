@@ -1,5 +1,5 @@
-export default function Article({ children, customClasses }) {
+export default function Article({ children, className }) {
   return (
-    <article className={"w-full relative " + customClasses}>{children}</article>
+    <article className={"w-full relative " + className}>{children}</article>
   );
 }
