@@ -41,7 +41,10 @@ export default function Home() {
       <Header />
 
       <main className={`${poppins.className}`}>
-        <div id="background" className=""></div>
+        <div
+          id="background"
+          className="bg-gradient-to-bl from-color-bg-top to-color-bg-bottom"
+        ></div>
 
         <MainCanvas />
       </main>

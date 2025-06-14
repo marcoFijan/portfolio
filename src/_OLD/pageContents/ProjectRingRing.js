@@ -41,7 +41,7 @@ export default function ProjectRingRing({}) {
         paragraph1a={
           "Aangezien dit dashboard privé RingRing data bevat, is er een inlogpagina waar er ingelogd dient te worden."
         }
-        paragraph1ImageAlt={"Inlogscherm van het ring ring ontwerp"}
+        paragraph1ImageAlt={"Inlogscherm van het ring-3 ring-3 ontwerp"}
         paragraph1ImageURL={signInImg}
         paragraph1ImageSmall={true}
         paragraph1ImageClassname={"align-self-center row-start-1"}
@@ -55,7 +55,7 @@ export default function ProjectRingRing({}) {
         paragraph1a={
           "Op de dashboardpagina wordt er een globaal overzicht getoond waar alle deatilpagina's zichbaar zijn: Kaart, datavisualisatie en feedback."
         }
-        paragraph1ImageAlt={"Hoofdscherm van het ring ring ontwerp"}
+        paragraph1ImageAlt={"Hoofdscherm van het ring-3 ring-3 ontwerp"}
         paragraph1ImageURL={homeImg}
         paragraph1ImageSmall={true}
         button1Href={"https://github.com/marcoFijan/projectDatavisualisation"}
@@ -68,7 +68,7 @@ export default function ProjectRingRing({}) {
         paragraph1a={
           "Op de Voor U pagina worden datavisualisaties getoond die relevant zijn voor de betreffende persoon die ingelogd is. In dit voorbeeld ligt de focus op tijdstippen. Hier wordt met D3 een stackedbarchart getoond. De gekleurde bars kunnen weggefiltered worden door op de betreffende filter te klikken aan de rechterkant. Daarnaast is het mogelijk om de data te filteren op dagen in plaats van tijdstippen. Naast de stacked barchart worden er ook andere data gevisualiseerd in een simpel leesbar vak en een piechart die ook met D3 ontworpen is."
         }
-        paragraph1ImageAlt={"Voor u pagina van het ring ring ontwerp"}
+        paragraph1ImageAlt={"Voor u pagina van het ring-3 ring-3 ontwerp"}
         paragraph1ImageURL={specificDataImg}
         paragraph1ImageSmall={true}
         paragraph1ImageClassname={"align-self-center row-start-1"}
@@ -82,7 +82,7 @@ export default function ProjectRingRing({}) {
         paragraph1a={
           "Op deze pagina kunnen de beleidsmakers de routes uitstippelen per tijdstip. Er wordt gebruik gemaakt van kleurcodes om de nachten, spitsuren en overdag weer te geven(blauw, rood en geel). Door het gebruik van een kaart hebben de medewerkers van Ring Ring een snel overzicht over de drukste periodes en welke routes fietser precies nemen."
         }
-        paragraph1ImageAlt={"Kaartpagina van het ring ring ontwerp"}
+        paragraph1ImageAlt={"Kaartpagina van het ring-3 ring-3 ontwerp"}
         paragraph1ImageURL={routesImg}
         paragraph1ImageSmall={true}
         button1Href={"https://github.com/marcoFijan/projectDatavisualisation"}
@@ -95,7 +95,7 @@ export default function ProjectRingRing({}) {
         paragraph1a={
           "Op de feedback pagina krijgen de beleidsmakers een overzicht te zien van alle binnen gekregen feedback. Hier worden verschillende gegevens getoont zoals afstand, datum en de feedback zelf. Het is mogelijk om de feedback te filteren op soort dag en feedbackscore. Daarnaast is het mogelijk om de feedback door te versturen naar een mede beleidsmaker wanneer de knop 'selecteer' wordt gebruikt."
         }
-        paragraph1ImageAlt={"Feedbackpagina van het ring ring ontwerp"}
+        paragraph1ImageAlt={"Feedbackpagina van het ring-3 ring-3 ontwerp"}
         paragraph1ImageURL={feedbackImg}
         paragraph1ImageSmall={true}
         paragraph1ImageClassname={"align-self-center row-start-1"}

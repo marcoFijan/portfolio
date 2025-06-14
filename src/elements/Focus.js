@@ -35,7 +35,7 @@ export default function H1({ children, className = "" }) {
   return (
     <motion.span
       className={clsx(
-        "pt-2 pb-8 md:pb-8 lg:pb-12 font-light leading-[1] sm:leading-[.82] text-colorWhiteSoft",
+        "pt-2 pb-8 md:pb-8 lg:pb-12 font-light leading-none sm:leading-[.82] text-color-white-soft",
         "text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl",
         "whitespace-pre-wrap", // allow breaking only at whitespace
         orbitron.className,

@@ -4,7 +4,7 @@ export default function Img({ href, src, alt, prio, noBorder, customClasses }) {
   const imageElement = (
     <div
       className={
-        `bg-gradient-to-b from-gray-800 to-black rounded-3xl p-3 ${
+        `bg-linear-to-b from-gray-800 to-black rounded-3xl p-3 ${
           noBorder ? "" : "border-gray-300 border-1"
         } ` + customClasses
       }

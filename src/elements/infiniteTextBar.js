@@ -5,12 +5,12 @@ import { motion, useInView } from "framer-motion";
 import { useFrame } from "@react-three/fiber";
 import { useScroll } from "@react-three/drei";
 import Letter from "./letter";
-import { Orbitron } from "next/font/google";
+import { Inter } from "next/font/google";
 
-const orbitron = Orbitron({
-  weight: ["400", "500", "600", "700"],
+const inter = Inter({
+  weight: ["400"],
   subsets: ["latin"],
-  variable: "--font-orbitron",
+  variable: "--font-inter",
 });
 
 export default function InfiniteTextBar({
@@ -101,8 +101,8 @@ export default function InfiniteTextBar({
   return (
     <div
       className={`${
-        orbitron.className
-      } overflow-hidden  border-colorWhiteSoft bg-colorBg text-colorWhiteSoft md:text-[10vw] text-4xl sm:text-7xl h-20 md:h-[12vw] whitespace-nowrap absolute  cursor-default left-1/2 -translate-x-1/2 ${
+        inter.className
+      } overflow-hidden  border-color-white-soft text-color-white-soft md:text-[10vw] text-4xl sm:text-7xl h-20 md:h-[12vw] whitespace-nowrap absolute  cursor-default left-1/2 -translate-x-1/2 ${
         directionLeft ? "-rotate-[5deg] " : "rotate-[5deg] "
       } ${className} `}
     >

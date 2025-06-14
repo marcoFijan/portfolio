@@ -1,13 +1,71 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-@layer base {
-}
+@theme {
+  --breakpoint-*: initial;
+  --breakpoint-xs: 500px;
+  --breakpoint-sm: 668px;
+  --breakpoint-md: 832px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+  --breakpoint-3xl: 1536px;
 
-@font-face {
-  font-family: "Mayor";
-  src: url("../../public/fonts/mayor.regular.ttf") format("truetype");
+  --background-size-*: initial;
+  --background-size-auto: auto;
+  --background-size-cover: cover;
+  --background-size-contain: contain;
+  --background-size-200\%: 200%;
+
+  --color-color-bg: #0c1a24;
+  --color-color-glass: #1d1f20;
+  --color-color-accent: #fb800d;
+  --color-color-accent-dark: #c26004;
+  --color-color-accent-light: #ffc793;
+  --color-color-logo-bg: transparent;
+  --color-color-logo-inner: transparent;
+  --color-color-bg-top: #030303;
+  --color-color-bg-bottom: #1d1f20;
+  --color-white: #c8cfd6;
+  --color-color-white-soft: #70828e;
+
+  --border-width-1: 1px;
+
+  --shadow-dark-inner: inset 5px 5px 10px #2b353c, inset -5px -5px 10px #1e2225;
+
+  --height-hamburger: 3rem;
+  --height-hamburger-bar: 3px;
+
+  --width-hamburger: 3rem;
+
+  --padding-article-padding: 3rem;
+  --padding-article-padding-mobile: 1rem;
+  --padding-wrapper: 3rem;
+  --padding-wrapper-mobile: 1rem;
+
+  --margin-1\/2-height: 50vh;
+  --margin-3\/5-height: 65vh;
+  --margin-hamburger: 0.5rem;
+
+  --container-wrapper: 110rem;
+  --container-paragraph: 60rem;
+
+  --grid-template-columns-fluid: repeat(auto-fit, minmax(23em, 1fr));
+
+  --text-home-h1: 8rem;
+  --text-home-h1-big: 8rem;
+
+  --background-image-gradient-radial: radial-gradient(var(--tw-gradient-stops));
+
+  --animate-infinite-scroll: infinite-scroll 2s linear infinite;
+
+  @keyframes infinite-scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
 }
 
 canvas {

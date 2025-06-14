@@ -1,5 +1,13 @@
 import { motion } from "framer-motion";
 
+import { Inter } from "next/font/google";
+
+const inter = Inter({
+  weight: ["400", "500", "600", "700"],
+  subsets: ["latin"],
+  variable: "--font-orbitron",
+});
+
 export default function H3({ children, className }) {
   const extras = className ? className : "";
 
@@ -7,7 +15,8 @@ export default function H3({ children, className }) {
     <motion.h3
       className={
         `text-xl md:text-2xl lg:text-3xl leading-relaxed mb-4 font-black text-white ` +
-        extras
+        extras +
+        inter.className
       }
       initial={{ opacity: 0, y: 25 }}
       whileInView={{

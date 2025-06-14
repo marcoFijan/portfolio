@@ -7,7 +7,7 @@ export default function NextLink({ text, href, cta, lightBg }) {
         id="button"
         className={`text-[#ffffff] font-bold px-8 py-3 mt-4 inline-block text-center mx-auto place-self-center rounded-full transition duration-500 ease-in-out ${
           cta
-            ? "bg-gradient-to-r from-[#2E86AB] to-[#67b6dd]"
+            ? "bg-linear-to-r from-[#2E86AB] to-[#67b6dd]"
             : "text-accentColor"
         }`}
         href={href}

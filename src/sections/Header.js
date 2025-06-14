@@ -118,7 +118,7 @@ export default function Header() {
                   : "max-h-0 overflow-hidden pointer-events-none"
               }`}
             >
-              <div className="flex h-full min-h-min w-full flex-col justify-end  overflow-y-auto overflow-x-hidden max-w-screen bg-colorBg px-wrapperMobile py-8">
+              <div className="flex h-full min-h-min w-full flex-col justify-end  overflow-y-auto overflow-x-hidden max-w-screen bg-color-bg px-wrapperMobile py-8">
                 {/* Logo */}
                 <NextLink
                   href="/"
@@ -169,18 +169,22 @@ export default function Header() {
         ) : (
           <>
             <nav className="w-max justify-self-center hidden lg:block relative z-50 desktop">
-              <ul className="backdrop-blur-[15px] bg-colorBg/[0.5] gap-4 rounded justify-between items-center px-4 py-3 flex relative border-white border-opacity-30 border transition-all duration-300">
+              <ul className="backdrop-blur-[15px] bg-color-glass/[0.5] gap-4 rounded-lg justify-between items-center px-4 py-3 flex relative transition-all duration-300 border border-white/[0.5]">
                 {links.links.map((link) => (
                   <li
                     key={link.name}
-                    className="text-white py-1 px-3 rounded cursor-pointer transition-all duration-500"
+                    className="text-white py-1 px-3 rounded-full cursor-pointer transition-all duration-500"
                   >
-                    <NextLink href={link.url} title={"Ga naar " + link.name}>
+                    <NextLink
+                      href={link.url}
+                      title={"Ga naar " + link.name}
+                      noBubble
+                    >
                       <span
-                        className="w-6 h-6 mr-1 object-contain fill-white stroke-white"
+                        className="w-6 h-6 mr-1 object-contain fill-white stroke-white text-shadow-lg"
                         dangerouslySetInnerHTML={{ __html: link.svg }}
                       />
-                      <span>{link.name}</span>
+                      <span className="text-shadow-lg">{link.name}</span>
                     </NextLink>
                   </li>
                 ))}
@@ -188,12 +192,24 @@ export default function Header() {
             </nav>
             <ul className="flex gap-2 justify-self-end relative z-50">
               <li>
-                <NextLink href="/" className={"group"} type={"secondary"} arrow>
+                <NextLink
+                  href="/"
+                  className={"group"}
+                  type={"navSocial"}
+                  arrow
+                  noBubble
+                >
                   <span>LinkedIn</span>
                 </NextLink>
               </li>
               <li>
-                <NextLink href="/" className={"group"} type={"secondary"} arrow>
+                <NextLink
+                  href="/"
+                  className={"group"}
+                  type={"navSocial"}
+                  arrow
+                  noBubble
+                >
                   <span>Github</span>
                 </NextLink>
               </li>

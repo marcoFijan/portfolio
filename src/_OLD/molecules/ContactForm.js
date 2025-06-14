@@ -59,12 +59,12 @@ export default function ContactForm({ darkBackground }) {
         rows="4"
         cols="50"
         required
-        // className="mb-8 mt-2 rounded-md shadow-inputField bg-bgColorLight p-2 valid:shadow-inputFieldValid focus:bg-white focus:border-2 focus:outline-none focus:border-accentColor focus:p-2 box-border"
+        // className="mb-8 mt-2 rounded-md shadow-inputField bg-bgColorLight p-2 valid:shadow-inputFieldValid focus:bg-white focus:border-2 focus:outline-hidden focus:border-accentColor focus:p-2 box-border"
         className={`mb-8 mt-2 rounded-md ${
           darkBackground
             ? "shadow-inputField bg-bgColorLight valid:shadow-inputFieldDarkValid "
             : "shadow-inputField bg-bgColorLight valid:shadow-inputFieldValid "
-        } p-2 border-2 border-white focus:bg-white focus:border-2 focus:outline-none focus:border-accentColor box-border`}
+        } p-2 border-2 border-white focus:bg-white focus:border-2 focus:outline-hidden focus:border-accentColor box-border`}
       ></textarea>
       <Button
         text={"Verstuur bericht"}

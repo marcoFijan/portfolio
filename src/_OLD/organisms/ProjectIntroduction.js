@@ -18,7 +18,7 @@ export default function ProjectIntroduction({
           <P text={introduction} darkBackground={darkBackground} />
           <P text={introduction2} darkBackground={darkBackground} />
         </section>
-        <div className="bg-CTAColor flex-grow min-w-[20rem]">
+        <div className="bg-CTAColor grow min-w-[20rem]">
           <p>placeholder</p>
         </div>
       </section>

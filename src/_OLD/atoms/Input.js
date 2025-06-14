@@ -9,7 +9,7 @@ export default function Input({ type, darkBackground }) {
         darkBackground
           ? "shadow-inputField bg-bgColorLight valid:shadow-inputFieldDarkValid "
           : "shadow-inputField bg-bgColorLight valid:shadow-inputFieldValid "
-      } p-2 border-2 border-white focus:bg-white focus:border-2 focus:outline-none focus:border-accentColor box-border`}
+      } p-2 border-2 border-white focus:bg-white focus:border-2 focus:outline-hidden focus:border-accentColor box-border`}
     />
   );
 }

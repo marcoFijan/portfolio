@@ -27,7 +27,7 @@ export default function Home() {
       </Head>
       <Header />
       <main className={`${montserrat.className}`}>
-        {/* <div className="bg-gradient-to-br from-green-50 to-violet-200 w-full h-screen absolute top-0 left-0" /> */}
+        {/* <div className="bg-linear-to-br from-green-50 to-violet-200 w-full h-screen absolute top-0 left-0" /> */}
         {/* <div
           id="background"
           className="w-full h-screen absolute top-0 left-0 bg-[#000000]"

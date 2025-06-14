@@ -14,10 +14,10 @@ export default function Letter({ char, letterHover }) {
       ref={ref}
       {...letterHover}
       animate={{
-        color: isInView ? "#e57d1c" : "#70828e",
+        color: isInView ? "#e57d1c" : "#ffffff30",
       }}
       transition={{ duration: 0.3 }}
-      className="inline-block empty:w-4"
+      className="inline-block empty:min-w-12"
     >
       {char}
     </motion.span>

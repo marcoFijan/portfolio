@@ -55,7 +55,7 @@ export default function Header() {
     //       />
     //       <label
     //         htmlFor="hamburgerMenu"
-    //         className="fixed flex items-center justify-center w-16 h-16 bg-gradient-to-br from-bgColorDarkLight via-bgColorDarkDark to-bgColorDarkLight rounded-lg cursor-pointer bottom-8 right-4 md:hidden"
+    //         className="fixed flex items-center justify-center w-16 h-16 bg-linear-to-br from-bgColorDarkLight via-bgColorDarkDark to-bgColorDarkLight rounded-lg cursor-pointer bottom-8 right-4 md:hidden"
     //         id="hamburgerMenu"
     //       >
     //         <div className="" id="menuButtonBurger"></div>
@@ -67,7 +67,7 @@ export default function Header() {
     //         <li className="transition">
     //           <Link
     //             id="button"
-    //             className="text-white font-bold px-4 py-1 inline-block text-center place-self-center hover:underline transition duration-500 ease-in-out bg-gradient-to-br from-bgColorDarkLight via-bgColorDarkDark to-bgColorDarkLight border-y-white box-border border-y-1 md:border-y-0 md:border-y-transparent md:from-transparent md:via-transparent md:to-transparent bg-transparent"
+    //             className="text-white font-bold px-4 py-1 inline-block text-center place-self-center hover:underline transition duration-500 ease-in-out bg-linear-to-br from-bgColorDarkLight via-bgColorDarkDark to-bgColorDarkLight border-y-white box-border border-y-1 md:border-y-0 md:border-y-transparent md:from-transparent md:via-transparent md:to-transparent bg-transparent"
     //             href={"/"}
     //           >
     //             Hoofdpagina
@@ -76,7 +76,7 @@ export default function Header() {
     //         <li className="transition">
     //           <Link
     //             id="button"
-    //             className="text-white font-bold px-4 py-1 inline-block text-center place-self-center hover:underline transition duration-500 ease-in-out bg-gradient-to-br from-bgColorDarkLight via-bgColorDarkDark to-bgColorDarkLight border-y-white box-border border-y-1 md:border-y-0 md:border-y-transparent md:from-transparent md:via-transparent md:to-transparent bg-transparent"
+    //             className="text-white font-bold px-4 py-1 inline-block text-center place-self-center hover:underline transition duration-500 ease-in-out bg-linear-to-br from-bgColorDarkLight via-bgColorDarkDark to-bgColorDarkLight border-y-white box-border border-y-1 md:border-y-0 md:border-y-transparent md:from-transparent md:via-transparent md:to-transparent bg-transparent"
     //             href={"/projects"}
     //           >
     //             Projecten
@@ -85,7 +85,7 @@ export default function Header() {
     //         <li className="transition">
     //           <Link
     //             id="button"
-    //             className="text-white font-bold px-4 py-1 inline-block text-center place-self-center hover:underline transition duration-500 ease-in-out bg-gradient-to-br from-bgColorDarkLight via-bgColorDarkDark to-bgColorDarkLight border-y-white box-border border-y-1 md:border-y-0 md:border-y-transparent md:from-transparent md:via-transparent md:to-transparent bg-transparent"
+    //             className="text-white font-bold px-4 py-1 inline-block text-center place-self-center hover:underline transition duration-500 ease-in-out bg-linear-to-br from-bgColorDarkLight via-bgColorDarkDark to-bgColorDarkLight border-y-white box-border border-y-1 md:border-y-0 md:border-y-transparent md:from-transparent md:via-transparent md:to-transparent bg-transparent"
     //             href={"https://github.com/marcoFijan"}
     //           >
     //             Githubpagina

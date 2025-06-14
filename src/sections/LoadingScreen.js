@@ -36,7 +36,7 @@ export default function ingScreen() {
           <div
             style={{ width: `${roundedProgress}%` }}
             className={
-              "absolute h-3 bg-gradient-to-br from-CTAColorDark to-CTAColorLight rounded-full"
+              "absolute h-3 bg-linear-to-br from-CTAColorDark to-CTAColorLight rounded-full"
             }
           ></div>
         </div>

@@ -5,7 +5,7 @@ export default function Button({ text, type, cta, url }) {
 
   // Define the conditional class name based on 'cta'
   const ctaClass = cta
-    ? "bg-gradient-to-r from-[#2E86AB] to-[#67b6dd]"
+    ? "bg-linear-to-r from-[#2E86AB] to-[#67b6dd]"
     : "text-accentColor";
 
   const hoverClasses = "hover:outline-1 hover:outline-white hover:bg-red-500";

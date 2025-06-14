@@ -9,7 +9,7 @@ export default function Input({ type, value, label }) {
 
   // Focus classes
   const focusClasses =
-    "focus:bg-white focus:text-colorBg focus:border-1 focus:outline-none focus:border-yellow-600 focus:rounded-xl";
+    "focus:bg-white focus:text-color-bg focus:border-1 focus:outline-hidden focus:border-yellow-600 focus:rounded-xl";
 
   // Hover classes
   const hoverClasses = "hover:border-yellow-600";
