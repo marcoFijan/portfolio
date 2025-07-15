@@ -1,12 +1,17 @@
 import { motion } from "framer-motion";
 
-export default function P({ children, customClasses }) {
+export default function P({ children, className, intro }) {
   return (
     <motion.p
-      className={
-        "text-white text-xl mb-4 font-light opacity-30 max-w-paragraph " +
-        customClasses
-      }
+      className={`mb-4 font-light opacity-80    
+        ${
+          className
+            ? className
+            : intro
+            ? "text-white text-lg md:text-xl lg:text-2xl max-w-[70rem]"
+            : "text-white text-md md:text-lg lg:text-xl max-w-paragraph"
+        }
+      `}
       initial={{ opacity: 0, y: 25 }}
       whileInView={{
         opacity: 1,

@@ -104,7 +104,6 @@ export default function Footer({ homePage }) {
   return (
     <>
       <footer className={`${montserrat.className} h-screen`}>
-        <Divider />
         <div className="w-full py-8">{footerContent}</div>
       </footer>
     </>

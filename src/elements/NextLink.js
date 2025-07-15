@@ -13,34 +13,36 @@ export default function NextLink({
 }) {
   const bubbleHover = {
     whileHover: {
-      scale: 1.05,
+      scale: 1.06,
       transition: {
         type: "spring",
-        stiffness: 300,
-        damping: 10,
+        stiffness: 500,
+        damping: 8,
       },
     },
     transition: { duration: 0.3 },
   };
   // Static classes
   const baseClasses =
-    "cursor-pointer flex transition-all ease-ease duration-500 items-center gap-1 text-lg xl:text-xl rounded-[0.5rem] ";
+    "cursor-pointer flex transition-all ease-ease duration-500 items-center gap-1 text-md xl:text-lg rounded-2xl uppercase   ";
 
   // Optionally, handle conditional classes based on 'cta' or 'className' prop
   const typeClasses =
     type === "primary"
-      ? "w-max backdrop-blur-[15px] hover:bg-white hover:text-color-accent-dark bg-color-accent-dark text-white h-[50px] px-8 py-8 "
+      ? "w-max backdrop-blur-[15px] hover:bg-color-accent hover:text-color-bg-top bg-transparent h-[50px] px-6 py-8 border-color-accent border-[2px] text-color-accent  "
       : type === "secondary"
-      ? "w-max backdrop-blur-[15px] hover:scale-[105%] hover:bg-white hover:text-color-accent-dark bg-color-glass/[0.05] text-white h-[50px] px-8 py-8 "
+      ? "w-max backdrop-blur-[15px] hover:scale-[105%] hover:bg-white hover:text-color-bg-top bg-color-glass/[0.05] border-color-white border-[2px] text-white h-[50px] px-6 py-8 "
+      : type === "submit"
+      ? "w-max backdrop-blur-[15px] hover:bg-color-accent hover:text-color-bg-top bg-transparent h-[50px] px-6 py-8 border-color-accent border-[2px] text-color-accent  "
       : type === "nav"
       ? "w-full text-white"
       : type === "navSocial"
       ? "w-max backdrop-blur-[15px] hover:text-color-accent fill-white hover:fill-color-accent bg-transparent h-[50px] border border-white/[0] border-opacity-0 px-8 py-8 text-white"
-      : "text-white"; // Example for 'cta' condition
+      : "text-white";
   const combinedClassNames = `${baseClasses} ${typeClasses} ${className}`;
 
   return (
-    <motion.div {...(!noBubble ? bubbleHover : {})}>
+    <motion.div className="w-max" {...(!noBubble ? bubbleHover : {})}>
       {href ? (
         <Link
           id="button"
@@ -59,7 +61,12 @@ export default function NextLink({
           )}
         </Link>
       ) : (
-        <button id="button" className={combinedClassNames} onClick={onClick}>
+        <button
+          id="button"
+          className={combinedClassNames}
+          onClick={onClick}
+          type="submit"
+        >
           {children}
           {arrow && (
             <svg

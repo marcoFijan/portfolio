@@ -29,7 +29,7 @@ export default function H1({ children, chapeau, className, big }) {
             inter.className
           } ${
             big
-              ? "text-home-h1 xl:text-home-h1-big text-transparent bg-clip-text font-semibold bg-gradient-to-br from-color-accent-light to-color-accent"
+              ? "text-[3.5rem] md:text-home-h1 xl:text-home-h1-big text-transparent bg-clip-text font-semibold bg-gradient-to-br from-color-accent-light to-color-accent"
               : "text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-transparent bg-clip-text font-semibold bg-gradient-to-br from-white to-white"
           }` + className
         }

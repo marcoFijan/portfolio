@@ -209,8 +209,8 @@ export default function Laptop({ mobile, props }) {
 
           // Check if screen width crosses 1000px (either direction)
           if (
-            (previousWidth <= 1000 && currentWidth > 1000) ||
-            (previousWidth > 1000 && currentWidth <= 1000)
+            (previousWidth <= 1200 && currentWidth > 1200) ||
+            (previousWidth > 1200 && currentWidth <= 1200)
           ) {
             location.reload();
           }

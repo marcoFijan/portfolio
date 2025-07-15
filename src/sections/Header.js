@@ -1,4 +1,3 @@
-import { Montserrat } from "next/font/google";
 import { useState, useEffect } from "react";
 import NextLink from "@/elements/NextLink";
 import Link from "next/link";
@@ -6,13 +5,7 @@ import Container from "../sections/Container.js";
 import LogoImg from "../../public/images/Logo.svg";
 import IconHome from "../../public/images/icons/iconHome.svg";
 
-const montserrat = Montserrat({
-  weight: ["400", "700", "900"],
-  subsets: ["latin"],
-  variable: "--font-montserrat",
-});
-
-export default function Header() {
+export default function Header({ home = false }) {
   const [screenSize, setScreenSize] = useState(0);
   const [mobile, setMobile] = useState();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,7 +17,7 @@ export default function Header() {
       };
       window.addEventListener("resize", updateDimension);
 
-      if (window.innerWidth <= 1024) {
+      if (window.innerWidth <= 1200) {
         setMobile(true);
       } else {
         setMobile(false);
@@ -70,7 +63,7 @@ export default function Header() {
   };
 
   return (
-    <header className="absolute w-full mt-4">
+    <header className={`${home ? "absolute" : "block mb-12"} w-full mt-4`}>
       <Container
         className={
           "box-border grid grid-cols-3 justify-between items-center z-10 left-0 top-0 w-screen"
@@ -89,19 +82,19 @@ export default function Header() {
             >
               <div className="relative flex h-full w-full items-center justify-center">
                 <div
-                  className={`h-hamburgerBar ease absolute w-full transform rounded-full transition duration-300 ${
+                  className={`h-hamburgerBar ease absolute w-full h-1 transform rounded-full transition duration-300 ${
                     isMenuOpen
                       ? "bg-white rotate-45"
                       : "bg-white top-0 group-hover:-translate-y-0.5"
                   }`}
                 />
                 <div
-                  className={`h-hamburgerBar bg-white ease absolute w-full transform rounded-full transition duration-300 ${
+                  className={`h-hamburgerBar bg-white ease absolute h-1 w-full transform rounded-full transition duration-300 ${
                     isMenuOpen ? "opacity-0" : ""
                   }`}
                 />
                 <div
-                  className={`h-hamburgerBar ease absolute w-full transform rounded-full transition duration-300 ${
+                  className={`h-hamburgerBar ease absolute w-full h-1 transform rounded-full transition duration-300 ${
                     isMenuOpen
                       ? "bg-white -rotate-45"
                       : "bg-white bottom-0 group-hover:translate-y-0.5"
@@ -118,7 +111,7 @@ export default function Header() {
                   : "max-h-0 overflow-hidden pointer-events-none"
               }`}
             >
-              <div className="flex h-full min-h-min w-full flex-col justify-end  overflow-y-auto overflow-x-hidden max-w-screen bg-color-bg px-wrapperMobile py-8">
+              <div className="flex h-full min-h-min w-full flex-col justify-end  overflow-y-auto overflow-x-hidden max-w-screen bg-color-glass/[0.99] px-wrapperMobile py-8">
                 {/* Logo */}
                 <NextLink
                   href="/"
@@ -129,7 +122,7 @@ export default function Header() {
                 </NextLink>
 
                 {/* Navigation links */}
-                <nav className="w-full h-screen top-0 left-0 z-50 lg:hidden">
+                <nav className="w-full h-screen top-0 left-0 z-50 ">
                   <ul>
                     {links.links.map((link) => (
                       <li key={link.name} className="w-full">
@@ -169,7 +162,7 @@ export default function Header() {
         ) : (
           <>
             <nav className="w-max justify-self-center hidden lg:block relative z-50 desktop">
-              <ul className="backdrop-blur-[15px] bg-color-glass/[0.5] gap-4 rounded-lg justify-between items-center px-4 py-3 flex relative transition-all duration-300 border border-white/[0.5]">
+              <ul className="backdrop-blur-[15px] bg-black/[0.5] gap-4 rounded-2xl justify-between items-center px-4 py-3 flex relative transition-all duration-300 border border-white/[0.5]">
                 {links.links.map((link) => (
                   <li
                     key={link.name}
@@ -181,7 +174,7 @@ export default function Header() {
                       noBubble
                     >
                       <span
-                        className="w-6 h-6 mr-1 object-contain fill-white stroke-white text-shadow-lg"
+                        className="w-6 h-6 mr-1 object-contain fill-white stroke-white text-shadow-sm"
                         dangerouslySetInnerHTML={{ __html: link.svg }}
                       />
                       <span className="text-shadow-lg">{link.name}</span>

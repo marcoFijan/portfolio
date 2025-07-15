@@ -25,12 +25,8 @@
     "postcss": "^8.4.31",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-pdf": "^7.5.1",
-    "sharp": "^0.33.0",
+    "react-pdf": "^10.0.1",
     "tailwindcss": "^4.1.4",
     "three": "^0.158.0"
-  },
-  "devDependencies": {
-    "sass": "^1.71.1"
   }
 }
