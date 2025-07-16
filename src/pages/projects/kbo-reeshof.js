@@ -46,6 +46,13 @@ export default function KBOTilburgReeshof() {
             </P>
           </article>
           <section className="w-full lg:max-w-[80%] mx-auto ">
+            <Img
+              src="/images/KBOReeshof/HomeHD.png"
+              alt="KBO Reeshof Menu uitgeklapt"
+              className="block object-cover aspect-video w-full"
+            />
+          </section>
+          <section className="grid grid-cols-1 lg:grid-cols-2 gap-y-12 justify-center  items-center pt-20">
             <div className={` relative m-8 ${afterClasses} ${beforeClasses}`}>
               <div
                 className={`${baseClasses} ${borderClasses} ${shadowClasses}`}
@@ -113,13 +120,11 @@ export default function KBOTilburgReeshof() {
                 </Splide>
               </div>
             </div>
-          </section>
-          <section className="grid grid-cols-1 md:grid-cols-2 gap-y-12 justify-center  items-center pt-20">
-            {/* <P className="max-w-1/2 text-color-accent text-lg md:text-xl lg:text-2xl justify-self-center text-center">
+            <P className="max-w-1/2 text-color-accent text-lg md:text-xl lg:text-2xl justify-self-center text-center">
               Veel afbeeldingen, het gebruik van skeumorphisme en grote,
               duidelijke knoppen ondersteunen ouderen bij het begrijpen van de
               interactie op de website
-            </P> */}
+            </P>
             <P className="max-w-1/2 text-color-accent text-lg md:text-xl lg:text-2xl justify-self-center text-center">
               Ouderen kunnen gebruikmaken van diverse stapsgewijze instructies
               om vertrouwd te raken met de belangrijkste functies van de website
@@ -253,7 +258,7 @@ export default function KBOTilburgReeshof() {
             </Splide> */}
           </section>
           <Divider />
-          <article className="mb-24 grid grid-cols-1 gap-12 gap-y-32 md:grid-cols-2 justify-center  items-center pt-20">
+          <article className="mb-24 grid grid-cols-1 gap-12 gap-y-32 lg:grid-cols-2 justify-center  items-center pt-20">
             <section>
               <H2 chapeau="Het probleem concreet beschrijven">
                 Probleemstelling
@@ -615,8 +620,10 @@ export default function KBOTilburgReeshof() {
             <section className="lg:col-span-2">
               <H2 chapeau="De Design Rationale voor de klant">Eindproduct</H2>
               <iframe
-                src={iframeSrc}
-                className="h-[17rem] md:h-[37rem] w-full shadow-button rounded-lg border-4 border-black border-box"
+                src={
+                  "https://drive.google.com/file/d/1iXpgTq90AxV9-KqkzIO90jlGQBFBjct8/preview"
+                }
+                className="h-[17rem] md:h-[37rem] w-full shadow-button rounded-2xl border-1 border-white border-box"
               />
             </section>
           </article>
