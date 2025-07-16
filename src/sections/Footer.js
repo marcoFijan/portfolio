@@ -1,5 +1,3 @@
-import { Montserrat } from "next/font/google";
-
 import Image from "next/image";
 import NextLink from "../elements/NextLink.js";
 import P from "../elements/P.js";
@@ -9,12 +7,6 @@ import Container from "./Container.js";
 import Divider from "../elements/Divider.js";
 
 import FooterImg from "../../public/images/marcoPointing.png";
-
-const montserrat = Montserrat({
-  weight: ["400", "500", "700", "900"],
-  subsets: ["latin"],
-  variable: "--font-montserrat",
-});
 
 export default function Footer({ homePage }) {
   const footerContent = (
@@ -103,7 +95,13 @@ export default function Footer({ homePage }) {
   );
   return (
     <>
-      <footer className={`${montserrat.className} h-screen`}>
+      <footer
+        className={
+          homePage
+            ? ""
+            : "mx-4 px-8 py-16 mb- w-[100%-1rem] rounded-t-2xl border-b-0 border-white/[0.5] border-1 bg-gradient-to-bl from-color-bg-top via-color-bg-bottom to-color-bg-top"
+        }
+      >
         <div className="w-full py-8">{footerContent}</div>
       </footer>
     </>

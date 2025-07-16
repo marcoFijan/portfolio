@@ -7,13 +7,15 @@ const inter = Inter({
   variable: "--font-orbitron",
 });
 
-export default function H3({ children, className }) {
+export default function H3({ children, className, noMarginTop = false }) {
   const extras = className ? className : "";
 
   return (
     <motion.h3
       className={
-        `text-xl md:text-2xl lg:text-3xl font-black leading-relaxed mb-4 text-white ` +
+        `text-xl md:text-2xl lg:text-3xl font-black leading-relaxed mb-2 text-color-accent ${
+          noMarginTop ? "mt-4" : "mt-12"
+        } ` +
         extras +
         inter.className
       }

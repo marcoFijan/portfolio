@@ -22,7 +22,7 @@ export default function H2({
             big
               ? "text-xl md:text-2xl lg:text-3xl"
               : "text-md md:text-lg lg:text-xl"
-          }  uppercase font-light text-shadow text-white/[0.5] text-opacity-50 pl-6 relative after:absolute after:content-[''] after:h-3 after:w-3 after:bg-white after:rounded-full after:left-0 after:top-1/2 after:-translate-y-1/2 after:opacity-100 after:border-1 after:border-black`}
+          }  uppercase font-light text-shadow text-white/[0.5] text-opacity-50 pl-6 relative after:absolute after:content-[''] after:h-3 after:w-3 after:bg-color-accent after:rounded-full after:left-0 after:top-1/2 w-max after:-translate-y-1/2 after:opacity-100 after:border-1 after:border-black`}
           initial={animateRight ? { x: 10000 } : { opacity: 0, y: 25 }}
           whileInView={{
             opacity: 1,

@@ -658,18 +658,11 @@ export default function MainCanvas({}) {
                   Bekijk het project
                 </NextLink>
               </SectionHome>
-              <SectionHome
-                amountOfPages={"1"}
-                className={"flex items-end flex-col"}
-              >
+              <SectionHome amountOfPages={"1"} className={"text-right"}>
                 <H2 chapeau={"Wedstrijd dashboard ontwerp + ontwikkeling"}>
                   GWOTY Award YoungOnes
                 </H2>
-                <NextLink
-                  className={"flex justify-end w-full "}
-                  type="primary"
-                  href="/projects/yo-gwoty"
-                >
+                <NextLink type="primary" href="/projects/yo-gwoty" alignRight>
                   Bekijk het project
                 </NextLink>
               </SectionHome>
@@ -689,20 +682,13 @@ export default function MainCanvas({}) {
                   Bekijk het project
                 </NextLink>
               </SectionHome>
-              <SectionHome
-                amountOfPages={"1"}
-                className={"flex items-end flex-col"}
-              >
+              <SectionHome amountOfPages={"1"} className={"text-end"}>
                 <H2
                   chapeau={"Andere projecten; Unity-engine, Blender, pure CSS"}
                 >
                   Andere projecten
                 </H2>
-                <NextLink
-                  className={"flex justify-end w-full "}
-                  type="primary"
-                  href="/projects"
-                >
+                <NextLink type="primary" href="/projects" alignRight>
                   Bekijk alle projecten
                 </NextLink>
               </SectionHome>
@@ -711,27 +697,10 @@ export default function MainCanvas({}) {
               <Container>
                 <H2 chapeau={"Ervaring"}></H2>{" "}
                 <div className="grid grid-cols-1 lg:grid-cols-2 w-full gap-4">
-                  <H2>Haastrecht</H2>
-                  <div className="mt-4 mb-20">
-                    <H3>UX Designer en Wordpress developer</H3>
-                    <P className="text-color-accent text-xl mb-3">
-                      Juni 2025 - heden
-                    </P>
-                    <small></small>
-                    <ul className="list-disc text-white opacity-70 ml-4">
-                      <li>
-                        Ondersteuning en onderhoud Wordpress website
-                        <i> haastrecht.huisarts-plus.nl</i>
-                      </li>
-                      <li>Start met herontwerp met betere UX</li>
-                    </ul>
-                  </div>
-                </div>
-                <div className="grid grid-cols-1 lg:grid-cols-2 w-full gap-4">
                   <H2>New Orange</H2>
                   <div className="mt-4 mb-20">
-                    <H3>Frontend Developer</H3>
-                    <P className="text-color-accent text-xl mb-3">
+                    <H3 noMarginTop>Frontend Developer</H3>
+                    <P className="text-white text-xl mb-3">
                       September 2023 - April 2025
                     </P>
                     <small></small>
@@ -780,14 +749,25 @@ export default function MainCanvas({}) {
                           <i> werkenbijflevoziekenhuis.nl</i>
                         </li>
                       </li>
+                      <li>
+                        Human Digital
+                        <li className="ml-4 opacity-65">
+                          Ontwikkeling Kentico componenten
+                          <i> humandigital.nl</i>
+                        </li>
+                        <li className="ml-4 opacity-65">
+                          Frontend Ontwikkeling Umbraco componenten
+                          <i> blikvangersontwerp.nl</i>
+                        </li>
+                      </li>
                     </ul>
                   </div>
                 </div>
                 <div className="grid grid-cols-1 lg:grid-cols-2 w-full gap-4">
                   <H2>YoungOnes</H2>
                   <div className="mt-4 mb-20">
-                    <H3>Frontend Developer</H3>
-                    <P className="text-color-accent text-xl mb-3">
+                    <H3 noMarginTop>Frontend Developer</H3>
+                    <P className="text-white text-xl mb-3">
                       September 2022 - Februari 2023
                     </P>
                     <ul className="list-disc text-white opacity-70 ml-4">
@@ -808,8 +788,8 @@ export default function MainCanvas({}) {
                 <div className="grid grid-cols-1 lg:grid-cols-2 w-full gap-4">
                   <H2>Silverfish</H2>
                   <div className="mt-4 mb-20">
-                    <H3>Wordpress Frontend Developer</H3>
-                    <P className="text-color-accent text-xl mb-3">
+                    <H3 noMarginTop>Wordpress Frontend Developer</H3>
+                    <P className="text-white text-xl mb-3">
                       November 2019 - Februari 2020
                     </P>
                     <ul className="list-disc text-white opacity-70 ml-4">
@@ -825,47 +805,16 @@ export default function MainCanvas({}) {
                   </div>
                 </div>
                 <Divider />
-                <Footer></Footer>
+                <Footer homePage />
               </Container>
             </section>
-            <SectionHome amountOfPages={"0.5"}>
-              <Divider />
-              <H2 chapeau={"Ervaring"}></H2>
-              <div className="grid grid-cols-1 lg:grid-cols-2 w-full gap-4">
-                <H2>Human Digital</H2>
-                <div className="mt-4 mb-20">
-                  <H3>Frontend Developer</H3>
-                  <P>September 2023 - April 2025</P>
-                  <small></small>
-                  <ul className="list-disc text-white opacity-50 ml-4">
-                    <li>
-                      Ondersteuning en ontwikkeling voor diverse klanten met
-                      Kentico of Umbraco CMS
-                    </li>
-                    <li>Zonnebloem - Ontwikkeling 75jaar.zonnebloem.nl</li>
-                    <li>
-                      Het Noord Brabants museum - Ontwikkeling en design
-                      grootsinbrabant.nl
-                    </li>
-                    <li>STL - Ontwikkeling Kentico herontwerp</li>
-                    <li>STL - Ontwikkeling Kentico Werknemersboekje</li>
-                    <li>
-                      GHZ - Frontend ontwikkeling Umbraco werken bij website
-                    </li>
-                    <li>
-                      Flevoziekenhuis - Frontend ontwikkeling Umbraco werken bij
-                      website
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </SectionHome>
-            <SectionHome amountOfPages={"1"}>
+
+            {/* <SectionHome amountOfPages={"1"}>
               <Divider />
               <H2 chapeau={"Interesse?"}>Neem contact met me op!</H2>
               <SectionContact /> <Divider />
-            </SectionHome>
-            <Footer></Footer>
+            </SectionHome> */}
+            {/* <Footer></Footer> */}
 
             {/* Footer [0.5 page] */}
             {/* <Footer homePage={true} /> */}

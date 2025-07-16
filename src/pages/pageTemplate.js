@@ -1,6 +1,7 @@
 import Head from "next/head";
 import MainCanvas from "../canvas/MainCanvas";
 import Header from "../sections/Header";
+import Footer from "@/sections/Footer";
 import { useRef, useEffect } from "react";
 
 export default function PageTemplate({ children, homePage = false }) {
@@ -29,6 +30,8 @@ export default function PageTemplate({ children, homePage = false }) {
 
         {children}
       </main>
+
+      {!homePage && <Footer />}
     </>
   );
 }
