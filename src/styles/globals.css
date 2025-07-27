@@ -87,6 +87,16 @@ canvas {
   scroll-behavior: smooth;
 }
 
+.splide .splide__arrow {
+  background-color: transparent;
+  border: 1px solid var(--color-color-accent);
+  top: calc(100% - 16px);
+}
+
+.splide .splide__arrow svg {
+  fill: var(--color-color-accent);
+}
+
 /* Header */
 header nav.desktop ul li:not(:first-child, :last-child) {
   position: relative;
