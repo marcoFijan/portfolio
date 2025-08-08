@@ -14,7 +14,7 @@ export default function Letter({ char, letterHover }) {
       ref={ref}
       {...letterHover}
       animate={{
-        color: isInView ? "#e57d1c" : "#ffffff30",
+        color: isInView ? "#e57d1c" : "#ffffff05",
       }}
       transition={{ duration: 0.3 }}
       className="inline-block empty:min-w-12 text-black"

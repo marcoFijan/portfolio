@@ -100,7 +100,7 @@ export default function MainCanvas({}) {
           </Scroll>
         </ScrollControls>
       </Canvas>
-      {/* <LoadingScreen /> */}
+      <LoadingScreen />
     </div>
   );
 }

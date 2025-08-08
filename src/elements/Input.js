@@ -1,7 +1,7 @@
 export default function Input({ type, value, label }) {
   // Regular styling
   const regularClasses =
-    "mb-8 mt-2 rounded-xl shadow-inputField text-white p-2 border-1 border-white";
+    "mb-8 mt-2 rounded-lg shadow-inputField text-white p-2 border-1 border-white";
 
   // Validation classes
   const validationClasses =
@@ -9,7 +9,7 @@ export default function Input({ type, value, label }) {
 
   // Focus classes
   const focusClasses =
-    "focus:bg-white focus:text-color-bg focus:border-1 focus:outline-hidden focus:border-yellow-600 focus:rounded-xl";
+    "focus:bg-white focus:text-color-bg focus:border-1 focus:outline-hidden focus:border-yellow-600 focus:rounded-lg";
 
   // Hover classes
   const hoverClasses = "hover:border-yellow-600";

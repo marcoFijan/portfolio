@@ -14,7 +14,9 @@ import Container from "../sections/Container.js";
 import Article from "../sections/Article.js";
 import Section from "../sections/Section.js";
 import SectionContact from "../sections/ContactSection.js";
+import Action from "@/elements/Action.js";
 import Footer from "../sections/Footer.js";
+import LoadingScreen from "@/collections/LoadingScreen.js";
 
 import H1 from "../elements/H1.js";
 import SubH1 from "../elements/SubH1.js";
@@ -89,9 +91,9 @@ export default function MainCanvas({}) {
           />
 
           <Laptop mobile={mobile} />
-          {/* <Suspense fallback={null}> */}
-          <Smartphone mobile={mobile} />
-          {/* </Suspense> */}
+          <Suspense fallback={null}>
+            <Smartphone mobile={mobile} />
+          </Suspense>
           <Scroll>
             {/* <Circle args={[1, 100, 200]} scale={5} position={[0, 0, -5]}>
               <MeshDistortMaterial
@@ -504,12 +506,13 @@ export default function MainCanvas({}) {
                       </div>
                     )}
                   </div>
+
                   <Image
-                    alt="Altje"
+                    alt="Marco Hero Image"
                     width={1000}
                     height={2000}
                     src="/images/marcoHero.png"
-                    className="-scale-x-100 grayscale-[95%] opacity-75 absolute top-[12vh] lg:top-[20vh] left-1/2 -translate-x-1/2 h-[40vh] border-b-2 border-white sm:h-[70vh] lg:h-[70vh] max-w-full sm:max-w-[70%] xl:max-w-full object-top object-cover xl:object-contain overflow-visible xl:object-bottom z-0"
+                    className="-scale-x-100 grayscale-[95%] opacity-75 absolute top-[12vh] lg:top-[20vh] left-1/2 -translate-x-1/2 h-[40vh] border-b-2 border-white sm:h-[70vh] lg:h-[70vh] max-w-full sm:max-w-[70%] xl:max-w-full object-top object-cover xl:object-contain overflow-visible xl:object-bottom z-0 fade-bottom"
                   />
                 </div>
                 <article className="pt-24 xl:absolute h-[70vh] sm:h-[50vh] left-0 bottom-0 xl:h-min xl:bottom-[unset] xl:pt-32 w-full xl:w-1/2 flex flex-col justify-center relative">
@@ -517,7 +520,22 @@ export default function MainCanvas({}) {
                     een wens, <br />
                     een product. <br />
                   </H1>
-                  <P>Daar help ik graag bij!</P>
+                  <P>
+                    Hi, ik ben Marco Fijan, een frontend developer met een
+                    passie voor pixel-perfect webapplicaties, betrouwbare code
+                    en gebruiksvriendelijke ervaringen.{" "}
+                  </P>
+                  <P
+                    className={
+                      "hidden lg:block text-white text-md md:text-lg lg:text-xl max-w-paragraph "
+                    }
+                  >
+                    Met een sterke focus op moderne webtechnologieën en
+                    gebruikerservaring (UX) design bouw ik schaalbare,
+                    toegankelijke en goed geteste interfaces die niet alleen
+                    goed werken, maar ook intuïtief aanvoelen.{" "}
+                  </P>
+
                   {/* <P>
                     Hoi! Ik ben een front-end ontwikkelaar met een scherp oog
                     voor UX en de kleinste details. Het bouwen van
@@ -525,14 +543,14 @@ export default function MainCanvas({}) {
                     ongeacht het budget, motiveert mij. Jouw online visie is
                     uniek, en samen zorgen we ervoor dat die tot leven komt!
                   </P> */}
-                  <div className="flex gap-x-4 gap-y-0.5 flex-wrap">
-                    <NextLink className={"mt-8 block"} type="primary">
+                  <Action>
+                    <NextLink className={"block"} type="primary">
                       Neem contact op!
                     </NextLink>
-                    <NextLink className={"mt-8 block"} type="secondary">
+                    <NextLink className={"block"} type="secondary">
                       Neem contact op!
                     </NextLink>
-                  </div>
+                  </Action>
                 </article>
 
                 {/* <article className="relative mt-auto pt-16 mb-32 flex flex-col justify-end z-10 w-full h-full pb-12 ">
@@ -629,17 +647,14 @@ export default function MainCanvas({}) {
 
               {/* Contactpage with a form [1.5 page] */}
               {/* <ContactSection homePage={true} /> */}
-              <SectionHome
-                amountOfPages={"1"}
-                className={"flex items-end flex-col"}
-              >
+              <SectionHome amountOfPages={"1"} className={"text-right"}>
                 <H2 chapeau={"Redesign website voor ouderen binnen budget"}>
                   KBO Tilburg Reeshof
                 </H2>
                 <NextLink
-                  className={"flex justify-end w-full "}
                   type="primary"
                   href="/projects/kbo-reeshof"
+                  alignRight
                 >
                   Bekijk het project
                 </NextLink>
@@ -686,11 +701,16 @@ export default function MainCanvas({}) {
                 <H2
                   chapeau={"Andere projecten; Unity-engine, Blender, pure CSS"}
                 >
+                  Andere projecten komen binnenkort
+                </H2>
+                {/* <H2
+                  chapeau={"Andere projecten; Unity-engine, Blender, pure CSS"}
+                >
                   Andere projecten
                 </H2>
                 <NextLink type="primary" href="/projects" alignRight>
                   Bekijk alle projecten
-                </NextLink>
+                </NextLink> */}
               </SectionHome>
             </Container>
             <section className="mx-4 px-8 pt-20 h-[200vh] w-[100%-1rem] rounded-t-2xl border-b-0 border-white/[0.5] border-1 bg-gradient-to-bl from-color-bg-top via-color-bg-bottom to-color-bg-top ">
@@ -808,20 +828,10 @@ export default function MainCanvas({}) {
                 <Footer homePage />
               </Container>
             </section>
-
-            {/* <SectionHome amountOfPages={"1"}>
-              <Divider />
-              <H2 chapeau={"Interesse?"}>Neem contact met me op!</H2>
-              <SectionContact /> <Divider />
-            </SectionHome> */}
-            {/* <Footer></Footer> */}
-
-            {/* Footer [0.5 page] */}
-            {/* <Footer homePage={true} /> */}
           </Scroll>
         </ScrollControls>
       </Canvas>
-      {/* <LoadingScreen /> */}
+      <LoadingScreen />
     </div>
   );
 }

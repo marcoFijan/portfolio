@@ -1,9 +1,9 @@
-import { motion } from "framer-motion";
-
-export default function P({ children, customClasses }) {
+export default function Divider({ children, customClasses, noMargin }) {
   return (
     <div
-      className={"mb-20 mt-20 rounded-full bg-white opacity-30 w-full h-1"}
+      className={`${
+        noMargin ? "my-0" : "my-20"
+      } rounded-full bg-color-border opacity-30 w-full h-1`}
     ></div>
   );
 }

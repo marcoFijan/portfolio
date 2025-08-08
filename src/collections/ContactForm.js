@@ -33,7 +33,7 @@ export default function ContactForm({ darkBackground }) {
       onSubmit={sendEmail}
       ref={form}
       autocomplete="off"
-      className="w-full max-w-xl  mx-auto flex flex-col p-8 rounded-xl mt-10"
+      className="w-full max-w-xl mx-auto flex flex-col p-8 rounded-xl mb-10 valid:border-1 valid:border-white invalid:border-1 invalid:border-color-border transition-all duration-500"
     >
       {/* <H3 className={"mb-4 "}>Voer hier je gegevens in</H3> */}
       <Input type={"text"} label={"Uw naam"} value={"name"} />

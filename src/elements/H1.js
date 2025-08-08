@@ -25,12 +25,12 @@ export default function H1({ children, chapeau, className, big }) {
       )}
       <motion.h1
         className={
-          `pt-2 pb-8 md:pb-8 lg:pb-12 leading-none sm:leading-[1]  ${
+          `pt-2 pb-8 md:pb-8 lg:pb-16 leading-none sm:leading-[1]  ${
             inter.className
           } ${
             big
-              ? "text-[3.5rem] md:text-home-h1 xl:text-home-h1-big text-transparent bg-clip-text font-semibold bg-gradient-to-br from-color-accent-light to-color-accent"
-              : "text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-transparent bg-clip-text font-semibold bg-gradient-to-br from-white to-white"
+              ? "text-[2.5rem] xs:text-[3.5rem] md:text-home-h1 xl:text-home-h1-big text-transparent bg-clip-text font-semibold bg-gradient-to-br from-color-accent-light to-color-accent"
+              : "text-shadow-color-bg-top text-shadow-sm text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-transparent bg-clip-text font-semibold bg-gradient-to-br from-white to-white"
           }` + className
         }
         initial={{ opacity: 0, y: 25 }}

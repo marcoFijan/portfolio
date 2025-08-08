@@ -17,9 +17,9 @@ export default function YoDashboardClients() {
   const borderClasses = "box-border rounded-2xl border-gray-300 border-0";
   const shadowClasses = "z-0 shadow-lg";
   const afterClasses =
-    "after:border-white after:border-1 after:rounded-2xl after:border-opacity-10 after:w-full after:-right-8 after:-bottom-8 after:absolute after:h-[100%] after:z-[-3]";
+    "after:border-1 after:rounded-2xl after:border-color-border after:w-full after:-right-8 after:-bottom-8 after:absolute after:h-[100%] after:z-[-3]";
   const beforeClasses =
-    "before:border-white before:border-1 before:rounded-2xl before:border-opacity-10 before:w-full before:-left-8 before:-top-8 before:absolute before:h-full before:z-[-3]";
+    "before:border-1 before:rounded-2xl before:border-color-border before:w-full before:-left-8 before:-top-8 before:absolute before:h-full before:z-[-3]";
 
   return (
     <PageTemplate>

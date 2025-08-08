@@ -30,21 +30,25 @@ export default function NextLink({
   // Optionally, handle conditional classes based on 'cta' or 'className' prop
   const typeClasses =
     type === "primary"
-      ? "w-max backdrop-blur-[15px] hover:bg-color-accent hover:text-color-bg-top bg-transparent h-[50px] px-6 py-8 border-color-accent border-[2px] text-color-accent  "
+      ? "w-max backdrop-blur-[15px] hover:bg-color-accent hover:text-color-bg-top bg-transparent h-[50px] p-4 sm:px-6 sm:py-8 border-color-accent border-[2px] text-color-accent  "
       : type === "secondary"
-      ? "w-max backdrop-blur-[15px] hover:scale-[105%] hover:bg-white hover:text-color-bg-top bg-color-glass/[0.05] border-color-white border-[2px] text-white h-[50px] px-6 py-8 "
+      ? "w-max backdrop-blur-[15px] hover:scale-[105%] hover:bg-white hover:text-color-bg-top bg-color-glass/[0.05] border-color-white border-[2px] text-white h-[50px] p-4 sm:px-6 sm:py-8"
       : type === "submit"
       ? "w-max backdrop-blur-[15px] hover:bg-color-accent hover:text-color-bg-top bg-transparent h-[50px] px-6 py-8 border-color-accent border-[2px] text-color-accent  "
       : type === "nav"
-      ? "w-full text-white"
+      ? "text-shadow-color-bg-top text-shadow-xs w-full group text-white !border-0 hover:fill-color-accent hover:stroke-color-accent hover:text-color-accent fill-white stroke-white "
+      : type === "logo"
+      ? "p-2 !m-0 bg-transparent hover:bg-color-bg-bottom/[0.3] flex justify-center items-center border-1 hover:border-color-border border-transparent"
       : type === "navSocial"
-      ? "w-max backdrop-blur-[15px] hover:text-color-accent fill-white hover:fill-color-accent bg-transparent h-[50px] border border-white/[0] border-opacity-0 px-8 py-8 text-white"
-      : "text-white";
-  const combinedClassNames = `${baseClasses} ${typeClasses} ${className}`;
+      ? "text-shadow-color-bg-top text-shadow-xs w-max backdrop-blur-[15px] hover:bg-color-bg-bottom/[0.3] hover:text-color-accent fill-white hover:fill-color-accent bg-transparent h-[50px] border-1 hover:border-color-border border-transparent px-8 py-8 text-white"
+      : "text-white relative z-10";
+  const combinedClassNames = `${baseClasses} ${typeClasses} ${className || ""}`;
 
   return (
     <motion.div
-      className={`w-max ${alignRight && "ml-auto"}`}
+      className={`${type === "nav" ? "w-full" : "w-max"} ${
+        alignRight && "ml-auto"
+      }`}
       {...(!noBubble ? bubbleHover : {})}
     >
       {href ? (

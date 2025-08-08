@@ -20,12 +20,12 @@ export default function LoadingScreen() {
     <section
       className={`${
         mounted
-          ? "animate-[becomeHidden_1s_ease-in-out_0s_normal_forwards]"
+          ? "animate-[becomeHidden_1s_ease-in-out_0s_normal_forwards] -z-50"
           : "z-50"
       } w-full h-screen bg-bgColorDark absolute top-0 left-0 flex items-center`}
     >
-      <section className="w-full p-articlePaddingMobile md:p-articlePadding max-w-xl mx-auto">
-        <H1 text="Welkom!" />
+      <section className="bg-gradient-to-bl from-color-bg-top to-color-bg-bottom fixed top-0 left-0 w-screen h-screen overflow-hidden">
+        <H1>Welkom!</H1>
 
         <H3 text={`Voortgang`} darkBackground={false} />
         <div className="w-full h-3 bg-bgColorLight shadow-inputField rounded-full relative mb-4">

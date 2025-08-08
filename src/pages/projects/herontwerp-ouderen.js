@@ -5,6 +5,7 @@ import H3 from "@/elements/H3.js";
 import P from "@/elements/P.js";
 import NextLink from "@/elements/NextLink";
 import Divider from "@/elements/Divider.js";
+import FlexArticle from "@/elements/FlexArticle.js";
 
 import Container from "@/sections/Container.js";
 import Img from "@/elements/Img.js";
@@ -17,14 +18,13 @@ export default function KBOTilburgReeshof() {
   const borderClasses = "box-border rounded-2xl border-gray-300 border-0";
   const shadowClasses = "z-0 shadow-lg";
   const afterClasses =
-    "after:border-white after:border-1 after:rounded-2xl after:border-opacity-10 after:w-full after:-right-8 after:-bottom-8 after:absolute after:h-[100%] after:z-[-3]";
+    "after:border-1 after:rounded-2xl after:border-color-border after:w-full after:-right-8 after:-bottom-8 after:absolute after:h-[100%] after:z-[-3]";
   const beforeClasses =
-    "before:border-white before:border-1 before:rounded-2xl before:border-opacity-10 before:w-full before:-left-8 before:-top-8 before:absolute before:h-full before:z-[-3]";
+    "before:border-1 before:rounded-2xl before:border-color-border before:w-full before:-left-8 before:-top-8 before:absolute before:h-full before:z-[-3]";
 
   return (
     <PageTemplate>
       <Container>
-        {" "}
         <H1
           big
           className={""}
@@ -44,6 +44,25 @@ export default function KBOTilburgReeshof() {
               ledenaantal. Ook willen ze dat hun website meer gebruikt wordt,
               omdat daar belangrijke informatie op staat.
             </P>
+            <div className="flex flex-wrap gap-y-4 gap-x-8 mt-8">
+              <NextLink
+                href="https://drive.google.com/file/d/1iXpgTq90AxV9-KqkzIO90jlGQBFBjct8/preview"
+                type="primary"
+                className="group"
+                arrow
+              >
+                Bekijk Design Rationale
+              </NextLink>
+              <NextLink
+                href="
+                https://amenable-sword-4e9.notion.site/Productbiografie-1edc81194bb144b2bddb7619a652b5b0"
+                arrow
+                className="group"
+                type="secondary"
+              >
+                Bekijk productbiografie
+              </NextLink>
+            </div>
           </article>
           <section className="w-full lg:max-w-[80%] mx-auto ">
             <Img
@@ -52,7 +71,12 @@ export default function KBOTilburgReeshof() {
               className="block object-cover aspect-video w-full"
             />
           </section>
-          <section className="grid grid-cols-1 lg:grid-cols-2 gap-y-12 justify-center  items-center pt-20">
+          <FlexArticle reverse smallMargin>
+            <P className="max-w-1/2 text-color-accent text-lg md:text-xl lg:text-2xl justify-self-center text-center">
+              Veel afbeeldingen, het gebruik van skeumorphisme en grote,
+              duidelijke knoppen ondersteunen ouderen bij het begrijpen van de
+              interactie op de website
+            </P>
             <div className={` relative m-8 ${afterClasses} ${beforeClasses}`}>
               <div
                 className={`${baseClasses} ${borderClasses} ${shadowClasses}`}
@@ -120,11 +144,8 @@ export default function KBOTilburgReeshof() {
                 </Splide>
               </div>
             </div>
-            <P className="max-w-1/2 text-color-accent text-lg md:text-xl lg:text-2xl justify-self-center text-center">
-              Veel afbeeldingen, het gebruik van skeumorphisme en grote,
-              duidelijke knoppen ondersteunen ouderen bij het begrijpen van de
-              interactie op de website
-            </P>
+          </FlexArticle>
+          <FlexArticle smallMargin>
             <P className="max-w-1/2 text-color-accent text-lg md:text-xl lg:text-2xl justify-self-center text-center">
               Ouderen kunnen gebruikmaken van diverse stapsgewijze instructies
               om vertrouwd te raken met de belangrijkste functies van de website
@@ -228,37 +249,10 @@ export default function KBOTilburgReeshof() {
                 </Splide>
               </div>
             </div>
+          </FlexArticle>
 
-            {/* <Splide
-              aria-label="My Favorite Images"
-              options={{
-                type: "loop",
-                gap: "0rem",
-                autoplay: true,
-                interval: 3000,
-                height: "min-content",
-              }}
-            >
-              <SplideSlide className="aspect-video h-min">
-                <Img
-                  noBorder
-                  src="/images/KBOReeshof/Menu.png"
-                  alt="KBO Reeshof Menu uitgeklapt"
-                  className="rounded-2xl border-white/[0.5] border-1 block object-contain aspect-video"
-                />
-              </SplideSlide>
-              <SplideSlide>
-                <Img
-                  noBorder
-                  src="/images/KBOReeshof/Menu.png"
-                  alt="KBO Reeshof Menu uitgeklapt"
-                  className="rounded-2xl border-white/[0.5] border-1"
-                ></Img>
-              </SplideSlide>
-            </Splide> */}
-          </section>
           <Divider />
-          <article className="mb-24 grid grid-cols-1 gap-12 gap-y-32 lg:grid-cols-2 justify-center  items-center pt-20">
+          <FlexArticle>
             <section>
               <H2 chapeau="Het probleem concreet beschrijven">
                 Probleemstelling
@@ -289,10 +283,55 @@ export default function KBOTilburgReeshof() {
               </P>
             </section>
             <Img
+              uniqueBg="bg-transparent"
+              className="w-[80%] max-w-[50rem] mx-auto"
               src="/images/KBOReeshof/KBOReeshofBuilding.png"
               alt="KBO Reeshof Gebouw"
               noBorder
             />
+          </FlexArticle>
+          <FlexArticle reverse alignBottom>
+            <section>
+              <H2 chapeau="Onderzoek doen naar de doelgroep">Verkennen</H2>
+              <P>
+                Voor er iets bedacht kan worden voor de doelgroep is het
+                belangrijk dat hier eerst globaal onderzoek naar gedaan wordt.
+                Hieronder vindt u mijn belangrijkste bevindingen uit het
+                onderzoek
+              </P>
+              <H3>Stakeholders</H3>
+              <P>
+                Op basis van mijn observaties bij het meedoen met activiteiten
+                en gesprekken met mijn kennispartner heb ik verschillende
+                stakeholders kunnen noteren. Elke stakeholder heeft zijn of haar
+                eigen wensen en belangen wanneer het gaat over een website van
+                een wijkgemeenschap. De belangrijkste stakeholders zijn de
+                ouderen en het wijkhuis, KBO Tilburg Reeshof. De ouderen moeten
+                zonder inspanning de website kunnen gebruiken en daarnaast moet
+                de website technisch ook haalbaar zijn voor KBO Tilburg Reeshof
+              </P>
+              <H3>Persona’s en Empathy Map</H3>
+              <P>
+                Om mijn resultaten over de doelgroep in kaart te brengen heb ik
+                persona’s opgesteld. Deze persona’s heb ik op kunnen stellen met
+                de onderzoeksmethodes ‘fly on the wall’, literatuuronderzoek
+                naar de doelgroep en enquêtes. Er werden voor deze
+                onderzoeksmethodes gekozen omdat je op deze manier veel
+                informatie kan verzamelen op een niet opdringerige manier.
+                Daarnaast kunnen ouderen ook zichzelf zijn en doen ze volledig
+                wat ze zelf willen zonder invloed van een ander. Vooral het ‘fly
+                on the wall’-onderzoek gaf mij veel inzichten. Zo bleek dat
+                ouderen erg verschillend zijn. Deze verschillen heb ik daarom
+                opgesplitst in 2 persona’s; Digibeet en enige ervaring.
+              </P>
+              <P>
+                Uit mijn vooronderzoek, voornamelijk ‘fly on the wall’, bleek
+                dat de doelgroep ook veel verschillende wensen, gedragingen en
+                gebruiken hebben. Om dit in kaart te stellen zet ik ook een
+                empathie map op. Hierin worden alle doelen en attitudes, ofwel
+                ‘pains’ en ‘gains’ overzichtelijk genoteerd
+              </P>
+            </section>
             <div className={` relative m-8 ${afterClasses} ${beforeClasses}`}>
               <div
                 className={`${baseClasses} ${borderClasses} ${shadowClasses}`}
@@ -335,166 +374,123 @@ export default function KBOTilburgReeshof() {
                 </Splide>
               </div>
             </div>
-
-            <section>
-              <H2 chapeau="Onderzoek doen naar de doelgroep">Verkennen</H2>
-              <P>
-                Voor er iets bedacht kan worden voor de doelgroep is het
-                belangrijk dat hier eerst globaal onderzoek naar gedaan wordt.
-                Hieronder vindt u mijn belangrijkste bevindingen uit het
-                onderzoek
-              </P>
-              <H3>Stakeholders</H3>
-              <P>
-                Op basis van mijn observaties bij het meedoen met activiteiten
-                en gesprekken met mijn kennispartner heb ik verschillende
-                stakeholders kunnen noteren. Elke stakeholder heeft zijn of haar
-                eigen wensen en belangen wanneer het gaat over een website van
-                een wijkgemeenschap. De belangrijkste stakeholders zijn de
-                ouderen en het wijkhuis, KBO Tilburg Reeshof. De ouderen moeten
-                zonder inspanning de website kunnen gebruiken en daarnaast moet
-                de website technisch ook haalbaar zijn voor KBO Tilburg Reeshof
-              </P>
-              <H3>Persona’s en Empathy Map</H3>
-              <P>
-                Om mijn resultaten over de doelgroep in kaart te brengen heb ik
-                persona’s opgesteld. Deze persona’s heb ik op kunnen stellen met
-                de onderzoeksmethodes ‘fly on the wall’, literatuuronderzoek
-                naar de doelgroep en enquêtes. Er werden voor deze
-                onderzoeksmethodes gekozen omdat je op deze manier veel
-                informatie kan verzamelen op een niet opdringerige manier.
-                Daarnaast kunnen ouderen ook zichzelf zijn en doen ze volledig
-                wat ze zelf willen zonder invloed van een ander. Vooral het ‘fly
-                on the wall’-onderzoek gaf mij veel inzichten. Zo bleek dat
-                ouderen erg verschillend zijn. Deze verschillen heb ik daarom
-                opgesplitst in 2 persona’s; Digibeet en enige ervaring.
-              </P>
-              <P>
-                Uit mijn vooronderzoek, voornamelijk ‘fly on the wall’, bleek
-                dat de doelgroep ook veel verschillende wensen, gedragingen en
-                gebruiken hebben. Om dit in kaart te stellen zet ik ook een
-                empathie map op. Hierin worden alle doelen en attitudes, ofwel
-                ‘pains’ en ‘gains’ overzichtelijk genoteerd
-              </P>
-            </section>
-            <section className="lg:col-span-2">
-              <H2 chapeau="De eisen voor het product vastleggen">Definiëren</H2>
-              <P>
-                Nu er een globaal beeld is van de doelgroep, is het van belang
-                om deze bevindingen concreet te noteren en te focussen op de
-                daadwerkelijke wensen en eisen van de doelgroep en het product
-              </P>
-              <section className="grid grid-cols-1 lg:grid-cols-2 gap-x-12">
-                <section>
-                  <H3>Belangrijkste inzichten</H3>
-                  <ul className="text-white md:text-md lg:text-lg max-w-paragraph list-disc ml-4 flex flex-col gap-2 font-light mb-8">
-                    <li>Ouderen hebben moeite met inloggen op websites</li>
-                    <li>
-                      Veel ouderen zijn gaan pinnen door corona; gebruik pincode
-                      gaat goed
-                    </li>
-                    <li>
-                      ‘Platte’ logo’s zijn over het algemeen onduidelijk voor
-                      ouderen
-                    </li>
-                    <li>
-                      Websites worden vrijwel alleen bezocht op grote schermen;
-                      laptop of computer
-                    </li>
-                    <li>
-                      Veel ouderen vinden donkere knoppen fijner dan fel
-                      gekleurde; beter contrastratio en daardoor beter leesbaar
-                    </li>
-                    <li>
-                      Ouderen zijn erg actief en proberen zoveel mogelijk te
-                      doen op een dag zolang er daglicht is; Gebruiken computers
-                      alleen in de ochtend of avond.
-                    </li>
-                    <li>
-                      Ouderen letten meer op pop-up berichten in tegenstelling
-                      tot jongeren
-                    </li>
-                    <li>Voorkom serifs en andere ingewikkelde lettertypen</li>
-                    <li>Gebruik een hoog contrastratio</li>
-                    <li>Voor de kleinste tekst minimaal 16 punten (1 rem)</li>
-                    <li>
-                      ‘Don’t make me think’ &amp; ‘Don’t make me remember’
-                    </li>
-                    <li>
-                      Design minimaal en toon niet te veel in 1 keer op het
-                      scherm
-                    </li>
-                    <li>
-                      Zorg voor duidelijke beschrijvende knoppen, niet alleen
-                      iconen
-                    </li>
-                    <li>
-                      Pastelkleuren, de kleur geel en de kleur felblauw zijn
-                      vermoeiend en slecht zichtbaar voor ouderen
-                    </li>
-                  </ul>
-                  <NextLink
-                    href="https://amenable-sword-4e9.notion.site/Interviews-Bag-tour-860c2c93b8564e1a9eac450c6341d45e"
-                    type="primary"
-                    className="group"
-                    arrow
-                  >
-                    Luister naar de interviews
-                  </NextLink>
-                </section>
-                <section>
-                  <H3>Belangrijkste eisen</H3>
-                  <ul className="text-white md:text-md lg:text-lg max-w-paragraph list-disc ml-4 flex flex-col gap-2 font-light mb-8">
-                    <li>De gebruiker kan zich opgeven voor activiteiten</li>
-                    <li>
-                      De gebruiker kan informatie, zoals contactinformatie en
-                      nieuws, vinden in het product
-                    </li>
-                    <li>
-                      Het product is toegespitst op de leden en gemeenshap van
-                      KBO Tilburg Reeshof
-                    </li>
-                    <li>
-                      Het product moet aantrekkelijk zijn voor de gebruiker,
-                      ofwel ouderen
-                    </li>
-                    <li>
-                      Het product moet zo min mogelijk jargon, Engelse en
-                      technische woorden bevatten
-                    </li>
-                    <li>
-                      Het product moet zo min mogelijk gele, lichtblauwe en
-                      pastelkleuren gebruiken
-                    </li>
-                    <li>
-                      Het product moet niet te veel informatie in 1 keer tonen;
-                      Inhoud opdelen in stappen
-                    </li>
-                    <li>
-                      Voor de kleinste tekst moet er minimaal 16 punten (1 rem)
-                      gebruikt worden, liefst meer
-                    </li>
-                    <li>
-                      Het product heeft verschillende ‘shortcuts’ om te
-                      navigeren van en naar pagina’s
-                    </li>
-                    <li>
-                      Het product moet gefocust zijn op een laptop en computer
-                      formaat (16:9)
-                    </li>
-                    <li>Het product betreft een digitaal prototype</li>
-                  </ul>
-                  <NextLink
-                    href="https://amenable-sword-4e9.notion.site/Interviews-Bag-tour-860c2c93b8564e1a9eac450c6341d45e"
-                    type="primary"
-                    className="group"
-                    arrow
-                  >
-                    Bekijk alle eisen
-                  </NextLink>
-                </section>
+          </FlexArticle>
+          <article className="w-full">
+            <H2 chapeau="De eisen voor het product vastleggen">Definiëren</H2>
+            <P>
+              Nu er een globaal beeld is van de doelgroep, is het van belang om
+              deze bevindingen concreet te noteren en te focussen op de
+              daadwerkelijke wensen en eisen van de doelgroep en het product
+            </P>
+            <section className="grid grid-cols-1 lg:grid-cols-2 gap-x-12">
+              <section>
+                <H3>Belangrijkste inzichten</H3>
+                <ul className="text-white md:text-md lg:text-lg max-w-paragraph list-disc ml-4 flex flex-col gap-2 font-light mb-8">
+                  <li>Ouderen hebben moeite met inloggen op websites</li>
+                  <li>
+                    Veel ouderen zijn gaan pinnen door corona; gebruik pincode
+                    gaat goed
+                  </li>
+                  <li>
+                    ‘Platte’ logo’s zijn over het algemeen onduidelijk voor
+                    ouderen
+                  </li>
+                  <li>
+                    Websites worden vrijwel alleen bezocht op grote schermen;
+                    laptop of computer
+                  </li>
+                  <li>
+                    Veel ouderen vinden donkere knoppen fijner dan fel
+                    gekleurde; beter contrastratio en daardoor beter leesbaar
+                  </li>
+                  <li>
+                    Ouderen zijn erg actief en proberen zoveel mogelijk te doen
+                    op een dag zolang er daglicht is; Gebruiken computers alleen
+                    in de ochtend of avond.
+                  </li>
+                  <li>
+                    Ouderen letten meer op pop-up berichten in tegenstelling tot
+                    jongeren
+                  </li>
+                  <li>Voorkom serifs en andere ingewikkelde lettertypen</li>
+                  <li>Gebruik een hoog contrastratio</li>
+                  <li>Voor de kleinste tekst minimaal 16 punten (1 rem)</li>
+                  <li>‘Don’t make me think’ &amp; ‘Don’t make me remember’</li>
+                  <li>
+                    Design minimaal en toon niet te veel in 1 keer op het scherm
+                  </li>
+                  <li>
+                    Zorg voor duidelijke beschrijvende knoppen, niet alleen
+                    iconen
+                  </li>
+                  <li>
+                    Pastelkleuren, de kleur geel en de kleur felblauw zijn
+                    vermoeiend en slecht zichtbaar voor ouderen
+                  </li>
+                </ul>
+                <NextLink
+                  href="https://amenable-sword-4e9.notion.site/Interviews-Bag-tour-860c2c93b8564e1a9eac450c6341d45e"
+                  type="primary"
+                  className="group"
+                  arrow
+                >
+                  Luister naar de interviews
+                </NextLink>
+              </section>
+              <section>
+                <H3>Belangrijkste eisen</H3>
+                <ul className="text-white md:text-md lg:text-lg max-w-paragraph list-disc ml-4 flex flex-col gap-2 font-light mb-8">
+                  <li>De gebruiker kan zich opgeven voor activiteiten</li>
+                  <li>
+                    De gebruiker kan informatie, zoals contactinformatie en
+                    nieuws, vinden in het product
+                  </li>
+                  <li>
+                    Het product is toegespitst op de leden en gemeenshap van KBO
+                    Tilburg Reeshof
+                  </li>
+                  <li>
+                    Het product moet aantrekkelijk zijn voor de gebruiker, ofwel
+                    ouderen
+                  </li>
+                  <li>
+                    Het product moet zo min mogelijk jargon, Engelse en
+                    technische woorden bevatten
+                  </li>
+                  <li>
+                    Het product moet zo min mogelijk gele, lichtblauwe en
+                    pastelkleuren gebruiken
+                  </li>
+                  <li>
+                    Het product moet niet te veel informatie in 1 keer tonen;
+                    Inhoud opdelen in stappen
+                  </li>
+                  <li>
+                    Voor de kleinste tekst moet er minimaal 16 punten (1 rem)
+                    gebruikt worden, liefst meer
+                  </li>
+                  <li>
+                    Het product heeft verschillende ‘shortcuts’ om te navigeren
+                    van en naar pagina’s
+                  </li>
+                  <li>
+                    Het product moet gefocust zijn op een laptop en computer
+                    formaat (16:9)
+                  </li>
+                  <li>Het product betreft een digitaal prototype</li>
+                </ul>
+                <NextLink
+                  href="https://amenable-sword-4e9.notion.site/Interviews-Bag-tour-860c2c93b8564e1a9eac450c6341d45e"
+                  type="primary"
+                  className="group"
+                  arrow
+                >
+                  Bekijk alle eisen
+                </NextLink>
               </section>
             </section>
+          </article>
+          <FlexArticle>
             <section>
               <H2 chapeau="Het genereren van mogelijke oplossingen">
                 Ideegeneratie
@@ -534,12 +530,14 @@ export default function KBOTilburgReeshof() {
               </NextLink>
             </section>
             <Img
+              uniqueBg="bg-transparent"
               noBorder
               className="max-w-[80%] mx-auto"
               src="/images/KBOReeshof/InspirationboardsHarrisProfile.png"
               alt="Harris Profiel"
             />
-            <Img src="/images/KBOReeshof/Concept.png" alt="Concept" />
+          </FlexArticle>
+          <FlexArticle reverse alignTop>
             <section>
               <H2 chapeau="Itereren op mogelijke oplossingen">
                 Conceptualiseren
@@ -586,6 +584,14 @@ export default function KBOTilburgReeshof() {
                 Bekijk alle concepten
               </NextLink>
             </section>
+            <Img
+              extraBorder
+              className=""
+              src="/images/KBOReeshof/Concept.png"
+              alt="Concept"
+            />
+          </FlexArticle>
+          <FlexArticle>
             <section>
               <H3>Vormgevingsregels</H3>
               <P>
@@ -617,15 +623,15 @@ export default function KBOTilburgReeshof() {
               src="/images/KBOReeshof/DesignRules.jpg"
               alt="Vormgevingsregels"
             />
-            <section className="lg:col-span-2">
-              <H2 chapeau="De Design Rationale voor de klant">Eindproduct</H2>
-              <iframe
-                src={
-                  "https://drive.google.com/file/d/1iXpgTq90AxV9-KqkzIO90jlGQBFBjct8/preview"
-                }
-                className="h-[17rem] md:h-[37rem] w-full shadow-button rounded-2xl border-1 border-white border-box"
-              />
-            </section>
+          </FlexArticle>
+          <article className="w-full mb-48">
+            <H2 chapeau="De Design Rationale voor de klant">Eindproduct</H2>
+            <iframe
+              src={
+                "https://drive.google.com/file/d/1iXpgTq90AxV9-KqkzIO90jlGQBFBjct8/preview"
+              }
+              className="h-[17rem] md:h-[37rem] w-full shadow-button rounded-2xl border-1 border-color-border border-box"
+            />
           </article>
         </section>
       </Container>

@@ -17,7 +17,7 @@
   --background-size-200\%: 200%;
 
   --color-color-bg: #030303;
-  --color-color-glass: #1d1f20;
+  /* --color-color-glass: #1d1f20; */
   --color-color-accent: #fb800d;
   --color-color-accent-dark: #c26004;
   --color-color-accent-light: #ffc793;
@@ -27,6 +27,10 @@
   --color-color-bg-bottom: #1d1f20;
   --color-white: #c8cfd6;
   --color-color-white-soft: #70828e;
+  --color-color-border: #303234;
+  --color-color-kbo-accent: #b92a3f;
+  --color-color-yo-accent: #10d1bb;
+  --color-color-sa-accent: #3b4982;
 
   --border-width-1: 1px;
 
@@ -52,10 +56,9 @@
   --grid-template-columns-fluid: repeat(auto-fit, minmax(23em, 1fr));
 
   --text-home-h1: 5rem;
-  --text-home-h1-big: 8rem;
+  --text-home-h1-big: 6.5rem;
 
   --background-image-gradient-radial: radial-gradient(var(--tw-gradient-stops));
-
   --animate-infinite-scroll: infinite-scroll 2s linear infinite;
 
   @keyframes infinite-scroll {
@@ -95,6 +98,15 @@ canvas {
 
 .splide .splide__arrow svg {
   fill: var(--color-color-accent);
+}
+
+.fade-bottom {
+  -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
 }
 
 /* Header */
@@ -161,14 +173,7 @@ header nav.desktop ul li:first-child:hover {
 header nav.desktop ul li:last-child:hover {
   background-position-x: right;
 }
-/* 
-.splide,
-.splide ul,
-.splide ul li {
-  height: min-content !important;
-} */
 
-/*Tailwind unsupported sizes*/
 .h-10vh {
   height: 10%;
   height: 10vh;
@@ -275,18 +280,6 @@ header nav.desktop ul li:last-child:hover {
     transform: perspective(1000px) rotateX(-16deg) rotateY(360deg);
   }
 }
-
-/* #background {
-  width: 100dvw;
-  height: 100dvh;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -3;
-  overflow: hidden;
-  background-color: #0c1a24;
-  transition: all 0.5s ease-in-out;
-} */
 
 #background[color="colorKBO"] {
   background-color: #021936;
