@@ -8,8 +8,8 @@ export default function P({ children, className, intro }) {
           className
             ? className
             : intro
-            ? "text-white text-lg md:text-xl lg:text-2xl max-w-[70rem]"
-            : "text-white text-md md:text-lg lg:text-xl max-w-paragraph "
+            ? "text-white text-md sm:text-lg md:text-xl lg:text-2xl max-w-[70rem]"
+            : "text-white text-sm sm:text-md md:text-lg lg:text-xl max-w-paragraph "
         }
       `}
       initial={{ opacity: 0, y: 25 }}

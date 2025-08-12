@@ -19,10 +19,9 @@ import Footer from "../sections/Footer.js";
 import LoadingScreen from "@/collections/LoadingScreen.js";
 
 import H1 from "../elements/H1.js";
-import SubH1 from "../elements/SubH1.js";
 import H2 from "../elements/H2.js";
-import SubH2 from "../elements/SubH2.js";
 import H3 from "../elements/H3.js";
+import Li from "../elements/Li.js";
 import Img from "../elements/Img.js";
 import P from "../elements/P.js";
 import Divider from "../elements/Divider.js";
@@ -86,7 +85,7 @@ export default function MainCanvas({}) {
         <Suspense fallback={null}>
           <ambientLight color={"white"} intensity={0.3} />
 
-          <ScrollControls pages={pages} damping={0.1}>
+          <ScrollControls pages={pages} damping={mobile ? 0 : 0.1}>
             <Environment
               blur={0}
               files="../images/Environment/studio_small_08_1k.hdr"
@@ -630,10 +629,11 @@ export default function MainCanvas({}) {
                       <Img
                         alt="Altje"
                         src="/images/general/MarcoBureau.jpg"
-                        className="object-right-top grayscale-75 opacity-70"
-                        classNameWrapper="col-span-1 lg:col-span-4 row-span-3 aspect-video "
+                        className="object-right-top grayscale-75 opacity-70 max-w-full"
+                        classNameWrapper="col-span-1 lg:col-span-4 row-span-3 aspect-video mb-20"
                       />
                       {/* <Section className="col-span-1 lg:col-span-4 lg:col-start-3"> */}
+
                       <P
                         className={
                           "text-xl lg:text-2xl xl:text-5xl text-white/40 col-span-1 lg:col-span-4 lg:col-start-3"
@@ -747,114 +747,114 @@ export default function MainCanvas({}) {
                   </NextLink>
                 </SectionHome>
               </Container>
-              <section className="mx-4 px-8 pt-20 h-[200vh] max-h-[200vh] overflow-y-auto w-[100%-1rem] rounded-t-2xl border-b-0 border-white/[0.5] border-1 bg-gradient-to-bl from-color-bg-top via-color-bg-bottom to-color-bg-top ">
+              <section className="mx-4 lg:px-8 pt-20 h-[150vh] max-h-[150vh] overflow-y-auto lg:h-[200vh] lg:max-h-[200vh] box-border w-[100%-1rem] rounded-t-2xl border-b-0 border-white/[0.5] border-1 bg-gradient-to-bl from-color-bg-top via-color-bg-bottom to-color-bg-top ">
                 <Container>
                   <H2 chapeau={"Ervaring"}></H2>{" "}
                   <div className="grid grid-cols-1 lg:grid-cols-2 w-full gap-4">
                     <H2>New Orange</H2>
-                    <div className="mt-4 mb-20">
+                    <div className="lg:mt-4 mt-[-50px] mb-20">
                       <H3 noMarginTop>Frontend Developer</H3>
-                      <P className="text-white text-xl mb-3">
+                      <P className="text-white text-md lg:text-xl mb-3">
                         September 2023 - April 2025
                       </P>
                       <small></small>
                       <ul className="list-disc text-white opacity-70 ml-4">
-                        <li>
+                        <Li>
                           Ondersteuning en ontwikkeling voor diverse klanten met
                           Kentico of Umbraco CMS
-                        </li>
-                        <li>
+                        </Li>
+                        <Li>
                           Gebruik van Tailwind, SCSS Sass, cshtml Razor,
                           Javascript
-                        </li>
-                        <li>
+                        </Li>
+                        <Li>
                           Zonnebloem
-                          <li className="ml-4 opacity-65">
+                          <Li className="ml-4 opacity-65">
                             Ontwikkeling<i> 75jaar.zonnebloem.nl</i>
-                          </li>
-                        </li>
-                        <li>
+                          </Li>
+                        </Li>
+                        <Li>
                           Het Noord Brabants museum
-                          <li className="ml-4 opacity-65">
+                          <Li className="ml-4 opacity-65">
                             Ontwikkeling en design
                             <i> grootsinbrabant.nl</i>
-                          </li>
-                        </li>
-                        <li>
+                          </Li>
+                        </Li>
+                        <Li>
                           Sectorinstituut Transport en Logistiek
-                          <li className="ml-4 opacity-65">
+                          <Li className="ml-4 opacity-65">
                             Ontwikkeling Kentico herontwerp<i> stl.nl</i>
-                          </li>
-                          <li className="ml-4 opacity-65">
+                          </Li>
+                          <Li className="ml-4 opacity-65">
                             Ontwikkeling Kentico<i> stl.nl/studentengids</i>
-                          </li>
-                        </li>
-                        <li>
+                          </Li>
+                        </Li>
+                        <Li>
                           Groene Hart Ziekenhuis
-                          <li className="ml-4 opacity-65">
+                          <Li className="ml-4 opacity-65">
                             Frontend ontwikkeling Umbraco
                             <i> werkenbijghz.nl</i>
-                          </li>
-                        </li>
-                        <li>
+                          </Li>
+                        </Li>
+                        <Li>
                           Flevoziekenhuis
-                          <li className="ml-4 opacity-65">
+                          <Li className="ml-4 opacity-65">
                             Frontend ontwikkeling Umbraco
                             <i> werkenbijflevoziekenhuis.nl</i>
-                          </li>
-                        </li>
-                        <li>
+                          </Li>
+                        </Li>
+                        <Li>
                           Human Digital
-                          <li className="ml-4 opacity-65">
+                          <Li className="ml-4 opacity-65">
                             Ontwikkeling Kentico componenten
                             <i> humandigital.nl</i>
-                          </li>
-                          <li className="ml-4 opacity-65">
+                          </Li>
+                          <Li className="ml-4 opacity-65">
                             Frontend Ontwikkeling Umbraco componenten
                             <i> blikvangersontwerp.nl</i>
-                          </li>
-                        </li>
+                          </Li>
+                        </Li>
                       </ul>
                     </div>
                   </div>
                   <div className="grid grid-cols-1 lg:grid-cols-2 w-full gap-4">
                     <H2>YoungOnes</H2>
-                    <div className="mt-4 mb-20">
+                    <div className="lg:mt-4 mt-[-50px] mb-20">
                       <H3 noMarginTop>Frontend Developer</H3>
-                      <P className="text-white text-xl mb-3">
+                      <P className="text-white text-md lg:text-xl mb-3">
                         September 2022 - Februari 2023
                       </P>
                       <ul className="list-disc text-white opacity-70 ml-4">
-                        <li>Ontwerp GWOTY award website (Figma)</li>
-                        <li>
+                        <Li>Ontwerp GWOTY award website (Figma)</Li>
+                        <Li>
                           Ontwikkeling GWOTY award website (NextJS, Api calls en
                           Tailwind)
-                        </li>
-                        <li>Ontwerp opdrachtgevers dashboard (Figma)</li>
-                        <li>
+                        </Li>
+                        <Li>Ontwerp opdrachtgevers dashboard (Figma)</Li>
+                        <Li>
                           Ontwikkeling opdrachtgevers dashboard (NextJS, Api
                           calls en Tailwind)
-                        </li>
-                        <li>UX testen van diverse ontwerpen</li>
+                        </Li>
+                        <Li>UX testen van diverse ontwerpen</Li>
                       </ul>
                     </div>
                   </div>
                   <div className="grid grid-cols-1 lg:grid-cols-2 w-full gap-4">
                     <H2>Silverfish</H2>
-                    <div className="mt-4 mb-20">
+                    <div className="lg:mt-4 mt-[-50px] mb-20">
                       <H3 noMarginTop>Wordpress Frontend Developer</H3>
-                      <P className="text-white text-xl mb-3">
+                      <P className="text-white text-md lg:text-xl mb-3">
                         November 2019 - Februari 2020
                       </P>
                       <ul className="list-disc text-white opacity-70 ml-4">
-                        <li>
+                        <Li>
                           Ontwikkel Wordpress website met een goedgekeurd Adobe
                           Illustrator Design
-                        </li>
-                        <li>
+                        </Li>
+                        <Li>
                           Ontwikkeling met Wordpress, Advanced Custom Fields,
                           CSS, Jquery en PHP
-                        </li>
+                        </Li>
                       </ul>
                     </div>
                   </div>

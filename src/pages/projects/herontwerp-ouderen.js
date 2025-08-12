@@ -48,9 +48,10 @@ export default function KBOTilburgReeshof() {
 
         <section className="w-full lg:max-w-[80%] mx-auto ">
           <Img
+            browserToolbar
             src="/images/KBOReeshof/HomeHD.png"
             alt="KBO Reeshof Menu uitgeklapt"
-            className="block object-cover aspect-video w-full"
+            className="block object-cover aspect-video w-full object-top"
           />
           <article className="my-20">
             <ul className="w-max mb-8 flex flex-col gap-4 max-w-full">

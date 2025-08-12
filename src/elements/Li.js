@@ -9,7 +9,7 @@ export default function li({ children, className, intro }) {
             ? className
             : intro
             ? "text-white text-lg md:text-xl lg:text-2xl max-w-[70rem]"
-            : "text-white text-md md:text-lg lg:text-xl max-w-paragraph"
+            : "text-white text-sm sm:text-md md:text-lg lg:text-xl max-w-paragraph"
         }
       `}
       initial={{ opacity: 0, y: 25 }}

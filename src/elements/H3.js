@@ -18,7 +18,7 @@ export default function H3({
   return (
     <motion.h3
       className={
-        `text-xl md:text-2xl lg:text-3xl font-black leading-relaxed mb-2 text-shadow-color-bg-top text-shadow-xs ${
+        `text-xl md:text-2xl lg:text-3xl font-black leading-snug mb-2 text-shadow-color-bg-top text-shadow-xs ${
           textWhite ? "text-white" : "text-color-accent"
         } ${noMarginTop ? "mt-4" : "mt-12"} ` +
         extras +
