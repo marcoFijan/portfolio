@@ -174,7 +174,7 @@ export default function Footer({ homePage }) {
           <P className="m-0 py-2 leading-0 text-white/[0.8]">
             Designed and engineered by Marco.
           </P>
-          <P className="m-0 p-0 leading-0 text-white/[0.8]">
+          <P className="m-0 p-0 text-white/[0.8]">
             Built with Next.js, Tailwind CSS, Three.js and Framer Motion.
           </P>
           <P className=" text-white/[0.6] italic">

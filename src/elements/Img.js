@@ -16,6 +16,9 @@ export default function Img({
   overflowScroll,
   invisibleBorder,
   browserToolbar,
+  width = 2000,
+  height = 2000,
+  sizes = "(max-width: 768px) 100vw, 800px",
 }) {
   const baseClasses = `w-full h-full ${
     contain
@@ -28,25 +31,26 @@ export default function Img({
   const shadowClasses = "z-0 shadow-lg";
   const afterClasses = `${
     invisibleBorder ? "after:border-transparent" : "after:border-color-border"
-  } after:border-1 after:rounded-2xl after:border-opacity-10 after:w-full after:-right-7 after:-bottom-7 after:absolute after:h-[100%] after:z-[-3]`;
+  } after:border-1 after:rounded-2xl after:border-opacity-10 after:w-full after:-right-3 after:-bottom-3 md:after:-right-7 md:after:-bottom-7 after:absolute after:h-[100%] after:z-[-3]`;
   const beforeClasses = `${
     invisibleBorder ? "before:border-transparent" : "before:border-color-border"
-  } before:border-1 before:rounded-2xl before:border-opacity-10 before:w-full before:-left-7 before:-top-7 before:absolute before:h-full before:z-[-3]`;
+  } before:border-1 before:rounded-2xl before:border-opacity-10 before:w-full before:-left-3 before:-top-3 md:before:-left-7 md:before:-top-7 before:absolute before:h-full before:z-[-3]`;
 
   return (
     <>
       {noBorder ? (
         <Image
-          className={`${className} ${uniqueBg ? uniqueBg : "bg-black"}`}
+          className={`${className} ${uniqueBg ? uniqueBg : "bg-black "}`}
           src={src}
           alt={alt}
-          priority={prio}
-          width={2000}
-          height={2000}
+          loading={prio ? "eager" : "lazy"}
+          width={width}
+          height={height}
+          sizes={sizes}
         />
       ) : (
         <div
-          className={` relative m-8 ${afterClasses} ${beforeClasses} ${classNameWrapper}`}
+          className={` relative m-4 md:m-8 ${afterClasses} ${beforeClasses} ${classNameWrapper}`}
         >
           {overflowScroll ? (
             <div className="overflow-hidden rounded-2xl">
@@ -58,8 +62,10 @@ export default function Img({
                   src={src}
                   alt={alt}
                   priority={prio}
-                  width={2000}
-                  height={2000}
+                  loading={prio ? "eager" : "lazy"}
+                  width={width}
+                  height={height}
+                  sizes={sizes}
                 />
               </div>
             </div>
@@ -79,8 +85,10 @@ export default function Img({
                 src={src}
                 alt={alt}
                 priority={prio}
-                width={2000}
-                height={2000}
+                loading={prio ? "eager" : "lazy"}
+                width={width}
+                height={height}
+                sizes={sizes}
               />
             </div>
           )}
