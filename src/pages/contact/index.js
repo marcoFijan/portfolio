@@ -1,36 +1,29 @@
-import { Montserrat } from "next/font/google";
-import Head from "next/head";
+import PageTemplate from "../pageTemplate";
+import Container from "@/sections/Container";
+import ContactSection from "@/sections/ContactSection.js";
 
-import ContactSection from "@/organisms/ContactSection.js";
-import Header from "@/organisms/Header.js";
-import Footer from "@/organisms/Footer.js";
-
-const montserrat = Montserrat({
-  weight: ["400", "700", "900"],
-  subsets: ["latin"],
-  variable: "--font-montserrat",
-});
+import H1 from "@/elements/H1";
+import P from "@/elements/P";
 
 export default function Contact() {
   return (
-    <>
-      <Head>
-        <title>Marco Fijan - Contact</title>
-        <meta
-          name="description"
-          content="Contact a Frontend Developer, Marco Fijan"
-        />
-        <meta
-          name="keywords"
-          content="HTML, CSS, JavaScript, NextJS, React, Svelte, Unity, Front, End, Frontend, Developer, Development, Git, Github, Portfolio, NL, Soliciting, Job, Vacature, Baan, UI, User, Interface, UX, Experience, Contact"
-        />
-        <meta name="author" content="Marco Fijan" />
-      </Head>
-      <Header />
-      <main className={`bg-bgColorDark pb-[50vh] ${montserrat.className}`}>
-        <ContactSection />
-      </main>
-      <Footer />
-    </>
+    <PageTemplate>
+      <Container>
+        <article>
+          <H1 big className="" chapeau={"Interesse? Of vragen?"}>
+            Neem contact met me op!
+          </H1>
+          <section className="grid grid-cols-1 xl:grid-cols-2 gap-8">
+            <P intro>
+              Heb je interesse in mijn werk, wil je een project bespreken, of
+              heb je gewoon een vraag? Aarzel dan niet om contact met me op te
+              nemen. Ik sta altijd open voor nieuwe uitdagingen en
+              samenwerkingen.
+            </P>
+            <ContactSection />
+          </section>
+        </article>
+      </Container>
+    </PageTemplate>
   );
 }

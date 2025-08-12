@@ -9,7 +9,7 @@ Title: Modern Slim Laptop
 
 import React, { useEffect, useRef, useState } from "react";
 import { useFrame } from "@react-three/fiber";
-import { useGLTF, useTexture, useScroll } from "@react-three/drei";
+import { useGLTF, useTexture, useScroll, Float } from "@react-three/drei";
 import { gsap } from "gsap";
 
 export default function Laptop({ mobile, props }) {
@@ -19,9 +19,15 @@ export default function Laptop({ mobile, props }) {
   );
   const [screenSize, setScreenSize] = useState(0);
   const startScreenPosition = {
-    rot: { x: 1.06, y: 0, z: 0 },
-    pos: { x: 0, y: 0.12, z: 0.01 },
+    rot: { x: 1.03, y: 0, z: 0 },
+    pos: { x: -30, y: 0.45, z: 0.45 },
   };
+
+  // rot: { x: 1.03, y: 0, z: 0 },
+  // pos: { x: 0, y: 0.06, z: 0.4 },
+
+  // pos: { x: 0, y: 0.12, z: 0.01 },
+
   const startTexture = useTexture("./images/ThumbnailsSmall/codeThumb.png");
   const kboReeshofTexture = useTexture(
     "./images/ThumbnailsSmall/KBOReeshofThumb.png"
@@ -45,26 +51,32 @@ export default function Laptop({ mobile, props }) {
   const [project3Screen, setProject3Screen] = useState(false);
   const [project4Screen, setProject4Screen] = useState(false);
   const [project5Screen, setProject5Screen] = useState(false);
+  const [accentColor, setAccentColor] = useState("blue");
+  const [float, setFloat] = useState(false);
 
   const laptop = useRef();
   const screenRot = useRef();
   const scroll = useScroll();
   const timeline = useRef();
+  const laptopBottom = useRef();
 
   // Update timeline
   useFrame((state, delta) => {
     if (typeof timeline.current !== "undefined")
       timeline.current.seek(scroll.offset * timeline.current.duration());
 
+    // console.log(scroll.offset);
+
     // Hardcoded screenchange since .call function from gsap has performance issues
     if (mobile) {
       if (scroll.offset < 0.09) {
-        setStartingScreen(true);
+        setStartingScreen(false);
         setProject1Screen(false);
         setProject2Screen(false);
         setProject3Screen(false);
         setProject4Screen(false);
         setProject5Screen(false);
+        setAccentColor("colorMain");
         // setLaptopScreenPath("./images/ThumbnailsSmall/codeThumb.png");
       } else if (scroll.offset >= 0.09 && scroll.offset <= 0.44) {
         setStartingScreen(false);
@@ -73,6 +85,7 @@ export default function Laptop({ mobile, props }) {
         setProject3Screen(false);
         setProject4Screen(false);
         setProject5Screen(false);
+        setAccentColor("noColor");
         // setLaptopScreenPath("./images/ThumbnailsSmall/KBOReeshofThumb.png");
       } else if (scroll.offset >= 0.45 && scroll.offset <= 0.53) {
         setStartingScreen(false);
@@ -81,6 +94,7 @@ export default function Laptop({ mobile, props }) {
         setProject3Screen(false);
         setProject4Screen(false);
         setProject5Screen(false);
+        setAccentColor("noColor");
         // setLaptopScreenPath("./images/ThumbnailsSmall/YODashboardThumb.png");
       } else if (scroll.offset >= 0.54 && scroll.offset <= 0.643) {
         setStartingScreen(false);
@@ -89,6 +103,7 @@ export default function Laptop({ mobile, props }) {
         setProject3Screen(true);
         setProject4Screen(false);
         setProject5Screen(false);
+        setAccentColor("noColor");
         // setLaptopScreenPath("./images/ThumbnailsSmall/YOGwotyThumb.png");
       } else if (scroll.offset >= 0.644 && scroll.offset <= 0.73) {
         setStartingScreen(false);
@@ -97,6 +112,7 @@ export default function Laptop({ mobile, props }) {
         setProject3Screen(false);
         setProject4Screen(true);
         setProject5Screen(false);
+        setAccentColor("noColor");
         // setLaptopScreenPath(
         //   "./images/ThumbnailsSmall/StandaardAanbouwThumb.png"
         // );
@@ -107,16 +123,18 @@ export default function Laptop({ mobile, props }) {
         setProject3Screen(false);
         setProject4Screen(false);
         setProject5Screen(true);
+        setAccentColor("noColor");
         // setLaptopScreenPath("./images/ThumbnailsSmall/ReisartikelenThumb.jpg");
       }
     } else {
       if (scroll.offset < 0.09) {
-        setStartingScreen(true);
+        setStartingScreen(false);
         setProject1Screen(false);
         setProject2Screen(false);
         setProject3Screen(false);
         setProject4Screen(false);
         setProject5Screen(false);
+        setAccentColor("colorMain");
         // setLaptopScreenPath("./images/ThumbnailsSmall/codeThumb.png");
       } else if (scroll.offset >= 0.09 && scroll.offset <= 0.392) {
         setStartingScreen(false);
@@ -125,6 +143,13 @@ export default function Laptop({ mobile, props }) {
         setProject3Screen(false);
         setProject4Screen(false);
         setProject5Screen(false);
+        if (scroll.offset >= 0.32) {
+          setAccentColor("colorKBO");
+          setFloat(true);
+        } else {
+          setAccentColor("noColor");
+        }
+
         // setLaptopScreenPath("./images/ThumbnailsSmall/KBOReeshofThumb.png");
       } else if (scroll.offset >= 0.393 && scroll.offset <= 0.4885) {
         setStartingScreen(false);
@@ -133,6 +158,7 @@ export default function Laptop({ mobile, props }) {
         setProject3Screen(false);
         setProject4Screen(false);
         setProject5Screen(false);
+        setAccentColor("colorYo");
         // setLaptopScreenPath("./images/ThumbnailsSmall/YODashboardThumb.png");
       } else if (scroll.offset >= 0.4886 && scroll.offset <= 0.6009) {
         setStartingScreen(false);
@@ -141,6 +167,7 @@ export default function Laptop({ mobile, props }) {
         setProject3Screen(true);
         setProject4Screen(false);
         setProject5Screen(false);
+        setAccentColor("colorYo");
         // setLaptopScreenPath("./images/ThumbnailsSmall/YOGwotyThumb.png");
       } else if (scroll.offset >= 0.601 && scroll.offset <= 0.6929) {
         setStartingScreen(false);
@@ -149,6 +176,7 @@ export default function Laptop({ mobile, props }) {
         setProject3Screen(false);
         setProject4Screen(true);
         setProject5Screen(false);
+        setAccentColor("colorSa");
         // setLaptopScreenPath(
         //   "./images/ThumbnailsSmall/StandaardAanbouwThumb.png"
         // );
@@ -159,6 +187,7 @@ export default function Laptop({ mobile, props }) {
         setProject3Screen(false);
         setProject4Screen(false);
         setProject5Screen(true);
+        setAccentColor("colorOther");
         // setLaptopScreenPath("./images/ThumbnailsSmall/ReisartikelenThumb.jpg");
       }
     }
@@ -166,10 +195,34 @@ export default function Laptop({ mobile, props }) {
 
   useEffect(() => {
     if (typeof window !== "undefined") {
+      let previousWidth = window.innerWidth;
+      let isThrottled = false;
+
       function updateDimension() {
-        setScreenSize(window.innerWidth);
-        location.reload();
+        if (isThrottled) return;
+
+        isThrottled = true;
+
+        // Delay the function execution to ensure it's not running too often
+        setTimeout(() => {
+          const currentWidth = window.innerWidth;
+
+          // Check if screen width crosses 1000px (either direction)
+          if (
+            (previousWidth <= 1200 && currentWidth > 1200) ||
+            (previousWidth > 1200 && currentWidth <= 1200)
+          ) {
+            location.reload();
+          }
+
+          // Update the previousWidth to currentWidth
+          previousWidth = currentWidth;
+
+          setScreenSize(currentWidth);
+          isThrottled = false; // Reset throttle flag
+        }, 200); // Set the throttle delay (200ms here, adjust as needed)
       }
+
       window.addEventListener("resize", updateDimension);
 
       return () => {
@@ -177,6 +230,11 @@ export default function Laptop({ mobile, props }) {
       };
     }
   }, [screenSize]);
+
+  useEffect(() => {
+    const background = document.querySelector("#background");
+    background.setAttribute("color", accentColor);
+  }, [accentColor]);
 
   useEffect(() => {
     // Setup timeline
@@ -245,11 +303,7 @@ export default function Laptop({ mobile, props }) {
         { z: rotation.close.rot.z },
         startpositions.hero
       )
-      .to(
-        screenRot.current.position,
-        { x: rotation.close.pos.x },
-        startpositions.hero
-      )
+      .to(screenRot.current.position, { x: 0 }, startpositions.hero)
       .to(
         screenRot.current.position,
         { y: rotation.close.pos.y },
@@ -261,9 +315,10 @@ export default function Laptop({ mobile, props }) {
         startpositions.hero
       )
       .to(laptop.current.rotation, { x: -Math.PI / 2 }, startpositions.hero)
-      .to(laptop.current.position, { y: -2 }, startpositions.hero)
-      .to(laptop.current.position, { x: -20 }, 3.5)
-      .to(laptop.current.rotation, { z: -1 }, 3.5)
+      // .to(laptop.current.position, { y: 0 }, startpositions.hero)
+      .to(laptop.current.position, { x: -30 }, 1)
+      // .to(laptop.current.position, { x: -20 }, 3.5)
+      // .to(laptop.current.rotation, { z: -1 }, 3.5)
       .to(
         laptop.current.position,
         { y: mobile ? -3.5 : -3 },
@@ -383,9 +438,10 @@ export default function Laptop({ mobile, props }) {
       )
       .to(
         laptop.current.position,
-        { x: mobile ? 0 : 5 },
+        { x: mobile ? 0 : 3 },
         startpositions.secondProject
       )
+      .to(laptop.current.position, { z: 0 }, startpositions.secondProject)
       .to(
         laptop.current.rotation,
         { z: Math.PI * 2 - Math.PI / 4 },
@@ -659,151 +715,163 @@ export default function Laptop({ mobile, props }) {
   }, [mobile]);
 
   return (
-    <group
-      {...props}
-      dispose={null}
-      scale={mobile ? 10 : 16}
-      ref={laptop}
-      position={[0, mobile ? -5 : -7, 0]}
-      rotation={[-0.4, 0, 0]}
+    <Float
+      speed={float ? 0.85 : 0}
+      rotationIntensity={0.5} // XYZ rotation intensity, defaults to 1
+      floatIntensity={0.5} // Up/down float intensity, works like a multiplier with floatingRange,defaults to 1
+      floatingRange={[0.05, 0.05]} // Range of y-axis values the object will float within, defaults to [-0.1,0.1]
     >
-      <group scale={0.01}>
-        <group position={[0, 0.02, 0]} rotation={[0, 0, 0]} scale={100}>
-          <group
-            position={[
-              startScreenPosition.pos.x,
-              startScreenPosition.pos.y,
-              startScreenPosition.pos.z,
-            ]}
-            rotation={[
-              startScreenPosition.rot.x,
-              startScreenPosition.rot.y,
-              startScreenPosition.rot.z,
-            ]}
-            ref={screenRot}
-          >
-            <mesh
-              geometry={nodes.Screen_Frame_Screen_Frame_0.geometry}
-              material={materials.Screen_Frame}
-            />
-            <mesh
-              geometry={nodes.Screen_Frame_Screen_Shiny_Border_0.geometry}
-              material={materials.Screen_Shiny_Border}
-            />
-            <mesh
-              geometry={nodes.Screen_Frame_Base_0.geometry}
-              material={materials.Base}
-            />
-            <mesh
-              rotation={[0, Math.PI / 2, 0]}
-              position={[0, 0.127, 0]}
-              scale={0.0198}
+      <group
+        {...props}
+        dispose={null}
+        scale={mobile ? 10 : 16}
+        ref={laptop}
+        position={[0, mobile ? -15 : -9, 0]} // [0, mobile ? -15 : -7, 0]
+        rotation={[-1, 0, 0]}
+        className={accentColor}
+      >
+        <group scale={0.01}>
+          <group position={[0, 0.02, 0]} rotation={[0, 0, 0]} scale={100}>
+            <group
+              position={[
+                startScreenPosition.pos.x,
+                startScreenPosition.pos.y,
+                startScreenPosition.pos.z,
+              ]}
+              rotation={[
+                startScreenPosition.rot.x,
+                startScreenPosition.rot.y,
+                startScreenPosition.rot.z,
+              ]}
+              ref={screenRot}
             >
-              <boxGeometry args={[0.01, 10.6, 16]} />
-              <meshStandardMaterial
-                map={startTexture}
-                roughness={0.3}
-                metalness={0.3}
-                opacity={startingScreen ? 1 : 0}
-                transparent
+              <mesh
+                geometry={nodes.Screen_Frame_Screen_Frame_0.geometry}
+                material={materials.Screen_Frame}
               />
-            </mesh>
-            <mesh
-              rotation={[0, Math.PI / 2, 0]}
-              position={[0, 0.127, 0]}
-              scale={0.0198}
-            >
-              <boxGeometry args={[0.01, 10.6, 16]} />
-              <meshStandardMaterial
-                map={kboReeshofTexture}
-                roughness={0.3}
-                metalness={0.3}
-                opacity={project1Screen ? 1 : 0}
-                transparent
+              <mesh
+                geometry={nodes.Screen_Frame_Screen_Shiny_Border_0.geometry}
+                material={materials.Screen_Shiny_Border}
               />
-            </mesh>
-            <mesh
-              rotation={[0, Math.PI / 2, 0]}
-              position={[0, 0.127, 0]}
-              scale={0.0198}
-            >
-              <boxGeometry args={[0.01, 10.6, 16]} />
-              <meshStandardMaterial
-                map={yoDashboardTexture}
-                roughness={0.3}
-                metalness={0.3}
-                opacity={project2Screen ? 1 : 0}
-                transparent
+              <mesh
+                geometry={nodes.Screen_Frame_Base_0.geometry}
+                material={materials.Base}
               />
-            </mesh>
-            <mesh
-              rotation={[0, Math.PI / 2, 0]}
-              position={[0, 0.127, 0]}
-              scale={0.0198}
-            >
-              <boxGeometry args={[0.01, 10.6, 16]} />
-              <meshStandardMaterial
-                map={yoGwotyTexture}
-                roughness={0.3}
-                metalness={0.3}
-                opacity={project3Screen ? 1 : 0}
-                transparent
+              <mesh
+                rotation={[0, Math.PI / 2, 0]}
+                position={[0, 0.127, 0]}
+                scale={0.0198}
+              >
+                <boxGeometry args={[0.01, 10.6, 16]} />
+                <meshStandardMaterial
+                  map={startTexture}
+                  roughness={0.3}
+                  metalness={0.3}
+                  opacity={startingScreen ? 1 : 0}
+                  transparent
+                />
+              </mesh>
+              <mesh
+                rotation={[0, Math.PI / 2, 0]}
+                position={[0, 0.127, 0]}
+                scale={0.0198}
+              >
+                <boxGeometry args={[0.01, 10.6, 16]} />
+                <meshStandardMaterial
+                  map={kboReeshofTexture}
+                  roughness={0.3}
+                  metalness={0.3}
+                  opacity={project1Screen ? 1 : 0}
+                  transparent
+                />
+              </mesh>
+              <mesh
+                rotation={[0, Math.PI / 2, 0]}
+                position={[0, 0.127, 0]}
+                scale={0.0198}
+              >
+                <boxGeometry args={[0.01, 10.6, 16]} />
+                <meshStandardMaterial
+                  map={yoDashboardTexture}
+                  roughness={0.3}
+                  metalness={0.3}
+                  opacity={project2Screen ? 1 : 0}
+                  transparent
+                />
+              </mesh>
+              <mesh
+                rotation={[0, Math.PI / 2, 0]}
+                position={[0, 0.127, 0]}
+                scale={0.0198}
+              >
+                <boxGeometry args={[0.01, 10.6, 16]} />
+                <meshStandardMaterial
+                  map={yoGwotyTexture}
+                  roughness={0.3}
+                  metalness={0.3}
+                  opacity={project3Screen ? 1 : 0}
+                  transparent
+                />
+              </mesh>
+              <mesh
+                rotation={[0, Math.PI / 2, 0]}
+                position={[0, 0.127, 0]}
+                scale={0.0198}
+              >
+                <boxGeometry args={[0.01, 10.6, 16]} />
+                <meshStandardMaterial
+                  map={StandaardAanbouwTexture}
+                  roughness={0.3}
+                  metalness={0.3}
+                  opacity={project4Screen ? 1 : 0}
+                  transparent
+                />
+              </mesh>
+              <mesh
+                rotation={[0, Math.PI / 2, 0]}
+                position={[0, 0.127, 0]}
+                scale={0.0198}
+              >
+                <boxGeometry args={[0.01, 10.6, 16]} />
+                <meshStandardMaterial
+                  map={ReisartikelenTexture}
+                  roughness={0.3}
+                  metalness={0.3}
+                  opacity={project5Screen ? 1 : 0}
+                  transparent
+                />
+              </mesh>
+            </group>
+            <group ref={laptopBottom}>
+              <mesh
+                geometry={nodes.Modern_Slim_Laptop_Base_0.geometry}
+                material={materials.Base}
               />
-            </mesh>
-            <mesh
-              rotation={[0, Math.PI / 2, 0]}
-              position={[0, 0.127, 0]}
-              scale={0.0198}
-            >
-              <boxGeometry args={[0.01, 10.6, 16]} />
-              <meshStandardMaterial
-                map={StandaardAanbouwTexture}
-                roughness={0.3}
-                metalness={0.3}
-                opacity={project4Screen ? 1 : 0}
-                transparent
+              <mesh
+                geometry={nodes.Modern_Slim_Laptop_Touchpad_0.geometry}
+                material={materials.Touchpad}
               />
-            </mesh>
-            <mesh
-              rotation={[0, Math.PI / 2, 0]}
-              position={[0, 0.127, 0]}
-              scale={0.0198}
-            >
-              <boxGeometry args={[0.01, 10.6, 16]} />
-              <meshStandardMaterial
-                map={ReisartikelenTexture}
-                roughness={0.3}
-                metalness={0.3}
-                opacity={project5Screen ? 1 : 0}
-                transparent
+              <mesh
+                geometry={
+                  nodes.Modern_Slim_Laptop_Plastic_Black_Ports_0.geometry
+                }
+                material={materials.Plastic_Black_Ports}
               />
-            </mesh>
+              <mesh
+                geometry={nodes.Modern_Slim_Laptop_Lights_0.geometry}
+                material={materials.Lights}
+              />
+              <mesh
+                geometry={nodes.Keyboard_Keyboard_0.geometry}
+                material={materials.Keyboard}
+                position={[-0.07, 0, 0.01]}
+                rotation={[0.02, 0, 0]}
+              />
+            </group>
           </group>
-          <mesh
-            geometry={nodes.Modern_Slim_Laptop_Base_0.geometry}
-            material={materials.Base}
-          />
-          <mesh
-            geometry={nodes.Modern_Slim_Laptop_Touchpad_0.geometry}
-            material={materials.Touchpad}
-          />
-          <mesh
-            geometry={nodes.Modern_Slim_Laptop_Plastic_Black_Ports_0.geometry}
-            material={materials.Plastic_Black_Ports}
-          />
-          <mesh
-            geometry={nodes.Modern_Slim_Laptop_Lights_0.geometry}
-            material={materials.Lights}
-          />
-          <mesh
-            geometry={nodes.Keyboard_Keyboard_0.geometry}
-            material={materials.Keyboard}
-            position={[-0.07, 0, 0.01]}
-            rotation={[0.02, 0, 0]}
-          />
         </group>
       </group>
-    </group>
+    </Float>
   );
 }
 

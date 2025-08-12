@@ -9,7 +9,7 @@
   stroke-dasharray: 300;
   stroke-dashoffset: 300;
   fill: transparent;
-  stroke: #e06020;
+  stroke: #3298d3;
   stroke-width: 1.5;
 }
 
@@ -66,8 +66,10 @@
     stroke-dashoffset: 0;
     stroke-width: 1.5;
     fill: transparent;
+    opacity: 1;
   }
   100% {
-    fill: white;
+    fill: #16192a;
+    opacity: 0.1;
   }
 }
