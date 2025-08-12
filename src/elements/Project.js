@@ -46,6 +46,8 @@ export default function ProjectSection({
               ? "from-color-kbo-accent"
               : projectGiver === "Standaard Aanbouw"
               ? "from-color-sa-accent"
+              : projectGiver === "Reisartikelen"
+              ? "from-color-ra-accent"
               : "from-color-accent"
           } transition-all duration-500`}
         ></div>

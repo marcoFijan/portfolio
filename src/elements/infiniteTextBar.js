@@ -57,7 +57,7 @@ export default function InfiniteTextBar({
         cancelAnimationFrame(animationRef.current);
       }
     };
-  }, []);
+  }, [directionLeft]);
 
   useFrame((state, delta) => {
     const currentOffset = scroll.offset;

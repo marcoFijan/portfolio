@@ -58,7 +58,7 @@ export default function RingRing() {
               className="block aspect-video w-full"
             />
           </section>
-          <ul className="w-max mb-8 flex flex-col gap-4">
+          <ul className="w-max mb-8 flex flex-col gap-4 max-w-full">
             <Li
               className={
                 "px-8 py-4 text-white border-color-border border-1 bg-color-bg-bottom rounded-2xl "
@@ -109,7 +109,7 @@ export default function RingRing() {
         </article>
         <Divider />
         <FlexArticle smallMargin alignTop>
-          <section className="sticky top-10">
+          <section className="sticky top-30">
             <H2 chapeau="Inlogscherm voor authenticatie">Inlogpagina</H2>
             <P>
               Het dashboard bevat privacygevoelige Ring Ring data. Daarom is een
@@ -127,7 +127,7 @@ export default function RingRing() {
         </FlexArticle>
 
         <FlexArticle alignTop reverse>
-          <section className="sticky top-10">
+          <section className="sticky top-30">
             <H2 chapeau="Het hoofdscherm">Dashboard</H2>
             <P>
               Het dashboard biedt een helder totaaloverzicht van alle
@@ -147,7 +147,7 @@ export default function RingRing() {
         </FlexArticle>
 
         <FlexArticle alignTop>
-          <section className="sticky top-10">
+          <section className="sticky top-30">
             <H2 chapeau="Data op basis van type account">Voor u-pagina</H2>
             <P>
               Op de ‘Voor U’-pagina worden datavisualisaties getoond die
@@ -169,7 +169,7 @@ export default function RingRing() {
         </FlexArticle>
 
         <FlexArticle alignTop reverse>
-          <section className="sticky top-10">
+          <section className="sticky top-30">
             <H2 chapeau="Routes bekijken op een kaart">Kaartpagina</H2>
             <P>
               Op de kaartpagina kunnen beleidsmakers fietsroutes analyseren op
@@ -190,7 +190,7 @@ export default function RingRing() {
         </FlexArticle>
 
         <FlexArticle alignTop>
-          <section className="sticky top-10">
+          <section className="sticky top-30">
             <H2 chapeau="Gegeven feedback over routes bekijken">
               Feedbackpagina
             </H2>

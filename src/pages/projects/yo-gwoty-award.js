@@ -39,7 +39,7 @@ export default function YOGwotyAward() {
             className="block object-cover aspect-video w-full"
           />
           <article className="mt-40">
-            <ul className="w-max mb-8 flex flex-col gap-4">
+            <ul className="w-max mb-8 flex flex-col gap-4 max-w-full">
               <Li
                 className={
                   "px-8 py-4 text-white border-color-border border-1 bg-color-bg-bottom rounded-2xl "
@@ -106,7 +106,7 @@ export default function YOGwotyAward() {
         </section>
 
         <FlexArticle smallMargin>
-          <P className="max-w-1/2 text-color-accent text-lg md:text-xl lg:text-2xl justify-self-center text-center">
+          <P className="max-w-full lg:max-w-1/2 text-color-accent text-lg md:text-xl lg:text-2xl justify-self-center text-center">
             Het dashboard geeft in één oogopslag inzicht in hoe gebruikers
             punten kunnen verdienen, hoeveel punten ze hebben, hun positie op
             het leaderboard en hoeveel tijd er nog over is in de
@@ -120,7 +120,7 @@ export default function YOGwotyAward() {
           />
         </FlexArticle>
         <FlexArticle reverse smallMargin>
-          <P className="max-w-1/2 text-color-accent text-lg md:text-xl lg:text-2xl justify-self-center text-center">
+          <P className="max-w-full lg:max-w-1/2 text-color-accent text-lg md:text-xl lg:text-2xl justify-self-center text-center">
             De profielpagina geeft een snel overzicht waar welke punten vandaan
             komen en waar nog punten behaald kunnen worden.
           </P>

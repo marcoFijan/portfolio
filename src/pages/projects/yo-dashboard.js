@@ -49,7 +49,7 @@ export default function YoDashboardClients() {
             className="block object-cover aspect-video w-full"
           />
           <article className="mb-0">
-            <ul className="w-max mb-8 flex flex-col gap-4">
+            <ul className="w-max mb-8 flex flex-col gap-4 max-w-full">
               <Li
                 className={
                   "px-8 py-4 text-white border-color-border border-1 bg-color-bg-bottom rounded-2xl "
@@ -85,7 +85,7 @@ export default function YoDashboardClients() {
             </P>
           </article>
           <section className="grid grid-cols-1 lg:grid-cols-2 gap-y-12 justify-center  items-center pt-20">
-            <P className="max-w-1/2 text-color-accent text-lg md:text-xl lg:text-2xl justify-self-center text-center">
+            <P className="max-w-full lg:max-w-1/2 text-color-accent text-lg md:text-xl lg:text-2xl justify-self-center text-center">
               Het opsplitsen van data in relevante categorieën, gebruik van
               ratio-diagrammen en tabellen waarin gescrold kan worden zorgt voor
               een overzichtelijke datavisualisatie waar snel conclusies uit
@@ -156,14 +156,14 @@ export default function YoDashboardClients() {
                 />
               </div>
             </div>
-            <P className="max-w-1/2 text-color-accent text-lg md:text-xl lg:text-2xl justify-self-center text-center">
+            <P className="max-w-full lg:max-w-1/2 text-color-accent text-lg md:text-xl lg:text-2xl justify-self-center text-center">
               Een globale filter bovenaan past de algehele dataoverzicht aan,
               zodat op die manier makkelijk alle data over alle categorieën in 1
               keer gefilterd kan worden.
             </P>
           </section>
           <Divider />
-          <article className="mb-24 grid grid-cols-1 gap-12 gap-y-32 xl:gap-y-64 lg:grid-cols-2 justify-center  items-center pt-20">
+          <article className="mb-24 grid grid-cols-1 gap-12 lg:gap-y-32 xl:gap-y-64 lg:grid-cols-2 justify-center  items-center ">
             <section>
               <H2 chapeau="Huidig gebruikt PowerBI dashboard">
                 Huidig dashboard
@@ -180,9 +180,26 @@ export default function YoDashboardClients() {
             <Img
               src="/images/YoDashboardClients/PowerBiDataViewer.png"
               alt="Oud dataoverzicht"
+              className={"rounded-2xl"}
               noBorder
             />
-
+          </article>
+          <article className="mb-24 grid grid-cols-1 gap-12 lg:gap-y-32 xl:gap-y-64 lg:grid-cols-2 justify-center  items-center ">
+            <section className="lg:order-2">
+              <H2 chapeau="De eerste schets van het nieuwe dashboard">
+                LoFi iteratie
+              </H2>
+              <P>
+                Na wat snelle schetsen op papier besloot ik de data op te
+                splitsen in 3 categorieën: Overzicht, Freelancer en Klussen.
+                Bovenaan zijn de tijd- en loactiegerelateerde filters
+                beschikbaar die alle data op het scherm update. Daarnaast kunnen
+                staven in de legenda uitgezet worden om meer in de specifieke
+                data te duiken. De populairste inzichten waar de opdrachtgevers
+                het meest om vroegen, worden in kleine blokken bovenaan getoond
+                met grote visuele getallen.
+              </P>
+            </section>
             <Splide
               options={{
                 type: "infinite",
@@ -264,22 +281,8 @@ export default function YoDashboardClients() {
                 </P>
               </SplideSlide>
             </Splide>
-
-            <section>
-              <H2 chapeau="De eerste schets van het nieuwe dashboard">
-                LoFi iteratie
-              </H2>
-              <P>
-                Na wat snelle schetsen op papier besloot ik de data op te
-                splitsen in 3 categorieën: Overzicht, Freelancer en Klussen.
-                Bovenaan zijn de tijd- en loactiegerelateerde filters
-                beschikbaar die alle data op het scherm update. Daarnaast kunnen
-                staven in de legenda uitgezet worden om meer in de specifieke
-                data te duiken. De populairste inzichten waar de opdrachtgevers
-                het meest om vroegen, worden in kleine blokken bovenaan getoond
-                met grote visuele getallen.
-              </P>
-            </section>
+          </article>
+          <article className="mb-24 grid grid-cols-1 gap-12 lg:gap-y-32 xl:gap-y-64 lg:grid-cols-2 justify-center  items-center ">
             <section>
               <H2 chapeau="Eerste versie van de schetsen met kleur">
                 HiFi V1 iteratie
@@ -336,6 +339,20 @@ export default function YoDashboardClients() {
                 <H3 className="text-center pb-8 ">Klussen</H3>
               </SplideSlide>
             </Splide>
+          </article>
+          <article className="mb-24 grid grid-cols-1 gap-12 lg:gap-y-32 xl:gap-y-64 lg:grid-cols-2 justify-center  items-center ">
+            <section className="lg:order-2">
+              <H2 chapeau="Consistentie toegepast met het vernieuwde dashboard">
+                HiFi V2 iteratie
+              </H2>
+              <P>
+                Na het ontwikkelen van de eerste HiFi kreeg ik te horen van de
+                opdrachtgever dat er al een dashboard was die de opdrachtgevers
+                van YoungOnes al gebruiken. Het design is daarom iets aangepast
+                om deze in de huidige huisstijl van het gebruikte dashboard te
+                kunnen plaatsen.
+              </P>
+            </section>
             <Splide
               options={{
                 type: "infinite",
@@ -377,18 +394,8 @@ export default function YoDashboardClients() {
                 <H3 className="text-center pb-8 ">Klussen</H3>
               </SplideSlide>
             </Splide>
-            <section>
-              <H2 chapeau="Consistentie toegepast met het vernieuwde dashboard">
-                HiFi V2 iteratie
-              </H2>
-              <P>
-                Na het ontwikkelen van de eerste HiFi kreeg ik te horen van de
-                opdrachtgever dat er al een dashboard was die de opdrachtgevers
-                van YoungOnes al gebruiken. Het design is daarom iets aangepast
-                om deze in de huidige huisstijl van het gebruikte dashboard te
-                kunnen plaatsen.
-              </P>
-            </section>
+          </article>
+          <article className="mb-24 grid grid-cols-1 gap-12 lg:gap-y-32 xl:gap-y-64 lg:grid-cols-2 justify-center  items-center ">
             <section>
               <H2 chapeau="Feedbackverwerking van opdrachtgevers">
                 HiFi V3 iteratie
@@ -462,6 +469,38 @@ export default function YoDashboardClients() {
                 <H3 className="text-center pb-8 ">Klussen</H3>
               </SplideSlide>
             </Splide>
+          </article>
+          <article className="mb-24 grid grid-cols-1 gap-12 lg:gap-y-32 xl:gap-y-64 lg:grid-cols-2 justify-center  items-center ">
+            <section className="lg:order-2">
+              <H2 chapeau="Het uiteindelijke resultaat in NextJS, Tailwind en ChartJS">
+                Ontwikkelde versie
+              </H2>
+              <P>
+                Na goedkeuring van de product owner was het tijd om het
+                dashboard te realiseren in de frontend. Na wat onderzoek, bleek
+                dat ChartJS het beste gecombineerd kon werden met NextJS en
+                Tailwind. Met ChartJS kun je, met de kracht de van D3 library,
+                snel krachtige diagrammen ontwikkelen.
+              </P>
+              <P>
+                Tijdens het ontwikkelproces werd er ook nog wat geïtereerd. Zo
+                werd het menu bovenin geplaatst, werd de locatiefilter bovenaan
+                verwijderd om verwarring te voorkomen voor opdrachtgevers met 1
+                locatie en werd het diagram op de kluspagina bovenaan gezet om
+                eerst de globale data te tonen. Daarnaast zijn er nog wat
+                kleuren veranderd en heb ik tijdelijke iconen ontworpen voor de
+                kaders boven de diagrammen.
+              </P>
+              <P>
+                Helaas is het dashboard ontwikkeld in een bestaand project van
+                YoungOnes waardoor er ook veel geschreven code van andere
+                aanwezig is in het project. Daarnaast wordt er gewerkt met
+                gevoelige informatie en diverse connecties met databases van
+                verschillende bedrijven. Ik heb daarom helaas geen toestemming
+                gekregen om de code online te hosten en dus is er geen github
+                link beschikbaar.
+              </P>
+            </section>
             <Splide
               options={{
                 type: "infinite",
@@ -509,36 +548,6 @@ export default function YoDashboardClients() {
                 <H3 className="text-center pb-8 ">Klussen</H3>
               </SplideSlide>
             </Splide>
-            <section>
-              <H2 chapeau="Het uiteindelijke resultaat in NextJS, Tailwind en ChartJS">
-                Ontwikkelde versie
-              </H2>
-              <P>
-                Na goedkeuring van de product owner was het tijd om het
-                dashboard te realiseren in de frontend. Na wat onderzoek, bleek
-                dat ChartJS het beste gecombineerd kon werden met NextJS en
-                Tailwind. Met ChartJS kun je, met de kracht de van D3 library,
-                snel krachtige diagrammen ontwikkelen.
-              </P>
-              <P>
-                Tijdens het ontwikkelproces werd er ook nog wat geïtereerd. Zo
-                werd het menu bovenin geplaatst, werd de locatiefilter bovenaan
-                verwijderd om verwarring te voorkomen voor opdrachtgevers met 1
-                locatie en werd het diagram op de kluspagina bovenaan gezet om
-                eerst de globale data te tonen. Daarnaast zijn er nog wat
-                kleuren veranderd en heb ik tijdelijke iconen ontworpen voor de
-                kaders boven de diagrammen.
-              </P>
-              <P>
-                Helaas is het dashboard ontwikkeld in een bestaand project van
-                YoungOnes waardoor er ook veel geschreven code van andere
-                aanwezig is in het project. Daarnaast wordt er gewerkt met
-                gevoelige informatie en diverse connecties met databases van
-                verschillende bedrijven. Ik heb daarom helaas geen toestemming
-                gekregen om de code online te hosten en dus is er geen github
-                link beschikbaar.
-              </P>
-            </section>
           </article>
         </section>
       </Container>

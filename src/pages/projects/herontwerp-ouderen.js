@@ -53,7 +53,7 @@ export default function KBOTilburgReeshof() {
             className="block object-cover aspect-video w-full"
           />
           <article className="my-20">
-            <ul className="w-max mb-8 flex flex-col gap-4">
+            <ul className="w-max mb-8 flex flex-col gap-4 max-w-full">
               <Li
                 className={
                   "px-8 py-4 text-white border-color-border border-1 bg-color-bg-bottom rounded-2xl "
@@ -98,8 +98,7 @@ export default function KBOTilburgReeshof() {
                 Bekijk Design Rationale
               </NextLink>
               <NextLink
-                href="
-                https://amenable-sword-4e9.notion.site/Productbiografie-1edc81194bb144b2bddb7619a652b5b0"
+                href="https://amenable-sword-4e9.notion.site/Productbiografie-1edc81194bb144b2bddb7619a652b5b0"
                 arrow
                 className="group"
                 type="secondary"
@@ -112,7 +111,7 @@ export default function KBOTilburgReeshof() {
 
         <section className="flex flex-col gap-12">
           <FlexArticle reverse smallMargin>
-            <P className="max-w-1/2 text-color-accent text-lg md:text-xl lg:text-2xl justify-self-center text-center">
+            <P className="max-w-full lg:max-w-1/2 text-color-accent text-lg md:text-xl lg:text-2xl justify-self-center text-center">
               Veel afbeeldingen, het gebruik van skeumorphisme en grote,
               duidelijke knoppen ondersteunen ouderen bij het begrijpen van de
               interactie op de website
@@ -186,7 +185,7 @@ export default function KBOTilburgReeshof() {
             </div>
           </FlexArticle>
           <FlexArticle smallMargin>
-            <P className="max-w-1/2 text-color-accent text-lg md:text-xl lg:text-2xl justify-self-center text-center">
+            <P className="max-w-full lg:max-w-1/2 text-color-accent text-lg md:text-xl lg:text-2xl justify-self-center text-center">
               Ouderen kunnen gebruikmaken van diverse stapsgewijze instructies
               om vertrouwd te raken met de belangrijkste functies van de website
             </P>

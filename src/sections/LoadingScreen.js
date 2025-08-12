@@ -7,7 +7,7 @@ import H3 from "../elements/H3.js";
 import Image from "next/image";
 import LogoImg from "../../public/images/Logo.svg";
 
-export default function ingScreen() {
+export default function LoadingScreen() {
   const { progress } = useProgress();
   const [mounted, setMounted] = useState(false);
   const [roundedProgress, setRoundedProgress] = useState(Math.round(progress));

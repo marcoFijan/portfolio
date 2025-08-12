@@ -544,11 +544,19 @@ export default function MainCanvas({}) {
                     uniek, en samen zorgen we ervoor dat die tot leven komt!
                   </P> */}
                     <Action>
-                      <NextLink className={"block"} type="primary">
+                      <NextLink
+                        className={"block"}
+                        type="primary"
+                        href="/contact"
+                      >
                         Neem contact op!
                       </NextLink>
-                      <NextLink className={"block"} type="secondary">
-                        Neem contact op!
+                      <NextLink
+                        className={"block"}
+                        type="secondary"
+                        href="projects"
+                      >
+                        Bekijk alle projecten
                       </NextLink>
                     </Action>
                   </article>
@@ -617,21 +625,38 @@ export default function MainCanvas({}) {
                       <Img
                         alt="Altje"
                         src="/images/general/MarcoBureau.jpg"
-                        className="object-right-top"
+                        className="object-right-top grayscale-75 opacity-70"
                         classNameWrapper="col-span-1 lg:col-span-4 row-span-3 aspect-video "
                       />
-                      <Section className="col-span-1 lg:col-span-4 lg:col-start-3">
-                        <Focus className="">
-                          Merken helpen opvallen in het digitale tijdperk. Samen
-                          zetten we de nieuwe norm. Geen poespas, altijd
-                          vooruitstrevend.
-                        </Focus>
-                        {/* <Focus className="">
+                      {/* <Section className="col-span-1 lg:col-span-4 lg:col-start-3"> */}
+                      <P
+                        className={
+                          "text-xl lg:text-2xl xl:text-5xl text-white/40 col-span-1 lg:col-span-4 lg:col-start-3"
+                        }
+                      >
+                        Ik help mensen graag in het digitale tijdperk.
+                      </P>
+                      <P
+                        className={
+                          "text-xl lg:text-2xl xl:text-5xl text-white/40 col-span-1 lg:col-span-4 lg:col-start-2"
+                        }
+                      >
+                        In de toekomstige grijze soep van AI, zet ik graag
+                        unieke concepten neer die uitblinken
+                      </P>
+                      <P
+                        className={
+                          "text-xl lg:text-2xl xl:text-5xl text-white/40 col-span-1 lg:col-span-4 lg:col-start-3"
+                        }
+                      >
+                        Geen poespas, altijd vooruitstrevend.
+                      </P>
+                      {/* <Focus className="">
                         De combinatie van mijn passie voor design, code en
                         interactie plaatst mij op een unieke plek in de wereld
                         van webdesign.
                       </Focus> */}
-                      </Section>
+                      {/* </Section> */}
                     </section>
                   </Article>
                   {/* <Divider></Divider> */}
@@ -705,16 +730,16 @@ export default function MainCanvas({}) {
                       "Andere projecten; Unity-engine, Blender, pure CSS"
                     }
                   >
-                    Andere projecten komen binnenkort
+                    Bekijk alle projecten
                   </H2>
                   {/* <H2
                   chapeau={"Andere projecten; Unity-engine, Blender, pure CSS"}
                 >
                   Andere projecten
-                </H2>
-                <NextLink type="primary" href="/projects" alignRight>
-                  Bekijk alle projecten
-                </NextLink> */}
+                </H2>*/}
+                  <NextLink type="primary" href="/projects" alignRight>
+                    Alle projecten
+                  </NextLink>
                 </SectionHome>
               </Container>
               <section className="mx-4 px-8 pt-20 h-[200vh] w-[100%-1rem] rounded-t-2xl border-b-0 border-white/[0.5] border-1 bg-gradient-to-bl from-color-bg-top via-color-bg-bottom to-color-bg-top ">

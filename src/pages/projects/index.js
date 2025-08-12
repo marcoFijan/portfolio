@@ -91,6 +91,18 @@ export default function Projects() {
                 }
               ></ProjectSection>
             </section>
+            <section className="w-full mx-auto xl:max-w-[80%] gap-8 ">
+              <ProjectSection
+                projectName={"Herontwerp reisartikelen.nl"}
+                projectLink={"/projects/reisartikelen"}
+                imgSrc={"/images/reisartikelen/thumb.jpg"}
+                imgAlt={"Reisartikelen herontwerp afbeelding"}
+                projectGiver={"Reisartikelen"}
+                projectChapeau={
+                  "Een herontwerp van de homepagina van reisartikelen.nl met de focus op corona en thuisvakanties"
+                }
+              ></ProjectSection>
+            </section>
           </div>
         </article>
       </Container>

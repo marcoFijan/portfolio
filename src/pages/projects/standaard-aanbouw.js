@@ -92,7 +92,7 @@ export default function StandaardAanbouw() {
             als huisstijl te gebruiken voor het herontwerp.
           </P>
           <FlexArticle smallMargin alignTop>
-            <section className="sticky top-10">
+            <section className="sticky top-30">
               <H3>Logo</H3>
               <P>
                 De aannemer is recentelijk een rebranding aangegaan en heeft het
@@ -108,7 +108,7 @@ export default function StandaardAanbouw() {
             </div>
           </FlexArticle>
           <FlexArticle reverse smallMargin alignTop>
-            <section className="sticky top-10">
+            <section className="sticky top-30">
               <H3>Briefpapier</H3>
               <P>
                 De aannemer werkt voornamelijk via bestaande contacten en heeft
@@ -125,7 +125,7 @@ export default function StandaardAanbouw() {
           </FlexArticle>
         </article>
         <article className="grid relative grid-cols-1 gap-12 lg:grid-cols-2 gap-y-12 pt-20 my-16 xl:my-32 items-start">
-          <section className="sticky top-10">
+          <section className="sticky top-30">
             <H2 chapeau="Overzicht van de hoofditeraties">Herontwerp</H2>
             <P>
               Het ontwerpproces verliep iteratief, van een eerste LoFi-schets
@@ -279,7 +279,7 @@ export default function StandaardAanbouw() {
           </section>
         </article>
         <article className="grid relative grid-cols-1 gap-12 lg:grid-cols-2 gap-y-12 pt-20 my-16 xl:my-32 items-start">
-          <section className="sticky top-10 xl:order-2">
+          <section className="sticky top-30 xl:order-2">
             <H2 chapeau="Overzicht van diverse detailpagina's">
               Overige schermen
             </H2>
