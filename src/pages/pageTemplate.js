@@ -8,11 +8,12 @@ export default function PageTemplate({
   children,
   homePage = false,
   projectPage = false,
+  title = "Marco Fijan - Portfolio",
 }) {
   return (
     <>
       <Head>
-        <title>Marco Fijan - Portfolio</title>
+        <title>{title}</title>
         <meta
           name="description"
           content="Portfolio of a Frontend Developer, Marco Fijan"
@@ -22,6 +23,25 @@ export default function PageTemplate({
           content="HTML, CSS, JavaScript, NextJS, React, Svelte, Unity, Frontend, Developer, Git, Github, Portfolio"
         />
         <meta name="author" content="Marco Fijan" />
+        {/* Viewport */}
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {/* Open Graph */}
+        <meta property="og:title" content="Marco Fijan - Portfolio" />
+        <meta
+          property="og:description"
+          content="Portfolio of a Frontend Developer, Marco Fijan"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://marco.fijan.net/" />
+        <meta property="og:image" content="/images/general/logo.svg" />
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Marco Fijan - Portfolio" />
+        <meta
+          name="twitter:description"
+          content="Portfolio of a Frontend Developer, Marco Fijan"
+        />
+        <meta name="twitter:image" content="/images/general/logo.svg" />
       </Head>
 
       <Header home={homePage} />
@@ -32,7 +52,15 @@ export default function PageTemplate({
         }`}
       >
         {projectPage && (
-          <div className="absolute overflow-hidden -z-[2] bg-radial from-color-bg-bottom  to-transparent to-50% w-[200%] h-[100%] -top-1/2 -left-1/2 transition-all duration-500"></div>
+          <div
+            className={`absolute overflow-hidden -z-[2] bg-radial ${
+              projectPage === "yo"
+                ? "from-color-yo-accent/[0.5] to-30%"
+                : projectPage === "kbo"
+                ? "from-color-kbo-accent"
+                : "from-color-bg-bottom to-50%"
+            } to-transparent w-[200%] h-[100%] -top-1/2 -left-1/2 transition-all duration-500`}
+          ></div>
         )}
         <div
           id="background"

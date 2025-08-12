@@ -31,7 +31,7 @@ export default function StandaardAanbouw() {
           <H1
             big
             className={""}
-            chapeau={"Een herontwerp van een wordpress website"}
+            chapeau={"Een herontwerp van een aannemers Wordpress website"}
           >
             Standaard aanbouw
           </H1>
@@ -58,13 +58,13 @@ export default function StandaardAanbouw() {
             bedrijf van een kennis. Ik begon met het analyseren van de huisstijl
             en de websites van concurrenten. Op basis daarvan maakte ik een
             low-fidelity (lo-fi) ontwerp. Na een feedbacksessie stemde de
-            opdrachtgever in met het concept, waarna ik het ontwerp verder
+            opdrachtgever in met een concept, waarna ik het ontwerp verder
             uitwerkte tot een high-fidelity (hi-fi) versie.
           </P>
           <P intro>
-            Na een tweede feedbackronde heb ik een aangepaste hi-fi ontworpen.
-            Deze definitieve versie is vervolgens responsive uitgewerkt en
-            gerealiseerd in WordPress.
+            Na een tweede feedbackronde heb ik een aangepaste hi-fi ontwerp
+            ontworpen. Deze definitieve versie is vervolgens responsive
+            uitgewerkt en gerealiseerd in WordPress.
           </P>
           <Action>
             <NextLink

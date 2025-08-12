@@ -3,6 +3,8 @@ import H1 from "@/elements/H1.js";
 import H2 from "@/elements/H2.js";
 import H3 from "@/elements/H3.js";
 import P from "@/elements/P.js";
+import Li from "@/elements/Li.js";
+import SvgDeviceOutline from "@/elements/SvgDeviceOutline.js";
 import NextLink from "@/elements/NextLink";
 import Divider from "@/elements/Divider.js";
 
@@ -22,18 +24,57 @@ export default function YoDashboardClients() {
     "before:border-1 before:rounded-2xl before:border-color-border before:w-full before:-left-8 before:-top-8 before:absolute before:h-full before:z-[-3]";
 
   return (
-    <PageTemplate>
+    <PageTemplate projectPage="yo">
       <Container>
-        {" "}
-        <H1
-          big
-          className={""}
-          chapeau={"Datavisualisatie voor opdrachtgevers van YoungOnes"}
-        >
-          Opdrachtgever Dashboard
-        </H1>
-        <section className="flex flex-col gap-12">
-          <article className="mb-20">
+        <div className="text-center">
+          <H1
+            big
+            className={""}
+            chapeau={"Datavisualisatie voor opdrachtgevers van YoungOnes"}
+          >
+            Opdrachtgever Dashboard
+          </H1>
+        </div>
+        <div className="hidden lg:block relative w-full h-[10rem]">
+          <div className="absolute left-0 top-0 w-full">
+            <SvgDeviceOutline />
+          </div>
+        </div>
+        <section className="flex flex-col gap-12 w-full lg:max-w-[80%] mx-auto">
+          <Img
+            extraBorder
+            browserToolbar
+            src="/images/YoDashboardClients/EindversieOverzicht.png"
+            alt="Eindproduct YoungOnes"
+            className="block object-cover aspect-video w-full"
+          />
+          <article className="mb-0">
+            <ul className="w-max mb-8 flex flex-col gap-4">
+              <Li
+                className={
+                  "px-8 py-4 text-white border-color-border border-1 bg-color-bg-bottom rounded-2xl "
+                }
+              >
+                <strong>Projectjaar:</strong> 2023
+              </Li>
+              <Li
+                className={
+                  "px-8 py-4 text-white border-color-border border-1 bg-color-bg-bottom rounded-2xl "
+                }
+              >
+                <strong>Projectdoel:</strong> Een dashboard creeëren die
+                opdrachtgevers van YoungOnes kunnen gebruiken om inzichten te
+                maken op hun data.
+              </Li>
+              <Li
+                className={
+                  "px-8 py-4 text-white border-color-border border-1 bg-color-bg-bottom rounded-2xl"
+                }
+              >
+                <strong>Doelgroep:</strong> Opdrachtgevers die YoungOnes
+                gebruiken (35-70 jaar)
+              </Li>
+            </ul>
             <P intro>
               YoungOnes gebruikte tot nu toe een automatisch gegenereerde
               PowerBI dashboard die de opdrachtgevers konden geberuiken om
@@ -43,13 +84,6 @@ export default function YoDashboardClients() {
               dashboard ontworpen en hier kreeg ik de opdracht
             </P>
           </article>
-          <section className="w-full lg:max-w-[80%] mx-auto ">
-            <Img
-              src="/images/YoDashboardClients/EindversieOverzicht.png"
-              alt="Eindproduct YoungOnes"
-              className="block object-cover aspect-video w-full"
-            />
-          </section>
           <section className="grid grid-cols-1 lg:grid-cols-2 gap-y-12 justify-center  items-center pt-20">
             <P className="max-w-1/2 text-color-accent text-lg md:text-xl lg:text-2xl justify-self-center text-center">
               Het opsplitsen van data in relevante categorieën, gebruik van
@@ -129,8 +163,7 @@ export default function YoDashboardClients() {
             </P>
           </section>
           <Divider />
-          <article className="mb-24 grid grid-cols-1 gap-12 gap-y-32 lg:grid-cols-2 justify-center  items-center pt-20">
-            <article className="flex flex-col lg:flex-row gap-12 gap-y-32 my-32"></article>
+          <article className="mb-24 grid grid-cols-1 gap-12 gap-y-32 xl:gap-y-64 lg:grid-cols-2 justify-center  items-center pt-20">
             <section>
               <H2 chapeau="Huidig gebruikt PowerBI dashboard">
                 Huidig dashboard

@@ -17,7 +17,13 @@ export default function SvgDeviceOutline() {
         fill="url(#paint1_linear_11_80)"
         mask="url(#path-3-inside-2_11_80)"
       />
-      <circle cx="799.5" cy="15.5" r="5" stroke="#323639" fill="transparent" />
+      <circle
+        cx="799.5"
+        cy="15.5"
+        r="5"
+        stroke="#ffffff20"
+        fill="transparent"
+      />
       <defs>
         <linearGradient
           id="paint0_linear_11_80"
@@ -27,8 +33,8 @@ export default function SvgDeviceOutline() {
           y2="622"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#323639" />
-          <stop offset="1" stop-color="#323639" stop-opacity="0" />
+          <stop stop-color="#ffffff20" />
+          <stop offset="1" stop-color="#ffffff20" stop-opacity="0" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_11_80"
@@ -38,8 +44,8 @@ export default function SvgDeviceOutline() {
           y2="583"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#323639" />
-          <stop offset="1" stop-color="#323639" stop-opacity="0" />
+          <stop stop-color="#ffffff20" />
+          <stop offset="1" stop-color="#ffffff20" stop-opacity="0" />
         </linearGradient>
       </defs>
     </svg>

@@ -3,9 +3,11 @@ import H1 from "@/elements/H1.js";
 import H2 from "@/elements/H2.js";
 import H3 from "@/elements/H3.js";
 import P from "@/elements/P.js";
+import Li from "@/elements/Li.js";
 import NextLink from "@/elements/NextLink";
 import Divider from "@/elements/Divider.js";
 import FlexArticle from "@/elements/FlexArticle.js";
+import SvgDeviceOutline from "@/elements/SvgDeviceOutline.js";
 
 import Container from "@/sections/Container.js";
 import Img from "@/elements/Img.js";
@@ -23,17 +25,59 @@ export default function KBOTilburgReeshof() {
     "before:border-1 before:rounded-2xl before:border-color-border before:w-full before:-left-8 before:-top-8 before:absolute before:h-full before:z-[-3]";
 
   return (
-    <PageTemplate>
+    <PageTemplate
+      projectPage
+      title="Marco Fijan - KBO Tilburg Reeshof - Een concept website ontwerp voor ouderen"
+    >
       <Container>
-        <H1
-          big
-          className={""}
-          chapeau={"Een concept website ontwerp voor ouderen"}
-        >
-          KBO Tilburg Reeshof
-        </H1>
-        <section className="flex flex-col gap-12">
-          <article className="mb-20">
+        <div className="text-center">
+          <H1
+            big
+            className={""}
+            chapeau={"Een concept website ontwerp voor ouderen"}
+          >
+            Herontwerp voor ouderen
+          </H1>
+        </div>
+
+        <div className="hidden lg:block relative w-full h-[10rem]">
+          <div className="absolute left-0 top-0 w-full">
+            <SvgDeviceOutline />
+          </div>
+        </div>
+
+        <section className="w-full lg:max-w-[80%] mx-auto ">
+          <Img
+            src="/images/KBOReeshof/HomeHD.png"
+            alt="KBO Reeshof Menu uitgeklapt"
+            className="block object-cover aspect-video w-full"
+          />
+          <article className="my-20">
+            <ul className="w-max mb-8 flex flex-col gap-4">
+              <Li
+                className={
+                  "px-8 py-4 text-white border-color-border border-1 bg-color-bg-bottom rounded-2xl "
+                }
+              >
+                <strong>Projectjaar:</strong> 2022
+              </Li>
+              <Li
+                className={
+                  "px-8 py-4 text-white border-color-border border-1 bg-color-bg-bottom rounded-2xl "
+                }
+              >
+                <strong>Projectdoel:</strong> Een website optimaliseren in
+                gebruiksvriendelijkheid voor ouderen
+              </Li>
+              <Li
+                className={
+                  "px-8 py-4 text-white border-color-border border-1 bg-color-bg-bottom rounded-2xl"
+                }
+              >
+                <strong>Doelgroep:</strong> Eenzame ouderen vanaf 65 jaar in
+                omgeving Tilburg Reeshof
+              </Li>
+            </ul>
             <P intro>
               Omdat ik vind dat er te weinig aandacht is voor ouderen op
               digitaal vlak, wilde ik onderzoeken hoe zij websites gebruiken en
@@ -64,13 +108,9 @@ export default function KBOTilburgReeshof() {
               </NextLink>
             </div>
           </article>
-          <section className="w-full lg:max-w-[80%] mx-auto ">
-            <Img
-              src="/images/KBOReeshof/HomeHD.png"
-              alt="KBO Reeshof Menu uitgeklapt"
-              className="block object-cover aspect-video w-full"
-            />
-          </section>
+        </section>
+
+        <section className="flex flex-col gap-12">
           <FlexArticle reverse smallMargin>
             <P className="max-w-1/2 text-color-accent text-lg md:text-xl lg:text-2xl justify-self-center text-center">
               Veel afbeeldingen, het gebruik van skeumorphisme en grote,

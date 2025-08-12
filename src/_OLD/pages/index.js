@@ -24,6 +24,25 @@ export default function Home() {
           content="HTML, CSS, JavaScript, NextJS, React, Svelte, Unity, Front, End, Frontend, Developer, Development, Git, Github, Portfolio, NL, Soliciting, Job, Vacature, Baan, UI, User, Interface, UX, Experience"
         />
         <meta name="author" content="Marco Fijan" />
+        {/* Viewport */}
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {/* Open Graph */}
+        <meta property="og:title" content="Marco Fijan - Portfolio" />
+        <meta
+          property="og:description"
+          content="Portfolio of a Frontend Developer, Marco Fijan"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://marcofijan.com/" />
+        <meta property="og:image" content="/images/general/logo.svg" />
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Marco Fijan - Portfolio" />
+        <meta
+          name="twitter:description"
+          content="Portfolio of a Frontend Developer, Marco Fijan"
+        />
+        <meta name="twitter:image" content="/images/general/logo.svg" />
       </Head>
       <Header />
       <main className={`${montserrat.className}`}>

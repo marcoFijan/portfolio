@@ -11,7 +11,7 @@ import NextLink from "@/elements/NextLink";
 
 export default function Projects() {
   return (
-    <PageTemplate>
+    <PageTemplate title="Marco Fijan - Projecten">
       <Container>
         <article>
           <H1 big className="" chapeau={"Kort overzicht van alle projecten"}>
@@ -76,6 +76,18 @@ export default function Projects() {
                 projectGiver={"Standaard Aanbouw"}
                 projectChapeau={
                   "Een herontwerp van een persoonlijke aannemer, waarbij de focus ligt op het verbeteren van de gebruikerservaring."
+                }
+              ></ProjectSection>
+            </section>
+            <section className="w-full mx-auto xl:max-w-[80%] gap-8 ">
+              <ProjectSection
+                projectName={"Datavisualisatie fietsverkeer"}
+                projectLink={"/projects/ring-ring"}
+                imgSrc={"/images/Thumbnails/RingRingThumb.jpg"}
+                imgAlt={"Ring Ring project afbeelding"}
+                projectGiver={"Ring Ring"}
+                projectChapeau={
+                  "Een datavisualisatie dashboard voor beleidsmakers van Ring Ring, gericht op het verbeteren van de fietsinfrastructuur."
                 }
               ></ProjectSection>
             </section>

@@ -5,6 +5,7 @@ import H3 from "@/elements/H3.js";
 import P from "@/elements/P.js";
 import Li from "@/elements/Li.js";
 import NextLink from "@/elements/NextLink";
+import SvgDeviceOutline from "@/elements/SvgDeviceOutline.js";
 import Divider from "@/elements/Divider.js";
 import Action from "@/elements/Action.js";
 import FlexArticle from "@/elements/FlexArticle.js";
@@ -17,60 +18,93 @@ export default function YOGwotyAward() {
   return (
     <PageTemplate>
       <Container>
-        {" "}
-        <H1
-          big
-          className={""}
-          chapeau={"Een wedstrijd onderling verschillende YoungOnes zzp'ers"}
-        >
-          Gig Worker Of The Year Award
-        </H1>
-        <article className="">
-          <P intro>
-            Vanuit de marketingafdeling van YoungOnes kreeg ik de opdracht om
-            een nieuw dashboard te ontwerpen en ontwikkelen voor de ZZP’ers die
-            via het platform werken. Het doel van dit dashboard was om ‘gig
-            workers’ op een speelse manier te motiveren: door te werken konden
-            zij punten verdienen, waarmee leuke prijzen gewonnen konden worden.
-          </P>
-          <Action>
-            <NextLink
-              type="primary"
-              href="https://youngones-gwoty-o9bw7u9mo-marcofijan1.vercel.app/"
-            >
-              Bekijk de statische website
-            </NextLink>
-            <NextLink
-              type="secondary"
-              href="https://github.com/marcoFijan/yo-gwoty"
-            >
-              Bekijk de Github
-            </NextLink>
-          </Action>
-          <section className="w-full lg:max-w-[80%] mx-auto my-36 ">
-            <Img
-              src="/images/YoGwoty/HiFiDashboard.png"
-              alt="Eindproduct YoungOnes"
-              className="block object-cover aspect-video w-full"
-            />
-          </section>
-          <P intro>Het dashboard moest in één oogopslag inzicht geven in:</P>
-          <ul className="list-disc ml-8 mb-8">
-            <Li intro>Hoe gebruikers punten konden verdienen</Li>
-            <Li intro>Hoeveel punten zij al hadden gespaard</Li>
-            <Li intro>Hun huidige positie op het leaderboard</Li>
-            <Li intro>Hoeveel tijd er nog over was in de campagneperiode</Li>
-          </ul>
+        <div className="text-center">
+          <H1
+            big
+            className={""}
+            chapeau={"Een wedstrijd onderling verschillende YoungOnes zzp'ers"}
+          >
+            Gig Worker Of The Year Award
+          </H1>
+        </div>
+        <div className="hidden lg:block relative w-full h-[10rem]">
+          <div className="absolute left-0 top-0 w-full">
+            <SvgDeviceOutline />
+          </div>
+        </div>
+        <section className="w-full lg:max-w-[80%] mx-auto ">
+          <Img
+            src="/images/YoGwoty/HiFiDashboard.png"
+            alt="Eindproduct YoungOnes"
+            className="block object-cover aspect-video w-full"
+          />
+          <article className="mt-40">
+            <ul className="w-max mb-8 flex flex-col gap-4">
+              <Li
+                className={
+                  "px-8 py-4 text-white border-color-border border-1 bg-color-bg-bottom rounded-2xl "
+                }
+              >
+                <strong>Projectjaar:</strong> 2022
+              </Li>
+              <Li
+                className={
+                  "px-8 py-4 text-white border-color-border border-1 bg-color-bg-bottom rounded-2xl "
+                }
+              >
+                <strong>Projectdoel:</strong> Geef de ZZPers van YoungOnes een
+                overzicht van hun punten tijdens de GWOTY wedstrijd
+              </Li>
+              <Li
+                className={
+                  "px-8 py-4 text-white border-color-border border-1 bg-color-bg-bottom rounded-2xl"
+                }
+              >
+                <strong>Doelgroep:</strong> ZZPers van YounOnes (35-70 jaar)
+              </Li>
+            </ul>
+            <P intro>
+              Vanuit de marketingafdeling van YoungOnes kreeg ik de opdracht om
+              een nieuw dashboard te ontwerpen en ontwikkelen voor de ZZP’ers
+              die via het platform werken. Het doel van dit dashboard was om
+              ‘gig workers’ op een speelse manier te motiveren: door te werken
+              konden zij punten verdienen, waarmee leuke prijzen gewonnen konden
+              worden.
+            </P>
 
-          <P intro>
-            Om dit te realiseren werkte ik nauw samen met het marketingteam. Zij
-            gaven mij inzicht in hun wensen, het doel van de campagne en hoe
-            vergelijkbare acties in voorgaande jaren waren verlopen. Op basis
-            hiervan heb ik het ontwerp en de gebruikerservaring afgestemd, zodat
-            het dashboard niet alleen functioneel was, maar ook aansloot bij de
-            doelgroep en marketingdoelen van YoungOnes.
-          </P>
-        </article>
+            <P intro>Het dashboard moest in één oogopslag inzicht geven in:</P>
+            <ul className="list-disc ml-8 mb-8">
+              <Li intro>Hoe gebruikers punten konden verdienen</Li>
+              <Li intro>Hoeveel punten zij al hadden gespaard</Li>
+              <Li intro>Hun huidige positie op het leaderboard</Li>
+              <Li intro>Hoeveel tijd er nog over was in de campagneperiode</Li>
+            </ul>
+
+            <P intro>
+              Om dit te realiseren werkte ik nauw samen met het marketingteam.
+              Zij gaven mij inzicht in hun wensen, het doel van de campagne en
+              hoe vergelijkbare acties in voorgaande jaren waren verlopen. Op
+              basis hiervan heb ik het ontwerp en de gebruikerservaring
+              afgestemd, zodat het dashboard niet alleen functioneel was, maar
+              ook aansloot bij de doelgroep en marketingdoelen van YoungOnes.
+            </P>
+            <Action className={""}>
+              <NextLink
+                type="primary"
+                href="https://youngones-gwoty-o9bw7u9mo-marcofijan1.vercel.app/"
+              >
+                Bekijk de statische website
+              </NextLink>
+              <NextLink
+                type="secondary"
+                href="https://github.com/marcoFijan/yo-gwoty"
+              >
+                Bekijk de Github
+              </NextLink>
+            </Action>
+          </article>
+        </section>
+
         <FlexArticle smallMargin>
           <P className="max-w-1/2 text-color-accent text-lg md:text-xl lg:text-2xl justify-self-center text-center">
             Het dashboard geeft in één oogopslag inzicht in hoe gebruikers

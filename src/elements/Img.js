@@ -5,7 +5,7 @@ export default function Img({
   href,
   src,
   alt,
-  prio,
+  prio = false,
   noBorder,
   classNameWrapper,
   className,
@@ -65,7 +65,9 @@ export default function Img({
             </div>
           ) : (
             <div
-              className={`overflow-hidden bg-color-bg-bottom ${baseClasses} ${borderClasses} ${shadowClasses} ${
+              className={`overflow-hidden ${
+                uniqueBg ? uniqueBg : "bg-color-bg-bottom"
+              }  ${baseClasses} ${borderClasses} ${shadowClasses} ${
                 extraBorder ? "border-color-border border-2" : "border-0"
               } ${className}`}
             >

@@ -17,7 +17,7 @@ export default function Letter({ char, letterHover }) {
         color: isInView ? "#e57d1c" : "#ffffff05",
       }}
       transition={{ duration: 0.3 }}
-      className="inline-block empty:min-w-12 text-black"
+      className="inline-block empty:min-w-12 text-[#ffffff05]"
     >
       {char}
     </motion.span>

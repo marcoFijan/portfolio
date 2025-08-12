@@ -102,7 +102,7 @@ export default function InfiniteTextBar({
     <div
       className={`${
         inter.className
-      } overflow-hidden  border-color-white-soft text-color-white-soft md:text-[10vw] text-4xl sm:text-7xl h-20 md:h-[12vw] whitespace-nowrap absolute -z-20 cursor-default left-1/2 -translate-x-1/2 ${
+      } overflow-hidden   text-color-[#ffffff05] md:text-[10vw] text-4xl sm:text-7xl h-20 md:h-[12vw] whitespace-nowrap absolute -z-20 cursor-default left-1/2 -translate-x-1/2 ${
         directionLeft ? "-rotate-[5deg] " : "rotate-[5deg] "
       } ${className} `}
     >
