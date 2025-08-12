@@ -601,16 +601,21 @@ export default function MainCanvas({}) {
                   className={"flex flex-col relative"}
                 >
                   <div className="h-[20000px] max-h-[60vw] xl:max-h-[30vw]">
-                    {/* <ScrollingBarRight></ScrollingBarRight> */}
-                    <InfiniteTextBar
-                      text="User_Experience - Frontend_Developer - Usability - Design - Testen - "
-                      className="md:-top-[6vw] -top-[20vw]"
-                    ></InfiniteTextBar>
-                    <InfiniteTextBar
-                      text="Figma - NextJS - Tailwind - SCSS - Umbraco - Wordpress - Kentico"
-                      className="top-[13vw]"
-                      directionLeft
-                    ></InfiniteTextBar>
+                    {mobile ? (
+                      ""
+                    ) : (
+                      <>
+                        <InfiniteTextBar
+                          text="User_Experience - Frontend_Developer - Usability - Design - Testen - "
+                          className="md:-top-[6vw] -top-[20vw]"
+                        ></InfiniteTextBar>
+                        <InfiniteTextBar
+                          text="Figma - NextJS - Tailwind - SCSS - Umbraco - Wordpress - Kentico - "
+                          className="top-[13vw]"
+                          directionLeft
+                        ></InfiniteTextBar>
+                      </>
+                    )}
                   </div>
 
                   <Article className="h-full">
@@ -742,7 +747,7 @@ export default function MainCanvas({}) {
                   </NextLink>
                 </SectionHome>
               </Container>
-              <section className="mx-4 px-8 pt-20 h-[200vh] w-[100%-1rem] rounded-t-2xl border-b-0 border-white/[0.5] border-1 bg-gradient-to-bl from-color-bg-top via-color-bg-bottom to-color-bg-top ">
+              <section className="mx-4 px-8 pt-20 h-[200vh] max-h-[200vh] overflow-y-auto w-[100%-1rem] rounded-t-2xl border-b-0 border-white/[0.5] border-1 bg-gradient-to-bl from-color-bg-top via-color-bg-bottom to-color-bg-top ">
                 <Container>
                   <H2 chapeau={"Ervaring"}></H2>{" "}
                   <div className="grid grid-cols-1 lg:grid-cols-2 w-full gap-4">
