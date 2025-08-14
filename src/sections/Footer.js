@@ -99,7 +99,7 @@ export default function Footer({ homePage }) {
         className={
           homePage
             ? ""
-            : "mx-4 px-8 py-16 mb- w-[100%-1rem] rounded-t-2xl border-b-0 border-color-border border-1 bg-gradient-to-bl from-color-bg-top via-color-bg-bottom to-color-bg-top"
+            : "mx-4 px-8 sm:py-16 mb- w-[100%-1rem] rounded-t-2xl border-b-0 border-color-border border-1 bg-gradient-to-bl from-color-bg-top via-color-bg-bottom to-color-bg-top"
         }
       >
         <section className="w-full flex flex-col items-center text-center justify-center">

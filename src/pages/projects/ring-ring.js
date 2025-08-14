@@ -15,15 +15,6 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 
 export default function RingRing() {
-  const baseClasses =
-    "w-full h-full object-cover relative bg-black overflow-hidden";
-  const borderClasses = "box-border rounded-2xl border-gray-300 border-0";
-  const shadowClasses = "z-0 shadow-lg";
-  const afterClasses =
-    "after:border-1 after:rounded-2xl after:border-color-border after:w-full after:-right-8 after:-bottom-8 after:absolute after:h-[100%] after:z-[-3]";
-  const beforeClasses =
-    "before:border-1 before:rounded-2xl before:border-color-border before:w-full before:-left-8 before:-top-8 before:absolute before:h-full before:z-[-3]";
-
   return (
     <PageTemplate
       projectPage
@@ -47,7 +38,7 @@ export default function RingRing() {
         </div>
 
         <article className="w-full lg:max-w-[80%] mx-auto">
-          <section className="lg:mb-36 mb-15">
+          <section className="mb-10 md:mb-20">
             <Img
               contain
               extraBorder
@@ -109,7 +100,7 @@ export default function RingRing() {
         </article>
         <Divider />
         <FlexArticle smallMargin alignTop>
-          <section className="sticky top-30">
+          <section className="lg:sticky top-30">
             <H2 chapeau="Inlogscherm voor authenticatie">Inlogpagina</H2>
             <P>
               Het dashboard bevat privacygevoelige Ring Ring data. Daarom is een
@@ -127,7 +118,7 @@ export default function RingRing() {
         </FlexArticle>
 
         <FlexArticle alignTop reverse>
-          <section className="sticky top-30">
+          <section className="lg:sticky top-30">
             <H2 chapeau="Het hoofdscherm">Dashboard</H2>
             <P>
               Het dashboard biedt een helder totaaloverzicht van alle
@@ -147,7 +138,7 @@ export default function RingRing() {
         </FlexArticle>
 
         <FlexArticle alignTop>
-          <section className="sticky top-30">
+          <section className="lg:sticky top-30">
             <H2 chapeau="Data op basis van type account">Voor u-pagina</H2>
             <P>
               Op de ‘Voor U’-pagina worden datavisualisaties getoond die
@@ -169,7 +160,7 @@ export default function RingRing() {
         </FlexArticle>
 
         <FlexArticle alignTop reverse>
-          <section className="sticky top-30">
+          <section className="lg:sticky top-30">
             <H2 chapeau="Routes bekijken op een kaart">Kaartpagina</H2>
             <P>
               Op de kaartpagina kunnen beleidsmakers fietsroutes analyseren op
@@ -190,7 +181,7 @@ export default function RingRing() {
         </FlexArticle>
 
         <FlexArticle alignTop>
-          <section className="sticky top-30">
+          <section className="lg:sticky top-30">
             <H2 chapeau="Gegeven feedback over routes bekijken">
               Feedbackpagina
             </H2>

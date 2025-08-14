@@ -19,9 +19,9 @@ export default function YoDashboardClients() {
   const borderClasses = "box-border rounded-2xl border-gray-300 border-0";
   const shadowClasses = "z-0 shadow-lg";
   const afterClasses =
-    "after:border-1 after:rounded-2xl after:border-color-border after:w-full after:-right-8 after:-bottom-8 after:absolute after:h-[100%] after:z-[-3]";
+    "after:border-1 after:rounded-2xl after:border-color-border after:w-full after:-right-3 after:-bottom-3 md:after:-right-7 md:after:-bottom-7 after:absolute after:h-[100%] after:z-[-3]";
   const beforeClasses =
-    "before:border-1 before:rounded-2xl before:border-color-border before:w-full before:-left-8 before:-top-8 before:absolute before:h-full before:z-[-3]";
+    "before:border-1 before:rounded-2xl before:border-color-border before:w-full before:-left-3 before:-top-3 md:before:-left-7 md:before:-top-7 before:absolute before:h-full before:z-[-3]";
 
   return (
     <PageTemplate projectPage="yo">
@@ -40,7 +40,7 @@ export default function YoDashboardClients() {
             <SvgDeviceOutline />
           </div>
         </div>
-        <section className="flex flex-col gap-12 w-full lg:max-w-[80%] mx-auto">
+        <section className="flex flex-col gap-6 md:gap-12 w-full lg:max-w-[80%] mx-auto">
           <Img
             extraBorder
             browserToolbar
@@ -91,7 +91,9 @@ export default function YoDashboardClients() {
               een overzichtelijke datavisualisatie waar snel conclusies uit
               gehaald kunnen worden.
             </P>
-            <div className={` relative m-8 ${afterClasses} ${beforeClasses}`}>
+            <div
+              className={` relative m-4 md:m-8 ${afterClasses} ${beforeClasses}`}
+            >
               <div
                 className={`${baseClasses} ${borderClasses} ${shadowClasses}`}
               >
@@ -143,7 +145,9 @@ export default function YoDashboardClients() {
                 </Splide>
               </div>
             </div>
-            <div className={` relative m-8 ${afterClasses} ${beforeClasses}`}>
+            <div
+              className={` relative m-4 md:m-8 ${afterClasses} ${beforeClasses}`}
+            >
               <div
                 className={`${baseClasses} ${borderClasses} ${shadowClasses}`}
               >
