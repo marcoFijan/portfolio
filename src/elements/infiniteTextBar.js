@@ -33,8 +33,6 @@ export default function InfiniteTextBar({
   const x = useRef(0);
 
   useEffect(() => {
-    console.log(" dirction", directionLeft);
-
     const step = () => {
       if (containerRef.current && contentRef.current) {
         const contentWidth = contentRef.current.offsetWidth / 2;
