@@ -41,7 +41,7 @@ export default function Reisartikelen() {
             <Img
               extraBorder
               browserToolbar
-              src="/images/reisartikelen/Thumb.jpg"
+              src="/images/Reisartikelen/Thumb.jpg"
               alt="Eind Ontwerp Reisartikelen.nl"
               className="block aspect-video w-full object-top"
             />
