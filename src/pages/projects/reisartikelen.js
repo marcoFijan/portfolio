@@ -37,11 +37,11 @@ export default function Reisartikelen() {
         </div>
 
         <article className="w-full lg:max-w-[80%] mx-auto">
-          <section className="lg:mb-36 mb-15">
+          <section className="mb-10 md:mb-20">
             <Img
               extraBorder
               browserToolbar
-              src="/images/reisartikelen/thumb.jpg"
+              src="/images/reisartikelen/Thumb.jpg"
               alt="Eind Ontwerp Reisartikelen.nl"
               className="block aspect-video w-full object-top"
             />
@@ -91,7 +91,7 @@ export default function Reisartikelen() {
         </article>
         <Divider />
         <FlexArticle smallMargin alignTop>
-          <section className="sticky top-30">
+          <section className="lg:sticky top-30">
             <H2 chapeau="Website voor het herontwerp">Orgineel ontwerp</H2>
             <P>
               Ik kreeg toestemming om flink van de standaard huisstijl af te
@@ -113,7 +113,7 @@ export default function Reisartikelen() {
         </FlexArticle>
 
         <FlexArticle alignTop reverse>
-          <section className="sticky top-30">
+          <section className="lg:sticky top-30">
             <H2 chapeau="Eerste schets na onderzoek">LoFi Ontwerp</H2>
             <P>
               In het eerste herontwerp zorgde ik voor een grote banner. Ook
@@ -134,7 +134,7 @@ export default function Reisartikelen() {
         </FlexArticle>
 
         <FlexArticle alignTop>
-          <section className="sticky top-30">
+          <section className="lg:sticky top-30">
             <H2 chapeau="Het laatste ontwerp">HiFi Ontwerp</H2>
             <P>
               Na een feedbackronde van het LoFi-ontwerp ging ik verder met het

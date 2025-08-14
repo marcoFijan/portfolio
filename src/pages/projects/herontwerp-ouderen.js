@@ -20,9 +20,9 @@ export default function KBOTilburgReeshof() {
   const borderClasses = "box-border rounded-2xl border-gray-300 border-0";
   const shadowClasses = "z-0 shadow-lg";
   const afterClasses =
-    "after:border-1 after:rounded-2xl after:border-color-border after:w-full after:-right-8 after:-bottom-8 after:absolute after:h-[100%] after:z-[-3]";
+    "after:border-1 after:rounded-2xl after:border-color-border after:w-full after:-right-3 after:-bottom-3 md:after:-right-7 md:after:-bottom-7 after:absolute after:h-[100%] after:z-[-3]";
   const beforeClasses =
-    "before:border-1 before:rounded-2xl before:border-color-border before:w-full before:-left-8 before:-top-8 before:absolute before:h-full before:z-[-3]";
+    "before:border-1 before:rounded-2xl before:border-color-border before:w-full before:-left-3 before:-top-3 md:before:-left-7 md:before:-top-7 before:absolute before:h-full before:z-[-3]";
 
   return (
     <PageTemplate
@@ -53,7 +53,7 @@ export default function KBOTilburgReeshof() {
             alt="KBO Reeshof Menu uitgeklapt"
             className="block object-cover aspect-video w-full object-top"
           />
-          <article className="my-20">
+          <article className="my-10 md:my-20">
             <ul className="w-max mb-8 flex flex-col gap-4 max-w-full">
               <Li
                 className={
@@ -110,14 +110,16 @@ export default function KBOTilburgReeshof() {
           </article>
         </section>
 
-        <section className="flex flex-col gap-12">
+        <section className="flex flex-col ">
           <FlexArticle reverse smallMargin>
             <P className="max-w-full lg:max-w-1/2 text-color-accent text-lg md:text-xl lg:text-2xl justify-self-center text-center">
               Veel afbeeldingen, het gebruik van skeumorphisme en grote,
               duidelijke knoppen ondersteunen ouderen bij het begrijpen van de
               interactie op de website
             </P>
-            <div className={` relative m-8 ${afterClasses} ${beforeClasses}`}>
+            <div
+              className={` relative m-4 md:m-8 ${afterClasses} ${beforeClasses}`}
+            >
               <div
                 className={`${baseClasses} ${borderClasses} ${shadowClasses}`}
               >
@@ -190,7 +192,9 @@ export default function KBOTilburgReeshof() {
               Ouderen kunnen gebruikmaken van diverse stapsgewijze instructies
               om vertrouwd te raken met de belangrijkste functies van de website
             </P>
-            <div className={` relative m-8 ${afterClasses} ${beforeClasses}`}>
+            <div
+              className={` relative m-4 md:m-8 ${afterClasses} ${beforeClasses}`}
+            >
               <div
                 className={`${baseClasses} ${borderClasses} ${shadowClasses}`}
               >
@@ -372,7 +376,9 @@ export default function KBOTilburgReeshof() {
                 ‘pains’ en ‘gains’ overzichtelijk genoteerd
               </P>
             </section>
-            <div className={` relative m-8 ${afterClasses} ${beforeClasses}`}>
+            <div
+              className={` relative m-4 md:m-8 ${afterClasses} ${beforeClasses}`}
+            >
               <div
                 className={`${baseClasses} ${borderClasses} ${shadowClasses}`}
               >
@@ -555,7 +561,7 @@ export default function KBOTilburgReeshof() {
                 eis mogelijke oplossingen bedacht. Door deze oplossingen te
                 combineren kunnen er orginele ideeën ontstaan.{" "}
               </P>
-              <P className="text-white text-md md:text-lg lg:text-xl max-w-paragraph mb-10">
+              <P>
                 Aangezien er veel ideegeneratie methodes zijn gebruikt en veel
                 van deze methodes vrij groot zijn in uitwerking, kunt u de
                 ideegeneratie methodes het best bekijken in de betreffende
@@ -577,7 +583,7 @@ export default function KBOTilburgReeshof() {
               alt="Harris Profiel"
             />
           </FlexArticle>
-          <FlexArticle reverse alignTop>
+          <FlexArticle reverse alignTop smallMargin>
             <section>
               <H2 chapeau="Itereren op mogelijke oplossingen">
                 Conceptualiseren
@@ -631,7 +637,7 @@ export default function KBOTilburgReeshof() {
               alt="Concept"
             />
           </FlexArticle>
-          <FlexArticle>
+          <FlexArticle smallMargin>
             <section>
               <H3>Vormgevingsregels</H3>
               <P>
@@ -664,7 +670,7 @@ export default function KBOTilburgReeshof() {
               alt="Vormgevingsregels"
             />
           </FlexArticle>
-          <article className="w-full mb-48">
+          <article className="w-full my-16 xl:my-32">
             <H2 chapeau="De Design Rationale voor de klant">Eindproduct</H2>
             <iframe
               src={

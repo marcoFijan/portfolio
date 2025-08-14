@@ -95,7 +95,7 @@ export default function Projects() {
               <ProjectSection
                 projectName={"Herontwerp reisartikelen.nl"}
                 projectLink={"/projects/reisartikelen"}
-                imgSrc={"/images/reisartikelen/thumb.jpg"}
+                imgSrc={"/images/reisartikelen/Thumb.jpg"}
                 imgAlt={"Reisartikelen herontwerp afbeelding"}
                 projectGiver={"Reisartikelen"}
                 projectChapeau={

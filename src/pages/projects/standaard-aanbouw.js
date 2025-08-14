@@ -20,9 +20,9 @@ export default function StandaardAanbouw() {
   const borderClasses = "box-border rounded-2xl border-gray-300 border-0";
   const shadowClasses = "z-0 shadow-lg";
   const afterClasses =
-    "after:border-1 after:rounded-2xl after:border-color-border after:w-full after:-right-8 after:-bottom-8 after:absolute after:h-[100%] after:z-[-3]";
+    "after:border-1 after:rounded-2xl after:border-color-border after:w-full after:-right-3 after:-bottom-3 md:after:-right-7 md:after:-bottom-7 after:absolute after:h-[100%] after:z-[-3]";
   const beforeClasses =
-    "before:border-1 before:rounded-2xl before:border-color-border before:w-full before:-left-8 before:-top-8 before:absolute before:h-full before:z-[-3]";
+    "before:border-1 before:rounded-2xl before:border-color-border before:w-full before:-left-3 before:-top-3 md:before:-left-7 md:before:-top-7 before:absolute before:h-full before:z-[-3]";
 
   return (
     <PageTemplate projectPage>
@@ -44,7 +44,7 @@ export default function StandaardAanbouw() {
         </div>
 
         <article className="w-full lg:max-w-[80%] mx-auto">
-          <section className="lg:mb-36 mb-15">
+          <section className="mb-10 md:mb-20">
             <Img
               extraBorder
               browserToolbar
@@ -92,7 +92,7 @@ export default function StandaardAanbouw() {
             als huisstijl te gebruiken voor het herontwerp.
           </P>
           <FlexArticle smallMargin alignTop>
-            <section className="sticky top-30">
+            <section className="lg:sticky top-30">
               <H3>Logo</H3>
               <P>
                 De aannemer is recentelijk een rebranding aangegaan en heeft het
@@ -108,7 +108,7 @@ export default function StandaardAanbouw() {
             </div>
           </FlexArticle>
           <FlexArticle reverse smallMargin alignTop>
-            <section className="sticky top-30">
+            <section className="lg:sticky top-30">
               <H3>Briefpapier</H3>
               <P>
                 De aannemer werkt voornamelijk via bestaande contacten en heeft
@@ -125,7 +125,7 @@ export default function StandaardAanbouw() {
           </FlexArticle>
         </article>
         <article className="grid relative grid-cols-1 gap-12 lg:grid-cols-2 gap-y-12 pt-20 my-16 xl:my-32 items-start">
-          <section className="sticky top-30">
+          <section className="lg:sticky top-30">
             <H2 chapeau="Overzicht van de hoofditeraties">Herontwerp</H2>
             <P>
               Het ontwerpproces verliep iteratief, van een eerste LoFi-schets
@@ -160,7 +160,9 @@ export default function StandaardAanbouw() {
 
           <section className="relative">
             <div className="absolute top-0 left-0 w-full h-full">
-              <div className={` relative m-8 ${afterClasses} ${beforeClasses}`}>
+              <div
+                className={` relative m-4 md:m-8 ${afterClasses} ${beforeClasses}`}
+              >
                 <div
                   className={`${baseClasses} ${borderClasses} ${shadowClasses}`}
                 >
@@ -279,7 +281,7 @@ export default function StandaardAanbouw() {
           </section>
         </article>
         <article className="grid relative grid-cols-1 gap-12 lg:grid-cols-2 gap-y-12 pt-20 my-16 xl:my-32 items-start">
-          <section className="sticky top-30 xl:order-2">
+          <section className="lg:sticky top-30 xl:order-2">
             <H2 chapeau="Overzicht van diverse detailpagina's">
               Overige schermen
             </H2>
@@ -294,7 +296,9 @@ export default function StandaardAanbouw() {
 
           <section className="relative">
             <div className="absolute top-0 left-0 w-full h-full">
-              <div className={` relative m-8 ${afterClasses} ${beforeClasses}`}>
+              <div
+                className={` relative m-4 md:m-8 ${afterClasses} ${beforeClasses}`}
+              >
                 <div
                   className={`${baseClasses} ${borderClasses} ${shadowClasses}`}
                 >
