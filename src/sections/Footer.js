@@ -124,7 +124,7 @@ export default function Footer({ homePage }) {
             <NextLink
               noBubble
               type="logo"
-              href="https://nl.linkedin.com/"
+              href="https://www.linkedin.com/in/marco-fijan-a0b60b161/"
               title="Ga naar contactpagina"
               className="fill-white hover:fill-color-accent hover:stroke-color-accent hover:text-color-accent"
             >
