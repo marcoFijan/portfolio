@@ -10,6 +10,21 @@
   --breakpoint-2xl: 1536px;
   --breakpoint-3xl: 1536px;
 
+  --text-xs: 0.75vh;
+  --text-sm: 0.875vh;
+  --text-base: 1vh;
+  --text-md: 1.25vh;
+  --text-lg: 1.5vh;
+  --text-xl: 2vh;
+  --text-2xl: 3vh;
+  --text-3xl: 4vh;
+  --text-4xl: 5vh;
+  --text-5xl: 6vh;
+  --text-6xl: 7vh;
+  --text-7xl: 8vh;
+  --text-8xl: 9vh;
+  --text-9xl: 10vh;
+
   --background-size-*: initial;
   --background-size-auto: auto;
   --background-size-cover: cover;
@@ -23,8 +38,10 @@
   --color-color-accent-light: #ffc793;
   --color-color-logo-bg: transparent;
   --color-color-logo-inner: transparent;
-  --color-color-bg-top: #030303;
-  --color-color-bg-bottom: #1d1f20;
+  --color-color-bg-top: #04070d;
+  --color-color-bg-bottom: #121a26;
+  --color-color-bg-top-light: #ffffff;
+  --color-color-bg-bottom-light: #c8cfd6;
   --color-white: #c8cfd6;
   --color-color-white-soft: #70828e;
   --color-color-border: #303234;
@@ -271,7 +288,9 @@ header nav.desktop ul li:first-child {
     rgba(242, 242, 242, 0.1) 100%
   );
 
-  background-size: 200% 100%, contain;
+  background-size:
+    200% 100%,
+    contain;
   background-position-x: right;
   transition: all ease-in-out 0.3s;
 }
@@ -284,7 +303,9 @@ header nav.desktop ul li:last-child {
     rgba(242, 242, 242, 0.1) 100%
   );
 
-  background-size: 200% 100%, contain;
+  background-size:
+    200% 100%,
+    contain;
   background-position-x: left;
   transition: all ease-in-out 0.3s;
 }

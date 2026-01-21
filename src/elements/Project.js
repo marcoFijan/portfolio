@@ -15,11 +15,11 @@ export default function ProjectSection({
 }) {
   return (
     <Link
-      className="bg-gradient-to-tr from-color-bg-top/[0.2] to-color-bg-bottom/[0.3] rounded-2xl p-1 md:p-3 lg:p-5 border border-color-border block group"
+      className="bg-gradient-to-tr from-color-bg-top/[0.2] to-color-bg-bottom/[0.3] rounded-2xl block group"
       href={projectLink || "#"}
       title={`Bekijk project: ${projectName}`}
     >
-      <section className="rounded-2xl border-color-border group-hover:border-white/[0.8] transition-all duration-500 ease-in-out  border overflow-hidden  w-full h-full px-4 md:px-10 lg:px-20 lg:pt-10 pb-0 relative">
+      <section className="rounded-2xl border-color-border group-hover:border-white/[0.8] transition-all duration-500 ease-in-out  border overflow-hidden  w-full h-full px-4 md:px-10 lg:px-20 lg:pt-10 pb-0 relative grid grid-cols-1 lg:grid-cols-2 gap-6">
         <article className=" flex lg:flex-nowrap flex-wrap-reverse justify-between items-start gap-x-8 relative text-white fill-white stroke-color-bg-top">
           <section className="lg:mt-0 -mt-10 pr-10">
             <H3 noMarginTop textWhite>
@@ -43,12 +43,12 @@ export default function ProjectSection({
             projectGiver === "YoungOnes"
               ? "from-color-yo-accent"
               : projectGiver === "KBO Tilburg Reeshof"
-              ? "from-color-kbo-accent"
-              : projectGiver === "Standaard Aanbouw"
-              ? "from-color-sa-accent"
-              : projectGiver === "Reisartikelen"
-              ? "from-color-ra-accent"
-              : "from-color-accent"
+                ? "from-color-kbo-accent"
+                : projectGiver === "Standaard Aanbouw"
+                  ? "from-color-sa-accent"
+                  : projectGiver === "Reisartikelen"
+                    ? "from-color-ra-accent"
+                    : "from-color-accent"
           } transition-all duration-500`}
         ></div>
         <div className="absolute -z-[2] bg-radial from-color-bg-bottom to-color-bg-top/[0.1] w-[200%] h-[200%] -top-full -left-1/2 transition-all duration-500"></div>
