@@ -1,56 +1,43 @@
-import { motion } from "framer-motion";
-import { Inter } from "next/font/google";
+import { Fugaz_One } from "next/font/google";
+import InViewAnimate from "../utilities/InViewAnimate.js";
 
-const inter = Inter({
-  weight: ["400", "500", "600", "700"],
+const fugazOne = Fugaz_One({
+  weight: ["400"],
   subsets: ["latin"],
-  variable: "--font-orbitron",
+  variable: "--font-fugazOne",
 });
 
-export default function H2({
-  children,
-  chapeau,
-  big = false,
-  animateRight = false,
-  className,
-}) {
+export default function H2({ children, chapeau, big = false, className = "" }) {
   return (
     <>
       {chapeau && (
-        <motion.span
-          className={`${inter.className} ${
+        <InViewAnimate
+          as="span"
+          splitText={true}
+          stagger={40}
+          delay={300}
+          className={`${fugazOne.className} ${
             big
-              ? "text-xl md:text-2xl lg:text-3xl after:top-[0.5rem]"
-              : "text-md md:text-lg lg:text-xl after:top-[0.7rem]"
-          }  uppercase font-light text-shadow-white/[0.5] text-shadow-2xs text-white/[0.5] text-opacity-50 pl-6 relative after:absolute after:content-[''] after:h-3 after:w-3 after:bg-color-accent after:rounded-full after:left-0 w-max after:-translate-y-1/2 after:opacity-100 `}
-          initial={animateRight ? { x: 10000 } : { opacity: 0, y: 25 }}
-          whileInView={{
-            opacity: 1,
-            x: 0,
-            transition: { duration: 0.5, delay: 0.1 },
-          }}
+              ? "text-xl md:text-2xl lg:text-3xl"
+              : "text-md md:text-lg lg:text-xl"
+          } uppercase font-light text-white/[0.5] pl-6 relative block mb-4 after:absolute after:content-[''] after:h-3 after:w-3 after:bg-color-accent after:rounded-full after:left-0 after:top-1/2 after:-translate-y-1/2`}
         >
           {chapeau}
-        </motion.span>
+        </InViewAnimate>
       )}
+
       {children && (
-        <motion.h2
-          className={`${
-            inter.className
-          } ${className} leading-tight mb-8 text-shadow text-white text-shadow-color-bg-top text-shadow-2xs font-semibold ${
+        <InViewAnimate
+          as="h2"
+          className={`${fugazOne.className} ${className} leading-tight mb-8 text-white font-black ${
             big
               ? "text-6xl md:text-7xl lg:text-9xl"
               : "text-3xl md:text-5xl lg:text-7xl"
           }`}
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-            transition: { duration: 0.5, delay: 0.1 },
-          }}
+          delay={100}
         >
           {children}
-        </motion.h2>
+        </InViewAnimate>
       )}
     </>
   );

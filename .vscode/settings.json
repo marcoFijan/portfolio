@@ -1,10 +1,4 @@
 {
   "editor.formatOnPaste": true,
-  "editor.formatOnSave": true,
-  "editor.colorDecorators": true,
-  "tailwindCSS.colorDecorators": false,
-  "css.colorDecorators": true,
-  "scss.colorDecorators": true,
-  "less.colorDecorators": true,
-  "disable-hardware-acceleration": true
+  "editor.formatOnSave": true
 }

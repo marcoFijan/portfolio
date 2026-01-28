@@ -1,37 +1,41 @@
-import { motion } from "framer-motion";
-import { Inter } from "next/font/google";
+import { Fugaz_One } from "next/font/google";
+import InViewAnimate from "../utilities/InViewAnimate.js";
 
-const inter = Inter({
-  weight: ["400", "500", "600", "700"],
+const fugazOne = Fugaz_One({
+  weight: ["400"],
   subsets: ["latin"],
-  variable: "--font-orbitron",
+  variable: "--font-fugazOne",
 });
 
 export default function H3({
   children,
-  className,
+  chapeau,
+  className = "",
   textWhite,
   noMarginTop = false,
 }) {
-  const extras = className ? className : "";
-
   return (
-    <motion.h3
-      className={
-        `text-xl md:text-2xl lg:text-3xl font-black leading-snug mb-2 text-shadow-color-bg-top text-shadow-xs ${
+    <>
+      {chapeau && (
+        <InViewAnimate
+          as="span"
+          splitText={true}
+          stagger={40}
+          delay={300}
+          className={`${fugazOne.className} text-md md:text-lg lg:text-xl uppercase font-light text-white/[0.5] text-opacity-50 pl-6 relative block after:absolute after:content-[''] after:h-3 after:w-3 after:bg-color-accent after:rounded-full after:left-0 after:top-1/2 after:-translate-y-1/2 after:opacity-100`}
+        >
+          {chapeau}
+        </InViewAnimate>
+      )}
+      <InViewAnimate
+        as="h3"
+        className={`${fugazOne.className} text-xl md:text-2xl lg:text-3xl font-black leading-snug mb-2 text-shadow-color-bg-top text-shadow-xs ${
           textWhite ? "text-white" : "text-color-accent"
-        } ${noMarginTop ? "mt-4" : "mt-12"} ` +
-        extras +
-        inter.className
-      }
-      initial={{ opacity: 0, y: 25 }}
-      whileInView={{
-        opacity: 1,
-        y: 0,
-        transition: { duration: 0.5, delay: 0.1 },
-      }}
-    >
-      {children}
-    </motion.h3>
+        } ${noMarginTop ? "mt-4" : "mt-12"} ${className}`}
+        delay={100}
+      >
+        {children}
+      </InViewAnimate>
+    </>
   );
 }

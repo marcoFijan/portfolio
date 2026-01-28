@@ -1,12 +1,17 @@
-export default function Container({ children, className }) {
+export default function Container({ children, className, amountOfPages }) {
+  const heightClass = amountOfPages
+    ? " h-" + (parseFloat(amountOfPages) * 100).toString() + "vh "
+    : "";
+
   return (
-    <div
+    <section
       className={
         "w-full max-w-wrapper mx-auto px-wrapper-mobile md:px-wrapper " +
-        className
+        className +
+        heightClass
       }
     >
       {children}
-    </div>
+    </section>
   );
 }

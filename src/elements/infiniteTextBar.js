@@ -1,10 +1,10 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { motion, useInView } from "framer-motion";
 import { useFrame } from "@react-three/fiber";
 import { useScroll } from "@react-three/drei";
 import Letter from "./letter";
+import Word from "./word";
 import { Inter } from "next/font/google";
 
 const inter = Inter({
@@ -14,14 +14,12 @@ const inter = Inter({
 });
 
 export default function InfiniteTextBar({
-  text = "Placeholder",
+  text = [],
   directionLeft = false,
   className,
 }) {
-  const animateText = text.toString();
   const defaultSpeed = directionLeft ? 1 : -1;
   const speedRef = useRef(defaultSpeed);
-  const [speed, setSpeed] = useState(defaultSpeed);
   const scroll = useScroll();
   const lastOffset = useRef(0);
   const scrollSpeed = useRef(0);
@@ -50,12 +48,8 @@ export default function InfiniteTextBar({
 
     animationRef.current = requestAnimationFrame(step);
 
-    return () => {
-      if (animationRef.current) {
-        cancelAnimationFrame(animationRef.current);
-      }
-    };
-  }, [directionLeft]);
+    return () => cancelAnimationFrame(animationRef.current);
+  }, []);
 
   useFrame((state, delta) => {
     const currentOffset = scroll.offset;
@@ -65,44 +59,41 @@ export default function InfiniteTextBar({
 
     const calculatedSpeed = defaultSpeed * scrollSpeed.current * 100;
 
-    if (Math.abs(scrollSpeed.current) > 0.001) {
-      // Save the current direction
-      lastDirectionRef.current = scrollSpeed.current > 0 ? 1 : -1;
-
-      // Update speed with direction and cap the minimum
-      speedRef.current =
-        Math.abs(calculatedSpeed) > 0.5
+    speedRef.current =
+      Math.abs(scrollSpeed.current) > 0.001
+        ? Math.abs(calculatedSpeed) > 0.5
           ? calculatedSpeed
-          : defaultSpeed * lastDirectionRef.current;
-    } else {
-      // Scroll stopped or at limit — keep moving at base speed in last direction
-      speedRef.current = defaultSpeed * lastDirectionRef.current;
-    }
+          : defaultSpeed * (scrollSpeed.current > 0 ? 1 : -1)
+        : defaultSpeed * lastDirectionRef.current;
+
+    if (Math.abs(scrollSpeed.current) > 0.001)
+      lastDirectionRef.current = scrollSpeed.current > 0 ? 1 : -1;
   });
 
   const letterHover = {
     whileHover: {
       scale: 1.1,
-      transition: {
-        type: "spring",
-        stiffness: 300,
-        damping: 10,
-      },
+      transition: { type: "spring", stiffness: 300, damping: 10 },
     },
   };
 
-  const renderText = (text) =>
-    [...text].map((char, i) => (
-      <Letter key={i} char={char} letterHover={letterHover} />
-    ));
+  const renderText = (words) =>
+    Array.isArray(words)
+      ? words.map((word, i) => (
+          <Word
+            key={i}
+            word={word}
+            letterHover={letterHover}
+            bold={i % 2 === 0}
+          />
+        ))
+      : [];
 
   return (
     <div
-      className={`${
-        inter.className
-      } overflow-hidden   text-color-[#ffffff05] md:text-[5vw] text-4xl sm:text-7xl h-20 md:h-[12vw] whitespace-nowrap absolute -z-20 cursor-default left-1/2 -translate-x-1/2 ${
-        directionLeft ? "-rotate-[5deg] " : "rotate-[5deg] "
-      } ${className} `}
+      className={`${inter.className} overflow-hidden text-color-[#ffffff05] md:text-[5vw] text-4xl sm:text-7xl h-20 md:h-[12vw] whitespace-nowrap absolute -z-20 cursor-default left-1/2 -translate-x-1/2 ${
+        directionLeft ? "-rotate-[5deg]" : "rotate-[5deg]"
+      } ${className}`}
     >
       <div ref={containerRef} className="relative w-full">
         <div
@@ -111,12 +102,14 @@ export default function InfiniteTextBar({
           style={{ whiteSpace: "nowrap" }}
         >
           {[...Array(4)].map((_, i) => (
-            <span key={i} className="flex">
-              {renderText(animateText)}
-              {renderText(animateText)}
-              {renderText(animateText)}
-              {renderText(animateText)}
-            </span>
+            <>
+              <span
+                key={i}
+                className="flex justify-center items-center gap-8 ml-8"
+              >
+                {renderText(text)}
+              </span>
+            </>
           ))}
         </div>
       </div>

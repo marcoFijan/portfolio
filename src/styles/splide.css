@@ -1,0 +1,9 @@
+.splide .splide__arrow {
+  background-color: transparent;
+  border: 1px solid var(--color-color-accent);
+  top: calc(100% - 16px);
+}
+
+.splide .splide__arrow svg {
+  fill: var(--color-color-accent);
+}

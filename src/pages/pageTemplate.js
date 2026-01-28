@@ -62,8 +62,27 @@ export default function PageTemplate({
         )}
         <div
           id="background"
-          className="bg-gradient-to-bl from-color-bg-top to-color-bg-bottom fixed top-0 left-0 w-screen h-screen overflow-hidden -z-10"
-        ></div>
+          data-color="colorKBO"
+          className="bg-gradient-to-bl from-color-bg-top to-color-bg-bottom fixed top-0 left-0 w-screen h-screen overflow-hidden -z-10 group"
+        >
+          <div
+            id="radial-glow"
+            className={`
+      fixed h-[400vh] w-[400vw] -right-[250vw] -top-[200vh]
+      bg-radial at-tr from-[var(--glow-color)] via-transparent to-transparent
+      
+      /* Default State */
+      [--glow-color:rgba(255,255,255,0.15)]
+      translate-x-0 translate-y-0
+      
+      /* colorKBO State */
+      /* Use a slightly higher alpha or OKLCH to prevent the "dimming" during transition */
+      group-data-[color='colorKBO']:[--glow-color:theme('colors.color-kbo-accent/0.15')]
+      group-data-[color='colorKBO']:-translate-x-[80vw] 
+      group-data-[color='colorKBO']:translate-y-[10vh]
+    `}
+          />
+        </div>
 
         {children}
       </main>
