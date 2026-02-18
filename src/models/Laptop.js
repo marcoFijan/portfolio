@@ -167,7 +167,7 @@ export default function Laptop({ mobile, props }) {
         setProject3Screen(true);
         setProject4Screen(false);
         setProject5Screen(false);
-        setAccentColor("colorYo");
+        setAccentColor("colorYo2");
         // setLaptopScreenPath("./images/ThumbnailsSmall/YOGwotyThumb.png");
       } else if (scroll.offset >= 0.601 && scroll.offset <= 0.6929) {
         setStartingScreen(false);

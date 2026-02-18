@@ -351,18 +351,8 @@ export default function MainCanvas({}) {
 
                 <Laptop mobile={mobile} />
                 <Smartphone mobile={mobile} />
-                <Scroll>
-                  {/* <Circle args={[1, 100, 200]} scale={5} position={[0, 0, -5]}>
-                    <MeshDistortMaterial
-                      color="#e5e7f9"
-                      attach="material"
-                      distort={0.5}
-                      speed={0.6}
-                    />
-                  </Circle> */}
-                </Scroll>
                 <Scroll html className="w-full">
-                  <SectionHome amountOfPages={mobile ? "4" : "3"}>
+                  <SectionHome amountOfPages={"3"}>
                     <Container className="relative grid grid-cols-2 lg:grid-cols-2 gap-6 h-max items-center justify-end pt-20 lg:pt-40">
                       <article>
                         <H1 chapeau={"Marco Fijan"} className={""} big>
@@ -921,97 +911,137 @@ export default function MainCanvas({}) {
                   <SectionHome
                     className={"flex flex-col justify-start text-center"}
                   >
-                    <H2 className="mt-[20vh]">Uitgelichtte Projecten</H2>
+                    <Container>
+                      <H2 className="mt-[20vh]">Uitgelichtte Projecten</H2>
+                    </Container>
                   </SectionHome>
 
                   <SectionHome amountOfPages={"1"} className={"text-right"}>
-                    <H3
-                      textWhite
-                      noMarginTop
-                      chapeau={"Redesign website voor ouderen binnen budget"}
-                    >
-                      KBO Tilburg Reeshof
-                    </H3>
-                    <NextLink
-                      type="primary"
-                      href="/projects/herontwerp-ouderen"
-                      alignRight
-                    >
-                      Bekijk het project
-                    </NextLink>
+                    <Container>
+                      <H3
+                        textWhite
+                        noMarginTop
+                        chapeau={"Redesign website voor ouderen binnen budget"}
+                      >
+                        KBO Tilburg Reeshof
+                      </H3>
+                      <NextLink
+                        type="primary"
+                        href="/projects/herontwerp-ouderen"
+                        alignRight
+                      >
+                        Bekijk het project
+                      </NextLink>
+                    </Container>
                   </SectionHome>
                   <SectionHome amountOfPages={"1"}>
-                    <H3
-                      textWhite
-                      noMarginTop
-                      chapeau={
-                        "Dashboard datavisualisatie ontwerp + ontwikkeling"
-                      }
-                    >
-                      Dashboard YoungOnes
-                    </H3>
-                    <NextLink
-                      className={"flex justify-end w-full "}
-                      type="primary"
-                      href="/projects/yo-dashboard"
-                    >
-                      Bekijk het project
-                    </NextLink>
+                    <Container>
+                      <H3
+                        textWhite
+                        noMarginTop
+                        chapeau={
+                          "Dashboard datavisualisatie ontwerp + ontwikkeling"
+                        }
+                      >
+                        Dashboard YoungOnes
+                      </H3>
+                      <NextLink
+                        className={"flex justify-end w-full "}
+                        type="primary"
+                        href="/projects/yo-dashboard"
+                      >
+                        Bekijk het project
+                      </NextLink>
+                    </Container>
                   </SectionHome>
                   <SectionHome amountOfPages={"1"} className={"text-right"}>
-                    <H3
-                      textWhite
-                      noMarginTop
-                      chapeau={"Wedstrijd dashboard ontwerp + ontwikkeling"}
-                    >
-                      GWOTY Award YoungOnes
-                    </H3>
-                    <NextLink
-                      type="primary"
-                      href="/projects/yo-gwoty-award"
-                      alignRight
-                    >
-                      Bekijk het project
-                    </NextLink>
+                    <Container>
+                      <H3
+                        textWhite
+                        noMarginTop
+                        chapeau={"Wedstrijd dashboard ontwerp + ontwikkeling"}
+                      >
+                        GWOTY Award YoungOnes
+                      </H3>
+                      <NextLink
+                        type="primary"
+                        href="/projects/yo-gwoty-award"
+                        alignRight
+                      >
+                        Bekijk het project
+                      </NextLink>
+                    </Container>
                   </SectionHome>
                   <SectionHome amountOfPages={"1"}>
-                    <H3
-                      textWhite
-                      noMarginTop
-                      chapeau={
-                        "Commercieel Wordpress website ontwerp + ontwikkeling"
-                      }
-                    >
-                      Standaard Aanbouw
-                    </H3>
-                    <NextLink
-                      className={"flex justify-end w-full "}
-                      type="primary"
-                      href="/projects/standaard-aanbouw"
-                    >
-                      Bekijk het project
-                    </NextLink>
+                    <Container>
+                      <H3
+                        textWhite
+                        noMarginTop
+                        chapeau={
+                          "Commercieel Wordpress website ontwerp + ontwikkeling"
+                        }
+                      >
+                        Standaard Aanbouw
+                      </H3>
+                      <NextLink
+                        className={"flex justify-end w-full "}
+                        type="primary"
+                        href="/projects/standaard-aanbouw"
+                      >
+                        Bekijk het project
+                      </NextLink>
+                    </Container>
                   </SectionHome>
-                  <SectionHome amountOfPages={"1"} className={"text-end"}>
-                    <H3
-                      textWhite
-                      noMarginTop
-                      chapeau={
-                        "Andere projecten; Unity-engine, Blender, pure CSS"
-                      }
-                    >
-                      Bekijk alle projecten
-                    </H3>
-                    {/* <H2
-                  chapeau={"Andere projecten; Unity-engine, Blender, pure CSS"}
-                >
-                  Andere projecten
-                </H2>*/}
-                    <NextLink type="primary" href="/projects" alignRight>
-                      Alle projecten
-                    </NextLink>
+                  <SectionHome amountOfPages={"1"} className={"text-center"}>
+                    <Container>
+                      <H3
+                        textWhite
+                        noMarginTop
+                        chapeau={
+                          "Andere projecten; Unity-engine, Blender, pure CSS"
+                        }
+                      >
+                        Bekijk alle projecten
+                      </H3>
+                      <NextLink type="primary" href="/projects" alignCenter>
+                        Alle projecten
+                      </NextLink>
+                    </Container>
                   </SectionHome>
-                  {/* </Container> */}
+                  <SectionHome
+                    amoundOfPages={"2"}
+                    className="relative h-full my-30 bg-color-bg-bottom-light inverted-card py-20 lg:py-20"
+                  >
+                    {/* <section className="relative h-full my-30 bg-color-bg-bottom-light inverted-card py-20 lg:py-20"> */}
+                    <svg
+                      width="160"
+                      height="160"
+                      viewBox="0 0 200 200"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className=" absolute w-30 h-30 left-0 -top-29.5"
+                    >
+                      <path
+                        d="M0 0C0 110.457 89.5431 200 200 200H0V0Z"
+                        className="fill-color-bg-bottom-light"
+                      />
+                    </svg>
+                    <svg
+                      width="160"
+                      height="160"
+                      viewBox="0 0 200 200"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className=" absolute w-30 h-30 right-0 -top-29.5 -rotate-90"
+                    >
+                      <path
+                        d="M0 0C0 110.457 89.5431 200 200 200H0V0Z"
+                        className="fill-color-bg-bottom-light"
+                      />
+                    </svg>
+                    <Container> </Container>
+                    {/* </section> */}
+                  </SectionHome>
                   <section className="mx-4 lg:px-8 pt-20 h-[150vh] max-h-[150vh] overflow-y-auto lg:h-[200vh] lg:max-h-[200vh] box-border w-[100%-1rem] rounded-t-2xl border-b-0 border-white/[0.5] border-1 bg-gradient-to-bl from-color-bg-top via-color-bg-bottom to-color-bg-top ">
                     <Container>
                       <H2 chapeau={"Ervaring"}></H2>{" "}
