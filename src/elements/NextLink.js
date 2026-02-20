@@ -63,7 +63,7 @@ export default function NextLink({
   };
 
   const isSocial = type === "navSocial";
-  const baseClasses = `cursor-pointer relative overflow-hidden flex transition-all duration-500 items-center rounded-full uppercase ${!isNav && !isSocial ? "gap-2 text-md xl:text-lg" : ""}`;
+  const baseClasses = `cursor-pointer tracking-widest relative overflow-hidden flex transition-all duration-500 items-center rounded-full uppercase ${!isNav && !isSocial ? "gap-2 text-sm xl:text-md" : ""}`;
   const combinedClasses = `${baseClasses} ${typeStyles[type] || ""} ${className}`;
 
   const bubbleColor =

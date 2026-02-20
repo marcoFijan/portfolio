@@ -10,7 +10,7 @@ const fugazOne = Fugaz_One({
 export default function H2({ children, chapeau, big = false, className = "" }) {
   return (
     <>
-      {chapeau && (
+      {/* {chapeau && (
         <InViewAnimate
           as="span"
           splitText={true}
@@ -24,12 +24,12 @@ export default function H2({ children, chapeau, big = false, className = "" }) {
         >
           {chapeau}
         </InViewAnimate>
-      )}
+      )} */}
 
       {children && (
         <InViewAnimate
           as="h2"
-          className={`${fugazOne.className} ${className} leading-tight mb-8 text-white font-black ${
+          className={`${fugazOne.className} ${className} leading-tight mb-8 dark:text-white text-black font-black ${
             big
               ? "text-6xl md:text-7xl lg:text-9xl"
               : "text-3xl md:text-5xl lg:text-7xl"

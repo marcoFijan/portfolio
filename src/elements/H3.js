@@ -16,7 +16,7 @@ export default function H3({
 }) {
   return (
     <>
-      {chapeau && (
+      {/* {chapeau && (
         <InViewAnimate
           as="span"
           splitText={true}
@@ -26,12 +26,10 @@ export default function H3({
         >
           {chapeau}
         </InViewAnimate>
-      )}
+      )} */}
       <InViewAnimate
         as="h3"
-        className={`${fugazOne.className} text-xl md:text-2xl lg:text-3xl font-black leading-snug mb-2 text-shadow-color-bg-top text-shadow-xs ${
-          textWhite ? "text-white" : "text-color-accent"
-        } ${noMarginTop ? "mt-4" : "mt-12"} ${className}`}
+        className={`${fugazOne.className} text-xl md:text-2xl lg:text-3xl font-black leading-snug mb-2 text-shadow-color-bg-top text-shadow-xs text-black dark:text-white ${noMarginTop ? "mt-4" : "mt-12"} ${className}`}
         delay={100}
       >
         {children}

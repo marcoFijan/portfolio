@@ -4,8 +4,7 @@ import Container from "../sections/Container.js";
 import Logo from "@/elements/Logo.js";
 import Divider from "@/elements/Divider.js";
 
-// 1. Data extracted to keep component body clean
-const NAV_LINKS = [
+const navLinks = [
   {
     name: "Home",
     url: "/",
@@ -27,7 +26,6 @@ export default function Header({ home = false }) {
   const [isMobile, setIsMobile] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Handle Resize
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth <= 1200);
     checkMobile();
@@ -35,7 +33,6 @@ export default function Header({ home = false }) {
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
-  // Handle Scroll Lock
   useEffect(() => {
     document.documentElement.classList.toggle(
       "overflow-y-hidden",
@@ -48,7 +45,6 @@ export default function Header({ home = false }) {
   return (
     <header className={`${home ? "absolute" : "fixed"} w-full mt-4 z-40`}>
       <Container className="grid grid-cols-3 justify-between items-center w-full">
-        {/* LOGO SECTION */}
         <div className="relative z-50">
           <NextLink
             noBubble
@@ -61,7 +57,6 @@ export default function Header({ home = false }) {
           </NextLink>
         </div>
 
-        {/* NAVIGATION SECTION */}
         {isMobile ? (
           <MobileNav
             isOpen={isMenuOpen}
@@ -72,7 +67,6 @@ export default function Header({ home = false }) {
           <DesktopNav />
         )}
 
-        {/* SOCIALS SECTION (Desktop Only) */}
         {!isMobile && (
           <ul className="flex gap-2 justify-self-end relative z-50">
             <SocialItem
@@ -100,9 +94,9 @@ function DesktopNav() {
   return (
     <nav className="w-max justify-self-center relative z-50">
       <ul className="backdrop-blur-md bg-color-bg-top/30 gap-4 rounded-full flex overflow-hidden">
-        {NAV_LINKS.map((link, i) => {
+        {navLinks.map((link, i) => {
           const isFirst = i === 0;
-          const isLast = i === NAV_LINKS.length - 1;
+          const isLast = i === navLinks.length - 1;
           const isMiddle = !isFirst && !isLast;
 
           return (
@@ -160,7 +154,7 @@ function MobileNav({ isOpen, onToggle, onClose }) {
       >
         <Container className="flex flex-col pt-24 h-full">
           <nav className="w-full">
-            {NAV_LINKS.map((link) => (
+            {navLinks.map((link) => (
               <div key={link.name} className="w-full">
                 <NextLink
                   href={link.url}

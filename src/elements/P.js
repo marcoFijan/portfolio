@@ -8,14 +8,13 @@ const workSans = Work_Sans({
 });
 
 export default function P({ children, className, intro }) {
-  // Combine your existing logic for classes
-  const combinedClasses = `mb-4 font-light opacity-80 text-shadow-color-bg-top text-shadow-2xs ${workSans.className} 
+  const combinedClasses = `mb-4 font-light text-shadow-color-bg-top text-shadow-2xs tracking-widest ${workSans.className} 
     ${
       className
         ? className
         : intro
-          ? "text-white text-md sm:text-lg md:text-xl lg:text-2xl max-w-[70rem] opacity-70"
-          : "text-white text-sm sm:text-md md:text-lg lg:text-xl max-w-paragraph opacity-70 "
+          ? "text-black dark:text-white text-md sm:text-lg md:text-xl lg:text-2xl max-w-280"
+          : "text-black dark:text-white text-sm sm:text-md md:text-lg lg:text-lg max-w-paragraph"
     }
   `;
 

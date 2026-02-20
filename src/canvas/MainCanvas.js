@@ -354,7 +354,7 @@ export default function MainCanvas({}) {
                 <Scroll html className="w-full">
                   <SectionHome amountOfPages={"3"}>
                     <Container className="relative grid grid-cols-2 lg:grid-cols-2 gap-6 h-max items-center justify-end pt-20 lg:pt-40">
-                      <article>
+                      <article className="dark">
                         <H1 chapeau={"Marco Fijan"} className={""} big>
                           Een wens, <br />
                           een product. <br />
@@ -1039,7 +1039,9 @@ export default function MainCanvas({}) {
                         className="fill-color-bg-bottom-light"
                       />
                     </svg>
-                    <Container> </Container>
+                    <Container>
+                      <H2 chapeau={"Ervaring"}></H2>
+                    </Container>
                     {/* </section> */}
                   </SectionHome>
                   <section className="mx-4 lg:px-8 pt-20 h-[150vh] max-h-[150vh] overflow-y-auto lg:h-[200vh] lg:max-h-[200vh] box-border w-[100%-1rem] rounded-t-2xl border-b-0 border-white/[0.5] border-1 bg-gradient-to-bl from-color-bg-top via-color-bg-bottom to-color-bg-top ">
