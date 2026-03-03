@@ -12,7 +12,7 @@ const navLinks = [
 
 const socialLinks = [
   { name: "LinkedIn", url: "https://linkedin.com/...", icon: "linkedin" },
-  { name: "Github", url: "https://github.com/...", icon: "github" },
+  // { name: "Github", url: "https://github.com/...", icon: "github" },
 ];
 
 export default function Header({ home = false }) {
@@ -99,33 +99,28 @@ function MobileNav({ isOpen, onToggle, onClose }) {
     <div className="flex items-center justify-end z-50">
       <button
         onClick={onToggle}
-        className={`fixed right-6 z-[60] h-12 w-12 rounded-full p-3 transition ${
-          isOpen ? "bg-transparent" : "bg-color-accent"
-        }`}
+        className={`fixed right-6 z-[60] h-12 w-12 rounded-full p-3 transition ${isOpen ? "bg-transparent" : "bg-color-accent"
+          }`}
       >
         <div className="relative h-full w-full flex flex-col justify-between">
           <span
-            className={`h-1 w-full bg-white rounded-full transition-transform ${
-              isOpen ? "rotate-45 translate-y-[10px]" : ""
-            }`}
+            className={`h-1 w-full bg-white rounded-full transition-transform ${isOpen ? "rotate-45 translate-y-[10px]" : ""
+              }`}
           />
           <span
-            className={`h-1 w-full bg-white rounded-full transition-opacity ${
-              isOpen ? "opacity-0" : ""
-            }`}
+            className={`h-1 w-full bg-white rounded-full transition-opacity ${isOpen ? "opacity-0" : ""
+              }`}
           />
           <span
-            className={`h-1 w-full bg-white rounded-full transition-transform ${
-              isOpen ? "-rotate-45 -translate-y-[10px]" : ""
-            }`}
+            className={`h-1 w-full bg-white rounded-full transition-transform ${isOpen ? "-rotate-45 -translate-y-[10px]" : ""
+              }`}
           />
         </div>
       </button>
 
       <div
-        className={`fixed inset-0 z-50 transition-transform duration-500 bg-gradient-to-bl from-color-bg-top to-color-bg-bottom ${
-          isOpen ? "translate-x-0" : "translate-x-full"
-        }`}
+        className={`fixed inset-0 z-50 transition-transform duration-500 bg-gradient-to-bl from-color-bg-top to-color-bg-bottom ${isOpen ? "translate-x-0" : "translate-x-full"
+          }`}
       >
         <Container className="flex flex-col pt-24 h-full">
           <nav className="w-full">

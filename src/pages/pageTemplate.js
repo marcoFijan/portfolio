@@ -49,20 +49,19 @@ export default function PageTemplate({
       <main className={`${homePage ? "" : "pt-28 lg:pt-48 "}`}>
         {projectPage && (
           <div
-            className={`absolute overflow-hidden max-w-full -z-[2] bg-radial ${
-              projectPage === "yo"
+            className={`absolute overflow-hidden max-w-full -z-[2] bg-radial ${projectPage === "yo"
                 ? "from-color-yo-accent/[0.4] to-60%"
                 : projectPage === "kbo"
                   ? "from-color-kbo-accent"
                   : projectPage === "ra"
                     ? "from-color-ra-accent/[0.7] to-70%"
                     : "from-color-bg-bottom to-50%"
-            } to-transparent w-[200%] h-[200%] -top-full left-0 transition-all duration-500`}
+              } to-transparent w-[200%] h-[200%] -top-full left-0 transition-all duration-500`}
           ></div>
         )}
         <div
           id="background"
-          data-color="colorKBO"
+          data-color=""
           className="bg-gradient-to-bl from-color-bg-top to-color-bg-bottom fixed top-0 left-0 w-screen h-screen overflow-hidden -z-10 group"
         >
           <div
