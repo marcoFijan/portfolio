@@ -9,7 +9,7 @@ import Action from "@/elements/Action";
 
 import H1 from "@/elements/H1";
 import P from "@/elements/P";
-import NextLink from "@/elements/NextLink";
+import Button from "@/elements/Button";
 
 export default function Error() {
   const router = useRouter();
@@ -57,12 +57,12 @@ export default function Error() {
         </div>
 
         <Action className={"justify-center items-center"}>
-          <NextLink type="secondary" onClick={handleClick}>
+          <Button type="secondary" onClick={handleClick}>
             Ga terug naar vorige pagina
-          </NextLink>
-          <NextLink type="primary" href="/">
+          </Button>
+          <Button type="primary" href="/">
             Ga naar hoofdpagina
-          </NextLink>
+          </Button>
         </Action>
       </Container>
     </PageTemplate>

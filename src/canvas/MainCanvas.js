@@ -19,7 +19,7 @@ import Li from "../elements/Li.js";
 import Img from "../elements/Img.js";
 import P from "../elements/P.js";
 import Divider from "../elements/Divider.js";
-import NextLink from "@/elements/NextLink";
+import Button from "@/elements/Button.js";
 import InfiniteTextBar from "@/elements/infiniteTextBar.js";
 
 import { Environment } from "@react-three/drei";
@@ -34,8 +34,8 @@ import { useScrollOffsets } from "@/hooks/Usescrolloffsets.js";
 // ---------------------------------------------------------------------------
 const SECTION_SELECTORS = {
   hero: "#hero",
-  heroMid: "#hero-mid",      // ~50vh into hero — devices fly off-screen
-  heroEnd: "#hero-end",      // ~90vh into hero — devices arc back in
+  heroMid: "#hero-mid", // ~50vh into hero — devices fly off-screen
+  heroEnd: "#hero-end", // ~90vh into hero — devices arc back in
   about: "#about",
   aboutEnd: "#about-end",
   projectIntro: "#project-intro", // devices fully land here — intro title shown
@@ -54,11 +54,16 @@ function FixedScene({ mobile, offsets }) {
   const ready = offsets.projectIntro !== undefined;
 
   return (
-    <div style={{ position: "fixed", inset: 0, zIndex: 0, pointerEvents: "none" }}>
+    <div
+      style={{ position: "fixed", inset: 0, zIndex: 0, pointerEvents: "none" }}
+    >
       <Canvas shadows camera={{ position: [0, 0, 7] }}>
         <Suspense fallback={null}>
           <ambientLight color="white" intensity={0.3} />
-          <Environment blur={0} files="../images/Environment/studio_small_08_1k.hdr" />
+          <Environment
+            blur={0}
+            files="../images/Environment/studio_small_08_1k.hdr"
+          />
           {ready && (
             <>
               <Laptop mobile={mobile} offsets={offsets} />
@@ -93,7 +98,10 @@ export default function MainCanvas() {
     return (
       <div className="w-full">
         <Container>
-          <section id="hero" className="relative pt-26 flex flex-col sm:flex-row items-start justify-start">
+          <section
+            id="hero"
+            className="relative pt-26 flex flex-col sm:flex-row items-start justify-start"
+          >
             <article className="left-0 bottom-0 xl:h-min xl:bottom-[unset] xl:pt-32 w-full xl:w-1/2 flex flex-col justify-start relative">
               <H1 chapeau="Marco Fijan" big>
                 een wens, <br />
@@ -105,8 +113,12 @@ export default function MainCanvas() {
                 gebruiksvriendelijke ervaringen.
               </P>
               <Action>
-                <NextLink className="block" type="primary" href="/contact">Neem contact op!</NextLink>
-                <NextLink className="block" type="secondary" href="projects">Bekijk alle projecten</NextLink>
+                <Button className="block" type="primary" href="/contact">
+                  Neem contact op!
+                </Button>
+                <Button className="block" type="secondary" href="projects">
+                  Bekijk alle projecten
+                </Button>
               </Action>
             </article>
           </section>
@@ -119,9 +131,16 @@ export default function MainCanvas() {
                 className="object-right-top grayscale-75 opacity-70 max-w-full"
                 classNameWrapper="col-span-1 xs:col-span-5 row-span-3 aspect-video mb-20"
               />
-              <P className="text-xl text-white/40 col-span-1 xs:col-span-6 text-end my-10">Ik help mensen graag in het digitale tijdperk.</P>
-              <P className="text-xl text-white/40 col-span-1 xs:col-span-6 my-10">In een toekomst waarin AI steeds meer op elkaar gaat lijken, werk ik graag aan unieke concepten die echt opvallen.</P>
-              <P className="text-xl text-white/40 col-span-1 xs:col-span-6 text-center my-10">Geen poespas, altijd vooruitstrevend.</P>
+              <P className="text-xl text-white/40 col-span-1 xs:col-span-6 text-end my-10">
+                Ik help mensen graag in het digitale tijdperk.
+              </P>
+              <P className="text-xl text-white/40 col-span-1 xs:col-span-6 my-10">
+                In een toekomst waarin AI steeds meer op elkaar gaat lijken,
+                werk ik graag aan unieke concepten die echt opvallen.
+              </P>
+              <P className="text-xl text-white/40 col-span-1 xs:col-span-6 text-center my-10">
+                Geen poespas, altijd vooruitstrevend.
+              </P>
             </section>
           </Article>
 
@@ -131,7 +150,11 @@ export default function MainCanvas() {
             <H1 chapeau="Mijn projecten">Uitgelichtte Projecten</H1>
             <section className="flex flex-col gap-6 mt-4">
               {PROJECTS.map((project) => (
-                <section key={project.id} id={project.id} className="w-full mx-auto xl:max-w-[80%]">
+                <section
+                  key={project.id}
+                  id={project.id}
+                  className="w-full mx-auto xl:max-w-[80%]"
+                >
                   <ProjectSection
                     projectName={project.name}
                     projectLink={project.link}
@@ -144,7 +167,9 @@ export default function MainCanvas() {
               ))}
             </section>
             <Action className="justify-center">
-              <NextLink type="primary" href="/projects">Bekijk alle projecten</NextLink>
+              <Button type="primary" href="/projects">
+                Bekijk alle projecten
+              </Button>
             </Action>
           </Article>
 
@@ -173,13 +198,23 @@ export default function MainCanvas() {
       <FixedScene mobile={mobile} offsets={offsets} />
 
       <main className="relative z-10">
-
         {/* Hero */}
-        <section id="hero" className="h-screen flex items-start pt-20 lg:pt-40 relative">
+        <section
+          id="hero"
+          className="h-screen flex items-start pt-20 lg:pt-40 relative"
+        >
           {/* Scroll markers — give the opening animation positions to target
               without hardcoding offsets that break on different screen sizes */}
-          <div id="hero-mid" className="absolute top-1/2 left-0 w-0 h-0 pointer-events-none" aria-hidden="true" />
-          <div id="hero-end" className="absolute bottom-[5%] left-0 w-0 h-0 pointer-events-none" aria-hidden="true" />
+          <div
+            id="hero-mid"
+            className="absolute top-1/2 left-0 w-0 h-0 pointer-events-none"
+            aria-hidden="true"
+          />
+          <div
+            id="hero-end"
+            className="absolute bottom-[5%] left-0 w-0 h-0 pointer-events-none"
+            aria-hidden="true"
+          />
           <Container className="grid grid-cols-2 gap-6">
             <article className="dark">
               <H1 chapeau="Marco Fijan" big>
@@ -198,16 +233,27 @@ export default function MainCanvas() {
                 intuïtief aanvoelen.
               </P>
               <Action>
-                <NextLink className="block" type="primary" href="/contact">Neem contact op!</NextLink>
-                <NextLink className="block" type="secondary" href="projects">Bekijk alle projecten</NextLink>
+                <Button className="block" type="primary" href="/contact">
+                  Neem contact op!
+                </Button>
+                <Button className="block" type="secondary" href="projects">
+                  Bekijk alle projecten
+                </Button>
               </Action>
             </article>
           </Container>
         </section>
 
         {/* About */}
-        <section id="about" className="relative my-30 bg-color-bg-bottom-light inverted-card py-20 lg:py-20">
-          <div id="about-end" className="absolute bottom-[5%] left-0 w-0 h-0 pointer-events-none" aria-hidden="true" />
+        <section
+          id="about"
+          className="relative my-30 bg-color-bg-bottom-light inverted-card py-20 lg:py-20"
+        >
+          <div
+            id="about-end"
+            className="absolute bottom-[5%] left-0 w-0 h-0 pointer-events-none"
+            aria-hidden="true"
+          />
           <CornerSVG position="left" side="top" />
           <CornerSVG position="right" side="top" rotate="-rotate-90" />
           {/* <div className="h-[20000px] relative z-10 max-h-[60vw] xl:max-h-[30vw]">
@@ -248,7 +294,10 @@ export default function MainCanvas() {
         </section>
 
         {/* Project intro — devices fly in here, title shown while they land */}
-        <section id="project-intro" className="h-screen flex items-center justify-center text-center">
+        <section
+          id="project-intro"
+          className="h-screen flex items-center justify-center text-center"
+        >
           <Container>
             <H2>Uitgelichtte Projecten</H2>
           </Container>
@@ -257,56 +306,88 @@ export default function MainCanvas() {
         {/* Projects — one screen each */}
         <section id="project-kbo" className="h-screen flex text-right">
           <Container>
-            <H3 textWhite noMarginTop chapeau="Redesign website voor ouderen binnen budget">
+            <H3
+              textWhite
+              noMarginTop
+              chapeau="Redesign website voor ouderen binnen budget"
+            >
               KBO Tilburg Reeshof
             </H3>
-            <NextLink type="primary" href="/projects/herontwerp-ouderen" alignRight>
+            <Button
+              type="primary"
+              href="/projects/herontwerp-ouderen"
+              alignRight
+            >
               Bekijk het project
-            </NextLink>
+            </Button>
           </Container>
         </section>
 
         <section id="project-dashboard" className="h-screen flex">
           <Container>
-            <H3 textWhite noMarginTop chapeau="Dashboard datavisualisatie ontwerp + ontwikkeling">
+            <H3
+              textWhite
+              noMarginTop
+              chapeau="Dashboard datavisualisatie ontwerp + ontwikkeling"
+            >
               Dashboard YoungOnes
             </H3>
-            <NextLink className="flex justify-end w-full" type="primary" href="/projects/yo-dashboard">
+            <Button
+              className="flex justify-end w-full"
+              type="primary"
+              href="/projects/yo-dashboard"
+            >
               Bekijk het project
-            </NextLink>
+            </Button>
           </Container>
         </section>
 
         <section id="project-gwoty" className="h-screen flex text-right">
           <Container>
-            <H3 textWhite noMarginTop chapeau="Wedstrijd dashboard ontwerp + ontwikkeling">
+            <H3
+              textWhite
+              noMarginTop
+              chapeau="Wedstrijd dashboard ontwerp + ontwikkeling"
+            >
               GWOTY Award YoungOnes
             </H3>
-            <NextLink type="primary" href="/projects/yo-gwoty-award" alignRight>
+            <Button type="primary" href="/projects/yo-gwoty-award" alignRight>
               Bekijk het project
-            </NextLink>
+            </Button>
           </Container>
         </section>
 
         <section id="project-aanbouw" className="h-screen flex">
           <Container>
-            <H3 textWhite noMarginTop chapeau="Commercieel Wordpress website ontwerp + ontwikkeling">
+            <H3
+              textWhite
+              noMarginTop
+              chapeau="Commercieel Wordpress website ontwerp + ontwikkeling"
+            >
               Standaard Aanbouw
             </H3>
-            <NextLink className="flex justify-end w-full" type="primary" href="/projects/standaard-aanbouw">
+            <Button
+              className="flex justify-end w-full"
+              type="primary"
+              href="/projects/standaard-aanbouw"
+            >
               Bekijk het project
-            </NextLink>
+            </Button>
           </Container>
         </section>
 
         <section id="project-other" className="h-screen flex text-center">
           <Container>
-            <H3 textWhite noMarginTop chapeau="Andere projecten; Unity-engine, Blender, pure CSS">
+            <H3
+              textWhite
+              noMarginTop
+              chapeau="Andere projecten; Unity-engine, Blender, pure CSS"
+            >
               Bekijk alle projecten
             </H3>
-            <NextLink type="primary" href="/projects" alignCenter>
+            <Button type="primary" href="/projects" alignCenter>
               Alle projecten
-            </NextLink>
+            </Button>
           </Container>
         </section>
 
@@ -322,7 +403,6 @@ export default function MainCanvas() {
             <Footer homePage />
           </Container>
         </section>
-
       </main>
 
       <LoadingScreen />
@@ -379,11 +459,17 @@ function CornerSVG({ position, side, rotate = "" }) {
   const posClass = `${position}-0 -${side}-29.5`;
   return (
     <svg
-      width="160" height="160" viewBox="0 0 200 200" fill="none"
+      width="160"
+      height="160"
+      viewBox="0 0 200 200"
+      fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={`absolute w-30 h-30 ${posClass} ${rotate}`}
     >
-      <path d="M0 0C0 110.457 89.5431 200 200 200H0V0Z" className="fill-color-bg-bottom-light" />
+      <path
+        d="M0 0C0 110.457 89.5431 200 200 200H0V0Z"
+        className="fill-color-bg-bottom-light"
+      />
     </svg>
   );
 }
@@ -398,11 +484,32 @@ function ExperienceContent() {
         "Ondersteuning en ontwikkeling voor diverse klanten met Kentico of Umbraco CMS",
         "Gebruik van Tailwind, SCSS Sass, cshtml Razor, Javascript",
         ["Zonnebloem", ["Ontwikkeling 75jaar.zonnebloem.nl"]],
-        ["Het Noord Brabants museum", ["Ontwikkeling en design grootsinbrabant.nl"]],
-        ["Sectorinstituut Transport en Logistiek", ["Ontwikkeling Kentico herontwerp stl.nl", "Ontwikkeling Kentico stl.nl/studentengids"]],
-        ["Groene Hart Ziekenhuis", ["Frontend ontwikkeling Umbraco werkenbijghz.nl"]],
-        ["Flevoziekenhuis", ["Frontend ontwikkeling Umbraco werkenbijflevoziekenhuis.nl"]],
-        ["Human Digital", ["Ontwikkeling Kentico componenten humandigital.nl", "Frontend Ontwikkeling Umbraco componenten blikvangersontwerp.nl"]],
+        [
+          "Het Noord Brabants museum",
+          ["Ontwikkeling en design grootsinbrabant.nl"],
+        ],
+        [
+          "Sectorinstituut Transport en Logistiek",
+          [
+            "Ontwikkeling Kentico herontwerp stl.nl",
+            "Ontwikkeling Kentico stl.nl/studentengids",
+          ],
+        ],
+        [
+          "Groene Hart Ziekenhuis",
+          ["Frontend ontwikkeling Umbraco werkenbijghz.nl"],
+        ],
+        [
+          "Flevoziekenhuis",
+          ["Frontend ontwikkeling Umbraco werkenbijflevoziekenhuis.nl"],
+        ],
+        [
+          "Human Digital",
+          [
+            "Ontwikkeling Kentico componenten humandigital.nl",
+            "Frontend Ontwikkeling Umbraco componenten blikvangersontwerp.nl",
+          ],
+        ],
       ],
     },
     {

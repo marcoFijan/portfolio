@@ -8,7 +8,7 @@ import Action from "@/elements/Action";
 
 import H1 from "@/elements/H1";
 import P from "@/elements/P";
-import NextLink from "@/elements/NextLink";
+import Button from "@/elements/Button";
 
 export default function Custom404() {
   const [href, setHref] = useState(); // default to homepage
@@ -46,13 +46,13 @@ export default function Custom404() {
 
         <Action className={"justify-center items-center"}>
           {href && (
-            <NextLink type="secondary" href={href}>
+            <Button type="secondary" href={href}>
               Ga terug naar vorige pagina
-            </NextLink>
+            </Button>
           )}
-          <NextLink type="primary" href="/">
+          <Button type="primary" href="/">
             Ga naar hoofdpagina
-          </NextLink>
+          </Button>
         </Action>
       </Container>
     </PageTemplate>

@@ -1,8 +1,8 @@
 import Link from "next/link";
 import React, { useState, useRef } from "react";
-import Icon from "@/utilities/Icon";
+import Icon from "@/utilities/icon";
 
-export default function NextLink({
+export default function Button({
   children,
   href,
   className = "",
@@ -38,7 +38,7 @@ export default function NextLink({
     setCircleStyle({
       top: `${y.toFixed(1)}%`,
       left: `${x.toFixed(1)}%`,
-      transform: "translate(-50%, -50%) scale(1)",
+      transform: "translate(-50%, -50%) scale(1.5)",
       width: `${width.toFixed(1)}%`,
     });
   };
@@ -61,8 +61,9 @@ export default function NextLink({
   };
 
   const isGhost = type === "ghost";
-  const baseClasses = `cursor-pointer tracking-widest relative overflow-hidden flex transition-all duration-500 items-center rounded-full uppercase ${!isGhost ? "gap-2 text-sm xl:text-md" : ""
-    }`;
+  const baseClasses = `cursor-pointer tracking-widest relative overflow-hidden flex transition-all duration-500 items-center rounded-full uppercase ${
+    !isGhost ? "gap-2 text-sm xl:text-md" : ""
+  }`;
 
   const combinedClasses =
     `${baseClasses} ${typeStyles[type] || ""} ${className}`.trim();

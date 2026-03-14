@@ -1,4 +1,4 @@
-import NextLink from "@/elements/NextLink";
+import Button from "@/elements/Button";
 import { useState } from "react";
 
 export default function ReadMore({ children, className, buttonText }) {

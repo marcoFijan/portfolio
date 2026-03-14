@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import Input from "../elements/Input";
-import NextLink from "@/elements/NextLink";
+import Button from "@/elements/Button";
 import H3 from "@/elements/H3";
 
 export default function ContactForm({ darkBackground }) {
@@ -16,7 +16,7 @@ export default function ContactForm({ darkBackground }) {
         "service_s4iwgms",
         "template_26bx8nk",
         form.current,
-        "82Kmqh7RQh-GfNBXd"
+        "82Kmqh7RQh-GfNBXd",
       )
       .then(
         (result) => {
@@ -24,7 +24,7 @@ export default function ContactForm({ darkBackground }) {
         },
         (error) => {
           setSuccess(false);
-        }
+        },
       );
   };
 
@@ -39,9 +39,9 @@ export default function ContactForm({ darkBackground }) {
       <Input type={"text"} label={"Uw naam"} value={"name"} />
       <Input type={"email"} value={"email"} label={"Uw email"} />
       <Input type={"textarea"} value={"message"} label={"Uw bericht"} />
-      <NextLink className={"flex justify-end w-full "} type="submit">
+      <Button className={"flex justify-end w-full "} type="submit">
         Verstuur bericht
-      </NextLink>
+      </Button>
       {succes && "Uw bericht is succesvol verzonden!"}
     </form>
   );

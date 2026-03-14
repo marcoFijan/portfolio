@@ -5,7 +5,7 @@ import H3 from "@/elements/H3.js";
 import P from "@/elements/P.js";
 import Li from "@/elements/Li.js";
 import SvgDeviceOutline from "@/elements/SvgDeviceOutline.js";
-import NextLink from "@/elements/NextLink";
+import Button from "@/elements/Button.js";
 import Divider from "@/elements/Divider.js";
 import Action from "@/elements/Action.js";
 import FlexArticle from "@/elements/FlexArticle.js";
@@ -67,18 +67,18 @@ export default function StandaardAanbouw() {
             uitgewerkt en gerealiseerd in WordPress.
           </P>
           <Action>
-            <NextLink
+            <Button
               type="primary"
               href="hhttps://github.com/marcoFijan/StandaardAanbouwWordpress"
             >
               Bekijk de Wordpress Github
-            </NextLink>
-            <NextLink
+            </Button>
+            <Button
               type="secondary"
               href="https://www.figma.com/design/ZcA6RMU1cP4lUignKSchCU/StandaardAanbouw-HiFi-V0.1?node-id=0-1"
             >
               Bekijk ontwerp op Figma
-            </NextLink>
+            </Button>
           </Action>
         </article>
         <Divider />

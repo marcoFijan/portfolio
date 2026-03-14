@@ -1,5 +1,5 @@
 import Image from "next/image";
-import NextLink from "../elements/NextLink.js";
+import Button from "../elements/Button.js";
 import P from "../elements/P.js";
 import H2 from "../elements/H2.js";
 import H3 from "../elements/H3.js";
@@ -25,19 +25,19 @@ export default function Footer({ homePage }) {
             <H3 text="Pagina's" darkBackground={false} />
           </li>
           <li>
-            <NextLink className="hover:underline" href={"/"}>
+            <Button className="hover:underline" href={"/"}>
               Hoofdpagina
-            </NextLink>
+            </Button>
           </li>
           <li>
-            <NextLink className="hover:underline" href={"/projects"}>
+            <Button className="hover:underline" href={"/projects"}>
               Projecten
-            </NextLink>
+            </Button>
           </li>
           <li>
-            <NextLink className="hover:underline" href={"/contact"}>
+            <Button className="hover:underline" href={"/contact"}>
               Contact
-            </NextLink>
+            </Button>
           </li>
         </ul>
       </nav>
@@ -47,41 +47,38 @@ export default function Footer({ homePage }) {
             <H3 text="Projecten" darkBackground={false} />
           </li>
           <li>
-            <NextLink
+            <Button
               className="hover:underline"
               href={"/projects/kbo-tilburg-reeshof"}
             >
               KBO Tilburg Reeshof
-            </NextLink>
+            </Button>
           </li>
           <li>
-            <NextLink
+            <Button
               className="hover:underline"
               href={"/projects/yo-gwoty-award"}
             >
               YO Dashboard
-            </NextLink>
+            </Button>
           </li>
           <li>
-            <NextLink
-              className="hover:underline"
-              href={"/projects/yo-dashboard"}
-            >
+            <Button className="hover:underline" href={"/projects/yo-dashboard"}>
               YO GWOTY-award
-            </NextLink>
+            </Button>
           </li>
           <li>
-            <NextLink
+            <Button
               className="hover:underline"
               href={"/projects/standaard-aanbouw"}
             >
               Standaard Aanbouw
-            </NextLink>
+            </Button>
           </li>
           <li>
-            <NextLink className="hover:underline" href={"/projects"}>
+            <Button className="hover:underline" href={"/projects"}>
               Overige projecten
-            </NextLink>
+            </Button>
           </li>
         </ul>
       </nav>
@@ -89,7 +86,7 @@ export default function Footer({ homePage }) {
         <H3 text="Contact" darkBackground={false} />
         <P>Heeft u interesse? </P>
         <P>Stuur gerust een berichtje!</P>
-        <NextLink href="/contact">Neem contact op!</NextLink>
+        <Button href="/contact">Neem contact op!</Button>
       </div>
     </section>
   );
@@ -105,7 +102,7 @@ export default function Footer({ homePage }) {
         <section className="w-full flex flex-col items-center text-center justify-center">
           <H3>Neem contact op</H3>
           <div className="flex gap-4">
-            <NextLink
+            <Button
               noBubble
               type="logo"
               href="/contact"
@@ -120,8 +117,8 @@ export default function Footer({ homePage }) {
                   <path d="m 16,976.36217 c -0.78597,0 -1.53205,0.1651 -2.21875,0.4375 l 33.9375,29.65633 c 1.46699,1.2816 3.02954,1.2825 4.5,0 l 34,-29.65633 c -0.6867,-0.2724 -1.43278,-0.4375 -2.21875,-0.4375 l -68,0 z m -5.9375,5.1562 C 10.02467,981.79177 10,982.07807 10,982.36217 l 0,40.00003 c 0,3.3239 2.67606,6 6,6 l 68,0 c 3.32394,0 6,-2.6761 6,-6 l 0,-40.00003 c 0,-0.2841 -0.0247,-0.5704 -0.0625,-0.8438 l -33.78125,29.46883 c -3.52452,3.0741 -8.85071,3.079 -12.375,0 L 10.0625,981.51837 z" />
                 </g>
               </svg>
-            </NextLink>
-            <NextLink
+            </Button>
+            <Button
               noBubble
               type="logo"
               href="https://www.linkedin.com/in/marco-fijan-a0b60b161/"
@@ -134,8 +131,8 @@ export default function Footer({ homePage }) {
               >
                 <path d="M347.445,0H34.555C15.471,0,0,15.471,0,34.555v312.889C0,366.529,15.471,382,34.555,382h312.889  C366.529,382,382,366.529,382,347.444V34.555C382,15.471,366.529,0,347.445,0z M118.207,329.844c0,5.554-4.502,10.056-10.056,10.056  H65.345c-5.554,0-10.056-4.502-10.056-10.056V150.403c0-5.554,4.502-10.056,10.056-10.056h42.806  c5.554,0,10.056,4.502,10.056,10.056V329.844z M86.748,123.432c-22.459,0-40.666-18.207-40.666-40.666S64.289,42.1,86.748,42.1  s40.666,18.207,40.666,40.666S109.208,123.432,86.748,123.432z M341.91,330.654c0,5.106-4.14,9.246-9.246,9.246H286.73  c-5.106,0-9.246-4.14-9.246-9.246v-84.168c0-12.556,3.683-55.021-32.813-55.021c-28.309,0-34.051,29.066-35.204,42.11v97.079  c0,5.106-4.139,9.246-9.246,9.246h-44.426c-5.106,0-9.246-4.14-9.246-9.246V149.593c0-5.106,4.14-9.246,9.246-9.246h44.426  c5.106,0,9.246,4.14,9.246,9.246v15.655c10.497-15.753,26.097-27.912,59.312-27.912c73.552,0,73.131,68.716,73.131,106.472  L341.91,330.654L341.91,330.654z" />
               </svg>
-            </NextLink>
-            <NextLink
+            </Button>
+            <Button
               noBubble
               type="logo"
               href="https://github.com/marcoFijan"
@@ -168,7 +165,7 @@ export default function Footer({ homePage }) {
                   </g>
                 </g>
               </svg>
-            </NextLink>
+            </Button>
           </div>
           <div className="bg-gradient-to-r from-color-border/[0] via-color-border to-color-border/[0] w-full max-w-[40rem] h-[1px] my-8"></div>
           <P className="m-0 py-2 leading-0 text-white/[0.8]">

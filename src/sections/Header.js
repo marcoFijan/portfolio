@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import NextLink from "@/elements/NextLink";
+import Button from "@/elements/Button.js";
 import Container from "../sections/Container.js";
 import Logo from "@/elements/Logo.js";
 import Divider from "@/elements/Divider.js";
@@ -37,17 +37,16 @@ export default function Header({ home = false }) {
 
   return (
     <header
-      className={`absolute w-full mt-4 z-40 max-w-wrapper mx-auto px-wrapper-mobile md:px-wrapper grid grid-cols-3 justify-between items-center`}
+      className={`absolute w-full left-1/2 -translate-x-1/2 mt-4 z-40 max-w-wrapper mx-auto px-wrapper-mobile md:px-wrapper grid grid-cols-3 justify-between items-center`}
     >
-      <NextLink
-        noBubble
+      <Button
         type="ghost"
         href="/"
         className="w-16 h-16 flex items-center justify-center p-2 relative z-50 hover:bg-transparent"
         onClick={() => setIsMenuOpen(false)}
       >
         <Logo />
-      </NextLink>
+      </Button>
 
       {isMobile ? (
         <MobileNav
@@ -63,9 +62,9 @@ export default function Header({ home = false }) {
         <ul className="flex gap-2 justify-self-end z-50 absolute">
           {socialLinks.map((social) => (
             <li key={social.name}>
-              <NextLink href={social.url} type="ghost" arrow icon={social.icon}>
+              <Button href={social.url} type="ghost" arrow icon={social.icon}>
                 {social.name}
-              </NextLink>
+              </Button>
             </li>
           ))}
         </ul>
@@ -80,13 +79,9 @@ function DesktopNav() {
       <ul className="backdrop-blur-md bg-color-bg-top/30 gap-4 rounded-full flex overflow-hidden">
         {navLinks.map((link) => (
           <li key={link.name}>
-            <NextLink
-              href={link.url}
-              type="ghost"
-              icon={link.icon} // Let NextLink handle the icon
-            >
+            <Button href={link.url} type="ghost" icon={link.icon}>
               {link.name}
-            </NextLink>
+            </Button>
           </li>
         ))}
       </ul>
@@ -99,43 +94,48 @@ function MobileNav({ isOpen, onToggle, onClose }) {
     <div className="flex items-center justify-end z-50">
       <button
         onClick={onToggle}
-        className={`fixed right-6 z-[60] h-12 w-12 rounded-full p-3 transition ${isOpen ? "bg-transparent" : "bg-color-accent"
-          }`}
+        className={`fixed right-6 z-[60] h-12 w-12 rounded-full p-3 transition ${
+          isOpen ? "bg-transparent" : "bg-color-accent"
+        }`}
       >
         <div className="relative h-full w-full flex flex-col justify-between">
           <span
-            className={`h-1 w-full bg-white rounded-full transition-transform ${isOpen ? "rotate-45 translate-y-[10px]" : ""
-              }`}
+            className={`h-1 w-full bg-white rounded-full transition-transform ${
+              isOpen ? "rotate-45 translate-y-[10px]" : ""
+            }`}
           />
           <span
-            className={`h-1 w-full bg-white rounded-full transition-opacity ${isOpen ? "opacity-0" : ""
-              }`}
+            className={`h-1 w-full bg-white rounded-full transition-opacity ${
+              isOpen ? "opacity-0" : ""
+            }`}
           />
           <span
-            className={`h-1 w-full bg-white rounded-full transition-transform ${isOpen ? "-rotate-45 -translate-y-[10px]" : ""
-              }`}
+            className={`h-1 w-full bg-white rounded-full transition-transform ${
+              isOpen ? "-rotate-45 -translate-y-[10px]" : ""
+            }`}
           />
         </div>
       </button>
 
       <div
-        className={`fixed inset-0 z-50 transition-transform duration-500 bg-gradient-to-bl from-color-bg-top to-color-bg-bottom ${isOpen ? "translate-x-0" : "translate-x-full"
-          }`}
+        className={`fixed inset-0 z-50 transition-transform duration-500 bg-gradient-to-bl from-color-bg-top to-color-bg-bottom ${
+          isOpen ? "translate-x-0" : "translate-x-full"
+        }`}
       >
         <Container className="flex flex-col pt-24 h-full">
           <nav className="w-full">
             {navLinks.map((link) => (
               <div key={link.name} className="w-full">
-                <NextLink
+                <Button
                   href={link.url}
                   type="ghost"
                   noBubble
-                  icon={link.icon} // Let NextLink handle the icon
+                  icon={link.icon} // Let Button handle the icon
                   className="py-6 border-b border-white/10 w-full group-hover:text-color-accent text-3xl"
                   onClick={onClose}
                 >
                   {link.name}
-                </NextLink>
+                </Button>
                 <Divider noMargin />
               </div>
             ))}

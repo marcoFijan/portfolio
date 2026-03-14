@@ -4,7 +4,7 @@ import H2 from "@/elements/H2.js";
 import H3 from "@/elements/H3.js";
 import P from "@/elements/P.js";
 import Li from "@/elements/Li.js";
-import NextLink from "@/elements/NextLink";
+import Button from "@/elements/Button.js";
 import Divider from "@/elements/Divider.js";
 import FlexArticle from "@/elements/FlexArticle.js";
 import SvgDeviceOutline from "@/elements/SvgDeviceOutline.js";
@@ -90,22 +90,22 @@ export default function KBOTilburgReeshof() {
               omdat daar belangrijke informatie op staat.
             </P>
             <div className="flex flex-wrap gap-y-4 gap-x-8 mt-8">
-              <NextLink
+              <Button
                 href="https://drive.google.com/file/d/1iXpgTq90AxV9-KqkzIO90jlGQBFBjct8/preview"
                 type="primary"
                 className="group"
                 arrow
               >
                 Bekijk Design Rationale
-              </NextLink>
-              <NextLink
+              </Button>
+              <Button
                 href="https://amenable-sword-4e9.notion.site/Productbiografie-1edc81194bb144b2bddb7619a652b5b0"
                 arrow
                 className="group"
                 type="secondary"
               >
                 Bekijk productbiografie
-              </NextLink>
+              </Button>
             </div>
           </article>
         </section>
@@ -474,14 +474,14 @@ export default function KBOTilburgReeshof() {
                     vermoeiend en slecht zichtbaar voor ouderen
                   </li>
                 </ul>
-                <NextLink
+                <Button
                   href="https://amenable-sword-4e9.notion.site/Interviews-Bag-tour-860c2c93b8564e1a9eac450c6341d45e"
                   type="primary"
                   className="group"
                   arrow
                 >
                   Luister naar de interviews
-                </NextLink>
+                </Button>
               </section>
               <section>
                 <H3>Belangrijkste eisen</H3>
@@ -525,14 +525,14 @@ export default function KBOTilburgReeshof() {
                   </li>
                   <li>Het product betreft een digitaal prototype</li>
                 </ul>
-                <NextLink
+                <Button
                   href="https://amenable-sword-4e9.notion.site/Interviews-Bag-tour-860c2c93b8564e1a9eac450c6341d45e"
                   type="primary"
                   className="group"
                   arrow
                 >
                   Bekijk alle eisen
-                </NextLink>
+                </Button>
               </section>
             </section>
           </article>
@@ -567,13 +567,13 @@ export default function KBOTilburgReeshof() {
                 ideegeneratie methodes het best bekijken in de betreffende
                 design rationale onderaan de pagina of in de productbiografie
               </P>
-              <NextLink
+              <Button
                 href="https://amenable-sword-4e9.notion.site/Ideegeneratie-141e664077d64253a884f872ab156497"
                 arrow
                 type="primary"
               >
                 Bekijk ideegeneratie
-              </NextLink>
+              </Button>
             </section>
             <Img
               uniqueBg="bg-transparent"
@@ -622,13 +622,13 @@ export default function KBOTilburgReeshof() {
                 verschillende klikbare elementen die vervolgens informatie geeft
                 wanneer er op wordt geklikt.
               </P>
-              <NextLink
+              <Button
                 href="https://amenable-sword-4e9.notion.site/Digitale-schetsen-voor-feedback-frenzy-530edefdd420499e8e6d6bbb2c3fda93"
                 arrow
                 type="primary"
               >
                 Bekijk alle concepten
-              </NextLink>
+              </Button>
             </section>
             <Img
               extraBorder

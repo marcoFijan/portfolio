@@ -7,7 +7,7 @@ import H1 from "@/elements/H1";
 import H2 from "@/elements/H2";
 import H3 from "@/elements/H3";
 import P from "@/elements/P";
-import NextLink from "@/elements/NextLink";
+import Button from "@/elements/Button";
 
 export default function Projects() {
   return (

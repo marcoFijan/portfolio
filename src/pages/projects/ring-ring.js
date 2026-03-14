@@ -5,7 +5,7 @@ import H3 from "@/elements/H3.js";
 import P from "@/elements/P.js";
 import Li from "@/elements/Li.js";
 import SvgDeviceOutline from "@/elements/SvgDeviceOutline.js";
-import NextLink from "@/elements/NextLink";
+import Button from "@/elements/Button.js";
 import Divider from "@/elements/Divider.js";
 import Action from "@/elements/Action.js";
 import FlexArticle from "@/elements/FlexArticle.js";
@@ -84,18 +84,18 @@ export default function RingRing() {
             afgelegde afstanden.
           </P>
           <Action>
-            <NextLink
+            <Button
               type="primary"
               href="https://github.com/marcoFijan/projectDatavisualisation"
             >
               Bekijk de Wordpress Github
-            </NextLink>
-            <NextLink
+            </Button>
+            <Button
               type="secondary"
               href="https://marcofijan.github.io/projectDatavisualisation/"
             >
               Bekijk de website
-            </NextLink>
+            </Button>
           </Action>
         </article>
         <Divider />

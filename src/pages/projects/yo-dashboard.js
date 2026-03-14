@@ -5,7 +5,7 @@ import H3 from "@/elements/H3.js";
 import P from "@/elements/P.js";
 import Li from "@/elements/Li.js";
 import SvgDeviceOutline from "@/elements/SvgDeviceOutline.js";
-import NextLink from "@/elements/NextLink";
+import Button from "@/elements/Button.js";
 import Divider from "@/elements/Divider.js";
 
 import Container from "@/sections/Container.js";

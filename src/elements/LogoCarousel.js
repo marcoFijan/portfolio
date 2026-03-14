@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function LogoCarousel() {
   return (
-    <div className="m-0 p-0 box-border h-[30vh] sm:h-[50vh] threeDSlider w-full lg:order-2 absolute bottom-0 right-0 lg:w-1/2">
+    <div className="m-0 p-0 box-border h-[30vh] sm:h-[50vh] threeDSlider w-full lg:order-2 absolute top-1/2 -translate-y-1/2 right-0 lg:w-1/2">
       <div className="relative opacity-50 z-10 w-full h-screen text-center overflow-visible  scale-[20%] xs:scale-[30%] sm:scale-[40%] md:scale-[40%] lg:scale-[50%] xl:scale-[40%] 2xl:scale-[44%] max-h-[25vh] lg:max-h-[50vh] group ">
         <div
           className="absolute aspect-square w-[150px] h-[150px] top-[5%] left-1/2 -ml-[125px] [transform-style:preserve-3d] [transform:perspective(1000px)] animate-[autoRun_90s_linear_infinite] z-20 "

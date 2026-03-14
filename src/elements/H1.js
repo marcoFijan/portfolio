@@ -15,7 +15,7 @@ export default function H1({ children, chapeau, className = "", big }) {
           as="span"
           splitText={true}
           stagger={40}
-          className={`${fugazOne.className} text-md xs:text-md sm:text-lg md:text-xl uppercase font-light dark:text-color-white-soft text-black text-opacity-50`}
+          className={`${fugazOne.className} text-md xs:text-md sm:text-lg md:text-xl uppercase font-light dark:text-white/80 text-black text-opacity-50`}
           delay={300}
         >
           {chapeau}
@@ -25,7 +25,7 @@ export default function H1({ children, chapeau, className = "", big }) {
         as="h1"
         className={`${fugazOne.className}  pt-2 pb-8 md:pb-8 lg:pb-16 leading-none sm:leading-[1] font-medium  ${
           big
-            ? "text-[2.5rem] xs:text-[3.5rem] md:text-home-h1 xl:text-home-h1-big text-transparent bg-clip-text bg-gradient-to-br dark:from-white dark:to-color-white-soft from-color-bg-bottom to-color-bg-top"
+            ? "text-4xl xs:text-5xl md:text-home-h1 xl:text-home-h1-big text-transparent bg-clip-text bg-gradient-to-br dark:from-white dark:to-color-white-soft from-color-bg-bottom to-color-bg-top"
             : "text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-transparent bg-clip-text bg-gradient-to-br dark:from-white dark:to-color-white-soft from-color-bg-bottom to-color-bg-top"
         } ${className}`}
         delay={100}

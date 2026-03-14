@@ -4,7 +4,7 @@ import H2 from "@/elements/H2.js";
 import P from "@/elements/P.js";
 import Li from "@/elements/Li.js";
 import SvgDeviceOutline from "@/elements/SvgDeviceOutline.js";
-import NextLink from "@/elements/NextLink";
+import Button from "@/elements/Button.js";
 import Divider from "@/elements/Divider.js";
 import Action from "@/elements/Action.js";
 import FlexArticle from "@/elements/FlexArticle.js";
@@ -81,12 +81,12 @@ export default function Reisartikelen() {
             is voor de coronamaatregelen en meer omzet kan draaien.
           </P>
           <Action>
-            <NextLink
+            <Button
               type="primary"
               href="https://www.figma.com/proto/w6Y44DPKMD8ttJCWdfOuyt/Reisartikelen.nl-HiFi-Final?node-id=1%3A2&scaling=scale-down-width"
             >
               Interactief prototype
-            </NextLink>
+            </Button>
           </Action>
         </article>
         <Divider />

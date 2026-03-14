@@ -4,7 +4,7 @@ import H2 from "@/elements/H2.js";
 import H3 from "@/elements/H3.js";
 import P from "@/elements/P.js";
 import Li from "@/elements/Li.js";
-import NextLink from "@/elements/NextLink";
+import Button from "@/elements/Button.js";
 import SvgDeviceOutline from "@/elements/SvgDeviceOutline.js";
 import Divider from "@/elements/Divider.js";
 import Action from "@/elements/Action.js";
@@ -89,18 +89,18 @@ export default function YOGwotyAward() {
               ook aansloot bij de doelgroep en marketingdoelen van YoungOnes.
             </P>
             <Action className={""}>
-              <NextLink
+              <Button
                 type="primary"
                 href="https://youngones-gwoty-o9bw7u9mo-marcofijan1.vercel.app/"
               >
                 Bekijk de statische website
-              </NextLink>
-              <NextLink
+              </Button>
+              <Button
                 type="secondary"
                 href="https://github.com/marcoFijan/yo-gwoty"
               >
                 Bekijk de Github
-              </NextLink>
+              </Button>
             </Action>
           </article>
         </section>
@@ -450,18 +450,18 @@ export default function YOGwotyAward() {
               website alsnog in statische vorm weer te geven.
             </P>
             <Action>
-              <NextLink
+              <Button
                 type="primary"
                 href="https://youngones-gwoty-o9bw7u9mo-marcofijan1.vercel.app/"
               >
                 Bekijk de statische website
-              </NextLink>
-              <NextLink
+              </Button>
+              <Button
                 type="secondary"
                 href="https://github.com/marcoFijan/yo-gwoty"
               >
                 Bekijk de Github
-              </NextLink>
+              </Button>
             </Action>
           </section>
           <Splide
