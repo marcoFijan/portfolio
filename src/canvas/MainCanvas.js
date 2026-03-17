@@ -5,11 +5,11 @@ import { useState, Suspense, useEffect } from "react";
 
 import Smartphone from "../models/Smartphone.js";
 import Laptop from "../models/Laptop.js";
-import Container from "../sections/Container.js";
-import Article from "../sections/Article.js";
+import Container from "../components/Container.js";
+import Article from "../components/Article.js";
 import ProjectSection from "@/elements/Project";
 import Action from "@/elements/Action.js";
-import Footer from "../sections/Footer.js";
+import Footer from "../components/Footer.js";
 import LoadingScreen from "@/collections/LoadingScreen.js";
 
 import H1 from "../elements/H1.js";

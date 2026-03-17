@@ -1,4 +1,4 @@
-import Container from "@/sections/Container";
+import Container from "@/components/Container";
 import H1 from "@/elements/H1";
 import P from "@/elements/P";
 import Action from "@/elements/Action";
@@ -39,7 +39,7 @@ export default function HeroSection({ mobile }) {
   return (
     <section
       id="hero"
-      className="h-screen flex items-start pt-20 lg:pt-40 relative"
+      className="flex items-start pt-20 lg:pt-20 relative"
     >
       <div
         id="hero-mid"

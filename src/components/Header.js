@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Button from "@/elements/Button.js";
-import Container from "../sections/Container.js";
+import Container from "./Container.js";
 import Logo from "@/elements/Logo.js";
 import Divider from "@/elements/Divider.js";
 
@@ -37,7 +37,7 @@ export default function Header({ home = false }) {
 
   return (
     <header
-      className={`absolute w-full left-1/2 -translate-x-1/2 mt-4 z-40 max-w-wrapper mx-auto px-wrapper-mobile md:px-wrapper grid grid-cols-3 justify-between items-center`}
+      className={`w-full mt-4 dark z-40 max-w-wrapper mx-auto px-wrapper-mobile md:px-wrapper grid grid-cols-3 justify-between items-center`}
     >
       <Button
         type="ghost"
@@ -75,7 +75,7 @@ export default function Header({ home = false }) {
 
 function DesktopNav() {
   return (
-    <nav className="w-max justify-self-center relative z-50">
+    <nav className="w-max fixed left-1/2 -translate-x-1/2 top-4 justify-self-center  z-50">
       <ul className="backdrop-blur-md bg-color-bg-top/30 gap-4 rounded-full flex overflow-hidden">
         {navLinks.map((link) => (
           <li key={link.name}>
@@ -94,33 +94,28 @@ function MobileNav({ isOpen, onToggle, onClose }) {
     <div className="flex items-center justify-end z-50">
       <button
         onClick={onToggle}
-        className={`fixed right-6 z-[60] h-12 w-12 rounded-full p-3 transition ${
-          isOpen ? "bg-transparent" : "bg-color-accent"
-        }`}
+        className={`fixed right-6 z-[60] h-12 w-12 rounded-full p-3 transition ${isOpen ? "bg-transparent" : "bg-color-accent"
+          }`}
       >
         <div className="relative h-full w-full flex flex-col justify-between">
           <span
-            className={`h-1 w-full bg-white rounded-full transition-transform ${
-              isOpen ? "rotate-45 translate-y-[10px]" : ""
-            }`}
+            className={`h-1 w-full bg-white rounded-full transition-transform ${isOpen ? "rotate-45 translate-y-[10px]" : ""
+              }`}
           />
           <span
-            className={`h-1 w-full bg-white rounded-full transition-opacity ${
-              isOpen ? "opacity-0" : ""
-            }`}
+            className={`h-1 w-full bg-white rounded-full transition-opacity ${isOpen ? "opacity-0" : ""
+              }`}
           />
           <span
-            className={`h-1 w-full bg-white rounded-full transition-transform ${
-              isOpen ? "-rotate-45 -translate-y-[10px]" : ""
-            }`}
+            className={`h-1 w-full bg-white rounded-full transition-transform ${isOpen ? "-rotate-45 -translate-y-[10px]" : ""
+              }`}
           />
         </div>
       </button>
 
       <div
-        className={`fixed inset-0 z-50 transition-transform duration-500 bg-gradient-to-bl from-color-bg-top to-color-bg-bottom ${
-          isOpen ? "translate-x-0" : "translate-x-full"
-        }`}
+        className={`fixed inset-0 z-50 transition-transform duration-500 bg-gradient-to-bl from-color-bg-top to-color-bg-bottom ${isOpen ? "translate-x-0" : "translate-x-full"
+          }`}
       >
         <Container className="flex flex-col pt-24 h-full">
           <nav className="w-full">

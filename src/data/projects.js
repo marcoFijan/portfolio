@@ -2,7 +2,7 @@ export const PROJECTS = [
   {
     id: "project-kbo",
     name: "Herontwerp voor ouderen",
-    link: "/projects/herontwerp-ouderen",
+    link: "/projects/kbo-tilburg-reeshof",
     img: "/images/Thumbnails/KBOReeshofThumb.png",
     alt: "KBO Tilburg Reeshof Project afbeelding",
     client: "KBO Tilburg Reeshof",

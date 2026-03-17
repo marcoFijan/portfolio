@@ -40,30 +40,40 @@ export default function InViewAnimate({
 
   const shouldAnimate = once ? hasAnimated : isInView;
 
-  // Logic for staggered character animation (Opacity only)
   if (splitText && typeof children === "string") {
+    const words = children.split(" ");
+    let charIndexCounter = 0;
+
     return (
       <Component ref={ref} className={className}>
-        {children.split("").map((char, index) => (
-          <span
-            key={index}
-            style={{
-              display: "inline-block",
-              whiteSpace: "pre",
-              opacity: shouldAnimate ? 1 : 0,
-              // Transform removed here for character mode
-              transition: `opacity ${duration}ms ease ${delay + index * stagger}ms`,
-              willChange: "opacity",
-            }}
-          >
-            {char}
+        {words.map((word, wordIndex) => (
+          <span key={wordIndex} style={{ display: "inline-block", whiteSpace: "nowrap" }}>
+            {word.split("").map((char) => {
+              const currentIndex = charIndexCounter++;
+              return (
+                <span
+                  key={currentIndex}
+                  style={{
+                    display: "inline-block",
+                    whiteSpace: "pre",
+                    opacity: shouldAnimate ? 1 : 0,
+                    transition: `opacity ${duration}ms ease ${delay + currentIndex * stagger}ms`,
+                    willChange: "opacity",
+                  }}
+                >
+                  {char}
+                </span>
+              );
+            })}
+            {wordIndex < words.length - 1 && (
+              <span style={{ display: "inline-block", whiteSpace: "pre" }}>&nbsp;</span>
+            )}
           </span>
         ))}
       </Component>
     );
   }
 
-  // Default behavior (Keeps the translateY animation)
   return (
     <Component
       ref={ref}

@@ -1,10 +1,10 @@
-import { Fugaz_One } from "next/font/google";
+import { Work_Sans } from "next/font/google";
 import InViewAnimate from "../utilities/InViewAnimate.js";
 
-const fugazOne = Fugaz_One({
-  weight: ["400"],
+const workSans = Work_Sans({
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],
-  variable: "--font-fugazOne",
+  variable: "--font-workSans",
 });
 
 export default function H2({ children, chapeau, big = false, className = "" }) {
@@ -29,11 +29,10 @@ export default function H2({ children, chapeau, big = false, className = "" }) {
       {children && (
         <InViewAnimate
           as="h2"
-          className={`${fugazOne.className} ${className} leading-tight mb-8 dark:text-white text-black font-black ${
-            big
-              ? "text-6xl md:text-7xl lg:text-9xl"
-              : "text-3xl md:text-5xl lg:text-7xl"
-          }`}
+          className={` ${className} leading-tight mb-8 dark:text-white text-black font-black ${workSans.className} ${big
+            ? "text-5xl lg:text-6xl 2xl:text-8xl"
+            : "text-2xl lg:text-4xl 2xl:text-6xl"
+            }`}
           delay={100}
         >
           {children}

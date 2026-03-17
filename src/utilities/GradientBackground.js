@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, forwardRef, useImperativeHandle } from "react";
+import { useEffect, useState, useRef, forwardRef, useImperativeHandle } from "react";
 
 // ─── GLSL Shaders ─────────────────────────────────────────────────────────────
 
@@ -440,34 +440,43 @@ function createGradient(
 
   // ── Animation loop ────────────────────────────────────────────────────────
   let t = 1_253_106,
-    last = 0,
+    last = performance.now(),
     rafId = 0,
     playing = true;
 
+  function renderFrame() {
+    matUniforms.u_time.value = t;
+    gl.clearColor(0, 0, 0, 0);
+    gl.clearDepth(1);
+    gl.useProgram(program);
+    uniformInstances.forEach(({ uniform, location }) =>
+      uniform.update(location ?? undefined),
+    );
+    attrInstances.forEach(({ attr, location }) => attr.use(location));
+    gl.drawElements(
+      gl.TRIANGLES,
+      attrs.index.values.length,
+      gl.UNSIGNED_SHORT,
+      0,
+    );
+  }
+
   function draw(ts) {
-    if (!document.hidden && playing && Math.trunc(ts) % 2 !== 0) {
+    if (!document.hidden && playing) {
       t += Math.min(ts - last, 1000 / 15);
       last = ts;
-      matUniforms.u_time.value = t;
-      gl.clearColor(0, 0, 0, 0);
-      gl.clearDepth(1);
-      gl.useProgram(program);
-      uniformInstances.forEach(({ uniform, location }) =>
-        uniform.update(location ?? undefined),
-      );
-      attrInstances.forEach(({ attr, location }) => attr.use(location));
-      gl.drawElements(
-        gl.TRIANGLES,
-        attrs.index.values.length,
-        gl.UNSIGNED_SHORT,
-        0,
-      );
+      renderFrame();
     }
     if (playing) rafId = requestAnimationFrame(draw);
   }
 
   resize();
   window.addEventListener("resize", resize);
+
+  // ── Fix: Force an immediate synchronous render ────────────────────────────
+  // This guarantees the canvas has pixel data drawn before the browser
+  // commits the first frame to the screen, eliminating any blank flashes.
+  renderFrame();
   rafId = requestAnimationFrame(draw);
 
   return {
@@ -477,6 +486,7 @@ function createGradient(
     play: () => {
       if (playing) return;
       playing = true;
+      last = performance.now(); // Reset last to prevent a massive jump
       rafId = requestAnimationFrame(draw);
     },
     destroy: () => {
@@ -506,6 +516,12 @@ const GradientBackground = forwardRef(function GradientBackground(
 ) {
   const canvasRef = useRef(null);
   const instanceRef = useRef(null);
+  const [mounted, setMounted] = useState(false);
+
+  // 1. Set mounted to true once we are on the client
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useImperativeHandle(ref, () => ({
     pause: () => instanceRef.current?.pause(),
@@ -513,7 +529,8 @@ const GradientBackground = forwardRef(function GradientBackground(
   }));
 
   useEffect(() => {
-    if (!canvasRef.current) return;
+    if (!mounted || !canvasRef.current) return;
+
     try {
       instanceRef.current = createGradient(canvasRef.current, {
         colors,
@@ -526,21 +543,23 @@ const GradientBackground = forwardRef(function GradientBackground(
     } catch (e) {
       console.warn("[GradientBackground] WebGL init failed:", e);
     }
+
     return () => {
       instanceRef.current?.destroy();
       instanceRef.current = null;
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [mounted, colors, height, density, amp, seed, darkenTop]);
+
+  if (!mounted) return null;
 
   return (
-    <div className="w-screen h-screen fixed top-0 left-0 z-0">
+    <div className="w-screen h-screen fixed top-0 left-0 -z-10 pointer-events-none">
       <canvas
         ref={canvasRef}
         aria-hidden="true"
-        className="w-full h-full absolute inset-0 -z-20"
+        className="w-full h-full absolute inset-0 -z-20 bg-color-bg"
       />
-      <div className="w-full h-full -z-10 absolute inset-0 bg-gradient-to-bl from-color-bg-top/60 to-color-bg-bottom" />
+      <div className="w-full h-full -z-10 absolute inset-0 opacity-40 brightness-80" style={{ backgroundColor: colors[0] }} />
     </div>
   );
 });

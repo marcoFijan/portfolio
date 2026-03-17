@@ -8,7 +8,7 @@ import Button from "@/elements/Button.js";
 import Divider from "@/elements/Divider.js";
 import Action from "@/elements/Action.js";
 import FlexArticle from "@/elements/FlexArticle.js";
-import Container from "@/sections/Container.js";
+import Container from "@/components/Container.js";
 import Img from "@/elements/Img.js";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";

@@ -7,12 +7,11 @@ const workSans = Work_Sans({
   variable: "--font-workSans",
 });
 
-export default function P({ children, className, intro }) {
-  const combinedClasses = `mb-4 font-light text-shadow-color-bg-top text-shadow-2xs tracking-widest ${className} ${workSans.className} 
-    ${
-      intro
-        ? "text-black dark:text-white text-md sm:text-lg md:text-xl lg:text-2xl max-w-280"
-        : "text-black dark:text-white text-sm sm:text-md md:text-lg lg:text-xl max-w-paragraph"
+export default function P({ children, className, intro, splitText }) {
+  const combinedClasses = `mb-4 font-light text-shadow-color-bg-top tracking-widest text-black dark:text-white ${className} ${workSans.className} 
+    ${intro
+      ? "text-md sm:text-lg md:text-xl lg:text-2xl max-w-280"
+      : "text-sm md:text-md max-w-paragraph"
     }
   `;
 
@@ -20,9 +19,11 @@ export default function P({ children, className, intro }) {
     <InViewAnimate
       as="p"
       className={combinedClasses}
+      splitText={!!splitText}
+      stagger={splitText ? 40 : 0}
       translateY={25}
       duration={500}
-      delay={100}
+      delay={200}
     >
       {children}
     </InViewAnimate>

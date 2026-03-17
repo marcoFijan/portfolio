@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React, { useState, useRef } from "react";
-import Icon from "@/utilities/icon";
+import Icon from "@/utilities/Icon";
 
 export default function Button({
   children,
@@ -52,22 +52,30 @@ export default function Button({
   };
 
   const typeStyles = {
+    // Primary: Accent border/text, turns to Dark on Hover
     primary:
       "border border-color-accent text-color-accent hover:text-color-bg-top backdrop-blur-[15px] py-2 sm:py-5 px-4 sm:px-8",
+
+    // Secondary: Dark text/border on Light mode, White text/border on Dark mode
     secondary:
-      "border border-color-white text-white hover:text-color-bg-top bg-color-glass/[0.05] backdrop-blur-[15px] py-2 sm:py-5 px-4 sm:px-8",
+      "border border-color-bg-top dark:border-white text-color-bg-top dark:text-white hover:text-white dark:hover:text-color-bg-top bg-color-glass/[0.05] backdrop-blur-[15px] py-2 sm:py-5 px-4 sm:px-8",
+
+    // Ghost: No border, text flips color on hover to contrast with the bubble
     ghost:
-      "text-white hover:text-color-bg-top transition-colors duration-300 py-2 sm:py-5 px-4 sm:px-4",
+      "text-color-bg-top dark:text-white hover:text-white dark:hover:text-color-bg-top transition-colors duration-300 py-2 sm:py-5 px-4",
   };
 
   const isGhost = type === "ghost";
-  const baseClasses = `cursor-pointer tracking-widest relative overflow-hidden flex transition-all duration-500 items-center rounded-full uppercase ${
-    !isGhost ? "gap-2 text-sm xl:text-md" : ""
-  }`;
+  const baseClasses = `group cursor-pointer tracking-widest relative overflow-hidden flex transition-all duration-500 items-center rounded-full uppercase ${!isGhost ? "gap-2 text-sm xl:text-md" : ""
+    }`;
 
-  const combinedClasses =
-    `${baseClasses} ${typeStyles[type] || ""} ${className}`.trim();
-  const bubbleColor = type === "primary" ? "bg-color-accent" : "bg-white";
+  const combinedClasses = `${baseClasses} ${typeStyles[type] || ""} ${className}`.trim();
+
+  // FIX: Bubble color now mirrors the hover text target color
+  const bubbleColor =
+    type === "primary"
+      ? "bg-color-accent"
+      : "bg-color-bg-top dark:bg-white";
 
   const Content = (
     <>
@@ -78,7 +86,8 @@ export default function Button({
         />
       )}
       <span
-        className={`relative z-10 flex items-center ${!isGhost || icon ? "gap-2" : ""}`}
+        className={`relative z-10 flex items-center transition-colors duration-300 ${!isGhost || icon ? "gap-2" : ""
+          }`}
       >
         {icon && <Icon name={icon} />}
 
@@ -100,7 +109,7 @@ export default function Button({
       onMouseEnter={handleMouseMove}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className={`group w-max ${alignRight ? "ml-auto" : ""}`.trim()}
+      className={`w-max ${alignRight ? "ml-auto" : ""}`.trim()}
     >
       {href ? (
         <Link href={href} className={combinedClasses} title={title}>

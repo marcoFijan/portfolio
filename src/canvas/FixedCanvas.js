@@ -8,7 +8,6 @@ import Smartphone from "@/models/Smartphone.js";
 import Laptop from "@/models/Laptop.js";
 
 export default function FixedScene({ mobile, offsets }) {
-  // Models are now rendered immediately so <LoadingScreen /> can track them!
   return (
     <div
       style={{ position: "fixed", inset: 0, zIndex: 0, pointerEvents: "none" }}

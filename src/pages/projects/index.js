@@ -1,6 +1,6 @@
 import PageTemplate from "../pageTemplate";
-import Container from "@/sections/Container";
-import ContactSection from "@/sections/ContactSection.js";
+import Container from "@/components/Container";
+import ContactSection from "@/components/ContactSection.js";
 import ProjectSection from "@/elements/Project";
 
 import H1 from "@/elements/H1";

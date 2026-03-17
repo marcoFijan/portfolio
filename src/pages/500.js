@@ -1,5 +1,5 @@
 import PageTemplate from "./pageTemplate";
-import Container from "@/sections/Container";
+import Container from "@/components/Container";
 import Action from "@/elements/Action";
 
 import H1 from "@/elements/H1";

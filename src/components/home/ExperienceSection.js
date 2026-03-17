@@ -1,10 +1,10 @@
-import Container from "@/sections/Container";
+import Container from "@/components/Container";
 import H2 from "@/elements/H2";
 import H3 from "@/elements/H3";
 import P from "@/elements/P";
 import Li from "@/elements/Li";
 import Divider from "@/elements/Divider";
-import Footer from "@/sections/Footer";
+import Footer from "@/components/Footer";
 import { EXPERIENCE } from "@/data/experience";
 
 function ExperienceContent() {
@@ -18,14 +18,13 @@ function ExperienceContent() {
           <H2>{job.company}</H2>
           <div className="lg:mt-4 mt-[-50px] mb-20">
             <H3 noMarginTop>{job.role}</H3>
-            <P className="text-white text-md lg:text-xl mb-3">{job.period}</P>
+            <P className="text-black dark:text-white text-md lg:text-xl mb-3">{job.period}</P>
 
-            <ul className="list-disc text-white opacity-70 ml-4">
+            <ul className="list-disc text-black dark:text-white opacity-70 ml-4">
               {job.items.map((item, i) =>
                 Array.isArray(item) ? (
                   <Li key={i}>
                     {item[0]}
-                    {/* Wrap the nested list in a <ul> to create valid HTML */}
                     <ul className="list-disc ml-4 mt-2">
                       {item[1]?.map((sub, j) => (
                         <Li key={j} className="opacity-65">
@@ -46,8 +45,7 @@ function ExperienceContent() {
   );
 }
 export default function ExperienceSection({ mobile }) {
-  const baseClasses =
-    "mx-4 pt-10 box-border rounded-t-2xl border-b-0 bg-gradient-to-bl from-color-bg-top via-color-bg-bottom to-color-bg-top";
+  const baseClasses = "bg-white  relative";
   const mobileClasses = `w-[100%-1rem] border-white/[0.5] border-1 ${baseClasses}`;
   const desktopClasses = `border-white/50 border ${baseClasses}`;
 
@@ -56,12 +54,16 @@ export default function ExperienceSection({ mobile }) {
       id="experience"
       className={mobile ? mobileClasses : desktopClasses}
     >
+      <svg className="w-full -translate-y-[99%] text-white" viewBox="0 0 1440 88" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M720.006 88C400.143 88 124.641 51.9188 0 0V88H720.006ZM1440 0C1315.37 51.9188 1039.87 88 720.006 88H1440V0Z" fill="currentColor"></path>
+      </svg>
       <Container>
         {!mobile && <H2 chapeau="Ervaring" />}
         <ExperienceContent />
-        <Divider />
-        <Footer homePage />
       </Container>
+      <svg className="w-full translate-y-[99%] text-white -scale-y-100" viewBox="0 0 1440 88" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M720.006 88C400.143 88 124.641 51.9188 0 0V88H720.006ZM1440 0C1315.37 51.9188 1039.87 88 720.006 88H1440V0Z" fill="currentColor"></path>
+      </svg>
     </section>
   );
 }

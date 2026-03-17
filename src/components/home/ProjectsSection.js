@@ -1,5 +1,5 @@
-import Container from "@/sections/Container.js";
-import Article from "@/sections/Article.js";
+import Container from "@/components/Container.js";
+import Article from "@/components/Article.js";
 import H1 from "@/elements/H1.js";
 import H2 from "@/elements/H2.js";
 import H3 from "@/elements/H3.js";
@@ -45,7 +45,7 @@ export default function ProjectsSection({ mobile }) {
     <>
       <section
         id="project-intro"
-        className="h-screen flex items-center justify-center text-center dark"
+        className="h-screen flex items-start justify-center text-center dark"
       >
         <Container>
           <H2>Uitgelichtte Projecten</H2>

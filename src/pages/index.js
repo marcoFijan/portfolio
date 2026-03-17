@@ -4,13 +4,13 @@ import { useState, useEffect } from "react";
 import { useScrollOffsets } from "@/hooks/Usescrolloffsets.js";
 
 // Sections using @ alias
-import Container from "@/sections/Container";
+import Container from "@/components/Container";
 import Divider from "@/elements/Divider";
 import LoadingScreen from "@/collections/LoadingScreen";
-import HeroSection from "@/sections/home/HeroSection";
-import AboutSection from "@/sections/home/AboutSection";
-import ProjectsSection from "@/sections/home/ProjectsSection";
-import ExperienceSection from "@/sections/home/ExperienceSection";
+import HeroSection from "@/components/home/HeroSection";
+import AboutSection from "@/components/home/AboutSection";
+import ProjectsSection from "@/components/home/ProjectsSection";
+import ExperienceSection from "@/components/home/ExperienceSection";
 import FixedScene from "@/canvas/FixedCanvas";
 import PageTemplate from "./pageTemplate";
 

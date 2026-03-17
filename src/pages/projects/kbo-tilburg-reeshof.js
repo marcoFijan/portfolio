@@ -1,0 +1,367 @@
+import PageTemplate from "../pageTemplate.js";
+import H1 from "@/elements/H1.js";
+import H2 from "@/elements/H2.js";
+import H3 from "@/elements/H3.js";
+import P from "@/elements/P.js";
+import Li from "@/elements/Li.js";
+import Button from "@/elements/Button.js";
+import Divider from "@/elements/Divider.js";
+import SvgDeviceOutline from "@/elements/SvgDeviceOutline.js";
+import Container from "@/components/Container.js";
+import Img from "@/elements/Img.js";
+import { Splide, SplideSlide } from "@splidejs/react-splide";
+import CornerSVG from "@/utilities/CornerSVG.js";
+import "@splidejs/react-splide/css";
+
+// Static Styling Constants
+// const baseClasses = "w-full h-full object-cover relative bg-black overflow-hidden";
+// const borderClasses = "box-border rounded-2xl border-gray-300 border-0";
+// const shadowClasses = "z-0 shadow-lg";
+const decorationClasses = "after:border-1 after:rounded-2xl after:border-color-border after:w-full after:-right-3 after:-bottom-3 md:after:-right-7 md:after:-bottom-7 after:absolute after:h-[100%] after:z-[-3] before:border-1 before:rounded-2xl before:border-color-border before:w-full before:-left-3 before:-top-3 md:before:-left-7 md:before:-top-7 before:absolute before:h-full before:z-[-3]";
+
+export default function KBOTilburgReeshof() {
+  return (
+    <PageTemplate
+      bgColors={["#063C58", "#063C58", "#000000", "#000000"]}
+      projectPage
+      title="Marco Fijan - KBO Tilburg Reeshof - Een concept website ontwerp voor ouderen"
+    >
+      {/* HERO SECTION (Dark background) */}
+      <Container grid className="dark">
+        <div className="text-center mb-12 col-span-12">
+          <H1 big chapeau={"Een concept website ontwerp voor ouderen"}>
+            KBO Tilburg Reeshof
+          </H1>
+        </div>
+
+        <div className="hidden lg:block col-span-12 relative w-full h-[10rem]">
+          <div className="absolute left-0 top-0 w-full">
+            <SvgDeviceOutline />
+          </div>
+        </div>
+
+        <div className="w-full col-span-12 lg:col-span-10 lg:col-start-2">
+          <Img
+            browserToolbar
+            src="/images/KBOReeshof/HomeHD.png"
+            alt="KBO Reeshof Menu uitgeklapt"
+            className="block object-cover aspect-video w-full object-top"
+          />
+          <div className="col-span-12 lg:col-span-5 my-8 lg:mt-16">
+            <ul className="flex flex-col gap-2">
+              <li className="px-4 py-2 bg-white rounded-full w-max">
+                <strong>Projectjaar:</strong> 2022
+              </li>
+              <li className="px-4 py-2 bg-white rounded-full w-max">
+                <strong>Projectdoel:</strong> Website optimalisatie voor senioren
+              </li>
+              <li className="px-4 py-2 bg-white rounded-full w-max">
+                <strong>Doelgroep:</strong> Eenzame ouderen (65+) in Tilburg
+              </li>
+            </ul>
+          </div>
+          <article className="col-span-12 lg:col-span-7 flex flex-col justify-center">
+            <P intro>
+              Omdat ik vind dat er te weinig aandacht is voor ouderen op digitaal vlak, wilde ik onderzoeken hoe zij websites gebruiken en hoe deze beter op hen afgestemd kunnen worden. Via mijn zoektocht kwam ik uit bij KBO Tilburg Reeshof, een lokale seniorenvereniging met meer dan 700 leden.
+            </P>
+            <div className="flex flex-wrap gap-4 mt-8">
+              <Button href="https://drive.google.com/file/d/1iXpgTq90AxV9-KqkzIO90jlGQBFBjct8/preview" type="primary" arrow>
+                Design Rationale
+              </Button>
+              <Button href="https://amenable-sword-4e9.notion.site/Productbiografie-1edc81194bb144b2bddb7619a652b5b0" type="secondary" arrow>
+                Productbiografie
+              </Button>
+            </div>
+          </article>
+        </div>
+
+      </Container>
+
+      {/* WHITE WRAPPER (Inverted Card) */}
+      <section className="relative flex flex-col gap-16 md:gap-32 xl:gap-64 mt-20 lg:mt-30 bg-white bg-color-bg-bottom-light inverted-card pt-20 lg:pt-32">
+        <svg className="w-full -translate-y-[99%] text-white absolute top-0 left-0" viewBox="0 0 1440 88" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M720.006 88C400.143 88 124.641 51.9188 0 0V88H720.006ZM1440 0C1315.37 51.9188 1039.87 88 720.006 88H1440V0Z" fill="currentColor"></path>
+        </svg>
+        {/* <CornerSVG position="top" side="left" />
+        <CornerSVG position="top" side="right" rotate="-rotate-90" /> */}
+
+
+        {/* PROBLEEMSTELLING */}
+        <Container grid>
+          <section className="col-span-12 xl:col-span-6 xl:sticky top-32 h-fit space-y-6">
+            <H2 chapeau="Het probleem concreet beschrijven">Probleemstelling</H2>
+            <P>
+              Elke dag zijn er duizenden ouderen in Nederland die in eenzaamheid leven. Zo’n 42% volgens het CBS. Deze doelgroep heeft vaak moeite met digitale toegankelijkheid.
+            </P>
+            <P>
+              Veel instanties communiceren online, maar websites zijn vaak niet ontworpen voor senioren. Denk aan kleine letters, verwarrende navigatie en gebrek aan tekstuele uitleg bij iconen.
+            </P>
+          </section>
+          <section className="col-span-12 xl:col-span-6 flex items-center justify-center">
+            <Img contain className="w-full max-w-[50rem]" src="/images/KBOReeshof/KBOReeshofBuilding.png" alt="KBO Reeshof Gebouw" noBorder />
+          </section>
+        </Container>
+
+        {/* VERKENNEN & PERSONAS */}
+        <Container article grid>
+          <section className="col-span-12 xl:col-span-6 xl:order-2 xl:sticky top-32 h-fit space-y-6">
+            <H2 chapeau="Onderzoek doen naar de doelgroep">Verkennen</H2>
+
+            <P>
+              Via 'fly on the wall' onderzoek en interviews heb ik twee persona's opgesteld: de 'Digibeet' en de 'Ervaren gebruiker'. Het bleek dat de behoeften binnen deze doelgroep enorm uiteenlopen.
+            </P>
+            <H3>Stakeholders & Empathie</H3>
+            <P>
+              Door letterlijk mee te doen met activiteiten bij KBO Reeshof, kreeg ik inzicht in de 'pains' en 'gains' van de doelgroep. Dit heb ik vertaald naar een Empathy Map om de mentale modellen van senioren beter te begrijpen.
+            </P>
+          </section>
+
+          <section className="col-span-12 xl:col-span-6 xl:order-1 relative">
+            <div className="rounded-2xl overflow-hidden">
+              <Splide options={{ type: "fade", rewind: true, pagination: false, arrows: false, autoplay: true }}>
+                <SplideSlide><Img src="/images/KBOReeshof/Persona1.jpg" alt="Persona 1" contain classNameWrapper="rounded-2xl overflow-hidden" /></SplideSlide>
+                <SplideSlide><Img src="/images/KBOReeshof/Persona2.jpg" alt="Persona 2" contain classNameWrapper="rounded-2xl overflow-hidden" /></SplideSlide>
+                <SplideSlide><Img src="/images/KBOReeshof/EmpathyMap.jpg" alt="Empathy Map" contain classNameWrapper="rounded-2xl overflow-hidden" /></SplideSlide>
+              </Splide>
+            </div>
+          </section>
+        </Container>
+
+        {/* DEFINIËREN */}
+        <Container bgClass="bg-color-kbo-bg">
+          <H2 chapeau="De eisen voor het product vastleggen">Definiëren</H2>
+          <P>
+            Nu er een duidelijk beeld is van de doelgroep, is het tijd om deze informatie te gebruiken voor het product. Het is belangrijk om de resultaten uit het onderzoek nu heel concreet op te schrijven. De focus ligt hierbij op wat de gebruikers echt nodig hebben en wat het product precies moet kunnen. Deze stap is nodig om van losse ideeën naar een plan te gaan dat echt aansluit bij de gebruiker.          </P>
+          <div className="grid grid-cols-12 gap-8 lg:gap-16">
+            <article className="col-span-12 lg:col-span-6">
+              <H3>Belangrijkste inzichten</H3>
+              <ul className="list-disc ml-4 flex flex-col gap-2 font-light mt-4 mb-8">
+                <Li>Ouderen hebben moeite met inloggen op websites</Li>
+                <Li>
+                  Veel ouderen zijn gaan pinnen door corona; gebruik pincode
+                  gaat goed
+                </Li>
+                <Li>
+                  ‘Platte’ logo’s zijn over het algemeen onduidelijk voor
+                  ouderen
+                </Li>
+                <Li>
+                  Websites worden vrijwel alleen bezocht op grote schermen;
+                  laptop of computer
+                </Li>
+                <Li>
+                  Veel ouderen vinden donkere knoppen fijner dan fel
+                  gekleurde; beter contrastratio en daardoor beter leesbaar
+                </Li>
+                <Li>
+                  Ouderen zijn erg actief en proberen zoveel mogelijk te doen
+                  op een dag zolang er daglicht is; Gebruiken computers alleen
+                  in de ochtend of avond.
+                </Li>
+                <Li>
+                  Ouderen letten meer op pop-up berichten in tegenstelling tot
+                  jongeren
+                </Li>
+                <Li>Voorkom serifs en andere ingewikkelde lettertypen</Li>
+                <Li>Gebruik een hoog contrastratio</Li>
+                <Li>Voor de kleinste tekst minimaal 16 punten (1 rem)</Li>
+                <Li>‘Don’t make me think’ &amp; ‘Don’t make me remember’</Li>
+                <Li>
+                  Design minimaal en toon niet te veel in 1 keer op het scherm
+                </Li>
+                <Li>
+                  Zorg voor duidelijke beschrijvende knoppen, niet alleen
+                  iconen
+                </Li>
+                <Li>
+                  Pastelkleuren, de kleur geel en de kleur felblauw zijn
+                  vermoeiend en slecht zichtbaar voor ouderen
+                </Li>              </ul>
+              <Button
+                href="https://amenable-sword-4e9.notion.site/Interviews-Bag-tour-860c2c93b8564e1a9eac450c6341d45e"
+                type="secondary"
+                className="group"
+                arrow
+              >
+                Luister naar de interviews
+              </Button>
+            </article>
+            <article className="col-span-12 lg:col-span-6">
+              <H3>Belangrijkste eisen</H3>
+              <ul className="list-disc ml-4 flex flex-col gap-2 font-light mt-4 mb-8">
+                <Li>De gebruiker kan zich opgeven voor activiteiten</Li>
+                <Li>
+                  De gebruiker kan informatie, zoals contactinformatie en
+                  nieuws, vinden in het product
+                </Li>
+                <Li>
+                  Het product is toegespitst op de leden en gemeenshap van KBO
+                  Tilburg Reeshof
+                </Li>
+                <Li>
+                  Het product moet aantrekkelijk zijn voor de gebruiker, ofwel
+                  ouderen
+                </Li>
+                <Li>
+                  Het product moet zo min mogelijk jargon, Engelse en
+                  technische woorden bevatten
+                </Li>
+                <Li>
+                  Het product moet zo min mogelijk gele, lichtblauwe en
+                  pastelkleuren gebruiken
+                </Li>
+                <Li>
+                  Het product moet niet te veel informatie in 1 keer tonen;
+                  Inhoud opdelen in stappen
+                </Li>
+                <Li>
+                  Voor de kleinste tekst moet er minimaal 16 punten (1 rem)
+                  gebruikt worden, liefst meer
+                </Li>
+                <Li>
+                  Het product heeft verschillende ‘shortcuts’ om te navigeren
+                  van en naar pagina’s
+                </Li>
+                <Li>
+                  Het product moet gefocust zijn op een laptop en computer
+                  formaat (16:9)
+                </Li>
+                <Li>Het product betreft een digitaal prototype</Li>              </ul>
+              <Button
+                href="https://amenable-sword-4e9.notion.site/Interviews-Bag-tour-860c2c93b8564e1a9eac450c6341d45e"
+                type="secondary"
+                className="group"
+                arrow
+              >
+                Bekijk alle eisen
+              </Button>
+            </article>
+          </div>
+        </Container>
+
+        <Container grid>
+          <article className="col-span-12 xl:col-span-6">
+            <H2 chapeau="Het genereren van mogelijke oplossingen">
+              Ideegeneratie
+            </H2>
+            <P>
+              Met de kennis opgedaan uit de verschillende onderzoeksmethodes
+              wordt er gebrainstormt. Hier worden aan de hand van
+              verschillende methodes mogelijke oplossingen bedacht. Het doel
+              is om zoveel mogelijk oplossingen te bedenken
+            </P>
+            <H3>Inspiratieborden & Harris profiel</H3>
+            <P>
+              Op basis van bestaande oplossingen, moderne ontwerptheorieën en
+              de kennis over de doelgroep worden er verschillende
+              inspiratieborden opgesteld. Deze inspiratieborden bevatten
+              zoveel mogelijk relevante afbeeldingen. Door deze afbeeldingen
+              bij elkaar te plaatsen, kunnen er ideeën ontstaan
+            </P>
+            <P>
+              Een andere erg hulpvolle methode was de Harris Profiel. Hier
+              werd de functionaliteit opgesplitst in eisen en werden er per
+              eis mogelijke oplossingen bedacht. Door deze oplossingen te
+              combineren kunnen er orginele ideeën ontstaan.{" "}
+            </P>
+            <P>
+              Aangezien er veel ideegeneratie methodes zijn gebruikt en veel
+              van deze methodes vrij groot zijn in uitwerking, kunt u de
+              ideegeneratie methodes het best bekijken in de betreffende
+              design rationale onderaan de pagina of in de productbiografie
+            </P>
+            <Button
+              href="https://amenable-sword-4e9.notion.site/Ideegeneratie-141e664077d64253a884f872ab156497"
+              arrow
+              type="secondary"
+            >
+              Bekijk ideegeneratie
+            </Button>
+          </article>
+          <Img
+            contain
+            classNameWrapper="w-full col-span-12 sm:col-span-10 sm:col-start-2 xl:col-span-6"
+            src="/images/KBOReeshof/InspirationboardsHarrisProfile.png"
+            alt="Harris Profiel"
+          />
+        </Container>
+
+        <Container grid>
+          <article className="col-span-12 xl:col-span-6 xl:sticky top-32 h-fit xl:order-2">
+            <H2 chapeau="Itereren op mogelijke oplossingen">
+              Conceptualiseren
+            </H2>
+            <P>
+              Nadat er verschillende ideeën vaststaan, worden er keuzes
+              gemaakt en worden deze keuzes uitgewerkt in schetsen
+            </P>
+            <H3>Concept</H3>
+            <P>
+              Onderzoek en interviews tonen aan dat 'de oudere' niet bestaat. De doelgroep varieert van ervaren, ongeduldige gebruikers tot senioren met computerangst. Het aanbieden van twee verschillende omgevingen bij binnenkomst is daarom essentieel om aan beide behoeften te voldoen.
+            </P>
+            <P>
+              De combinatie van een vertrouwde websitestructuur met skeuomorfe elementen (herkenbare, fysiek ogende knoppen) werkt drempelverlagend. Kennispartners bevestigen dat deze visuele insteek de intuïtie prikkelt zonder de functionele basis te verliezen.
+            </P>
+            <P className="mb-8">
+              Bij binnenkomst krijgt de gebruiker de keuze om een standaard
+              website of om een visuele versimpelde website te bezoeken. Bij
+              de standaard website wordt er een zijbalk gebruikt met
+              essentiële elementen in de vorm van een herkenbare
+              afstandsbediening. De visuele website toont een muur met
+              verschillende klikbare elementen die vervolgens informatie geeft
+              wanneer er op wordt geklikt.
+            </P>
+            <Button
+              href="https://amenable-sword-4e9.notion.site/Digitale-schetsen-voor-feedback-frenzy-530edefdd420499e8e6d6bbb2c3fda93"
+              arrow
+              type="secondary"
+            >
+              Bekijk alle concepten
+            </Button>
+          </article>
+          <div className="col-span-12 xl:col-span-6 xl:sticky top-32 h-fit xl:order-1">
+            <Img
+              contain
+              classNameWrapper="rounded-2xl overflow-hidden"
+              src="/images/KBOReeshof/Concept.png"
+              alt="Concept"
+            />
+          </div>
+        </Container>
+
+        {/* CONCEPTUALISEREN & VORMGEVING */}
+        <Container grid>
+          <section className="col-span-12 lg:col-span-6 lg:sticky top-32 h-fit space-y-6">
+            <H2 chapeau="Itereren op mogelijke oplossingen">Vormgevingsregels</H2>
+            <P>
+              Omdat dit een volledig nieuw ontwerp voor ouderen betreft, zijn definitieve ontwerpkeuzes pas na uitgebreide gebruikerstesten mogelijk. Toch bieden het onderzoek naar de doelgroep en de huidige huisstijl van KBO-Brabant een stevig fundament voor de eerste vormgevingsregels.
+            </P>
+            <P>
+              Uit interviews en de design pattern search blijkt dat de voorkeur sterk uitgaat naar 3D-knoppen en elementen met een hoog contrast, terwijl moderne 'platte' iconen vaak voor verwarring zorgen. Donkere knoppen zijn hierbij favoriet vanwege de uitstekende leesbaarheid. Deze inzichten, gecombineerd met vastgestelde regels voor kleurgebruik en tekstgrootte, vormen de basis voor de eerste testbare prototypes.
+            </P>
+            <Button href="https://amenable-sword-4e9.notion.site/Ideegeneratie-141e664077d64253a884f872ab156497" arrow type="secondary">
+              Bekijk Proces
+            </Button>
+          </section>
+          <section className="col-span-12 lg:col-span-6">
+            <Img src="/images/KBOReeshof/DesignRules.jpg" alt="Vormgevingsregels" className="w-full" />
+          </section>
+        </Container>
+
+        {/* FINAL PRODUCT */}
+        <Container bgClass="bg-color-kbo-bg">
+          <Divider />
+          <H2 chapeau="De Design Rationale voor de klant" className="mb-8 text-center lg:text-left">Eindproduct</H2>
+          <iframe
+            src="https://drive.google.com/file/d/1iXpgTq90AxV9-KqkzIO90jlGQBFBjct8/preview"
+            className="h-[17rem] md:h-[37rem] w-full shadow-button rounded-2xl border-1 border-gray-200"
+            title="Design Rationale"
+          />
+        </Container>
+        <svg className="w-full translate-y-[99%] text-color-kbo-bg -scale-y-100 absolute bottom-0 left-0" viewBox="0 0 1440 88" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M720.006 88C400.143 88 124.641 51.9188 0 0V88H720.006ZM1440 0C1315.37 51.9188 1039.87 88 720.006 88H1440V0Z" fill="currentColor"></path>
+        </svg>
+      </section>
+    </PageTemplate>
+  );
+}

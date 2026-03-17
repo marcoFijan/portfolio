@@ -1,29 +1,44 @@
 "use client";
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 
-export default function Letter({ word, letterHover, bold }) {
+export default function Letter({ word, bold }) {
   const ref = useRef(null);
-  const isInView = useInView(ref, {
-    margin: "-50% 0px -50% 0px",
-    amount: "some",
-  });
+  const [isInView, setIsInView] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsInView(entry.isIntersecting);
+      },
+      {
+        rootMargin: "-50% 0px -50% 0px",
+        threshold: 0,
+      }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) observer.unobserve(ref.current);
+    };
+  }, []);
 
   return (
     <>
-      <motion.span
+      <span
         ref={ref}
-        animate={{
-          color: isInView ? "#1f1f1f" : "#3b3b3b27",
-        }}
-        transition={{ duration: 0.3 }}
         className={
-          "inline-block empty:min-w-12 text-[#3b3b3b27]" +
-          (bold ? " font-black " : "font-light")
+          `inline-block empty:min-w-12 transition-colors duration-300 ` +
+          (bold ? " font-bold " : " font-light ")
         }
+        style={{
+          color: isInView ? "#2e2e2e" : "#85858527",
+        }}
       >
         {word}
-      </motion.span>
+      </span>
       <span className="bg-color-accent w-4 h-4 rounded-full"></span>
     </>
   );

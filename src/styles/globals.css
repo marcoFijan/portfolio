@@ -17,20 +17,20 @@
   --breakpoint-2xl: 1536px;
   --breakpoint-3xl: 1536px;
 
-  --text-xs: 0.75rem; /* 12px */
-  --text-sm: 0.875rem; /* 14px */
-  --text-base: 1rem; /* 16px */
-  --text-md: 1.125rem; /* 18px */
-  --text-lg: 1.25rem; /* 20px */
-  --text-xl: 1.5rem; /* 24px */
-  --text-2xl: 1.875rem; /* 30px */
-  --text-3xl: 2.25rem; /* 36px */
-  --text-4xl: 3rem; /* 48px */
-  --text-5xl: 3.75rem; /* 60px */
-  --text-6xl: 4.5rem; /* 72px */
-  --text-7xl: 6rem; /* 96px */
-  --text-8xl: 8rem; /* 128px */
-  --text-9xl: 10rem; /* 160px */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-md: 1.125rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 1.875rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 3rem;
+  --text-5xl: 3.75rem;
+  --text-6xl: 4.5rem;
+  --text-7xl: 6rem;
+  --text-8xl: 8rem;
+  --text-9xl: 9rem;
 
   --background-size-*: initial;
   --background-size-auto: auto;
@@ -56,6 +56,7 @@
   --color-color-white-soft: #70828e;
   /* --color-color-border: #303234; */
   --color-color-kbo-accent: #b92a3f;
+  --color-color-kbo-bg: #063C58;
   --color-color-yo-accent: #10d1bb;
   --color-color-sa-accent: #3b4982;
   --color-color-ra-accent: #0077c9;
@@ -83,9 +84,6 @@
   --container-paragraph: 50rem;
 
   --grid-template-columns-fluid: repeat(auto-fit, minmax(23em, 1fr));
-
-  --text-home-h1: 5rem;
-  --text-home-h1-big: 5rem;
 
   --background-image-gradient-radial: radial-gradient(var(--tw-gradient-stops));
   --animate-infinite-scroll: infinite-scroll 2s linear infinite;
