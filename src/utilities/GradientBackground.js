@@ -1,6 +1,12 @@
 "use client";
 
-import { useEffect, useState, useRef, forwardRef, useImperativeHandle } from "react";
+import {
+  useEffect,
+  useState,
+  useRef,
+  forwardRef,
+  useImperativeHandle,
+} from "react";
 
 // ─── GLSL Shaders ─────────────────────────────────────────────────────────────
 
@@ -499,7 +505,7 @@ function createGradient(
 
 // ─── Component ────────────────────────────────────────────────────────────────
 
-const DEFAULT_COLORS = ["#121a26", "#121a26", "#20447a", "#2065cc"];
+const DEFAULT_COLORS = ["#021a44", "#5099d5", "#021a44", "#021a44"];
 
 const GradientBackground = forwardRef(function GradientBackground(
   {
@@ -559,7 +565,10 @@ const GradientBackground = forwardRef(function GradientBackground(
         aria-hidden="true"
         className="w-full h-full absolute inset-0 -z-20 bg-color-bg"
       />
-      <div className="w-full h-full -z-10 absolute inset-0 opacity-40 brightness-80" style={{ backgroundColor: colors[0] }} />
+      <div
+        className="w-full h-full -z-10 absolute inset-0 opacity-40 brightness-80"
+        style={{ backgroundColor: colors[0] }}
+      />
     </div>
   );
 });

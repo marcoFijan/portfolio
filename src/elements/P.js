@@ -8,10 +8,11 @@ const workSans = Work_Sans({
 });
 
 export default function P({ children, className, intro, splitText }) {
-  const combinedClasses = `mb-4 font-light text-shadow-color-bg-top tracking-widest text-black dark:text-white ${className} ${workSans.className} 
-    ${intro
-      ? "text-md sm:text-lg md:text-xl lg:text-2xl max-w-280"
-      : "text-sm md:text-md max-w-paragraph"
+  const combinedClasses = `mb-4 last-of-type:mb-0 font-light text-shadow-color-bg-top tracking-widest text-black dark:text-white ${className} ${workSans.className} 
+    ${
+      intro
+        ? "text-md md:text-lg max-w-280"
+        : "text-sm md:text-md max-w-paragraph"
     }
   `;
 

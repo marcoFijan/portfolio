@@ -16,7 +16,9 @@ export default function Img({
 }) {
   if (overflowScroll) {
     return (
-      <div className={`relative rounded-2xl overflow-hidden ${classNameWrapper}`}>
+      <div
+        className={`relative rounded-2xl overflow-hidden ${classNameWrapper}`}
+      >
         <div className="max-h-[50rem] overflow-y-auto">
           <Image
             src={src}
@@ -33,7 +35,9 @@ export default function Img({
   }
 
   return (
-    <div className={`relative ${contain ? "" : "rounded-2xl overflow-hidden bg-color-bg-bottom"} ${classNameWrapper}`}>
+    <div
+      className={`relative ${contain ? "" : "rounded-2xl overflow-hidden bg-black"} ${classNameWrapper}`}
+    >
       {browserToolbar && <SvgBrowserToolbar />}
       <Image
         src={src}

@@ -16,20 +16,27 @@ export default function ProjectsSection({ mobile }) {
         <H1 chapeau="Mijn projecten">Uitgelichtte Projecten</H1>
         <section className="flex flex-col gap-6 mt-4">
           {PROJECTS.map((project) => (
-            <section
-              key={project.id}
-              id={project.id}
-              className="w-full mx-auto xl:max-w-[80%]"
-            >
-              <ProjectSection
-                projectName={project.name}
-                projectLink={project.link}
-                imgSrc={project.img}
-                imgAlt={project.alt}
-                projectGiver={project.client}
-                projectChapeau={project.desc}
-              />
-            </section>
+            <>
+              <ul className="list-none">
+                <li className="py-1 px-3 rounded-full bg-white text-black">
+                  Design
+                </li>
+              </ul>
+              <section
+                key={project.id}
+                id={project.id}
+                className="w-full mx-auto xl:max-w-[80%]"
+              >
+                <ProjectSection
+                  projectName={project.name}
+                  projectLink={project.link}
+                  imgSrc={project.img}
+                  imgAlt={project.alt}
+                  projectGiver={project.client}
+                  projectChapeau={project.desc}
+                />
+              </section>
+            </>
           ))}
         </section>
         <Action className="justify-center">
@@ -52,9 +59,7 @@ export default function ProjectsSection({ mobile }) {
         </Container>
       </section>
 
-      {/* Map over the unified PROJECTS data for Desktop */}
       {PROJECTS.map((project, index) => {
-        // Alternate alignment based on odd/even indexes to match your original layout
         const isRightAligned = index % 2 === 0;
 
         return (
@@ -87,7 +92,6 @@ export default function ProjectsSection({ mobile }) {
         );
       })}
 
-      {/* Keep the static "Other projects" outro section */}
       <section id="project-other" className="h-screen flex text-center dark">
         <Container>
           <H3

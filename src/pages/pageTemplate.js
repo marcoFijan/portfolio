@@ -8,7 +8,6 @@ import { useRef, useEffect } from "react";
 export default function PageTemplate({
   children,
   homePage = false,
-  projectPage = false,
   bgColors = [],
   title = "Marco Fijan - Portfolio",
 }) {
@@ -46,19 +45,9 @@ export default function PageTemplate({
       <Header home={homePage} />
 
       <main className={`${homePage ? "w-full" : "pt-28 "}`}>
-        {projectPage && (
-          <div
-            className={`absolute overflow-hidden max-w-full -z-[2] bg-radial ${projectPage === "yo"
-              ? "from-color-yo-accent/[0.4] to-60%"
-              : projectPage === "kbo"
-                ? "from-color-kbo-accent"
-                : projectPage === "ra"
-                  ? "from-color-ra-accent/[0.7] to-70%"
-                  : "from-color-bg-bottom to-50%"
-              } to-transparent w-[200%] h-[200%] -top-full left-0 transition-all duration-500`}
-          ></div>
-        )}
-        <GradientBackground colors={bgColors.length > 0 ? bgColors : undefined} />
+        <GradientBackground
+          colors={bgColors.length > 0 ? bgColors : undefined}
+        />
         {children}
       </main>
 

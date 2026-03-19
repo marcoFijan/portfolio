@@ -15,12 +15,12 @@ export default function ProjectSection({
 }) {
   return (
     <Link
-      className="bg-gradient-to-tr from-color-bg-top/[0.2] to-color-bg-bottom/[0.3] rounded-2xl block group"
+      className="bg-[#ffffff] rounded-2xl block group relative z-20 border border-black h-full"
       href={projectLink || "#"}
       title={`Bekijk project: ${projectName}`}
     >
-      <section className="rounded-2xl border-color-border group-hover:border-white/[0.8] transition-all duration-500 ease-in-out  border overflow-hidden  w-full h-full px-4 md:px-10 lg:px-20 lg:pt-10 pb-0 relative grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <article className=" flex lg:flex-nowrap flex-wrap-reverse justify-between items-start gap-x-8 relative text-white fill-white stroke-color-bg-top">
+      <section className="rounded-2xl border-white/0 group-hover:border-white/80 transition-all duration-500 ease-in-out  border overflow-hidden  w-full h-full px-4 md:px-10 lg:px-20 lg:pt-10 pb-0 relative grid grid-cols-1 gap-6">
+        <article className=" flex lg:flex-nowrap flex-wrap-reverse justify-between items-start gap-x-8 relative text-black fill-black stroke-color-bg-top">
           <section className="lg:mt-0 -mt-10 pr-10">
             <H3 noMarginTop textWhite>
               {projectName}
@@ -39,7 +39,7 @@ export default function ProjectSection({
         </article>
         <div className="absolute top-0 left-0 bg-gradient-to-bl from-color-bg-top to-color-bg-bottom"></div>
         <div
-          className={`absolute -z-[1] bg-radial to-color-bg-top/[0.1] w-[200%] h-[200%] -top-full -left-1/2 opacity-0 group-hover:opacity-100 ${
+          className={`absolute -z-[1] bg-radial to-white/[0.1] w-[200%] h-[200%] -top-full -left-1/2 opacity-0 group-hover:opacity-100 ${
             projectGiver === "YoungOnes"
               ? "from-color-yo-accent"
               : projectGiver === "KBO Tilburg Reeshof"
@@ -51,8 +51,8 @@ export default function ProjectSection({
                     : "from-color-accent"
           } transition-all duration-500`}
         ></div>
-        <div className="absolute -z-[2] bg-radial from-color-bg-bottom to-color-bg-top/[0.1] w-[200%] h-[200%] -top-full -left-1/2 transition-all duration-500"></div>
-        <div className="group-hover:translate-y-4 transform-y-4 lg:translate-y-10 transition-all duration-500 aspect-video w-full lg:w-4/5 mx-auto overflow-hidden rounded-t-2xl bg-color-bg-bottom border border-color-border pt-1">
+        <div className="absolute -z-[2] bg-radial from-white to-white/[0.1] w-[200%] h-[200%] -top-full -left-1/2 transition-all duration-500"></div>
+        <div className="group-hover:translate-y-4 transform-y-4 lg:translate-y-10 transition-all duration-500 aspect-video w-full lg:w-4/5 mx-auto overflow-hidden rounded-t-2xl bg-black border border-color-border pt-1">
           <SvgBrowserToolbar />
 
           <Img

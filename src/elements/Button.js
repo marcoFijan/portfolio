@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React, { useState, useRef } from "react";
-import Icon from "@/utilities/Icon";
+import Icon from "@/utilities/icon";
 
 export default function Button({
   children,
@@ -54,7 +54,7 @@ export default function Button({
   const typeStyles = {
     // Primary: Accent border/text, turns to Dark on Hover
     primary:
-      "border border-color-accent text-color-accent hover:text-color-bg-top backdrop-blur-[15px] py-2 sm:py-5 px-4 sm:px-8",
+      "border dark:border-color-accent border-color-accent-dark dark:text-color-accent text-color-accent-dark hover:text-color-bg-top backdrop-blur-[15px] py-2 sm:py-5 px-4 sm:px-8",
 
     // Secondary: Dark text/border on Light mode, White text/border on Dark mode
     secondary:
@@ -66,16 +66,16 @@ export default function Button({
   };
 
   const isGhost = type === "ghost";
-  const baseClasses = `group cursor-pointer tracking-widest relative overflow-hidden flex transition-all duration-500 items-center rounded-full uppercase ${!isGhost ? "gap-2 text-sm xl:text-md" : ""
-    }`;
+  const baseClasses = `group cursor-pointer tracking-widest relative overflow-hidden flex transition-all duration-500 items-center rounded-full uppercase ${
+    !isGhost ? "gap-2 text-sm xl:text-md" : ""
+  }`;
 
-  const combinedClasses = `${baseClasses} ${typeStyles[type] || ""} ${className}`.trim();
+  const combinedClasses =
+    `${baseClasses} ${typeStyles[type] || ""} ${className}`.trim();
 
   // FIX: Bubble color now mirrors the hover text target color
   const bubbleColor =
-    type === "primary"
-      ? "bg-color-accent"
-      : "bg-color-bg-top dark:bg-white";
+    type === "primary" ? "bg-color-accent" : "bg-color-bg-top dark:bg-white";
 
   const Content = (
     <>
@@ -86,8 +86,9 @@ export default function Button({
         />
       )}
       <span
-        className={`relative z-10 flex items-center transition-colors duration-300 ${!isGhost || icon ? "gap-2" : ""
-          }`}
+        className={`relative z-10 flex items-center transition-colors duration-300 ${
+          !isGhost || icon ? "gap-2" : ""
+        }`}
       >
         {icon && <Icon name={icon} />}
 
