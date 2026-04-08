@@ -3,7 +3,7 @@ import Article from "@/components/Article.js";
 import H1 from "@/elements/H1.js";
 import H2 from "@/elements/H2.js";
 import H3 from "@/elements/H3.js";
-import P from "@/elements/P.js"; // Imported the P tag
+import P from "@/elements/P.js";
 import Action from "@/elements/Action.js";
 import Button from "@/elements/Button";
 import ProjectSection from "@/elements/Project";
@@ -17,11 +17,6 @@ export default function ProjectsSection({ mobile }) {
         <section className="flex flex-col gap-6 mt-4">
           {PROJECTS.map((project) => (
             <>
-              <ul className="list-none">
-                <li className="py-1 px-3 rounded-full bg-white text-black">
-                  Design
-                </li>
-              </ul>
               <section
                 key={project.id}
                 id={project.id}
@@ -74,7 +69,7 @@ export default function ProjectsSection({ mobile }) {
               </H3>
 
               <P
-                className={`text-white/80 mb-8 ${isRightAligned ? "ml-auto" : ""}`}
+                className={`text-white/80 !max-w-120 pb-8 ${isRightAligned ? "ml-auto" : ""}`}
               >
                 {project.desc}
               </P>
@@ -93,7 +88,7 @@ export default function ProjectsSection({ mobile }) {
       })}
 
       <section id="project-other" className="h-screen flex text-center dark">
-        <Container>
+        <Container className="flex flex-col items-center justify-center gap-8">
           <H3
             textWhite
             noMarginTop
@@ -101,7 +96,12 @@ export default function ProjectsSection({ mobile }) {
           >
             Bekijk alle projecten
           </H3>
-          <Button type="primary" href="/projects" alignCenter>
+          <Button
+            type="primary"
+            href="/projects"
+            alignCenter
+            className="mx-auto"
+          >
             Alle projecten
           </Button>
         </Container>

@@ -33,35 +33,35 @@ export default function SvgBrowserToolbar() {
         stroke="#8C8E8D"
         stroke-width="2.66667"
         stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinejoin="round"
       />
       <path
         d="M38 73H22M22 73L28.6667 66.3334M22 73L28.6667 79.6667"
         stroke="#8C8E8D"
         stroke-width="2.66667"
         stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinejoin="round"
       />
       <path
         d="M1533.64 75.397C1533.56 75.3855 1533.45 75.3855 1533.36 75.397C1531.34 75.328 1529.73 73.672 1529.73 71.6365C1529.73 69.555 1531.41 67.8645 1533.5 67.8645C1535.58 67.8645 1537.27 69.555 1537.27 71.6365C1537.26 73.672 1535.66 75.328 1533.64 75.397Z"
         stroke="#8C8E8D"
         stroke-width="1.725"
         stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinejoin="round"
       />
       <path
         d="M1541.25 82.9871C1539.2 84.8616 1536.49 86.0001 1533.5 86.0001C1530.51 86.0001 1527.8 84.8616 1525.75 82.9871C1525.86 81.9061 1526.55 80.8481 1527.78 80.0201C1530.94 77.9271 1536.09 77.9271 1539.22 80.0201C1540.45 80.8481 1541.14 81.9061 1541.25 82.9871Z"
         stroke="#8C8E8D"
         stroke-width="1.725"
         stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinejoin="round"
       />
       <path
         d="M1533.5 86C1539.85 86 1545 80.8512 1545 74.5C1545 68.1487 1539.85 63 1533.5 63C1527.15 63 1522 68.1487 1522 74.5C1522 80.8512 1527.15 86 1533.5 86Z"
         stroke="#8C8E8D"
         stroke-width="1.725"
         stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinejoin="round"
       />
       <rect x="141" y="56" width="1363" height="34" rx="17" fill="#282C2F" />
       <circle cx="1574" cy="68" r="3" fill="#8C8E8D" />

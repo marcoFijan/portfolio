@@ -1,5 +1,18 @@
 export const EXPERIENCE = [
   {
+    company: "LiNC",
+    role: "Wordpress Developer",
+    period: "December 2025 - Heden",
+    items: [
+      "Ontwikkelen en onderhouden van diverse Wordpress websites.",
+      "Gebruik van Tailwind, PHP, Javascript, Wordpress, Advanced Custom Fields, GTM, WP Rocket en WooCommerce",
+      ["AVEC", ["Ontwikkeling AVEC.nl"]],
+      ["Gydz", ["Ontwikkeling Wordpress gydz.nl"]],
+      ["LiNC", ["Ontwikkeling Wordpress linc.nl"]],
+      ["NextUp", ["Ontwikkeling Wordpress nextup.nl"]],
+    ],
+  },
+  {
     company: "New Orange",
     role: "Frontend Developer",
     period: "September 2023 - April 2025",

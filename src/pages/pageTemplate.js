@@ -1,9 +1,7 @@
 import Head from "next/head";
-import MainCanvas from "../canvas/MainCanvas";
 import Header from "../components/Header";
 import Footer from "@/components/Footer";
 import GradientBackground from "@/utilities/GradientBackground";
-import { useRef, useEffect } from "react";
 
 export default function PageTemplate({
   children,

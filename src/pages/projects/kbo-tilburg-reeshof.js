@@ -19,7 +19,6 @@ export default function KBOTilburgReeshof() {
       projectPage
       title="Marco Fijan - KBO Tilburg Reeshof - Een concept website ontwerp voor ouderen"
     >
-      {/* HERO SECTION (Dark background) */}
       <Container grid className="dark">
         <div className="text-center mb-12 col-span-12">
           <H1 big chapeau={"Een concept website ontwerp voor ouderen"}>
@@ -82,8 +81,7 @@ export default function KBOTilburgReeshof() {
         </div>
       </Container>
 
-      {/* WHITE WRAPPER (Inverted Card) */}
-      <section className="relative flex flex-col gap-16 md:gap-32 xl:gap-64 mt-20 lg:mt-30 bg-white bg-color-bg-bottom-light inverted-card pt-20 lg:pt-32">
+      <section className="relative flex flex-col gap-16 md:gap-32 xl:gap-64 mt-20 lg:mt-30 bg-white inverted-card pt-20 lg:pt-32">
         <svg
           className="w-full -translate-y-[99%] text-white absolute top-0 left-0"
           viewBox="0 0 1440 88"

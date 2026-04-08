@@ -1,7 +1,7 @@
 export default function Input({ type, value, label }) {
   // Regular styling
   const regularClasses =
-    "mb-8 mt-2 rounded-lg shadow-inputField text-white p-2 border-1 border-white";
+    "mb-8 mt-2 rounded-full bg-black/5 py-6 px-8 shadow-inputField text-black p-2 border-1 border-white";
 
   // Validation classes
   const validationClasses =
@@ -9,18 +9,16 @@ export default function Input({ type, value, label }) {
 
   // Focus classes
   const focusClasses =
-    "focus:bg-white focus:text-color-bg focus:border-1 focus:outline-hidden focus:border-yellow-600 focus:rounded-lg";
+    "focus:bg-black focus:text-white focus:border-1 focus:outline-hidden focus:border-black";
 
-  // Hover classes
-  const hoverClasses = "hover:border-yellow-600";
+  const hoverClasses = "hover:border-accent";
 
-  // Transition classes
   const transitionClasses = "box-border transition-all duration-500";
 
   return (
     <>
       {label && (
-        <label htmlFor={value} className={"text-white"}>
+        <label htmlFor={value} className="text-black">
           {label}
         </label>
       )}
