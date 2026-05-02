@@ -3,29 +3,26 @@ import H2 from "@/elements/H2";
 import H3 from "@/elements/H3";
 import P from "@/elements/P";
 import Li from "@/elements/Li";
-import Divider from "@/elements/Divider";
-import Footer from "@/components/Footer";
+import Button from "@/elements/Button";
 import { EXPERIENCE } from "@/data/experience";
+import Wave from "@/elements/Wave";
 
 function ExperienceContent() {
   return (
     <>
       {EXPERIENCE.map((job) => (
-        <div
-          key={job.company}
-          className="grid grid-cols-1 lg:grid-cols-2 w-full gap-4"
-        >
-          <H2>{job.company}</H2>
-          <div className="lg:mt-4 mt-[-50px] mb-20">
-            <H3 noMarginTop>{job.role}</H3>
+        <div key={job.company} className="grid grid-cols-1 2xl:grid-cols-2 w-full gap-4">
+          <span className="block"><H2 chapeau={job.chapeau}>{job.company}</H2></span>
+          <div className={`mb-20 ${job.chapeau ? 'lg:mt-10 -mt-12.5' : 'lg:mt-4 -mt-12.5'}`}>
+            <H3 noMarginTop textOrange>{job.role}</H3>
             <P className="text-black dark:text-white text-md lg:text-xl mb-3">{job.period}</P>
 
-            <ul className="list-disc text-black dark:text-white opacity-70 ml-4">
+            <ul className="list-disc text-black dark:text-white opacity-70 ml-0">
               {job.items.map((item, i) =>
                 Array.isArray(item) ? (
                   <Li key={i}>
                     {item[0]}
-                    <ul className="list-disc ml-4 mt-2">
+                    <ul className="list-disc ml-0 mb-2">
                       {item[1]?.map((sub, j) => (
                         <Li key={j} className="opacity-65">
                           <i>{sub}</i>
@@ -44,26 +41,23 @@ function ExperienceContent() {
     </>
   );
 }
-export default function ExperienceSection({ mobile }) {
+export default function ExperienceSection({ }) {
   const baseClasses = "bg-white  relative";
-  const mobileClasses = `w-[100%-1rem] border-white/[0.5] border-1 ${baseClasses}`;
   const desktopClasses = `border-white/50 border ${baseClasses}`;
 
   return (
     <section
       id="experience"
-      className={mobile ? mobileClasses : desktopClasses}
+      className={desktopClasses}
     >
-      <svg className="w-full -translate-y-[99%] text-white" viewBox="0 0 1440 88" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M720.006 88C400.143 88 124.641 51.9188 0 0V88H720.006ZM1440 0C1315.37 51.9188 1039.87 88 720.006 88H1440V0Z" fill="currentColor"></path>
-      </svg>
+      <Wave className="-translate-y-[99%]" startAt={30} />
       <Container>
-        {!mobile && <H2 chapeau="Ervaring" />}
         <ExperienceContent />
+        <Button className="block mx-auto" type="secondary" arrow href="https://www.linkedin.com/in/marco-fijan-a0b60b161/" icon="linkedin">
+          Bekijk mijn LinkedIn
+        </Button>
       </Container>
-      <svg className="w-full translate-y-[99%] text-white -scale-y-100" viewBox="0 0 1440 88" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M720.006 88C400.143 88 124.641 51.9188 0 0V88H720.006ZM1440 0C1315.37 51.9188 1039.87 88 720.006 88H1440V0Z" fill="currentColor"></path>
-      </svg>
+      <Wave className="translate-y-[99%]" side="left" startAt={70} />
     </section>
   );
 }

@@ -1,7 +1,6 @@
 @import "tailwindcss";
 @import "./animations.css";
 @import "./utilities.css";
-@import "./header.css";
 @import "./splide.css";
 @import "./fonts.css";
 
@@ -74,7 +73,7 @@
   --margin-hamburger: 0.5rem;
 
   --container-wrapper: 110rem;
-  --container-paragraph: 50rem;
+  --container-paragraph: 70rem;
 
   --grid-template-columns-fluid: repeat(auto-fit, minmax(23em, 1fr));
 

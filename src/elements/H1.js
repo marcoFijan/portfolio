@@ -9,7 +9,7 @@ const workSans = Work_Sans({
 
 export default function H1({ children, chapeau, className = "", big }) {
   const sizeClasses = big
-    ? "text-6xl lg:text-7xl 2xl:text-8xl"
+    ? "text-6xl lg:text-7xl 2xl:text-7xl"
     : "text-3xl lg:text-5xl 2xl:text-7xl"
 
   const colorClasses = "text-transparent bg-clip-text bg-gradient-to-br from-black to-neutral-600 dark:from-white dark:to-white/60";
@@ -21,7 +21,7 @@ export default function H1({ children, chapeau, className = "", big }) {
           as="span"
           splitText={true}
           stagger={40}
-          className={`${workSans.className} block text-md xs:text-md sm:text-lg md:text-xl uppercase font-light text-black/50 dark:text-white/50`}
+          className={`${workSans.className} block text-xl md:text-2xl uppercase font-light text-black/50 dark:text-white/50`}
           delay={300}
         >
           {chapeau}
@@ -32,8 +32,8 @@ export default function H1({ children, chapeau, className = "", big }) {
         as="h1"
         className={`
           ${workSans.className} 
-          pt-2 pb-8 md:pb-8 lg:pb-16 
-          leading-[0.9] sm:leading-[1] 
+          pt-2 pb-16 lg:pb-24 
+          leading-[0.9] sm:leading-none 
           font-extrabold
           ${sizeClasses} 
           ${colorClasses} 

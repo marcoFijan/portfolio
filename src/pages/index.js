@@ -3,11 +3,10 @@
 import { useState, useEffect } from "react";
 import { useScrollOffsets } from "@/hooks/Usescrolloffsets.js";
 
-// Sections using @ alias
 import Container from "@/components/Container";
 import Divider from "@/elements/Divider";
 import LoadingScreen from "@/collections/LoadingScreen";
-import HeroSection from "@/components/home/HeroSection";
+import HeroHome from "@/components/home/HeroHome";
 import AboutSection from "@/components/home/AboutSection";
 import ProjectsSection from "@/components/home/ProjectsSection";
 import ExperienceSection from "@/components/home/ExperienceSection";
@@ -34,7 +33,7 @@ export default function MainCanvas() {
   const offsets = useScrollOffsets(SECTION_SELECTORS);
 
   useEffect(() => {
-    const check = () => setMobile(window.innerWidth <= 1000);
+    const check = () => setMobile(window.innerWidth <= 1400);
     check();
     window.addEventListener("resize", check);
     return () => window.removeEventListener("resize", check);
@@ -42,30 +41,22 @@ export default function MainCanvas() {
 
   if (mobile) {
     return (
-      <div className="w-full">
-        <Container>
-          <HeroSection mobile={true} />
-          <AboutSection mobile={true} />
-          <Divider />
-          <ProjectsSection mobile={true} />
-          <Divider />
-        </Container>
+      <PageTemplate homePage>
+        <HeroHome mobile={true} />
+        <AboutSection className="dark" />
+        <ProjectsSection mobile={true} />
         <ExperienceSection mobile={true} />
-      </div>
+      </PageTemplate>
     );
   }
 
   return (
     <PageTemplate homePage>
-      <FixedScene mobile={mobile} offsets={offsets} />
-
-      {/* <div className="relative z-10"> */}
-      <HeroSection className="dark" mobile={false} />
+      <FixedScene offsets={offsets} />
+      <HeroHome className="dark" mobile={false} />
       <AboutSection className="dark" mobile={false} />
       <ProjectsSection className="dark" mobile={false} />
       <ExperienceSection className="dark" mobile={false} />
-      {/* </div> */}
-
       <LoadingScreen />
     </PageTemplate>
   );

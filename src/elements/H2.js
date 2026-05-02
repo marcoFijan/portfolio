@@ -10,29 +10,22 @@ const workSans = Work_Sans({
 export default function H2({ children, chapeau, big = false, className = "" }) {
   return (
     <>
-      {/* {chapeau && (
+      {chapeau && (
         <InViewAnimate
           as="span"
           splitText={true}
           stagger={40}
           delay={300}
-          className={`${fugazOne.className} ${
-            big
-              ? "text-xl md:text-2xl lg:text-3xl"
-              : "text-md md:text-lg lg:text-xl"
-          } uppercase font-light text-white/[0.5] pl-6 relative block mb-4 after:absolute after:content-[''] after:h-3 after:w-3 after:bg-color-accent after:rounded-full after:left-0 after:top-1/2 after:-translate-y-1/2`}
+          className={`${workSans.className} block text-xl uppercase font-light text-black/50 dark:text-white/50`}
         >
           {chapeau}
         </InViewAnimate>
-      )} */}
+      )}
 
       {children && (
         <InViewAnimate
           as="h2"
-          className={` ${className} leading-tight mb-8 dark:text-white text-black font-black ${workSans.className} ${big
-            ? "text-5xl lg:text-6xl 2xl:text-8xl"
-            : "text-2xl lg:text-4xl 2xl:text-6xl"
-            }`}
+          className={` ${className} leading-tight mb-8 dark:text-white text-black font-black ${workSans.className} text-2xl md:text-4xl lg:text-5xl 2xl:text-6xl`}
           delay={100}
         >
           {children}

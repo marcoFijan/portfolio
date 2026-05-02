@@ -7,7 +7,7 @@ import { Environment } from "@react-three/drei";
 import Smartphone from "@/models/Smartphone.js";
 import Laptop from "@/models/Laptop.js";
 
-export default function FixedScene({ mobile, offsets }) {
+export default function FixedScene({ offsets }) {
   return (
     <div
       style={{ position: "fixed", inset: 0, zIndex: 0, pointerEvents: "none" }}
@@ -19,8 +19,8 @@ export default function FixedScene({ mobile, offsets }) {
             blur={0}
             files="/images/Environment/studio_small_08_1k.hdr"
           />
-          <Laptop mobile={mobile} offsets={offsets} />
-          <Smartphone mobile={mobile} offsets={offsets} />
+          <Laptop offsets={offsets} />
+          <Smartphone offsets={offsets} />
         </Suspense>
       </Canvas>
     </div>

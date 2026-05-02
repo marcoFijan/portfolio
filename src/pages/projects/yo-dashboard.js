@@ -7,6 +7,7 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 import ProjectHero from "@/components/project/HeroProject.js";
 import Container from "@/components/Container.js";
+import Wave from "@/elements/Wave.js";
 
 const projectData = {
   chapeau: "Datavisualisatie voor opdrachtgevers van YoungOnes",
@@ -39,7 +40,7 @@ export default function YoDashboardClients() {
       {/* HERO */}
       <ProjectHero {...projectData} />
 
-      <section className="bg-white relative z-10 mb-30 inverted-card py-20 lg:py-20">
+      <section className="bg-white relative z-10 mb-30 inverted-card py-48">
         {/* CURRENT DASHBOARD */}
         <Container grid className="mb-24 xl:mb-40">
           <section className="col-span-12 lg:col-span-6 lg:sticky top-32 h-fit space-y-6">
@@ -435,20 +436,7 @@ export default function YoDashboardClients() {
             </Splide>
           </section>
         </Container>
-
-        <svg
-          className="w-full translate-y-[99%] text-white -scale-y-100 absolute bottom-0 left-0"
-          viewBox="0 0 1440 88"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            fillRule="evenodd"
-            clipRule="evenodd"
-            d="M720.006 88C400.143 88 124.641 51.9188 0 0V88H720.006ZM1440 0C1315.37 51.9188 1039.87 88 720.006 88H1440V0Z"
-            fill="currentColor"
-          ></path>
-        </svg>
+        <Wave className="translate-y-[99%] absolute bottom-0 z-20" side="left" startAt={60} />
       </section>
     </PageTemplate>
   );

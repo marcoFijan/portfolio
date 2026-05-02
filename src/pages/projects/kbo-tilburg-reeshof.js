@@ -9,6 +9,7 @@ import Divider from "@/elements/Divider.js";
 import SvgDeviceOutline from "@/elements/SvgDeviceOutline.js";
 import Container from "@/components/Container.js";
 import Img from "@/elements/Img.js";
+import Wave from "@/elements/Wave.js";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 
@@ -82,19 +83,7 @@ export default function KBOTilburgReeshof() {
       </Container>
 
       <section className="relative flex flex-col gap-16 md:gap-32 xl:gap-64 mt-20 lg:mt-30 bg-white inverted-card pt-20 lg:pt-32">
-        <svg
-          className="w-full -translate-y-[99%] text-white absolute top-0 left-0"
-          viewBox="0 0 1440 88"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M720.006 88C400.143 88 124.641 51.9188 0 0V88H720.006ZM1440 0C1315.37 51.9188 1039.87 88 720.006 88H1440V0Z"
-            fill="currentColor"
-          ></path>
-        </svg>
+        <Wave className="-translate-y-[99%] absolute top-0" />
 
         {/* PROBLEEMSTELLING */}
         <Container grid>
@@ -128,7 +117,6 @@ export default function KBOTilburgReeshof() {
         <Container article grid>
           <section className="col-span-12 xl:col-span-6 xl:order-2 xl:sticky top-32 h-fit space-y-6">
             <H2 chapeau="Onderzoek doen naar de doelgroep">Verkennen</H2>
-
             <P>
               Via 'fly on the wall' onderzoek en interviews heb ik twee
               persona's opgesteld: de 'Digibeet' en de 'Ervaren gebruiker'. Het
@@ -337,6 +325,8 @@ export default function KBOTilburgReeshof() {
               href="https://amenable-sword-4e9.notion.site/Ideegeneratie-141e664077d64253a884f872ab156497"
               arrow
               type="secondary"
+              className="mt-8"
+
             >
               Bekijk ideegeneratie
             </Button>
@@ -386,6 +376,8 @@ export default function KBOTilburgReeshof() {
               href="https://amenable-sword-4e9.notion.site/Digitale-schetsen-voor-feedback-frenzy-530edefdd420499e8e6d6bbb2c3fda93"
               arrow
               type="secondary"
+              className="mt-8"
+
             >
               Bekijk alle concepten
             </Button>
@@ -426,6 +418,7 @@ export default function KBOTilburgReeshof() {
               href="https://amenable-sword-4e9.notion.site/Ideegeneratie-141e664077d64253a884f872ab156497"
               arrow
               type="secondary"
+              className="mt-8"
             >
               Bekijk Proces
             </Button>
@@ -441,7 +434,6 @@ export default function KBOTilburgReeshof() {
 
         {/* FINAL PRODUCT */}
         <Container bgClass="bg-color-kbo-bg">
-          <Divider />
           <H2
             chapeau="De Design Rationale voor de klant"
             className="mb-8 text-center lg:text-left"
@@ -454,19 +446,6 @@ export default function KBOTilburgReeshof() {
             title="Design Rationale"
           />
         </Container>
-        <svg
-          className="w-full translate-y-[99%] text-color-kbo-bg -scale-y-100 absolute bottom-0 left-0"
-          viewBox="0 0 1440 88"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M720.006 88C400.143 88 124.641 51.9188 0 0V88H720.006ZM1440 0C1315.37 51.9188 1039.87 88 720.006 88H1440V0Z"
-            fill="currentColor"
-          ></path>
-        </svg>
       </section>
     </PageTemplate>
   );

@@ -1,7 +1,7 @@
+import Wave from "@/elements/Wave";
+
 export default function Container({ children, article, bgClass = "", className = "", grid, amountOfPages }) {
-  const dynamicStyle = amountOfPages
-    ? { height: `${parseFloat(amountOfPages) * 100}vh` }
-    : {};
+  const dynamicStyle = amountOfPages ? { height: `${parseFloat(amountOfPages) * 100}vh` } : {};
 
   const classes = [
     "w-full max-w-wrapper mx-auto px-wrapper-mobile md:px-wrapper ",
@@ -19,9 +19,11 @@ export default function Container({ children, article, bgClass = "", className =
 
   if (bgClass) {
     return (
-      <div className={`${bgClass} py-32 dark`}>
+      <section className={`${bgClass} py-32 dark relative`}>
+        <Wave className="-translate-y-[99%] absolute top-0" colorClass={bgClass.replace("bg-", "text-")} startAt={15} />
         {content}
-      </div>
+        <Wave className="translate-y-[99%] absolute bottom-0" colorClass={bgClass.replace("bg-", "text-")} side="left" startAt={75} />
+      </section>
     );
   }
 

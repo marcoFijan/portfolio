@@ -1,4 +1,4 @@
-export const PROJECTS = [
+export const FEATURED_PROJECTS = [
   {
     id: "project-kbo",
     name: "Herontwerp voor ouderen",

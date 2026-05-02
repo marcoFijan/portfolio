@@ -505,7 +505,8 @@ function createGradient(
 
 // ─── Component ────────────────────────────────────────────────────────────────
 
-const DEFAULT_COLORS = ["#021a44", "#5099d5", "#021a44", "#021a44"];
+// const DEFAULT_COLORS = ["#021a44", "#5099d5", "#021a44", "#021a44"];
+const DEFAULT_COLORS = ["#000000", "#000000", "#3d008d", "#000000"];
 
 const GradientBackground = forwardRef(function GradientBackground(
   {

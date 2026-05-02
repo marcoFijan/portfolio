@@ -1,5 +1,6 @@
 export const EXPERIENCE = [
   {
+    chapeau: "Mijn ervaring",
     company: "LiNC",
     role: "Wordpress Developer",
     period: "December 2025 - Heden",
@@ -15,7 +16,7 @@ export const EXPERIENCE = [
   {
     company: "New Orange",
     role: "Frontend Developer",
-    period: "September 2023 - April 2025",
+    period: "September 2023 - November 2025",
     items: [
       "Ondersteuning en ontwikkeling voor diverse klanten met Kentico of Umbraco CMS",
       "Gebruik van Tailwind, SCSS Sass, cshtml Razor, Javascript",

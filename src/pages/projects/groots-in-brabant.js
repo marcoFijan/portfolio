@@ -116,6 +116,7 @@ export default function GrootsInBrabant() {
             />
           </section>
         </Container>
+        <Wave />
 
         {/* BOTTOM DECORATIVE WAVE */}
         <svg

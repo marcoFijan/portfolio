@@ -1,35 +1,23 @@
-import { Fugaz_One } from "next/font/google";
+import { Work_Sans } from "next/font/google";
 import InViewAnimate from "../utilities/InViewAnimate.js";
 
-const fugazOne = Fugaz_One({
-  weight: ["400"],
+const workSans = Work_Sans({
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],
-  variable: "--font-fugazOne",
+  variable: "--font-workSans",
 });
 
 export default function H3({
   children,
-  chapeau,
   className = "",
-  textWhite,
+  textOrange = false,
   noMarginTop = false,
 }) {
   return (
     <>
-      {/* {chapeau && (
-        <InViewAnimate
-          as="span"
-          splitText={true}
-          stagger={40}
-          delay={300}
-          className={`${fugazOne.className} text-md md:text-lg lg:text-xl uppercase font-light text-white/[0.5] text-opacity-50 pl-6 relative block after:absolute after:content-[''] after:h-3 after:w-3 after:bg-color-accent after:rounded-full after:left-0 after:top-1/2 after:-translate-y-1/2 after:opacity-100`}
-        >
-          {chapeau}
-        </InViewAnimate>
-      )} */}
       <InViewAnimate
         as="h3"
-        className={`${fugazOne.className} text-xl lg:text-2xl 2xl:text-3xl font-bold leading-snug mb-2 text-black dark:text-white ${noMarginTop ? "mt-4" : "mt-12"} ${className}`}
+        className={`${workSans.className} text-xl lg:text-2xl 2xl:text-3xl font-bold leading-snug mb-2 ${textOrange ? 'text-color-accent' : 'text-black dark:text-white'} ${noMarginTop ? "mt-4" : "mt-12"} ${className}`}
         delay={100}
       >
         {children}
