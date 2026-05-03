@@ -1,125 +1,134 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { motion, useInView } from "framer-motion";
-import { useFrame } from "@react-three/fiber";
-import { useScroll } from "@react-three/drei";
-import Letter from "./letter";
-import { Inter } from "next/font/google";
+import { useEffect, useRef } from "react";
+import Word from "./word";
+import { Work_Sans } from "next/font/google";
 
-const inter = Inter({
-  weight: ["400"],
+const workSans = Work_Sans({
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-workSans",
 });
 
 export default function InfiniteTextBar({
-  text = "Placeholder",
+  text = [],
   directionLeft = false,
-  className,
+  className = "",
 }) {
-  const animateText = text.toString();
-  const defaultSpeed = directionLeft ? 1 : -1;
-  const speedRef = useRef(defaultSpeed);
-  const [speed, setSpeed] = useState(defaultSpeed);
-  const scroll = useScroll();
-  const lastOffset = useRef(0);
-  const scrollSpeed = useRef(0);
-  const lastDirectionRef = useRef(1); // 1 for forward, -1 for backward
+  // 1. Tweak these to your liking
+  const baseMagnitude = 1.2;      // Higher = faster default crawl
+  const scrollSensitivity = 3;   // Lower = less "crazy" speed during scroll
 
-  const containerRef = useRef(null);
+  // 2. The Direction Multiplier: 1 for Left, -1 for Right
+  const dirMult = directionLeft ? 0.5 : -0.5;
+
+  const targetSpeed = useRef(baseMagnitude * dirMult);
+  const speedRef = useRef(targetSpeed.current);
+
+  const lastScrollY = useRef(0);
+  const lastTime = useRef(0);
   const contentRef = useRef(null);
-  const animationRef = useRef();
   const x = useRef(0);
 
   useEffect(() => {
-    const step = () => {
-      if (containerRef.current && contentRef.current) {
-        const contentWidth = contentRef.current.offsetWidth / 2;
+    lastScrollY.current = window.scrollY;
+    lastTime.current = performance.now();
 
-        x.current -= speedRef.current;
-        if (Math.abs(x.current) >= contentWidth) {
-          x.current = 0;
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      const currentTime = performance.now();
+      const deltaTime = currentTime - lastTime.current;
+      const deltaY = currentScrollY - lastScrollY.current;
+
+      if (deltaTime > 0 && Math.abs(deltaY) > 0) {
+        const velocity = deltaY / deltaTime;
+
+        // 3. Update target direction based on scroll
+        // If scrolling Down (deltaY > 0), maintain primary direction
+        // If scrolling Up (deltaY < 0), flip the primary direction
+        if (deltaY > 0) {
+          targetSpeed.current = baseMagnitude * dirMult;
+        } else {
+          targetSpeed.current = -baseMagnitude * dirMult;
         }
 
-        contentRef.current.style.transform = `translateX(${x.current}px)`;
+        // 4. Add a controlled boost based on scroll speed
+        // We add to the current speed so it feels reactive, but keep it directional
+        speedRef.current += velocity * scrollSensitivity * dirMult;
       }
 
-      animationRef.current = requestAnimationFrame(step);
+      lastScrollY.current = currentScrollY;
+      lastTime.current = currentTime;
     };
 
-    animationRef.current = requestAnimationFrame(step);
+    const step = () => {
+      if (contentRef.current) {
+        const halfWidth = contentRef.current.scrollWidth / 2;
+
+        if (halfWidth > 0) {
+          // Move x position
+          x.current -= speedRef.current;
+
+          // Seamless loop logic
+          if (x.current <= -halfWidth) {
+            x.current += halfWidth;
+          } else if (x.current >= 0) {
+            x.current -= halfWidth;
+          }
+
+          contentRef.current.style.transform = `translate3d(${x.current}px, 0, 0)`;
+        }
+      }
+
+      // 5. Ease back to the targetSpeed (the last scroll direction)
+      // 0.05 is the friction. 
+      speedRef.current += (targetSpeed.current - speedRef.current) * 0.05;
+
+      requestAnimationFrame(step);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    const animId = requestAnimationFrame(step);
 
     return () => {
-      if (animationRef.current) {
-        cancelAnimationFrame(animationRef.current);
-      }
+      window.removeEventListener("scroll", handleScroll);
+      cancelAnimationFrame(animId);
     };
-  }, [directionLeft]);
+  }, [dirMult]); // Re-sync if direction prop changes
 
-  useFrame((state, delta) => {
-    const currentOffset = scroll.offset;
-    const diff = currentOffset - lastOffset.current;
-    scrollSpeed.current = diff / delta;
-    lastOffset.current = currentOffset;
+  const renderText = (words) => {
+    const wordArray = typeof words === "string" ? words.split(" ") : words;
+    if (!Array.isArray(wordArray)) return null;
 
-    const calculatedSpeed = defaultSpeed * scrollSpeed.current * 100;
-
-    if (Math.abs(scrollSpeed.current) > 0.001) {
-      // Save the current direction
-      lastDirectionRef.current = scrollSpeed.current > 0 ? 1 : -1;
-
-      // Update speed with direction and cap the minimum
-      speedRef.current =
-        Math.abs(calculatedSpeed) > 0.5
-          ? calculatedSpeed
-          : defaultSpeed * lastDirectionRef.current;
-    } else {
-      // Scroll stopped or at limit — keep moving at base speed in last direction
-      speedRef.current = defaultSpeed * lastDirectionRef.current;
-    }
-  });
-
-  const letterHover = {
-    whileHover: {
-      scale: 1.1,
-      transition: {
-        type: "spring",
-        stiffness: 300,
-        damping: 10,
-      },
-    },
+    return wordArray.map((word, i) => (
+      <Word key={i} word={word} bold={i % 2 === 0} />
+    ));
   };
 
-  const renderText = (text) =>
-    [...text].map((char, i) => (
-      <Letter key={i} char={char} letterHover={letterHover} />
-    ));
-
   return (
-    <div
-      className={`${
-        inter.className
-      } overflow-hidden   text-color-[#ffffff05] md:text-[10vw] text-4xl sm:text-7xl h-20 md:h-[12vw] whitespace-nowrap absolute -z-20 cursor-default left-1/2 -translate-x-1/2 ${
-        directionLeft ? "-rotate-[5deg] " : "rotate-[5deg] "
-      } ${className} `}
-    >
-      <div ref={containerRef} className="relative w-full">
-        <div
-          ref={contentRef}
-          className="flex will-change-transform"
-          style={{ whiteSpace: "nowrap" }}
-        >
-          {[...Array(4)].map((_, i) => (
-            <span key={i} className="flex">
-              {renderText(animateText)}
-              {renderText(animateText)}
-              {renderText(animateText)}
-              {renderText(animateText)}
-            </span>
-          ))}
+    <div className="relative w-full overflow-x-clip overflow-y-visible pointer-events-none">
+      <div
+        className={`${workSans.className} overflow-hidden whitespace-nowrap absolute left-1/2 -translate-x-1/2 ${directionLeft ? "-rotate-[5deg]" : "rotate-[5deg]"
+          } ${className}`}
+        style={{
+          color: "rgba(255, 255, 255, 0.08)",
+          zIndex: 1,
+          fontSize: "min(10vw, 100px)",
+          width: "140vw",
+          overflow: "visible"
+        }}
+      >
+        <div className="flex">
+          <div ref={contentRef} className="flex will-change-transform">
+            {[...Array(2)].map((_, i) => (
+              <div key={i} className="flex items-center gap-16 px-8">
+                {renderText(text)}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
+      <div className="h-[120px]" />
     </div>
   );
 }

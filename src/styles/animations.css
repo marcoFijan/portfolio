@@ -1,0 +1,141 @@
+@keyframes infinite-scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes animate-intro {
+
+  0%,
+  4% {
+    top: 0;
+  }
+
+  5%,
+  9% {
+    top: -10vw;
+  }
+
+  10%,
+  14% {
+    top: -20vw;
+  }
+
+  15%,
+  19% {
+    top: -30vw;
+  }
+
+  20%,
+  24% {
+    top: -40vw;
+  }
+
+  25%,
+  29% {
+    top: -50vw;
+  }
+
+  30%,
+  34% {
+    top: -60vw;
+  }
+
+  35%,
+  39% {
+    top: -70vw;
+  }
+
+  40%,
+  44% {
+    top: -80vw;
+  }
+
+  45%,
+  49% {
+    top: -90vw;
+  }
+
+  50%,
+  54% {
+    top: -100vw;
+  }
+
+  55%,
+  59% {
+    top: -110vw;
+  }
+
+  60%,
+  64% {
+    top: -120vw;
+  }
+
+  65%,
+  69% {
+    top: -130vw;
+  }
+
+  70%,
+  74% {
+    top: -140vw;
+  }
+
+  75%,
+  79% {
+    top: -150vw;
+  }
+
+  80%,
+  84% {
+    top: -160vw;
+  }
+
+  85%,
+  89% {
+    top: -170vw;
+  }
+
+  90%,
+  94% {
+    top: -180vw;
+  }
+
+  95%,
+  99.9999% {
+    top: -190vw;
+  }
+
+  100% {
+    top: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes autoRun {
+  from {
+    transform: perspective(1000px) rotateX(-16deg) rotateY(0deg);
+  }
+
+  to {
+    transform: perspective(1000px) rotateX(-16deg) rotateY(360deg);
+  }
+}
+
+/* canvas {
+  opacity: 0;
+  animation: fadeIn 2s cubic-bezier(0.43, 0.83, 0.49, 1.03) 2s forwards;
+} */

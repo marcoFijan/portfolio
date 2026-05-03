@@ -1,37 +1,27 @@
-import { motion } from "framer-motion";
-import { Inter } from "next/font/google";
+import { Work_Sans } from "next/font/google";
+import InViewAnimate from "../utilities/InViewAnimate.js";
 
-const inter = Inter({
-  weight: ["400", "500", "600", "700"],
+const workSans = Work_Sans({
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],
-  variable: "--font-orbitron",
+  variable: "--font-workSans",
 });
 
 export default function H3({
   children,
-  className,
-  textWhite,
+  className = "",
+  textOrange = false,
   noMarginTop = false,
 }) {
-  const extras = className ? className : "";
-
   return (
-    <motion.h3
-      className={
-        `text-xl md:text-2xl lg:text-3xl font-black leading-snug mb-2 text-shadow-color-bg-top text-shadow-xs ${
-          textWhite ? "text-white" : "text-color-accent"
-        } ${noMarginTop ? "mt-4" : "mt-12"} ` +
-        extras +
-        inter.className
-      }
-      initial={{ opacity: 0, y: 25 }}
-      whileInView={{
-        opacity: 1,
-        y: 0,
-        transition: { duration: 0.5, delay: 0.1 },
-      }}
-    >
-      {children}
-    </motion.h3>
+    <>
+      <InViewAnimate
+        as="h3"
+        className={`${workSans.className} text-xl lg:text-2xl 2xl:text-3xl font-bold leading-snug mb-6 ${textOrange ? "text-color-accent" : "text-black dark:text-white"} ${noMarginTop ? "mt-3" : "mt-12"} ${className}`}
+        delay={100}
+      >
+        {children}
+      </InViewAnimate>
+    </>
   );
 }

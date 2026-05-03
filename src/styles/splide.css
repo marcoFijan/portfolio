@@ -1,0 +1,30 @@
+.splide .splide__arrow {
+  background-color: transparent;
+  border: 1px solid var(--color-black);
+  top: calc(100% - 16px);
+  transition: all ease-in-out 0.3s;
+  width: 4rem;
+  height: 4rem;
+}
+
+.splide .splide__arrow:hover {
+  background-color: var(--color-black);
+  border: 1px solid var(--color-white);
+
+  svg {
+    fill: var(--color-white);
+  }
+}
+
+.splide .splide__arrow svg {
+  fill: var(--color-black);
+  transition: all ease-in-out 0.3s;
+}
+
+.splide .splide__pagination__page {
+  border: 1px solid var(--color-black);
+
+  &.is-active {
+    background-color: var(--color-black);
+  }
+}

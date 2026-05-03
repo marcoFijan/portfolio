@@ -1,48 +1,80 @@
-export default function Input({ type, value, label }) {
-  // Regular styling
-  const regularClasses =
-    "mb-8 mt-2 rounded-lg shadow-inputField text-white p-2 border-1 border-white";
+import React from "react";
 
-  // Validation classes
-  const validationClasses =
-    "valid:bg-transparent valid:text-white valid:border-0 valid:rounded-none invalid:text-red-600";
+export default function Input({
+  type = "text",
+  id,
+  name,
+  value,
+  onChange,
+  label,
+  required = false,
+}) {
+  const isTextarea = type.toLowerCase() === "textarea";
+  const inputClasses = `
+    peer w-full box-border transition-all duration-500
+    rounded-2xl bg-black/5 px-8 pt-7 pb-3 text-black
+    shadow-inputField border border-white outline-none
+    hover:border-accent
+    focus:bg-black focus:text-white focus:border-black
+    valid:border-b-1
+  `
+    .replace(/\s+/g, " ")
+    .trim();
 
-  // Focus classes
-  const focusClasses =
-    "focus:bg-white focus:text-color-bg focus:border-1 focus:outline-hidden focus:border-yellow-600 focus:rounded-lg";
+  const labelClasses = `
+    absolute left-8 pointer-events-none transition-all duration-300 text-black/60
+    top-1/2 -translate-y-1/2
+    peer-focus:top-4 peer-focus:text-[11px] peer-focus:text-white/60
+    peer-[:not(:placeholder-shown)]:top-4 peer-[:not(:placeholder-shown)]:text-[11px] peer-[:not(:placeholder-shown)]:text-black/60
+    peer-focus:peer-[:not(:placeholder-shown)]:text-white/60
+  `
+    .replace(/\s+/g, " ")
+    .trim();
 
-  // Hover classes
-  const hoverClasses = "hover:border-yellow-600";
-
-  // Transition classes
-  const transitionClasses = "box-border transition-all duration-500";
+  const textareaLabelClasses = `
+    absolute left-8 pointer-events-none transition-all duration-300 text-black/60
+    top-6 -translate-y-1/2
+    peer-focus:top-4 peer-focus:text-[11px] peer-focus:text-white/60
+    peer-[:not(:placeholder-shown)]:top-4 peer-[:not(:placeholder-shown)]:text-[11px] peer-[:not(:placeholder-shown)]:text-black/60
+    peer-focus:peer-[:not(:placeholder-shown)]:text-white/60
+  `
+    .replace(/\s+/g, " ")
+    .trim();
 
   return (
-    <>
-      {label && (
-        <label htmlFor={value} className={"text-white"}>
-          {label}
-        </label>
-      )}
-      {type.toLowerCase() == "textarea" ? (
+    <div className="relative w-full">
+      {isTextarea ? (
         <textarea
-          type={type}
-          id={value}
-          name={value}
+          id={id || name}
+          name={name}
+          value={value}
+          onChange={onChange}
           rows="4"
-          cols="50"
-          required
-          className={`${regularClasses} ${validationClasses} ${focusClasses} ${hoverClasses} ${transitionClasses} valid:border-1`}
+          required={required}
+          placeholder=" "
+          className={`${inputClasses} min-h-30`}
         />
       ) : (
         <input
           type={type}
-          id={value}
-          name={value}
-          required
-          className={`${regularClasses} ${validationClasses} ${focusClasses} ${hoverClasses} ${transitionClasses} valid:border-b-1`}
+          id={id || name}
+          name={name}
+          value={value}
+          onChange={onChange}
+          required={required}
+          placeholder=" "
+          className={inputClasses}
         />
       )}
-    </>
+
+      {label && (
+        <label
+          htmlFor={id || name}
+          className={isTextarea ? textareaLabelClasses : labelClasses}
+        >
+          {label}
+        </label>
+      )}
+    </div>
   );
 }

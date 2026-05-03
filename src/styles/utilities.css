@@ -1,0 +1,90 @@
+* {
+  scroll-behavior: smooth;
+}
+
+/* Masks */
+.fade-bottom {
+  -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+/* Height utilities */
+.h-10vh {
+  height: 10vh;
+  height: 10dvh;
+}
+.h-20vh {
+  height: 20vh;
+  height: 20dvh;
+}
+.h-30vh {
+  height: 30vh;
+  height: 30dvh;
+}
+.h-40vh {
+  height: 40vh;
+  height: 40dvh;
+}
+.h-50vh {
+  height: 50vh;
+  height: 50dvh;
+}
+.h-60vh {
+  height: 60vh;
+  height: 60dvh;
+}
+.h-70vh {
+  height: 70vh;
+  height: 70dvh;
+}
+.h-80vh {
+  height: 80vh;
+  height: 80dvh;
+}
+.h-90vh {
+  height: 90vh;
+  height: 90dvh;
+}
+.h-100vh {
+  height: 100vh;
+  height: 100dvh;
+}
+.h-200vh {
+  height: 200vh;
+  height: 200dvh;
+}
+.h-300vh {
+  height: 300vh;
+  height: 300dvh;
+}
+
+/* Background color states */
+/* #background[color="colorKBO"] {
+  background-color: #021936;
+}
+
+#background[color="colorYO"] {
+  background-color: #000000;
+}
+
+#background[color="colorSA"] {
+  background-color: #212a50;
+} */
+
+@property --glow-color {
+  syntax: "<color>";
+  initial-value: rgba(255, 255, 255, 0.2);
+  inherits: false;
+}
+
+#radial-glow {
+  /* Separating the durations can help: movement usually feels better slightly slower than color */
+  transition:
+    --glow-color 1000ms linear,
+    transform 1200ms cubic-bezier(0.23, 1, 0.32, 1);
+  will-change: transform, opacity;
+}

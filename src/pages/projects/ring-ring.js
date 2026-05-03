@@ -1,106 +1,51 @@
 import PageTemplate from "../pageTemplate.js";
-import H1 from "@/elements/H1.js";
 import H2 from "@/elements/H2.js";
-import H3 from "@/elements/H3.js";
 import P from "@/elements/P.js";
-import Li from "@/elements/Li.js";
-import SvgDeviceOutline from "@/elements/SvgDeviceOutline.js";
-import NextLink from "@/elements/NextLink";
-import Divider from "@/elements/Divider.js";
-import Action from "@/elements/Action.js";
-import FlexArticle from "@/elements/FlexArticle.js";
-import Container from "@/sections/Container.js";
 import Img from "@/elements/Img.js";
-import { Splide, SplideSlide } from "@splidejs/react-splide";
-import "@splidejs/react-splide/css";
+import ProjectHero from "@/components/project/HeroProject.js";
+import Container from "@/components/Container.js";
+import Wave from "@/elements/Wave.js";
+
+const projectData = {
+  chapeau: "Dashboard voor beleidsmakers van Ring Ring",
+  title: "Datavisualisatie van fietsverkeer",
+  mainImage: {
+    src: "/images/RingRing/Home.jpg",
+    alt: "Eind Ontwerp Ring Ring",
+  },
+  introParagraphs: [
+    "Voor Ring Ring heb ik een professioneel dashboard ontworpen waarmee beleidsmakers inzicht krijgen in het fietsverkeer. Ring Ring verzamelt via haar app waardevolle data over fietsroutes, gebruikersgedrag en feedback. Het dashboard visualiseert deze data op een overzichtelijke en toegankelijke manier, zodat beleidsmakers gefundeerde beslissingen kunnen nemen ter bevordering van fietsgebruik. De aangeleverde data bestond onder andere uit routecoördinaten, snelheden, tijdstippen, feedbackscores en afgelegde afstanden.",
+  ],
+  actions: [
+    {
+      label: "Bekijk Github",
+      href: "https://github.com/marcoFijan/projectDatavisualisation",
+      type: "primary",
+    },
+    {
+      label: "Bekijk de website",
+      href: "https://marcofijan.github.io/projectDatavisualisation/",
+      type: "secondary",
+    },
+  ],
+  projectDetails: [
+    { label: "Projectjaar", value: "2021" },
+    { label: "Projectdoel", value: "Design en Datavisualisatie" },
+    { label: "Doelgroep", value: "Beleidsmakers Ring Ring (35-70 jaar)" },
+  ],
+};
 
 export default function RingRing() {
   return (
     <PageTemplate
-      projectPage
+      bgColors={["#000000", "#c42116", "#c42116", "#000000"]}
       title="Marco Fijan - Ring Ring - Datavisualisatie van fietsverkeer"
     >
-      <Container>
-        <div className="text-center">
-          <H1
-            big
-            className={""}
-            chapeau={"Dashboard voor beleidsmakers van Ring Ring"}
-          >
-            Datavisualisatie van fietsverkeer
-          </H1>
-        </div>
+      <ProjectHero {...projectData} />
 
-        <div className="hidden lg:block relative w-full h-[10rem]">
-          <div className="absolute left-0 top-0 w-full">
-            <SvgDeviceOutline />
-          </div>
-        </div>
-
-        <article className="w-full lg:max-w-[80%] mx-auto">
-          <section className="mb-10 md:mb-20">
-            <Img
-              contain
-              extraBorder
-              browserToolbar
-              uniqueBg="bg-[#f1f1f1]"
-              src="/images/RingRing/Home.jpg"
-              alt="Eind Ontwerp Ring Ring"
-              className="block aspect-video w-full"
-            />
-          </section>
-          <ul className="w-max mb-8 flex flex-col gap-4 max-w-full">
-            <Li
-              className={
-                "px-8 py-4 text-white border-color-border border-1 bg-color-bg-bottom rounded-2xl "
-              }
-            >
-              <strong>Projectjaar:</strong> 2021
-            </Li>
-            <Li
-              className={
-                "px-8 py-4 text-white border-color-border border-1 bg-color-bg-bottom rounded-2xl "
-              }
-            >
-              <strong>Projectdoel:</strong> Design en Datavisualisatie
-            </Li>
-            <Li
-              className={
-                "px-8 py-4 text-white border-color-border border-1 bg-color-bg-bottom rounded-2xl"
-              }
-            >
-              <strong>Doelgroep:</strong> Beleidsmakers Ring Ring (35-70 jaar)
-            </Li>
-          </ul>
-          <P intro>
-            Voor Ring Ring heb ik een professioneel dashboard ontworpen waarmee
-            beleidsmakers inzicht krijgen in het fietsverkeer. Ring Ring
-            verzamelt via haar app waardevolle data over fietsroutes,
-            gebruikersgedrag en feedback. Het dashboard visualiseert deze data
-            op een overzichtelijke en toegankelijke manier, zodat beleidsmakers
-            gefundeerde beslissingen kunnen nemen ter bevordering van
-            fietsgebruik. De aangeleverde data bestond onder andere uit
-            routecoördinaten, snelheden, tijdstippen, feedbackscores en
-            afgelegde afstanden.
-          </P>
-          <Action>
-            <NextLink
-              type="primary"
-              href="https://github.com/marcoFijan/projectDatavisualisation"
-            >
-              Bekijk de Wordpress Github
-            </NextLink>
-            <NextLink
-              type="secondary"
-              href="https://marcofijan.github.io/projectDatavisualisation/"
-            >
-              Bekijk de website
-            </NextLink>
-          </Action>
-        </article>
-        <Divider />
-        <FlexArticle smallMargin alignTop>
-          <section className="lg:sticky top-30">
+      <section className="bg-white relative z-10 mb-30 inverted-card py-20 lg:py-20 flex flex-col gap-24 lg:gap-36">
+        <Container grid className="my-24 xl:my-40 ">
+          <section className="col-span-12 lg:col-span-5 lg:sticky top-32 h-fit space-y-6">
             <H2 chapeau="Inlogscherm voor authenticatie">Inlogpagina</H2>
             <P>
               Het dashboard bevat privacygevoelige Ring Ring data. Daarom is een
@@ -108,17 +53,18 @@ export default function RingRing() {
               geautoriseerde beleidsmakers toegang hebben tot de informatie.
             </P>
           </section>
-          <div className="max-w-[50rem] mx-auto">
+          <section className="col-span-12 lg:col-span-6 lg:col-start-7 relative">
             <Img
               src="/images/RingRing/Inlogscherm.png"
               alt="Ring Ring inlogscherm"
-              uniqueBg="bg-[#f1f1f1]"
+              className="object-contain w-full rounded-2xl bg-[#f1f1f1]"
             />
-          </div>
-        </FlexArticle>
+          </section>
+        </Container>
 
-        <FlexArticle alignTop reverse>
-          <section className="lg:sticky top-30">
+        {/* DASHBOARD SCREEN */}
+        <Container grid className="mb-24 xl:mb-40 ">
+          <section className="col-span-12 lg:col-span-5 lg:order-2 lg:sticky top-32 h-fit space-y-6">
             <H2 chapeau="Het hoofdscherm">Dashboard</H2>
             <P>
               Het dashboard biedt een helder totaaloverzicht van alle
@@ -127,18 +73,18 @@ export default function RingRing() {
               direct toegankelijk.
             </P>
           </section>
-          <Img
-            contain
-            extraBorder
-            browserToolbar
-            src="/images/RingRing/Home.jpg"
-            alt="Hoofdscherm van het ring-3 ring-3 ontwerp"
-            className="block aspect-video w-full"
-          />
-        </FlexArticle>
+          <section className="col-span-12 lg:col-span-6 lg:order-1 relative">
+            <Img
+              src="/images/RingRing/Home.jpg"
+              alt="Hoofdscherm van het ontwerp"
+              className="object-contain w-full rounded-2xl border border-gray-200"
+            />
+          </section>
+        </Container>
 
-        <FlexArticle alignTop>
-          <section className="lg:sticky top-30">
+        {/* FOR YOU SCREEN */}
+        <Container grid className="mb-24 xl:mb-40 ">
+          <section className="col-span-12 lg:col-span-5 lg:sticky top-32 h-fit space-y-6">
             <H2 chapeau="Data op basis van type account">Voor u-pagina</H2>
             <P>
               Op de ‘Voor U’-pagina worden datavisualisaties getoond die
@@ -149,18 +95,18 @@ export default function RingRing() {
               datatypes, waardoor snel inzicht ontstaat in het fietsgebruik.
             </P>
           </section>
-          <Img
-            contain
-            extraBorder
-            browserToolbar
-            src="/images/RingRing/SpecificData.jpg"
-            alt="Voor u pagina van het ring-3 ring-3 ontwerp"
-            className="block aspect-video w-full"
-          />
-        </FlexArticle>
+          <section className="col-span-12 lg:col-span-6 lg:col-start-7 relative">
+            <Img
+              src="/images/RingRing/SpecificData.jpg"
+              alt="Voor u pagina van het ontwerp"
+              className="object-contain w-full rounded-2xl border border-gray-200"
+            />
+          </section>
+        </Container>
 
-        <FlexArticle alignTop reverse>
-          <section className="lg:sticky top-30">
+        {/* MAP SCREEN */}
+        <Container grid className="mb-24 xl:mb-40 items-center">
+          <section className="col-span-12 lg:col-span-5 lg:order-2 lg:sticky top-32 h-fit space-y-6">
             <H2 chapeau="Routes bekijken op een kaart">Kaartpagina</H2>
             <P>
               Op de kaartpagina kunnen beleidsmakers fietsroutes analyseren op
@@ -170,18 +116,18 @@ export default function RingRing() {
               fietsverkeer en ondersteunt beleidsvorming.
             </P>
           </section>
-          <Img
-            contain
-            extraBorder
-            browserToolbar
-            src="/images/RingRing/Routes.jpg"
-            alt="Kaartpagina van het ring-3 ring-3 ontwerp"
-            className="block aspect-video w-full"
-          />
-        </FlexArticle>
+          <section className="col-span-12 lg:col-span-6 lg:order-1 relative">
+            <Img
+              src="/images/RingRing/Routes.jpg"
+              alt="Kaartpagina van het ontwerp"
+              className="object-contain w-full rounded-2xl border border-gray-200"
+            />
+          </section>
+        </Container>
 
-        <FlexArticle alignTop>
-          <section className="lg:sticky top-30">
+        {/* FEEDBACK SCREEN */}
+        <Container grid>
+          <section className="col-span-12 lg:col-span-5 lg:sticky top-32 h-fit space-y-6">
             <H2 chapeau="Gegeven feedback over routes bekijken">
               Feedbackpagina
             </H2>
@@ -193,16 +139,21 @@ export default function RingRing() {
               te sturen naar collega’s voor verdere opvolging.
             </P>
           </section>
-          <Img
-            extraBorder
-            browserToolbar
-            overflowScroll
-            src="/images/RingRing/Feedback.jpg"
-            alt="Feedbackpagina van het ring-3 ring-3 ontwerp"
-            className="block w-full"
-          />
-        </FlexArticle>
-      </Container>
+          <section className="col-span-12 lg:col-span-6 lg:col-start-7 relative">
+            <Img
+              src="/images/RingRing/Feedback.jpg"
+              alt="Feedbackpagina van het ontwerp"
+              className="object-contain w-full rounded-2xl border border-gray-200"
+            />
+          </section>
+        </Container>
+
+        <Wave
+          className="translate-y-[99%] absolute bottom-0 z-20"
+          side="left"
+          startAt={60}
+        />
+      </section>
     </PageTemplate>
   );
 }

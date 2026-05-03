@@ -1,25 +1,35 @@
-import { motion } from "framer-motion";
+import { Work_Sans } from "next/font/google";
+import InViewAnimate from "../utilities/InViewAnimate.js";
 
-export default function li({ children, className, intro }) {
+const workSans = Work_Sans({
+  subsets: ["latin"],
+  variable: "--font-workSans",
+});
+
+export default function Li({ children, className = "", intro, splitText }) {
+  const baseClasses = [
+    "relative list-none font-light tracking-widest text-black dark:text-white",
+    "text-shadow-color-bg-top", workSans.className,
+    "before:content-[''] before:absolute before:left-0 before:top-[0.6em]",
+    "before:w-2 before:h-2 before:bg-color-accent before:rotate-45",
+    "pl-6 ml-1",
+    intro
+      ? "text-md sm:text-lg md:text-xl lg:text-2xl max-w-[280px]"
+      : "text-sm md:text-md max-w-paragraph",
+    className
+  ].join(" ");
+
   return (
-    <motion.li
-      className={`font-light opacity-80    
-        ${
-          className
-            ? className
-            : intro
-            ? "text-white text-lg md:text-xl lg:text-2xl max-w-[70rem]"
-            : "text-white text-sm sm:text-md md:text-lg lg:text-xl max-w-paragraph"
-        }
-      `}
-      initial={{ opacity: 0, y: 25 }}
-      whileInView={{
-        opacity: 1,
-        y: 0,
-        transition: { duration: 0.5, delay: 0.1 },
-      }}
+    <InViewAnimate
+      as="li"
+      className={baseClasses}
+      splitText={!!splitText}
+      stagger={splitText ? 40 : 0}
+      translateY={25}
+      duration={500}
+      delay={200}
     >
       {children}
-    </motion.li>
+    </InViewAnimate>
   );
 }

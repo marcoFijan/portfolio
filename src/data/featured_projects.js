@@ -1,0 +1,38 @@
+export const FEATURED_PROJECTS = [
+  {
+    id: "project-kbo",
+    name: "Herontwerp voor ouderen",
+    link: "/projects/kbo-tilburg-reeshof",
+    img: "/images/Thumbnails/KBOReeshofThumb.png",
+    alt: "KBO Tilburg Reeshof Project afbeelding",
+    client: "KBO Tilburg Reeshof",
+    desc: "Een nieuw herontwerp speciaal voor ouderen die vaak wat meer moeite hebben met webapplicaties.",
+  },
+  {
+    id: "project-dashboard",
+    name: "Opdrachtgever dashboard",
+    link: "/projects/yo-dashboard",
+    img: "/images/Thumbnails/YODashboardThumb.png",
+    alt: "Opdrachtgever dashboard project afbeelding",
+    client: "YoungOnes",
+    desc: "Een nieuw dashboard voor opdrachtgevers om hun data te beheren.",
+  },
+  {
+    id: "project-gwoty",
+    name: "GWOTY awards",
+    link: "/projects/yo-gwoty-award",
+    img: "/images/Thumbnails/YOGwotyThumb.png",
+    alt: "GWOTY awards project afbeelding",
+    client: "YoungOnes",
+    desc: "Een dashboard voor de GWOTY awards periode, waar opdrachtgevers hun projecten kunnen indienen.",
+  },
+  {
+    id: "project-aanbouw",
+    name: "Standaard Aanbouw",
+    link: "/projects/standaard-aanbouw",
+    img: "/images/Thumbnails/StandaardAanbouwThumb.png",
+    alt: "Standaard Aanbouw project afbeelding",
+    client: "Standaard Aanbouw",
+    desc: "Een herontwerp van een persoonlijke aannemer, waarbij de focus ligt op het verbeteren van de gebruikerservaring.",
+  },
+];

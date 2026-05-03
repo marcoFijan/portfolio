@@ -1,17 +1,36 @@
 import PageTemplate from "../pageTemplate.js";
-import H1 from "@/elements/H1.js";
 import H2 from "@/elements/H2.js";
 import P from "@/elements/P.js";
-import Li from "@/elements/Li.js";
-import SvgDeviceOutline from "@/elements/SvgDeviceOutline.js";
-import NextLink from "@/elements/NextLink";
-import Divider from "@/elements/Divider.js";
-import Action from "@/elements/Action.js";
-import FlexArticle from "@/elements/FlexArticle.js";
-import Container from "@/sections/Container.js";
 import Img from "@/elements/Img.js";
-import { Splide, SplideSlide } from "@splidejs/react-splide";
-import "@splidejs/react-splide/css";
+import ProjectHero from "@/components/project/HeroProject.js";
+import Container from "@/components/Container.js";
+
+const projectData = {
+  chapeau: "Een herontwerp met focus op conversieratio's",
+  title: "Reisartikelen herontwerp",
+  mainImage: {
+    src: "/images/Reisartikelen/Thumb.jpg",
+    alt: "Eind Ontwerp Reisartikelen.nl",
+  },
+  introParagraphs: [
+    "Het bedrijf achter reisartikelen.nl merkte dat hun conversie erg laag was. Daarom wilde ze een mogelijke herontwerp hebben van hun website die beter gefocust is op de huidige bezoekers. Reisartikelen.nl is een website die gespecialiseerd is in allerlei soort reisartikelen. Helaas zorgde de coronamaatregelen ervoor dat hun website dit jaar niet erg relevant of nuttig meer was. Ik kreeg de opdracht om de website te herontwerpen zodat deze beter relevant is voor de coronamaatregelen en meer omzet kan draaien.",
+  ],
+  actions: [
+    {
+      label: "Interactief prototype",
+      href: "https://www.figma.com/proto/w6Y44DPKMD8ttJCWdfOuyt/Reisartikelen.nl-HiFi-Final?node-id=1%3A2&scaling=scale-down-width",
+      type: "primary",
+    },
+  ],
+  projectDetails: [
+    { label: "Projectjaar", value: "2020" },
+    {
+      label: "Projectdoel",
+      value: "Consistentie, vertrouwen opbouwen en beetere conversie",
+    },
+    { label: "Doelgroep", value: "Corona getroffen reizigers" },
+  ],
+};
 
 export default function Reisartikelen() {
   return (
@@ -19,101 +38,35 @@ export default function Reisartikelen() {
       projectPage="ra"
       title="Marco Fijan - reisartikelen.nl - Herontwerp webshop met focus op corona thuisvakanties"
     >
-      <Container>
-        <div className="text-center">
-          <H1
-            big
-            className={""}
-            chapeau={"Een herontwerp met focus op conversieratio's"}
-          >
-            Reisartikelen herontwerp
-          </H1>
-        </div>
+      {/* HERO */}
+      <ProjectHero {...projectData} />
 
-        <div className="hidden lg:block relative w-full h-[10rem]">
-          <div className="absolute left-0 top-0 w-full">
-            <SvgDeviceOutline />
-          </div>
-        </div>
-
-        <article className="w-full lg:max-w-[80%] mx-auto">
-          <section className="mb-10 md:mb-20">
-            <Img
-              extraBorder
-              browserToolbar
-              src="/images/Reisartikelen/Thumb.jpg"
-              alt="Eind Ontwerp Reisartikelen.nl"
-              className="block aspect-video w-full object-top"
-            />
-          </section>
-          <ul className="w-max mb-8 flex flex-col gap-4 max-w-full">
-            <Li
-              className={
-                "px-8 py-4 text-white border-color-border border-1 bg-color-bg-bottom rounded-2xl "
-              }
-            >
-              <strong>Projectjaar:</strong> 2020
-            </Li>
-            <Li
-              className={
-                "px-8 py-4 text-white border-color-border border-1 bg-color-bg-bottom rounded-2xl "
-              }
-            >
-              <strong>Projectdoel:</strong> Consistentie, vertrouwen opbouwen en
-              beetere conversie
-            </Li>
-            <Li
-              className={
-                "px-8 py-4 text-white border-color-border border-1 bg-color-bg-bottom rounded-2xl"
-              }
-            >
-              <strong>Doelgroep:</strong> Corona getroffen reizigers
-            </Li>
-          </ul>
-          <P intro>
-            Het bedrijf achter reisartikelen.nl merkte dat hun conversie erg
-            laag was. Daarom wilde ze een mogelijke herontwerp hebben van hun
-            website die beter gefocust is op de huidige bezoekers.
-            Reisartikelen.nl is een website die gespecialiseerd is in allerlei
-            soort reisartikelen. Helaas zorgde de coronamaatregelen ervoor dat
-            hun website dit jaar niet erg relevant of nuttig meer was. Ik kreeg
-            de oprdacht om de website te herontwerpen zodat deze beter relevant
-            is voor de coronamaatregelen en meer omzet kan draaien.
-          </P>
-          <Action>
-            <NextLink
-              type="primary"
-              href="https://www.figma.com/proto/w6Y44DPKMD8ttJCWdfOuyt/Reisartikelen.nl-HiFi-Final?node-id=1%3A2&scaling=scale-down-width"
-            >
-              Interactief prototype
-            </NextLink>
-          </Action>
-        </article>
-        <Divider />
-        <FlexArticle smallMargin alignTop>
-          <section className="lg:sticky top-30">
-            <H2 chapeau="Website voor het herontwerp">Orgineel ontwerp</H2>
+      <section className="bg-white relative z-10 mb-30 inverted-card py-20 lg:py-20">
+        {/* ORIGINAL DESIGN */}
+        <Container grid className="mb-24 xl:mb-40">
+          <section className="col-span-12 lg:col-span-6 lg:sticky top-32 h-fit space-y-6">
+            <H2 chapeau="Website voor het herontwerp">Origineel ontwerp</H2>
             <P>
               Ik kreeg toestemming om flink van de standaard huisstijl af te
               stappen. Reisartikelen was namelijk ook erg opzoek om hun funnels
               en conversieratio te verbeteren. Uiteraard moesten de fonts en
               kleuren hetzelfde blijven. Ik heb me voornamelijk gefocust op
-              verschillende commercieël ontwerp principes zoals call to action
-              buttons, vertrouwen creeëren, social proof en content in footer.
+              verschillende commerciële ontwerpprincipes zoals call to action
+              buttons, vertrouwen creëren, social proof en content in footer.
             </P>
           </section>
-          <div className="max-w-[50rem] mx-auto">
+          <section className="col-span-12 lg:col-span-6 relative">
             <Img
-              contain
-              extraBorder
               src="/images/Reisartikelen/Original.jpg"
-              alt="Ring Ring inlogscherm"
+              alt="Origineel ontwerp reisartikelen.nl"
+              className="object-contain w-full rounded-2xl border border-gray-200"
             />
-          </div>
-        </FlexArticle>
+          </section>
+        </Container>
 
-        <FlexArticle alignTop reverse>
-          <section className="lg:sticky top-30">
+        {/* LOFI DESIGN */}
+        <Container grid className="mb-24 xl:mb-40">
+          <section className="col-span-12 lg:col-span-6 lg:order-2 lg:sticky top-32 h-fit space-y-6">
             <H2 chapeau="Eerste schets na onderzoek">LoFi Ontwerp</H2>
             <P>
               In het eerste herontwerp zorgde ik voor een grote banner. Ook
@@ -125,16 +78,18 @@ export default function Reisartikelen() {
               maar houdt dit inzichtelijk.
             </P>
           </section>
-          <Img
-            contain
-            extraBorder
-            src="/images/Reisartikelen/LoFi.jpg"
-            alt="Lofi ontwerp reisartikelen.nl"
-          />
-        </FlexArticle>
+          <section className="col-span-12 lg:col-span-6 lg:order-1 relative">
+            <Img
+              src="/images/Reisartikelen/LoFi.jpg"
+              alt="Lofi ontwerp reisartikelen.nl"
+              className="object-contain w-full rounded-2xl border border-gray-200"
+            />
+          </section>
+        </Container>
 
-        <FlexArticle alignTop>
-          <section className="lg:sticky top-30">
+        {/* HIFI DESIGN */}
+        <Container grid>
+          <section className="col-span-12 lg:col-span-6 lg:sticky top-32 h-fit space-y-6">
             <H2 chapeau="Het laatste ontwerp">HiFi Ontwerp</H2>
             <P>
               Na een feedbackronde van het LoFi-ontwerp ging ik verder met het
@@ -146,14 +101,29 @@ export default function Reisartikelen() {
               die mensen trekt naar de nieuwsbrief sectie.
             </P>
           </section>
-          <Img
-            contain
-            extraBorder
-            src="/images/Reisartikelen/HiFi.jpg"
-            alt="HiFi reisartikelen.nl"
-          />
-        </FlexArticle>
-      </Container>
+          <section className="col-span-12 lg:col-span-6 relative">
+            <Img
+              src="/images/Reisartikelen/HiFi.jpg"
+              alt="HiFi reisartikelen.nl"
+              className="object-contain w-full rounded-2xl border border-gray-200"
+            />
+          </section>
+        </Container>
+
+        <svg
+          className="w-full translate-y-[99%] text-white -scale-y-100 absolute bottom-0 left-0"
+          viewBox="0 0 1440 88"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M720.006 88C400.143 88 124.641 51.9188 0 0V88H720.006ZM1440 0C1315.37 51.9188 1039.87 88 720.006 88H1440V0Z"
+            fill="currentColor"
+          ></path>
+        </svg>
+      </section>
     </PageTemplate>
   );
 }

@@ -1,10 +1,10 @@
 import PageTemplate from "./pageTemplate";
-import Container from "@/sections/Container";
+import Container from "@/components/Container";
 import Action from "@/elements/Action";
 
 import H1 from "@/elements/H1";
 import P from "@/elements/P";
-import NextLink from "@/elements/NextLink";
+import Button from "@/elements/Button";
 
 export default function Custom500() {
   return (
@@ -25,9 +25,9 @@ export default function Custom500() {
         </div>
 
         <Action className={"justify-center items-center"}>
-          <NextLink type="primary" href="#">
+          <Button type="primary" href="#">
             Herlaad de pagina
-          </NextLink>
+          </Button>
         </Action>
       </Container>
     </PageTemplate>

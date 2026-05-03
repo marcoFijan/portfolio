@@ -1,139 +1,89 @@
 import PageTemplate from "../pageTemplate.js";
-import H1 from "@/elements/H1.js";
 import H2 from "@/elements/H2.js";
 import H3 from "@/elements/H3.js";
 import P from "@/elements/P.js";
-import Li from "@/elements/Li.js";
-import NextLink from "@/elements/NextLink";
-import SvgDeviceOutline from "@/elements/SvgDeviceOutline.js";
-import Divider from "@/elements/Divider.js";
+import Button from "@/elements/Button.js";
 import Action from "@/elements/Action.js";
-import FlexArticle from "@/elements/FlexArticle.js";
-import Container from "@/sections/Container.js";
 import Img from "@/elements/Img.js";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
+import ProjectHero from "@/components/project/HeroProject.js";
+import Container from "@/components/Container.js";
+
+const projectData = {
+  chapeau: "Een wedstrijd onderling verschillende YoungOnes zzp'ers",
+  title: "Gig Worker Of The Year Award",
+  mainImage: {
+    src: "/images/YoGwoty/HiFiDashboard.png",
+    alt: "Eindproduct YoungOnes",
+  },
+  introParagraphs: [
+    "Vanuit de marketingafdeling van YoungOnes kreeg ik de opdracht om een nieuw dashboard te ontwerpen en ontwikkelen voor de ZZP’ers die via het platform werken. Het doel van dit dashboard was om ‘gig workers’ op een speelse manier te motiveren: door te werken konden zij punten verdienen, waarmee leuke prijzen gewonnen konden worden.",
+    "Het dashboard moest in één oogopslag inzicht geven in: hoe gebruikers punten konden verdienen, hoeveel punten zij al hadden gespaard, hun huidige positie op het leaderboard en hoeveel tijd er nog over was in de campagneperiode.",
+    "Om dit te realiseren werkte ik nauw samen met het marketingteam. Zij gaven mij inzicht in hun wensen, het doel van de campagne en hoe vergelijkbare acties in voorgaande jaren waren verlopen. Op basis hiervan heb ik het ontwerp en de gebruikerservaring afgestemd, zodat het dashboard niet alleen functioneel was, maar ook aansloot bij de doelgroep en marketingdoelen van YoungOnes.",
+  ],
+  actions: [
+    {
+      label: "Bekijk de statische website",
+      href: "https://youngones-gwoty-o9bw7u9mo-marcofijan1.vercel.app/",
+      type: "primary",
+    },
+    {
+      label: "Bekijk de Github",
+      href: "https://github.com/marcoFijan/yo-gwoty",
+      type: "secondary",
+    },
+  ],
+  projectDetails: [
+    { label: "Projectjaar", value: "2022" },
+    {
+      label: "Projectdoel",
+      value:
+        "Geef de ZZPers van YoungOnes een overzicht van hun punten tijdens de GWOTY wedstrijd",
+    },
+    { label: "Doelgroep", value: "ZZPers van YounOnes (35-70 jaar)" },
+  ],
+};
 
 export default function YOGwotyAward() {
   return (
-    <PageTemplate>
-      <Container>
-        <div className="text-center">
-          <H1
-            big
-            className={""}
-            chapeau={"Een wedstrijd onderling verschillende YoungOnes zzp'ers"}
-          >
-            Gig Worker Of The Year Award
-          </H1>
-        </div>
-        <div className="hidden lg:block relative w-full h-[10rem]">
-          <div className="absolute left-0 top-0 w-full">
-            <SvgDeviceOutline />
-          </div>
-        </div>
-        <section className="w-full lg:max-w-[80%] mx-auto ">
-          <Img
-            src="/images/YoGwoty/HiFiDashboard.png"
-            alt="Eindproduct YoungOnes"
-            className="block object-cover aspect-video w-full"
-          />
-          <article className="mt-40">
-            <ul className="w-max mb-8 flex flex-col gap-4 max-w-full">
-              <Li
-                className={
-                  "px-8 py-4 text-white border-color-border border-1 bg-color-bg-bottom rounded-2xl "
-                }
-              >
-                <strong>Projectjaar:</strong> 2022
-              </Li>
-              <Li
-                className={
-                  "px-8 py-4 text-white border-color-border border-1 bg-color-bg-bottom rounded-2xl "
-                }
-              >
-                <strong>Projectdoel:</strong> Geef de ZZPers van YoungOnes een
-                overzicht van hun punten tijdens de GWOTY wedstrijd
-              </Li>
-              <Li
-                className={
-                  "px-8 py-4 text-white border-color-border border-1 bg-color-bg-bottom rounded-2xl"
-                }
-              >
-                <strong>Doelgroep:</strong> ZZPers van YounOnes (35-70 jaar)
-              </Li>
-            </ul>
-            <P intro>
-              Vanuit de marketingafdeling van YoungOnes kreeg ik de opdracht om
-              een nieuw dashboard te ontwerpen en ontwikkelen voor de ZZP’ers
-              die via het platform werken. Het doel van dit dashboard was om
-              ‘gig workers’ op een speelse manier te motiveren: door te werken
-              konden zij punten verdienen, waarmee leuke prijzen gewonnen konden
-              worden.
+    <PageTemplate bgColors={["#000000", "#000000", "#10d1bb", "#000000"]}>
+      {/* HERO */}
+      <ProjectHero {...projectData} />
+
+      <section className="bg-white relative z-10 mb-30 inverted-card py-20 lg:py-20">
+        {/* HIGHLIGHTS */}
+        <Container grid className="mb-24 xl:mb-40 items-center">
+          <section className="col-span-12 lg:col-span-6 space-y-6">
+            <H2 chapeau="Belangrijkste schermen">Dashboard & Profiel</H2>
+            <P>
+              Het dashboard geeft in één oogopslag inzicht in hoe gebruikers
+              punten kunnen verdienen, hoeveel punten ze hebben, hun positie op
+              het leaderboard en hoeveel tijd er nog over is in de
+              campagneperiode.
             </P>
-
-            <P intro>Het dashboard moest in één oogopslag inzicht geven in:</P>
-            <ul className="list-disc ml-8 mb-8">
-              <Li intro>Hoe gebruikers punten konden verdienen</Li>
-              <Li intro>Hoeveel punten zij al hadden gespaard</Li>
-              <Li intro>Hun huidige positie op het leaderboard</Li>
-              <Li intro>Hoeveel tijd er nog over was in de campagneperiode</Li>
-            </ul>
-
-            <P intro>
-              Om dit te realiseren werkte ik nauw samen met het marketingteam.
-              Zij gaven mij inzicht in hun wensen, het doel van de campagne en
-              hoe vergelijkbare acties in voorgaande jaren waren verlopen. Op
-              basis hiervan heb ik het ontwerp en de gebruikerservaring
-              afgestemd, zodat het dashboard niet alleen functioneel was, maar
-              ook aansloot bij de doelgroep en marketingdoelen van YoungOnes.
+            <P>
+              De profielpagina geeft een snel overzicht waar welke punten
+              vandaan komen en waar nog punten behaald kunnen worden.
             </P>
-            <Action className={""}>
-              <NextLink
-                type="primary"
-                href="https://youngones-gwoty-o9bw7u9mo-marcofijan1.vercel.app/"
-              >
-                Bekijk de statische website
-              </NextLink>
-              <NextLink
-                type="secondary"
-                href="https://github.com/marcoFijan/yo-gwoty"
-              >
-                Bekijk de Github
-              </NextLink>
-            </Action>
-          </article>
-        </section>
+          </section>
+          <section className="col-span-12 lg:col-span-6 space-y-8">
+            <Img
+              src="/images/YoGwoty/EindversieDashboard.jpg"
+              alt="Eindproduct dashboard YoungOnes"
+              className="object-contain w-full rounded-2xl border border-gray-200"
+            />
+            <Img
+              src="/images/YoGwoty/EindversieProfiel.jpg"
+              alt="Eindproduct profiel YoungOnes"
+              className="object-contain w-full rounded-2xl border border-gray-200"
+            />
+          </section>
+        </Container>
 
-        <FlexArticle smallMargin>
-          <P className="max-w-full lg:max-w-1/2 text-color-accent text-lg md:text-xl lg:text-2xl justify-self-center text-center">
-            Het dashboard geeft in één oogopslag inzicht in hoe gebruikers
-            punten kunnen verdienen, hoeveel punten ze hebben, hun positie op
-            het leaderboard en hoeveel tijd er nog over is in de
-            campagneperiode.
-          </P>
-          <Img
-            extraBorder
-            src="/images/YoGwoty/EindversieDashboard.jpg"
-            alt="Eindproduct dashboard YoungOnes"
-            className="block object-cover aspect-video w-full"
-          />
-        </FlexArticle>
-        <FlexArticle reverse smallMargin>
-          <P className="max-w-full lg:max-w-1/2 text-color-accent text-lg md:text-xl lg:text-2xl justify-self-center text-center">
-            De profielpagina geeft een snel overzicht waar welke punten vandaan
-            komen en waar nog punten behaald kunnen worden.
-          </P>
-          <Img
-            extraBorder
-            src="/images/YoGwoty/EindversieProfiel.jpg"
-            alt="Eindproduct profiel YoungOnes"
-            className="block object-cover aspect-video w-full"
-          />
-        </FlexArticle>
-        <Divider />
-        <article className="grid grid-cols-1 xl:grid-cols-2 gap-12 justify-center my-16 xl:my-32 items-top">
-          <section>
+        {/* LOFI ITERATION */}
+        <Container grid className="mb-24 xl:mb-40">
+          <section className="col-span-12 lg:col-span-6 lg:order-2 lg:sticky top-32 h-fit space-y-6">
             <H2 chapeau="De eerste schetsen">LoFi</H2>
             <P>
               Op basis van verschillende beelden en informatie over voogaande
@@ -143,103 +93,119 @@ export default function YOGwotyAward() {
               eventuele aanpassingen sneller toegepast kunnen worden.
             </P>
           </section>
-          <Splide
-            options={{
-              type: "infinite",
-              rewind: true,
-              autoplay: false,
-              interval: 4000,
-              speed: 2000,
-              arrows: true,
-              pagination: true,
-              gap: "4rem",
-            }}
-          >
-            <SplideSlide>
-              <Img
-                src="/images/YoGwoty/LoFiInloggen.png"
-                alt="Lofi schets #1"
-                className="block object-contain object-top w-full aspect-[2/1]"
-              />
-              <H3 className="text-center ">Inlogpagina</H3>
-              <P className="pb-8 text-white text-md lg:text-lg max-w-paragraph">
-                In het dashboard moet uiteraard ingelogd kunnen worden. Dit werd
-                daarom ook in de LoFi meegeneomen om te controleren dat ik geen
-                informatie mis.
-              </P>
-            </SplideSlide>
-            <SplideSlide>
-              <Img
-                src="/images/YoGwoty/LoFiDashboardVersie1.png"
-                alt="Lofi schets #2"
-                className="block object-contain object-top w-full aspect-[2/1]"
-              />
-              <H3 className="text-center ">Dashboard V1</H3>
-              <P className="pb-8 text-white text-md lg:text-lg max-w-paragraph">
-                De belangrijkste pagina is het dashboard. Dit is waar alle
-                essentiele informatie te vinden is. In de eerste iteratie had ik
-                de timer klein linksboven staan.
-              </P>
-            </SplideSlide>
 
-            <SplideSlide>
-              <Img
-                src="/images/YoGwoty/LoFiDashboardVersie2.png"
-                alt="Lofi schets #3"
-                className="block object-contain object-top w-full aspect-[2/1]"
-              />
-              <H3 className="text-center ">Dashboard V2</H3>
-              <P className="pb-8 text-white text-md lg:text-lg max-w-paragraph">
-                Uiteindelijk besloot ik om knoppen te maken van de kaders
-                bovenin. Dit geeft meer rust, en een mogelijk hogere
-                conversieratio voor de secundaire paginas.
-              </P>
-            </SplideSlide>
+          <section className="col-span-12 lg:col-span-6 lg:order-1 relative">
+            <Splide options={{ type: "fade", rewind: true, pagination: true }}>
+              <SplideSlide>
+                <Img
+                  invisibleBorder
+                  overflowScroll
+                  src="/images/YoGwoty/LoFiInloggen.png"
+                  alt="Lofi schets #1"
+                  className="object-contain w-full"
+                />
+                <div className="p-8 text-center">
+                  <H3>Inlogpagina</H3>
+                  <P className="italic">
+                    In het dashboard moet uiteraard ingelogd kunnen worden. Dit
+                    werd daarom ook in de LoFi meegeneomen om te controleren dat
+                    ik geen informatie mis.
+                  </P>
+                </div>
+              </SplideSlide>
+              <SplideSlide>
+                <Img
+                  invisibleBorder
+                  overflowScroll
+                  src="/images/YoGwoty/LoFiDashboardVersie1.png"
+                  alt="Lofi schets #2"
+                  className="object-contain w-full"
+                />
+                <div className="p-8 text-center">
+                  <H3>Dashboard V1</H3>
+                  <P className="italic">
+                    De belangrijkste pagina is het dashboard. Dit is waar alle
+                    essentiele informatie te vinden is. In de eerste iteratie
+                    had ik de timer klein linksboven staan.
+                  </P>
+                </div>
+              </SplideSlide>
+              <SplideSlide>
+                <Img
+                  invisibleBorder
+                  overflowScroll
+                  src="/images/YoGwoty/LoFiDashboardVersie2.png"
+                  alt="Lofi schets #3"
+                  className="object-contain w-full"
+                />
+                <div className="p-8 text-center">
+                  <H3>Dashboard V2</H3>
+                  <P className="italic">
+                    Uiteindelijk besloot ik om knoppen te maken van de kaders
+                    bovenin. Dit geeft meer rust, en een mogelijk hogere
+                    conversieratio voor de secundaire paginas.
+                  </P>
+                </div>
+              </SplideSlide>
+              <SplideSlide>
+                <Img
+                  invisibleBorder
+                  overflowScroll
+                  src="/images/YoGwoty/LofiLeaderboard.png"
+                  alt="Lofi Leaderboard"
+                  className="object-contain w-full"
+                />
+                <div className="p-8 text-center">
+                  <H3>Leaderboard</H3>
+                  <P className="italic">
+                    Tijdens de wedstrijd willen de freelancers natuurlijk ook
+                    een ranglijst zien met hun positie en die van hun
+                    concurrenten. Hiervoor is er een leaderboard beschikbaar.
+                  </P>
+                </div>
+              </SplideSlide>
+              <SplideSlide>
+                <Img
+                  invisibleBorder
+                  overflowScroll
+                  src="/images/YoGwoty/LoFiAbout.png"
+                  alt="Lofi schets #4"
+                  className="object-contain w-full"
+                />
+                <div className="p-8 text-center">
+                  <H3>Over GWOTY</H3>
+                  <P className="italic">
+                    Om mensen te informeren over wat GWOTY precies inhoud, werd
+                    er een about-pagina ontworpen. Hier kan de gebruiker stap
+                    voor stap lezen hoe de puntenscore van GWOTY precies werkt.
+                  </P>
+                </div>
+              </SplideSlide>
+              <SplideSlide>
+                <Img
+                  invisibleBorder
+                  overflowScroll
+                  src="/images/YoGwoty/LoFiAlgemeneVoorwaarden.png"
+                  alt="Lofi schets #5"
+                  className="object-contain w-full"
+                />
+                <div className="p-8 text-center">
+                  <H3>Voorwaarden</H3>
+                  <P className="italic">
+                    Naast de informatie over GWOTY, is het ook belangrijk om de
+                    algemene voorwaarden helder te hebben. Hiervoor is er een
+                    voorwaarden pagina waar de gebruiker alle voorwaarden kan
+                    vindne.
+                  </P>
+                </div>
+              </SplideSlide>
+            </Splide>
+          </section>
+        </Container>
 
-            <SplideSlide>
-              <Img
-                src="/images/YoGwoty/LofiLeaderboard.png"
-                alt="KBO Reeshof Menu uitgeklapt"
-                className="block object-contain object-top w-full aspect-[2/1]"
-              />
-              <H3 className="text-center ">Leaderboard</H3>
-              <P className="pb-8 text-white text-md lg:text-lg max-w-paragraph">
-                Tijdens de wedstrijd willen de freelancers natuurlijk ook een
-                ranglijst zien met hun positie en die van hun concurrenten.
-                Hiervoor is er een leaderboard beschikbaar
-              </P>
-            </SplideSlide>
-            <SplideSlide>
-              <Img
-                src="/images/YoGwoty/LoFiAbout.png"
-                alt="Lofi schets #4"
-                className="block object-contain object-top w-full aspect-[2/1]"
-              />
-              <H3 className="text-center ">Over GWOTY</H3>
-              <P className="pb-8 text-white text-md lg:text-lg max-w-paragraph">
-                Om mensen te informeren over wat GWOTY precies inhoud, werd er
-                een about-pagina ontworpen. Hier kan de gebruiker stap voor stap
-                lezen hoe de puntenscore van GWOTY precies werkt.
-              </P>
-            </SplideSlide>
-            <SplideSlide>
-              <Img
-                src="/images/YoGwoty/LoFiAlgemeneVoorwaarden.png"
-                alt="Lofi schets #4"
-                className="block object-contain object-top w-full aspect-[2/1]"
-              />
-              <H3 className="text-center ">Voorwaarden</H3>
-              <P className="pb-8 text-white text-md lg:text-lg max-w-paragraph">
-                Naast de informatie over GWOTY, is het ook belangrijk om de
-                algemene voorwaarden helder te hebben. Hiervoor is er een
-                voorwaarden pagina waar de gebruiker alle voorwaarden kan
-                vindne.
-              </P>
-            </SplideSlide>
-          </Splide>
-        </article>
-        <article className="grid grid-cols-1 xl:grid-cols-2 gap-12 justify-center my-16 xl:my-32 items-top">
-          <section className="xl:order-2">
+        {/* HIFI ITERATION */}
+        <Container grid className="mb-24 xl:mb-40">
+          <section className="col-span-12 lg:col-span-6 lg:sticky top-32 h-fit space-y-6">
             <H2 chapeau="Kleur geven aan het ontwerp">HiFi iteratie</H2>
             <P>
               Nadat de LoFi ontwerpen klaar waren, had ik een gesprek met een
@@ -258,86 +224,100 @@ export default function YOGwotyAward() {
               daarom geschrapt.
             </P>
           </section>
-          <Splide
-            options={{
-              type: "infinite",
-              rewind: true,
-              autoplay: false,
-              interval: 4000,
-              speed: 2000,
-              arrows: true,
-              pagination: true,
-              gap: "4rem",
-            }}
-          >
-            <SplideSlide>
-              <Img
-                src="/images/YoGwoty/HiFiInloggen.png"
-                alt="Lofi schets #1"
-                className="block object-contain object-top w-full aspect-[2/1]"
-              />
-              <H3 className="text-center ">Inlogpagina</H3>
-              <P className="pb-8 text-white text-md lg:text-lg max-w-paragraph">
-                Voor de HiFi voor het inloggen was er niet veel werk nodig. Er
-                werd een bijpassende afbeelding gebruikt en de kleuren en
-                lettertype werden toegepast volgens de huisstijl.
-              </P>
-            </SplideSlide>
-            <SplideSlide>
-              <Img
-                src="/images/YoGwoty/HiFiDashboard.png"
-                alt="Lofi schets #2"
-                className="block object-contain object-top w-full aspect-[2/1]"
-              />
-              <H3 className="text-center ">Dashboard</H3>
-              <P className="pb-8 text-white text-md lg:text-lg max-w-paragraph">
-                Ook het dashboard kreeg een update door hier een nieuw logo toe
-                te voegen in de header en bijpassende iconen en huisstijl toe te
-                voegen. Ook werden de menuitems geüpdate.
-              </P>
-            </SplideSlide>
-            <SplideSlide>
-              <Img
-                src="/images/YoGwoty/HiFiProfiel.png"
-                alt="Hifi Profiel"
-                className="block object-contain object-top w-full aspect-[2/1]"
-              />
-              <H3 className="text-center ">Profiel</H3>
-              <P className="pb-8 text-white text-md lg:text-lg max-w-paragraph">
-                Een van de feedbackpunten vanuit marketing is dat ze graag een
-                profielpagina willen hebben. Op deze manier heeft de gebruiker
-                een beter inzicht over zijn of haar behaalde punten.
-              </P>
-            </SplideSlide>
 
-            <SplideSlide>
-              <Img
-                src="/images/YoGwoty/HiFiLeaderboard.png"
-                alt="KBO Reeshof Menu uitgeklapt"
-                className="block object-contain object-top w-full aspect-[2/1]"
-              />
-              <H3 className="text-center ">Leaderboard</H3>
-              <P className="pb-8 text-white text-md lg:text-lg max-w-paragraph">
-                Voor het leaderboard was niet veel werk nodig. Alleen de
-                huisstijl werd toegepast.
-              </P>
-            </SplideSlide>
-            <SplideSlide>
-              <Img
-                src="/images/YoGwoty/HiFiAbout.png"
-                alt="Lofi schets #4"
-                className="block object-contain object-top w-full aspect-[2/1]"
-              />
-              <H3 className="text-center ">Over GWOTY</H3>
-              <P className="pb-8 text-white text-md lg:text-lg max-w-paragraph">
-                Ook de HiFi van de about-pagina was erg makkelijk te ontwerpen.
-                Hier was weinig feedback voor ontvangen
-              </P>
-            </SplideSlide>
-          </Splide>
-        </article>
-        <article className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-12 justify-center my-16 xl:my-32 items-top">
-          <section className="xl:col-span-2">
+          <section className="col-span-12 lg:col-span-6 relative">
+            <Splide options={{ type: "fade", rewind: true, pagination: true }}>
+              <SplideSlide>
+                <Img
+                  invisibleBorder
+                  overflowScroll
+                  src="/images/YoGwoty/HiFiInloggen.png"
+                  alt="Hifi inloggen"
+                  className="object-contain w-full"
+                />
+                <div className="p-8 text-center">
+                  <H3>Inlogpagina</H3>
+                  <P className="italic">
+                    Voor de HiFi voor het inloggen was er niet veel werk nodig.
+                    Er werd een bijpassende afbeelding gebruikt en de kleuren en
+                    lettertype werden toegepast volgens de huisstijl.
+                  </P>
+                </div>
+              </SplideSlide>
+              <SplideSlide>
+                <Img
+                  invisibleBorder
+                  overflowScroll
+                  src="/images/YoGwoty/HiFiDashboard.png"
+                  alt="Hifi Dashboard"
+                  className="object-contain w-full"
+                />
+                <div className="p-8 text-center">
+                  <H3>Dashboard</H3>
+                  <P className="italic">
+                    Ook het dashboard kreeg een update door hier een nieuw logo
+                    toe te voegen in de header en bijpassende iconen en
+                    huisstijl toe te voegen. Ook werden de menuitems geüpdate.
+                  </P>
+                </div>
+              </SplideSlide>
+              <SplideSlide>
+                <Img
+                  invisibleBorder
+                  overflowScroll
+                  src="/images/YoGwoty/HiFiProfiel.png"
+                  alt="Hifi Profiel"
+                  className="object-contain w-full"
+                />
+                <div className="p-8 text-center">
+                  <H3>Profiel</H3>
+                  <P className="italic">
+                    Een van de feedbackpunten vanuit marketing is dat ze graag
+                    een profielpagina willen hebben. Op deze manier heeft de
+                    gebruiker een beter inzicht over zijn of haar behaalde
+                    punten.
+                  </P>
+                </div>
+              </SplideSlide>
+              <SplideSlide>
+                <Img
+                  invisibleBorder
+                  overflowScroll
+                  src="/images/YoGwoty/HiFiLeaderboard.png"
+                  alt="Hifi Leaderboard"
+                  className="object-contain w-full"
+                />
+                <div className="p-8 text-center">
+                  <H3>Leaderboard</H3>
+                  <P className="italic">
+                    Voor het leaderboard was niet veel werk nodig. Alleen de
+                    huisstijl werd toegepast.
+                  </P>
+                </div>
+              </SplideSlide>
+              <SplideSlide>
+                <Img
+                  invisibleBorder
+                  overflowScroll
+                  src="/images/YoGwoty/HiFiAbout.png"
+                  alt="Hifi About"
+                  className="object-contain w-full"
+                />
+                <div className="p-8 text-center">
+                  <H3>Over GWOTY</H3>
+                  <P className="italic">
+                    Ook de HiFi van de about-pagina was erg makkelijk te
+                    ontwerpen. Hier was weinig feedback voor ontvangen.
+                  </P>
+                </div>
+              </SplideSlide>
+            </Splide>
+          </section>
+        </Container>
+
+        {/* HIFI MOBILE ITERATION */}
+        <Container grid className="mb-24 xl:mb-40">
+          <section className="col-span-12 lg:col-span-6 lg:order-2 lg:sticky top-32 h-fit space-y-6">
             <H2 chapeau="De mobiele responsive versie van het HiFi-ontwerp">
               HiFi iteratie mobiel
             </H2>
@@ -350,83 +330,97 @@ export default function YOGwotyAward() {
               hamburgermenu en stylingselementen zoals flex en grid.
             </P>
           </section>
-          <Splide
-            options={{
-              type: "infinite",
-              rewind: true,
-              autoplay: false,
-              interval: 4000,
-              speed: 2000,
-              arrows: true,
-              pagination: true,
-              gap: "4rem",
-            }}
-          >
-            <SplideSlide>
-              <Img
-                src="/images/YoGwoty/HiFiInloggenMobiel.png"
-                alt="Lofi schets #1"
-                className="block object-contain object-top w-full aspect-[3/5]"
-              />
-              <H3 className="text-center ">Inlogpagina</H3>
-              <P className="pb-8 text-white text-md lg:text-lg max-w-paragraph">
-                Voor de mobiele versie werd de afbeelding verborgen om direct de
-                content weer te geven.
-              </P>
-            </SplideSlide>
-            <SplideSlide>
-              <Img
-                src="/images/YoGwoty/HiFiDashboardMobiel.png"
-                alt="Lofi schets #2"
-                className="block object-contain object-top w-full aspect-[3/5]"
-              />
-              <H3 className="text-center ">Dashboard</H3>
-              <P className="pb-8 text-white text-md lg:text-lg max-w-paragraph">
-                Het dashboard werd onder elkaar gezet in volgorde van
-                relevantie. De timer werd daarom bovenaan getoond.
-              </P>
-            </SplideSlide>
-            <SplideSlide>
-              <Img
-                src="/images/YoGwoty/HiFiProfielMobiel.png"
-                alt="Hifi Profiel"
-                className="block object-contain object-top w-full aspect-[3/5]"
-              />
-              <H3 className="text-center ">Profiel</H3>
-              <P className="pb-8 text-white text-md lg:text-lg max-w-paragraph">
-                Bij het profiel werd de sidebar volledig onderaan gezet en het
-                hoofdvak met belangrijke informatie bovenaan.
-              </P>
-            </SplideSlide>
 
-            <SplideSlide>
-              <Img
-                src="/images/YoGwoty/HiFiLeaderboardMobiel.png"
-                alt="KBO Reeshof Menu uitgeklapt"
-                className="block object-contain object-top w-full aspect-[3/5]"
-              />
-              <H3 className="text-center ">Leaderboard</H3>
-              <P className="pb-8 text-white text-md lg:text-lg max-w-paragraph">
-                Ook bij het leaderboard verschijnt de sidebar onderaan en het
-                hoofdvlak met belangrijke informatie bovenaan
-              </P>
-            </SplideSlide>
-            <SplideSlide>
-              <Img
-                src="/images/YoGwoty/HiFiAboutMobiel.png"
-                alt="Lofi schets #4"
-                className="block object-contain object-top w-full aspect-[3/5]"
-              />
-              <H3 className="text-center ">Over GWOTY</H3>
-              <P className="pb-8 text-white text-md lg:text-lg max-w-paragraph">
-                In de mobiele versie verdwijnt de overflow en wordt de tekst
-                volledig onder elkaar getoond om het scrollen te versoepelen
-              </P>
-            </SplideSlide>
-          </Splide>
-        </article>
-        <article className="pb-32 grid grid-cols-1 xl:grid-cols-2 gap-12 justify-center my-16 xl:my-32 items-top">
-          <section className="xl:order-2">
+          <section className="col-span-12 lg:col-span-6 lg:order-1 relative">
+            <Splide options={{ type: "fade", rewind: true, pagination: true }}>
+              <SplideSlide>
+                <Img
+                  invisibleBorder
+                  overflowScroll
+                  src="/images/YoGwoty/HiFiInloggenMobiel.png"
+                  alt="Hifi Inloggen Mobiel"
+                  className="object-contain w-full"
+                />
+                <div className="p-8 text-center">
+                  <H3>Inlogpagina</H3>
+                  <P className="italic">
+                    Voor de mobiele versie werd de afbeelding verborgen om
+                    direct de content weer te geven.
+                  </P>
+                </div>
+              </SplideSlide>
+              <SplideSlide>
+                <Img
+                  invisibleBorder
+                  overflowScroll
+                  src="/images/YoGwoty/HiFiDashboardMobiel.png"
+                  alt="Hifi Dashboard Mobiel"
+                  className="object-contain w-full"
+                />
+                <div className="p-8 text-center">
+                  <H3>Dashboard</H3>
+                  <P className="italic">
+                    Het dashboard werd onder elkaar gezet in volgorde van
+                    relevantie. De timer werd daarom bovenaan getoond.
+                  </P>
+                </div>
+              </SplideSlide>
+              <SplideSlide>
+                <Img
+                  invisibleBorder
+                  overflowScroll
+                  src="/images/YoGwoty/HiFiProfielMobiel.png"
+                  alt="Hifi Profiel Mobiel"
+                  className="object-contain w-full"
+                />
+                <div className="p-8 text-center">
+                  <H3>Profiel</H3>
+                  <P className="italic">
+                    Bij het profiel werd de sidebar volledig onderaan gezet en
+                    het hoofdvak met belangrijke informatie bovenaan.
+                  </P>
+                </div>
+              </SplideSlide>
+              <SplideSlide>
+                <Img
+                  invisibleBorder
+                  overflowScroll
+                  src="/images/YoGwoty/HiFiLeaderboardMobiel.png"
+                  alt="Hifi Leaderboard Mobiel"
+                  className="object-contain w-full"
+                />
+                <div className="p-8 text-center">
+                  <H3>Leaderboard</H3>
+                  <P className="italic">
+                    Ook bij het leaderboard verschijnt de sidebar onderaan en
+                    het hoofdvlak met belangrijke informatie bovenaan.
+                  </P>
+                </div>
+              </SplideSlide>
+              <SplideSlide>
+                <Img
+                  invisibleBorder
+                  overflowScroll
+                  src="/images/YoGwoty/HiFiAboutMobiel.png"
+                  alt="Hifi About Mobiel"
+                  className="object-contain w-full"
+                />
+                <div className="p-8 text-center">
+                  <H3>Over GWOTY</H3>
+                  <P className="italic">
+                    In de mobiele versie verdwijnt de overflow en wordt de tekst
+                    volledig onder elkaar getoond om het scrollen te
+                    versoepelen.
+                  </P>
+                </div>
+              </SplideSlide>
+            </Splide>
+          </section>
+        </Container>
+
+        {/* DEVELOPED VERSION */}
+        <Container grid>
+          <section className="col-span-12 lg:col-span-6 lg:sticky top-32 h-fit space-y-6">
             <H2 chapeau="Het uiteindelijke resultaat in NextJS en Tailwind">
               Uitgewerkte versie
             </H2>
@@ -440,7 +434,7 @@ export default function YOGwotyAward() {
               updaten op de canvas vind ik ergens wel handig. Maar toch vind ik
               dit ergens ook nog een ouderwetse manier. Zeker wanneer je dit
               vergelijkt met Svelte waar dit volledig is geautimatiseerd zonder
-              enige prestatieverlies
+              enige prestatieverlies.
             </P>
             <P>
               Hieronder vind u de link naar een statische versie van deze
@@ -449,104 +443,131 @@ export default function YOGwotyAward() {
               informatie. Om die reden is de website zo goed mogelijk om de
               website alsnog in statische vorm weer te geven.
             </P>
-            <Action>
-              <NextLink
+
+            <Action className="mt-8">
+              <Button
                 type="primary"
                 href="https://youngones-gwoty-o9bw7u9mo-marcofijan1.vercel.app/"
               >
                 Bekijk de statische website
-              </NextLink>
-              <NextLink
+              </Button>
+              <Button
                 type="secondary"
                 href="https://github.com/marcoFijan/yo-gwoty"
               >
                 Bekijk de Github
-              </NextLink>
+              </Button>
             </Action>
           </section>
-          <Splide
-            options={{
-              type: "infinite",
-              rewind: true,
-              autoplay: false,
-              interval: 4000,
-              speed: 2000,
-              arrows: true,
-              pagination: true,
-              gap: "4rem",
-            }}
-          >
-            <SplideSlide>
-              <Img
-                src="/images/YoGwoty/EindversieInloggen.jpg"
-                alt="Lofi schets #1"
-                className="block object-contain object-top w-full aspect-[2/1]"
-              />
-              <H3 className="text-center ">Inlogpagina</H3>
-              <P className="pb-8 text-white text-md lg:text-lg max-w-paragraph">
-                Voor de eindversie werd de afbeelding veranderd naar iets
-                toepasselijker voor de doelgroep: hard werken, ofwel strijden.
-                Ook werd de gekleurde kring verwijderd om meer rust te creeëren.
-              </P>
-            </SplideSlide>
-            <SplideSlide>
-              <Img
-                src="/images/YoGwoty/EindversieDashboard.jpg"
-                alt="Lofi schets #2"
-                className="block object-contain object-top w-full aspect-[2/1]"
-              />
-              <H3 className="text-center ">Dashboard</H3>
-              <P className="pb-8 text-white text-md lg:text-lg max-w-paragraph">
-                Voor het dashboard heb ik snel een nieuwe bannerafbeelding
-                gemaakt die minder druk overkomt, hierdoor komt de inhoud beter
-                naar voren. Daarnaast is de prestatiesectie ook overzichtelijker
-                vormgegeven.
-              </P>
-            </SplideSlide>
-            <SplideSlide>
-              <Img
-                src="/images/YoGwoty/EindversieProfiel.jpg"
-                alt="Hifi Profiel"
-                className="block object-contain object-top w-full aspect-[2/1]"
-              />
-              <H3 className="text-center ">Profiel</H3>
-              <P className="pb-8 text-white text-md lg:text-lg max-w-paragraph">
-                Als laatste is de profielpagina verwerkt. Hier is vooral de
-                overzicht sectie aangepast. Er is veel onnodige uitleg
-                verwijderd en deze uitleg is samengevat tot belangrijkst
-                gegevens met grote getallen.
-              </P>
-            </SplideSlide>
 
-            <SplideSlide>
-              <Img
-                src="/images/YoGwoty/EindversieLeaderboard.jpg"
-                alt="KBO Reeshof Menu uitgeklapt"
-                className="block object-contain object-top w-full aspect-[2/1]"
-              />
-              <H3 className="text-center ">Tussenstand (Leaderboard)</H3>
-              <P className="pb-8 text-white text-md lg:text-lg max-w-paragraph">
-                Het Leaderboard werd hernoemd naar tussenstand op verzoek van
-                team marketing. Leaderboard is te engels en team marketing wilde
-                hiervoor een nederlandse benaming. Daarnaast is er meer padding
-                toegevoegd en meer kleuren voor de top 3.
-              </P>
-            </SplideSlide>
-            <SplideSlide>
-              <Img
-                src="/images/YoGwoty/HiFiAbout.png"
-                alt="Lofi schets #4"
-                className="block object-contain object-top w-full aspect-[2/1]"
-              />
-              <H3 className="text-center ">Over GWOTY</H3>
-              <P className="pb-8 text-white text-md lg:text-lg max-w-paragraph">
-                Ook de HiFi van de about-pagina was erg makkelijk te ontwerpen.
-                Hier was weinig feedback voor ontvangen
-              </P>
-            </SplideSlide>
-          </Splide>
-        </article>
-      </Container>
+          <section className="col-span-12 lg:col-span-6 relative mt-12 lg:mt-0">
+            <Splide options={{ type: "fade", rewind: true, pagination: true }}>
+              <SplideSlide>
+                <Img
+                  invisibleBorder
+                  overflowScroll
+                  src="/images/YoGwoty/EindversieInloggen.jpg"
+                  alt="Eindversie Inloggen"
+                  className="object-contain w-full"
+                />
+                <div className="p-8 text-center">
+                  <H3>Inlogpagina</H3>
+                  <P className="italic">
+                    Voor de eindversie werd de afbeelding veranderd naar iets
+                    toepasselijker voor de doelgroep: hard werken, ofwel
+                    strijden. Ook werd de gekleurde kring verwijderd om meer
+                    rust te creeëren.
+                  </P>
+                </div>
+              </SplideSlide>
+              <SplideSlide>
+                <Img
+                  invisibleBorder
+                  overflowScroll
+                  src="/images/YoGwoty/EindversieDashboard.jpg"
+                  alt="Eindversie Dashboard"
+                  className="object-contain w-full"
+                />
+                <div className="p-8 text-center">
+                  <H3>Dashboard</H3>
+                  <P className="italic">
+                    Voor het dashboard heb ik snel een nieuwe bannerafbeelding
+                    gemaakt die minder druk overkomt, hierdoor komt de inhoud
+                    beter naar voren. Daarnaast is de prestatiesectie ook
+                    overzichtelijker vormgegeven.
+                  </P>
+                </div>
+              </SplideSlide>
+              <SplideSlide>
+                <Img
+                  invisibleBorder
+                  overflowScroll
+                  src="/images/YoGwoty/EindversieProfiel.jpg"
+                  alt="Eindversie Profiel"
+                  className="object-contain w-full"
+                />
+                <div className="p-8 text-center">
+                  <H3>Profiel</H3>
+                  <P className="italic">
+                    Als laatste is de profielpagina verwerkt. Hier is vooral de
+                    overzicht sectie aangepast. Er is veel onnodige uitleg
+                    verwijderd en deze uitleg is samengevat tot belangrijkst
+                    gegevens met grote getallen.
+                  </P>
+                </div>
+              </SplideSlide>
+              <SplideSlide>
+                <Img
+                  invisibleBorder
+                  overflowScroll
+                  src="/images/YoGwoty/EindversieLeaderboard.jpg"
+                  alt="Eindversie Leaderboard"
+                  className="object-contain w-full"
+                />
+                <div className="p-8 text-center">
+                  <H3>Tussenstand (Leaderboard)</H3>
+                  <P className="italic">
+                    Het Leaderboard werd hernoemd naar tussenstand op verzoek
+                    van team marketing. Leaderboard is te engels en team
+                    marketing wilde hiervoor een nederlandse benaming. Daarnaast
+                    is er meer padding toegevoegd en meer kleuren voor de top 3.
+                  </P>
+                </div>
+              </SplideSlide>
+              <SplideSlide>
+                <Img
+                  invisibleBorder
+                  overflowScroll
+                  src="/images/YoGwoty/HiFiAbout.png"
+                  alt="Eindversie About"
+                  className="object-contain w-full"
+                />
+                <div className="p-8 text-center">
+                  <H3>Over GWOTY</H3>
+                  <P className="italic">
+                    Ook de HiFi van de about-pagina was erg makkelijk te
+                    ontwerpen. Hier was weinig feedback voor ontvangen.
+                  </P>
+                </div>
+              </SplideSlide>
+            </Splide>
+          </section>
+        </Container>
+
+        <svg
+          className="w-full translate-y-[99%] text-white -scale-y-100 absolute bottom-0 left-0"
+          viewBox="0 0 1440 88"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M720.006 88C400.143 88 124.641 51.9188 0 0V88H720.006ZM1440 0C1315.37 51.9188 1039.87 88 720.006 88H1440V0Z"
+            fill="currentColor"
+          ></path>
+        </svg>
+      </section>
     </PageTemplate>
   );
 }

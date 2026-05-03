@@ -1,47 +1,47 @@
-import { motion } from "framer-motion";
-import { Inter } from "next/font/google";
+import { Work_Sans } from "next/font/google";
+import InViewAnimate from "../utilities/InViewAnimate.js";
 
-const inter = Inter({
+const workSans = Work_Sans({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-workSans",
 });
 
-export default function H1({ children, chapeau, className, big }) {
+export default function H1({ children, chapeau, className = "", big }) {
+  const sizeClasses = "text-4xl sm:text-6xl lg:text-7xl 2xl:text-7xl";
+
+  const colorClasses =
+    "text-transparent bg-clip-text bg-gradient-to-br from-black to-neutral-600 dark:from-white dark:to-white/60";
+
   return (
     <>
       {chapeau && (
-        <motion.span
-          className={`text-md xs:text-lg sm:text-xl md:text-2xl uppercase font-light text-white text-opacity-50 pl-6 relative after:absolute after:content-[''] after:h-3 after:w-3 after:bg-white after:rounded-full after:left-0 after:top-1/2 after:-translate-y-1/2 after:opacity-70 after:border-1 after:border-black ${inter.className}`}
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-            transition: { duration: 0.5, delay: 0.1 },
-          }}
+        <InViewAnimate
+          as="span"
+          splitText={true}
+          stagger={40}
+          className={`${workSans.className} block text-xl md:text-2xl uppercase font-light text-black/50 dark:text-white/50`}
+          delay={300}
         >
           {chapeau}
-        </motion.span>
+        </InViewAnimate>
       )}
-      <motion.h1
-        className={
-          `pt-2 pb-8 md:pb-8 lg:pb-16 leading-none sm:leading-[1]  ${
-            inter.className
-          } ${
-            big
-              ? "text-[2.5rem] xs:text-[3.5rem] md:text-home-h1 xl:text-home-h1-big text-transparent bg-clip-text font-semibold bg-gradient-to-br from-color-accent-light to-color-accent"
-              : "text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-transparent bg-clip-text font-semibold bg-gradient-to-br from-white to-white"
-          }` + className
-        }
-        initial={{ opacity: 0, y: 25 }}
-        whileInView={{
-          opacity: 1,
-          y: 0,
-          transition: { duration: 0.5, delay: 0.1 },
-        }}
+
+      <InViewAnimate
+        as="h1"
+        className={`
+          ${workSans.className} 
+          pt-2 pb-16 lg:pb-18 
+          leading-[0.9] sm:leading-none 
+          font-extrabold
+          ${sizeClasses} 
+          ${colorClasses} 
+          ${className}
+        `}
+        delay={100}
       >
         {children}
-      </motion.h1>
+      </InViewAnimate>
     </>
   );
 }

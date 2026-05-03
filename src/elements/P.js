@@ -1,25 +1,32 @@
-import { motion } from "framer-motion";
+import { Work_Sans } from "next/font/google";
+import InViewAnimate from "../utilities/InViewAnimate.js";
 
-export default function P({ children, className, intro }) {
+const workSans = Work_Sans({
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  subsets: ["latin"],
+  variable: "--font-workSans",
+});
+
+export default function P({ children, className, intro, splitText }) {
+  const combinedClasses = `mb-4 last-of-type:mb-0 font-light text-shadow-color-bg-top tracking-widest text-black dark:text-white ${className} ${workSans.className} 
+    ${
+      intro
+        ? "text-sm sm:text-md md:text-lg max-w-280"
+        : "text-sm sm:text-md max-w-paragraph"
+    }
+  `;
+
   return (
-    <motion.p
-      className={`mb-4 font-light opacity-80 text-shadow-color-bg-top text-shadow-2xs   
-        ${
-          className
-            ? className
-            : intro
-            ? "text-white text-md sm:text-lg md:text-xl lg:text-2xl max-w-[70rem]"
-            : "text-white text-sm sm:text-md md:text-lg lg:text-xl max-w-paragraph "
-        }
-      `}
-      initial={{ opacity: 0, y: 25 }}
-      whileInView={{
-        opacity: 1,
-        y: 0,
-        transition: { duration: 0.5, delay: 0.1 },
-      }}
+    <InViewAnimate
+      as="p"
+      className={combinedClasses}
+      splitText={!!splitText}
+      stagger={splitText ? 40 : 0}
+      translateY={25}
+      duration={500}
+      delay={200}
     >
       {children}
-    </motion.p>
+    </InViewAnimate>
   );
 }
