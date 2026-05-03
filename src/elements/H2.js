@@ -16,7 +16,7 @@ export default function H2({ children, chapeau, big = false, className = "" }) {
           splitText={true}
           stagger={40}
           delay={300}
-          className={`${workSans.className} block text-xl uppercase font-light text-black/50 dark:text-white/50`}
+          className={`${workSans.className} block text-md mb-2 lg:text-xl uppercase font-light text-black/50 dark:text-white/50`}
         >
           {chapeau}
         </InViewAnimate>
@@ -25,7 +25,7 @@ export default function H2({ children, chapeau, big = false, className = "" }) {
       {children && (
         <InViewAnimate
           as="h2"
-          className={` ${className} leading-tight mb-8 dark:text-white text-black font-black ${workSans.className} text-2xl md:text-4xl lg:text-5xl 2xl:text-6xl`}
+          className={` ${className} lg:leading-none mb-8 lg:mb-10 dark:text-white text-black font-black ${workSans.className} text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl`}
           delay={100}
         >
           {children}

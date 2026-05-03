@@ -9,9 +9,10 @@ const workSans = Work_Sans({
 
 export default function P({ children, className, intro, splitText }) {
   const combinedClasses = `mb-4 last-of-type:mb-0 font-light text-shadow-color-bg-top tracking-widest text-black dark:text-white ${className} ${workSans.className} 
-    ${intro
-      ? "text-md md:text-lg max-w-280"
-      : "text-md max-w-paragraph"
+    ${
+      intro
+        ? "text-sm sm:text-md md:text-lg max-w-280"
+        : "text-sm sm:text-md max-w-paragraph"
     }
   `;
 

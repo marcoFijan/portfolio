@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React, { useState, useRef } from "react";
-import Icon from "@/utilities/Icon";
+import Icon from "@/utilities/icon";
 
 export default function Button({
   children,
@@ -11,6 +11,7 @@ export default function Button({
   noBubble = false,
   alignRight = false,
   arrow = false,
+  centered = false,
   icon,
   title = "Ga naar pagina",
 }) {
@@ -51,27 +52,41 @@ export default function Button({
     }));
   };
 
+  const primaryStyles = `dark:text-color-accent text-color-accent-dark hover:text-color-bg-top backdrop-blur-[15px] py-5 ${centered ? "px-4 md:px-8" : "pl-0 pr-8 md:pr-16 hover:pl-4 hover:pr-4 hover:md:pl-8 hover:md:pr-8"}`;
+  const secondaryStyles = `text-color-bg-top dark:text-white hover:text-white dark:hover:text-color-bg-top bg-color-glass/[0.05] backdrop-blur-[15px] py-5 ${centered ? "px-4 md:px-8" : "pl-0 pr-8 md:pr-16 hover:pl-4 hover:pr-4 hover:md:pl-8 hover:md:pr-8"}`;
+
   const typeStyles = {
-    primary: "border dark:border-color-accent border-color-accent-dark dark:text-color-accent text-color-accent-dark hover:text-color-bg-top backdrop-blur-[15px] py-5 px-8",
-    secondary: "border border-color-bg-top dark:border-white text-color-bg-top dark:text-white hover:text-white dark:hover:text-color-bg-top bg-color-glass/[0.05] backdrop-blur-[15px] py-5 px-8",
-    ghost: "text-color-bg-top dark:text-white hover:text-white dark:hover:text-color-bg-top transition-colors duration-300 py-5 px-4",
+    primary: primaryStyles,
+    submit: secondaryStyles,
+    secondary: secondaryStyles,
+    ghost:
+      "text-color-bg-top dark:text-white hover:text-white dark:hover:text-color-bg-top transition-colors duration-300 py-5 px-4",
   };
   const isGhost = type === "ghost";
-  const baseClasses = `group cursor-pointer tracking-widest relative overflow-hidden flex transition-all duration-500 items-center rounded-full uppercase ${!isGhost ? "gap-2 text-md" : ""}`;
-  const combinedClasses = `${baseClasses} ${typeStyles[type] || ""} ${className}`.trim();
-  const bubbleColor = type === "primary" ? "bg-color-accent" : "bg-color-bg-top dark:bg-white";
+  const baseClasses = `group cursor-pointer tracking-widest relative overflow-hidden flex transition-all duration-500 items-center rounded-full uppercase ${!isGhost ? "gap-2 text-sm md:text-md" : ""}`;
+  const combinedClasses =
+    `${baseClasses} ${typeStyles[type] || ""} ${className}`.trim();
+
+  const bubbleColor =
+    type === "primary" ? "bg-color-accent" : "bg-color-bg-top dark:bg-white";
 
   const Content = (
     <>
       {showBubble && (
-        <span className={`pointer-events-none absolute aspect-square rounded-full transition-transform duration-700 ease-out ${bubbleColor}`} style={circleStyle} />)}
-      <span className={`relative z-10 flex items-center transition-colors duration-300 ${!isGhost || icon ? "gap-2" : ""}`}>
+        <span
+          className={`pointer-events-none absolute aspect-square rounded-full transition-transform duration-700 ease-out ${bubbleColor}`}
+          style={circleStyle}
+        />
+      )}
+      <span
+        className={`relative z-10 flex items-center transition-colors duration-300 ${!isGhost || icon ? "gap-2" : ""}`}
+      >
         {icon && <Icon name={icon} />}
         {children}
         {arrow && (
           <Icon
             name="arrow"
-            className="fill-current shrink-0 w-5 h-5 rotate-[135deg] group-hover:rotate-[540deg] transition-all duration-500"
+            className="fill-current shrink-0 w-5 h-5 rotate-135 group-hover:rotate-540 transition-all duration-500"
           />
         )}
       </span>
@@ -91,7 +106,11 @@ export default function Button({
           {Content}
         </Link>
       ) : (
-        <button onClick={onClick} type="button" className={combinedClasses}>
+        <button
+          onClick={onClick}
+          type={type === "submit" ? "submit" : "button"}
+          className={combinedClasses}
+        >
           {Content}
         </button>
       )}

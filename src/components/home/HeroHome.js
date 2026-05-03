@@ -8,10 +8,18 @@ import LogoCarousel from "@/elements/LogoCarousel";
 export default function HeroHome() {
   return (
     <section id="hero" className="relative pt-20 lg:pt-26 flex items-start">
-      <div id="hero-mid" className="absolute top-1/2 left-0 w-0 h-0 pointer-events-none" aria-hidden="true" />
-      <div id="hero-end" className="absolute bottom-[5%] left-0 w-0 h-0 pointer-events-none" aria-hidden="true" />
+      <div
+        id="hero-mid"
+        className="absolute top-1/2 left-0 w-0 h-0 pointer-events-none"
+        aria-hidden="true"
+      />
+      <div
+        id="hero-end"
+        className="absolute bottom-[5%] left-0 w-0 h-0 pointer-events-none"
+        aria-hidden="true"
+      />
 
-      <Container className="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full">
+      <Container className="grid grid-cols-1 lg:grid-cols-2 gap-x-6 w-full">
         <article className="dark flex flex-col justify-start lg:col-span-2">
           <H1 chapeau="Marco Fijan" big>
             Een wens, <br />

@@ -525,7 +525,6 @@ const GradientBackground = forwardRef(function GradientBackground(
   const instanceRef = useRef(null);
   const [mounted, setMounted] = useState(false);
 
-  // 1. Set mounted to true once we are on the client
   useEffect(() => {
     setMounted(true);
   }, []);

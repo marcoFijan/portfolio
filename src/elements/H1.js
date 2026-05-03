@@ -8,11 +8,10 @@ const workSans = Work_Sans({
 });
 
 export default function H1({ children, chapeau, className = "", big }) {
-  const sizeClasses = big
-    ? "text-6xl lg:text-7xl 2xl:text-7xl"
-    : "text-3xl lg:text-5xl 2xl:text-7xl"
+  const sizeClasses = "text-4xl sm:text-6xl lg:text-7xl 2xl:text-7xl";
 
-  const colorClasses = "text-transparent bg-clip-text bg-gradient-to-br from-black to-neutral-600 dark:from-white dark:to-white/60";
+  const colorClasses =
+    "text-transparent bg-clip-text bg-gradient-to-br from-black to-neutral-600 dark:from-white dark:to-white/60";
 
   return (
     <>
@@ -32,7 +31,7 @@ export default function H1({ children, chapeau, className = "", big }) {
         as="h1"
         className={`
           ${workSans.className} 
-          pt-2 pb-16 lg:pb-24 
+          pt-2 pb-16 lg:pb-18 
           leading-[0.9] sm:leading-none 
           font-extrabold
           ${sizeClasses} 

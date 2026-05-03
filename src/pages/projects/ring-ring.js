@@ -4,6 +4,7 @@ import P from "@/elements/P.js";
 import Img from "@/elements/Img.js";
 import ProjectHero from "@/components/project/HeroProject.js";
 import Container from "@/components/Container.js";
+import Wave from "@/elements/Wave.js";
 
 const projectData = {
   chapeau: "Dashboard voor beleidsmakers van Ring Ring",
@@ -40,13 +41,11 @@ export default function RingRing() {
       bgColors={["#000000", "#c42116", "#c42116", "#000000"]}
       title="Marco Fijan - Ring Ring - Datavisualisatie van fietsverkeer"
     >
-      {/* HERO */}
       <ProjectHero {...projectData} />
 
-      <section className="bg-white relative z-10 mb-30 inverted-card py-20 lg:py-20">
-        {/* LOGIN SCREEN */}
-        <Container grid className="mb-24 xl:mb-40 ">
-          <section className="col-span-12 lg:col-span-6 lg:sticky top-32 h-fit space-y-6">
+      <section className="bg-white relative z-10 mb-30 inverted-card py-20 lg:py-20 flex flex-col gap-24 lg:gap-36">
+        <Container grid className="my-24 xl:my-40 ">
+          <section className="col-span-12 lg:col-span-5 lg:sticky top-32 h-fit space-y-6">
             <H2 chapeau="Inlogscherm voor authenticatie">Inlogpagina</H2>
             <P>
               Het dashboard bevat privacygevoelige Ring Ring data. Daarom is een
@@ -54,7 +53,7 @@ export default function RingRing() {
               geautoriseerde beleidsmakers toegang hebben tot de informatie.
             </P>
           </section>
-          <section className="col-span-12 lg:col-span-6 relative">
+          <section className="col-span-12 lg:col-span-6 lg:col-start-7 relative">
             <Img
               src="/images/RingRing/Inlogscherm.png"
               alt="Ring Ring inlogscherm"
@@ -65,7 +64,7 @@ export default function RingRing() {
 
         {/* DASHBOARD SCREEN */}
         <Container grid className="mb-24 xl:mb-40 ">
-          <section className="col-span-12 lg:col-span-6 lg:order-2 lg:sticky top-32 h-fit space-y-6">
+          <section className="col-span-12 lg:col-span-5 lg:order-2 lg:sticky top-32 h-fit space-y-6">
             <H2 chapeau="Het hoofdscherm">Dashboard</H2>
             <P>
               Het dashboard biedt een helder totaaloverzicht van alle
@@ -85,7 +84,7 @@ export default function RingRing() {
 
         {/* FOR YOU SCREEN */}
         <Container grid className="mb-24 xl:mb-40 ">
-          <section className="col-span-12 lg:col-span-6 lg:sticky top-32 h-fit space-y-6">
+          <section className="col-span-12 lg:col-span-5 lg:sticky top-32 h-fit space-y-6">
             <H2 chapeau="Data op basis van type account">Voor u-pagina</H2>
             <P>
               Op de ‘Voor U’-pagina worden datavisualisaties getoond die
@@ -96,7 +95,7 @@ export default function RingRing() {
               datatypes, waardoor snel inzicht ontstaat in het fietsgebruik.
             </P>
           </section>
-          <section className="col-span-12 lg:col-span-6 relative">
+          <section className="col-span-12 lg:col-span-6 lg:col-start-7 relative">
             <Img
               src="/images/RingRing/SpecificData.jpg"
               alt="Voor u pagina van het ontwerp"
@@ -107,7 +106,7 @@ export default function RingRing() {
 
         {/* MAP SCREEN */}
         <Container grid className="mb-24 xl:mb-40 items-center">
-          <section className="col-span-12 lg:col-span-6 lg:order-2 lg:sticky top-32 h-fit space-y-6">
+          <section className="col-span-12 lg:col-span-5 lg:order-2 lg:sticky top-32 h-fit space-y-6">
             <H2 chapeau="Routes bekijken op een kaart">Kaartpagina</H2>
             <P>
               Op de kaartpagina kunnen beleidsmakers fietsroutes analyseren op
@@ -128,7 +127,7 @@ export default function RingRing() {
 
         {/* FEEDBACK SCREEN */}
         <Container grid>
-          <section className="col-span-12 lg:col-span-6 lg:sticky top-32 h-fit space-y-6">
+          <section className="col-span-12 lg:col-span-5 lg:sticky top-32 h-fit space-y-6">
             <H2 chapeau="Gegeven feedback over routes bekijken">
               Feedbackpagina
             </H2>
@@ -140,7 +139,7 @@ export default function RingRing() {
               te sturen naar collega’s voor verdere opvolging.
             </P>
           </section>
-          <section className="col-span-12 lg:col-span-6 relative">
+          <section className="col-span-12 lg:col-span-6 lg:col-start-7 relative">
             <Img
               src="/images/RingRing/Feedback.jpg"
               alt="Feedbackpagina van het ontwerp"
@@ -149,19 +148,11 @@ export default function RingRing() {
           </section>
         </Container>
 
-        <svg
-          className="w-full translate-y-[99%] text-white -scale-y-100 absolute bottom-0 left-0"
-          viewBox="0 0 1440 88"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            fillRule="evenodd"
-            clipRule="evenodd"
-            d="M720.006 88C400.143 88 124.641 51.9188 0 0V88H720.006ZM1440 0C1315.37 51.9188 1039.87 88 720.006 88H1440V0Z"
-            fill="currentColor"
-          ></path>
-        </svg>
+        <Wave
+          className="translate-y-[99%] absolute bottom-0 z-20"
+          side="left"
+          startAt={60}
+        />
       </section>
     </PageTemplate>
   );

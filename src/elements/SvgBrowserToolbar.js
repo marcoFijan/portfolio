@@ -19,48 +19,48 @@ export default function SvgBrowserToolbar() {
       <path
         d="M117.393 77.3948C115.191 80.9388 110.534 82.0268 106.99 79.8249C103.446 77.623 102.358 72.9651 104.559 69.4211C106.761 65.8771 111.419 64.7891 114.963 66.9909C116.214 67.768 117.159 68.851 117.761 70.0829"
         stroke="#8C8E8D"
-        stroke-width="2.26824"
-        stroke-linecap="round"
+        strokeWidth="2.26824"
+        strokeLinecap="round"
       />
       <path
         d="M118.724 65.8789L118.156 69.9073C118.083 70.4238 117.605 70.7833 117.089 70.7104L113.06 70.1418"
         stroke="#8C8E8D"
-        stroke-width="2.26824"
-        stroke-linecap="round"
+        strokeWidth="2.26824"
+        strokeLinecap="round"
       />
       <path
         d="M62 73H78M78 73L71.3333 66.3334M78 73L71.3333 79.6667"
         stroke="#8C8E8D"
-        stroke-width="2.66667"
-        stroke-linecap="round"
+        strokeWidth="2.66667"
+        strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M38 73H22M22 73L28.6667 66.3334M22 73L28.6667 79.6667"
         stroke="#8C8E8D"
-        stroke-width="2.66667"
-        stroke-linecap="round"
+        strokeWidth="2.66667"
+        strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M1533.64 75.397C1533.56 75.3855 1533.45 75.3855 1533.36 75.397C1531.34 75.328 1529.73 73.672 1529.73 71.6365C1529.73 69.555 1531.41 67.8645 1533.5 67.8645C1535.58 67.8645 1537.27 69.555 1537.27 71.6365C1537.26 73.672 1535.66 75.328 1533.64 75.397Z"
         stroke="#8C8E8D"
-        stroke-width="1.725"
-        stroke-linecap="round"
+        strokeWidth="1.725"
+        strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M1541.25 82.9871C1539.2 84.8616 1536.49 86.0001 1533.5 86.0001C1530.51 86.0001 1527.8 84.8616 1525.75 82.9871C1525.86 81.9061 1526.55 80.8481 1527.78 80.0201C1530.94 77.9271 1536.09 77.9271 1539.22 80.0201C1540.45 80.8481 1541.14 81.9061 1541.25 82.9871Z"
         stroke="#8C8E8D"
-        stroke-width="1.725"
-        stroke-linecap="round"
+        strokeWidth="1.725"
+        strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M1533.5 86C1539.85 86 1545 80.8512 1545 74.5C1545 68.1487 1539.85 63 1533.5 63C1527.15 63 1522 68.1487 1522 74.5C1522 80.8512 1527.15 86 1533.5 86Z"
         stroke="#8C8E8D"
-        stroke-width="1.725"
-        stroke-linecap="round"
+        strokeWidth="1.725"
+        strokeLinecap="round"
         strokeLinejoin="round"
       />
       <rect x="141" y="56" width="1363" height="34" rx="17" fill="#282C2F" />

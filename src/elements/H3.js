@@ -17,7 +17,7 @@ export default function H3({
     <>
       <InViewAnimate
         as="h3"
-        className={`${workSans.className} text-xl lg:text-2xl 2xl:text-3xl font-bold leading-snug mb-2 ${textOrange ? 'text-color-accent' : 'text-black dark:text-white'} ${noMarginTop ? "mt-4" : "mt-12"} ${className}`}
+        className={`${workSans.className} text-xl lg:text-2xl 2xl:text-3xl font-bold leading-snug mb-6 ${textOrange ? "text-color-accent" : "text-black dark:text-white"} ${noMarginTop ? "mt-3" : "mt-12"} ${className}`}
         delay={100}
       >
         {children}

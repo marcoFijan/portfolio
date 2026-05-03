@@ -55,7 +55,7 @@ const ProjectHero = ({
                     d="M720.006 88C400.143 88 124.641 51.9188 0 0V88H720.006ZM1440 0C1315.37 51.9188 1039.87 88 720.006 88H1440V0Z"
                   />
                 </svg>
-                <div className="bg-black  relative after:w-full after:h-full after:absolute after:left-0 after:top-0 after:bg-black/15 w-full h-600" />
+                <div className="bg-black  relative after:w-full after:h-1/2 after:absolute after:left-0 after:top-0 after:bg-black/15 w-full h-600" />
               </div>
             </section>
           </div>
@@ -97,7 +97,12 @@ const ProjectHero = ({
             </div>
           </section>
         </Container>
-        <Wave className="translate-y-[99%] absolute bottom-0 z-20" colorClass="text-black" side="left" startAt={60} />
+        <Wave
+          className="translate-y-[99%] absolute bottom-0 z-20"
+          colorClass="text-black"
+          side="left"
+          startAt={60}
+        />
       </section>
     </>
   );

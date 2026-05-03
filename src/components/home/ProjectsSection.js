@@ -37,7 +37,7 @@ export default function ProjectsSection({ mobile }) {
           ))}
         </section>
         <Action className="justify-center mt-16">
-          <Button type="primary" href="/projects">
+          <Button type="primary" href="/projects" centered>
             Bekijk alle projecten
           </Button>
         </Action>
@@ -66,7 +66,12 @@ export default function ProjectsSection({ mobile }) {
             className={`h-screen dark flex text-center!`}
           >
             <Container className="flex flex-col items-center justify-start gap-8">
-              <H3 textWhite noMarginTop chapeau={project.name} className="text-shadow-lg">
+              <H3
+                textWhite
+                noMarginTop
+                chapeau={project.name}
+                className="text-shadow-lg"
+              >
                 {project.client}
               </H3>
 
@@ -81,6 +86,7 @@ export default function ProjectsSection({ mobile }) {
                 type="primary"
                 href={project.link}
                 alignCenter
+                centered
                 className="mx-auto"
               >
                 Bekijk het project
@@ -104,6 +110,7 @@ export default function ProjectsSection({ mobile }) {
             type="primary"
             href="/projects"
             alignCenter
+            centered
             className="mx-auto"
           >
             Alle projecten

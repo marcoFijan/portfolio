@@ -41,7 +41,6 @@ export default function YoDashboardClients() {
       <ProjectHero {...projectData} />
 
       <section className="bg-white relative z-10 mb-30 inverted-card py-48">
-        {/* CURRENT DASHBOARD */}
         <Container grid className="mb-24 xl:mb-40">
           <section className="col-span-12 lg:col-span-6 lg:sticky top-32 h-fit space-y-6">
             <H2 chapeau="Huidig gebruikt PowerBI dashboard">
@@ -436,7 +435,11 @@ export default function YoDashboardClients() {
             </Splide>
           </section>
         </Container>
-        <Wave className="translate-y-[99%] absolute bottom-0 z-20" side="left" startAt={60} />
+        <Wave
+          className="translate-y-[99%] absolute bottom-0 z-20"
+          side="left"
+          startAt={60}
+        />
       </section>
     </PageTemplate>
   );

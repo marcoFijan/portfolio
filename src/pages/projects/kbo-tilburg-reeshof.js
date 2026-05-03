@@ -5,8 +5,7 @@ import H3 from "@/elements/H3.js";
 import P from "@/elements/P.js";
 import Li from "@/elements/Li.js";
 import Button from "@/elements/Button.js";
-import Divider from "@/elements/Divider.js";
-import SvgDeviceOutline from "@/elements/SvgDeviceOutline.js";
+import ProjectHero from "@/components/project/HeroProject.js";
 import Container from "@/components/Container.js";
 import Img from "@/elements/Img.js";
 import Wave from "@/elements/Wave.js";
@@ -14,78 +13,49 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 
 export default function KBOTilburgReeshof() {
+  const projectData = {
+    chapeau: "Een concept website ontwerp voor ouderen",
+    title: "KBO Tilburg Reeshof",
+    mainImage: {
+      src: "/images/KBOReeshof/HomeHD.png",
+      alt: "Eindproduct Design",
+    },
+    introParagraphs: [
+      "Omdat ik vind dat er te weinig aandacht is voor ouderen op digitaal vlak, wilde ik onderzoeken hoe zij websites gebruiken en hoe deze beter op hen afgestemd kunnen worden. Via mijn zoektocht kwam ik uit bij KBO Tilburg Reeshof, een lokale seniorenvereniging met meer dan 700 leden.",
+    ],
+    actions: [
+      {
+        label: "Design Rationale",
+        href: "https://drive.google.com/file/d/1iXpgTq90AxV9-KqkzIO90jlGQBFBjct8/preview",
+        type: "primary",
+      },
+      {
+        label: "Productbiografie",
+        href: "https://amenable-sword-4e9.notion.site/Productbiografie-1edc81194bb144b2bddb7619a652b5b0",
+        type: "secondary",
+      },
+    ],
+    projectDetails: [
+      { label: "Projectjaar", value: "2022" },
+      {
+        label: "Projectdoel",
+        value: "Website optimalisatie voor senioren",
+      },
+      {
+        label: "Doelgroep",
+        value: "Eenzame ouderen (65+) in Tilburg",
+      },
+    ],
+  };
   return (
     <PageTemplate
       bgColors={["#063C58", "#063C58", "#000000", "#000000"]}
       projectPage
       title="Marco Fijan - KBO Tilburg Reeshof - Een concept website ontwerp voor ouderen"
     >
-      <Container grid className="dark">
-        <div className="text-center mb-12 col-span-12">
-          <H1 big chapeau={"Een concept website ontwerp voor ouderen"}>
-            KBO Tilburg Reeshof
-          </H1>
-        </div>
+      <ProjectHero {...projectData} />
 
-        <div className="hidden lg:block col-span-12 relative w-full h-[10rem]">
-          <div className="absolute left-0 top-0 w-full">
-            <SvgDeviceOutline />
-          </div>
-        </div>
-
-        <div className="w-full col-span-12 lg:col-span-10 lg:col-start-2">
-          <Img
-            browserToolbar
-            src="/images/KBOReeshof/HomeHD.png"
-            alt="KBO Reeshof Menu uitgeklapt"
-            className="block object-cover aspect-video w-full object-top"
-          />
-          <div className="col-span-12 lg:col-span-5 my-8 lg:mt-16">
-            <ul className="flex flex-col gap-2">
-              <li className="px-4 py-2 bg-white rounded-full w-max">
-                <strong>Projectjaar:</strong> 2022
-              </li>
-              <li className="px-4 py-2 bg-white rounded-full w-max">
-                <strong>Projectdoel:</strong> Website optimalisatie voor
-                senioren
-              </li>
-              <li className="px-4 py-2 bg-white rounded-full w-max">
-                <strong>Doelgroep:</strong> Eenzame ouderen (65+) in Tilburg
-              </li>
-            </ul>
-          </div>
-          <article className="col-span-12 lg:col-span-7 flex flex-col justify-center">
-            <P intro>
-              Omdat ik vind dat er te weinig aandacht is voor ouderen op
-              digitaal vlak, wilde ik onderzoeken hoe zij websites gebruiken en
-              hoe deze beter op hen afgestemd kunnen worden. Via mijn zoektocht
-              kwam ik uit bij KBO Tilburg Reeshof, een lokale seniorenvereniging
-              met meer dan 700 leden.
-            </P>
-            <div className="flex flex-wrap gap-4 mt-8">
-              <Button
-                href="https://drive.google.com/file/d/1iXpgTq90AxV9-KqkzIO90jlGQBFBjct8/preview"
-                type="primary"
-                arrow
-              >
-                Design Rationale
-              </Button>
-              <Button
-                href="https://amenable-sword-4e9.notion.site/Productbiografie-1edc81194bb144b2bddb7619a652b5b0"
-                type="secondary"
-                arrow
-              >
-                Productbiografie
-              </Button>
-            </div>
-          </article>
-        </div>
-      </Container>
-
-      <section className="relative flex flex-col gap-16 md:gap-32 xl:gap-64 mt-20 lg:mt-30 bg-white inverted-card pt-20 lg:pt-32">
-        <Wave className="-translate-y-[99%] absolute top-0" />
-
-        {/* PROBLEEMSTELLING */}
+      <section className="bg-white relative z-10 mb-12 inverted-card pt-48  flex flex-col gap-24 lg:gap-36">
         <Container grid>
           <section className="col-span-12 xl:col-span-6 xl:sticky top-32 h-fit space-y-6">
             <H2 chapeau="Het probleem concreet beschrijven">
@@ -113,7 +83,6 @@ export default function KBOTilburgReeshof() {
           </section>
         </Container>
 
-        {/* VERKENNEN & PERSONAS */}
         <Container article grid>
           <section className="col-span-12 xl:col-span-6 xl:order-2 xl:sticky top-32 h-fit space-y-6">
             <H2 chapeau="Onderzoek doen naar de doelgroep">Verkennen</H2>
@@ -171,8 +140,7 @@ export default function KBOTilburgReeshof() {
           </section>
         </Container>
 
-        {/* DEFINIËREN */}
-        <Container bgClass="bg-color-kbo-bg">
+        <Container bgClass="bg-color-kbo-bg text-color-kbo-bg">
           <H2 chapeau="De eisen voor het product vastleggen">Definiëren</H2>
           <P>
             Nu er een duidelijk beeld is van de doelgroep, is het tijd om deze
@@ -326,7 +294,6 @@ export default function KBOTilburgReeshof() {
               arrow
               type="secondary"
               className="mt-8"
-
             >
               Bekijk ideegeneratie
             </Button>
@@ -377,7 +344,6 @@ export default function KBOTilburgReeshof() {
               arrow
               type="secondary"
               className="mt-8"
-
             >
               Bekijk alle concepten
             </Button>
@@ -392,7 +358,6 @@ export default function KBOTilburgReeshof() {
           </div>
         </Container>
 
-        {/* CONCEPTUALISEREN & VORMGEVING */}
         <Container grid>
           <section className="col-span-12 lg:col-span-6 lg:sticky top-32 h-fit space-y-6">
             <H2 chapeau="Itereren op mogelijke oplossingen">
@@ -432,8 +397,7 @@ export default function KBOTilburgReeshof() {
           </section>
         </Container>
 
-        {/* FINAL PRODUCT */}
-        <Container bgClass="bg-color-kbo-bg">
+        <Container bgClass="bg-color-kbo-bg text-color-kbo-bg">
           <H2
             chapeau="De Design Rationale voor de klant"
             className="mb-8 text-center lg:text-left"

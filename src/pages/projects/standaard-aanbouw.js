@@ -211,7 +211,7 @@ export default function StandaardAanbouw() {
         >
           <path
             fill-rule="evenodd"
-            clip-rule="evenodd"
+            clipRule="evenodd"
             d="M720.006 88C400.143 88 124.641 51.9188 0 0V88H720.006ZM1440 0C1315.37 51.9188 1039.87 88 720.006 88H1440V0Z"
             fill="currentColor"
           ></path>

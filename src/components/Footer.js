@@ -11,7 +11,7 @@ export default function Footer() {
         <div className="flex gap-4">
           <Button
             type="ghost"
-            className="w-16 h-16 flex items-center justify-center p-2 relative z-50 hover:bg-transparent text-white hover:text-black"
+            className="w-16 h-16 flex items-center justify-center p-2 relative z-10 hover:bg-transparent text-white hover:text-black"
             href="/contact"
             title="Ga naar contactpagina"
           >
@@ -27,7 +27,7 @@ export default function Footer() {
 
           <Button
             type="ghost"
-            className="w-16 h-16 flex items-center justify-center p-2 relative z-50 hover:bg-transparent text-white hover:text-black"
+            className="w-16 h-16 flex items-center justify-center p-2 relative z-10 hover:bg-transparent text-white hover:text-black"
             href="https://www.linkedin.com/in/marco-fijan-a0b60b161/"
             title="Ga naar LinkedIn"
           >
@@ -39,10 +39,9 @@ export default function Footer() {
             </svg>
           </Button>
 
-          {/* Github Button */}
           <Button
             type="ghost"
-            className="w-16 h-16 flex items-center justify-center p-2 relative z-50 hover:bg-transparent text-white hover:text-black"
+            className="w-16 h-16 flex items-center justify-center p-2 relative z-10 hover:bg-transparent text-white hover:text-black"
             href="https://github.com/marcoFijan"
             title="Bekijk de Githubpagina"
           >
