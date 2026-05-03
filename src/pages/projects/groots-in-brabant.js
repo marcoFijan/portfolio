@@ -4,6 +4,7 @@ import P from "@/elements/P.js";
 import Img from "@/elements/Img.js";
 import ProjectHero from "@/components/project/HeroProject.js";
 import Container from "@/components/Container.js";
+import Wave from "@/elements/Wave.js";
 
 const projectData = {
   chapeau: "Website voor een grootschalig kunstproject in Brabant",
